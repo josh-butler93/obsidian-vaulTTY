@@ -11,10 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "git/git_commands.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "git_commands"
             }
           },
           {
@@ -291,6 +295,9 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "git/git_workflow.md",
+    "git/git_commands.md",
+    "git",
     "Kanban/Kanban Board.md",
     "Build out PiHole on mini PC 1.md",
     "Untitled Kanban.md",
@@ -323,9 +330,6 @@
     "Test_dir/'Testdir.md'",
     "Test_dir",
     "Commands/SCP Commands.md",
-    "Networking/Networking Index.md",
-    "Networking/Networing",
-    "Networking",
-    "Yaml/Yaml Index.md"
+    "Networking/Networing"
   ]
 }
