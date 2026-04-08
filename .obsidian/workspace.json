@@ -295,6 +295,9 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "git/quick_commands.md",
+    "git/git_initial_seutp.md~",
+    "git/git_initial_seutp.md",
     "git/git_workflow.md",
     "git/git_commands.md",
     "git",
@@ -325,11 +328,8 @@
     "Kanban/Taskings/Build out home Assistant Pod.md",
     "Kanban/Taskings",
     "Kanban/Taskings/Build out graylog Server.md",
-    "Testdir.md",
     "Linux Guru.md~",
     "Test_dir/'Testdir.md'",
-    "Test_dir",
-    "Commands/SCP Commands.md",
-    "Networking/Networing"
+    "Test_dir"
   ]
 }
