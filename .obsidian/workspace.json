@@ -112,7 +112,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 246.50260543823242
+    "width": 246.50260543823242,
+    "collapsed": true
   },
   "right": {
     "id": "1f60c4e1c0218a96",
@@ -228,9 +229,19 @@
               "icon": "lucide-globe",
               "title": "Google Chrome"
             }
+          },
+          {
+            "id": "3f242c6521db7557",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 8
       }
     ],
     "direction": "horizontal",
@@ -253,11 +264,15 @@
       "obsidian-kanban:Create new board": false,
       "homepage:Open homepage": false,
       "iconic:Open rulebook": false,
-      "terminal:Open terminal": false
+      "terminal:Open terminal": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2d7ea948c3acbed6",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "Test.md~",
+    "Test.md",
+    "Test",
     "Omarchy/Keyboard Shortcuts.md",
     "Kanban/Kanban Board.md",
     "Kanban/Kanban Index.md",
@@ -289,10 +304,7 @@
     "Networking/Networing",
     "Networking",
     "HomeLab/HomeLab Index.md~",
-    "Config Files/Config Files Index.md~",
     "Yaml/Yaml Index.md",
-    "PodmanDesktop/PodmanDesktop Index.md",
-    "Commands/Terminal Webserver Commands.md",
-    "Google.md"
+    "PodmanDesktop/PodmanDesktop Index.md"
   ]
 }
