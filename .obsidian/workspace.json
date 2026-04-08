@@ -16,6 +16,28 @@
               "icon": "lucide-git-fork",
               "title": "Graph view"
             }
+          },
+          {
+            "id": "b0d9eb20e2f2cae3",
+            "type": "leaf",
+            "state": {
+              "type": "kanban",
+              "state": {
+                "file": "Kanban/Kanban Board.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "list",
+                  "list-collapse": [
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ]
+                }
+              },
+              "icon": "lucide-trello",
+              "title": "Kanban Board"
+            }
           }
         ]
       }
@@ -112,8 +134,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 246.50260543823242,
-    "collapsed": true
+    "width": 246.50260543823242
   },
   "right": {
     "id": "1f60c4e1c0218a96",
@@ -270,15 +291,17 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "Kanban/Kanban Board.md",
+    "Build out PiHole on mini PC 1.md",
+    "Untitled Kanban.md",
+    "Untitled Kanban 1.md",
     "Test.md~",
     "Test.md",
     "Test",
     "Omarchy/Keyboard Shortcuts.md",
-    "Kanban/Kanban Board.md",
     "Kanban/Kanban Index.md",
     "Build out PiHole on mini PC.md",
     "Linux Guru.md",
-    "Untitled Kanban.md",
     "Neovim/Neovim Index.md",
     "Config Files/Config Files.md",
     "Neovim/Neovim Keyboard Shortcuts.md",
@@ -303,8 +326,6 @@
     "Networking/Networking Index.md",
     "Networking/Networing",
     "Networking",
-    "HomeLab/HomeLab Index.md~",
-    "Yaml/Yaml Index.md",
-    "PodmanDesktop/PodmanDesktop Index.md"
+    "Yaml/Yaml Index.md"
   ]
 }

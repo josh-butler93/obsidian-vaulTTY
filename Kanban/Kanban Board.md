@@ -8,7 +8,8 @@ kanban-plugin: list
 
 - [ ] [[Build out graylog Server]]
 - [ ] [[Build out home Assistant Pod]]
-- [ ] [[Build out PiHole on mini PC]]
+- [ ] [[Build out PiHole on mini PC 1]]
+- [ ] Git Commit Cron Job
 
 
 ## To Do
