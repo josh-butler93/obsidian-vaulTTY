@@ -1,0 +1,41 @@
+{
+  "frames": [
+    {
+      "url": "http://10.0.0.250:8006",
+      "displayName": "HomeLab",
+      "icon": "server",
+      "hideOnMobile": true,
+      "addRibbonIcon": true,
+      "openInCenter": true,
+      "zoomLevel": 1,
+      "forceIframe": false,
+      "customCss": "",
+      "customJs": ""
+    },
+    {
+      "url": "https://google.com",
+      "displayName": "Google Chrome",
+      "icon": "globe",
+      "hideOnMobile": true,
+      "addRibbonIcon": true,
+      "openInCenter": true,
+      "zoomLevel": 1,
+      "forceIframe": false,
+      "customCss": "",
+      "customJs": ""
+    },
+    {
+      "url": "https://www.youtube.com/",
+      "displayName": "Youtube",
+      "icon": "monitor-play",
+      "hideOnMobile": true,
+      "addRibbonIcon": true,
+      "openInCenter": true,
+      "zoomLevel": 1,
+      "forceIframe": false,
+      "customCss": "",
+      "customJs": ""
+    }
+  ],
+  "padding": 5
+}

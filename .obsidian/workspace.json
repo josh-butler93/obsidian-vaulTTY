@@ -1,0 +1,298 @@
+{
+  "main": {
+    "id": "5324373015726ba8",
+    "type": "split",
+    "children": [
+      {
+        "id": "4509724f8bf84da7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e7a7b303c61786dc",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "2e9fdd6e3f966b39",
+    "type": "split",
+    "children": [
+      {
+        "id": "06cd274f73e252db",
+        "type": "tabs",
+        "dimension": 62.47086247086248,
+        "children": [
+          {
+            "id": "2d7ea948c3acbed6",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "9af1cd5969031780",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "1647405a133c482b",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          },
+          {
+            "id": "6a9d3e47a8084138",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          },
+          {
+            "id": "3528b5dc06de8723",
+            "type": "leaf",
+            "state": {
+              "type": "mk-path-view",
+              "state": {},
+              "icon": "layout-grid",
+              "title": "Navigator"
+            }
+          }
+        ]
+      },
+      {
+        "id": "e29cda0bf574f382",
+        "type": "tabs",
+        "dimension": 37.52913752913753,
+        "children": [
+          {
+            "id": "33a39bcda5d4a633",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 246.50260543823242
+  },
+  "right": {
+    "id": "1f60c4e1c0218a96",
+    "type": "split",
+    "children": [
+      {
+        "id": "a0e8424219f139a8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1dc73f8ac5d098f1",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Config Files/Monitor Config file setup.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Monitor Config file setup"
+            }
+          },
+          {
+            "id": "fcb4542d63a6947e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Config Files/Monitor Config file setup.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Monitor Config file setup"
+            }
+          },
+          {
+            "id": "729b5be0e0c2155b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "f56e287154fecfee",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "ec5fd4584cf546dd",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Config Files/Monitor Config file setup.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Monitor Config file setup"
+            }
+          },
+          {
+            "id": "0dd7c3ade2dd26fd",
+            "type": "leaf",
+            "state": {
+              "type": "custom-frames-youtube",
+              "state": {},
+              "icon": "lucide-monitor-play",
+              "title": "Youtube"
+            }
+          },
+          {
+            "id": "e7a7b303c61786dc",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          },
+          {
+            "id": "e7a7b303c61786dc",
+            "type": "leaf",
+            "state": {
+              "type": "custom-frames-google-chrome",
+              "state": {},
+              "icon": "lucide-globe",
+              "title": "Google Chrome"
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 825.5,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "obsidian-custom-frames:Open Youtube": false,
+      "omnisearch:Omnisearch": false,
+      "obsidian-custom-frames:Open HomeLab": false,
+      "obsidian-custom-frames:Open Google Chrome": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "obsidian-kanban:Create new board": false,
+      "homepage:Open homepage": false,
+      "iconic:Open rulebook": false,
+      "terminal:Open terminal": false
+    }
+  },
+  "active": "2d7ea948c3acbed6",
+  "lastOpenFiles": [
+    "Omarchy/Keyboard Shortcuts.md",
+    "Kanban/Kanban Board.md",
+    "Kanban/Kanban Index.md",
+    "Build out PiHole on mini PC.md",
+    "Linux Guru.md",
+    "Untitled Kanban.md",
+    "Neovim/Neovim Index.md",
+    "Config Files/Config Files.md",
+    "Neovim/Neovim Keyboard Shortcuts.md",
+    "Vault.md",
+    "Tags",
+    "Neovim",
+    "Omarchy/Omarchy Index.md",
+    "Commands/Commands Index.md",
+    "Commands/Initramfs.md",
+    "Commands/TMUX Commands.md",
+    "Commands/APT File Corruption Commands.md",
+    "Commands/Metasploit Commands.md",
+    "Commands/Neovim Commands.md",
+    "Kanban/Taskings/Build out home Assistant Pod.md",
+    "Kanban/Taskings",
+    "Kanban/Taskings/Build out graylog Server.md",
+    "Testdir.md",
+    "Linux Guru.md~",
+    "Test_dir/'Testdir.md'",
+    "Test_dir",
+    "Commands/SCP Commands.md",
+    "Networking/Networking Index.md",
+    "Networking/Networing",
+    "Networking",
+    "HomeLab/HomeLab Index.md~",
+    "Config Files/Config Files Index.md~",
+    "Yaml/Yaml Index.md",
+    "PodmanDesktop/PodmanDesktop Index.md",
+    "Commands/Terminal Webserver Commands.md",
+    "Google.md"
+  ]
+}
