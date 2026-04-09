@@ -1,0 +1,13 @@
+Start the podman machine
+- command:
+    - podman machine init
+        - This initializes the default vm
+
+- command: 
+    - podman machine start 
+        - This startss the vm
+
+- command: 
+    - podman machine ssh
+        - This is where you ssh into the vm
+
