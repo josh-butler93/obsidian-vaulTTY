@@ -99,3 +99,6 @@ podman run ubuntu apt update --some of the little things you can get a contianer
 | Background service      | `-d nginx`                  |
 | One-time task           | `podman run ubuntu echo hi` |
 
+Images can add up if you pull many of them. You can clean up unused images with:
+podman image prune     # removes dangling images
+podman system prune    # removes all unused images, containers, networks
