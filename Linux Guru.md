@@ -7,6 +7,7 @@
 [[Neovim Index]] 
 [[Omarchy Index]]
 [[PodmanDesktop Index]] 
+[[SSH Index]]
 [[Tmux Index]]
 [[Tmux Restore Index]]
 [[Yaml Index]] 

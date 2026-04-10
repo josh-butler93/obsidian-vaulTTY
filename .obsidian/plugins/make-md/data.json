@@ -38,7 +38,8 @@
   "vaultSelector": true,
   "deleteFileOption": "trash",
   "expandedSpaces": [
-    "/"
+    "/",
+    "//SSH"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",

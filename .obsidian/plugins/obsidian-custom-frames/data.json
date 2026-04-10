@@ -1,18 +1,6 @@
 {
   "frames": [
     {
-      "url": "http://10.0.0.250:8006",
-      "displayName": "HomeLab",
-      "icon": "server",
-      "hideOnMobile": true,
-      "addRibbonIcon": true,
-      "openInCenter": true,
-      "zoomLevel": 1,
-      "forceIframe": false,
-      "customCss": "",
-      "customJs": ""
-    },
-    {
       "url": "https://google.com",
       "displayName": "Google Chrome",
       "icon": "globe",
@@ -28,6 +16,30 @@
       "url": "https://www.youtube.com/",
       "displayName": "Youtube",
       "icon": "monitor-play",
+      "hideOnMobile": true,
+      "addRibbonIcon": true,
+      "openInCenter": true,
+      "zoomLevel": 1,
+      "forceIframe": false,
+      "customCss": "",
+      "customJs": ""
+    },
+    {
+      "url": "https://chatgpt.com/",
+      "displayName": "Jarvis",
+      "icon": "brain",
+      "hideOnMobile": true,
+      "addRibbonIcon": true,
+      "openInCenter": true,
+      "zoomLevel": 1,
+      "forceIframe": false,
+      "customCss": "",
+      "customJs": ""
+    },
+    {
+      "url": "https://github.com/josh-butler93",
+      "displayName": "github",
+      "icon": "folder-git-2",
       "hideOnMobile": true,
       "addRibbonIcon": true,
       "openInCenter": true,

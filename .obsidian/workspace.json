@@ -8,13 +8,43 @@
         "type": "tabs",
         "children": [
           {
-            "id": "e7a7b303c61786dc",
+            "id": "8fd0b4cd6d88d123",
             "type": "leaf",
+            "pinned": true,
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "terminal:terminal",
+              "state": {
+                "terminal:terminal": {
+                  "cwd": "/home/sysadmin/Documents/obsidian-vault/linuxadmin",
+                  "focus": false,
+                  "profile": {
+                    "args": [],
+                    "executable": "/bin/sh",
+                    "followTheme": true,
+                    "name": "",
+                    "platforms": {
+                      "linux": true
+                    },
+                    "pythonExecutable": "python3",
+                    "restoreHistory": false,
+                    "rightClickAction": "copyPaste",
+                    "successExitCodes": [
+                      "0",
+                      "SIGINT",
+                      "SIGTERM"
+                    ],
+                    "terminalOptions": {
+                      "documentOverride": null
+                    },
+                    "type": "integrated",
+                    "useWin32Conhost": true
+                  },
+                  "serial": null
+                }
+              },
+              "pinned": true,
+              "icon": "terminal",
+              "title": "Terminal: sh"
             }
           }
         ]
@@ -82,7 +112,7 @@
             }
           },
           {
-            "id": "883070bc096b00d4",
+            "id": "165c8dca72a55e78",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -202,6 +232,26 @@
             }
           },
           {
+            "id": "c5ed727fce9b9d26",
+            "type": "leaf",
+            "state": {
+              "type": "custom-frames-jarvis",
+              "state": {},
+              "icon": "lucide-brain",
+              "title": "Jarvis"
+            }
+          },
+          {
+            "id": "314eac8bea1767d8",
+            "type": "leaf",
+            "state": {
+              "type": "custom-frames-google-chrome",
+              "state": {},
+              "icon": "lucide-globe",
+              "title": "Google Chrome"
+            }
+          },
+          {
             "id": "0dd7c3ade2dd26fd",
             "type": "leaf",
             "state": {
@@ -209,6 +259,16 @@
               "state": {},
               "icon": "lucide-monitor-play",
               "title": "Youtube"
+            }
+          },
+          {
+            "id": "b77fd09aa238bc55",
+            "type": "leaf",
+            "state": {
+              "type": "custom-frames-github",
+              "state": {},
+              "icon": "lucide-folder-git-2",
+              "title": "github"
             }
           },
           {
@@ -222,16 +282,6 @@
             }
           },
           {
-            "id": "e7a7b303c61786dc",
-            "type": "leaf",
-            "state": {
-              "type": "custom-frames-google-chrome",
-              "state": {},
-              "icon": "lucide-globe",
-              "title": "Google Chrome"
-            }
-          },
-          {
             "id": "3f242c6521db7557",
             "type": "leaf",
             "state": {
@@ -242,35 +292,41 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
-    "width": 825.5,
+    "width": 516.5,
     "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
+      "graph:Open graph view": false,
+      "obsidian-custom-frames:Open Jarvis": false,
+      "obsidian-custom-frames:Open github": false,
       "obsidian-custom-frames:Open Youtube": false,
-      "omnisearch:Omnisearch": false,
-      "obsidian-custom-frames:Open HomeLab": false,
       "obsidian-custom-frames:Open Google Chrome": false,
       "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
+      "omnisearch:Omnisearch": false,
       "obsidian-kanban:Create new board": false,
-      "homepage:Open homepage": false,
       "iconic:Open rulebook": false,
       "terminal:Open terminal": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "8fd0b4cd6d88d123",
   "lastOpenFiles": [
+    "SSH/ssh_keys.md",
+    "SSH/SSH Index.md",
+    "SSH",
+    "Kanban/Kanban Board.md",
+    "Kanban/Kanban.md",
     "PodmanDesktop/database_setup.md~",
     "PodmanDesktop/podman_commands.md~",
     "Linux Guru.md",
@@ -291,21 +347,16 @@
     "git/git_initial_seutp.md",
     "git/git_workflow.md",
     "git",
-    "Kanban/Kanban Board.md",
     "Build out PiHole on mini PC 1.md",
     "Untitled Kanban.md",
     "Untitled Kanban 1.md",
     "Test.md~",
     "Test.md",
-    "Test",
     "Kanban/Kanban Index.md",
     "Build out PiHole on mini PC.md",
     "Neovim/Neovim Index.md",
     "Config Files/Config Files.md",
     "Neovim/Neovim Keyboard Shortcuts.md",
-    "Vault.md",
-    "Tags",
-    "Omarchy/Omarchy Index.md",
-    "Commands/Commands Index.md"
+    "Vault.md"
   ]
 }
