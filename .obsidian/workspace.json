@@ -16,28 +16,6 @@
               "icon": "lucide-git-fork",
               "title": "Graph view"
             }
-          },
-          {
-            "id": "b0d9eb20e2f2cae3",
-            "type": "leaf",
-            "state": {
-              "type": "kanban",
-              "state": {
-                "file": "Kanban/Kanban Board.md",
-                "kanbanViewState": {
-                  "kanban-plugin": "list",
-                  "list-collapse": [
-                    false,
-                    false,
-                    false,
-                    false,
-                    false
-                  ]
-                }
-              },
-              "icon": "lucide-trello",
-              "title": "Kanban Board"
-            }
           }
         ]
       }
@@ -104,7 +82,7 @@
             }
           },
           {
-            "id": "3528b5dc06de8723",
+            "id": "883070bc096b00d4",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -113,7 +91,8 @@
               "title": "Navigator"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       },
       {
         "id": "e29cda0bf574f382",
@@ -134,7 +113,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 246.50260543823242
+    "width": 246.50260543823242,
+    "collapsed": true
   },
   "right": {
     "id": "1f60c4e1c0218a96",
@@ -262,7 +242,7 @@
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
@@ -289,8 +269,20 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2d7ea948c3acbed6",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "PodmanDesktop/database_setup.md~",
+    "PodmanDesktop/podman_commands.md~",
+    "Linux Guru.md",
+    "PodmanDesktop/database_setup.md",
+    "PodmanDesktop/nginx_container.md~",
+    "PodmanDesktop/podman_commands.md",
+    "PodmanDesktop/podman_breakdown.md",
+    "PodmanDesktop/nginx_container.md",
+    "PodmanDesktop/nginx_container",
+    "PodmanDesktop/podman_breakdown",
+    "PodmanDesktop/podman_commands",
+    "Omarchy/Keyboard Shortcuts.md",
     "git/git_index.md",
     "git/git_commands.md",
     "git/git_cheatsheet.md",
@@ -306,26 +298,14 @@
     "Test.md~",
     "Test.md",
     "Test",
-    "Omarchy/Keyboard Shortcuts.md",
     "Kanban/Kanban Index.md",
     "Build out PiHole on mini PC.md",
-    "Linux Guru.md",
     "Neovim/Neovim Index.md",
     "Config Files/Config Files.md",
     "Neovim/Neovim Keyboard Shortcuts.md",
     "Vault.md",
     "Tags",
-    "Neovim",
     "Omarchy/Omarchy Index.md",
-    "Commands/Commands Index.md",
-    "Commands/Initramfs.md",
-    "Commands/TMUX Commands.md",
-    "Commands/APT File Corruption Commands.md",
-    "Commands/Metasploit Commands.md",
-    "Commands/Neovim Commands.md",
-    "Kanban/Taskings",
-    "Linux Guru.md~",
-    "Test_dir/'Testdir.md'",
-    "Test_dir"
+    "Commands/Commands Index.md"
   ]
 }
