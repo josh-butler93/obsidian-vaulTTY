@@ -31,6 +31,15 @@ Connecting to Containers
      - Command:
       - podman ps
 
+docker pull vs docker run:
+   - docker pull only downloads the image to your local machine without running it
+   - docker run does two things: if the image isn't locally available, it pulls it first, then starts a container from that image
+You're correct on both points.
+Image naming: You don't always need the full name. Docker Hub official images like nginx, postgres, python work with just the short name. For other registries, you need the full path (e.g., quay.io/centos/centos7).
+docker pull vs docker run:
+- docker pull nginx — Downloads the image to your local machine, but does not run it
+- docker run nginx — First checks if the image exists locally, pulls it if not, then starts a container from it
+
 Running a container
 - Command:
   - podman run [Options] Image [Command]
