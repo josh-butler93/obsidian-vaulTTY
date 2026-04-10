@@ -1,6 +1,10 @@
 command:
 - tmux show-options -g prefix
-
+ - command:
+  - contrl + space + s
+    - click on a session and press the below key to kill a session
+      - x 
+         - when prompted press the y button to kill the session
 create a new session
 - tmux new -s <session_name>
 - control + space then d
