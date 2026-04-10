@@ -62,3 +62,22 @@ CTRL + Space → c
 
 CTRL + Space → n   (next)  
 CTRL + Space → p   (previous)
+
+
+## Setting up TMUX Resurrect
+  1. Clone the github repo 
+  2. Run the installer ~/.tmux/plugins/tpm/bin/install_plugins
+  3. create a config file ~/.tmux.conf and add the proper key binds 
+      -((!Side Note))-> the save and restore keybinds need to be added in order for the functionality of it to work 
+  4. After editing the config file either run the below commands 
+    - Command:
+      - tmux source-file ~/.tmux.conf 
+      - tmux kill-server && tmux
+
+## Save and Restore setup 
+- Command:
+  - contrl + space + S <shift + s> to save the setup 
+  - tmux kill-server
+  - tmux -> this reopens tmux 
+  - tmux source-file ~/.tmux.conf -> this will reload the save keybindings 
+  - contrl + space + R <shift + r> this restores the previous sessions
