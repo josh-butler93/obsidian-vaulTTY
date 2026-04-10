@@ -102,3 +102,15 @@ podman run ubuntu apt update --some of the little things you can get a contianer
 Images can add up if you pull many of them. You can clean up unused images with:
 podman image prune     # removes dangling images
 podman system prune    # removes all unused images, containers, networks
+
+Docker:
+docker rmi <image_name_or_id>     # remove specific image
+docker rmi $(docker images -q)     # remove all images (must stop containers first)
+docker image prune -a             # remove all unused images
+Podman:
+podman rmi <image_name_or_id>     # remove specific image
+podman rmi $(podman images -q)     # remove all images
+podman image prune -a             # remove all unused images
+To remove images, you first need to stop and remove any containers using those images:
+docker rm $(docker ps -aq)         # remove all containers
+podman rm $(podman ps -aq)         # remove all containers
