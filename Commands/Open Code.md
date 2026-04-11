@@ -1,0 +1,4 @@
+- Command:
+  - curl -fsSL https://opencode.ai/install | bash
+- Command:
+  - opencode --version # this command verifies installation
