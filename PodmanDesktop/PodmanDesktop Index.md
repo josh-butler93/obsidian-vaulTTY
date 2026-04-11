@@ -1,4 +1,4 @@
-[[datbase_setup]]
-[[podman_commands]]
-[[podman_breakdown]]
-[[nginx_container]]
+[[Datbase Setup]]
+[[Podman Commands]]
+[[Podman Breakdown]]
+[[Nginx Container]]

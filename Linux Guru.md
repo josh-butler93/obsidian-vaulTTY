@@ -1,5 +1,6 @@
 [[Commands Index]] 
 [[Config Files Index]]
+[[Dev Index]]
 [[Git Index]]
 [[HomeLab Index]]
 [[Kanban Index]]

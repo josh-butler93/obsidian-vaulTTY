@@ -30,7 +30,7 @@ Connecting to Containers
     - prio to running the above command run the below command to get the name of the container
      - Command:
       - podman ps
-
+      - podman inspect your_container | grep -i image
 docker pull vs docker run:
    - docker pull only downloads the image to your local machine without running it
    - docker run does two things: if the image isn't locally available, it pulls it first, then starts a container from that image

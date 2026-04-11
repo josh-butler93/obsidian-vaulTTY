@@ -1,2 +1,3 @@
-[[tmux_restore]]
+[[Tmux Commands]]
+[[Tmux Restore]]
 

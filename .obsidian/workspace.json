@@ -42,7 +42,7 @@
                 }
               },
               "icon": "terminal",
-              "title": "Terminal: sh"
+              "title": "Terminal: tmux new -s work"
             }
           },
           {
@@ -51,12 +51,12 @@
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://www.google.com/search?q=how+do+you+naviage+between+two+panes+in+neovim&sca_esv=8e2fe23374549be9&hl=en&sxsrf=ANbL-n7tWxNtkFneUGEOy3dzvd27TZqJcA%3A1775871562500&ei=SqbZaYucHqfT5NoPj6WWwQs&biw=1525&bih=777&ved=0ahUKEwiL6ZiN1eSTAxWnKVkFHY-SJbgQ4dUDCBE&uact=5&oq=how+do+you+naviage+between+two+panes+in+neovim&gs_lp=Egxnd3Mtd2l6LXNlcnAiLmhvdyBkbyB5b3UgbmF2aWFnZSBiZXR3ZWVuIHR3byBwYW5lcyBpbiBuZW92aW0yBxAhGAoYoAEyBxAhGAoYoAEyBxAhGAoYoAEyBxAhGAoYoAEyBRAhGJ8FMgUQIRifBUiibFD-DFinanANeAGQAQCYAa4CoAHBMaoBCTI0LjI5LjIuMbgBA8gBAPgBAZgCRaACkzXCAgoQABhHGNYEGLADwgINEAAYgAQYigUYQxiwA8ICDhAAGOQCGNYEGLAD2AEBwgIXEC4Y3AYYuAYY2gYY2AIYyAMYsAPYAQHCAgQQIxgnwgIKEAAYgAQYigUYQ8ICEBAuGIAEGIoFGEMYxwEY0QPCAhMQLhiABBiKBRhDGLEDGMcBGNEDwgIFEAAYgATCAg4QABiABBiKBRiNBhixA8ICCxAAGIAEGIoFGJECwgIIEAAYgAQYsQPCAg4QABiABBiKBRixAxiDAcICCxAAGIAEGIoFGLEDwgIIEAAYFhgeGArCAgYQABgWGB7CAgcQABiABBgNwgIGEAAYHhgNwgILEAAYgAQYigUYhgPCAgUQABjvBcICCBAAGIAEGKIEwgIHECEYqwIYCpgDAIgGAZAGE7oGBggBEAEYCZIHCTM0LjMyLjIuMaAHhJEEsgcJMjEuMzIuMi4xuAerNMIHCDAuOC41NS42yAfPAoAIAQ&sclient=gws-wiz-serp",
-                "title": "how do you naviage between two panes in neovim - Google Search",
+                "url": "https://www.google.com/search?q=after+installing+nodjs+and+npm+how+do+i+get+vite+up+and+running&sca_esv=8e2fe23374549be9&hl=en&biw=1525&bih=777&sxsrf=ANbL-n4sVZ7vEmucIy5HZhKP8T_kU12xhA%3A1775876640888&ei=ILrZafbuNeGt5NoPr5juyA0&ved=0ahUKEwj2_uCC6OSTAxXhFlkFHS-MG9kQ4dUDCBE&uact=5&oq=after+installing+nodjs+and+npm+how+do+i+get+vite+up+and+running&gs_lp=Egxnd3Mtd2l6LXNlcnAiP2FmdGVyIGluc3RhbGxpbmcgbm9kanMgYW5kIG5wbSBob3cgZG8gaSBnZXQgdml0ZSB1cCBhbmQgcnVubmluZ0i9jQFQuQhYsIwBcAV4AZABAJgBhgGgAaYpqgEENjIuM7gBA8gBAPgBAZgCQ6ACmyvCAgoQABhHGNYEGLADwgILEAAYgAQYigUYkQLCAhEQLhiABBixAxiDARjHARjRA8ICDhAAGIAEGIoFGLEDGIMBwgILEAAYgAQYsQMYgwHCAg4QLhiABBixAxjHARjRA8ICCxAuGIAEGMcBGNEDwgIEECMYJ8ICDhAuGK8BGMcBGIAEGI4FwgIOEC4YgAQYigUYsQMYgwHCAg4QLhiABBjHARivARiOBcICBRAuGIAEwgIIEAAYgAQYsQPCAgUQABiABMICDRAAGIAEGIoFGEMYsQPCAg0QLhiABBiKBRhDGLEDwgIIEC4YsQMYgATCAgoQLhiABBiKBRhDwgIIEC4YgAQYsQPCAg0QLhiABBjHARjRAxgKwgIGEAAYFhgewgILEAAYgAQYigUYhgPCAgUQABjvBcICBxAAGIAEGA3CAgYQABgeGA3CAggQABgFGB4YDcICCBAAGAgYHhgNwgIIEAAYgAQYogTCAgcQIRgKGKABwgIHECEYqwIYCpgDAIgGAZAGCJIHBDU4LjmgB8X4BLIHBDUzLjm4B_gqwgcJMC4yMi40MC41yAeoAoAIAQ&sclient=gws-wiz-serp",
+                "title": "after installing nodjs and npm how do i get vite up and running - Google Search",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "how do you naviage between two panes in neovim - Google Search"
+              "title": "after installing nodjs and npm how do i get vite up and running - Google Search"
             }
           }
         ]
@@ -133,8 +133,7 @@
               "title": "Navigator"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       },
       {
         "id": "e29cda0bf574f382",
@@ -328,41 +327,41 @@
   },
   "active": "1125088bc572f2f8",
   "lastOpenFiles": [
+    "Dev/Dev Container App Setup.md",
+    "Dev/Dev Server Setup.md~",
+    "PodmanDesktop/Podman Commands.md~",
+    "PodmanDesktop/PodmanDesktop Index.md~",
+    "PodmanDesktop/Database Setup.md",
+    "PodmanDesktop/Nginx Container.md",
+    "PodmanDesktop/Podman Breakdown.md",
+    "PodmanDesktop/Podman Commands.md",
+    "Linux Guru.md~",
+    "Dev/Dev Index.md",
+    "Dev/Dev Server Setup.md",
+    "Dev",
+    "Tmux/Tmux Index.md~",
+    "Tmux/Tmux Restore.md",
+    "Tmux/Tmux Commands.md",
+    "Tmux/tmuxcommands",
+    "Commands/Open Code.md",
     "Neovim/Neovim Keyboard Shortcuts.md~",
     "2026-04-10.md",
     "Maldev/docker target practice setup.md~",
     "Maldev/docker target practice setup.md",
     "Maldev/target practice.md",
-    "Linux Guru.md~",
     "Maldev/Maldev Index.md",
     "Maldev",
-    "Kali",
-    "Docker",
     "Networking/linux nettools.md",
     "SSH/ssh_keys.md",
     "SSH/SSH Index.md",
-    "SSH",
     "Kanban/Kanban Board.md",
     "Kanban/Kanban.md",
-    "PodmanDesktop/database_setup.md~",
-    "PodmanDesktop/podman_commands.md~",
     "Linux Guru.md",
     "PodmanDesktop/database_setup.md",
-    "PodmanDesktop/nginx_container.md~",
     "PodmanDesktop/podman_commands.md",
     "PodmanDesktop/podman_breakdown.md",
     "PodmanDesktop/nginx_container.md",
-    "PodmanDesktop/nginx_container",
     "Omarchy/Keyboard Shortcuts.md",
-    "git/git_index.md",
-    "git/git_commands.md",
-    "git/git_cheatsheet.md",
-    "git/quick_commands.md",
-    "git/git_initial_seutp.md",
-    "git/git_workflow.md",
-    "Build out PiHole on mini PC 1.md",
-    "Untitled Kanban.md",
-    "Untitled Kanban 1.md",
-    "Test.md"
+    "git/git_index.md"
   ]
 }
