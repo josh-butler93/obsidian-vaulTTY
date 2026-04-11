@@ -1,0 +1,22 @@
+- Command:
+  - After successfull installation run the Command  
+    - Command:
+      - aws --version
+  - Setting up aws sso 
+    - Command:
+      - aws configure sso # add recommended name
+        - Breakdown 
+          - What this will do:
+          - Open a browser
+          - Let you log in through AWS
+          - Link your CLI to your account securely
+      - Go to the IAM Center
+        - Scroll down to 'aws access portal' on the right 
+          - Copy the ipv4 only url--it ends with https://.../start 
+            - Copy the region located in the browser
+              - example:
+                - us-east-1
+            - For the 'SSO registration scopes' just press enter
+              - It will set the default [sso:account:access]:
+            - Create a User that has access to IAM Identity Center not IAM access
+

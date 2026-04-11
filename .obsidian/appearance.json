@@ -1,7 +1,8 @@
 {
-  "cssTheme": "Cyber Glow",
-  "accentColor": "#272020",
+  "cssTheme": "Minimal",
+  "accentColor": "#2646ba",
   "showRibbon": true,
-  "showViewHeader": false,
-  "monospaceFontFamily": "Z003"
+  "showViewHeader": true,
+  "monospaceFontFamily": "Z003",
+  "theme": "obsidian"
 }

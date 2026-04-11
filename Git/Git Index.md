@@ -3,4 +3,3 @@
 [[git_initial_setup]]
 [[git_workflow]]
 [[quick_commands]]
-

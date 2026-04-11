@@ -1,0 +1,2 @@
+- Command:
+  - The below command initializes the connection to aws cli

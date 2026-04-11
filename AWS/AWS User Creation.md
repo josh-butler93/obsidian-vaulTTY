@@ -1,0 +1,31 @@
+- Command:
+  - There are two types of users in aws 
+    - AWS IAM && AWS IAM Identity Center
+      - IAM Identity Center allows users access to the portal which can be found on the right of the dash board when logged into the Identity Center In the 'AWS Access Portal Url's'
+        - Url example:
+          - https://d-906608fd06.awsapps.com/start
+    - Creating User:
+      - Click the 'Users Tab'
+        - Select Add user and setup the user that way 
+          - An email will be sent to them to setup their password
+            - Use this url https://d-906608fd06.awsapps.com/start to login to the portal 
+          - Once in there will be a list of what the user has access to just click on one and it will take you to the console
+          - when setting up the terminal run the below Command
+          - *aws configure sso #This stores everything locally on the machine so this command would need to be ran again if logging in from another machine
+            - for the url be sure to include this same one as the access portal 
+            - https://d-906608fd06.awsapps.com/start
+            - Be sure to select the correct region
+            - When complete run the below commands 
+              - *aws sts get-caller-identity --profile your-profile
+              - *aws sso login --profile your-profile #This only needs to be ran after the session expires
+              - *aws configure set region us-east-1 --profile your-profile # this sets the regions so you dont have to run this with your commands 
+              - *aws ec2 describe-instances --profile your-profile
+              - aws ec2 describe-instances --region us-east-1 --profile your-profile
+- To Create/Assign Permissions
+  - Click the 'Permissions' tab and build them out 
+    - To assign permissions click the 'User Accounts' tab
+    - Select the Root user account 
+      - On the next page click the Permissions tab and selec the user
+      - Assign them the persmissions you want which can be viewed once they log into the access portal from the link above
+        - To view that users permissions select users tab and select said user 
+        - Under the AWS accounts tab you will see the permissions this user has assigned to them  

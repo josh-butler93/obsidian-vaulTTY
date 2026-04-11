@@ -3,5 +3,7 @@
   "vimMode": true,
   "alwaysUpdateLinks": true,
   "showUnsupportedFiles": true,
-  "showInlineTitle": true
+  "showInlineTitle": true,
+  "focusNewTab": true,
+  "uriCallbacks": false
 }

@@ -1,3 +1,4 @@
+[[Git Index]] 
 Step 1: Clone Your Repo Locally
 - Command:
   - git clone https://github.com/josh-butler93/linux.git

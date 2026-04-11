@@ -5,6 +5,48 @@
       "ctime": 1775417137218,
       "url": "https://www.google.com/",
       "title": "Google"
+    },
+    {
+      "type": "url",
+      "ctime": 1775887691623,
+      "url": "https://dash.cloudflare.com/5ff50ecf3455ebebadd0e0e7f7ec9282/home/overview",
+      "title": "Cloudflare"
+    },
+    {
+      "type": "url",
+      "ctime": 1775887524385,
+      "url": "http://10.0.0.235/ui/signin",
+      "title": "TrueNAS "
+    },
+    {
+      "type": "url",
+      "ctime": 1775886805906,
+      "url": "https://wallhaven.cc/",
+      "title": "wallhaven.cc"
+    },
+    {
+      "type": "url",
+      "ctime": 1775889382290,
+      "url": "https://account.hackthebox.com/login",
+      "title": "HTB Account"
+    },
+    {
+      "type": "url",
+      "ctime": 1775923793481,
+      "url": "https://lucide.dev/",
+      "title": "Lucide Icons"
+    },
+    {
+      "type": "url",
+      "ctime": 1775927616209,
+      "url": "https://www.speedtest.net/run",
+      "title": "Speedtest"
+    },
+    {
+      "type": "url",
+      "ctime": 1775931480172,
+      "url": "https://us-east-1.signin.aws/platform/d-906608fd06/login?workflowStateHandle=180fea93-1a33-4242-b3a7-ff268bbf729c",
+      "title": "Amazon Web Services"
     }
   ]
 }

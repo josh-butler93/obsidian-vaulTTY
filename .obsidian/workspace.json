@@ -4,12 +4,27 @@
     "type": "split",
     "children": [
       {
-        "id": "5ea3efab4f01816e",
+        "id": "ff73bac9297530e7",
         "type": "tabs",
         "children": [
           {
-            "id": "1125088bc572f2f8",
+            "id": "b5ca365efa5e045c",
             "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://658471279233-asn3uit2.us-east-1.console.aws.amazon.com/singlesignon/organization/home?region=us-east-1&tab=account-assignments#/instances/722335409826ad8a/permission-sets",
+                "title": "Permission sets | IAM Identity Center (successor to AWS Single Sign-On) | us-east-1",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Permission sets | IAM Identity Center (successor to AWS Single Sign-On) | us-east-1"
+            }
+          },
+          {
+            "id": "fc113fe46236d0a8",
+            "type": "leaf",
+            "pinned": true,
             "state": {
               "type": "terminal:terminal",
               "state": {
@@ -41,25 +56,55 @@
                   "serial": null
                 }
               },
+              "pinned": true,
               "icon": "terminal",
-              "title": "Terminal: tmux new -s work"
+              "title": "Terminal: sh"
             }
           },
           {
-            "id": "ed82d6c6f9e931cf",
+            "id": "66417982caa285c7",
             "type": "leaf",
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://www.google.com/search?q=after+installing+nodjs+and+npm+how+do+i+get+vite+up+and+running&sca_esv=8e2fe23374549be9&hl=en&biw=1525&bih=777&sxsrf=ANbL-n4sVZ7vEmucIy5HZhKP8T_kU12xhA%3A1775876640888&ei=ILrZafbuNeGt5NoPr5juyA0&ved=0ahUKEwj2_uCC6OSTAxXhFlkFHS-MG9kQ4dUDCBE&uact=5&oq=after+installing+nodjs+and+npm+how+do+i+get+vite+up+and+running&gs_lp=Egxnd3Mtd2l6LXNlcnAiP2FmdGVyIGluc3RhbGxpbmcgbm9kanMgYW5kIG5wbSBob3cgZG8gaSBnZXQgdml0ZSB1cCBhbmQgcnVubmluZ0i9jQFQuQhYsIwBcAV4AZABAJgBhgGgAaYpqgEENjIuM7gBA8gBAPgBAZgCQ6ACmyvCAgoQABhHGNYEGLADwgILEAAYgAQYigUYkQLCAhEQLhiABBixAxiDARjHARjRA8ICDhAAGIAEGIoFGLEDGIMBwgILEAAYgAQYsQMYgwHCAg4QLhiABBixAxjHARjRA8ICCxAuGIAEGMcBGNEDwgIEECMYJ8ICDhAuGK8BGMcBGIAEGI4FwgIOEC4YgAQYigUYsQMYgwHCAg4QLhiABBjHARivARiOBcICBRAuGIAEwgIIEAAYgAQYsQPCAgUQABiABMICDRAAGIAEGIoFGEMYsQPCAg0QLhiABBiKBRhDGLEDwgIIEC4YsQMYgATCAgoQLhiABBiKBRhDwgIIEC4YgAQYsQPCAg0QLhiABBjHARjRAxgKwgIGEAAYFhgewgILEAAYgAQYigUYhgPCAgUQABjvBcICBxAAGIAEGA3CAgYQABgeGA3CAggQABgFGB4YDcICCBAAGAgYHhgNwgIIEAAYgAQYogTCAgcQIRgKGKABwgIHECEYqwIYCpgDAIgGAZAGCJIHBDU4LjmgB8X4BLIHBDUzLjm4B_gqwgcJMC4yMi40MC41yAeoAoAIAQ&sclient=gws-wiz-serp",
-                "title": "after installing nodjs and npm how do i get vite up and running - Google Search",
+                "url": "https://signin.aws.amazon.com/oauth?response_type=code&backwards_compatible=false&iam_user=true&code_challenge_method=SHA-256&redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome&client_id=arn%3Aaws%3Asignin%3A%3A%3Aconsole%2Fsignin-create-session&code_challenge=jzkL3tpNQIFCwJtKVLR0TXV7kRgW7yPT7p3A9R95Bsk&scope=openid",
+                "title": "Amazon Web Services Sign-In",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "after installing nodjs and npm how do i get vite up and running - Google Search"
+              "title": "Amazon Web Services Sign-In"
+            }
+          },
+          {
+            "id": "ecc892df9db53c9b",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://d-906608fd06.awsapps.com/start/#/?tab=accounts",
+                "title": "Accounts | AWS access portal",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Accounts | AWS access portal"
+            }
+          },
+          {
+            "id": "7bb6c47b7b29dd72",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://658471279233-b5l4izqy.us-east-1.console.aws.amazon.com/console/home?region=us-east-1#",
+                "title": "Console Home | Console Home | us-east-1",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Console Home | Console Home | us-east-1"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -71,7 +116,6 @@
       {
         "id": "06cd274f73e252db",
         "type": "tabs",
-        "dimension": 62.47086247086248,
         "children": [
           {
             "id": "2d7ea948c3acbed6",
@@ -80,7 +124,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": true
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -124,7 +168,7 @@
             }
           },
           {
-            "id": "355dccd12778bb35",
+            "id": "a0894630de07332f",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -133,24 +177,8 @@
               "title": "Navigator"
             }
           }
-        ]
-      },
-      {
-        "id": "e29cda0bf574f382",
-        "type": "tabs",
-        "dimension": 37.52913752913753,
-        "children": [
-          {
-            "id": "33a39bcda5d4a633",
-            "type": "leaf",
-            "state": {
-              "type": "calendar",
-              "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
-            }
-          }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -248,8 +276,8 @@
             "state": {
               "type": "custom-frames-jarvis",
               "state": {},
-              "icon": "lucide-brain",
-              "title": "Jarvis"
+              "icon": "lucide-ghost",
+              "title": "custom-frames-jarvis"
             }
           },
           {
@@ -258,8 +286,8 @@
             "state": {
               "type": "custom-frames-github",
               "state": {},
-              "icon": "lucide-folder-git-2",
-              "title": "github"
+              "icon": "lucide-ghost",
+              "title": "custom-frames-github"
             }
           },
           {
@@ -278,8 +306,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
+              "icon": "lucide-ghost",
+              "title": "git-view"
             }
           },
           {
@@ -295,9 +323,19 @@
               "icon": "globe-2",
               "title": "Explore Docker's Container Image Repository | Docker Hub"
             }
+          },
+          {
+            "id": "00667bb60aa24faa",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
           }
         ],
-        "currentTab": 9
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -306,37 +344,63 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "terminal:Open terminal": false,
       "graph:Open graph view": false,
+      "terminal:Open terminal": false,
+      "obsidian-custom-frames:Open AWS": false,
+      "obsidian-custom-frames:Open Azure": false,
+      "obsidian-custom-frames:Open Google Chrome": false,
       "obsidian-custom-frames:Open Jarvis": false,
       "obsidian-custom-frames:Open github": false,
+      "obsidian-custom-frames:Open Cloudflare": false,
+      "obsidian-custom-frames:Open Zapier": false,
+      "obsidian-custom-frames:Open Nas": false,
+      "obsidian-custom-frames:Open Labex.io": false,
+      "obsidian-custom-frames:Open HTB": false,
+      "obsidian-custom-frames:Open OvertheWire": false,
       "obsidian-custom-frames:Open Youtube": false,
-      "obsidian-custom-frames:Open Google Chrome": false,
-      "switcher:Open quick switcher": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "bases:Create new base": false,
-      "omnisearch:Omnisearch": false,
-      "obsidian-kanban:Create new board": false,
-      "iconic:Open rulebook": false,
+      "obsidian-custom-frames:Open Tiktok": false,
+      "obsidian-custom-frames:Open Cineby": false,
+      "obsidian-custom-frames:Open 123Movies": false,
+      "obsidian-custom-frames:Open Openart.ai": false,
+      "obsidian-custom-frames:Open Suno": false,
+      "obsidian-custom-frames:Open Banana Pro": false,
       "obsidian-git:Open Git source control": false,
+      "obsidian-kanban:Create new board": false,
+      "omnisearch:Omnisearch": false,
+      "switcher:Open quick switcher": false,
+      "iconic:Open rulebook": false,
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "1125088bc572f2f8",
+  "active": "fc113fe46236d0a8",
   "lastOpenFiles": [
+    "AWS/AWS User Creation.md",
+    "AWS/AWS Index.md~",
+    "AWS/AWS Cli Setup.md",
+    "AWS/AWS Cli Commands.md",
+    "AWS/AWS Cli Arch Install.md",
+    "AWS/AWS Index.md",
+    "Linux Guru.md~",
+    "AWS",
+    "Images",
+    "Images/wallhaven-4g823l.jpg",
+    "Images/wallhaven-gj15r7.png",
+    "Images/wallhaven-x15w2d.jpg",
+    "Maldev/docker target practice setup.md",
+    "Vault.md",
+    "Kanban/Kanban.md",
+    "PodmanDesktop/Database Setup.md",
+    "Maldev/target practice.md",
+    "Git/git_initial_seutp.md",
+    "Git/Git Index.md",
     "Dev/Dev SSH Key Setup.md",
     "Dev/Dev Container App Setup.md",
     "Dev/Dev Server Setup.md~",
     "PodmanDesktop/Podman Commands.md~",
     "PodmanDesktop/PodmanDesktop Index.md~",
-    "PodmanDesktop/Database Setup.md",
     "PodmanDesktop/Nginx Container.md",
     "PodmanDesktop/Podman Breakdown.md",
     "PodmanDesktop/Podman Commands.md",
-    "Linux Guru.md~",
     "Dev/Dev Index.md",
     "Dev/Dev Server Setup.md",
     "Dev",
@@ -345,23 +409,9 @@
     "Tmux/Tmux Commands.md",
     "Tmux/tmuxcommands",
     "Commands/Open Code.md",
-    "Neovim/Neovim Keyboard Shortcuts.md~",
     "2026-04-10.md",
-    "Maldev/docker target practice setup.md~",
-    "Maldev/docker target practice setup.md",
-    "Maldev/target practice.md",
     "Maldev/Maldev Index.md",
-    "Maldev",
     "Networking/linux nettools.md",
-    "SSH/ssh_keys.md",
-    "SSH/SSH Index.md",
-    "Kanban/Kanban Board.md",
-    "Kanban/Kanban.md",
-    "Linux Guru.md",
-    "PodmanDesktop/database_setup.md",
-    "PodmanDesktop/podman_commands.md",
-    "PodmanDesktop/podman_breakdown.md",
-    "PodmanDesktop/nginx_container.md",
-    "Omarchy/Keyboard Shortcuts.md"
+    "SSH/ssh_keys.md"
   ]
 }

@@ -1,3 +1,4 @@
+[[Config Files Index]] 
 Pulling the Database Image
 - Command:
   - podman pull docker.io/library/postgres:latest
