@@ -10,7 +10,6 @@
           {
             "id": "1125088bc572f2f8",
             "type": "leaf",
-            "pinned": true,
             "state": {
               "type": "terminal:terminal",
               "state": {
@@ -42,7 +41,6 @@
                   "serial": null
                 }
               },
-              "pinned": true,
               "icon": "terminal",
               "title": "Terminal: sh"
             }
@@ -53,12 +51,12 @@
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://www.google.com/search?q=what+is+the+docker+command+to+have+it+run+a+container+in+the+background+but+to+also+autoremove+once+it+is+stopped&sca_esv=8e2fe23374549be9&sxsrf=ANbL-n549LYb34R2MsO4SdV-uvOFA5_dUw%3A1775868435088&ei=E5rZaffOA4yl5NoPk66ogQQ&iflsig=AFdpzrgAAAAAadmoI3a5hEjyX9p9A1wTIcpxFwcjbNuk&ved=2ahUKEwjLxrfWyeSTAxW5MVkFHf9KF5oQ0NsOegQIAxAB&uact=5&sclient=gws-wiz&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpaEWjvZ2Py1XXV8d8KvlI3u6MWRtAr31GIrXLfiKhJJ8rW39M0T_N8wn3kINg3nQk-dwTV6GiRqsz_UCAHf8NRZyLKsY-V5C5ynqrPD1mUAJQ8aWXTrBgQIoCzS4BTgwqw6_B7gbQ52nPH8GPLFPk3OM318UJioR0SKlWt7yxtxRuuc__lZTt_gSqCshRqw_ivGkWrQ&aep=10&ntc=1&mstk=AUtExfCR_3WFM-kWbabd-9zw3JVmsNJCrEKDs8d54UwEJvQbrwRxkcCG4h02XsCwm58xWgPybaMslxXenKjB3mUjvc472CFR_3qohI6IT-WnMyg6h0e0K3renonGBNIunaYivQOyO1Ha7vD-n0GdTvNRXqB7lUwsSd9w3D_iIe3JBhdYJ_mNNulNIn8Rzl9FAe2PN4A2yMnmsilqHcunKzMAezCOfRgFNUPRWy4zQ4HRZ5NWh-sjap_ukGRP9xK1--25YFit-oHJ86c7b8QjEmvOoAnQqI6hzkGWLAc4bvN6okmZAEKdsBdiq2BIHm-sGI04Mb1l5EzV7fJHbg&csuir=1&mtid=AJvZacelF8nq5NoPqPaB0Aw&udm=50",
-                "title": "what is the docker command to have it run a container in the background but to also autoremove once it is stopped - Google Search",
+                "url": "https://www.google.com/search?q=how+do+you+naviage+between+two+panes+in+neovim&sca_esv=8e2fe23374549be9&hl=en&sxsrf=ANbL-n7tWxNtkFneUGEOy3dzvd27TZqJcA%3A1775871562500&ei=SqbZaYucHqfT5NoPj6WWwQs&biw=1525&bih=777&ved=0ahUKEwiL6ZiN1eSTAxWnKVkFHY-SJbgQ4dUDCBE&uact=5&oq=how+do+you+naviage+between+two+panes+in+neovim&gs_lp=Egxnd3Mtd2l6LXNlcnAiLmhvdyBkbyB5b3UgbmF2aWFnZSBiZXR3ZWVuIHR3byBwYW5lcyBpbiBuZW92aW0yBxAhGAoYoAEyBxAhGAoYoAEyBxAhGAoYoAEyBxAhGAoYoAEyBRAhGJ8FMgUQIRifBUiibFD-DFinanANeAGQAQCYAa4CoAHBMaoBCTI0LjI5LjIuMbgBA8gBAPgBAZgCRaACkzXCAgoQABhHGNYEGLADwgINEAAYgAQYigUYQxiwA8ICDhAAGOQCGNYEGLAD2AEBwgIXEC4Y3AYYuAYY2gYY2AIYyAMYsAPYAQHCAgQQIxgnwgIKEAAYgAQYigUYQ8ICEBAuGIAEGIoFGEMYxwEY0QPCAhMQLhiABBiKBRhDGLEDGMcBGNEDwgIFEAAYgATCAg4QABiABBiKBRiNBhixA8ICCxAAGIAEGIoFGJECwgIIEAAYgAQYsQPCAg4QABiABBiKBRixAxiDAcICCxAAGIAEGIoFGLEDwgIIEAAYFhgeGArCAgYQABgWGB7CAgcQABiABBgNwgIGEAAYHhgNwgILEAAYgAQYigUYhgPCAgUQABjvBcICCBAAGIAEGKIEwgIHECEYqwIYCpgDAIgGAZAGE7oGBggBEAEYCZIHCTM0LjMyLjIuMaAHhJEEsgcJMjEuMzIuMi4xuAerNMIHCDAuOC41NS42yAfPAoAIAQ&sclient=gws-wiz-serp",
+                "title": "how do you naviage between two panes in neovim - Google Search",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "what is the docker command to have it run a container in the background but to also autoremove once it is stopped - Google Search"
+              "title": "how do you naviage between two panes in neovim - Google Search"
             }
           }
         ]
@@ -126,7 +124,7 @@
             }
           },
           {
-            "id": "e07179c46aa43e3d",
+            "id": "355dccd12778bb35",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -157,7 +155,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 246.50260543823242
+    "width": 246.50260543823242,
+    "collapsed": true
   },
   "right": {
     "id": "1f60c4e1c0218a96",
@@ -329,6 +328,7 @@
   },
   "active": "1125088bc572f2f8",
   "lastOpenFiles": [
+    "Neovim/Neovim Keyboard Shortcuts.md~",
     "2026-04-10.md",
     "Maldev/docker target practice setup.md~",
     "Maldev/docker target practice setup.md",
@@ -363,7 +363,6 @@
     "Build out PiHole on mini PC 1.md",
     "Untitled Kanban.md",
     "Untitled Kanban 1.md",
-    "Test.md",
-    "Kanban/Kanban Index.md"
+    "Test.md"
   ]
 }

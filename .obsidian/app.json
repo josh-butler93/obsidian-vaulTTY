@@ -2,5 +2,6 @@
   "showLineNumber": true,
   "vimMode": true,
   "alwaysUpdateLinks": true,
-  "showUnsupportedFiles": true
+  "showUnsupportedFiles": true,
+  "showInlineTitle": true
 }

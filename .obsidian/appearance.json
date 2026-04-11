@@ -1,4 +1,7 @@
 {
   "cssTheme": "Cyber Glow",
-  "accentColor": "#382a29"
+  "accentColor": "#272020",
+  "showRibbon": true,
+  "showViewHeader": false,
+  "monospaceFontFamily": "Z003"
 }
