@@ -1,3 +1,5 @@
+SSO Setup
+
 - Command:
   - There are two types of users in aws 
     - AWS IAM && AWS IAM Identity Center
@@ -29,3 +31,27 @@
       - Assign them the persmissions you want which can be viewed once they log into the access portal from the link above
         - To view that users permissions select users tab and select said user 
         - Under the AWS accounts tab you will see the permissions this user has assigned to them  
+
+IAM User Setup 
+- login to the console as a the root user and setup the user that way 
+- The login is persistant and not sso at which point the user can log directly into the console 
+- But the account id is needed and can be found under the root users name at the top right corner
+
+- Settinp up aws cli with IAM users
+- Command: 
+  - Logged as that user go to IAM
+    - Select yourself
+      - In the summary tab select 'Create Access Keys'
+      - Select 'Command Line Interface (CLI)'
+      - Generate the access keys adding name and description and save them to a specified location 
+- Command: 
+- From the termianl run:
+  - *aws configure 
+    - access key: AKIA...
+    - Secret: ecS...
+    - Region: use region found in browser
+    - Enter on the next option 
+      - No output means it was successful
+    - *aws sts get-caller-identity
+    - *aws ec2 describe-instances #it will default to this user for all commands 
+- Session stays persistant as long as the access keys are active with the users account in the console 

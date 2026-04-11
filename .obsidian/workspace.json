@@ -8,20 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "b5ca365efa5e045c",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://658471279233-asn3uit2.us-east-1.console.aws.amazon.com/singlesignon/organization/home?region=us-east-1&tab=account-assignments#/instances/722335409826ad8a/permission-sets",
-                "title": "Permission sets | IAM Identity Center (successor to AWS Single Sign-On) | us-east-1",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "Permission sets | IAM Identity Center (successor to AWS Single Sign-On) | us-east-1"
-            }
-          },
-          {
             "id": "fc113fe46236d0a8",
             "type": "leaf",
             "pinned": true,
@@ -62,49 +48,49 @@
             }
           },
           {
-            "id": "66417982caa285c7",
+            "id": "295363672c3d10fe",
             "type": "leaf",
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://signin.aws.amazon.com/oauth?response_type=code&backwards_compatible=false&iam_user=true&code_challenge_method=SHA-256&redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome&client_id=arn%3Aaws%3Asignin%3A%3A%3Aconsole%2Fsignin-create-session&code_challenge=jzkL3tpNQIFCwJtKVLR0TXV7kRgW7yPT7p3A9R95Bsk&scope=openid",
-                "title": "Amazon Web Services Sign-In",
+                "url": "https://658471279233-asn3uit2.us-east-1.console.aws.amazon.com/singlesignon/home?region=us-east-1#/instances/722335409826ad8a/users",
+                "title": "Users | IAM Identity Center | us-east-1",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "Amazon Web Services Sign-In"
+              "title": "Users | IAM Identity Center | us-east-1"
             }
           },
           {
-            "id": "ecc892df9db53c9b",
+            "id": "98e5870bd4295f14",
             "type": "leaf",
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://d-906608fd06.awsapps.com/start/#/?tab=accounts",
-                "title": "Accounts | AWS access portal",
+                "url": "https://658471279233-pgylt4y5.us-east-1.console.aws.amazon.com/iam/home?region=us-east-2#/users/details/sysadmin?section=security_credentials",
+                "title": "sysadmin | IAM | Global",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "Accounts | AWS access portal"
+              "title": "sysadmin | IAM | Global"
             }
           },
           {
-            "id": "7bb6c47b7b29dd72",
+            "id": "5d0c212a6c8f7ee8",
             "type": "leaf",
             "state": {
-              "type": "webviewer",
+              "type": "markdown",
               "state": {
-                "url": "https://658471279233-b5l4izqy.us-east-1.console.aws.amazon.com/console/home?region=us-east-1#",
-                "title": "Console Home | Console Home | us-east-1",
-                "mode": "webview"
+                "file": "Testing.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
               },
-              "icon": "globe-2",
-              "title": "Console Home | Console Home | us-east-1"
+              "icon": "lucide-file",
+              "title": "Testing"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -177,8 +163,7 @@
               "title": "Navigator"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
@@ -374,6 +359,7 @@
   },
   "active": "fc113fe46236d0a8",
   "lastOpenFiles": [
+    "Testing.md",
     "AWS/AWS User Creation.md",
     "AWS/AWS Index.md~",
     "AWS/AWS Cli Setup.md",
@@ -411,7 +397,6 @@
     "Commands/Open Code.md",
     "2026-04-10.md",
     "Maldev/Maldev Index.md",
-    "Networking/linux nettools.md",
-    "SSH/ssh_keys.md"
+    "Networking/linux nettools.md"
   ]
 }
