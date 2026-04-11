@@ -1,0 +1,19 @@
+- Breakdown:
+  - The goal is to spin up docker contianers to use a punching bag
+    - Opencode: 
+      - Yes, this is a common and legitimate practice for learning. Docker containers make excellent targets because:
+        - 1. They're isolated from your host system
+        - 2. You can quickly spin up vulnerable containers
+        - 3. It's all contained in your own environment
+      - Some options for vulnerable targets:
+        - Metasploitable2/3 - intentionally vulnerable Linux VMs
+        - DVWA (Damn Vulnerable Web App) - vulnerable web app in a container
+        - OWASP WebGoat - intentionally vulnerable Java app
+        - Vulhub - collection of vulnerable Docker containers at vulhub.org
+    - Tips:
+      - Use docker run --rm -it vulnerables/cve-2019-5736 for container escape practice
+      - Keep containers on a private Docker network, not exposed externally
+      - Don't expose vulnerable containers to the internet
+
+- This is standard practice in security training and CTF environments
+    - Just make sure you're only testing against your own infrastructureg

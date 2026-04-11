@@ -1,7 +1,7 @@
 {
   "frames": [
     {
-      "url": "https://google.com",
+      "url": "https://google.com/",
       "displayName": "Google Chrome",
       "icon": "globe",
       "hideOnMobile": true,

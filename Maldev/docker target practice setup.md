@@ -1,0 +1,69 @@
+- Container Images:
+   - Here are popular vulnerable Docker images:
+      - Network/Service Vulnerable Containers:
+        - telspace/tinyserve - vulnerable FTP server
+        - sicko/vsftp - vulnerable vsftpd (CVE-2011-2523)
+        - vulnerables/cve-2019-5736 - container escape CVE
+        - vulnerables/cve-2016-5195 - Dirty COW exploit
+        - metasploitable/metasploitable3 - vulnerable Windows/Linux VMs
+        - USITWG/OpenVAS - vulnerability scanner target
+      - Web App Vulnerable Containers:
+        - citizenstig/dvwa - Damn Vulnerable Web App
+        - vulnerables/web-dvwa
+        - raesene/bwapp - Buggy Web Application
+        - wpscanteam/wpscan targets (WordPress setups)
+        - cmnatic/misconfiguration-jwt - JWT misconfig practice
+        - webgoat/webgoat-8.0 - OWASP WebGoat
+      - Linux Distro Targets:
+        - vulnerables/ubuntu-14.04
+        - vulnerables/centos6
+        - metasploitable/metasploitable2 - Linux target with many vulns
+      - CTF/All-in-One:
+        - vulhub/vulhub - massive collection (vulhub.org)
+        - paolauwb/drunk_pickle_rick - Rick and Morty CTF
+        - tetsuo55/hackazon - vulnerable e-commerce app
+- Command: 
+   - Run with: 
+    - docker run --rm -it <image_name>
+      - --rm flag:
+        - Removes the container automatically when it stops/exits
+        - Keeps your system clean from leftover containers
+        - Without it, stopped containers remain on disk (docker ps -a)
+        docker pull:
+
+- Pulling Images:
+  - Yes, you can pull images first to have them ready:
+    - Command:
+      - docker pull citizenstig/dvwa
+      - docker pull metasploitable/metasploitable2
+          - Breakdown:
+             - They're stored in /var/lib/docker on your host.
+- Running containers:
+    - Once pulled, run them with:
+      - Command:
+        - docker run --rm -it citizenstig/dvwa # shows contaner logs press ctrl + c to stop the container 
+        - docker run -d --rm -it citizenstig/dvwa # the container will run in the background but you will have to manully stop it 
+          - docker stop <container_name/id>
+            docker rmi <container_name_or_id>
+      - Command:
+        - docker exec:
+          - That's for running commands in a running container
+          - First you need the container running in the background:
+            - docker run -d --name my-target citizenstig/dvwa
+              - Then exec into it:
+                - Command:
+                  - docker exec -it my-target bash
+- Quick workflow:
+   - docker pull citizenstig/dvwa
+   - docker run -d --name citizenstig/dvwa
+   - docker exec -it image name bash
+
+- Exactly right; when the container stops (you exit, ctrl+c, or it crashes), Docker automatically deletes it. No cleanup needed.
+   - If you want to keep the container after stopping, omit --rm:
+    - Command:
+      - docker run -it citizenstig/dvwa  # container persists after exit
+      - docker ps -a  # will show it
+      - docker start <container_id>  # restart it later
+    - Then manually clean up with:
+      - Command:
+        - docker rm <container_id>
