@@ -1,0 +1,16 @@
+- Command:
+  - Listed below are all the items that come packaged with net-tools on the linux side
+    - Command:
+      - sudo pacman -S net-tools  
+    - Installs:
+       - net-tools includes:
+       - arp - ARP cache management
+       - ifconfig - configure network interfaces
+       - netstat - network statistics
+       - route - IP routing table management
+       - nameif - name network interfaces by MAC address
+       - ipmaddr - multicast address management
+       - iptunnel - tunnel interface management
+       - mii-tool - Media Independent Interface tool
+
+    - Note: ifconfig and netstat are considered legacy. Modern alternatives are ip and ss from the iproute2 package, which are already installed by default on Arch.
