@@ -53,12 +53,12 @@
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://658471279233-asn3uit2.us-east-1.console.aws.amazon.com/singlesignon/home?region=us-east-1#/instances/722335409826ad8a/users",
-                "title": "Users | IAM Identity Center | us-east-1",
+                "url": "https://658471279233-asn3uit2.us-east-1.console.aws.amazon.com/console/home?region=us-east-1",
+                "title": "Console Home | Console Home | us-east-1",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "Users | IAM Identity Center | us-east-1"
+              "title": "Console Home | Console Home | us-east-1"
             }
           },
           {
@@ -67,12 +67,12 @@
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://658471279233-pgylt4y5.us-east-1.console.aws.amazon.com/iam/home?region=us-east-2#/users/details/sysadmin?section=security_credentials",
-                "title": "sysadmin | IAM | Global",
+                "url": "https://658471279233-pgylt4y5.us-east-2.console.aws.amazon.com/console/home?region=us-east-2",
+                "title": "Console Home | Console Home | us-east-2",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "sysadmin | IAM | Global"
+              "title": "Console Home | Console Home | us-east-2"
             }
           },
           {
