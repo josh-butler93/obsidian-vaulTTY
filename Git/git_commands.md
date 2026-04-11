@@ -30,6 +30,9 @@ git push                  # Push future commits
 
 Pull changes from github
 
+git fetch 
+git status
+git pull 
 git pull origin main
 
 Branching 
