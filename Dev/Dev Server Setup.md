@@ -1,6 +1,37 @@
 =========
 NPM Setup 
 =========
+podman run -it --name devbox -p 5173:5173 -p 3000:3000 node:20 bash
+podman run --rm -it --name devbox -p 5173:5173 -p 3000:3000 node:20 bash
+*podman run -it --name devbox -p 2222:22 -p 5173:5173 -p 3000:3000 node:20 bash
+  the above allows for ssh login 
+
+apt update && apt install -y nodejs npm
+or 
+apt update && apt install -y curl && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && apt install -y nodejs
+node -v 
+npm -v 
+
+#NPM 
+  npm create vite@latest
+    cd project-name
+      npm install
+        npm run dev 
+          npm run dev -- --host 0.0.0.0
+            ip a
+              http://*.*.*.*:5173
+
+#NPX 
+podman run -it --name devbox -p 5173:5173 -p 3000:3000 node:20 bash
+npx -v # naviagte to the folder where the code is 
+  echo "<h1>Hello World</h1>" > index.html 
+    npx serve .
+    # npx serve . -l 3001 -> choose the port you want to run it on 
+        npx serve . --listen 0.0.0.0:3000
+          http://*.*.*.*:3000
+            podman start devbox # to start the container if needed
+              podman attach devbox 
+
 You're using mise to manage Node.js. In your nginx container, you'll need to install it directly.
 For a Debian/Ubuntu-based container:
 - Command:
@@ -8,6 +39,8 @@ For a Debian/Ubuntu-based container:
 - Or 
   - install a newer version:
     - Command:
+
+
       - curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
       - apt install -y nodejs
 - Verify:

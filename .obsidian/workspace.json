@@ -327,6 +327,7 @@
   },
   "active": "1125088bc572f2f8",
   "lastOpenFiles": [
+    "Dev/Dev SSH Key Setup.md",
     "Dev/Dev Container App Setup.md",
     "Dev/Dev Server Setup.md~",
     "PodmanDesktop/Podman Commands.md~",
@@ -361,7 +362,6 @@
     "PodmanDesktop/podman_commands.md",
     "PodmanDesktop/podman_breakdown.md",
     "PodmanDesktop/nginx_container.md",
-    "Omarchy/Keyboard Shortcuts.md",
-    "git/git_index.md"
+    "Omarchy/Keyboard Shortcuts.md"
   ]
 }
