@@ -65,6 +65,12 @@
       "ctime": 1775945879200,
       "url": "http://10.0.0.144/linux-essentials/#server",
       "title": "Linux Essentials Dashboard"
+    },
+    {
+      "type": "url",
+      "ctime": 1775970816270,
+      "url": "https://github.com/ohmyzsh/ohmyzsh/wiki/Themes/6443ad96899b5f4b752e240f07bc70e40e815ce2",
+      "title": "Themes · ohmyzsh/ohmyzsh Wiki"
     }
   ]
 }

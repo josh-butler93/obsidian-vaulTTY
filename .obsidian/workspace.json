@@ -8,6 +8,15 @@
         "type": "tabs",
         "children": [
           {
+            "id": "8c35a467c7376d77",
+            "type": "leaf",
+            "state": {
+              "type": "beautitab-react-view",
+              "state": {},
+              "title": "New tab"
+            }
+          },
+          {
             "id": "fc113fe46236d0a8",
             "type": "leaf",
             "pinned": true,
@@ -53,31 +62,12 @@
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://us-east-1.lightsail.aws.amazon.com/ls/webapp/us-east-1/instances/AlmaLinux/connect",
+                "url": "https://us-east-1.lightsail.aws.amazon.com/ls/webapp/us-east-1/instances/AlmaLinux/connect?region=us-east-1#",
                 "title": "Lightsail | us-east-1",
                 "mode": "webview"
               },
               "icon": "globe-2",
               "title": "Lightsail | us-east-1"
-            }
-          },
-          {
-            "id": "8f3314ca21d9d686",
-            "type": "leaf",
-            "state": {
-              "type": "custom-frames-youtube",
-              "state": {},
-              "icon": "lucide-monitor-play",
-              "title": "Youtube"
-            }
-          },
-          {
-            "id": "8c35a467c7376d77",
-            "type": "leaf",
-            "state": {
-              "type": "beautitab-react-view",
-              "state": {},
-              "title": "New tab"
             }
           },
           {
@@ -94,7 +84,8 @@
               "title": "Themes · ohmyzsh/ohmyzsh Wiki"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -158,7 +149,7 @@
             }
           },
           {
-            "id": "a0894630de07332f",
+            "id": "e04e478e11c73bdb",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -364,6 +355,7 @@
   },
   "active": "fc113fe46236d0a8",
   "lastOpenFiles": [
+    "Commands/APT File Corruption Commands.md",
     "PodmanDesktop/Container Export.md~",
     "AWS/AWS Lightsail.md~",
     "PodmanDesktop/Container Export.md",
@@ -399,7 +391,6 @@
     "Dev/Dev Index.md",
     "Dev/Dev Server Setup.md",
     "Dev",
-    "Tmux/Tmux Index.md~",
     "Tmux/Tmux Restore.md",
     "Tmux/Tmux Commands.md",
     "Commands/Open Code.md"
