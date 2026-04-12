@@ -1,0 +1,17 @@
+- Command:
+  - *podman ps
+  - podman commit <container_id or image name> devbox:latest <- this is the name you want the image to be 
+  - Example: # stay logged into the container and open another ssh session and run the below commands 
+    - *podman commit ubuntu devbox:latest
+    - *podman commit a1b2c3d94u devbox:latest
+  - Command: # verifying the image exists
+    - *podman images 
+    - *podman run -it devbox:latest #verify the container works 
+    - on the host machine create the directory you want the container to be attached to 
+    - mkdir -p ~/portal 
+    - podman run -it -v ~/portal:/workspace devbox:latest 
+    - Then log into the image 
+    - echo "alias devbox='podman run -it -v \$HOME/dev:/workspace devbox:latest'" >> ~/.bashrc
+source ~/.bashrc # run this on the instance or server hosting container 
+    - Run the below command to start it up 
+      - devbox
