@@ -53,7 +53,7 @@
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://us-east-1.lightsail.aws.amazon.com/ls/webapp/us-east-1/instances/AlmaLinux/metrics/CpuOverview?timeRange=1h",
+                "url": "https://us-east-1.lightsail.aws.amazon.com/ls/webapp/us-east-1/instances/AlmaLinux/connect",
                 "title": "Lightsail | us-east-1",
                 "mode": "webview"
               },
@@ -86,12 +86,12 @@
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://www.google.com/search?sca_esv=b8727ca78a0892ec&sxsrf=ANbL-n7uxVJQ2HbbtKQj4MpJcjSQ54F_LA:1775959319806&udm=2&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpaEWjvZ2Py1XXV8d8KvlI3p-ML-906rRL_m6h4jR-tdAeyw6pOVABma0FfM0NmtAR3KDb9iUS5m9YwM5Ail3nSY3OP40bHMBQ3EyoHe0_ln491bVQOMWZeGBJhzAUg44ks9678v-taU55-yfGe4MV2TeVDvvTk2qZUkQdxIiM-l9xrECp6AY0VYgbhrubog_118D9hw&q=lunar+vim&sa=X&ved=2ahUKEwjR1pGDnOeTAxX1FlkFHdQoMuUQtKgLegQIExAB&biw=1273&bih=655&dpr=1.44#sv=CAMSXBoyKhBlLXJ3SXhEbmNiRERIa0pNMg5yd0l4RG5jYkRESGtKTToOT01JaTZGcWdiN0l1T00gBCocCgZtb3NhaWMSEGUtcndJeERuY2JEREhrSk0YADABSgQIARACGAcg-JPklwxKCBABGAEgASgB",
-                "title": "lunar vim - Google Search",
+                "url": "https://github.com/ohmyzsh/ohmyzsh/wiki/Themes/6443ad96899b5f4b752e240f07bc70e40e815ce2",
+                "title": "Themes · ohmyzsh/ohmyzsh Wiki",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "lunar vim - Google Search"
+              "title": "Themes · ohmyzsh/ohmyzsh Wiki"
             }
           }
         ]
@@ -364,8 +364,9 @@
   },
   "active": "fc113fe46236d0a8",
   "lastOpenFiles": [
-    "PodmanDesktop/Container Export.md",
+    "PodmanDesktop/Container Export.md~",
     "AWS/AWS Lightsail.md~",
+    "PodmanDesktop/Container Export.md",
     "AWS/AWS Lightsail.md",
     "Testing.md",
     "AWS/AWS User Creation.md",
@@ -401,7 +402,6 @@
     "Tmux/Tmux Index.md~",
     "Tmux/Tmux Restore.md",
     "Tmux/Tmux Commands.md",
-    "Commands/Open Code.md",
-    "2026-04-10.md"
+    "Commands/Open Code.md"
   ]
 }

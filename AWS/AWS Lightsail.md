@@ -41,5 +41,6 @@ Host lightsail-lab <-name can be changed as needed
   - dnf install -y podman
   - podman --version 
     - mkdir portal <- on instance machine 
+    - podman run -it --userns=keep-id -v ~/portal:/workspace devbox:latest 
     - podman run -it -v /home/ec2-user/portal:/container_portal ubuntu:latest 
       - We are using a container with BIND mounts

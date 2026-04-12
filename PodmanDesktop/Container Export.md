@@ -4,11 +4,19 @@
   - Example: # stay logged into the container and open another ssh session and run the below commands 
     - *podman commit ubuntu devbox:latest
     - *podman commit a1b2c3d94u devbox:latest
+    - *podman save devbox:latest -o devbox.tar
+      - then you can scp the image to another server copy it to my laptop or uploade it to cloud storage
+    - To load the image run the below command
+      - *podman load -i devbox.tar
+      - *podman run -it devbox:latest
   - Command: # verifying the image exists
     - *podman images 
     - *podman run -it devbox:latest #verify the container works 
     - on the host machine create the directory you want the container to be attached to 
     - mkdir -p ~/portal 
+    - *podman run -it -v ~/portal:/workspaces:Z -w /workspace devbox:latest
+    - podman run -it --user -v ~/portal:/workspaces:Z devbox:latest
+    - podman run -it --userns=keepid -v ~/portal:/workspace devbox:latest 
     - podman run -it -v ~/portal:/workspace devbox:latest 
     - Then log into the image 
     - echo "alias devbox='podman run -it -v \$HOME/dev:/workspace devbox:latest'" >> ~/.bashrc
