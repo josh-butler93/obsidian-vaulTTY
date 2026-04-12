@@ -78,3 +78,59 @@ Host lightsail-lab <-name can be changed as needed
     - *sudoedit /etc/nginx/conf.d/default.conf #only run if the above location doesnt exist 
     - *sudo systemctl reload nginx
     - *curl localhost #should see the html content from the code
+
+
+- Command: Setting up  multiple sites 
+ - *sudo mkdir -p /var/www/portal 
+ - *sudo cp or mv ~/portal/container_setup.html var/www/site2/index.html 
+ - *sudo chown -R nginx:nginx /var/www/portal 
+ - *sudo chmod -R 755 /var/www/portal
+ - *sudo chmod -R /var/www/portal
+ - *sudo restorcon -Rv /var/www/portal
+ - *sudoedit /etc/nginx/nginx.conf 
+
+Add this inside the server {} block:
+ 
+location /site2/ {
+    alias /var/www/site2/;
+    index index.html;
+}
+
+And make sure your existing site is:
+
+location /podman_commands/ {
+    alias /var/www/podman_commands/;
+    index index.html;
+}
+
+server {
+    listen       80;
+    listen       [::]:80;
+    server_name  _;
+    root         /var/www/webpages;
+
+    include /etc/nginx/default.d/*.conf;
+
+    location /podman_commands/ {
+        alias /var/www/webpages/podman_commands/;
+        index index.html;
+    }
+
+    location /site2/ {
+        alias /var/www/webpages/site2/;
+        index index.html;
+    }
+
+    error_page 404 /404.html;
+  
+| Where         | What goes there     |
+| ------------- | ------------------- |
+| `http {}`     | global config       |
+| `server {}`   | your website config |
+| `location {}` | URL routing rules   |
+
+  - *sudo nginx -t 
+  - *sudo systemctl reload nginx
+
+  - http://YOUR_IP/podman_commands/
+  - http://YOUR_IP/site2/
