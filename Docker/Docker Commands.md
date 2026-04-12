@@ -1,0 +1,18 @@
+- Command:
+  - *sudo dnf install -y docker
+  - *docker ps
+  - *docker ps -a 
+  - *docker images
+  - *docker run -d -it image_name
+  - *docker run -it image_name bash # this will pull an instance and put you in a terminal
+  - *docker run -d -it --name test image_name bash # this will pull an instance put you in a termianl and will continue to run after you exit out 
+  - *docker start image image_name
+    - *docker exec -it image_name bash or sh 
+  - *docker stop image_name
+  - *docker rm image_name
+  - *docker rm $(docker ps -aq) #this will remove all containers including running ones 
+  - *docker rm -a # same as above Command
+  - *docker rm --filter status=exited 
+  - *docker rmi # to remove images 
+  - *docker image prune -a 
+

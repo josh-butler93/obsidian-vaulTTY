@@ -2,6 +2,7 @@
 [[Commands Index]] 
 [[Config Files Index]]
 [[Dev Index]]
+[[Docker Index]]
 [[Git Index]]
 [[HomeLab Index]]
 [[Kanban Index]]
