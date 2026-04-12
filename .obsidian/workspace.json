@@ -17,7 +17,21 @@
             }
           },
           {
-            "id": "fc113fe46236d0a8",
+            "id": "1dc9a3934fcdd106",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://us-east-1.lightsail.aws.amazon.com/ls/webapp/us-east-1/instances/AlmaLinux/metrics/CpuOverview?timeRange=1h",
+                "title": "Lightsail | us-east-1",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Lightsail | us-east-1"
+            }
+          },
+          {
+            "id": "9f814bc2837a50b2",
             "type": "leaf",
             "pinned": true,
             "state": {
@@ -55,37 +69,9 @@
               "icon": "terminal",
               "title": "Terminal: sh"
             }
-          },
-          {
-            "id": "1dc9a3934fcdd106",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://us-east-1.lightsail.aws.amazon.com/ls/webapp/us-east-1/instances/AlmaLinux/connect?region=us-east-1#",
-                "title": "Lightsail | us-east-1",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "Lightsail | us-east-1"
-            }
-          },
-          {
-            "id": "fd1c046ccf6a31b1",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://github.com/ohmyzsh/ohmyzsh/wiki/Themes/6443ad96899b5f4b752e240f07bc70e40e815ce2",
-                "title": "Themes · ohmyzsh/ohmyzsh Wiki",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "Themes · ohmyzsh/ohmyzsh Wiki"
-            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -149,7 +135,7 @@
             }
           },
           {
-            "id": "e04e478e11c73bdb",
+            "id": "f98bf093b375a05e",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -353,8 +339,9 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "fc113fe46236d0a8",
+  "active": "9f814bc2837a50b2",
   "lastOpenFiles": [
+    "Commands/APT File Corruption Commands.md",
     "Docker/Docker Practice Guide.md",
     "Docker/Docker Webpage.md",
     "PodmanDesktop/Podman Webpage.md",
@@ -377,7 +364,6 @@
     "Docker/Docker Commands.md",
     "Docker/Docker Index.md",
     "Linux Guru.md~",
-    "Commands/APT File Corruption Commands.md",
     "PodmanDesktop/Container Export.md",
     "AWS/AWS Lightsail.md",
     "Testing.md",
