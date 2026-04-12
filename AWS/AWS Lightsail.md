@@ -44,3 +44,10 @@ Host lightsail-lab <-name can be changed as needed
     - podman run -it --userns=keep-id -v ~/portal:/workspace devbox:latest 
     - podman run -it -v /home/ec2-user/portal:/container_portal ubuntu:latest 
       - We are using a container with BIND mounts
+
+- Command: 
+  - SCP 
+    - scp /path/to/local/file ec2-user@Lightsail-public-IP:/path/to/remote/destination
+    - scp -i ~/lightsail-key.pem /path/to/file.pem ec2-user@55.2.10.1:/home/ec2-user/portal
+    - example:
+      - scp -i LightsailDefualtKey-us-east-1 ~/Desktop/code.html ec2-user@10.0.0.1:/home/ec2-user/webpages
