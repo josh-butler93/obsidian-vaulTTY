@@ -51,3 +51,30 @@ Host lightsail-lab <-name can be changed as needed
     - scp -i ~/lightsail-key.pem /path/to/file.pem ec2-user@55.2.10.1:/home/ec2-user/portal
     - example:
       - scp -i LightsailDefualtKey-us-east-1 ~/Desktop/code.html ec2-user@10.0.0.1:/home/ec2-user/webpages
+
+- Nginx Webpage Setup 
+  - Command:
+    - On the webpage go to the networking tab and make sure port 80 and 22 are open 
+      - *mv ~/podman_webpage.html /var/www/html/index.html 
+        - *sudo nginx -T | grep root #location of html file varies by distros
+        - *ls /usr/share/nginx/html 
+          - * mv ~/podoman_webpage.html /usr/share/nginx/html/.index.html
+      - *sudo systemctl enable nginx
+      - *sudo systemctl start nginx 
+      - *curl localhost # you should see teh html content 
+       - go to http://YOUR_PUBLIC_IP
+    - *podman run -d -p 80:80 -v /var/www/html:/usr/share/nginx/html:Z nginx
+     - Above command is for running an nginx container inside of lighsail 
+
+- Command: Centos/Alma Config 
+  - Nginx index.html location change 
+    - *sudo mkdir -p /var/www/webpages 
+    - *sudo mv ~/podman_webpage.html /var/www/webpages/index.html
+    - *sudo chown -R nginx:nginx /var/www/webpages
+    - #optional in case above step fails --sudo chown -R www-data:www-date /var/www/webpages 
+    - *sudo restorcon -Rv /var/www/webpages
+    - *sudo chcon -R -t httpd_sys_content_t /var/www/webpages 
+    - *sudoedit /etc/nginx/nginx.conf 
+    - *sudoedit /etc/nginx/conf.d/default.conf #only run if the above location doesnt exist 
+    - *sudo systemctl reload nginx
+    - *curl localhost #should see the html content from the code
