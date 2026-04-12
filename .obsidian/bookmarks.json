@@ -47,6 +47,24 @@
       "ctime": 1775931480172,
       "url": "https://us-east-1.signin.aws/platform/d-906608fd06/login?workflowStateHandle=180fea93-1a33-4242-b3a7-ff268bbf729c",
       "title": "Amazon Web Services"
+    },
+    {
+      "type": "url",
+      "ctime": 1775945782886,
+      "url": "http://localhost:5173/",
+      "title": "vite"
+    },
+    {
+      "type": "url",
+      "ctime": 1775945817211,
+      "url": "http://localhost:3001/",
+      "title": "Linux Admin Essentials"
+    },
+    {
+      "type": "url",
+      "ctime": 1775945879200,
+      "url": "http://10.0.0.144/linux-essentials/#server",
+      "title": "Linux Essentials Dashboard"
     }
   ]
 }

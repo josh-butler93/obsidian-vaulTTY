@@ -66,6 +66,11 @@ Running a container
   - podman run -d nginx # run in the background
   - podman run -d -v myvolume:/data nginx # run with persistant storage/volume 
   - podman run -d -e POSTGRES_PASSWORD=secret postgres
+  - podman run -it -v /home/youruser/<folder_on_host>:/workspace image_name 
+    - /home/youruser/folder_on_host == host folder 
+    - /workspace == dev folder on container 
+      - This is designed to allow the container and the host to share the same files 
+        - Its called BIND mounts
 
 Lifecycle commands after spinning up Containers
 - Command:
