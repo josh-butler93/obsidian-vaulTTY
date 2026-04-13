@@ -215,6 +215,18 @@
       "forceIframe": false,
       "customCss": "",
       "customJs": ""
+    },
+    {
+      "url": "http://10.0.0.144/admin",
+      "displayName": "Pihole",
+      "icon": "anchor",
+      "hideOnMobile": true,
+      "addRibbonIcon": true,
+      "openInCenter": true,
+      "zoomLevel": 1,
+      "forceIframe": false,
+      "customCss": "",
+      "customJs": ""
     }
   ],
   "padding": 5

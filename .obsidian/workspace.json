@@ -13,12 +13,12 @@
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://us-east-1.lightsail.aws.amazon.com/ls/webapp/us-east-1/instances/AlmaLinux/networking",
-                "title": "Lightsail | us-east-1",
+                "url": "https://signin.aws.amazon.com/oauth?client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fparksidewebapp&code_challenge=8T5KLf97vtC0tPQrfy40fv-loZYqWPzS3ppAUKHeBIE&code_challenge_method=SHA-256&redirect_uri=https%3A%2F%2Fus-east-1.lightsail.aws.amazon.com%2Fls%2Fwebapp%2Fus-east-1%2Finstances%2FAlmaLinux%2Fmetrics%2FCpuOverview%3Fregion%3Dus-east-1%26state%3DhashArgs%2523%26timeRange%3D1h%26isauthcode%3Dtrue&response_type=code",
+                "title": "Amazon Web Services Sign-In",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "Lightsail | us-east-1"
+              "title": "Amazon Web Services Sign-In"
             }
           },
           {
@@ -59,6 +59,20 @@
               "pinned": true,
               "icon": "terminal",
               "title": "Terminal: sh"
+            }
+          },
+          {
+            "id": "235a6f004dfc95cd",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "http://10.0.0.144/admin/groups/lists",
+                "title": "Pi-hole nginx",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Pi-hole nginx"
             }
           },
           {
