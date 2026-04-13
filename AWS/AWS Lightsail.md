@@ -134,3 +134,15 @@ server {
 
   - http://YOUR_IP/podman_commands/
   - http://YOUR_IP/site2/
+
+- Command: Npx Setup
+  - *npm install -y npm nodejs 
+  - *node -v 
+  - *npm  -v 
+  - *npx --version
+  - npx serve . -l 3000
+  - *npx serve . -l tcp://0.0.0.0:3000
+  - http://lightsail-ip:3000
+- Command: Npx Global install
+ - npm install -g serve
+  - serve -l 3000

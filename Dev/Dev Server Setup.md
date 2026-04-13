@@ -29,6 +29,7 @@ npx -v # naviagte to the folder where the code is
     # npx serve . -l 3001 -> choose the port you want to run it on 
         npx serve . --listen 0.0.0.0:3000
           http://*.*.*.*:3000
+        - *npx serve . -l tcp://0.0.0.0:3000 #for container access
             podman start devbox # to start the container if needed
               podman attach devbox 
 

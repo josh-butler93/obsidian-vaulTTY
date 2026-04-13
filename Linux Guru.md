@@ -10,6 +10,7 @@
 [[Networking Index]]
 [[Neovim Index]] 
 [[Omarchy Index]]
+[[Pihole Index]]
 [[PodmanDesktop Index]] 
 [[SSH Index]]
 [[Tmux Index]]

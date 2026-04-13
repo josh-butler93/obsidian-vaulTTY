@@ -8,12 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "7347904d59cbc5b6",
+            "id": "1dc9a3934fcdd106",
             "type": "leaf",
             "state": {
-              "type": "beautitab-react-view",
-              "state": {},
-              "title": "New tab"
+              "type": "webviewer",
+              "state": {
+                "url": "https://us-east-1.lightsail.aws.amazon.com/ls/webapp/us-east-1/instances/AlmaLinux/networking",
+                "title": "Lightsail | us-east-1",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Lightsail | us-east-1"
             }
           },
           {
@@ -57,31 +62,26 @@
             }
           },
           {
-            "id": "1dc9a3934fcdd106",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://us-east-1.lightsail.aws.amazon.com/ls/webapp/us-east-1/instances/AlmaLinux/metrics/CpuOverview?timeRange=1h",
-                "title": "Lightsail | us-east-1",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "Lightsail | us-east-1"
-            }
-          },
-          {
             "id": "bd57371d59c2a0fc",
             "type": "leaf",
             "state": {
               "type": "webviewer",
               "state": {
                 "url": "http://44.214.143.84/",
-                "title": "Container Daily Practice Guide",
+                "title": "Welcome",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "Container Daily Practice Guide"
+              "title": "Welcome"
+            }
+          },
+          {
+            "id": "7347904d59cbc5b6",
+            "type": "leaf",
+            "state": {
+              "type": "beautitab-react-view",
+              "state": {},
+              "title": "New tab"
             }
           }
         ],
@@ -355,6 +355,10 @@
   },
   "active": "9f814bc2837a50b2",
   "lastOpenFiles": [
+    "Dev/Dev Server Setup.md~",
+    "Pihole/Pihole Container Setup.md",
+    "Pihole/Pihole Index.md",
+    "Pihole",
     "Commands/APT File Corruption Commands.md",
     "Docker/Docker Practice Guide.md",
     "Docker/Docker Webpage.md",
@@ -377,7 +381,6 @@
     "Docker/Docker Commands.md~",
     "Docker/Docker Commands.md",
     "Docker/Docker Index.md",
-    "Linux Guru.md~",
     "PodmanDesktop/Container Export.md",
     "AWS/AWS Lightsail.md",
     "Testing.md",
@@ -390,9 +393,6 @@
     "Images/wallhaven-gj15r7.png",
     "Images/wallhaven-x15w2d.jpg",
     "Maldev/docker target practice setup.md",
-    "Vault.md",
-    "Kanban/Kanban.md",
-    "PodmanDesktop/Database Setup.md",
-    "Maldev/target practice.md"
+    "Vault.md"
   ]
 }
