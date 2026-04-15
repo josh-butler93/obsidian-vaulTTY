@@ -4,3 +4,8 @@
   - *git git add 
   - *git commit
   - *git log
+  - *git branch -M <brandch_name>
+  - *git pull 
+  - *git fetch
+  - *git checkout
+  - *rm -rf .git #This removes the github repo 
