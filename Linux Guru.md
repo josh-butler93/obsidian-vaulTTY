@@ -13,6 +13,7 @@
 [[Pihole Index]]
 [[PodmanDesktop Index]] 
 [[SSH Index]]
+[[Tailscale Index]]
 [[Tmux Index]]
 [[Tmux Restore Index]]
 [[Yaml Index]] 

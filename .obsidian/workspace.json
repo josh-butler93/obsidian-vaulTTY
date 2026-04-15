@@ -8,17 +8,35 @@
         "type": "tabs",
         "children": [
           {
-            "id": "1dc9a3934fcdd106",
+            "id": "d773e4c0bc900a7d",
             "type": "leaf",
             "state": {
-              "type": "webviewer",
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          },
+          {
+            "id": "c0fdb03ccd4d613f",
+            "type": "leaf",
+            "state": {
+              "type": "kanban",
               "state": {
-                "url": "https://signin.aws.amazon.com/oauth?client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fparksidewebapp&code_challenge=8T5KLf97vtC0tPQrfy40fv-loZYqWPzS3ppAUKHeBIE&code_challenge_method=SHA-256&redirect_uri=https%3A%2F%2Fus-east-1.lightsail.aws.amazon.com%2Fls%2Fwebapp%2Fus-east-1%2Finstances%2FAlmaLinux%2Fmetrics%2FCpuOverview%3Fregion%3Dus-east-1%26state%3DhashArgs%2523%26timeRange%3D1h%26isauthcode%3Dtrue&response_type=code",
-                "title": "Amazon Web Services Sign-In",
-                "mode": "webview"
+                "file": "Kanban/Kanban Board.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "list",
+                  "list-collapse": [
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ]
+                }
               },
-              "icon": "globe-2",
-              "title": "Amazon Web Services Sign-In"
+              "icon": "lucide-trello",
+              "title": "Kanban Board"
             }
           },
           {
@@ -62,44 +80,54 @@
             }
           },
           {
-            "id": "235a6f004dfc95cd",
+            "id": "11b055373dc034a4",
             "type": "leaf",
             "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "http://10.0.0.144/admin/groups/lists",
-                "title": "Pi-hole nginx",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "Pi-hole nginx"
+              "type": "custom-frames-labex.io",
+              "state": {},
+              "icon": "lucide-pickaxe",
+              "title": "Labex.io"
             }
           },
           {
-            "id": "bd57371d59c2a0fc",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "http://44.214.143.84/",
-                "title": "Welcome",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "Welcome"
-            }
-          },
-          {
-            "id": "7347904d59cbc5b6",
+            "id": "00a42c8c33ed31d7",
             "type": "leaf",
             "state": {
               "type": "beautitab-react-view",
               "state": {},
               "title": "New tab"
             }
+          },
+          {
+            "id": "999c4a6a43e19d5a",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://www.google.com/search?q=coding+libraries&sca_esv=2de0de60c9cf323a&sxsrf=ANbL-n5IGbePkvEzPzsSnq_n5AQHJgw-Mw%3A1776213418324&source=hp&ei=qt3eab_dEbWs1QH00reQAw&iflsig=AFdpzrgAAAAAad7ruh3aV2rOB-Ghz3e74LZ0cdhI8ehA&oq=coding+libr&gs_lp=Egdnd3Mtd2l6Igtjb2RpbmcgbGlicioCCAAyBRAAGIAEMgUQABiABDIFEAAYgAQyBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHkjYS1D_BViZOnAHeACQAQCYAW-gAc0IqgEEMTYuMbgBA8gBAPgBAZgCGKACuQmoAgrCAgcQIxjqAhgnwgIEECMYJ8ICChAjGPAFGJ4GGCfCAgsQABiABBixAxiDAcICCBAAGIAEGLEDwgIOEAAYgAQYigUYsQMYgwHCAhEQLhiABBixAxiDARjHARjRA8ICDhAuGIAEGLEDGMcBGNEDwgILEC4YgAQYsQMYgwHCAg4QLhiABBiKBRixAxiDAcICDhAAGIAEGIoFGI0GGLEDwgIKECMYngYY8AUYJ8ICDhAuGIAEGMcBGK8BGI4FwgIIEC4YgAQYsQPCAhEQLhiDARjHARixAxjRAxiABMICCxAuGIAEGMcBGNEDwgIOEC4YrwEYxwEYgAQYjgXCAgcQABiABBgKwgIFEC4YgATCAggQABgWGB4YCpgDB_EF3NlFA2ZieoCSBwQyMi4yoAfXwQGyBwQxNS4yuAecCcIHBzAuMTEuMTPIB1GACAE&sclient=gws-wiz",
+                "title": "coding libraries - Google Search",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "coding libraries - Google Search"
+            }
+          },
+          {
+            "id": "533a6551cc64df32",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://hub.docker.com/_/caddy?xk=ShowRecommendedBadge&xt=Disabled",
+                "title": "caddy - Official Image | Docker Hub",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "caddy - Official Image | Docker Hub"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -111,6 +139,7 @@
       {
         "id": "06cd274f73e252db",
         "type": "tabs",
+        "dimension": 64.34210526315789,
         "children": [
           {
             "id": "2d7ea948c3acbed6",
@@ -163,7 +192,7 @@
             }
           },
           {
-            "id": "f98bf093b375a05e",
+            "id": "77e6108e28539e73",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -173,7 +202,24 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
+      },
+      {
+        "id": "6383ed4e90b91296",
+        "type": "tabs",
+        "dimension": 35.6578947368421,
+        "children": [
+          {
+            "id": "00667bb60aa24faa",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
+          }
+        ]
       }
     ],
     "direction": "horizontal",
@@ -222,21 +268,6 @@
             }
           },
           {
-            "id": "729b5be0e0c2155b",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-tags",
-              "title": "Tags"
-            }
-          },
-          {
             "id": "f56e287154fecfee",
             "type": "leaf",
             "state": {
@@ -271,70 +302,125 @@
             "state": {
               "type": "custom-frames-jarvis",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "custom-frames-jarvis"
+              "icon": "lucide-brain",
+              "title": "Jarvis"
             }
           },
           {
-            "id": "b77fd09aa238bc55",
+            "id": "7347904d59cbc5b6",
+            "type": "leaf",
+            "state": {
+              "type": "custom-frames-aws",
+              "state": {},
+              "icon": "lucide-cloud-check",
+              "title": "AWS"
+            }
+          },
+          {
+            "id": "f341baacf784fa9f",
+            "type": "leaf",
+            "state": {
+              "type": "custom-frames-cloudflare",
+              "state": {},
+              "icon": "lucide-monitor-cloud",
+              "title": "Cloudflare"
+            }
+          },
+          {
+            "id": "843ba780267f6aeb",
+            "type": "leaf",
+            "state": {
+              "type": "custom-frames-zapier",
+              "state": {},
+              "icon": "lucide-bot-message-square",
+              "title": "Zapier"
+            }
+          },
+          {
+            "id": "9321619e0f56284c",
+            "type": "leaf",
+            "state": {
+              "type": "custom-frames-pihole",
+              "state": {},
+              "icon": "lucide-anchor",
+              "title": "Pihole"
+            }
+          },
+          {
+            "id": "848ed51c36aff9cb",
+            "type": "leaf",
+            "state": {
+              "type": "custom-frames-tailscale",
+              "state": {},
+              "icon": "lucide-key",
+              "title": "Tailscale"
+            }
+          },
+          {
+            "id": "d0de3439139c5d3a",
+            "type": "leaf",
+            "state": {
+              "type": "custom-frames-truenas",
+              "state": {},
+              "icon": "lucide-file-box",
+              "title": "Truenas"
+            }
+          },
+          {
+            "id": "12e5e54c777c4da0",
+            "type": "leaf",
+            "state": {
+              "type": "custom-frames-jellyfin",
+              "state": {},
+              "icon": "lucide-picture-in-picture",
+              "title": "Jellyfin"
+            }
+          },
+          {
+            "id": "7f0c08e2abcbc6ec",
             "type": "leaf",
             "state": {
               "type": "custom-frames-github",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "custom-frames-github"
+              "icon": "lucide-folder-git-2",
+              "title": "github"
             }
           },
           {
-            "id": "e7a7b303c61786dc",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
-            }
-          },
-          {
-            "id": "3f242c6521db7557",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {},
-              "icon": "lucide-ghost",
-              "title": "git-view"
-            }
-          },
-          {
-            "id": "bdd9ca9e23e30367",
+            "id": "6566096a1280a13a",
             "type": "leaf",
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://hub.docker.com/search",
-                "title": "Explore Docker's Container Image Repository | Docker Hub",
+                "url": "https://mail.google.com/mail/u/0/?ogbl#inbox",
+                "title": "Inbox (6,670) - butlerjl804@gmail.com - Gmail",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "Explore Docker's Container Image Repository | Docker Hub"
+              "title": "Inbox (6,670) - butlerjl804@gmail.com - Gmail"
             }
           },
           {
-            "id": "00667bb60aa24faa",
+            "id": "4e8daaa0e62bbab0",
             "type": "leaf",
             "state": {
-              "type": "calendar",
-              "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 10
       }
     ],
     "direction": "horizontal",
-    "width": 755.5,
+    "width": 900.5,
     "collapsed": true
   },
   "left-ribbon": {
@@ -342,15 +428,19 @@
       "graph:Open graph view": false,
       "terminal:Open terminal": false,
       "obsidian-custom-frames:Open AWS": false,
+      "obsidian-custom-frames:Open Cloudflare": false,
+      "obsidian-custom-frames:Open Zapier": false,
+      "obsidian-custom-frames:Open Pihole": false,
+      "obsidian-custom-frames:Open Tailscale": false,
+      "obsidian-custom-frames:Open Truenas": false,
+      "obsidian-custom-frames:Open Jellyfin": false,
+      "obsidian-custom-frames:Open github": false,
+      "obsidian-custom-frames:Open Claude": false,
+      "obsidian-custom-frames:Open Labex.io": false,
       "obsidian-custom-frames:Open Azure": false,
       "obsidian-custom-frames:Open Google Chrome": false,
       "obsidian-custom-frames:Open Jarvis": false,
       "obsidian-custom-frames:Open Youtube": false,
-      "obsidian-custom-frames:Open github": false,
-      "obsidian-custom-frames:Open Cloudflare": false,
-      "obsidian-custom-frames:Open Zapier": false,
-      "obsidian-custom-frames:Open Nas": false,
-      "obsidian-custom-frames:Open Labex.io": false,
       "obsidian-custom-frames:Open HTB": false,
       "obsidian-custom-frames:Open OvertheWire": false,
       "obsidian-custom-frames:Open Tiktok": false,
@@ -369,6 +459,16 @@
   },
   "active": "9f814bc2837a50b2",
   "lastOpenFiles": [
+    "Kanban/Kanban Board.md",
+    "Kanban/Taskings/Untitled.md",
+    "HomeLab/Lab Setup.md",
+    "Tailscale/Tailscale Index.md~",
+    "Tailscale/Tailscale Index.md",
+    "Linux Guru.md~",
+    "Tailscale",
+    "Commands/tial",
+    "Commands/Tailscale/fuckyou",
+    "Commands/Tailscale",
     "Dev/Dev Server Setup.md~",
     "Pihole/Pihole Container Setup.md",
     "Pihole/Pihole Index.md",
@@ -381,18 +481,11 @@
     "PodmanDesktop/Podman Guide Webpage.md",
     "Docker/docker_guide.html",
     "PodmanDesktop/podman_guide_webpage.html",
-    "Dev/container_guide.html",
-    "podman_guide_webpage.html",
-    "docker_guide.html",
     "Git/Testing.md",
-    "PodmanDesktop/podman_webpage.html",
     "PodmanDesktop/podman_run_flags.md",
     "Docker/docker_practice_guide.md",
-    "container_guide.html",
-    "podman_webpage.html",
     "podman_run_flags.md",
     "docker_practice_guide.md",
-    "Docker/Docker Commands.md~",
     "Docker/Docker Commands.md",
     "Docker/Docker Index.md",
     "PodmanDesktop/Container Export.md",
@@ -402,11 +495,8 @@
     "AWS/AWS Cli Setup.md",
     "AWS/AWS Cli Commands.md",
     "AWS/AWS Cli Arch Install.md",
-    "AWS/AWS Index.md",
     "Images/wallhaven-4g823l.jpg",
     "Images/wallhaven-gj15r7.png",
-    "Images/wallhaven-x15w2d.jpg",
-    "Maldev/docker target practice setup.md",
-    "Vault.md"
+    "Images/wallhaven-x15w2d.jpg"
   ]
 }

@@ -38,9 +38,9 @@
   "vaultSelector": true,
   "deleteFileOption": "trash",
   "expandedSpaces": [
-    "/",
     "//Tags",
-    "//Commands"
+    "/",
+    "//Kanban/Kanban/Taskings"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",

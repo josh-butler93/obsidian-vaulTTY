@@ -37,7 +37,7 @@
       "customJs": ""
     },
     {
-      "url": "https://github.com/josh-butler93",
+      "url": "https://github.com/dashboard",
       "displayName": "github",
       "icon": "folder-git-2",
       "hideOnMobile": true,
@@ -62,7 +62,7 @@
     },
     {
       "url": "http://10.0.0.235/ui/signin",
-      "displayName": "Nas",
+      "displayName": "Truenas",
       "icon": "file-box",
       "hideOnMobile": true,
       "addRibbonIcon": true,
@@ -220,6 +220,30 @@
       "url": "http://10.0.0.144/admin",
       "displayName": "Pihole",
       "icon": "anchor",
+      "hideOnMobile": true,
+      "addRibbonIcon": true,
+      "openInCenter": true,
+      "zoomLevel": 1,
+      "forceIframe": false,
+      "customCss": "",
+      "customJs": ""
+    },
+    {
+      "url": "https://login.tailscale.com/admin/machines",
+      "displayName": "Tailscale",
+      "icon": "key",
+      "hideOnMobile": true,
+      "addRibbonIcon": true,
+      "openInCenter": true,
+      "zoomLevel": 1,
+      "forceIframe": false,
+      "customCss": "",
+      "customJs": ""
+    },
+    {
+      "url": "http://10.0.0.235:30013/web/#/dashboard",
+      "displayName": "Jellyfin",
+      "icon": "picture-in-picture",
       "hideOnMobile": true,
       "addRibbonIcon": true,
       "openInCenter": true,

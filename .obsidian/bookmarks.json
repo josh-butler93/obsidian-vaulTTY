@@ -8,6 +8,12 @@
     },
     {
       "type": "url",
+      "ctime": 1776139122812,
+      "url": "https://hub.docker.com/search",
+      "title": "Docker Hub"
+    },
+    {
+      "type": "url",
       "ctime": 1775887691623,
       "url": "https://dash.cloudflare.com/5ff50ecf3455ebebadd0e0e7f7ec9282/home/overview",
       "title": "Cloudflare"
@@ -71,6 +77,12 @@
       "ctime": 1775970816270,
       "url": "https://github.com/ohmyzsh/ohmyzsh/wiki/Themes/6443ad96899b5f4b752e240f07bc70e40e815ce2",
       "title": "Themes · ohmyzsh/ohmyzsh Wiki"
+    },
+    {
+      "type": "url",
+      "ctime": 1776142268721,
+      "url": "http://10.0.0.235:30037/?orgId=1&from=now-6h&to=now&timezone=browser",
+      "title": "TrueNas Grafana"
     }
   ]
 }
