@@ -1,3 +1,4 @@
+[[git quickie]]
 [[git_cheatsheet]]
 [[git_commands]]
 [[git_initial_setup]]
