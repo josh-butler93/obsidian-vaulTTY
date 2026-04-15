@@ -42,7 +42,7 @@ Host lightsail-lab <-name can be changed as needed
   - podman --version 
     - mkdir portal <- on instance machine 
     - podman run -it --userns=keep-id -v ~/portal:/workspace devbox:latest 
-    - podman run -it -v /home/ec2-user/portal:/container_portal ubuntu:latest 
+    - podman run -it -v /home/ec2-user/portal:/container_portal -w /container_portal ubuntu:latest 
       - We are using a container with BIND mounts
 
 - Command: 

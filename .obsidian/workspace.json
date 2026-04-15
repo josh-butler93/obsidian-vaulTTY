@@ -80,22 +80,31 @@
             }
           },
           {
-            "id": "11b055373dc034a4",
+            "id": "533a6551cc64df32",
             "type": "leaf",
             "state": {
-              "type": "custom-frames-labex.io",
-              "state": {},
-              "icon": "lucide-pickaxe",
-              "title": "Labex.io"
+              "type": "webviewer",
+              "state": {
+                "url": "https://hub.docker.com/r/zabbix/zabbix-web-nginx-pgsql",
+                "title": "zabbix/zabbix-web-nginx-pgsql - Docker Image",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "zabbix/zabbix-web-nginx-pgsql - Docker Image"
             }
           },
           {
-            "id": "00a42c8c33ed31d7",
+            "id": "851c0e1ac9bde114",
             "type": "leaf",
             "state": {
-              "type": "beautitab-react-view",
-              "state": {},
-              "title": "New tab"
+              "type": "webviewer",
+              "state": {
+                "url": "https://docs.aws.amazon.com/lightsail/latest/userguide/understanding-firewall-and-port-mappings-in-amazon-lightsail.html",
+                "title": "Control instance traffic with firewalls in Lightsail - Amazon Lightsail",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Control instance traffic with firewalls in Lightsail - Amazon Lightsail"
             }
           },
           {
@@ -104,26 +113,45 @@
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://www.google.com/search?q=coding+libraries&sca_esv=2de0de60c9cf323a&sxsrf=ANbL-n5IGbePkvEzPzsSnq_n5AQHJgw-Mw%3A1776213418324&source=hp&ei=qt3eab_dEbWs1QH00reQAw&iflsig=AFdpzrgAAAAAad7ruh3aV2rOB-Ghz3e74LZ0cdhI8ehA&oq=coding+libr&gs_lp=Egdnd3Mtd2l6Igtjb2RpbmcgbGlicioCCAAyBRAAGIAEMgUQABiABDIFEAAYgAQyBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHkjYS1D_BViZOnAHeACQAQCYAW-gAc0IqgEEMTYuMbgBA8gBAPgBAZgCGKACuQmoAgrCAgcQIxjqAhgnwgIEECMYJ8ICChAjGPAFGJ4GGCfCAgsQABiABBixAxiDAcICCBAAGIAEGLEDwgIOEAAYgAQYigUYsQMYgwHCAhEQLhiABBixAxiDARjHARjRA8ICDhAuGIAEGLEDGMcBGNEDwgILEC4YgAQYsQMYgwHCAg4QLhiABBiKBRixAxiDAcICDhAAGIAEGIoFGI0GGLEDwgIKECMYngYY8AUYJ8ICDhAuGIAEGMcBGK8BGI4FwgIIEC4YgAQYsQPCAhEQLhiDARjHARixAxjRAxiABMICCxAuGIAEGMcBGNEDwgIOEC4YrwEYxwEYgAQYjgXCAgcQABiABBgKwgIFEC4YgATCAggQABgWGB4YCpgDB_EF3NlFA2ZieoCSBwQyMi4yoAfXwQGyBwQxNS4yuAecCcIHBzAuMTEuMTPIB1GACAE&sclient=gws-wiz",
-                "title": "coding libraries - Google Search",
+                "url": "https://www.red-gate.com/simple-talk/development/other-development/the-difference-between-libraries-and-frameworks/",
+                "title": "The difference between libraries and frameworks | Simple Talk",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "coding libraries - Google Search"
+              "title": "The difference between libraries and frameworks | Simple Talk"
             }
           },
           {
-            "id": "533a6551cc64df32",
+            "id": "722dce5d83754b36",
+            "type": "leaf",
+            "state": {
+              "type": "custom-frames-github",
+              "state": {},
+              "icon": "lucide-folder-git-2",
+              "title": "github"
+            }
+          },
+          {
+            "id": "230c08f8eb332448",
+            "type": "leaf",
+            "state": {
+              "type": "beautitab-react-view",
+              "state": {},
+              "title": "New tab"
+            }
+          },
+          {
+            "id": "aeccd7df59bfb0d9",
             "type": "leaf",
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://hub.docker.com/_/caddy?xk=ShowRecommendedBadge&xt=Disabled",
-                "title": "caddy - Official Image | Docker Hub",
+                "url": "https://www.google.com/search?q=github+repo+key+shows+read+only+how+do+i+change+that&sca_esv=ff395dd47995098c&sxsrf=ANbL-n6dCiqGyq7_iSz3WZTBDYtLdoA-2g%3A1776221478740&source=hp&ei=Jv3eaYO-K6Sp5NoPxuzUgQc&iflsig=AFdpzrgAAAAAad8LNhOUi3VkwDn9DYdXUij3Z6cPTl4Y&ved=0ahUKEwiD6Z_S7O6TAxWkFFkFHUY2NXAQ4dUDCDc&uact=5&oq=github+repo+key+shows+read+only+how+do+i+change+that&gs_lp=Egdnd3Mtd2l6IjRnaXRodWIgcmVwbyBrZXkgc2hvd3MgcmVhZCBvbmx5IGhvdyBkbyBpIGNoYW5nZSB0aGF0MgUQIRigATIFECEYoAEyBRAhGKABMgUQIRigAUiynxJQ9x5YrZ0ScAx4AJABAZgBiQGgAdI2qgEEOTQuNLgBA8gBAPgBAZgCYqAC4jWoAgrCAg0QIxjwBRieBhjqAhgnwgIHECMY6gIYJ8ICBBAjGCfCAgsQABiABBiKBRiRAsICFxAuGIAEGIoFGI0GGLEDGMcBGK8BGI4FwgIREC4YgAQYsQMYgwEYxwEY0QPCAg4QLhiABBixAxjHARjRA8ICCxAuGIAEGLEDGIMBwgIKECMYyQIY8AUYJ8ICCxAuGIMBGLEDGIAEwgIIEAAYgAQYsQPCAg4QABiABBiKBRixAxiDAcICChAjGPAFGMkCGCfCAhYQLhiABBiKBRhDGLEDGIMBGMcBGNEDwgIREC4YgAQYsQMYxwEYrwEYjgXCAg4QLhiABBjHARivARiOBcICCBAuGIAEGLEDwgIOEAAYgAQYigUYkQIYsQPCAg0QABiABBiKBRhDGLEDwgIIEC4YsQMYgATCAgsQABiABBixAxiDAcICBRAAGIAEwgIHEAAYgAQYCsICBhAAGBYYHsICCxAAGIAEGIoFGIYDwgIIEAAYgAQYogTCAggQABgWGB4YCsICCBAAGIkFGKIEwgIFEAAY7wXCAgoQABiABBiKBRhDwgIQEAAYgAQYigUYQxixAxiDAcICERAAGIAEGIoFGJECGLEDGIMBwgIFECEYnwXCAgUQIRirApgDCuIDBRIBMSBA8QU-avvloZpgqZIHBDk0LjSgB97PBLIHBDg1LjS4B701wgcJNS42Ny4yMy4zyAeFAoAIAQ&sclient=gws-wiz",
+                "title": "github repo key shows read only how do i change that - Google Search",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "caddy - Official Image | Docker Hub"
+              "title": "github repo key shows read only how do i change that - Google Search"
             }
           }
         ],
@@ -393,11 +421,11 @@
               "type": "webviewer",
               "state": {
                 "url": "https://mail.google.com/mail/u/0/?ogbl#inbox",
-                "title": "Inbox (6,670) - butlerjl804@gmail.com - Gmail",
+                "title": "Inbox (6,671) - butlerjl804@gmail.com - Gmail",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "Inbox (6,670) - butlerjl804@gmail.com - Gmail"
+              "title": "Inbox (6,671) - butlerjl804@gmail.com - Gmail"
             }
           },
           {
@@ -416,7 +444,7 @@
             }
           }
         ],
-        "currentTab": 10
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -459,6 +487,8 @@
   },
   "active": "9f814bc2837a50b2",
   "lastOpenFiles": [
+    "AWS/AWS Lightsail.md~",
+    "Git/git quickie.md~",
     "Git/git quickie.md",
     "Kanban/Kanban Board.md",
     "Kanban/Taskings/Untitled.md",
@@ -481,7 +511,6 @@
     "PodmanDesktop/Podman Run Flags.md",
     "PodmanDesktop/Podman Guide Webpage.md",
     "Docker/docker_guide.html",
-    "PodmanDesktop/podman_guide_webpage.html",
     "Git/Testing.md",
     "PodmanDesktop/podman_run_flags.md",
     "Docker/docker_practice_guide.md",
@@ -494,7 +523,6 @@
     "Testing.md",
     "AWS/AWS User Creation.md",
     "AWS/AWS Cli Setup.md",
-    "AWS/AWS Cli Commands.md",
     "Images/wallhaven-4g823l.jpg",
     "Images/wallhaven-gj15r7.png",
     "Images/wallhaven-x15w2d.jpg"
