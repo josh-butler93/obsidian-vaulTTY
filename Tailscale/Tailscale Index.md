@@ -1,0 +1,12 @@
+- Command:
+  - Tailscale is a private peer to peer network that allows you to connect to devices no matter where they are at in the world as long as they are connected to the same network
+
+  - *sudo systemctl enable --now tailscaled 
+  - *sudo systemctl start tailscaled 
+  - *sudo tailscale up 
+    - select the link that is output and approve the device 
+  - *tailscale status #This will show all the devices connected to the network
+  - *tailscale ip -4 #This will give you the ipv4 address
+  - *tail scale ping -c 4 <ip_from_status_command>
+    - example:
+      - ping -c 4 100.111.222.33 
