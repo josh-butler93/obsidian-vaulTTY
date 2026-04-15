@@ -1,0 +1,6 @@
+- Command:
+  - *git init 
+  - *git status
+  - *git git add 
+  - *git commit
+  - *git log
