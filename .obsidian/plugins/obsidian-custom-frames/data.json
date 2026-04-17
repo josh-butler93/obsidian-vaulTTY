@@ -263,6 +263,18 @@
       "forceIframe": false,
       "customCss": "",
       "customJs": ""
+    },
+    {
+      "url": "https://app.dokploy.com/dashboard/deployments",
+      "displayName": "Dcokeploy",
+      "icon": "vault",
+      "hideOnMobile": true,
+      "addRibbonIcon": false,
+      "openInCenter": false,
+      "zoomLevel": 1,
+      "forceIframe": false,
+      "customCss": "",
+      "customJs": ""
     }
   ],
   "padding": 5

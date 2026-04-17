@@ -8,35 +8,13 @@
         "type": "tabs",
         "children": [
           {
-            "id": "d773e4c0bc900a7d",
+            "id": "c0fdb03ccd4d613f",
             "type": "leaf",
             "state": {
               "type": "graph",
               "state": {},
               "icon": "lucide-git-fork",
               "title": "Graph view"
-            }
-          },
-          {
-            "id": "c0fdb03ccd4d613f",
-            "type": "leaf",
-            "state": {
-              "type": "kanban",
-              "state": {
-                "file": "Kanban/Kanban Board.md",
-                "kanbanViewState": {
-                  "kanban-plugin": "list",
-                  "list-collapse": [
-                    false,
-                    false,
-                    false,
-                    false,
-                    false
-                  ]
-                }
-              },
-              "icon": "lucide-trello",
-              "title": "Kanban Board"
             }
           },
           {
@@ -85,40 +63,22 @@
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://hub.docker.com/r/zabbix/zabbix-web-nginx-pgsql",
-                "title": "zabbix/zabbix-web-nginx-pgsql - Docker Image",
+                "url": "https://hub.docker.com/r/amazon/aws-lambda-python",
+                "title": "amazon/aws-lambda-python - Docker Image",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "zabbix/zabbix-web-nginx-pgsql - Docker Image"
+              "title": "amazon/aws-lambda-python - Docker Image"
             }
           },
           {
-            "id": "851c0e1ac9bde114",
+            "id": "0ba09aac569d38a7",
             "type": "leaf",
             "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://docs.aws.amazon.com/lightsail/latest/userguide/understanding-firewall-and-port-mappings-in-amazon-lightsail.html",
-                "title": "Control instance traffic with firewalls in Lightsail - Amazon Lightsail",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "Control instance traffic with firewalls in Lightsail - Amazon Lightsail"
-            }
-          },
-          {
-            "id": "999c4a6a43e19d5a",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://www.red-gate.com/simple-talk/development/other-development/the-difference-between-libraries-and-frameworks/",
-                "title": "The difference between libraries and frameworks | Simple Talk",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "The difference between libraries and frameworks | Simple Talk"
+              "type": "custom-frames-cloudflare",
+              "state": {},
+              "icon": "lucide-monitor-cloud",
+              "title": "Cloudflare"
             }
           },
           {
@@ -132,30 +92,40 @@
             }
           },
           {
+            "id": "aeccd7df59bfb0d9",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://app.dokploy.com/dashboard/projects",
+                "title": "Dokploy",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Dokploy"
+            }
+          },
+          {
             "id": "230c08f8eb332448",
+            "type": "leaf",
+            "state": {
+              "type": "custom-frames-youtube",
+              "state": {},
+              "icon": "lucide-monitor-play",
+              "title": "Youtube"
+            }
+          },
+          {
+            "id": "fc477bffcbe41fb2",
             "type": "leaf",
             "state": {
               "type": "beautitab-react-view",
               "state": {},
               "title": "New tab"
             }
-          },
-          {
-            "id": "aeccd7df59bfb0d9",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://www.google.com/search?q=github+repo+key+shows+read+only+how+do+i+change+that&sca_esv=ff395dd47995098c&sxsrf=ANbL-n6dCiqGyq7_iSz3WZTBDYtLdoA-2g%3A1776221478740&source=hp&ei=Jv3eaYO-K6Sp5NoPxuzUgQc&iflsig=AFdpzrgAAAAAad8LNhOUi3VkwDn9DYdXUij3Z6cPTl4Y&ved=0ahUKEwiD6Z_S7O6TAxWkFFkFHUY2NXAQ4dUDCDc&uact=5&oq=github+repo+key+shows+read+only+how+do+i+change+that&gs_lp=Egdnd3Mtd2l6IjRnaXRodWIgcmVwbyBrZXkgc2hvd3MgcmVhZCBvbmx5IGhvdyBkbyBpIGNoYW5nZSB0aGF0MgUQIRigATIFECEYoAEyBRAhGKABMgUQIRigAUiynxJQ9x5YrZ0ScAx4AJABAZgBiQGgAdI2qgEEOTQuNLgBA8gBAPgBAZgCYqAC4jWoAgrCAg0QIxjwBRieBhjqAhgnwgIHECMY6gIYJ8ICBBAjGCfCAgsQABiABBiKBRiRAsICFxAuGIAEGIoFGI0GGLEDGMcBGK8BGI4FwgIREC4YgAQYsQMYgwEYxwEY0QPCAg4QLhiABBixAxjHARjRA8ICCxAuGIAEGLEDGIMBwgIKECMYyQIY8AUYJ8ICCxAuGIMBGLEDGIAEwgIIEAAYgAQYsQPCAg4QABiABBiKBRixAxiDAcICChAjGPAFGMkCGCfCAhYQLhiABBiKBRhDGLEDGIMBGMcBGNEDwgIREC4YgAQYsQMYxwEYrwEYjgXCAg4QLhiABBjHARivARiOBcICCBAuGIAEGLEDwgIOEAAYgAQYigUYkQIYsQPCAg0QABiABBiKBRhDGLEDwgIIEC4YsQMYgATCAgsQABiABBixAxiDAcICBRAAGIAEwgIHEAAYgAQYCsICBhAAGBYYHsICCxAAGIAEGIoFGIYDwgIIEAAYgAQYogTCAggQABgWGB4YCsICCBAAGIkFGKIEwgIFEAAY7wXCAgoQABiABBiKBRhDwgIQEAAYgAQYigUYQxixAxiDAcICERAAGIAEGIoFGJECGLEDGIMBwgIFECEYnwXCAgUQIRirApgDCuIDBRIBMSBA8QU-avvloZpgqZIHBDk0LjSgB97PBLIHBDg1LjS4B701wgcJNS42Ny4yMy4zyAeFAoAIAQ&sclient=gws-wiz",
-                "title": "github repo key shows read only how do i change that - Google Search",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "github repo key shows read only how do i change that - Google Search"
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -220,7 +190,7 @@
             }
           },
           {
-            "id": "77e6108e28539e73",
+            "id": "8f49e8268bd66415",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -421,11 +391,11 @@
               "type": "webviewer",
               "state": {
                 "url": "https://mail.google.com/mail/u/0/?ogbl#inbox",
-                "title": "Inbox (6,671) - butlerjl804@gmail.com - Gmail",
+                "title": "Inbox (6,674) - butlerjl804@gmail.com - Gmail",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "Inbox (6,671) - butlerjl804@gmail.com - Gmail"
+              "title": "Inbox (6,674) - butlerjl804@gmail.com - Gmail"
             }
           },
           {
@@ -453,6 +423,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-custom-frames:Open Docker Hub": false,
       "graph:Open graph view": false,
       "terminal:Open terminal": false,
       "obsidian-custom-frames:Open AWS": false,
@@ -463,7 +434,6 @@
       "obsidian-custom-frames:Open Truenas": false,
       "obsidian-custom-frames:Open Jellyfin": false,
       "obsidian-custom-frames:Open github": false,
-      "obsidian-custom-frames:Open Claude": false,
       "obsidian-custom-frames:Open Labex.io": false,
       "obsidian-custom-frames:Open Azure": false,
       "obsidian-custom-frames:Open Google Chrome": false,
@@ -487,10 +457,10 @@
   },
   "active": "9f814bc2837a50b2",
   "lastOpenFiles": [
+    "Kanban/Kanban Board.md",
     "AWS/AWS Lightsail.md~",
     "Git/git quickie.md~",
     "Git/git quickie.md",
-    "Kanban/Kanban Board.md",
     "Kanban/Taskings/Untitled.md",
     "HomeLab/Lab Setup.md",
     "Tailscale/Tailscale Index.md~",
@@ -510,7 +480,6 @@
     "PodmanDesktop/Podman Webpage.md",
     "PodmanDesktop/Podman Run Flags.md",
     "PodmanDesktop/Podman Guide Webpage.md",
-    "Docker/docker_guide.html",
     "Git/Testing.md",
     "PodmanDesktop/podman_run_flags.md",
     "Docker/docker_practice_guide.md",
