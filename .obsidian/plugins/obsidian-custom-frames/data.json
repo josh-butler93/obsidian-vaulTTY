@@ -275,6 +275,18 @@
       "forceIframe": false,
       "customCss": "",
       "customJs": ""
+    },
+    {
+      "url": "http://100.27.33.117:9090/",
+      "displayName": "Jenkins",
+      "icon": "blocks",
+      "hideOnMobile": true,
+      "addRibbonIcon": false,
+      "openInCenter": false,
+      "zoomLevel": 1,
+      "forceIframe": false,
+      "customCss": "",
+      "customJs": ""
     }
   ],
   "padding": 5

@@ -8,17 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "c0fdb03ccd4d613f",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
-            }
-          },
-          {
-            "id": "9f814bc2837a50b2",
+            "id": "5737045bac5ea966",
             "type": "leaf",
             "pinned": true,
             "state": {
@@ -58,55 +48,17 @@
             }
           },
           {
-            "id": "533a6551cc64df32",
+            "id": "c0fdb03ccd4d613f",
             "type": "leaf",
             "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://hub.docker.com/r/amazon/aws-lambda-python",
-                "title": "amazon/aws-lambda-python - Docker Image",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "amazon/aws-lambda-python - Docker Image"
-            }
-          },
-          {
-            "id": "0ba09aac569d38a7",
-            "type": "leaf",
-            "state": {
-              "type": "custom-frames-cloudflare",
+              "type": "graph",
               "state": {},
-              "icon": "lucide-monitor-cloud",
-              "title": "Cloudflare"
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           },
           {
-            "id": "722dce5d83754b36",
-            "type": "leaf",
-            "state": {
-              "type": "custom-frames-github",
-              "state": {},
-              "icon": "lucide-folder-git-2",
-              "title": "github"
-            }
-          },
-          {
-            "id": "aeccd7df59bfb0d9",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://app.dokploy.com/dashboard/projects",
-                "title": "Dokploy",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "Dokploy"
-            }
-          },
-          {
-            "id": "230c08f8eb332448",
+            "id": "8efc94048e89a6ee",
             "type": "leaf",
             "state": {
               "type": "custom-frames-youtube",
@@ -116,7 +68,27 @@
             }
           },
           {
-            "id": "fc477bffcbe41fb2",
+            "id": "f6aedad018dcb54a",
+            "type": "leaf",
+            "state": {
+              "type": "custom-frames-aws",
+              "state": {},
+              "icon": "lucide-cloud-check",
+              "title": "AWS"
+            }
+          },
+          {
+            "id": "7de327b7bcc37db9",
+            "type": "leaf",
+            "state": {
+              "type": "custom-frames-cloudflare",
+              "state": {},
+              "icon": "lucide-monitor-cloud",
+              "title": "Cloudflare"
+            }
+          },
+          {
+            "id": "cba7f45725a5cdc1",
             "type": "leaf",
             "state": {
               "type": "beautitab-react-view",
@@ -125,21 +97,29 @@
             }
           },
           {
-            "id": "f6f1bdefde24e6bb",
+            "id": "6adf30bc035bad6c",
             "type": "leaf",
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://www.google.com/search?q=error+code+502&sca_esv=d82d863c77b9e74c&sxsrf=ANbL-n6RrDhdgYVBacLUaJZVtGP-kIUzyA%3A1776475240931&source=hp&ei=aNziafnWNu-r5NoPtq-9-AY&iflsig=AFdpzrgAAAAAaeLqeNtmqic1qQYMy7gQbYxo_rP3PMVz&ved=0ahUKEwj5qr79nfaTAxXvFVkFHbZXD28Q4dUDCCc&uact=5&oq=error+code+502&gs_lp=Egdnd3Mtd2l6GgIYAiIOZXJyb3IgY29kZSA1MDIyCBAAGIAEGLEDMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAESOMpUKgHWOEmcAF4AJABAJgBWqAByQaqAQIxNLgBA8gBAPgBAZgCD6AClweoAgrCAg0QIxjqAhgnGIsDGPgFwgIHECMY6gIYJ8ICChAjGOoCGCcYiwPCAg0QIxjwBRieBhjqAhgnwgIEECMYJ8ICChAjGJ4GGPAFGCfCAhEQLhiABBixAxiDARjHARjRA8ICDhAuGIAEGIoFGLEDGIMBwgIOEC4YgAQYsQMYxwEY0QPCAgsQABiABBixAxiDAcICChAjGPAFGMkCGCfCAgsQLhiABBixAxiDAcICCBAuGIAEGLEDwgIIEC4YsQMYgATCAg4QABiABBiKBRixAxiDAZgDEPEFt2LbqredKJ2SBwIxNaAH-m2yBwIxNLgHhgfCBwgwLjEwLjQuMcgHN4AIAQ&sclient=gws-wiz",
-                "title": "error code 502 - Google Search",
+                "url": "https://sso.redhat.com/auth/realms/redhat-external/login-actions/required-action?execution=rh-update-profile&client_id=cloud-services&tab_id=o-uG4bkRslc&client_data=eyJydSI6Imh0dHBzOi8vY29uc29sZS5yZWRoYXQuY29tL29wZW5zaGlmdC9jcmVhdGUvbG9jYWwiLCJydCI6ImNvZGUiLCJybSI6ImZyYWdtZW50Iiwic3QiOiI5NzgzYWJiNzJiZDc0YzA3ODc2YTZhMDBiMmI2NmQ2YiJ9",
+                "title": "We need a little more information | Red Hat IDP",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "error code 502 - Google Search"
+              "title": "We need a little more information | Red Hat IDP"
+            }
+          },
+          {
+            "id": "f6dfeeca237b495e",
+            "type": "leaf",
+            "state": {
+              "type": "beautitab-react-view",
+              "state": {},
+              "title": "New tab"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -194,17 +174,7 @@
             }
           },
           {
-            "id": "6a9d3e47a8084138",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
-            }
-          },
-          {
-            "id": "8f49e8268bd66415",
+            "id": "54022edfc70b519d",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -214,7 +184,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       },
       {
         "id": "6383ed4e90b91296",
@@ -235,7 +205,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 246.50260543823242,
+    "width": 233.50043487548828,
     "collapsed": true
   },
   "right": {
@@ -299,136 +269,16 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Config Files/Monitor Config file setup.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Monitor Config file setup"
-            }
-          },
-          {
-            "id": "c5ed727fce9b9d26",
-            "type": "leaf",
-            "state": {
-              "type": "custom-frames-jarvis",
-              "state": {},
-              "icon": "lucide-brain",
-              "title": "Jarvis"
-            }
-          },
-          {
-            "id": "7347904d59cbc5b6",
-            "type": "leaf",
-            "state": {
-              "type": "custom-frames-aws",
-              "state": {},
-              "icon": "lucide-cloud-check",
-              "title": "AWS"
-            }
-          },
-          {
-            "id": "f341baacf784fa9f",
-            "type": "leaf",
-            "state": {
-              "type": "custom-frames-cloudflare",
-              "state": {},
-              "icon": "lucide-monitor-cloud",
-              "title": "Cloudflare"
-            }
-          },
-          {
-            "id": "843ba780267f6aeb",
-            "type": "leaf",
-            "state": {
-              "type": "custom-frames-zapier",
-              "state": {},
-              "icon": "lucide-bot-message-square",
-              "title": "Zapier"
-            }
-          },
-          {
-            "id": "9321619e0f56284c",
-            "type": "leaf",
-            "state": {
-              "type": "custom-frames-pihole",
-              "state": {},
-              "icon": "lucide-anchor",
-              "title": "Pihole"
-            }
-          },
-          {
-            "id": "848ed51c36aff9cb",
-            "type": "leaf",
-            "state": {
-              "type": "custom-frames-tailscale",
-              "state": {},
-              "icon": "lucide-key",
-              "title": "Tailscale"
-            }
-          },
-          {
-            "id": "d0de3439139c5d3a",
-            "type": "leaf",
-            "state": {
-              "type": "custom-frames-truenas",
-              "state": {},
-              "icon": "lucide-file-box",
-              "title": "Truenas"
-            }
-          },
-          {
-            "id": "12e5e54c777c4da0",
-            "type": "leaf",
-            "state": {
-              "type": "custom-frames-jellyfin",
-              "state": {},
-              "icon": "lucide-picture-in-picture",
-              "title": "Jellyfin"
-            }
-          },
-          {
-            "id": "7f0c08e2abcbc6ec",
-            "type": "leaf",
-            "state": {
-              "type": "custom-frames-github",
-              "state": {},
-              "icon": "lucide-folder-git-2",
-              "title": "github"
-            }
-          },
-          {
-            "id": "6566096a1280a13a",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://mail.google.com/mail/u/0/?ogbl#inbox",
-                "title": "Inbox (6,674) - butlerjl804@gmail.com - Gmail",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "Inbox (6,674) - butlerjl804@gmail.com - Gmail"
-            }
-          },
-          {
-            "id": "4e8daaa0e62bbab0",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-tags",
-              "title": "Tags"
+              "title": "Outline"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -466,14 +316,17 @@
       "omnisearch:Omnisearch": false,
       "switcher:Open quick switcher": false,
       "iconic:Open rulebook": false,
-      "workspaces:Manage workspace layouts": false
+      "workspaces:Manage workspace layouts": false,
+      "command-palette:Open command palette": false
     }
   },
-  "active": "9f814bc2837a50b2",
+  "active": "5737045bac5ea966",
   "lastOpenFiles": [
+    "ollama/ollama setup.md",
+    "ollama",
+    "Kanban/Kanban Board.md",
     "AWS/ssh commands.md",
     "AWS/ssh_keys.md",
-    "Kanban/Kanban Board.md",
     "AWS/AWS Lightsail.md~",
     "Git/git quickie.md~",
     "Git/git quickie.md",
@@ -489,7 +342,6 @@
     "Dev/Dev Server Setup.md~",
     "Pihole/Pihole Container Setup.md",
     "Pihole/Pihole Index.md",
-    "Pihole",
     "Commands/APT File Corruption Commands.md",
     "Docker/Docker Practice Guide.md",
     "Docker/Docker Webpage.md",
@@ -506,7 +358,6 @@
     "PodmanDesktop/Container Export.md",
     "AWS/AWS Lightsail.md",
     "Testing.md",
-    "AWS/AWS User Creation.md",
     "Images/wallhaven-4g823l.jpg",
     "Images/wallhaven-gj15r7.png",
     "Images/wallhaven-x15w2d.jpg"

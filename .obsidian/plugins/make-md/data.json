@@ -40,7 +40,8 @@
   "expandedSpaces": [
     "//Tags",
     "/",
-    "//Kanban/Kanban/Taskings"
+    "//Kanban/Kanban/Taskings",
+    "//Kanban"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",

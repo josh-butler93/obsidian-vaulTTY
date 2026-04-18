@@ -14,6 +14,9 @@ kanban-plugin: list
 
 ## To Do
 
+- [ ] Opencode Linux Commands
+- [ ] Opencode Docker Commands
+- [ ] Opencode Podman Commands
 
 
 ## In Progress
