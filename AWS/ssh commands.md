@@ -1,0 +1,13 @@
+- Command:
+  - ssh-keygen -t ed25519
+    - click through the prompts and setup as needed
+  - keys location:
+    - ~/.ssh/id_ed25519.pub
+      - this is your public key 
+      - order:
+        - Server A -> the server you will be using to remote into another machine
+        - Server B the server you will be remoting into
+        - Run the above command on server A 
+          - Copy your public key to server B 
+- Command:
+  - ssh-copy-id username@server_b_ip

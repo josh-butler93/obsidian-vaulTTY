@@ -123,6 +123,20 @@
               "state": {},
               "title": "New tab"
             }
+          },
+          {
+            "id": "f6f1bdefde24e6bb",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://www.google.com/search?q=error+code+502&sca_esv=d82d863c77b9e74c&sxsrf=ANbL-n6RrDhdgYVBacLUaJZVtGP-kIUzyA%3A1776475240931&source=hp&ei=aNziafnWNu-r5NoPtq-9-AY&iflsig=AFdpzrgAAAAAaeLqeNtmqic1qQYMy7gQbYxo_rP3PMVz&ved=0ahUKEwj5qr79nfaTAxXvFVkFHbZXD28Q4dUDCCc&uact=5&oq=error+code+502&gs_lp=Egdnd3Mtd2l6GgIYAiIOZXJyb3IgY29kZSA1MDIyCBAAGIAEGLEDMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAESOMpUKgHWOEmcAF4AJABAJgBWqAByQaqAQIxNLgBA8gBAPgBAZgCD6AClweoAgrCAg0QIxjqAhgnGIsDGPgFwgIHECMY6gIYJ8ICChAjGOoCGCcYiwPCAg0QIxjwBRieBhjqAhgnwgIEECMYJ8ICChAjGJ4GGPAFGCfCAhEQLhiABBixAxiDARjHARjRA8ICDhAuGIAEGIoFGLEDGIMBwgIOEC4YgAQYsQMYxwEY0QPCAgsQABiABBixAxiDAcICChAjGPAFGMkCGCfCAgsQLhiABBixAxiDAcICCBAuGIAEGLEDwgIIEC4YsQMYgATCAg4QABiABBiKBRixAxiDAZgDEPEFt2LbqredKJ2SBwIxNaAH-m2yBwIxNLgHhgfCBwgwLjEwLjQuMcgHN4AIAQ&sclient=gws-wiz",
+                "title": "error code 502 - Google Search",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "error code 502 - Google Search"
+            }
           }
         ],
         "currentTab": 1
@@ -457,6 +471,8 @@
   },
   "active": "9f814bc2837a50b2",
   "lastOpenFiles": [
+    "AWS/ssh commands.md",
+    "AWS/ssh_keys.md",
     "Kanban/Kanban Board.md",
     "AWS/AWS Lightsail.md~",
     "Git/git quickie.md~",
@@ -491,7 +507,6 @@
     "AWS/AWS Lightsail.md",
     "Testing.md",
     "AWS/AWS User Creation.md",
-    "AWS/AWS Cli Setup.md",
     "Images/wallhaven-4g823l.jpg",
     "Images/wallhaven-gj15r7.png",
     "Images/wallhaven-x15w2d.jpg"
