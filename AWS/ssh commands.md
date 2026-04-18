@@ -11,3 +11,7 @@
           - Copy your public key to server B 
 - Command:
   - ssh-copy-id username@server_b_ip
+
+- Command:
+  - Ssh'ing from lightsail to homelab pc 
+    - *ssh -i path/to/key/ username@homelab-ip:
