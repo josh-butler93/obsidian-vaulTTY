@@ -88,35 +88,17 @@
             }
           },
           {
-            "id": "cba7f45725a5cdc1",
-            "type": "leaf",
-            "state": {
-              "type": "beautitab-react-view",
-              "state": {},
-              "title": "New tab"
-            }
-          },
-          {
-            "id": "6adf30bc035bad6c",
+            "id": "637ba8321a4a1643",
             "type": "leaf",
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://sso.redhat.com/auth/realms/redhat-external/login-actions/required-action?execution=rh-update-profile&client_id=cloud-services&tab_id=o-uG4bkRslc&client_data=eyJydSI6Imh0dHBzOi8vY29uc29sZS5yZWRoYXQuY29tL29wZW5zaGlmdC9jcmVhdGUvbG9jYWwiLCJydCI6ImNvZGUiLCJybSI6ImZyYWdtZW50Iiwic3QiOiI5NzgzYWJiNzJiZDc0YzA3ODc2YTZhMDBiMmI2NmQ2YiJ9",
-                "title": "We need a little more information | Red Hat IDP",
+                "url": "https://www.google.com/search?q=16+gigs+to+mb&sca_esv=562b59745d56cfa4&biw=1398&bih=704&sxsrf=ANbL-n4KeV3nzU4lEtyelpeqsgPCmVwjsg%3A1776562288484&ei=cDDkacedHYKkiLMPq7W60As&oq=16+gigs+&gs_lp=Egxnd3Mtd2l6LXNlcnAiCDE2IGdpZ3MgKgIIADILEAAYgAQYigUYkQIyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgARIxC5QyAlYqR1wA3gBkAEAmAHKAaABxwiqAQUwLjcuMbgBA8gBAPgBAZgCC6AC4wrCAgoQABhHGNYEGLADwgIEECMYJ8ICGhAuGIAEGIoFGI0GGLEDGIMBGMcBGK8BGI4FwgIXEC4YgAQYigUYjQYYsQMYxwEYrwEYjgXCAggQABiABBixA8ICDhAAGIAEGIoFGLEDGIMBwgIKEAAYgAQYigUYQ8ICEBAAGIAEGIoFGEMYsQMYgwHCAg4QLhiABBjHARivARiOBcICDRAAGIAEGIoFGEMYsQPCAhAQLhiABBiKBRhDGLEDGOUEmAMAiAYBkAYIkgcFMy43LjGgB-s0sgcFMC43LjG4B50KwgcFMy01LjbIB-YBgAgB&sclient=gws-wiz-serp",
+                "title": "16 gigs to mb - Google Search",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "We need a little more information | Red Hat IDP"
-            }
-          },
-          {
-            "id": "f6dfeeca237b495e",
-            "type": "leaf",
-            "state": {
-              "type": "beautitab-react-view",
-              "state": {},
-              "title": "New tab"
+              "title": "16 gigs to mb - Google Search"
             }
           }
         ]
@@ -322,6 +304,10 @@
   },
   "active": "5737045bac5ea966",
   "lastOpenFiles": [
+    "ollama/ollama cloudfare tunnel.md",
+    "ollama/ollama setup.md~",
+    "ollama/ollama models.md~",
+    "ollama/ollama models.md",
     "ollama/ollama setup.md",
     "ollama",
     "Kanban/Kanban Board.md",
@@ -338,8 +324,6 @@
     "Tailscale",
     "Commands/tial",
     "Commands/Tailscale/fuckyou",
-    "Commands/Tailscale",
-    "Dev/Dev Server Setup.md~",
     "Pihole/Pihole Container Setup.md",
     "Pihole/Pihole Index.md",
     "Commands/APT File Corruption Commands.md",
@@ -356,8 +340,6 @@
     "Docker/Docker Commands.md",
     "Docker/Docker Index.md",
     "PodmanDesktop/Container Export.md",
-    "AWS/AWS Lightsail.md",
-    "Testing.md",
     "Images/wallhaven-4g823l.jpg",
     "Images/wallhaven-gj15r7.png",
     "Images/wallhaven-x15w2d.jpg"
