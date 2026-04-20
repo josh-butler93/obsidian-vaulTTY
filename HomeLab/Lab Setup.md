@@ -35,3 +35,6 @@ dockerchatbot
 
 nginx
 - 10.0.0.144
+
+ollama
+- 10.0.0.158

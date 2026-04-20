@@ -83,6 +83,12 @@
       "ctime": 1776142268721,
       "url": "http://10.0.0.235:30037/?orgId=1&from=now-6h&to=now&timezone=browser",
       "title": "TrueNas Grafana"
+    },
+    {
+      "type": "url",
+      "ctime": 1776645274203,
+      "url": "https://crontab.guru/dashboard.html",
+      "title": "Crontab Guru Dashboard"
     }
   ]
 }

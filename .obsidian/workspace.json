@@ -58,27 +58,35 @@
             }
           },
           {
-            "id": "8efc94048e89a6ee",
+            "id": "91fd8c9433c176bf",
             "type": "leaf",
             "state": {
-              "type": "custom-frames-youtube",
-              "state": {},
-              "icon": "lucide-monitor-play",
-              "title": "Youtube"
+              "type": "webviewer",
+              "state": {
+                "url": "https://learn.kodekloud.com/user/courses/crash-course-kubernetes-for-absolute-beginners",
+                "title": "Crash Course: Kubernetes For Absolute Beginners | KodeKloud",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Crash Course: Kubernetes For Absolute Beginners | KodeKloud"
             }
           },
           {
-            "id": "f6aedad018dcb54a",
+            "id": "eeefb71ed5a10a41",
             "type": "leaf",
             "state": {
-              "type": "custom-frames-aws",
-              "state": {},
-              "icon": "lucide-cloud-check",
-              "title": "AWS"
+              "type": "webviewer",
+              "state": {
+                "url": "https://www.cineby.sc/movie/533533?play=true",
+                "title": "TRON: Ares",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "TRON: Ares"
             }
           },
           {
-            "id": "7de327b7bcc37db9",
+            "id": "b888ad1b26752f4f",
             "type": "leaf",
             "state": {
               "type": "custom-frames-cloudflare",
@@ -88,17 +96,26 @@
             }
           },
           {
-            "id": "637ba8321a4a1643",
+            "id": "913d9e9e3143e712",
+            "type": "leaf",
+            "state": {
+              "type": "beautitab-react-view",
+              "state": {},
+              "title": "New tab"
+            }
+          },
+          {
+            "id": "e198a33cbfa93317",
             "type": "leaf",
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://www.google.com/search?q=16+gigs+to+mb&sca_esv=562b59745d56cfa4&biw=1398&bih=704&sxsrf=ANbL-n4KeV3nzU4lEtyelpeqsgPCmVwjsg%3A1776562288484&ei=cDDkacedHYKkiLMPq7W60As&oq=16+gigs+&gs_lp=Egxnd3Mtd2l6LXNlcnAiCDE2IGdpZ3MgKgIIADILEAAYgAQYigUYkQIyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgARIxC5QyAlYqR1wA3gBkAEAmAHKAaABxwiqAQUwLjcuMbgBA8gBAPgBAZgCC6AC4wrCAgoQABhHGNYEGLADwgIEECMYJ8ICGhAuGIAEGIoFGI0GGLEDGIMBGMcBGK8BGI4FwgIXEC4YgAQYigUYjQYYsQMYxwEYrwEYjgXCAggQABiABBixA8ICDhAAGIAEGIoFGLEDGIMBwgIKEAAYgAQYigUYQ8ICEBAAGIAEGIoFGEMYsQMYgwHCAg4QLhiABBjHARivARiOBcICDRAAGIAEGIoFGEMYsQPCAhAQLhiABBiKBRhDGLEDGOUEmAMAiAYBkAYIkgcFMy43LjGgB-s0sgcFMC43LjG4B50KwgcFMy01LjbIB-YBgAgB&sclient=gws-wiz-serp",
-                "title": "16 gigs to mb - Google Search",
+                "url": "https://learn.omacom.io/2/the-omarchy-manual/101/system-snapshots",
+                "title": "System snapshots · The Omarchy Manual · DHH",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "16 gigs to mb - Google Search"
+              "title": "System snapshots · The Omarchy Manual · DHH"
             }
           }
         ]
@@ -156,7 +173,7 @@
             }
           },
           {
-            "id": "54022edfc70b519d",
+            "id": "23070d10d30d1996",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -258,6 +275,21 @@
               "icon": "lucide-list",
               "title": "Outline"
             }
+          },
+          {
+            "id": "4085b93a78db54a5",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
           }
         ],
         "currentTab": 3
@@ -304,6 +336,13 @@
   },
   "active": "5737045bac5ea966",
   "lastOpenFiles": [
+    "Omarchy/SnapShots Link.md",
+    "cron job setup.md",
+    "Cron Job Index.md",
+    "Cron_Jobs",
+    "Docker/Docker Compose Install.md",
+    "Gitlab",
+    "ollama/ollama cloudfare tunnel.md~",
     "ollama/ollama cloudfare tunnel.md",
     "ollama/ollama setup.md~",
     "ollama/ollama models.md~",
@@ -321,9 +360,6 @@
     "Tailscale/Tailscale Index.md~",
     "Tailscale/Tailscale Index.md",
     "Linux Guru.md~",
-    "Tailscale",
-    "Commands/tial",
-    "Commands/Tailscale/fuckyou",
     "Pihole/Pihole Container Setup.md",
     "Pihole/Pihole Index.md",
     "Commands/APT File Corruption Commands.md",
@@ -336,10 +372,6 @@
     "PodmanDesktop/podman_run_flags.md",
     "Docker/docker_practice_guide.md",
     "podman_run_flags.md",
-    "docker_practice_guide.md",
-    "Docker/Docker Commands.md",
-    "Docker/Docker Index.md",
-    "PodmanDesktop/Container Export.md",
     "Images/wallhaven-4g823l.jpg",
     "Images/wallhaven-gj15r7.png",
     "Images/wallhaven-x15w2d.jpg"
