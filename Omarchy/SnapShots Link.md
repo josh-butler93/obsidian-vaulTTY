@@ -1,0 +1,4 @@
+- Command:
+  - Link on snapshots in omarchy is posted below
+    - Link:
+      - https://learn.omacom.io/2/the-omarchy-manual/101/system-snapshots
