@@ -14,9 +14,13 @@ services:
     networks:
       - tugtainer_net
     restart: unless-stopped
+    ports:
+      - 2375:2375
+    tmpfs:
+      - /run
 
   app:
-    image: ghrc.io/quenary/tugtainer:1
+    image: ghcr.io/quenary/tugtainer:1
     container_name: tugtainer
     volumes:
       - tugtainer_data:/tugtainer
@@ -35,4 +39,4 @@ networks:
     driver: bridge
 
 volumes:
-  tugtainer_data
+  tugtainer_data:
