@@ -8,9 +8,42 @@
         "type": "tabs",
         "children": [
           {
+            "id": "c0fdb03ccd4d613f",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          },
+          {
+            "id": "dbcf8a86f3b4f6ff",
+            "type": "leaf",
+            "state": {
+              "type": "kanban",
+              "state": {
+                "file": "Kanban/Kanban Board.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "list",
+                  "list-collapse": [
+                    true,
+                    false,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true
+                  ]
+                }
+              },
+              "icon": "lucide-trello",
+              "title": "Kanban Board"
+            }
+          },
+          {
             "id": "5737045bac5ea966",
             "type": "leaf",
-            "pinned": true,
             "state": {
               "type": "terminal:terminal",
               "state": {
@@ -42,19 +75,18 @@
                   "serial": null
                 }
               },
-              "pinned": true,
               "icon": "terminal",
               "title": "Terminal: sh"
             }
           },
           {
-            "id": "c0fdb03ccd4d613f",
+            "id": "e80389b8435465a7",
             "type": "leaf",
             "state": {
-              "type": "graph",
+              "type": "custom-frames-labex.io",
               "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "icon": "lucide-pickaxe",
+              "title": "Labex.io"
             }
           },
           {
@@ -63,26 +95,26 @@
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://learn.kodekloud.com/user/courses/crash-course-kubernetes-for-absolute-beginners",
-                "title": "Crash Course: Kubernetes For Absolute Beginners | KodeKloud",
+                "url": "https://learn.kodekloud.com/user/courses/linux-professional-institute-lpic-1-exam-101",
+                "title": "Linux Professional Institute LPIC-1 Exam 101 | KodeKloud",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "Crash Course: Kubernetes For Absolute Beginners | KodeKloud"
+              "title": "Linux Professional Institute LPIC-1 Exam 101 | KodeKloud"
             }
           },
           {
-            "id": "eeefb71ed5a10a41",
+            "id": "e4d8416b0aad506a",
             "type": "leaf",
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://www.cineby.sc/movie/533533?play=true",
-                "title": "TRON: Ares",
+                "url": "https://learn.kodekloud.com/user/pricing?utm_sourcekk=kodekloud&utm_mediumkk=hubspot&utm_campaignkk=hubspot%2Bcta&utm_termkk=accelerate_in_april&hsCtaAttrib=211415288121",
+                "title": "Pricing | KodeKloud",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "TRON: Ares"
+              "title": "Pricing | KodeKloud"
             }
           },
           {
@@ -96,7 +128,41 @@
             }
           },
           {
-            "id": "913d9e9e3143e712",
+            "id": "6232bb081f718d3d",
+            "type": "leaf",
+            "state": {
+              "type": "custom-frames-aws",
+              "state": {},
+              "icon": "lucide-cloud-check",
+              "title": "AWS"
+            }
+          },
+          {
+            "id": "60e04e20e5668778",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://us-east-1.lightsail.aws.amazon.com/ls/webapp/us-east-1/instances/AlmaLinux/metrics/NetworkIn?timeRange=1h",
+                "title": "Lightsail | us-east-1",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Lightsail | us-east-1"
+            }
+          },
+          {
+            "id": "83f15cde8ac727be",
+            "type": "leaf",
+            "state": {
+              "type": "custom-frames-youtube",
+              "state": {},
+              "icon": "lucide-monitor-play",
+              "title": "Youtube"
+            }
+          },
+          {
+            "id": "5f4863951b6e9e2a",
             "type": "leaf",
             "state": {
               "type": "beautitab-react-view",
@@ -105,20 +171,21 @@
             }
           },
           {
-            "id": "e198a33cbfa93317",
+            "id": "5238bc396e60ea96",
             "type": "leaf",
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://learn.omacom.io/2/the-omarchy-manual/101/system-snapshots",
-                "title": "System snapshots · The Omarchy Manual · DHH",
+                "url": "https://www.google.com/search?q=what+fire+wall+does+oracle+linux+use&sca_esv=903386efdd046f5a&biw=1398&bih=704&sxsrf=ANbL-n7bCGinoSY0w1L_EEBMVjoBm2GXGA%3A1777139715094&ei=AwDtadOxBfHV5NoPsciegAM&ved=0ahUKEwiTv7yryYmUAxXxKlkFHTGkBzAQ4dUDCBE&uact=5&oq=what+fire+wall+does+oracle+linux+use&gs_lp=Egxnd3Mtd2l6LXNlcnAiJHdoYXQgZmlyZSB3YWxsIGRvZXMgb3JhY2xlIGxpbnV4IHVzZTIHECEYChigAUiAPVDcC1jkO3ADeAGQAQGYAfkCoAHnKaoBCDMuMjguMi4yuAEDyAEA-AEBmAIloAKWLsICChAAGEcY1gQYsAPCAg4QABjkAhjWBBiwA9gBAcICFxAuGNwGGLgGGNoGGNgCGMgDGLAD2AEBwgILEAAYgAQYigUYkQLCAgoQABiABBiKBRhDwgIKEC4YgAQYigUYQ8ICEBAAGIAEGIoFGEMYsQMYgwHCAgsQLhiABBixAxiDAcICERAuGIAEGLEDGIMBGMcBGNEDwgIOEC4YgAQYigUYsQMYgwHCAgQQIxgnwgIKECMYngYY8AUYJ8ICChAjGPAFGJ4GGCfCAgUQABiABMICCBAAGIAEGLEDwgIIEAAYFhgeGArCAgYQABgWGB7CAgcQABiABBgNwgIGEAAYHhgNwgIIEAAYCBgeGA3CAgsQABiABBiKBRiGA8ICBRAAGO8FwgIFECEYnwXCAgUQIRirApgDAIgGAZAGDboGBggBEAEYCZIHCDMuMjkuNC4xoAeqnAKyBwgwLjI5LjQuMbgHny3CBwsyLTEuMTcuMTguMcgH2wWACAE&sclient=gws-wiz-serp",
+                "title": "what fire wall does oracle linux use - Google Search",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "System snapshots · The Omarchy Manual · DHH"
+              "title": "what fire wall does oracle linux use - Google Search"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -173,7 +240,7 @@
             }
           },
           {
-            "id": "23070d10d30d1996",
+            "id": "5c68b823237bd3e1",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -182,8 +249,7 @@
               "title": "Navigator"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       },
       {
         "id": "6383ed4e90b91296",
@@ -212,8 +278,30 @@
     "type": "split",
     "children": [
       {
+        "id": "f511bb96da74c682",
+        "type": "tabs",
+        "dimension": 56.76020408163265,
+        "children": [
+          {
+            "id": "1f2c7e62179f40fc",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://www.youtube.com/watch?v=UL1RF8tHOfM",
+                "title": "What Went Wrong with THE HUNGER GAMES | Ballad of Songbirds and Snakes Explained - YouTube",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "What Went Wrong with THE HUNGER GAMES | Ballad of Songbirds and Snakes Explained - YouTube"
+            }
+          }
+        ]
+      },
+      {
         "id": "a0e8424219f139a8",
         "type": "tabs",
+        "dimension": 43.23979591836735,
         "children": [
           {
             "id": "1dc73f8ac5d098f1",
@@ -268,12 +356,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Kanban/Kanban Board.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Kanban Board"
             }
           },
           {
@@ -290,17 +379,32 @@
               "icon": "lucide-tags",
               "title": "Tags"
             }
+          },
+          {
+            "id": "8a35702465200cf8",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://www.udemy.com/courses/search/?src=ukw&q=linux+plus+practice+exam",
+                "title": "Search results | Udemy",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Search results | Udemy"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 900.5,
+    "width": 725.5,
     "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-custom-frames:Open Sprites": false,
       "obsidian-custom-frames:Open Docker Hub": false,
       "graph:Open graph view": false,
       "terminal:Open terminal": false,
@@ -331,11 +435,33 @@
       "switcher:Open quick switcher": false,
       "iconic:Open rulebook": false,
       "workspaces:Manage workspace layouts": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "soundscapes:Soundscapes: My Music": false
     }
   },
   "active": "5737045bac5ea966",
   "lastOpenFiles": [
+    "docker-compose/tugtainer.yml",
+    "docker-compose/tugtainer-compose.md",
+    "docker-compose/Docker Compose Index.md",
+    "docker-compose",
+    "Kanban/Kanban Board.md",
+    "Portainer/Portainer Agent Install.md",
+    "Portainer/Portainer Install.md~",
+    "Portainer/docker-compose.yml",
+    "Portainer/Portainer Install.md",
+    "Portainer/Portainer Index.md",
+    "Portainer",
+    "Docker/Docker Oracle Install.md",
+    "Build out K8 Cluster.md",
+    "Build out DockerSwarm Cluster.md",
+    "Build out Portainer Server.md",
+    "Build out mib to gib converter.md",
+    "CCNA.md",
+    "Comptia Server+.md",
+    "AWS Solutions Architect Associate.md",
+    "Lpic-1v2.md",
+    "Lpic-1v1.md",
     "Omarchy/SnapShots Link.md",
     "cron job setup.md",
     "Cron Job Index.md",
@@ -349,29 +475,8 @@
     "ollama/ollama models.md",
     "ollama/ollama setup.md",
     "ollama",
-    "Kanban/Kanban Board.md",
     "AWS/ssh commands.md",
     "AWS/ssh_keys.md",
-    "AWS/AWS Lightsail.md~",
-    "Git/git quickie.md~",
-    "Git/git quickie.md",
-    "Kanban/Taskings/Untitled.md",
-    "HomeLab/Lab Setup.md",
-    "Tailscale/Tailscale Index.md~",
-    "Tailscale/Tailscale Index.md",
-    "Linux Guru.md~",
-    "Pihole/Pihole Container Setup.md",
-    "Pihole/Pihole Index.md",
-    "Commands/APT File Corruption Commands.md",
-    "Docker/Docker Practice Guide.md",
-    "Docker/Docker Webpage.md",
-    "PodmanDesktop/Podman Webpage.md",
-    "PodmanDesktop/Podman Run Flags.md",
-    "PodmanDesktop/Podman Guide Webpage.md",
-    "Git/Testing.md",
-    "PodmanDesktop/podman_run_flags.md",
-    "Docker/docker_practice_guide.md",
-    "podman_run_flags.md",
     "Images/wallhaven-4g823l.jpg",
     "Images/wallhaven-gj15r7.png",
     "Images/wallhaven-x15w2d.jpg"

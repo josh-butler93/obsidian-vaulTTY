@@ -12,6 +12,7 @@
 [[Omarchy Index]]
 [[Pihole Index]]
 [[PodmanDesktop Index]] 
+[[Portainer Index]]
 [[SSH Index]]
 [[Tailscale Index]]
 [[Tmux Index]]

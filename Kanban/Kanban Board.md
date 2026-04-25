@@ -4,12 +4,22 @@ kanban-plugin: list
 
 ---
 
+## Certifications
+
+- [ ] [[Lpic-1v1]]
+- [ ] [[Lpic-1v2]]
+- [ ] [[AWS Solutions Architect Associate]]
+- [ ] [[Comptia Server+]]
+- [ ] [[CCNA]]
+
+
 ## Lab Setup
 
-- [ ] [[Build out graylog Server]]
-- [ ] [[Build out home Assistant Pod]]
 - [ ] [[Build out PiHole on mini PC 1]]
-- [ ] Git Commit Cron Job
+- [ ] [[Build out mib to gib converter]]
+- [ ] [[Build out Portainer Server]]
+- [ ] [[Build out DockerSwarm Cluster]]
+- [ ] [[Build out K8 Cluster]]
 
 
 ## To Do
@@ -25,16 +35,22 @@ kanban-plugin: list
 
 ## Done
 
+- [ ] [[Build out home Assistant Pod]]
 
 
 ## Moonshot
 
 
 
+## Backlog
+
+- [ ] [[Build out graylog Server]]
+
+
 
 
 %% kanban:settings
 ```
-{"kanban-plugin":"list","list-collapse":[false,false,false,false,false],"show-checkboxes":true,"full-list-lane-width":true}
+{"kanban-plugin":"list","list-collapse":[true,false,true,true,true,true,true],"show-checkboxes":true,"full-list-lane-width":true}
 ```
 %%

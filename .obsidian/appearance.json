@@ -1,8 +1,8 @@
 {
-  "cssTheme": "Minimal",
+  "cssTheme": "Vanilla AMOLED",
   "accentColor": "#394865",
-  "showRibbon": true,
-  "showViewHeader": true,
+  "showRibbon": false,
+  "showViewHeader": false,
   "monospaceFontFamily": "Z003",
   "theme": "obsidian"
 }

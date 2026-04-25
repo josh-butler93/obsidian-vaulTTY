@@ -5,5 +5,7 @@
   "showUnsupportedFiles": true,
   "showInlineTitle": true,
   "focusNewTab": true,
-  "uriCallbacks": false
+  "uriCallbacks": false,
+  "foldHeading": true,
+  "foldIndent": true
 }
