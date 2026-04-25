@@ -10,4 +10,4 @@ services:
       - dockhand_data:/app/data 
 
 volumes:
-  dockhand_data
+  dockhand_data:
