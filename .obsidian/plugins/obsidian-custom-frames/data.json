@@ -61,42 +61,6 @@
       "customJs": ""
     },
     {
-      "url": "http://10.0.0.235/ui/signin",
-      "displayName": "Truenas",
-      "icon": "file-box",
-      "hideOnMobile": true,
-      "addRibbonIcon": true,
-      "openInCenter": true,
-      "zoomLevel": 1,
-      "forceIframe": false,
-      "customCss": "",
-      "customJs": ""
-    },
-    {
-      "url": "https://account.hackthebox.com/login",
-      "displayName": "HTB",
-      "icon": "brick-wall-shield",
-      "hideOnMobile": true,
-      "addRibbonIcon": true,
-      "openInCenter": true,
-      "zoomLevel": 1,
-      "forceIframe": false,
-      "customCss": "",
-      "customJs": ""
-    },
-    {
-      "url": "https://overthewire.org/wargames/",
-      "displayName": "OvertheWire",
-      "icon": "shield-alert",
-      "hideOnMobile": true,
-      "addRibbonIcon": true,
-      "openInCenter": true,
-      "zoomLevel": 1,
-      "forceIframe": false,
-      "customCss": "",
-      "customJs": ""
-    },
-    {
       "url": "https://suno.com/",
       "displayName": "Suno",
       "icon": "mic-vocal",
@@ -145,30 +109,6 @@
       "customJs": ""
     },
     {
-      "url": "https://ww8.123moviesfree.net",
-      "displayName": "123Movies",
-      "icon": "closed-caption",
-      "hideOnMobile": true,
-      "addRibbonIcon": true,
-      "openInCenter": true,
-      "zoomLevel": 1,
-      "forceIframe": false,
-      "customCss": "",
-      "customJs": ""
-    },
-    {
-      "url": "https://www.cineby.sc/browse/movie",
-      "displayName": "Cineby",
-      "icon": "clapperboard",
-      "hideOnMobile": true,
-      "addRibbonIcon": true,
-      "openInCenter": true,
-      "zoomLevel": 1,
-      "forceIframe": false,
-      "customCss": "",
-      "customJs": ""
-    },
-    {
       "url": "https://www.tiktok.com/@fashixn_icxn",
       "displayName": "Tiktok",
       "icon": "ticket",
@@ -196,18 +136,6 @@
       "url": "https://labex.io/learn",
       "displayName": "Labex.io",
       "icon": "pickaxe",
-      "hideOnMobile": true,
-      "addRibbonIcon": true,
-      "openInCenter": true,
-      "zoomLevel": 1,
-      "forceIframe": false,
-      "customCss": "",
-      "customJs": ""
-    },
-    {
-      "url": "https://portal.azure.com/#home",
-      "displayName": "Azure",
-      "icon": "cloud",
       "hideOnMobile": true,
       "addRibbonIcon": true,
       "openInCenter": true,
@@ -259,18 +187,6 @@
       "hideOnMobile": true,
       "addRibbonIcon": true,
       "openInCenter": true,
-      "zoomLevel": 1,
-      "forceIframe": false,
-      "customCss": "",
-      "customJs": ""
-    },
-    {
-      "url": "https://app.dokploy.com/dashboard/deployments",
-      "displayName": "Dcokeploy",
-      "icon": "vault",
-      "hideOnMobile": true,
-      "addRibbonIcon": false,
-      "openInCenter": false,
       "zoomLevel": 1,
       "forceIframe": false,
       "customCss": "",

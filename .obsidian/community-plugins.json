@@ -2,7 +2,6 @@
   "calendar",
   "obsidian-kanban",
   "obsidian-icon-folder",
-  "obsidian-custom-frames",
   "iconic",
   "terminal",
   "omnisearch",
@@ -11,5 +10,6 @@
   "obsidian-git",
   "cmdr",
   "ninja-cursor",
+  "obsidian-custom-frames",
   "soundscapes"
 ]

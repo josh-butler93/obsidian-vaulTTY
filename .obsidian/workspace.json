@@ -80,16 +80,6 @@
             }
           },
           {
-            "id": "e80389b8435465a7",
-            "type": "leaf",
-            "state": {
-              "type": "custom-frames-labex.io",
-              "state": {},
-              "icon": "lucide-pickaxe",
-              "title": "Labex.io"
-            }
-          },
-          {
             "id": "91fd8c9433c176bf",
             "type": "leaf",
             "state": {
@@ -101,87 +91,6 @@
               },
               "icon": "globe-2",
               "title": "Linux Professional Institute LPIC-1 Exam 101 | KodeKloud"
-            }
-          },
-          {
-            "id": "e4d8416b0aad506a",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://learn.kodekloud.com/user/pricing?utm_sourcekk=kodekloud&utm_mediumkk=hubspot&utm_campaignkk=hubspot%2Bcta&utm_termkk=accelerate_in_april&hsCtaAttrib=211415288121",
-                "title": "Pricing | KodeKloud",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "Pricing | KodeKloud"
-            }
-          },
-          {
-            "id": "b888ad1b26752f4f",
-            "type": "leaf",
-            "state": {
-              "type": "custom-frames-cloudflare",
-              "state": {},
-              "icon": "lucide-monitor-cloud",
-              "title": "Cloudflare"
-            }
-          },
-          {
-            "id": "6232bb081f718d3d",
-            "type": "leaf",
-            "state": {
-              "type": "custom-frames-aws",
-              "state": {},
-              "icon": "lucide-cloud-check",
-              "title": "AWS"
-            }
-          },
-          {
-            "id": "60e04e20e5668778",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://us-east-1.lightsail.aws.amazon.com/ls/webapp/us-east-1/instances/AlmaLinux/metrics/NetworkIn?timeRange=1h",
-                "title": "Lightsail | us-east-1",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "Lightsail | us-east-1"
-            }
-          },
-          {
-            "id": "83f15cde8ac727be",
-            "type": "leaf",
-            "state": {
-              "type": "custom-frames-youtube",
-              "state": {},
-              "icon": "lucide-monitor-play",
-              "title": "Youtube"
-            }
-          },
-          {
-            "id": "5f4863951b6e9e2a",
-            "type": "leaf",
-            "state": {
-              "type": "beautitab-react-view",
-              "state": {},
-              "title": "New tab"
-            }
-          },
-          {
-            "id": "5238bc396e60ea96",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://www.google.com/search?q=what+fire+wall+does+oracle+linux+use&sca_esv=903386efdd046f5a&biw=1398&bih=704&sxsrf=ANbL-n7bCGinoSY0w1L_EEBMVjoBm2GXGA%3A1777139715094&ei=AwDtadOxBfHV5NoPsciegAM&ved=0ahUKEwiTv7yryYmUAxXxKlkFHTGkBzAQ4dUDCBE&uact=5&oq=what+fire+wall+does+oracle+linux+use&gs_lp=Egxnd3Mtd2l6LXNlcnAiJHdoYXQgZmlyZSB3YWxsIGRvZXMgb3JhY2xlIGxpbnV4IHVzZTIHECEYChigAUiAPVDcC1jkO3ADeAGQAQGYAfkCoAHnKaoBCDMuMjguMi4yuAEDyAEA-AEBmAIloAKWLsICChAAGEcY1gQYsAPCAg4QABjkAhjWBBiwA9gBAcICFxAuGNwGGLgGGNoGGNgCGMgDGLAD2AEBwgILEAAYgAQYigUYkQLCAgoQABiABBiKBRhDwgIKEC4YgAQYigUYQ8ICEBAAGIAEGIoFGEMYsQMYgwHCAgsQLhiABBixAxiDAcICERAuGIAEGLEDGIMBGMcBGNEDwgIOEC4YgAQYigUYsQMYgwHCAgQQIxgnwgIKECMYngYY8AUYJ8ICChAjGPAFGJ4GGCfCAgUQABiABMICCBAAGIAEGLEDwgIIEAAYFhgeGArCAgYQABgWGB7CAgcQABiABBgNwgIGEAAYHhgNwgIIEAAYCBgeGA3CAgsQABiABBiKBRiGA8ICBRAAGO8FwgIFECEYnwXCAgUQIRirApgDAIgGAZAGDboGBggBEAEYCZIHCDMuMjkuNC4xoAeqnAKyBwgwLjI5LjQuMbgHny3CBwsyLTEuMTcuMTguMcgH2wWACAE&sclient=gws-wiz-serp",
-                "title": "what fire wall does oracle linux use - Google Search",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "what fire wall does oracle linux use - Google Search"
             }
           }
         ],
@@ -240,7 +149,7 @@
             }
           },
           {
-            "id": "5c68b823237bd3e1",
+            "id": "760afca84ddb4713",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -249,7 +158,8 @@
               "title": "Navigator"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       },
       {
         "id": "6383ed4e90b91296",
@@ -280,7 +190,7 @@
       {
         "id": "f511bb96da74c682",
         "type": "tabs",
-        "dimension": 56.76020408163265,
+        "dimension": 56.76020408163266,
         "children": [
           {
             "id": "1f2c7e62179f40fc",
@@ -301,7 +211,7 @@
       {
         "id": "a0e8424219f139a8",
         "type": "tabs",
-        "dimension": 43.23979591836735,
+        "dimension": 43.23979591836734,
         "children": [
           {
             "id": "1dc73f8ac5d098f1",
@@ -404,31 +314,8 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "obsidian-custom-frames:Open Sprites": false,
-      "obsidian-custom-frames:Open Docker Hub": false,
       "graph:Open graph view": false,
       "terminal:Open terminal": false,
-      "obsidian-custom-frames:Open AWS": false,
-      "obsidian-custom-frames:Open Cloudflare": false,
-      "obsidian-custom-frames:Open Zapier": false,
-      "obsidian-custom-frames:Open Pihole": false,
-      "obsidian-custom-frames:Open Tailscale": false,
-      "obsidian-custom-frames:Open Truenas": false,
-      "obsidian-custom-frames:Open Jellyfin": false,
-      "obsidian-custom-frames:Open github": false,
-      "obsidian-custom-frames:Open Labex.io": false,
-      "obsidian-custom-frames:Open Azure": false,
-      "obsidian-custom-frames:Open Google Chrome": false,
-      "obsidian-custom-frames:Open Jarvis": false,
-      "obsidian-custom-frames:Open Youtube": false,
-      "obsidian-custom-frames:Open HTB": false,
-      "obsidian-custom-frames:Open OvertheWire": false,
-      "obsidian-custom-frames:Open Tiktok": false,
-      "obsidian-custom-frames:Open Cineby": false,
-      "obsidian-custom-frames:Open 123Movies": false,
-      "obsidian-custom-frames:Open Openart.ai": false,
-      "obsidian-custom-frames:Open Suno": false,
-      "obsidian-custom-frames:Open Banana Pro": false,
       "obsidian-git:Open Git source control": false,
       "obsidian-kanban:Create new board": false,
       "omnisearch:Omnisearch": false,
@@ -436,11 +323,30 @@
       "iconic:Open rulebook": false,
       "workspaces:Manage workspace layouts": false,
       "command-palette:Open command palette": false,
+      "obsidian-custom-frames:Open Google Chrome": false,
+      "obsidian-custom-frames:Open Youtube": false,
+      "obsidian-custom-frames:Open Jarvis": false,
+      "obsidian-custom-frames:Open github": false,
+      "obsidian-custom-frames:Open Cloudflare": false,
+      "obsidian-custom-frames:Open Suno": false,
+      "obsidian-custom-frames:Open Zapier": false,
+      "obsidian-custom-frames:Open Openart.ai": false,
+      "obsidian-custom-frames:Open Banana Pro": false,
+      "obsidian-custom-frames:Open Tiktok": false,
+      "obsidian-custom-frames:Open AWS": false,
+      "obsidian-custom-frames:Open Labex.io": false,
+      "obsidian-custom-frames:Open Pihole": false,
+      "obsidian-custom-frames:Open Tailscale": false,
+      "obsidian-custom-frames:Open Jellyfin": false,
+      "obsidian-custom-frames:Open Docker Hub": false,
+      "obsidian-custom-frames:Open Sprites": false,
       "soundscapes:Soundscapes: My Music": false
     }
   },
   "active": "5737045bac5ea966",
   "lastOpenFiles": [
+    "docker-compose/dockhand.yml",
+    "docker-compose/Docker Compose Install_v2.md",
     "docker-compose/tugtainer.yml",
     "docker-compose/tugtainer-compose.md",
     "docker-compose/Docker Compose Index.md",
@@ -474,9 +380,7 @@
     "ollama/ollama models.md~",
     "ollama/ollama models.md",
     "ollama/ollama setup.md",
-    "ollama",
     "AWS/ssh commands.md",
-    "AWS/ssh_keys.md",
     "Images/wallhaven-4g823l.jpg",
     "Images/wallhaven-gj15r7.png",
     "Images/wallhaven-x15w2d.jpg"
