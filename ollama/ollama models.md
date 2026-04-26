@@ -14,6 +14,7 @@
   - ollama run gemma:2b 
   - ollama run mistral
 
+
 phi3 -> fast everyday use -> alias="ollama run phi" <- 
 phi3 -> better reasoning -> alias="ollama run phi3" <- 
 mistral -> higher quality -> alias="ollama run mistral" <- 
