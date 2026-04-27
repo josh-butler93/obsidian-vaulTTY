@@ -1,0 +1,11 @@
+services:
+  Vimbegood:
+    container_name: vimbegood
+    image: brandoncc/vim-be-good:stable
+    stdin_open: true
+    tty: true
+    profiles:
+      - vim
+
+#command: docker compose run Vimbegood
+#stdin_open: true && tty: true ensures the container stops when I exit

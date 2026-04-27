@@ -1,0 +1,15 @@
+services:
+  terraform:
+    image: terraform-cont:v1
+    container_name: terra-runner
+    working_dir: /workspace
+    volumes:
+      - ./terraform:/workspace
+    stdin_open: true
+    tty: true
+#command: docker compose up -d 
+#command: docker exec -it terraform sh
+#command: terraform init
+#command: terraform plan
+#command: terraform apply
+
