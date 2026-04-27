@@ -1,10 +1,10 @@
 {
-  "addToCommand": true,
-  "addToContextMenu": true,
+  "addToCommand": false,
+  "addToContextMenu": false,
   "createInstanceNearExistingOnes": true,
   "errorNoticeTimeout": 0,
   "exposeInternalModules": true,
-  "focusOnNewInstance": true,
+  "focusOnNewInstance": false,
   "hideStatusBar": "focused",
   "interceptLogging": true,
   "language": "",
@@ -12,8 +12,8 @@
   "newInstanceBehavior": "newHorizontalSplit",
   "noticeTimeout": 5,
   "openChangelogOnUpdate": true,
-  "pinNewInstance": true,
-  "preferredRenderer": "webgl",
+  "pinNewInstance": false,
+  "preferredRenderer": "canvas",
   "profiles": {
     "darwinExternalDefault": {
       "args": [

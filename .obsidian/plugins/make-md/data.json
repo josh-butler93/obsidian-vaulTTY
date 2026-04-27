@@ -39,9 +39,7 @@
   "deleteFileOption": "trash",
   "expandedSpaces": [
     "//Tags",
-    "/",
-    "//Kanban/Kanban/Taskings",
-    "//Kanban"
+    "/"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
