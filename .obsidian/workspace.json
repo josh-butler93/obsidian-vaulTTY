@@ -37,27 +37,16 @@
             "id": "bb22c8402abe6403",
             "type": "leaf",
             "state": {
-              "type": "beautitab-react-view",
-              "state": {},
-              "title": "New tab"
-            }
-          },
-          {
-            "id": "d98d9bfa9c5737a8",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
+              "type": "excalidraw",
               "state": {
-                "url": "https://github.com/josh-butler93/obsidian-vaulTTY/tree/main/Images",
-                "title": "obsidian-vaulTTY/Images at main · josh-butler93/obsidian-vaulTTY",
-                "mode": "webview"
+                "file": "Excalidraw/AWS EKS.md"
               },
-              "icon": "globe-2",
-              "title": "obsidian-vaulTTY/Images at main · josh-butler93/obsidian-vaulTTY"
+              "icon": "excalidraw-icon",
+              "title": "AWS EKS"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -121,8 +110,7 @@
               "title": "Navigator"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       },
       {
         "id": "6383ed4e90b91296",
@@ -271,8 +259,9 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "d98d9bfa9c5737a8",
+  "active": "bb22c8402abe6403",
   "lastOpenFiles": [
+    "Excalidraw/AWS EKS.svg",
     "Kernel_Developement/Kernal Dev.md",
     "Kernel_Developement/Getting Started.md",
     "Kernel_Developement",
@@ -308,7 +297,6 @@
     "Portainer/Portainer Index.md",
     "Docker/Docker Oracle Install.md",
     "Build out K8 Cluster.md",
-    "Build out DockerSwarm Cluster.md",
     "Images/wallhaven-4g823l.jpg",
     "Images/wallhaven-gj15r7.png",
     "Images/wallhaven-x15w2d.jpg"
