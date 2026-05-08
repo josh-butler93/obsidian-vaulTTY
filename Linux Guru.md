@@ -6,6 +6,7 @@
 [[Git Index]]
 [[HomeLab Index]]
 [[Kanban Index]]
+[[Keranl Dev]]
 [[Maldev Index]]
 [[Networking Index]]
 [[Neovim Index]] 

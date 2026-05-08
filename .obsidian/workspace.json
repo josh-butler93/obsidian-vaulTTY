@@ -8,93 +8,56 @@
         "type": "tabs",
         "children": [
           {
-            "id": "c0fdb03ccd4d613f",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
-            }
-          },
-          {
-            "id": "dbcf8a86f3b4f6ff",
-            "type": "leaf",
-            "state": {
-              "type": "kanban",
-              "state": {
-                "file": "Kanban/Kanban Board.md",
-                "kanbanViewState": {
-                  "kanban-plugin": "list",
-                  "list-collapse": [
-                    true,
-                    false,
-                    true,
-                    true,
-                    true,
-                    true,
-                    true
-                  ]
-                }
-              },
-              "icon": "lucide-trello",
-              "title": "Kanban Board"
-            }
-          },
-          {
-            "id": "5737045bac5ea966",
-            "type": "leaf",
-            "state": {
-              "type": "terminal:terminal",
-              "state": {
-                "terminal:terminal": {
-                  "cwd": "/home/sysadmin/Documents/obsidian-vault/linuxadmin",
-                  "focus": false,
-                  "profile": {
-                    "args": [],
-                    "executable": "/bin/sh",
-                    "followTheme": true,
-                    "name": "",
-                    "platforms": {
-                      "linux": true
-                    },
-                    "pythonExecutable": "python3",
-                    "restoreHistory": false,
-                    "rightClickAction": "copyPaste",
-                    "successExitCodes": [
-                      "0",
-                      "SIGINT",
-                      "SIGTERM"
-                    ],
-                    "terminalOptions": {
-                      "documentOverride": null
-                    },
-                    "type": "integrated",
-                    "useWin32Conhost": true
-                  },
-                  "serial": null
-                }
-              },
-              "icon": "terminal",
-              "title": "Terminal: sh"
-            }
-          },
-          {
-            "id": "91fd8c9433c176bf",
+            "id": "c66aca7b4834be0a",
             "type": "leaf",
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://learn.kodekloud.com/user/courses/linux-professional-institute-lpic-1-exam-101",
-                "title": "Linux Professional Institute LPIC-1 Exam 101 | KodeKloud",
+                "url": "https://www.google.com/search?q=what+is+an+rpm+in+linux&sca_esv=144a354d1415577e&sxsrf=ANbL-n4_10-c236UKdsh7YXtkyTKZCG93g%3A1778198182661&source=hp&ei=pib9ab_pJfef5NoPy6Ln0Ac&iflsig=AFdpzrgAAAAAaf00tlRJbviudW_i1Nyp5cEjTV_mNF9v&ved=0ahUKEwi_1I-4sKiUAxX3D1kFHUvRGXoQ4dUDCDk&uact=5&oq=what+is+an+rpm+in+linux&gs_lp=Egdnd3Mtd2l6Ihd3aGF0IGlzIGFuIHJwbSBpbiBsaW51eDIFEAAYgAQyBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB5I4EFQtghYuT1wBXgAkAEBmAHYAqAB6RuqAQg5LjE1LjIuMbgBA8gBAPgBAZgCH6ACmh2oAgrCAg0QIxieBhjwBRjqAhgnwgIHECMY6gIYJ8ICDRAjGPAFGJ4GGOoCGCfCAgoQIxjwBRieBhgnwgIKECMYngYY8AUYJ8ICBBAjGCfCAgsQABiABBixAxiDAcICCxAuGIAEGLEDGIMBwgIOEAAYgAQYigUYsQMYgwHCAhEQLhiABBixAxiDARjHARjRA8ICERAuGIAEGIoFGI0GGLEDGIMBwgIOEC4YgAQYsQMYxwEY0QPCAhEQLhiABBixAxjHARivARiOBcICDRAjGJ4GGPAFGLECGCfCAgcQIxixAhgnwgIQEAAYgAQYigUYChixAxiDAcICExAAGIAEGIoFGAoYjQYYsQMYgwHCAhAQABiABBiKBRgKGI0GGLEDwgIMEAAYgAQYChgLGLEDwgINECMY8AUYngYYsQIYJ8ICERAAGIAEGIoFGI0GGLEDGIMBwgIOEAAYgAQYigUYjQYYsQPCAggQABiABBixA8ICChAjGIAEGIoFGCfCAgsQABiABBiKBRiGA8ICBRAAGO8FwgIIEAAYgAQYogSYAxjxBQLr53F6ICCOkgcGNy4yMS4zoAeanAKyBwYyLjIxLjO4B6kcwgcIMi03LjIxLjPIB5YDgAgB&sclient=gws-wiz",
+                "title": "what is an rpm in linux - Google Search",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "Linux Professional Institute LPIC-1 Exam 101 | KodeKloud"
+              "title": "what is an rpm in linux - Google Search"
+            }
+          },
+          {
+            "id": "8a59e15745ac1703",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Linux Package Managers.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Linux Package Managers"
+            }
+          },
+          {
+            "id": "bb22c8402abe6403",
+            "type": "leaf",
+            "state": {
+              "type": "beautitab-react-view",
+              "state": {},
+              "title": "New tab"
+            }
+          },
+          {
+            "id": "d98d9bfa9c5737a8",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://github.com/josh-butler93/obsidian-vaulTTY/tree/main/Images",
+                "title": "obsidian-vaulTTY/Images at main · josh-butler93/obsidian-vaulTTY",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "obsidian-vaulTTY/Images at main · josh-butler93/obsidian-vaulTTY"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -149,7 +112,7 @@
             }
           },
           {
-            "id": "760afca84ddb4713",
+            "id": "104e84627546d84c",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -159,7 +122,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       },
       {
         "id": "6383ed4e90b91296",
@@ -180,38 +143,15 @@
       }
     ],
     "direction": "horizontal",
-    "width": 233.50043487548828,
-    "collapsed": true
+    "width": 243.5086555480957
   },
   "right": {
     "id": "1f60c4e1c0218a96",
     "type": "split",
     "children": [
       {
-        "id": "f511bb96da74c682",
-        "type": "tabs",
-        "dimension": 56.76020408163266,
-        "children": [
-          {
-            "id": "1f2c7e62179f40fc",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://www.youtube.com/watch?v=UL1RF8tHOfM",
-                "title": "What Went Wrong with THE HUNGER GAMES | Ballad of Songbirds and Snakes Explained - YouTube",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "What Went Wrong with THE HUNGER GAMES | Ballad of Songbirds and Snakes Explained - YouTube"
-            }
-          }
-        ]
-      },
-      {
         "id": "a0e8424219f139a8",
         "type": "tabs",
-        "dimension": 43.23979591836734,
         "children": [
           {
             "id": "1dc73f8ac5d098f1",
@@ -296,7 +236,7 @@
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://www.udemy.com/courses/search/?src=ukw&q=linux+plus+practice+exam",
+                "url": "https://www.udemy.com/courses/search/?src=ukw&q=linux+plus+practice+exam&features=has_simple_quiz",
                 "title": "Search results | Udemy",
                 "mode": "webview"
               },
@@ -316,71 +256,59 @@
     "hiddenItems": {
       "graph:Open graph view": false,
       "terminal:Open terminal": false,
-      "obsidian-git:Open Git source control": false,
-      "obsidian-kanban:Create new board": false,
-      "omnisearch:Omnisearch": false,
-      "switcher:Open quick switcher": false,
-      "iconic:Open rulebook": false,
-      "workspaces:Manage workspace layouts": false,
-      "command-palette:Open command palette": false,
+      "obsidian-custom-frames:Open Labex.io": false,
       "obsidian-custom-frames:Open Google Chrome": false,
       "obsidian-custom-frames:Open Youtube": false,
-      "obsidian-custom-frames:Open Jarvis": false,
-      "obsidian-custom-frames:Open github": false,
-      "obsidian-custom-frames:Open Cloudflare": false,
-      "obsidian-custom-frames:Open Suno": false,
       "obsidian-custom-frames:Open Zapier": false,
-      "obsidian-custom-frames:Open Openart.ai": false,
-      "obsidian-custom-frames:Open Banana Pro": false,
       "obsidian-custom-frames:Open Tiktok": false,
-      "obsidian-custom-frames:Open AWS": false,
-      "obsidian-custom-frames:Open Labex.io": false,
-      "obsidian-custom-frames:Open Pihole": false,
-      "obsidian-custom-frames:Open Tailscale": false,
-      "obsidian-custom-frames:Open Jellyfin": false,
-      "obsidian-custom-frames:Open Docker Hub": false,
-      "obsidian-custom-frames:Open Sprites": false,
-      "soundscapes:Soundscapes: My Music": false
+      "obsidian-git:Open Git source control": false,
+      "switcher:Open quick switcher": false,
+      "workspaces:Manage workspace layouts": false,
+      "command-palette:Open command palette": false,
+      "obsidian-kanban:Create new board": false,
+      "iconic:Open rulebook": false,
+      "omnisearch:Omnisearch": false,
+      "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "5737045bac5ea966",
+  "active": "d98d9bfa9c5737a8",
   "lastOpenFiles": [
-    "docker-compose/dockhand.yml",
+    "Kernel_Developement/Kernal Dev.md",
+    "Kernel_Developement/Getting Started.md",
+    "Kernel_Developement",
+    "Excalidraw/Linux Package Managers.md",
+    "Excalidraw/AWS EKS.md",
+    "Excalidraw/Drawing 2026-05-05 23.31.11.excalidraw.md",
+    "kernal_developer/Getting Started.md",
+    "kernal_developer/Kernal Dev.md",
+    "kernal_developer",
+    "Excalidraw",
+    "docker-compose/omarchy_compose/docker-compose/vimbegood/docker-compose.yml",
+    "docker-compose/omarchy_compose/docker-compose/terraform/terraform-yml.con",
+    "docker-compose/omarchy_compose/docker-compose/terraform/dockhand",
+    "docker-compose/omarchy_compose/docker-compose/terraform/compose.yml",
+    "docker-compose/omarchy_compose/docker-compose/terraform/aws.terraform",
+    "docker-compose/omarchy_compose/docker-compose/dockand/compose.yml",
+    "docker-compose/omarchy_compose/docker-compose/dockand/Obsidian Shortcut",
+    "Kanban/Kanban Board.md",
+    "Terraform/Terraform Index.md",
+    "Commands/Neovim Commands.md",
+    "Commands/Metasploit Commands.md",
+    "Commands/Initramfs.md",
+    "Commands/APT File Corruption Commands.md",
+    "Commands/Commands Index.md",
+    "Omarchy/Keyboard Shortcuts.md",
+    "Omarchy/SnapShots Link.md",
+    "Omarchy/Omarchy Index.md",
     "docker-compose/Docker Compose Install_v2.md",
-    "docker-compose/tugtainer.yml",
     "docker-compose/tugtainer-compose.md",
     "docker-compose/Docker Compose Index.md",
-    "docker-compose",
-    "Kanban/Kanban Board.md",
     "Portainer/Portainer Agent Install.md",
-    "Portainer/Portainer Install.md~",
-    "Portainer/docker-compose.yml",
     "Portainer/Portainer Install.md",
     "Portainer/Portainer Index.md",
-    "Portainer",
     "Docker/Docker Oracle Install.md",
     "Build out K8 Cluster.md",
     "Build out DockerSwarm Cluster.md",
-    "Build out Portainer Server.md",
-    "Build out mib to gib converter.md",
-    "CCNA.md",
-    "Comptia Server+.md",
-    "AWS Solutions Architect Associate.md",
-    "Lpic-1v2.md",
-    "Lpic-1v1.md",
-    "Omarchy/SnapShots Link.md",
-    "cron job setup.md",
-    "Cron Job Index.md",
-    "Cron_Jobs",
-    "Docker/Docker Compose Install.md",
-    "Gitlab",
-    "ollama/ollama cloudfare tunnel.md~",
-    "ollama/ollama cloudfare tunnel.md",
-    "ollama/ollama setup.md~",
-    "ollama/ollama models.md~",
-    "ollama/ollama models.md",
-    "ollama/ollama setup.md",
-    "AWS/ssh commands.md",
     "Images/wallhaven-4g823l.jpg",
     "Images/wallhaven-gj15r7.png",
     "Images/wallhaven-x15w2d.jpg"
