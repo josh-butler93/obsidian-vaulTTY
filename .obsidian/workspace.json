@@ -8,20 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "c66aca7b4834be0a",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://www.google.com/search?q=what+is+an+rpm+in+linux&sca_esv=144a354d1415577e&sxsrf=ANbL-n4_10-c236UKdsh7YXtkyTKZCG93g%3A1778198182661&source=hp&ei=pib9ab_pJfef5NoPy6Ln0Ac&iflsig=AFdpzrgAAAAAaf00tlRJbviudW_i1Nyp5cEjTV_mNF9v&ved=0ahUKEwi_1I-4sKiUAxX3D1kFHUvRGXoQ4dUDCDk&uact=5&oq=what+is+an+rpm+in+linux&gs_lp=Egdnd3Mtd2l6Ihd3aGF0IGlzIGFuIHJwbSBpbiBsaW51eDIFEAAYgAQyBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB5I4EFQtghYuT1wBXgAkAEBmAHYAqAB6RuqAQg5LjE1LjIuMbgBA8gBAPgBAZgCH6ACmh2oAgrCAg0QIxieBhjwBRjqAhgnwgIHECMY6gIYJ8ICDRAjGPAFGJ4GGOoCGCfCAgoQIxjwBRieBhgnwgIKECMYngYY8AUYJ8ICBBAjGCfCAgsQABiABBixAxiDAcICCxAuGIAEGLEDGIMBwgIOEAAYgAQYigUYsQMYgwHCAhEQLhiABBixAxiDARjHARjRA8ICERAuGIAEGIoFGI0GGLEDGIMBwgIOEC4YgAQYsQMYxwEY0QPCAhEQLhiABBixAxjHARivARiOBcICDRAjGJ4GGPAFGLECGCfCAgcQIxixAhgnwgIQEAAYgAQYigUYChixAxiDAcICExAAGIAEGIoFGAoYjQYYsQMYgwHCAhAQABiABBiKBRgKGI0GGLEDwgIMEAAYgAQYChgLGLEDwgINECMY8AUYngYYsQIYJ8ICERAAGIAEGIoFGI0GGLEDGIMBwgIOEAAYgAQYigUYjQYYsQPCAggQABiABBixA8ICChAjGIAEGIoFGCfCAgsQABiABBiKBRiGA8ICBRAAGO8FwgIIEAAYgAQYogSYAxjxBQLr53F6ICCOkgcGNy4yMS4zoAeanAKyBwYyLjIxLjO4B6kcwgcIMi03LjIxLjPIB5YDgAgB&sclient=gws-wiz",
-                "title": "what is an rpm in linux - Google Search",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "what is an rpm in linux - Google Search"
-            }
-          },
-          {
             "id": "8a59e15745ac1703",
             "type": "leaf",
             "state": {
@@ -34,19 +20,64 @@
             }
           },
           {
-            "id": "bb22c8402abe6403",
+            "id": "deda09d9a1e0f1fd",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "custom-frames-tiktok",
+              "state": {},
+              "icon": "lucide-ticket",
+              "title": "Tiktok"
+            }
+          },
+          {
+            "id": "ff9e5aab8cd5fa7d",
+            "type": "leaf",
+            "state": {
+              "type": "custom-frames-youtube",
+              "state": {},
+              "icon": "lucide-monitor-play",
+              "title": "Youtube"
+            }
+          },
+          {
+            "id": "371c0b8cd4330288",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
               "state": {
-                "file": "Excalidraw/AWS EKS.md"
+                "url": "https://github.com/devopsjourney1/learn-k8s",
+                "title": "devopsjourney1/learn-k8s",
+                "mode": "webview"
               },
-              "icon": "excalidraw-icon",
-              "title": "AWS EKS"
+              "icon": "globe-2",
+              "title": "devopsjourney1/learn-k8s"
+            }
+          },
+          {
+            "id": "a53a34333122bf16",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://www.youtube.com/watch?v=E8cM12jRH7k",
+                "title": "How To Learn A New Programming Language - YouTube",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "How To Learn A New Programming Language - YouTube"
+            }
+          },
+          {
+            "id": "b7cdfe4901d0c5e4",
+            "type": "leaf",
+            "state": {
+              "type": "beautitab-react-view",
+              "state": {},
+              "title": "New tab"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -101,7 +132,7 @@
             }
           },
           {
-            "id": "104e84627546d84c",
+            "id": "326b9ed180ac5af3",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -110,7 +141,8 @@
               "title": "Navigator"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       },
       {
         "id": "6383ed4e90b91296",
@@ -131,7 +163,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 243.5086555480957
+    "width": 243.5086555480957,
+    "collapsed": true
   },
   "right": {
     "id": "1f60c4e1c0218a96",
@@ -259,26 +292,28 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "bb22c8402abe6403",
+  "active": "371c0b8cd4330288",
   "lastOpenFiles": [
+    "Gt_Clones/learn-k8s/solution/v4.yaml",
+    "Gt_Clones/learn-k8s/solution/v3.yaml",
+    "Gt_Clones/learn-k8s/solution/v2.yaml",
+    "Gt_Clones/learn-k8s/solution/v1.yaml",
+    "Gt_Clones/learn-k8s/solution/Final.yaml",
+    "Gt_Clones/learn-k8s/solution",
+    "Gt_Clones/learn-k8s/namespaces/namespace-prod.yaml",
+    "Gt_Clones/learn-k8s/namespaces",
+    "Gt_Clones/learn-k8s/Sceenshots/Services-manifest.yaml",
+    "Gt_Clones/learn-k8s/Sceenshots/Pod-manifest.yaml",
+    "Gt_Clones/learn-k8s/Sceenshots/Deployment-manifest.yaml",
+    "Gt_Clones/learn-k8s/README.md",
+    "Excalidraw/Linux Package Managers.md",
+    "Excalidraw/AWS EKS.md",
     "Excalidraw/AWS EKS.svg",
     "Kernel_Developement/Kernal Dev.md",
     "Kernel_Developement/Getting Started.md",
-    "Kernel_Developement",
-    "Excalidraw/Linux Package Managers.md",
-    "Excalidraw/AWS EKS.md",
     "Excalidraw/Drawing 2026-05-05 23.31.11.excalidraw.md",
     "kernal_developer/Getting Started.md",
     "kernal_developer/Kernal Dev.md",
-    "kernal_developer",
-    "Excalidraw",
-    "docker-compose/omarchy_compose/docker-compose/vimbegood/docker-compose.yml",
-    "docker-compose/omarchy_compose/docker-compose/terraform/terraform-yml.con",
-    "docker-compose/omarchy_compose/docker-compose/terraform/dockhand",
-    "docker-compose/omarchy_compose/docker-compose/terraform/compose.yml",
-    "docker-compose/omarchy_compose/docker-compose/terraform/aws.terraform",
-    "docker-compose/omarchy_compose/docker-compose/dockand/compose.yml",
-    "docker-compose/omarchy_compose/docker-compose/dockand/Obsidian Shortcut",
     "Kanban/Kanban Board.md",
     "Terraform/Terraform Index.md",
     "Commands/Neovim Commands.md",
@@ -296,7 +331,6 @@
     "Portainer/Portainer Install.md",
     "Portainer/Portainer Index.md",
     "Docker/Docker Oracle Install.md",
-    "Build out K8 Cluster.md",
     "Images/wallhaven-4g823l.jpg",
     "Images/wallhaven-gj15r7.png",
     "Images/wallhaven-x15w2d.jpg"
