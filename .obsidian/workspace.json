@@ -77,7 +77,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -292,8 +292,12 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "371c0b8cd4330288",
+  "active": "ff9e5aab8cd5fa7d",
   "lastOpenFiles": [
+    "k8s/homepage_setup",
+    "k8s",
+    "homepage_setup",
+    "Excalidraw/Linux Package Managers.md",
     "Gt_Clones/learn-k8s/solution/v4.yaml",
     "Gt_Clones/learn-k8s/solution/v3.yaml",
     "Gt_Clones/learn-k8s/solution/v2.yaml",
@@ -302,11 +306,7 @@
     "Gt_Clones/learn-k8s/solution",
     "Gt_Clones/learn-k8s/namespaces/namespace-prod.yaml",
     "Gt_Clones/learn-k8s/namespaces",
-    "Gt_Clones/learn-k8s/Sceenshots/Services-manifest.yaml",
-    "Gt_Clones/learn-k8s/Sceenshots/Pod-manifest.yaml",
-    "Gt_Clones/learn-k8s/Sceenshots/Deployment-manifest.yaml",
     "Gt_Clones/learn-k8s/README.md",
-    "Excalidraw/Linux Package Managers.md",
     "Excalidraw/AWS EKS.md",
     "Excalidraw/AWS EKS.svg",
     "Kernel_Developement/Kernal Dev.md",

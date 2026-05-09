@@ -1,0 +1,27 @@
+Homepage Helm Config Notes
+==========================
+
+Values file: ~/homepage-values.yaml
+Helm repo:   jameswynn
+Chart:       homepage (v2.1.0, app v1.2.0)
+Namespace:   prod
+
+Deploy command:
+  helm upgrade homepage jameswynn/homepage -n prod -f ~/homepage-values.yaml
+
+Config keys under the `config:` section:
+
+  config.settings   → settings.yaml   (theme, color, title, layout, etc.)
+  config.bookmarks  → bookmarks.yaml  (bookmark groups)
+  config.services   → services.yaml   (service groups/links)
+  config.widgets    → widgets.yaml    (resource/search/K8s widgets)
+  config.kubernetes → kubernetes.yaml (K8s integration)
+  config.docker     → docker.yaml     (Docker integration)
+
+Important notes:
+  - settings.yaml changes (color, theme, title, layout) require clicking
+    the refresh icon (bottom-right) in the homepage UI to take effect.
+  - bookmarks, services, widgets, kubernetes, docker pick up automatically
+    on pod restart.
+  - Dark Reader browser extension overrides homepage colors — disable it
+    for the homepage domain.
