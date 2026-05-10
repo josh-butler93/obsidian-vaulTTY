@@ -142,6 +142,60 @@
       "ctime": 1777241494400,
       "url": "https://ww8.123moviesfree.net/",
       "title": "123Movies"
+    },
+    {
+      "type": "url",
+      "ctime": 1778437722854,
+      "url": "https://kernelnewbies.org/ML",
+      "title": "ML - Linux Kernel Newbies"
+    },
+    {
+      "type": "url",
+      "ctime": 1778437742184,
+      "url": "https://lore.kernel.org/",
+      "title": "public-inbox listing"
+    },
+    {
+      "type": "url",
+      "ctime": 1778437749019,
+      "url": "https://subspace.kernel.org/vger.kernel.org.html",
+      "title": "vger.kernel.org — subspace.kernel.org documentation"
+    },
+    {
+      "type": "url",
+      "ctime": 1778437755153,
+      "url": "https://kernelnewbies.org/FirstKernelPatch",
+      "title": "FirstKernelPatch - Linux Kernel Newbies"
+    },
+    {
+      "type": "url",
+      "ctime": 1778437761440,
+      "url": "https://training.linuxfoundation.org/training/a-beginners-guide-to-linux-kernel-development-lfd103/",
+      "title": "A Beginner’s Guide to Linux Kernel Development (LFD103) - Linux Foundation - Education"
+    },
+    {
+      "type": "url",
+      "ctime": 1778438117034,
+      "url": "https://bugzilla.kernel.org/",
+      "title": "Kernel.org Bugzilla Main Page"
+    },
+    {
+      "type": "url",
+      "ctime": 1778442260099,
+      "url": "https://code.visualstudio.com/docs/languages/cpp",
+      "title": "C/C++ for Visual Studio Code"
+    },
+    {
+      "type": "url",
+      "ctime": 1778448278543,
+      "url": "https://www.codecademy.com/learn/learn-c-pointers-and-memory/modules/pointers-and-memory-c-next-steps/cheatsheet",
+      "title": "Learn C: Pointers and Memory: Pointers and Memory Cheatsheet | Codecademy"
+    },
+    {
+      "type": "url",
+      "ctime": 1778448287162,
+      "url": "https://www.codecademy.com/resources/docs/c/pointers",
+      "title": "C | Pointers | Codecademy"
     }
   ]
 }

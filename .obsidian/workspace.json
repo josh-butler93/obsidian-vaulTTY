@@ -20,13 +20,41 @@
             }
           },
           {
-            "id": "deda09d9a1e0f1fd",
+            "id": "14506d2d5395874b",
             "type": "leaf",
             "state": {
-              "type": "custom-frames-tiktok",
-              "state": {},
-              "icon": "lucide-ticket",
-              "title": "Tiktok"
+              "type": "terminal:terminal",
+              "state": {
+                "terminal:terminal": {
+                  "cwd": "/home/sysadmin/Documents/obsidian-vault/linuxadmin",
+                  "focus": false,
+                  "profile": {
+                    "args": [],
+                    "executable": "/bin/sh",
+                    "followTheme": true,
+                    "name": "",
+                    "platforms": {
+                      "linux": true
+                    },
+                    "pythonExecutable": "python3",
+                    "restoreHistory": false,
+                    "rightClickAction": "copyPaste",
+                    "successExitCodes": [
+                      "0",
+                      "SIGINT",
+                      "SIGTERM"
+                    ],
+                    "terminalOptions": {
+                      "documentOverride": null
+                    },
+                    "type": "integrated",
+                    "useWin32Conhost": true
+                  },
+                  "serial": null
+                }
+              },
+              "icon": "terminal",
+              "title": "Terminal: sh"
             }
           },
           {
@@ -40,17 +68,55 @@
             }
           },
           {
-            "id": "371c0b8cd4330288",
+            "id": "d2707b6b55514451",
+            "type": "leaf",
+            "state": {
+              "type": "custom-frames-labex.io",
+              "state": {},
+              "icon": "lucide-pickaxe",
+              "title": "Labex.io"
+            }
+          },
+          {
+            "id": "bda56df44ef2e8a7",
             "type": "leaf",
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://github.com/devopsjourney1/learn-k8s",
-                "title": "devopsjourney1/learn-k8s",
+                "url": "https://www.codecademy.com/catalog/language/c",
+                "title": "C Courses & Tutorials | Codecademy",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "devopsjourney1/learn-k8s"
+              "title": "C Courses & Tutorials | Codecademy"
+            }
+          },
+          {
+            "id": "3d0a17c36dee65e1",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://www.boot.dev/dashboard",
+                "title": "Dashboard | Boot.dev",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Dashboard | Boot.dev"
+            }
+          },
+          {
+            "id": "5fb84e4345a6812c",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://www.tiktok.com/@fashixn_icxn",
+                "title": "༄ (@fashixn_icxn) | TikTok",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "༄ (@fashixn_icxn) | TikTok"
             }
           },
           {
@@ -59,25 +125,30 @@
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://www.youtube.com/watch?v=E8cM12jRH7k",
-                "title": "How To Learn A New Programming Language - YouTube",
+                "url": "https://www.youtube.com/watch?v=04VyicSDEAk",
+                "title": "Build and Run Your Own Kernel! - YouTube",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "How To Learn A New Programming Language - YouTube"
+              "title": "Build and Run Your Own Kernel! - YouTube"
             }
           },
           {
-            "id": "b7cdfe4901d0c5e4",
+            "id": "2748279199ba13a0",
             "type": "leaf",
             "state": {
-              "type": "beautitab-react-view",
-              "state": {},
-              "title": "New tab"
+              "type": "webviewer",
+              "state": {
+                "url": "https://www.youtube.com/watch?v=WiZ05pnHZqM",
+                "title": "Linux Kernel Programming 01: Compile and Boot - YouTube",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Linux Kernel Programming 01: Compile and Boot - YouTube"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -292,20 +363,21 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "ff9e5aab8cd5fa7d",
+  "active": "14506d2d5395874b",
   "lastOpenFiles": [
+    "Kernel_Developement/kernel_dev_installs.yml",
+    "Kernel_Developement/Linux Kernal Dev Setup.md",
+    "Kernel_Developement/linux_kernal_dev_setup.yml",
+    "Excalidraw/Linux Package Managers.md",
     "k8s/homepage_setup",
     "k8s",
     "homepage_setup",
-    "Excalidraw/Linux Package Managers.md",
     "Gt_Clones/learn-k8s/solution/v4.yaml",
     "Gt_Clones/learn-k8s/solution/v3.yaml",
     "Gt_Clones/learn-k8s/solution/v2.yaml",
     "Gt_Clones/learn-k8s/solution/v1.yaml",
     "Gt_Clones/learn-k8s/solution/Final.yaml",
     "Gt_Clones/learn-k8s/solution",
-    "Gt_Clones/learn-k8s/namespaces/namespace-prod.yaml",
-    "Gt_Clones/learn-k8s/namespaces",
     "Gt_Clones/learn-k8s/README.md",
     "Excalidraw/AWS EKS.md",
     "Excalidraw/AWS EKS.svg",
@@ -330,7 +402,6 @@
     "Portainer/Portainer Agent Install.md",
     "Portainer/Portainer Install.md",
     "Portainer/Portainer Index.md",
-    "Docker/Docker Oracle Install.md",
     "Images/wallhaven-4g823l.jpg",
     "Images/wallhaven-gj15r7.png",
     "Images/wallhaven-x15w2d.jpg"

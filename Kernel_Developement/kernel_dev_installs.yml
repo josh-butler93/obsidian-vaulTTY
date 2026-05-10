@@ -1,0 +1,104 @@
+# Ansible Playbook — Linux Kernel Development Environment
+
+This playbook installs a Linux kernel development environment for both:
+
+* RHEL-based systems
+* Debian-based systems
+
+It installs:
+
+* compiler/build tools
+* kernel build dependencies
+* git
+* wget
+* optional Linux kernel source clone
+
+---
+
+yaml
+---
+- name: Configure Linux kernel development environment
+  hosts: kerneldev
+  become: true
+
+  vars:
+    kernel_source_dir: /opt/linux
+    clone_kernel_source: true
+
+  tasks:
+
+    - name: Install RHEL development tools group
+      when: ansible_os_family == "RedHat"
+      ansible.builtin.dnf:
+        name: "@Development Tools"
+        state: present
+
+    - name: Install RHEL kernel build dependencies
+      when: ansible_os_family == "RedHat"
+      ansible.builtin.dnf:
+        name:
+          - ncurses-devel
+          - bison
+          - flex
+          - openssl-devel
+          - elfutils-libelf-devel
+          - bc
+          - perl
+          - git
+          - wget
+        state: present
+
+    - name: Install Debian build dependencies
+      when: ansible_os_family == "Debian"
+      ansible.builtin.apt:
+        name:
+          - build-essential
+          - libncurses-dev
+          - bison
+          - flex
+          - libssl-dev
+          - libelf-dev
+          - bc
+          - perl
+          - git
+          - wget
+        state: present
+        update_cache: true
+
+    - name: Create kernel source directory
+      ansible.builtin.file:
+        path: "{{ kernel_source_dir }}"
+        state: directory
+        mode: '0755'
+
+    - name: Clone Linux kernel source
+      when: clone_kernel_source
+      ansible.builtin.git:
+        repo: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+        dest: "{{ kernel_source_dir }}"
+        version: master
+        update: yes
+
+    - name: Verify gcc installation
+      ansible.builtin.command: gcc --version
+      register: gcc_output
+      changed_when: false
+
+    - name: Show gcc version
+      ansible.builtin.debug:
+        var: gcc_output.stdout_lines
+
+    - name: Verify make installation
+      ansible.builtin.command: make --version
+      register: make_output
+      changed_when: false
+
+    - name: Show make version
+      ansible.builtin.debug:
+        var: make_output.stdout_lines
+```
+
+gcc --version
+make --version
+git --version
+git clone https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
