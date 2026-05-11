@@ -1,0 +1,17 @@
+kubectl #this will list out all the commands you can use
+kubectl get nodes
+kubectl get pods #this will list out pods in default namespace
+kubectl get pods -n _namespace_pod_is_in --> kubectl get pods -n test
+kubectl get svc _pod_name_ -n namespace --> this will give the ip address of the pod where it can be reached from the ui
+kubectl get top node
+kubectl get top pods 
+kubectl get namespaces # this will list out namespaces
+kubectl create namespace _namespace_name_
+kubectl detelet namespace _namespace_name_
+k9s --> to launch k9s app
+
+helm add repo <repo name>
+helm repo update
+helm repo list
+helm install <app_name> bitnami/app_name --> repo/app
+helm uninstall app_name

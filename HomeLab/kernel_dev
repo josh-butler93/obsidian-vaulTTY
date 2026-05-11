@@ -1,0 +1,24 @@
+make defconfig # this creates a baseline .config file
+
+make -j$(nproc)
+	- make: starts the kernel build
+	- -j: parallel compliation
+	- $(nproc): uses all avaliable cpu cores
+*The above command complies thousands of files and turns them into an executable/bootable image
+*The generated are stored in the /arch/x86/boot/ directory 
+* ls -lh arch/x86/boot/bzImage #this is the compressed linux kernal image
+
+make menuconfig
+	- launches a terminal based gui/config meu for the kernal
+	- when finished run the below command to verify
+		- tail -20 .config
+		- ls arch/x86/boot/bzImage
+			(if it outputs --arch/x86/boot/bzImage--) the build was successful
+	-	- echo $? --if it returns 0 the previous make command succeded
+
+See kernel dev obsidian folder for mini kernel module build test 
+commands: make #should see hello.ko output 
+command: sudo insmod hello.ko 
+command: dmesg | tail 
+command: sudo rmmod hello 
+command: dmeg | tail 

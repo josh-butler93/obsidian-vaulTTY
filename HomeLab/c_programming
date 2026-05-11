@@ -1,0 +1,5 @@
+gcc hello.c -o hello
+./hello
+
+run the above command to compile the c code into an executable
+then run the ./hello to execute the code
