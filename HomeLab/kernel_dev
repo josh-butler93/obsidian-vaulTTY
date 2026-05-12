@@ -1,6 +1,15 @@
 ===============
 Day 1: Commands
 ===============
+--Make:
+	- make = an automated build intruction runner
+	- It reads instructions from a 'Makefile' and figures out:
+		- what needs compiling
+		- what order to do it in
+		- what changed
+		- what output to generate
+	- basically just telling it to compile .c files -> link them together -> build modules -> create kernal image
+	- *without make you would have to manually compile all those .c files*
 make defconfig # this creates a baseline .config file
 
 make -j$(nproc)
@@ -29,9 +38,64 @@ command: dmeg | tail
 ===============
 Day 2: Commands
 ===============
-make clean
-make defconfig
-make -j$(nproc)
+1. make clean
 
+---Make changes as needed before compiling the kernel 
+	- makes changes to the .config file before compiling the code
+	- this gives you the chance to make changes fix error and stuff then compile boot and test 
+		- .config = blueprint for what the kernel should contain
+			- what drivers to include
+			- what features to enable
+			- what modules to build
+			- what architecture settings to use
+2. make menuconfig
+	- Search for 'Kernel hacking'
+		- enable debug options
+		- enable extra logging
+	- Change Hostname/Version
+		- search localversion
+			- set something like 'JoshLab'
+2b. make defconfig
+
+---Tie all the files togther to create the linux kerel 3-3b
+	-The kenel starts as thousands of seperate files
+	-The below commands compiles them/links them together to create the 'KERNEL IMAGE'
+3. make = one task at a time
+3b. make -j$(nproc) = build using all available resources
+	-j - run multiple builds simultaneouslly
+	-nproc - returns the number of cpu cores/threads
+		- so command: make -j8 (if you had 8 cores)
+
+---Location of the Kernel Image File
+4. arch/x86/boot/bzImage
+	- name is typically vmlinux
+
+---Install vs Boot
+5. sudo make modules_install # copies modules into the /lib/modules/<kernal-version>/ <- directory
+5b. sudo make install # installs kernel image into /boot
+	-Now the machine knows the kernel exists
+	-This means that when the machine reboots you can select that kernel
+
+kernel source code
+        ↓
+make defconfig / menuconfig
+        ↓
+.config created/modified
+        ↓
+make
+        ↓
+kernel image + modules built
+        ↓
+make install
+        ↓
+kernel copied into /boot
+        ↓
+reboot
+        ↓
+bootloader selects kernel
+        ↓
+Linux runs your kernel
+
+---Navigating through the directory
 grep -R "module_init" . # ways to navigate through the codebase
 grep -R "printk" . # ways to navigate throuhg the codebase
