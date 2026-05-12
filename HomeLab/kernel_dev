@@ -38,7 +38,15 @@ command: dmeg | tail
 ===============
 Day 2: Commands
 ===============
-1. make clean
+---Removes the previously built compilation files and starts fresh
+	- The generated build artifacts
+make
+  = build LEGO structure
+
+make clean
+  = take apart assembled pieces
+
+*1. make clean
 
 ---Make changes as needed before compiling the kernel 
 	- makes changes to the .config file before compiling the code
@@ -48,31 +56,31 @@ Day 2: Commands
 			- what features to enable
 			- what modules to build
 			- what architecture settings to use
-2. make menuconfig
+*2. make menuconfig
 	- Search for 'Kernel hacking'
 		- enable debug options
 		- enable extra logging
 	- Change Hostname/Version
 		- search localversion
 			- set something like 'JoshLab'
-2b. make defconfig
+*2b. make defconfig
 
 ---Tie all the files togther to create the linux kerel 3-3b
 	-The kenel starts as thousands of seperate files
 	-The below commands compiles them/links them together to create the 'KERNEL IMAGE'
-3. make = one task at a time
-3b. make -j$(nproc) = build using all available resources
+*3. make = one task at a time
+*3b. make -j$(nproc) = build using all available resources
 	-j - run multiple builds simultaneouslly
 	-nproc - returns the number of cpu cores/threads
 		- so command: make -j8 (if you had 8 cores)
 
 ---Location of the Kernel Image File
-4. arch/x86/boot/bzImage
+*4. arch/x86/boot/bzImage
 	- name is typically vmlinux
 
 ---Install vs Boot
-5. sudo make modules_install # copies modules into the /lib/modules/<kernal-version>/ <- directory
-5b. sudo make install # installs kernel image into /boot
+*5. sudo make modules_install # copies modules into the /lib/modules/<kernal-version>/ <- directory
+*5b. sudo make install # installs kernel image into /boot
 	-Now the machine knows the kernel exists
 	-This means that when the machine reboots you can select that kernel
 
