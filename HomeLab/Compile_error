@@ -1,0 +1,11 @@
+cc1: internal compiler error: Segmentation fault
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <http://bugzilla.redhat.com/bugzilla> for instructions.
+The bug is not reproducible, so it is likely a hardware or OS problem.
+make[4]: *** [scripts/Makefile.build:289: net/wireless/trace.o] Error 1
+make[3]: *** [scripts/Makefile.build:548: net/wireless] Error 2
+make[2]: *** [scripts/Makefile.build:548: net] Error 2
+make[1]: *** [/home/sysadmin/linux_source/Makefile:2143: .] Error 2
+make: *** [Makefile:248: __sub-make] Error 2
+
