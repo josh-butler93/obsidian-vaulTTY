@@ -1,0 +1,23 @@
+modify code/config
+        ↓
+compile kernel
+        ↓
+fix build errors
+        ↓
+boot test
+        ↓
+runtime debugging
+        ↓
+logs/crash tracing
+
+---
+
+change one line
+        ↓
+compile
+        ↓
+boot test
+        ↓
+read logs
+        ↓
+repeat

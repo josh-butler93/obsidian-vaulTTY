@@ -8,15 +8,15 @@
         "type": "tabs",
         "children": [
           {
-            "id": "8a59e15745ac1703",
+            "id": "e997a41c07d3a027",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "Excalidraw/Linux Package Managers.md"
+                "file": "Excalidraw/Kernel_Dev_Workflow.md"
               },
               "icon": "excalidraw-icon",
-              "title": "Linux Package Managers"
+              "title": "Kernel_Dev_Workflow"
             }
           },
           {
@@ -68,6 +68,20 @@
             }
           },
           {
+            "id": "5fb84e4345a6812c",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://www.tiktok.com/@fashixn_icxn",
+                "title": "༄ (@fashixn_icxn) | TikTok",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "༄ (@fashixn_icxn) | TikTok"
+            }
+          },
+          {
             "id": "d2707b6b55514451",
             "type": "leaf",
             "state": {
@@ -75,6 +89,20 @@
               "state": {},
               "icon": "lucide-pickaxe",
               "title": "Labex.io"
+            }
+          },
+          {
+            "id": "3d0a17c36dee65e1",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://www.boot.dev/lessons/7291a30c-4942-4b90-a5c0-026e12bbf9c8",
+                "title": "Learn Memory Management in C: Printing Variables | Boot.dev",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Learn Memory Management in C: Printing Variables | Boot.dev"
             }
           },
           {
@@ -89,34 +117,6 @@
               },
               "icon": "globe-2",
               "title": "C Courses & Tutorials | Codecademy"
-            }
-          },
-          {
-            "id": "3d0a17c36dee65e1",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://www.boot.dev/dashboard",
-                "title": "Dashboard | Boot.dev",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "Dashboard | Boot.dev"
-            }
-          },
-          {
-            "id": "5fb84e4345a6812c",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://www.tiktok.com/@fashixn_icxn",
-                "title": "༄ (@fashixn_icxn) | TikTok",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "༄ (@fashixn_icxn) | TikTok"
             }
           },
           {
@@ -147,8 +147,7 @@
               "title": "Linux Kernel Programming 01: Compile and Boot - YouTube"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -203,7 +202,7 @@
             }
           },
           {
-            "id": "326b9ed180ac5af3",
+            "id": "d77b3c18c1788f0e",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -348,6 +347,7 @@
     "hiddenItems": {
       "graph:Open graph view": false,
       "terminal:Open terminal": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
       "obsidian-custom-frames:Open Labex.io": false,
       "obsidian-custom-frames:Open Google Chrome": false,
       "obsidian-custom-frames:Open Youtube": false,
@@ -359,12 +359,13 @@
       "command-palette:Open command palette": false,
       "obsidian-kanban:Create new board": false,
       "iconic:Open rulebook": false,
-      "omnisearch:Omnisearch": false,
-      "obsidian-excalidraw-plugin:New drawing": false
+      "omnisearch:Omnisearch": false
     }
   },
-  "active": "14506d2d5395874b",
+  "active": "d2707b6b55514451",
   "lastOpenFiles": [
+    "Kernel_Developement/kernel_dev_workflow",
+    "Excalidraw/Kernel_Dev_Workflow.md",
     "HomeLab/c_programming",
     "Kernel_Developement/Makefile",
     "Kernel_Developement/hello.c",
@@ -378,7 +379,6 @@
     "k8s/homepage_setup",
     "k8s",
     "homepage_setup",
-    "Gt_Clones/learn-k8s/solution/v4.yaml",
     "Gt_Clones/learn-k8s/README.md",
     "Excalidraw/AWS EKS.md",
     "Excalidraw/AWS EKS.svg",
@@ -401,7 +401,6 @@
     "docker-compose/tugtainer-compose.md",
     "docker-compose/Docker Compose Index.md",
     "Portainer/Portainer Agent Install.md",
-    "Portainer/Portainer Install.md",
     "Images/wallhaven-4g823l.jpg",
     "Images/wallhaven-gj15r7.png",
     "Images/wallhaven-x15w2d.jpg"

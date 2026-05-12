@@ -1,3 +1,6 @@
+===============
+Day 1: Commands
+===============
 make defconfig # this creates a baseline .config file
 
 make -j$(nproc)
@@ -22,3 +25,13 @@ command: sudo insmod hello.ko
 command: dmesg | tail 
 command: sudo rmmod hello 
 command: dmeg | tail 
+
+===============
+Day 2: Commands
+===============
+make clean
+make defconfig
+make -j$(nproc)
+
+grep -R "module_init" . # ways to navigate through the codebase
+grep -R "printk" . # ways to navigate throuhg the codebase
