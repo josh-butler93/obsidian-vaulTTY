@@ -1,0 +1,11 @@
+ssh-keygen -t ed25519 -->configure as needed
+cat ~/.ssh/id-ed25519.pub
+got to github select the profile picture in the top right corner >> go to settings
+select ssh keys >> add the keys there
+
+go to the repo you want to clone
+	- select the grenn <>Code box	
+	- it will have the url for https or ssh access
+git clone git@github.com:josh-butler93/obsidian-vaulTTY.git
+cd into the directory you just cloned and go from there
+
