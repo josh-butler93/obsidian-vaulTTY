@@ -4,6 +4,8 @@
 ```bash
 git config --global user.name "Your Name"
 git config --global user.email "your_email@example.com"
+git config --list
+git config --list --show-origin
 
 ## 2. Intialize the repository
 

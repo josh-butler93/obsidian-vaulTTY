@@ -1,7 +1,13 @@
 kubectl #this will list out all the commands you can use
+kubectl cluster-info
+kubectl get nodes -o wide
 kubectl get nodes
 kubectl get pods #this will list out pods in default namespace
+kubectl get pods -A <--short cut for --all-namespaces
 kubectl get pods -n _namespace_pod_is_in --> kubectl get pods -n test
+kubectl get deployments -A
+kubectl get all -A --> This command displays an overview of pods, services, and deployments across all namespaces
+kubectl describe node <node_name> --> kubectl describe node minikube
 kubectl describe svc <podname> -n namespace
 kubectl get svc _pod_name_ -n namespace --> this will give the ip address of the pod where it can be reached from the ui
 kubectl get top node

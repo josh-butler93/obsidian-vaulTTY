@@ -11,12 +11,15 @@
             "id": "e997a41c07d3a027",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "Excalidraw/Kernel_Dev_Workflow.md"
+                "file": "Git/git_cheatsheet.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
               },
-              "icon": "excalidraw-icon",
-              "title": "Kernel_Dev_Workflow"
+              "icon": "lucide-file",
+              "title": "git_cheatsheet"
             }
           },
           {
@@ -79,16 +82,6 @@
               },
               "icon": "globe-2",
               "title": "༄ (@fashixn_icxn) | TikTok"
-            }
-          },
-          {
-            "id": "d2707b6b55514451",
-            "type": "leaf",
-            "state": {
-              "type": "custom-frames-labex.io",
-              "state": {},
-              "icon": "lucide-pickaxe",
-              "title": "Labex.io"
             }
           },
           {
@@ -363,13 +356,16 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "d2707b6b55514451",
+  "active": "3d0a17c36dee65e1",
   "lastOpenFiles": [
+    "k8s/contol_plane_breakdown",
+    "Git/git_cheatsheet.md",
+    "Git/git quickie.md",
+    "Excalidraw/Kernel_Dev_Workflow.md",
     "packer/packer_commands.txt",
     "packer",
     "HomeLab/Compile_error",
     "Kernel_Developement/kernel_dev_workflow",
-    "Excalidraw/Kernel_Dev_Workflow.md",
     "HomeLab/c_programming",
     "Kernel_Developement/Makefile",
     "Kernel_Developement/hello.c",
@@ -378,7 +374,6 @@
     "AWS/AWS Solutions Architect Associate.md",
     "Kernel_Developement/kernel_dev_installs.yml",
     "Kernel_Developement/Linux Kernal Dev Setup.md",
-    "Kernel_Developement/linux_kernal_dev_setup.yml",
     "Excalidraw/Linux Package Managers.md",
     "Gt_Clones/learn-k8s/README.md",
     "Excalidraw/AWS EKS.md",
@@ -400,8 +395,6 @@
     "Omarchy/Omarchy Index.md",
     "docker-compose/Docker Compose Install_v2.md",
     "docker-compose/tugtainer-compose.md",
-    "docker-compose/Docker Compose Index.md",
-    "Portainer/Portainer Agent Install.md",
     "Images/wallhaven-4g823l.jpg",
     "Images/wallhaven-gj15r7.png",
     "Images/wallhaven-x15w2d.jpg"
