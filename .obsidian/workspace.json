@@ -147,7 +147,8 @@
               "title": "Linux Kernel Programming 01: Compile and Boot - YouTube"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -202,7 +203,7 @@
             }
           },
           {
-            "id": "d77b3c18c1788f0e",
+            "id": "d6ccf57fedec1866",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -364,6 +365,9 @@
   },
   "active": "d2707b6b55514451",
   "lastOpenFiles": [
+    "packer/packer_commands.txt",
+    "packer",
+    "HomeLab/Compile_error",
     "Kernel_Developement/kernel_dev_workflow",
     "Excalidraw/Kernel_Dev_Workflow.md",
     "HomeLab/c_programming",
@@ -376,9 +380,6 @@
     "Kernel_Developement/Linux Kernal Dev Setup.md",
     "Kernel_Developement/linux_kernal_dev_setup.yml",
     "Excalidraw/Linux Package Managers.md",
-    "k8s/homepage_setup",
-    "k8s",
-    "homepage_setup",
     "Gt_Clones/learn-k8s/README.md",
     "Excalidraw/AWS EKS.md",
     "Excalidraw/AWS EKS.svg",
