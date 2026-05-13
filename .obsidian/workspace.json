@@ -90,12 +90,12 @@
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://www.boot.dev/lessons/7291a30c-4942-4b90-a5c0-026e12bbf9c8",
-                "title": "Learn Memory Management in C: Printing Variables | Boot.dev",
+                "url": "https://www.boot.dev/lessons/1c5ad89a-8e62-4440-bbad-da29e84c33ad",
+                "title": "Learn Memory Management in C: Void | Boot.dev",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "Learn Memory Management in C: Printing Variables | Boot.dev"
+              "title": "Learn Memory Management in C: Void | Boot.dev"
             }
           },
           {
@@ -358,6 +358,7 @@
   },
   "active": "3d0a17c36dee65e1",
   "lastOpenFiles": [
+    "HomeLab/repos",
     "k8s/contol_plane_breakdown",
     "Git/git_cheatsheet.md",
     "Git/git quickie.md",
@@ -372,7 +373,6 @@
     "HomeLab/kernel_dev",
     "HomeLab/k8s",
     "AWS/AWS Solutions Architect Associate.md",
-    "Kernel_Developement/kernel_dev_installs.yml",
     "Kernel_Developement/Linux Kernal Dev Setup.md",
     "Excalidraw/Linux Package Managers.md",
     "Gt_Clones/learn-k8s/README.md",
