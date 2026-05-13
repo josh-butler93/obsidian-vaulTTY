@@ -140,6 +140,7 @@ Day 4
 *grep "=m" .config | head || grep "=y" .config | head
 * modinfo net/netfilter/xt_nat.ko -->this shows module metadata, dependencies, descriptions, license
 **sudo make modules_install
+**sudo make install
 
 *free -h
 *nproc -->number of processors
