@@ -1,0 +1,3 @@
+*ls /etc/yum.repod/ --> This will list out the repos currently stored on the system
+*sudo dnf clean all -->this will clear all cached data and force a fresh synchronization
+

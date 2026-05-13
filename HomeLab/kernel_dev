@@ -1,6 +1,19 @@
+==============
+Beginner Goals
+==============
+
+pull source
+→ configure
+→ compile
+→ observe failures
+→ troubleshoot
+→ repeat
+
 ===============
 Day 1: Commands
 ===============
+*uname -r
+
 --Make:
 	- make = an automated build intruction runner
 	- It reads instructions from a 'Makefile' and figures out:
@@ -10,17 +23,17 @@ Day 1: Commands
 		- what output to generate
 	- basically just telling it to compile .c files -> link them together -> build modules -> create kernal image
 	- *without make you would have to manually compile all those .c files*
-make defconfig # this creates a baseline .config file
+*make defconfig # this creates a baseline .config file
 
-make -j$(nproc)
+*make -j$(nproc)
 	- make: starts the kernel build
 	- -j: parallel compliation
 	- $(nproc): uses all avaliable cpu cores
-*The above command complies thousands of files and turns them into an executable/bootable image
-*The generated are stored in the /arch/x86/boot/ directory 
-* ls -lh arch/x86/boot/bzImage #this is the compressed linux kernal image
+The above command complies thousands of files and turns them into an executable/bootable image
+The generated are stored in the /arch/x86/boot/ directory 
+ ls -lh arch/x86/boot/bzImage #this is the compressed linux kernal image
 
-make menuconfig
+*make menuconfig
 	- launches a terminal based gui/config meu for the kernal
 	- when finished run the below command to verify
 		- tail -20 .config
@@ -40,13 +53,13 @@ Day 2: Commands
 ===============
 ---Removes the previously built compilation files and starts fresh
 	- The generated build artifacts
-make
+*make
   = build LEGO structure
 
-make clean
+*make clean
   = take apart assembled pieces
 
-*1. make clean
+1. make clean
 
 ---Make changes as needed before compiling the kernel 
 	- makes changes to the .config file before compiling the code
@@ -56,31 +69,31 @@ make clean
 			- what features to enable
 			- what modules to build
 			- what architecture settings to use
-*2. make menuconfig
+2. make menuconfig
 	- Search for 'Kernel hacking'
 		- enable debug options
 		- enable extra logging
 	- Change Hostname/Version
 		- search localversion
 			- set something like 'JoshLab'
-*2b. make defconfig
+2b. make defconfig
 
 ---Tie all the files togther to create the linux kerel 3-3b
 	-The kenel starts as thousands of seperate files
 	-The below commands compiles them/links them together to create the 'KERNEL IMAGE'
-*3. make = one task at a time
-*3b. make -j$(nproc) = build using all available resources
+3. make = one task at a time
+3b. make -j$(nproc) = build using all available resources
 	-j - run multiple builds simultaneouslly
 	-nproc - returns the number of cpu cores/threads
 		- so command: make -j8 (if you had 8 cores)
 
 ---Location of the Kernel Image File
-*4. arch/x86/boot/bzImage
+4. arch/x86/boot/bzImage
 	- name is typically vmlinux
 
 ---Install vs Boot
-*5. sudo make modules_install # copies modules into the /lib/modules/<kernal-version>/ <- directory
-*5b. sudo make install # installs kernel image into /boot
+5. sudo make modules_install # copies modules into the /lib/modules/<kernal-version>/ <- directory
+5b. sudo make install # installs kernel image into /boot
 	-Now the machine knows the kernel exists
 	-This means that when the machine reboots you can select that kernel
 
@@ -105,5 +118,67 @@ bootloader selects kernel
 Linux runs your kernel
 
 ---Navigating through the directory
-grep -R "module_init" . # ways to navigate through the codebase
-grep -R "printk" . # ways to navigate throuhg the codebase
+*grep -R "module_init" . # ways to navigate through the codebase
+*grep -R "printk" . # ways to navigate throuhg the codebase
+*grep -R "schedule(" kernel/
+=====
+Day 4
+=====
+
+*cd ~
+*mkdir kernel-practice
+*cd kernel-practice
+
+*wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.90.tar.xz
+*tar -xf linux-6.6.90.tar.xz && cd linux-6.6.90
+*make defconfig || make menuconfig
+
+*make || make -j$(nproc) || make -j2 || make -j4
+*make kernelrelease
+*ls -lh arch/x86/boot/bzImage
+*find . -name "*.ko" | head -->this allows me to see all generated modules
+*grep "=m" .config | head || grep "=y" .config | head
+* modinfo net/netfilter/xt_nat.ko -->this shows module metadata, dependencies, descriptions, license
+**sudo make modules_install
+
+*free -h
+*nproc -->number of processors
+*sudo dmidecode -t memory -->This shows dimm slots sizes populated sticks and detected ram
+
+Add local version string
+
+Search:
+
+Local version
+
+Set:
+
+-day3test
+
+Then your compiled kernel will literally show:
+
+6.6.x-day3test
+
+Enable some debug options
+
+Look under:
+
+Kernel hacking
+
+Enable:
+
+debug info
+printk timing
+verbose logging
+
+Safe learning options.
+
+✅ Toggle a driver to module
+
+Find some random unused driver and change:
+
+[*] → [M]
+
+This teaches:
+
+built-in vs module behavior
