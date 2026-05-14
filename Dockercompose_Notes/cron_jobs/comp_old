@@ -1,0 +1,12 @@
+services:
+  crontab-ui:
+    build: .
+    container_name: crontab-ui
+    ports:
+      - "8000:8000"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+    volumes:
+      - /var/spool/cron:/var/spool/cron
+    restart: unless-stopped

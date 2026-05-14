@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  hello:
+    image: hello-world
+
+#command: docker compose up --run this after saving the file 
+#command: docker compose down --run this for cleanup
+#command: rm docker-compose --more cleanup commands 
