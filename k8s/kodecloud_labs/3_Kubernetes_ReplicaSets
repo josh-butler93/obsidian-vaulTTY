@@ -1,0 +1,34 @@
+--How many ReplicaSets exist on the system?
+	*kubectl get replicaset 
+	*kubectl get rs
+
+--How many pods are desired in the replica set?
+	*kubectl get rs
+		- Look for the desired tab and it will show how many pods are desired
+
+--What is the image used to create the pods in the new-replica-set?
+	*kubectl describe replicaset
+	*kubectl describe rs
+
+--How many pods are ready in the replicaset?
+	*kubectl get pods 
+		- Look at the ready tab when running the command
+	*kubectl describe pod xyz
+		- See why the pod is failing
+
+**After deleting a pod that was created by the replicaset because there is a desired state for how many should be running a new on will be auto created 
+
+--Create a replicaset using the replicaset-definition-1.yaml file located at /root/
+	*kubectl create -f replicatset-defininion-1.yaml
+	*kubectl get rs
+
+--Fix the issue in the replicaset-definition-2.yaml
+	*kubectl create -f replicaset-definiaion-2.yaml
+	*kubectl get rs
+
+--Delete two newly created replicasets replicaset-1 && replicaset-2
+	*kubectl delete -f relicaset-1.yaml
+	*kubectl delete -f replicaset-2.yaml
+
+--Fix the original replicaset new-replica-set to use the correct image with the name as busybox
+	*kubectl 

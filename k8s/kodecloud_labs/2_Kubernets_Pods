@@ -1,0 +1,42 @@
+--How many pods exist on the system?
+	* kubectl get pods -A
+	* kubectl get pods -n default
+
+--Create a new pods using the nginx image
+	* kubectl run nginx --image=nginx
+
+--How many Pods are created in the default namespace?
+	* kubectl get pods -n default
+
+--Which image is specified for the pods whose names begin with the newpods prefix
+	* kubectl describe pods newpod-xyz -n default
+		- Look under the Contianers section to see the image that is being pulled
+
+--Which nodes are the pods placed on?
+	* kubectl describe pods newpod-xyz -n default
+		- Look at the node section and it will tell you which node the pod was placed on 
+
+--We just created a new pod named webapp. How many containers are part of the webapp pod?
+	* kubectl get pod webapp -n default
+	- Ready 1/2 --the so the answer is two
+	- so 2 containers but only one is running 
+
+--What images are used in the new webapp pod?
+	* kubectl describe pod webapp -n default
+		- Look in the container section to see what images are being pulled
+
+--What is the state of the contaienr agentx in the pod webapp?
+	* kubectl describe pod webapp -n default
+		- Look at the bottom of the section to see why the contianer is not running
+
+--What does the ready column in the output of the kubectl getpdos command indicate?
+	* kubectl get pods
+		- Ready containers in pod / Total containers in pod
+
+--Delete the webapp pod...
+	* kubectl delete pod webapp -n default
+
+--Create a new pod with the name redis and the image redis123
+	* kubectl run redis --image=redis123 --dry-run=client -o yaml > redis-definition.yaml
+	* kubectl create -f redis-definitaion.yaml
+	* kubectl get pods

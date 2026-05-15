@@ -1,0 +1,10 @@
+--How many nodes are part of the cluster?
+	- kubectl get nodes
+
+--What is the verssion of Kubernetes running on the nodes?
+	- kubectl get nodes --> Look at the version section
+
+--What flavor and version of Operating System on which the Kubernetes nodes are running:
+	- kubectl describe nodes --> Look in the System Info: Section of the output
+
+

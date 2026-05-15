@@ -7,6 +7,7 @@ kubectl get pods -A <--short cut for --all-namespaces
 kubectl get pods -n _namespace_pod_is_in --> kubectl get pods -n test
 kubectl get deployments -A
 kubectl get all -A --> This command displays an overview of pods, services, and deployments across all namespaces
+kubectl describe pod <pod-name> -n <namespace>
 kubectl describe node <node_name> --> kubectl describe node minikube
 kubectl describe svc <podname> -n namespace
 kubectl get svc _pod_name_ -n namespace --> this will give the ip address of the pod where it can be reached from the ui
@@ -15,6 +16,15 @@ kubectl get top pods
 kubectl get namespaces # this will list out namespaces
 kubectl create namespace _namespace_name_
 kubectl detelet namespace _namespace_name_
+kubectl create deployment my-app --image=nginx --> run the following command in a terminal to create a deployment
+kubectl run nginx --image nginx --> # run the following command in a terminal to run a container in a pod
+kubectl run redis --image=redis123 
+kubectl run redis --image=redis123 --dry-run=client -o yaml > redis-definition.yaml
+	- the above option is used to create a manifest file for running the redis container
+kubectl create -f redis-definition.yaml
+kubectl edit pod redis
+kubectl apply -f redis-definition.yaml <--run this command if you make changes to the yaml file this will update the pod
+
 k9s --> to launch k9s app
 
 helm add repo <repo name>

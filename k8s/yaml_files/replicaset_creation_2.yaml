@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: replicaset-2
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      tier: frontend
+    template:
+      metadata:
+        labels:
+          tier: frontend
+      spec:
+        contianers:
+        - name: nginx
+          image: nginx
+
+#kubectl create -f replicaset-creation-2.yaml
