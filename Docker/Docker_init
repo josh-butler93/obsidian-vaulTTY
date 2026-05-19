@@ -1,0 +1,3 @@
+When working with containers you usually create a docker file to define your image and a compose.yaml file on how to run it
+	- To help create the files docker has a command called *docker init*
+	- Run the above command and docker will create all the required files need

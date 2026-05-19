@@ -1,0 +1,28 @@
+Overall Helm Installation Link Below:
+--https://helm.sh/docs/intro/install/
+--https://artifacthub.io/
+
+*curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-4
+*chmod 700 get_helm.sh
+*./get_helm.sh
+
+*helm search repo <<application_name>>
+*helm repo add name_repo_url -->> ex
+	*helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+	*helm repo list
+	*helm repo update
+	*helm install my-webapp ingress-nginx/ingress-nginx
+	*helm list
+	*helm status <release_name> --show-resources
+	*kubectl get pods -A
+	*kubectl logs <pod_name>
+	*kubectl describe pod my-webapp -n default
+	*kubectl port-forward service/<service_name> 8080:<target_port>
+		-http://localhost:8080
+	*kubectl get services
+	*helm uninstall my-webapp
+
+
+--Windows Install:
+	- winget install Helm.Helm
+	- winget install --id Helm.Helm --source winget

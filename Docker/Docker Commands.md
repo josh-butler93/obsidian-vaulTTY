@@ -2,7 +2,7 @@
   - *sudo dnf install -y docker
   - *docker ps
   - *docker ps -a 
-  - *docker images
+  - *docke images
   - *docker run -d -it image_name
   - *docker run -it image_name bash # this will pull an instance and put you in a terminal
   - *docker run -d -it --name test image_name bash # this will pull an instance put you in a termianl and will continue to run after you exit out 

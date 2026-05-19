@@ -1,0 +1,8 @@
+ansible: ansible zip installation files
+	- https://releases.ansible.com/ansible/
+
+ansible:documentation
+	- https://docs.ansible.com/projects/ansible/latest/getting_started/index.html
+
+ansible:community
+	- https://docs.ansible.com/community.html
