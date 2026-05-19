@@ -1,0 +1,28 @@
+#To get the list of docker commands
+	*docker --help
+
+#To pull and run an image
+	*docker run <<image_name>
+
+#Spinning up a docker container using an ubuntu image
+	*docker run -d ubunutu
+
+#To view the status of a running container
+	*docker ps
+	*docker ps -a --> to view a list of running and stopped containers <-- 
+
+#To stop a running container either use the container name or container id
+	*docker stop jammy_jam
+
+#To list out all the images on a running container
+	*docker images
+
+#Run the below command to delete all running and non running commands
+	*docker stop $(docker ps -aq)
+	*docker rm $(docker ps -aq)
+
+#To delete an image
+	*docker rmi <image_id>
+	*docker rmi $(docker images -aq)
+
+
