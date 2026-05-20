@@ -25,4 +25,11 @@
 	*docker rmi <image_id>
 	*docker rmi $(docker images -aq)
 
+#Run a container in detached mode with the ubunutu image and the name webapp
+	*docker run -d --name webapp nginx:1.14-alpine
+
+#Identify an ubuntu based container running create a file called learning.txt under the root folder with the text --This is a file--
+	*docker ps --filter ancestro=ubuntu --format '{{.ID}}'
+	*docker exec <container id> sh -c 'echo "This is the file" >> /root/learning.txt'
+
 

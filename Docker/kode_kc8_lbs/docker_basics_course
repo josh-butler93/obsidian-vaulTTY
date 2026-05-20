@@ -1,0 +1,3 @@
+Dockerhub link: https://hub.docker.com/repositories/slumbxr
+# Running a container from an image
+	*docker run <image_name>

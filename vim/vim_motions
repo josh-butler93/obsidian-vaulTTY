@@ -1,0 +1,3 @@
+when inside the lightsail instance instead of doing ctrl + w h/j/k/l
+type:
+	*:windcmd w ---h/j/k/l

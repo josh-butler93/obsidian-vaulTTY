@@ -1,0 +1,35 @@
+mkdir -p ~/.local/share/nvim/site/pack/plugins/start
+git clone https://github.com/sphamba/smear-cursor.nvim ~/.local/share/nvim/site/pack/plugins/start/smear-cursor.nvim
+
+mkdir ~/.config/nvim/init.lua
+
+vim ~/.config/nvim/init.lua
+
+-- Ensure Neovim is at least 0.10.2
+require('smear_cursor').setup({
+    -- This must be true for hjkl tracking
+    smear_between_neighbor_lines = true, 
+    
+    -- Visual adjustments
+    cursor_color = "#ff00ff", -- Bright color to verify it's working
+    stiffness = 0.8,          -- Lower = more "lag" and smoothness
+    trailing_stiffness = 0.5, -- Controls the tail length
+})
+
+or
+
+-- Add this to the top of your init.lua
+vim.pack.add({ "https://github.com/sphamba/smear-cursor.nvim" })
+
+require('smear_cursor').setup({
+    enabled = true,
+    smear_between_buffers = true,
+    smear_between_neighbor_lines = true, -- Crucial for HJKL tracking
+})
+
+
+Explanation of Settings:
+	- cursor_color: Setting this to #87ceeb gives you a clear light blue smear
+	- trailing_stiffness: This is the most important setting for the "trail." At 0.2, the end of the smear will take longer to catch up to your cursor, leaving a visible path behind it
+	- stiffness: Reducing this to 0.5 makes the initial animation smoother and less instantaneous
+	- damping: At 0.6, the cursor will "overshoot" its target slightly when you stop moving, adding more visual flair to the animation

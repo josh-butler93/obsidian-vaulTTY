@@ -15,4 +15,5 @@
   - *docker rm --filter status=exited 
   - *docker rmi # to remove images 
   - *docker image prune -a 
+  - *docker run jtcressy/cowsay
 
