@@ -1,0 +1,30 @@
+#Setting up Multiversal Hub
+	*mkdir git-branch-lab && cd git-branch-lab
+	*git init
+	*echo "# Git Branch Lab" > README.md
+	*echo "This is my hub for multiversal Git branch experiments" >> README.md
+	*git add README.md
+	*git commit -m "Initial commit: Create the multverse hub"
+
+#Creating Your First Alternate Reality
+	*git branch feature-dimension --> this command creates a new branch but DOESN'T switch to it yet
+	*git branch --> the '*' shows which branch you are currently attached to
+	*git checkout feature-dimension -->this command switches your current dir. to the feature-dimension branch and it updates your working directory to match the state of the feature-dimension branch...its like steppping through a portal into the new reality
+	*git switch feature-dimension --> newer prefered command specifically designed for branch switching 
+---Creating and switching branches in one command 
+	*git checkout -b feature-dimension 
+	*git switch -c feature-dimension
+
+#Shaping Your New Reality
+	*echo "This is a powerful artifact from another dimension" > dimesional-artifact.txt
+	*git add dimensional-artifact.txt && git commit -m "Created a powerful interdimensional artifact"
+	*echo "#### Feature Dimension" >> README.md
+	*echo "We've discovered a powerful artifact in this reality" >> README.md
+	*git add README.md && git commit -m "Document the discovery of the artifact"
+	*git diff master
+
+#Merging Realities
+	*git checkout master --> jump back to our main reality
+	*git switch master
+	*git merge feature-dimension
+
