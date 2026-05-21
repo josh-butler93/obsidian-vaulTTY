@@ -1,0 +1,16 @@
+config file locations:
+	- ~/.config/nvim
+mkdir -p ~/.local/share/nvim/site/pack/plugins/start                          git clone https://github.com/sphamba/smear-cursor.nvim ~/.local/share/nvim/site/pack/plugins/start/smear-cursor.nvim    
+
+mkdi -p ~/.config/nvim
+touch ~/.config/nvim/init.lua
+require('smear_cursor').setup({    
+		-- This must be true for hjkl tracking
+		smear_between_neighbor_lines = true,	
+
+		-- Visual adjustments
+		cursor_color =  "#87ceeb", -- Bright color to verify it's working
+		stiffness = 0.5, -- Lower = more "lag" and smoothness
+		trailing_stiffness = 0.2, -- Controls the tail length
+		damping = 0.6,
+})
