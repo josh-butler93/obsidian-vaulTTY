@@ -28,3 +28,9 @@
 	*git switch master
 	*git merge feature-dimension
 
+#Closing Dimensional Portals
+	*git branch -d feature-dimension
+		'-d': tells git to delete the branch but only if its been fully merged
+			- Git will only allow you to delete a branch using the -d if the changes in it have been merged to the branch you are on
+			- If you try to delete a branch that hasn't been fully mereged git will give you a warning
+
