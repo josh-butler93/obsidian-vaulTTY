@@ -135,18 +135,8 @@
               "icon": "lucide-file",
               "title": "git_cheatsheet"
             }
-          },
-          {
-            "id": "85d1489016ca66a1",
-            "type": "leaf",
-            "state": {
-              "type": "beautitab-react-view",
-              "state": {},
-              "title": "New tab"
-            }
           }
-        ],
-        "currentTab": 8
+        ]
       }
     ],
     "direction": "vertical"
@@ -232,7 +222,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 243.5086555480957
+    "width": 243.5086555480957,
+    "collapsed": true
   },
   "right": {
     "id": "1f60c4e1c0218a96",
@@ -348,7 +339,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 725.5
+    "width": 725.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -369,8 +361,22 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "c22cef52b2780280",
+  "active": "14506d2d5395874b",
   "lastOpenFiles": [
+    "Command_Guru/Linux Admin",
+    "Command_Guru/Git/git_test",
+    "Command_Guru/Git",
+    "Command_Guru",
+    "lab-archive/Kanban/lab-archive.md",
+    "lab-archive/Kanban/cron job setup.md",
+    "lab-archive/Kanban/Lpic-1v2.md",
+    "lab-archive/Kanban/Lpic-1v1.md",
+    "lab-archive/Kanban/Cron Job Index.md",
+    "lab-archive/Kanban/Comptia Server+.md",
+    "lab-archive/Kanban/CCNA.md",
+    "lab-archive/Kanban/Build out Portainer Server.md",
+    "lab-archive/Kanban/Build out K8 Cluster.md",
+    "lab-archive/Kanban/Build out DockerSwarm Cluster.md",
     "lab-archive/lab-archive.md",
     "lab-archive/Gt_Clones/learn-k8s/README.md",
     "Vault.md",
@@ -381,9 +387,6 @@
     "lab-archive/docker-compose/omarchy_compose/docker-compose/dockand/compose.yml",
     "lab-archive/docker-compose/omarchy_compose/docker-compose/dockand/Obsidian Shortcut",
     "lab-archive/docker-compose/omarchy_compose/docker-compose/vimbegood",
-    "lab-archive/docker-compose/omarchy_compose/docker-compose/terraform",
-    "lab-archive/docker-compose/omarchy_compose/docker-compose/dockand",
-    "lab-archive/Terraform/terraform-proxmox/lxc/lxc.tfvars.example",
     "lab-archive/Terraform/terraform-proxmox/README.md",
     "lab-archive/Kanban/Taskings/Untitled.md",
     "lab-archive/Kanban/Taskings/Build out home Assistant Pod.md",
@@ -396,17 +399,6 @@
     "lab-archive/docker-compose/Docker Compose Index.md",
     "lab-archive/Yaml/Yaml Index.md",
     "lab-archive/TmuxRestore/ssh_tmux_session.md",
-    "lab-archive/TmuxRestore/Tmux Restore Index.md",
-    "lab-archive/Tmux/Tmux Restore.md",
-    "lab-archive/Tmux/Tmux Index.md",
-    "lab-archive/Tmux/Tmux Commands.md",
-    "lab-archive/Terraform/Terraform Index.md",
-    "lab-archive/Tailscale/Tailscale Index.md",
-    "lab-archive/SSH/ssh_keys.md",
-    "lab-archive/SSH/SSH Index.md",
-    "lab-archive/Portainer/Portainer Install.md",
-    "lab-archive/Portainer/Portainer Index.md",
-    "lab-archive/Portainer/Portainer Agent Install.md",
     "lab-archive/Images/wallhaven-x15w2d.jpg",
     "lab-archive/Images/wallhaven-gj15r7.png",
     "lab-archive/Images/wallhaven-4g823l.jpg",
