@@ -1,0 +1,38 @@
+#Creating a New Branch
+	* mkdir git-branch-lab
+	* cd git-branch-lab
+	* git init
+	* git status
+---
+  - echo "# Git Branch Lab" > README.md
+  - echo "This is my hub for multiversal Git branch experiments" >> README.md
+
+  	* git add README.md
+	* git commit -m "Initial Commit" Created the multiverse hub" --think of commit like taking a snapshot of the file
+
+#Creating a New Branch --Alternate Reality
+	* git branch feature-dimension
+	* git branch
+	* git checkout feature-dimension
+	* git switch feature-dimension
+	* git branch
+---
+  - echo "This is a powerful artifact from another dimension" > dimensional-artifact.txt
+  - git add dimensional-artifact.txt
+  - git commit -m "Create a powerful interdimensional artifact"
+  - echo "#### Feature Dimension" >> README.md
+  - echo "We've discovered a powerful artifact in this reality" >> README.md
+  - git add README.md
+  - git commit -m "Added ..." 
+
+#Merging Branches --Reality Conjunction
+	* git checkout master || git switch master
+		--on the master branch the files created above are not there and wont exist until the branches are merged
+	* git merge feature-dimension
+	* git branch --merged --to see which branches were merged
+
+#Closing the Branch ---Closing Dimensional Portal
+	* git branch -d feature-dimension --the '-d' tells git to delete the branch
+	* git branch -D feature-dimension ---the '-D' will delete the branch if git complains about anything 
+	* git branch
+	* git branch -a ---This command allows you to see all branches, including remote branches

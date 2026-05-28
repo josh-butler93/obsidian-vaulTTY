@@ -1,0 +1,13 @@
+Docker Link: https://hub.docker.com/
+
+#Running a Docker Container
+	*docker run <container_name>
+	* docker ps -a
+	* docker start <container_name>
+	* docker stop <container_name>
+	* docker rm <container_name>
+	* docker rmi <image_name>
+	* docker run ubuntu sleep 5
+
+#Executing Commands on a running container
+	* docker exec <container_name> cat /etc/os-release
