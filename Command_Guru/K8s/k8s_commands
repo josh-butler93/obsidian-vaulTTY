@@ -46,6 +46,8 @@
 	* kubectl get pods -o wide -n dev
 	* kubectl get pods -A -o wide
 	* kubectl get pod webapp -o wide -n dev
+	* kubectl describe pod webapp -n dev
+	* kubectl create -f webapp.yml
 
 #############################################################################################
 #Lab 1:
@@ -72,3 +74,7 @@
  	* kubectl get pod webapp -o wide -n default
 
 #Lab 3:
+ --A pod named node-api is deployed and the container within the pod contains an env. variable named APP_COLOR
+ 	--Identify the value of the APP_COLOR env. variable configured inside the container
+	* kubectl describe pod node-api
+		--look under Containers >> Environment section for app_color

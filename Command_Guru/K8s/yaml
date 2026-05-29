@@ -1,18 +1,27 @@
 #Blank Template
 
-apiVersion: v1
-kind:
-metadata:
--
--
--
-spec:
+apiVersion: v1  #string/value
+kind: Pod       #string/value
+metadata: #only names and labels are put in this section
+  name: myapp-pod    #dictionary
+  labels:    	     #dictionary
+    app: myapp       #dictionary
+    type: front-end  #dictionary
 
+spec:
+  container:
+  - name: nginx-container
+    image: nginx
+
+# kubectl create -f pod-nginx.yml
 ---Those are the top level/root-level properties for the k8s yaml files
 
   - 'apiVersion:' It is the version of the k8s api being used to create the project
-  	---Kind && Version
-		- Kind: Pod          Version: v1
-		- Kind: Service      Version: v1
-		- Kind: ReplicaSet   Version: apps/v1
-		- Kind: Deployment   Version: apps/v1
+  - 'kind:' This refers to the type of object that you are trying to create
+  - 'metadata:' This is data about the object like name, labels, etc
+  - 'spec:' This is where the pod specs are setup
+---Kind && Version
+ - Kind: Pod          Version: v1
+ - Kind: Service      Version: v1
+ - Kind: ReplicaSet   Version: apps/v1
+ - Kind: Deployment   Version: apps/v1
