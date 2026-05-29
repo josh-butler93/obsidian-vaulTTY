@@ -1,0 +1,14 @@
+#File Listing Commands
+	* ls 
+	* ls -l
+	* ls -lh
+	* ls -alh
+	* ls -lt 
+	* ls -ltr
+	* ls -lhSr
+	* ls -l */ --contents of immediate subdirectories
+	* ls -l | cowsay
+---
+  - '-S': Sort by file size
+  - '-X': Sort alphabetically by file extension
+  - '-v': Sort by version (useful for numbered files)

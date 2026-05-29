@@ -1,0 +1,18 @@
+#Blank Template
+
+apiVersion: v1
+kind:
+metadata:
+-
+-
+-
+spec:
+
+---Those are the top level/root-level properties for the k8s yaml files
+
+  - 'apiVersion:' It is the version of the k8s api being used to create the project
+  	---Kind && Version
+		- Kind: Pod          Version: v1
+		- Kind: Service      Version: v1
+		- Kind: ReplicaSet   Version: apps/v1
+		- Kind: Deployment   Version: apps/v1

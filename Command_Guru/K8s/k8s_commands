@@ -1,0 +1,74 @@
+#k8s==Container Orchestration
+  --Node=Machine with Kubernetes installed where pods are deployed to
+  --Cluster=Group of nodes
+  --Master=Another node with k8s installed on it that watches over the nodes in the cluster and is responsible for the orchestration of the nodes
+  --kubectl=is used to deploy,manage, and maintain the k8s cluster
+  --pods=containers are encapsulated into a k8s object called a pod
+
+#Control Plane
+  - kube-apiserver (API): Serves as the cluster’s front door. All administrative commands and resource requests pass through it
+  - etcd (Key Value Store): Stores all configuration data and the current state of the cluster
+  	---If you lose etcd data, you lose the state of the cluster
+  - kube-scheduler (SCH): Assigns Pods to Nodes based on resource requirements, constraints, and policies
+  - kube-controller-manager (CTLM): Runs a variety of controllers that continually adjust the cluster’s state
+  	---Ensuring that the actual state matches the desired state defined by your deployments and configurations
+
+#Nodes (Worker Machines)
+  - Node: Nodes are where workloads run
+  - kubelet (KLT): A node-level agent that communicates with the Control Plane
+  	---It ensures Pods are running and reports their status back to the Control Plane
+  - Container Runtime (CR): Software that runs and manages containers (e.g., Docker or containerd)
+  	---It creates and manages containerized applications within Pods
+
+#Pods
+  - Pod: A Pod is the smallest deployable unit in Kubernetes, typically representing a single instance of a running application
+   ---Pods can contain one or more containers that share the same network namespace and storage volumes
+
+#Services
+  - A Service defines Pods policy for how to access them providing IP addresses, DNS names, and load-balancing
+  
+##############################################Commands#####################################
+---
+	* kubectl cluster-info
+	* kubectl get ns
+	* kubectl get ns Namespace_name
+	* kubectl get nodes
+	* kubectl get nodes -o wide
+	* kubectl get nodes -n Namespace_name
+	* kubectl describe node minikube
+	* kubectl run 
+	* kubectl run hello-minikube
+	* kubectl get pods -A
+	* kubectl get pods -o wide
+	* kubectl get deployments -A
+	* kubectl get all -A
+	* kubectl run nginx-app --image nginx -n dev 
+	* kubectl get pods -o wide -n dev
+	* kubectl get pods -A -o wide
+	* kubectl get pod webapp -o wide -n dev
+
+#############################################################################################
+#Lab 1:
+ --How many nodes are a part of the cluster and what is the version k8s runnong on the nodes
+ 	* kubectl get nodes
+
+ --What is the k8s control plan url
+ 	* kubectl cluster-info
+
+ --Create a Pod named nginx-pod using the nginx image
+ 	* kubectl run nginx-pod --image nginx
+
+#Lab 2:
+ --How many pods exist in the default namespace 
+ 	* kubectl get pods -A
+
+ --Create a new pod with the nginx image
+ 	* kubectl run nginx --image nginx
+
+ --Which nodes are the pods placed on
+ 	* kubectl get pods -o wide -n default
+
+ --What is the state of the pod webapp
+ 	* kubectl get pod webapp -o wide -n default
+
+#Lab 3:
