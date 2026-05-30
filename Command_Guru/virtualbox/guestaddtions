@@ -29,3 +29,5 @@ After that:
 shared clipboard should work
 dynamic screen resizing should work
 better mouse integration should work
+===================================
+To exit Scaled Mode in VirtualBox, press the Host Key + C on your keyboard (e.g., Right Ctrl + C). The "Host Key" is typically the Right Ctrl key on Windows/Linux or the Left Command key on a Mac
