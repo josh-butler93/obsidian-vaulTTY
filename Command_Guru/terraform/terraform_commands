@@ -1,0 +1,3 @@
+	* mkdir terraform-projects/HCL
+		---.tf files are used for writing config files in Terraform using HCL
+	* terraform init	
