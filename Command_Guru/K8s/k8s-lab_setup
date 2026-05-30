@@ -1,0 +1,3 @@
+#hostname setup
+	* hostnamectl set-hostname k8s-control
+	* hostname
