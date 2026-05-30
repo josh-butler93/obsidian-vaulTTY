@@ -8,7 +8,73 @@
         "type": "tabs",
         "children": [
           {
-            "id": "14506d2d5395874b",
+            "id": "b9d0f72b7896823f",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://kodekloud.com/studio/labs?utm_source=google&utm_medium=cpc&utm_campaign=KK_SEM_US_Non_Brand_B2C-Cloud-Acquisition_TB&utm_term=cloud%20computing%20courses&utm_content=174320635661&utm_term=cloud%20computing%20courses&utm_campaign=KK_SEM_US_Non_Brand_B2C-Cloud-Acquisition_TB&utm_source=adwords&utm_medium=ppc&hsa_acc=8039903603&hsa_cam=22329177045&hsa_grp=174320635661&hsa_ad=743477440938&hsa_src=g&hsa_tgt=kwd-7165328286&hsa_kw=cloud%20computing%20courses&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=22329177045&_gl=1*pglkt1*_up*MQ..*_gs*MQ..&gclid=CjwKCAjw8uTQBhAdEiwAVvtJyixdNopmOBDT7hJpYNpYPTT9fys4OdNrWeITxoR2BPxihH8FQK0mohoCN6QQAvD_BwE&gbraid=0AAAAACO3P68i3H5fQv_GxrhPfg4V8PfXd",
+                "title": "KodeKloud Free Labs - Try Hands-On Labs Now !",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "KodeKloud Free Labs - Try Hands-On Labs Now !"
+            }
+          },
+          {
+            "id": "5458e8b596214fbe",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://www.boot.dev/dashboard",
+                "title": "Dashboard | Boot.dev",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Dashboard | Boot.dev"
+            }
+          },
+          {
+            "id": "bda56df44ef2e8a7",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://www.codecademy.com/catalog/language/c",
+                "title": "C Courses & Tutorials | Codecademy",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "C Courses & Tutorials | Codecademy"
+            }
+          },
+          {
+            "id": "b530206d343f2dbd",
+            "type": "leaf",
+            "state": {
+              "type": "custom-frames-zapier",
+              "state": {},
+              "icon": "lucide-bot-message-square",
+              "title": "Zapier"
+            }
+          },
+          {
+            "id": "08c755b907bfd6e2",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://www.pluralsight.com/",
+                "title": "Build team skills in AI, data, cloud, and security | Pluralsight",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Build team skills in AI, data, cloud, and security | Pluralsight"
+            }
+          },
+          {
+            "id": "19343eb76ed342df",
             "type": "leaf",
             "state": {
               "type": "terminal:terminal",
@@ -46,94 +112,15 @@
             }
           },
           {
-            "id": "2ce8cbf1a1f031ef",
+            "id": "e01b1a2eb8fc1d69",
             "type": "leaf",
             "state": {
-              "type": "custom-frames-labex.io",
-              "state": {},
-              "icon": "lucide-pickaxe",
-              "title": "Labex.io"
-            }
-          },
-          {
-            "id": "1e1b47763029e9ff",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
+              "type": "excalidraw",
               "state": {
-                "url": "https://learn.kodekloud.com/user/courses/docker-training-course-for-the-absolute-beginner",
-                "title": "Docker Training Course for the Absolute Beginner | KodeKloud",
-                "mode": "webview"
+                "file": "lab-archive/Excalidraw/Linux Package Managers.md"
               },
-              "icon": "globe-2",
-              "title": "Docker Training Course for the Absolute Beginner | KodeKloud"
-            }
-          },
-          {
-            "id": "3d0a17c36dee65e1",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://www.boot.dev/dashboard",
-                "title": "Dashboard | Boot.dev",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "Dashboard | Boot.dev"
-            }
-          },
-          {
-            "id": "bda56df44ef2e8a7",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://www.codecademy.com/catalog/language/c",
-                "title": "C Courses & Tutorials | Codecademy",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "C Courses & Tutorials | Codecademy"
-            }
-          },
-          {
-            "id": "522d76aa090eb026",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://www.youtube.com/watch?v=rJrd2QMVbGM",
-                "title": "(1) C Programming and Memory Management - Full Course - YouTube",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "(1) C Programming and Memory Management - Full Course - YouTube"
-            }
-          },
-          {
-            "id": "b530206d343f2dbd",
-            "type": "leaf",
-            "state": {
-              "type": "custom-frames-zapier",
-              "state": {},
-              "icon": "lucide-bot-message-square",
-              "title": "Zapier"
-            }
-          },
-          {
-            "id": "e997a41c07d3a027",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Git/git_cheatsheet.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
-              },
-              "icon": "lucide-file",
-              "title": "git_cheatsheet"
+              "icon": "excalidraw-icon",
+              "title": "Linux Package Managers"
             }
           }
         ]
@@ -191,7 +178,7 @@
             }
           },
           {
-            "id": "c22cef52b2780280",
+            "id": "6a9396151f5a2de2",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -345,29 +332,40 @@
   "left-ribbon": {
     "hiddenItems": {
       "graph:Open graph view": false,
-      "terminal:Open terminal": false,
-      "obsidian-excalidraw-plugin:New drawing": false,
-      "obsidian-custom-frames:Open Labex.io": false,
-      "obsidian-custom-frames:Open Google Chrome": false,
-      "obsidian-custom-frames:Open Youtube": false,
-      "obsidian-custom-frames:Open Zapier": false,
-      "obsidian-custom-frames:Open Tiktok": false,
-      "obsidian-git:Open Git source control": false,
       "switcher:Open quick switcher": false,
       "workspaces:Manage workspace layouts": false,
       "command-palette:Open command palette": false,
       "obsidian-kanban:Create new board": false,
       "iconic:Open rulebook": false,
-      "omnisearch:Omnisearch": false
+      "terminal:Open terminal": false,
+      "omnisearch:Omnisearch": false,
+      "obsidian-git:Open Git source control": false,
+      "obsidian-custom-frames:Open Google Chrome": false,
+      "obsidian-custom-frames:Open Youtube": false,
+      "obsidian-custom-frames:Open Zapier": false,
+      "obsidian-custom-frames:Open Tiktok": false,
+      "obsidian-custom-frames:Open Labex.io": false,
+      "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "14506d2d5395874b",
+  "active": "b9d0f72b7896823f",
   "lastOpenFiles": [
     "lab-archive/Kanban/Vault.md",
-    "Command_Guru/Linux Admin",
     "Command_Guru/Git/git_test",
-    "Command_Guru/Git",
-    "Command_Guru",
+    "lab_compose_files/tugtainer/compose.yml",
+    "lab_compose_files/portainer/docker-compose.yml",
+    "lab_compose_files/tugtainer",
+    "lab_compose_files/portainer",
+    "lab_compose_files",
+    "arch_docker_compose/tugtainer/compose.yml",
+    "arch_docker_compose/portainer/docker-compose.yml",
+    "arch_docker_compose/tugtainer",
+    "arch_docker_compose/portainer",
+    "lab-archive/Excalidraw/Linux Package Managers.md",
+    "lab-archive/Commands/Commands Index.md",
+    "lab-archive/Excalidraw/AWS EKS.md",
+    "lab-archive/Excalidraw/AWS EKS.svg",
+    "lab-archive/Excalidraw/Kernel_Dev_Workflow.md",
     "lab-archive/Kanban/lab-archive.md",
     "lab-archive/Kanban/cron job setup.md",
     "lab-archive/Kanban/Lpic-1v2.md",
@@ -381,12 +379,6 @@
     "lab-archive/lab-archive.md",
     "lab-archive/Gt_Clones/learn-k8s/README.md",
     "Vault.md",
-    "lab-archive/docker-compose/omarchy_compose/docker-compose/vimbegood/docker-compose.yml",
-    "lab-archive/docker-compose/omarchy_compose/docker-compose/terraform/terraform-yml.con",
-    "lab-archive/docker-compose/omarchy_compose/docker-compose/terraform/compose.yml",
-    "lab-archive/docker-compose/omarchy_compose/docker-compose/terraform/aws.terraform",
-    "lab-archive/docker-compose/omarchy_compose/docker-compose/dockand/compose.yml",
-    "lab-archive/docker-compose/omarchy_compose/docker-compose/dockand/Obsidian Shortcut",
     "lab-archive/Terraform/terraform-proxmox/README.md",
     "lab-archive/Kanban/Taskings/Untitled.md",
     "lab-archive/Kanban/Taskings/Build out home Assistant Pod.md",
@@ -394,15 +386,9 @@
     "lab-archive/ollama/ollama setup.md",
     "lab-archive/ollama/ollama models.md",
     "lab-archive/ollama/ollama cloudfare tunnel.md",
-    "lab-archive/docker-compose/tugtainer-compose.md",
-    "lab-archive/docker-compose/Docker Compose Install_v2.md",
-    "lab-archive/docker-compose/Docker Compose Index.md",
-    "lab-archive/Yaml/Yaml Index.md",
-    "lab-archive/TmuxRestore/ssh_tmux_session.md",
     "lab-archive/Images/wallhaven-x15w2d.jpg",
     "lab-archive/Images/wallhaven-gj15r7.png",
     "lab-archive/Images/wallhaven-4g823l.jpg",
-    "lab-archive/Excalidraw/AWS EKS.svg",
     "Excalidraw/AWS EKS.svg",
     "Images/wallhaven-4g823l.jpg",
     "Images/wallhaven-gj15r7.png",
