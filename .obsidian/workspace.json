@@ -77,12 +77,12 @@
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://app.pluralsight.com/library/",
-                "title": "Home | Pluralsight",
+                "url": "https://app.pluralsight.com/search/browse?type=lab&m_sort=newest&query_id=144779f6-da69-480a-97d5-15bef3432a52&source=prism_v2&tag_level3_filter=9b3d7783-1a9e-42c0-84b2-b8109cb49797&categories=8b477e1f-12bd-4c97-93fd-677a644efc7c",
+                "title": "Browse | Pluralsight",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "Home | Pluralsight"
+              "title": "Browse | Pluralsight"
             }
           },
           {
@@ -103,10 +103,10 @@
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://jbdtj2b6qxes5mkl.labs.kodekloud.com/#/quiz/lab/1"
+                "url": "https://kodekloud.com/studio/labs/terraform"
               },
               "icon": "lucide-file",
-              "title": "Terraform Providers Free Labs | Try Hands-On Labs @ KodeKloud Studio"
+              "title": "Terraform Free Labs | Try Hands-On Labs @ KodeKloud Studio"
             }
           },
           {
@@ -120,9 +120,33 @@
               "icon": "lucide-file",
               "title": "local_file | Resources | hashicorp/local | Terraform | Terraform Registry"
             }
+          },
+          {
+            "id": "725f8b3fd34e0edb",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "https://github.com/josh-butler93/obsidian-vaulTTY/tree/main/Command_Guru/terraform/teform_projects"
+              },
+              "icon": "lucide-file",
+              "title": "obsidian-vaulTTY/Command_Guru/terraform/teform_projects at main · josh-butler93/obsidian-vaulTTY"
+            }
+          },
+          {
+            "id": "1a7c31b63f2ab3e3",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "https://www.google.com/search?q=why+do+i+keep+gettign+this+fucking+github+error+Compressing+objects%3A+100%25+%2891%2F91%29%2C+done.+send-pack%3A+unexpected+disconnect+while+reading+sideband+packet+Connection+to+github.com+closed+by+remote+host.+fatal%3A+the+remote+end+hung+up+unexpectedly&udm=50&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpV6Bbbmx4QVaoKkiRQ2jlwspSJmW4ELJ_q6C3Z7ydZ0zUFjYUtIFlWdMm34hz3-7e7p8z0DU_NFSMoUWzvdbBddX76yx0lt2qCIrCbCpQ4QNxd8kh2QZH91iI7h1pMyfuTbOg824fbc1bJUfajwP8K2Qf4Z8ROK1RHmjFsoBPJiteqZ_0dvYyEzVvHHzFI0an1MehPQ&aep=10&ntc=1&mstk=AUtExfA9rOk5LcEcSv9AclcoDvg1ehcPq-55piGbd8BSi_qNS5B0nj6X8ruPE40_y_ERYHJ92tHVjsHcnSycacPDJ125jBXdvs8E6v2XRW6rLL6WUyFFtSkHVCbJnNWr7LYEQwyzfdG3QtpR82VSKgL0PqBwQMhGTpkpkE6IWbNIAC6sITnv5Wnd_U4CHC3HQ1LgzLQ-O261vKR9s662N9yt3nsCCXpaClB0zQ5odVqbcHs_QyN9aObgxRrVd_U51vxbztcEwj2-VvKaHEb1G3kVpNLEOF_UT1LSb725_K-bbHVjA-aCM2LsfgGbQhuVJZvFRaxdIwVhmlQEew&aioh=3&csuir=1&mtid=nDgbauO8NrfR5NoPneGCkAk"
+              },
+              "icon": "lucide-file",
+              "title": "why do i keep gettign this fucking github error Compressing objects: 100% (91/91), done. send-pack: unexpected disconnect while reading sideband packet Connection to github.com closed by remote host. fatal: the remote end hung up unexpectedly - Google Search"
+            }
           }
         ],
-        "currentTab": 7
+        "currentTab": 10
       }
     ],
     "direction": "vertical"
@@ -357,7 +381,7 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "80918a9226209b63",
+  "active": "1a7c31b63f2ab3e3",
   "lastOpenFiles": [
     "Command_Guru/terraform/main.tf",
     "Command_Guru/terraform",
