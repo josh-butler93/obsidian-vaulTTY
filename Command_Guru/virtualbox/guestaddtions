@@ -1,0 +1,31 @@
+ubuntu installs: 
+sudo apt update
+sudo apt install build-essential dkms linux-headers-$(uname -r) -y
+sudo reboot
+-Then in VirtualBox top menu:
+-Devices → Insert Guest Additions CD Image
+sudo mkdir /mnt/cdrom
+sudo mount /dev/cdrom /mnt/cdrom
+cd /mnt/cdrom
+sudo ./VBoxLinuxAdditions.run
+sudo reboot
+
+rhel installs:
+sudo dnf install gcc make perl kernel-devel kernel-headers dkms elfutils-libelf-devel -y
+sudo reboot
+-After reboot:
+-In the VirtualBox menu:
+-Devices → Insert Guest Additions CD Image
+sudo mkdir -p /mnt/cdrom
+sudo mount /dev/cdrom /mnt/cdrom
+cd /mnt/cdrom
+sudo ./VBoxLinuxAdditions.run
+sudo reboot
+
+---ls /dev/cd*
+---sudo mount /dev/sr0 /mnt/cdrom
+=============================
+After that:
+shared clipboard should work
+dynamic screen resizing should work
+better mouse integration should work
