@@ -32,3 +32,6 @@ EOF
 ===========================================
 	-Apply:
 		* sudo sysctl --systemv
+	-Verify
+		* lsmod | grep br_netfilter
+		* sysctl net.ipv4.ip_forward
