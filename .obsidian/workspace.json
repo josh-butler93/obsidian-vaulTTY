@@ -13,12 +13,12 @@
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://kodekloud.com/studio/labs?utm_source=google&utm_medium=cpc&utm_campaign=KK_SEM_US_Non_Brand_B2C-Cloud-Acquisition_TB&utm_term=cloud%20computing%20courses&utm_content=174320635661&utm_term=cloud%20computing%20courses&utm_campaign=KK_SEM_US_Non_Brand_B2C-Cloud-Acquisition_TB&utm_source=adwords&utm_medium=ppc&hsa_acc=8039903603&hsa_cam=22329177045&hsa_grp=174320635661&hsa_ad=743477440938&hsa_src=g&hsa_tgt=kwd-7165328286&hsa_kw=cloud%20computing%20courses&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=22329177045&_gl=1*pglkt1*_up*MQ..*_gs*MQ..&gclid=CjwKCAjw8uTQBhAdEiwAVvtJyixdNopmOBDT7hJpYNpYPTT9fys4OdNrWeITxoR2BPxihH8FQK0mohoCN6QQAvD_BwE&gbraid=0AAAAACO3P68i3H5fQv_GxrhPfg4V8PfXd",
-                "title": "KodeKloud Free Labs - Try Hands-On Labs Now !",
+                "url": "https://kodekloud.com/studio/labs/terraform",
+                "title": "Terraform Free Labs | Try Hands-On Labs @ KodeKloud Studio",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "KodeKloud Free Labs - Try Hands-On Labs Now !"
+              "title": "Terraform Free Labs | Try Hands-On Labs @ KodeKloud Studio"
             }
           },
           {
@@ -60,17 +60,29 @@
             }
           },
           {
-            "id": "08c755b907bfd6e2",
+            "id": "e01b1a2eb8fc1d69",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "lab-archive/Excalidraw/Linux Package Managers.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Linux Package Managers"
+            }
+          },
+          {
+            "id": "a59e4a8ce6f14a67",
             "type": "leaf",
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://www.pluralsight.com/",
-                "title": "Build team skills in AI, data, cloud, and security | Pluralsight",
+                "url": "https://app.pluralsight.com/library/",
+                "title": "Home | Pluralsight",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "Build team skills in AI, data, cloud, and security | Pluralsight"
+              "title": "Home | Pluralsight"
             }
           },
           {
@@ -112,18 +124,31 @@
             }
           },
           {
-            "id": "e01b1a2eb8fc1d69",
+            "id": "c13465698d7b47a8",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "surfing-view",
               "state": {
-                "file": "lab-archive/Excalidraw/Linux Package Managers.md"
+                "url": "https://learn.kodekloud.com/user/dashboard"
               },
-              "icon": "excalidraw-icon",
-              "title": "Linux Package Managers"
+              "icon": "lucide-file",
+              "title": "Dashboard | KodeKloud"
+            }
+          },
+          {
+            "id": "80918a9226209b63",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "https://hj4tjkawsybshjth.labs.kodekloud.com/#/quiz/lab/1"
+              },
+              "icon": "lucide-file",
+              "title": "Terraform HCL Free Labs | Try Hands-On Labs @ KodeKloud Studio"
             }
           }
-        ]
+        ],
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -178,13 +203,23 @@
             }
           },
           {
-            "id": "6a9396151f5a2de2",
+            "id": "5d05572d1ad070cb",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
               "state": {},
               "icon": "layout-grid",
               "title": "Navigator"
+            }
+          },
+          {
+            "id": "736b3f10e5abb7e2",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-tab-tree",
+              "state": {},
+              "icon": "chrome",
+              "title": "Surfing Tab Tree"
             }
           }
         ],
@@ -348,21 +383,21 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "b9d0f72b7896823f",
+  "active": "19343eb76ed342df",
   "lastOpenFiles": [
+    "Command_Guru/terraform",
+    "lab-archive/Excalidraw/Linux Package Managers.md",
+    "Command_Guru/virtualbox/guestaddtions",
+    "Command_Guru/virtualbox",
+    "Command_Guru/K8s/k8s-lab_setup",
+    "Tags",
     "lab_compose_files/dockhand/compose.yml",
     "lab_compose_files/dockhand",
     "lab_compose_files/dockhand_compose/compose.yml",
     "lab_compose_files/dockhand_compose",
     "Command_Guru/Linux/linux_commands",
     "Command_Guru/K8s/yaml",
-    "Command_Guru/K8s/web-pod.yaml",
-    "Command_Guru/K8s/redis.yml",
-    "Command_Guru/K8s/k8s_commands",
-    "Command_Guru/K8s/httpd_pod.yml",
-    "Command_Guru/Git/github_actions",
     "lab-archive/Kanban/Vault.md",
-    "lab-archive/Excalidraw/Linux Package Managers.md",
     "lab-archive/Commands/Commands Index.md",
     "lab-archive/Excalidraw/AWS EKS.md",
     "lab-archive/Excalidraw/AWS EKS.svg",

@@ -11,21 +11,21 @@
     "notion",
     "craft"
   ],
-  "alwaysShowCustomSearch": false,
+  "alwaysShowCustomSearch": true,
   "showOtherSearchEngines": true,
   "showSearchBarInPage": true,
   "markdownPath": "/",
   "customHighlightFormat": false,
   "highlightFormat": "[{CONTENT}]({URL})",
   "highlightInSameTab": false,
-  "openInSameTab": true,
+  "openInSameTab": false,
   "showRefreshButton": true,
-  "openInObsidianWeb": false,
+  "openInObsidianWeb": true,
   "useCustomIcons": false,
   "useWebview": false,
   "useIconList": true,
   "darkMode": true,
-  "randomBackground": false,
+  "randomBackground": true,
   "lastOpenedFiles": true,
   "bookmarkManager": {
     "openBookMark": false,
@@ -46,9 +46,32 @@
     ],
     "defaultFilterType": "tree"
   },
-  "treeData": [],
+  "treeData": [
+    {
+      "id": "c13465698d7b47a8",
+      "parent": 0,
+      "droppable": true,
+      "text": "Dashboard | KodeKloud",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "80918a9226209b63",
+      "parent": 0,
+      "droppable": true,
+      "text": "Terraform HCL Free Labs | Try Hands-On Labs @ KodeKloud Studio",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    }
+  ],
   "enableHtmlPreview": true,
-  "supportLivePreviewInlineUrl": false,
+  "supportLivePreviewInlineUrl": true,
   "enableTreeView": true,
   "focusSearchBarViaKeyboard": true
 }
