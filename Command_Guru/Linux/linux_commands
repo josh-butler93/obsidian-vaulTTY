@@ -12,3 +12,7 @@
   - '-S': Sort by file size
   - '-X': Sort alphabetically by file extension
   - '-v': Sort by version (useful for numbered files)
+
+#hostname setup
+	* hostnamectl set-hostname k8s-control
+	* hostname
