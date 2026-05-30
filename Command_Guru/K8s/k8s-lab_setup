@@ -1,3 +1,10 @@
 #hostname setup
 	* hostnamectl set-hostname k8s-control
 	* hostname
+
+###VirtualBox 
+	* adapter 1 = nat
+	* adapter 2 = hostonly
+
+#Turn swap off
+	* sudo swapoff -a
