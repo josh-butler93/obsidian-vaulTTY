@@ -68,6 +68,17 @@
         "fileSize": "",
         "icon": {}
       }
+    },
+    {
+      "id": "69dbc8b857d724fa",
+      "parent": 0,
+      "droppable": true,
+      "text": "local_file | Resources | hashicorp/local | Terraform | Terraform Registry",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
     }
   ],
   "enableHtmlPreview": true,
