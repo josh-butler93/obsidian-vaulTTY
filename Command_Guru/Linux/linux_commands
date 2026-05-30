@@ -19,3 +19,8 @@
 
 #Tailscale
 	* tailscale ip -4
+
+#Memory
+	* sudo swapoff -a 
+	* sudo swapon -a
+	* free -h
