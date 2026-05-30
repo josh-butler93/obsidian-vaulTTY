@@ -24,3 +24,6 @@
 	* sudo swapoff -a 
 	* sudo swapon -a
 	* free -h
+		---Swap memory in Linux acts as a backup to physical RAM
+		---When RAM fills up, the Linux kernel moves idle or infrequently used data to swap space, freeing up RAM for active applications
+		---It functions as a safety net to prevent system crashes
