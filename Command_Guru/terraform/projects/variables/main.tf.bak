@@ -1,0 +1,4 @@
+resource "local_file" "jedi" {
+  filename = "~/terraform/testing123"
+  content = "testing123"
+}

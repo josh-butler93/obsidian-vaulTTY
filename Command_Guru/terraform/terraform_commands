@@ -1,3 +1,5 @@
+#Link: https://developer.hashicorp.com/terraform/language/values/variables
+
 #Terraform HCL
 	* mkdir terraform-projects/HCL
 		---.tf files are used for writing config files in Terraform using HCL
