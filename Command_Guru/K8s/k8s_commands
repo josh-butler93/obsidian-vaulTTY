@@ -34,8 +34,7 @@
 	* kubectl get ns Namespace_name
 	* kubectl get nodes
 	* kubectl get nodes -o wide
-	* kubectl get nodes -n Namespace_name
-	* kubectl describe node minikube
+	* kubectl get nodes -n Namespace_name * kubectl describe node minikube
 	* kubectl run >> creates a single pod if it dies thats it >> docker run container equivalent 
 	* kubectl run hello-minikube
 	* kubectl run test --image busybox -it --rm -- sh
@@ -56,8 +55,13 @@
 	* kubectl describe pod webapp -n dev
 	* kubectl create -f webapp.yml
 	* kubectl delete pod webapp -n default
-	* kubectl get sevice uptime-kuma -n prod
+	* kubectl get svc -n prod
+	* kubectl get svc uptime-kuma -n prod
+	* kubectl get svc uptime-kuma -n prod -o yaml > uptime-kuma_sevices.yaml
+	* kubectl get svc homepage -n prod
 	* kubectl apply -f uptime-kuma.yaml >> this is a deployment >> if the pod dies it notices and recreates it >> think docker compose
+	* kubectl get svc -A
+	* kubectl get ingress -A
 
 #############################################################################################
 #Lab 1:

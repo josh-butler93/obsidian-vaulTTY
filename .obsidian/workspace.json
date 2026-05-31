@@ -364,6 +364,7 @@
   },
   "active": "b543129fc883e663",
   "lastOpenFiles": [
+    "homelab_k8s-build/k8s-documentation",
     "homelab_k8s-build/grafana.yaml",
     "homelab_k8s-build",
     "Command_Guru/terraform/projects/variables_v2/variable.tf",
@@ -374,7 +375,6 @@
     "Command_Guru/terraform/projects/variables_v2/main.tf",
     "Command_Guru/terraform/projects/variables_v2",
     "Command_Guru/terraform/projects/variables/variables.tf",
-    "Command_Guru/terraform/projects/variables/providers.tf",
     "lab-archive/Excalidraw/Linux Package Managers.md",
     "lab-archive/Kanban/Vault.md",
     "lab-archive/Commands/Commands Index.md",

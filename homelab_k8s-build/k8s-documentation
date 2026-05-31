@@ -1,0 +1,14 @@
+homelab-gitops/
+├── infrastructure/
+│   ├── portainer/
+│   ├── ingress/
+│   └── cert-manager/
+│
+├── monitoring/
+│   ├── grafana/
+│   ├── prometheus/
+│   └── loki/
+│
+└── apps/
+    ├── uptime-kuma/
+    └── homepage/
