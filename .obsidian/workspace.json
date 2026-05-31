@@ -364,6 +364,8 @@
   },
   "active": "b543129fc883e663",
   "lastOpenFiles": [
+    "homelab_k8s-build/grafana.yaml",
+    "homelab_k8s-build",
     "Command_Guru/terraform/projects/variables_v2/variable.tf",
     "Command_Guru/terraform/projects/variables_v2/throwaway.auto.tfvars",
     "Command_Guru/terraform/projects/variables_v2/testing.tfvars",
@@ -373,8 +375,6 @@
     "Command_Guru/terraform/projects/variables_v2",
     "Command_Guru/terraform/projects/variables/variables.tf",
     "Command_Guru/terraform/projects/variables/providers.tf",
-    "Command_Guru/terraform/projects/variables/main.tf.bak",
-    "Command_Guru/terraform/projects/variables/main.tf",
     "lab-archive/Excalidraw/Linux Package Managers.md",
     "lab-archive/Kanban/Vault.md",
     "lab-archive/Commands/Commands Index.md",
