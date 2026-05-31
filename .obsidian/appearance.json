@@ -2,7 +2,7 @@
   "cssTheme": "Vanilla AMOLED",
   "accentColor": "#394865",
   "showRibbon": true,
-  "showViewHeader": false,
+  "showViewHeader": true,
   "monospaceFontFamily": "Z003",
   "theme": "obsidian"
 }

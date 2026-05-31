@@ -8,16 +8,14 @@
         "type": "tabs",
         "children": [
           {
-            "id": "b9d0f72b7896823f",
+            "id": "f6c34a362d1c04ef",
             "type": "leaf",
             "state": {
-              "type": "webviewer",
+              "type": "surfing-view",
               "state": {
-                "url": "https://kodekloud.com/studio/labs/terraform",
-                "title": "Terraform Free Labs | Try Hands-On Labs @ KodeKloud Studio",
-                "mode": "webview"
+                "url": "https://kodekloud.com/studio/labs/terraform"
               },
-              "icon": "globe-2",
+              "icon": "lucide-file",
               "title": "Terraform Free Labs | Try Hands-On Labs @ KodeKloud Studio"
             }
           },
@@ -60,6 +58,18 @@
             }
           },
           {
+            "id": "725f8b3fd34e0edb",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "https://github.com/josh-butler93/obsidian-vaulTTY/tree/main/Command_Guru/terraform/projects"
+              },
+              "icon": "lucide-file",
+              "title": "obsidian-vaulTTY/Command_Guru/terraform/projects at main · josh-butler93/obsidian-vaulTTY"
+            }
+          },
+          {
             "id": "e01b1a2eb8fc1d69",
             "type": "leaf",
             "state": {
@@ -69,44 +79,6 @@
               },
               "icon": "excalidraw-icon",
               "title": "Linux Package Managers"
-            }
-          },
-          {
-            "id": "a59e4a8ce6f14a67",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://app.pluralsight.com/search/browse?type=lab&m_sort=newest&query_id=144779f6-da69-480a-97d5-15bef3432a52&source=prism_v2&tag_level3_filter=9b3d7783-1a9e-42c0-84b2-b8109cb49797&categories=8b477e1f-12bd-4c97-93fd-677a644efc7c",
-                "title": "Browse | Pluralsight",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "Browse | Pluralsight"
-            }
-          },
-          {
-            "id": "c13465698d7b47a8",
-            "type": "leaf",
-            "state": {
-              "type": "surfing-view",
-              "state": {
-                "url": "https://learn.kodekloud.com/user/dashboard"
-              },
-              "icon": "lucide-file",
-              "title": "Dashboard | KodeKloud"
-            }
-          },
-          {
-            "id": "80918a9226209b63",
-            "type": "leaf",
-            "state": {
-              "type": "surfing-view",
-              "state": {
-                "url": "https://kodekloud.com/studio/labs/terraform"
-              },
-              "icon": "lucide-file",
-              "title": "Terraform Free Labs | Try Hands-On Labs @ KodeKloud Studio"
             }
           },
           {
@@ -122,31 +94,28 @@
             }
           },
           {
-            "id": "725f8b3fd34e0edb",
+            "id": "114eb1589d6d76c8",
             "type": "leaf",
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://github.com/josh-butler93/obsidian-vaulTTY/tree/main/Command_Guru/terraform/teform_projects"
+                "url": "https://contacts.google.com/widget/hovercard/v/2?hl=en&origin=https%3A%2F%2Fmail.google.com&usegapi=1&jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.gapi.en.54_HDveOtkQ.O%2Fd%3D1%2Frs%3DAHpOoo9QufOdPYTRkbTJadTW6smsxlWLMw%2Fm%3D__features__#id=I__HC_94253229&_gfid=I__HC_94253229&parent=https%3A%2F%2Fmail.google.com&pfname=&rpctoken=20391648"
               },
               "icon": "lucide-file",
-              "title": "obsidian-vaulTTY/Command_Guru/terraform/teform_projects at main · josh-butler93/obsidian-vaulTTY"
+              "title": "Inbox (7,084) - butlerjl804@gmail.com - Gmail"
             }
           },
           {
-            "id": "1a7c31b63f2ab3e3",
+            "id": "1b88cc33b5968eaa",
             "type": "leaf",
             "state": {
-              "type": "surfing-view",
-              "state": {
-                "url": "https://www.google.com/search?q=why+do+i+keep+gettign+this+fucking+github+error+Compressing+objects%3A+100%25+%2891%2F91%29%2C+done.+send-pack%3A+unexpected+disconnect+while+reading+sideband+packet+Connection+to+github.com+closed+by+remote+host.+fatal%3A+the+remote+end+hung+up+unexpectedly&udm=50&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpV6Bbbmx4QVaoKkiRQ2jlwspSJmW4ELJ_q6C3Z7ydZ0zUFjYUtIFlWdMm34hz3-7e7p8z0DU_NFSMoUWzvdbBddX76yx0lt2qCIrCbCpQ4QNxd8kh2QZH91iI7h1pMyfuTbOg824fbc1bJUfajwP8K2Qf4Z8ROK1RHmjFsoBPJiteqZ_0dvYyEzVvHHzFI0an1MehPQ&aep=10&ntc=1&mstk=AUtExfA9rOk5LcEcSv9AclcoDvg1ehcPq-55piGbd8BSi_qNS5B0nj6X8ruPE40_y_ERYHJ92tHVjsHcnSycacPDJ125jBXdvs8E6v2XRW6rLL6WUyFFtSkHVCbJnNWr7LYEQwyzfdG3QtpR82VSKgL0PqBwQMhGTpkpkE6IWbNIAC6sITnv5Wnd_U4CHC3HQ1LgzLQ-O261vKR9s662N9yt3nsCCXpaClB0zQ5odVqbcHs_QyN9aObgxRrVd_U51vxbztcEwj2-VvKaHEb1G3kVpNLEOF_UT1LSb725_K-bbHVjA-aCM2LsfgGbQhuVJZvFRaxdIwVhmlQEew&aioh=3&csuir=1&mtid=nDgbauO8NrfR5NoPneGCkAk"
-              },
-              "icon": "lucide-file",
-              "title": "why do i keep gettign this fucking github error Compressing objects: 100% (91/91), done. send-pack: unexpected disconnect while reading sideband packet Connection to github.com closed by remote host. fatal: the remote end hung up unexpectedly - Google Search"
+              "type": "custom-frames-tiktok",
+              "state": {},
+              "icon": "lucide-ticket",
+              "title": "Tiktok"
             }
           }
-        ],
-        "currentTab": 10
+        ]
       }
     ],
     "direction": "vertical"
@@ -201,16 +170,6 @@
             }
           },
           {
-            "id": "5d05572d1ad070cb",
-            "type": "leaf",
-            "state": {
-              "type": "mk-path-view",
-              "state": {},
-              "icon": "layout-grid",
-              "title": "Navigator"
-            }
-          },
-          {
             "id": "736b3f10e5abb7e2",
             "type": "leaf",
             "state": {
@@ -219,9 +178,19 @@
               "icon": "chrome",
               "title": "Surfing Tab Tree"
             }
+          },
+          {
+            "id": "b3df0fda1cdecd0c",
+            "type": "leaf",
+            "state": {
+              "type": "mk-path-view",
+              "state": {},
+              "icon": "layout-grid",
+              "title": "Navigator"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       },
       {
         "id": "6383ed4e90b91296",
@@ -381,8 +350,10 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "1a7c31b63f2ab3e3",
+  "active": "f6c34a362d1c04ef",
   "lastOpenFiles": [
+    "Command_Guru/kernel_dev/kdev_links",
+    "Command_Guru/kernel_dev",
     "Command_Guru/terraform/main.tf",
     "Command_Guru/terraform",
     "lab-archive/Excalidraw/Linux Package Managers.md",
@@ -393,8 +364,6 @@
     "lab_compose_files/dockhand/compose.yml",
     "lab_compose_files/dockhand",
     "lab_compose_files/dockhand_compose/compose.yml",
-    "lab_compose_files/dockhand_compose",
-    "Command_Guru/Linux/linux_commands",
     "lab-archive/Kanban/Vault.md",
     "lab-archive/Commands/Commands Index.md",
     "lab-archive/Excalidraw/AWS EKS.md",
