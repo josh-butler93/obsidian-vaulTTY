@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web-pod #podName
+  labels:
+    app: web
+    env: prod
+
+spec:
+  containers:
+    - name: nginx-container #container name
+      image: nginx
+
+# kubectl create -f webpod.yml
