@@ -1,0 +1,43 @@
+apiVersion: v1
+items:
+- apiVersion: networking.k8s.io/v1
+  kind: Ingress
+  metadata:
+    annotations:
+      cert-manager.io/issuer: rancher
+      cert-manager.io/issuer-kind: Issuer
+      meta.helm.sh/release-name: rancher
+      meta.helm.sh/release-namespace: cattle-system
+    creationTimestamp: "2026-05-09T03:25:10Z"
+    generation: 1
+    labels:
+      app: rancher
+      app.kubernetes.io/managed-by: Helm
+      chart: rancher-2.14.1
+      heritage: Helm
+      release: rancher
+    name: rancher
+    namespace: cattle-system
+    resourceVersion: "15514"
+    uid: ed2b1d15-9eca-4247-8288-421ddfc38e26
+  spec:
+    rules:
+    - host: 10.0.0.224.nip.io
+      http:
+        paths:
+        - backend:
+            service:
+              name: rancher
+              port:
+                number: 80
+          path: /
+          pathType: ImplementationSpecific
+    tls:
+    - hosts:
+      - 10.0.0.224.nip.io
+      secretName: tls-rancher-ingress
+  status:
+    loadBalancer: {}
+kind: List
+metadata:
+  resourceVersion: ""

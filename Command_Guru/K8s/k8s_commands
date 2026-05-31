@@ -38,6 +38,7 @@
 	* kubectl run >> creates a single pod if it dies thats it >> docker run container equivalent 
 	* kubectl run hello-minikube
 	* kubectl run test --image busybox -it --rm -- sh
+	* kubectl get all -n prod > svc,pods,nodes
 	* kubectl get pods -A
 	* kubectl get pods -o wide >> status,ip,os
 	* kubectl get pod uptime-kuma-3wdfvs -n prod -o yaml

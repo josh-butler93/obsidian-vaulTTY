@@ -1,0 +1,4 @@
+helm install artifactory jfrog/artifactory \
+  -n artifactory \
+  --create-namespace \
+  -f artifactory/values.yaml

@@ -1,0 +1,12 @@
+env:
+  - name: HOMEPAGE_ALLOWED_HOSTS
+    value: "*"
+
+service:
+  main:
+    type: LoadBalancer
+
+config:
+  settings:
+    theme: dark
+    color: slate

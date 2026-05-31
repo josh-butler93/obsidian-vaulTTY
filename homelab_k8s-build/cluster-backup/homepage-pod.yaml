@@ -1,0 +1,227 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    values-checksum: b487934a608515493cf3972fbcc77063bdcf2df701ee41bfe7ac4341649ffc51
+  creationTimestamp: "2026-05-11T02:34:16Z"
+  generateName: homepage-7b8f8d9959-
+  generation: 1
+  labels:
+    app.kubernetes.io/instance: homepage
+    app.kubernetes.io/name: homepage
+    pod-template-hash: 7b8f8d9959
+  name: homepage-7b8f8d9959-bwxc6
+  namespace: prod
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: ReplicaSet
+    name: homepage-7b8f8d9959
+    uid: 9497586d-6f99-4340-95e5-9afe17e98880
+  resourceVersion: "593651"
+  uid: 332a562a-63dd-47bf-85d2-d947a51f066e
+spec:
+  automountServiceAccountToken: true
+  containers:
+  - env:
+    - name: HOMEPAGE_ALLOWED_HOSTS
+      value: '*'
+    image: ghcr.io/gethomepage/homepage:v1.2.0
+    imagePullPolicy: IfNotPresent
+    livenessProbe:
+      failureThreshold: 3
+      periodSeconds: 10
+      successThreshold: 1
+      tcpSocket:
+        port: 3000
+      timeoutSeconds: 1
+    name: homepage
+    ports:
+    - containerPort: 3000
+      name: http
+      protocol: TCP
+    readinessProbe:
+      failureThreshold: 3
+      periodSeconds: 10
+      successThreshold: 1
+      tcpSocket:
+        port: 3000
+      timeoutSeconds: 1
+    resources: {}
+    startupProbe:
+      failureThreshold: 30
+      periodSeconds: 5
+      successThreshold: 1
+      tcpSocket:
+        port: 3000
+      timeoutSeconds: 1
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /app/config
+      name: homepage-base-config
+    - mountPath: /app/config/bookmarks.yaml
+      name: homepage-config
+      subPath: bookmarks.yaml
+    - mountPath: /app/config/docker.yaml
+      name: homepage-config
+      subPath: docker.yaml
+    - mountPath: /app/config/kubernetes.yaml
+      name: homepage-config
+      subPath: kubernetes.yaml
+    - mountPath: /app/config/services.yaml
+      name: homepage-config
+      subPath: services.yaml
+    - mountPath: /app/config/settings.yaml
+      name: homepage-config
+      subPath: settings.yaml
+    - mountPath: /app/config/widgets.yaml
+      name: homepage-config
+      subPath: widgets.yaml
+    - mountPath: /app/config/logs
+      name: logs
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-4jslg
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: k3s-control-01
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - emptyDir: {}
+    name: homepage-base-config
+  - configMap:
+      defaultMode: 420
+      name: homepage
+    name: homepage-config
+  - emptyDir: {}
+    name: logs
+  - name: kube-api-access-4jslg
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2026-05-31T15:51:14Z"
+    observedGeneration: 1
+    status: "True"
+    type: PodReadyToStartContainers
+  - lastProbeTime: null
+    lastTransitionTime: "2026-05-11T02:34:17Z"
+    observedGeneration: 1
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2026-05-31T15:51:21Z"
+    observedGeneration: 1
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2026-05-31T15:51:21Z"
+    observedGeneration: 1
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2026-05-11T02:34:17Z"
+    observedGeneration: 1
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: containerd://f6c5285f97cab244bdfaf74411ea2625874e2161d6dfe9e22e1c12c72b1f54ad
+    image: ghcr.io/gethomepage/homepage:v1.2.0
+    imageID: ghcr.io/gethomepage/homepage@sha256:5e6bcbb595c4e857540577135e0f8b3ffc2e97c23d6e0ddc7df183de5bfdd442
+    lastState:
+      terminated:
+        containerID: containerd://64b866d5f6fd0d7f869eedf970e6f73ad0a22b6cf904e0f7b0ba129196a0ed6c
+        exitCode: 255
+        finishedAt: "2026-05-31T15:50:57Z"
+        reason: Unknown
+        startedAt: "2026-05-11T02:34:20Z"
+    name: homepage
+    ready: true
+    resources: {}
+    restartCount: 1
+    started: true
+    state:
+      running:
+        startedAt: "2026-05-31T15:51:12Z"
+    user:
+      linux:
+        gid: 0
+        supplementalGroups:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 6
+        - 10
+        - 11
+        - 20
+        - 26
+        - 27
+        uid: 0
+    volumeMounts:
+    - mountPath: /app/config
+      name: homepage-base-config
+    - mountPath: /app/config/bookmarks.yaml
+      name: homepage-config
+    - mountPath: /app/config/docker.yaml
+      name: homepage-config
+    - mountPath: /app/config/kubernetes.yaml
+      name: homepage-config
+    - mountPath: /app/config/services.yaml
+      name: homepage-config
+    - mountPath: /app/config/settings.yaml
+      name: homepage-config
+    - mountPath: /app/config/widgets.yaml
+      name: homepage-config
+    - mountPath: /app/config/logs
+      name: logs
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-4jslg
+      readOnly: true
+      recursiveReadOnly: Disabled
+  hostIP: 10.0.0.224
+  hostIPs:
+  - ip: 10.0.0.224
+  - ip: 2601:140:827e:6d00::383f
+  observedGeneration: 1
+  phase: Running
+  podIP: 10.42.0.20
+  podIPs:
+  - ip: 10.42.0.20
+  qosClass: BestEffort
+  startTime: "2026-05-11T02:34:17Z"

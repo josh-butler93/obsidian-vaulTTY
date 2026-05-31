@@ -1,0 +1,152 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: "2026-05-09T17:47:27Z"
+  generateName: portainer-agent-69b84755f4-
+  generation: 1
+  labels:
+    app: portainer-agent
+    pod-template-hash: 69b84755f4
+  name: portainer-agent-69b84755f4-mhp92
+  namespace: portainer
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: ReplicaSet
+    name: portainer-agent-69b84755f4
+    uid: 2daee387-c695-47c9-8c79-d01f24c6914c
+  resourceVersion: "594555"
+  uid: bea9414a-c7e2-4d64-9db2-af4bb5e56659
+spec:
+  containers:
+  - env:
+    - name: LOG_LEVEL
+      value: DEBUG
+    - name: AGENT_CLUSTER_ADDR
+      value: portainer-agent-headless
+    - name: KUBERNETES_POD_IP
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: status.podIP
+    image: portainer/agent:2.39.2
+    imagePullPolicy: Always
+    name: portainer-agent
+    ports:
+    - containerPort: 9001
+      protocol: TCP
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-qq9zh
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: k3s-control-01
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: portainer-sa-clusteradmin
+  serviceAccountName: portainer-sa-clusteradmin
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: kube-api-access-qq9zh
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2026-05-31T15:51:13Z"
+    observedGeneration: 1
+    status: "True"
+    type: PodReadyToStartContainers
+  - lastProbeTime: null
+    lastTransitionTime: "2026-05-09T17:47:27Z"
+    observedGeneration: 1
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2026-05-31T15:51:49Z"
+    observedGeneration: 1
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2026-05-31T15:51:49Z"
+    observedGeneration: 1
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2026-05-09T17:47:27Z"
+    observedGeneration: 1
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: containerd://67833e18ec62c3345d34f5eb1454b9ddb61b20c654e81a4084eb3969fd3c4480
+    image: docker.io/portainer/agent:2.39.2
+    imageID: docker.io/portainer/agent@sha256:dc0e8285f8b4c105c3237f1cc0022f92dd265c53ced5f53b9ce7c9741144e879
+    lastState:
+      terminated:
+        containerID: containerd://b5b781ee635eda5e0c49f669a9234e7dadf229bab076001eb1b666f53fabb3e2
+        exitCode: 1
+        finishedAt: "2026-05-31T15:51:34Z"
+        reason: Error
+        startedAt: "2026-05-31T15:51:12Z"
+    name: portainer-agent
+    ready: true
+    resources: {}
+    restartCount: 6
+    started: true
+    state:
+      running:
+        startedAt: "2026-05-31T15:51:49Z"
+    user:
+      linux:
+        gid: 0
+        supplementalGroups:
+        - 0
+        uid: 0
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-qq9zh
+      readOnly: true
+      recursiveReadOnly: Disabled
+  hostIP: 10.0.0.224
+  hostIPs:
+  - ip: 10.0.0.224
+  - ip: 2601:140:827e:6d00::383f
+  observedGeneration: 1
+  phase: Running
+  podIP: 10.42.0.14
+  podIPs:
+  - ip: 10.42.0.14
+  qosClass: BestEffort
+  startTime: "2026-05-09T17:47:27Z"
