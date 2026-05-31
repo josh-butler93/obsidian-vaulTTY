@@ -42,12 +42,15 @@
 	* kubectl get pods -o wide
 	* kubectl get deployments -A
 	* kubectl get all -A
+	* kubectl run nginx --image nginx -n default
 	* kubectl run nginx-app --image nginx -n dev 
+	* kubectl edit nginx-app >> image: nginx:latest
 	* kubectl get pods -o wide -n dev
 	* kubectl get pods -A -o wide
 	* kubectl get pod webapp -o wide -n dev
 	* kubectl describe pod webapp -n dev
 	* kubectl create -f webapp.yml
+	* kubectl delete pod webapp -n default
 
 #############################################################################################
 #Lab 1:
@@ -78,3 +81,33 @@
  	--Identify the value of the APP_COLOR env. variable configured inside the container
 	* kubectl describe pod node-api
 		--look under Containers >> Environment section for app_color
+
+#Lab 4:
+ --Create a pod named nginx in the default namespace
+	* kubectl run nginx --image nginx
+	* kubectl run nginx --image nginx -n default
+
+ --How many pods are running in the default namespace
+	* kubeclt get pods -n default
+	* kubectl get pods
+
+ --What image are the pods named newpod* running
+	* kubectl describe pod newpods-f33EFaz
+
+ --What node are the pods place on
+	* kubectl describe pod newpods-fee3fz
+
+ --A new pod named webapp is created...how many containers are part of the webapp pod
+	* kubeclt get pods -n default >> Ready 1/2 >> Ready Containers in Pod/Total containers in pod >> 2 containers but only 1 is running
+
+ --What images are used for the webapp pod
+	* kubectl describe pod webapp
+
+ --Delete the webapp pod
+	* kubectl delete pod webapp
+
+ --Create a pod named redis and the image redis123
+	* kubeclt run redis --image redis123 -n default
+
+ --Change the image on the pod to redis
+	* kubectl edit redis >> change the value in the image: field >> save and exit >> k8s will auto attempt to apply the update 

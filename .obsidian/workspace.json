@@ -13,10 +13,10 @@
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://a5376lbhxkmx2kwq.labs.kodekloud.com/#/quiz/end"
+                "url": "https://mwoiyevovfhvonv7.labs.kodekloud.com/#/quiz/end"
               },
               "icon": "lucide-file",
-              "title": "Terraform Variables Advanced Free Labs | Try Hands-On Labs @ KodeKloud Studio"
+              "title": "Kubernetes Pods Free Labs | Try Hands-On Labs @ KodeKloud Studio"
             }
           },
           {
@@ -127,8 +127,7 @@
               "title": "Tiktok"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -363,7 +362,7 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "2b4e649a6099e542",
+  "active": "b543129fc883e663",
   "lastOpenFiles": [
     "Command_Guru/terraform/projects/variables_v2/variable.tf",
     "Command_Guru/terraform/projects/variables_v2/throwaway.auto.tfvars",
