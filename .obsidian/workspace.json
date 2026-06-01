@@ -70,18 +70,6 @@
             }
           },
           {
-            "id": "725f8b3fd34e0edb",
-            "type": "leaf",
-            "state": {
-              "type": "surfing-view",
-              "state": {
-                "url": "https://github.com/josh-butler93/obsidian-vaulTTY/tree/main/Command_Guru/terraform/projects"
-              },
-              "icon": "lucide-file",
-              "title": "obsidian-vaulTTY/Command_Guru/terraform/projects at main · josh-butler93/obsidian-vaulTTY"
-            }
-          },
-          {
             "id": "e01b1a2eb8fc1d69",
             "type": "leaf",
             "state": {
@@ -106,18 +94,6 @@
             }
           },
           {
-            "id": "114eb1589d6d76c8",
-            "type": "leaf",
-            "state": {
-              "type": "surfing-view",
-              "state": {
-                "url": "https://contacts.google.com/widget/hovercard/v/2?hl=en&origin=https%3A%2F%2Fmail.google.com&usegapi=1&jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.gapi.en.54_HDveOtkQ.O%2Fd%3D1%2Frs%3DAHpOoo9QufOdPYTRkbTJadTW6smsxlWLMw%2Fm%3D__features__#id=I__HC_94253229&_gfid=I__HC_94253229&parent=https%3A%2F%2Fmail.google.com&pfname=&rpctoken=20391648"
-              },
-              "icon": "lucide-file",
-              "title": "Inbox (7,085) - butlerjl804@gmail.com - Gmail"
-            }
-          },
-          {
             "id": "1b88cc33b5968eaa",
             "type": "leaf",
             "state": {
@@ -125,6 +101,18 @@
               "state": {},
               "icon": "lucide-ticket",
               "title": "Tiktok"
+            }
+          },
+          {
+            "id": "0fd24cc4d38d17dc",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "https://www.google.com/search?q=what+does+creating+a+replicaset+do+in+k8s&udm=50&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpFZYo9qIX3pM4_jubAu4b8AaRchTLk94dg4O3CFQ_SX-02VDcOTqIwxBmpVF4xt7f4xuorbdndTIc7egrrInd2Ums8Hql69LsWkgWPKiyd-TiHa-TvpXjtGLnM8-E6AOY2JkjeQceeA7rYEYi_2sTl_VDWiSQcEGCrOsirqSjAcuv8f5I0KrH-5sSoIS6L-XGR_opGA&aep=10&ntc=1&mstk=AUtExfCJZrJ9-ke5Ze_5Ys_rDFEnFuklGoi2X0w8-r317kQiDedPoFHmZ-SNEA1V1QisI2CC735BGr8LascDVCNijyWhz6u-dvO2Czm7-B3nenm6q7hZy1szVQpFnSkmqd5K5KJs2czjb61H8O2IeDvObOXUnmwCZzgScTK2w3HdUlcBG7g2zr2a--EYeTR2Yvenq-UYNzXXITyqgTPSw1lrSQcazYB-zjpbBPaDX6cuttJN-h4WGmIcuPkkPeTv6dVpAFu5ZVrsZsdw3CU3r-TQJjpJGO1SqOXTd9iN46TXfTdSeTIqlB3u59k4iAhsjWGrRmNXgUkKzh72fQ&aioh=3&csuir=1&mtid=sIgcaunsBLLY5NoPxobKiAw"
+              },
+              "icon": "lucide-file",
+              "title": "what does creating a replicaset do in k8s - Google Search"
             }
           }
         ]
@@ -192,7 +180,7 @@
             }
           },
           {
-            "id": "b3df0fda1cdecd0c",
+            "id": "2685e99c5d4647f2",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -364,18 +352,18 @@
   },
   "active": "b543129fc883e663",
   "lastOpenFiles": [
+    "homelab_k8s-build/iso_image_locations",
+    "Command_Guru/K8s/yaml_files/replicaset-definition-2.yaml",
+    "Command_Guru/K8s/yaml_files/replicaset-setup.yaml",
+    "Command_Guru/K8s/yaml_files/yaml",
+    "Command_Guru/K8s/yaml_files/web-pod.yaml",
+    "Command_Guru/K8s/yaml_files/redis.yml",
+    "Command_Guru/K8s/yaml_files/httpd_pod.yml",
+    "Command_Guru/K8s/yaml_files",
+    "lab-archive/Excalidraw/Linux Package Managers.md",
     "homelab_k8s-build/cluster-backup/k3s-test/sha256sum-amd64.txt",
     "homelab_k8s-build/cluster-backup/k3s-test/k3s",
     "homelab_k8s-build/cluster-backup/artifactory/values.yaml",
-    "homelab_k8s-build/cluster-backup/artifactory/artifactory_helm_install",
-    "homelab_k8s-build/cluster-backup/uptime.yaml",
-    "homelab_k8s-build/cluster-backup/uptime-kuma.yaml",
-    "homelab_k8s-build/cluster-backup/secrets.yaml",
-    "homelab_k8s-build/cluster-backup/pvc.yaml",
-    "homelab_k8s-build/cluster-backup/portainer-pod.yaml",
-    "homelab_k8s-build/cluster-backup/portainer-deployment.yaml",
-    "homelab_k8s-build/cluster-backup/namespaces",
-    "lab-archive/Excalidraw/Linux Package Managers.md",
     "lab-archive/Kanban/Vault.md",
     "lab-archive/Commands/Commands Index.md",
     "lab-archive/Excalidraw/AWS EKS.md",

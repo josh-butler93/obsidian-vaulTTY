@@ -35,3 +35,51 @@ EOF
 	-Verify
 		* lsmod | grep br_netfilter
 		* sysctl net.ipv4.ip_forward
+
+#K3s >> k8s install
+	* curl -sfL https://get.k3s.io | sh -
+	* curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="server --write-kubeconfig-mode=644" sh -
+	* sudo systemctl enable k3s
+	* sudo systemctl start k3s
+	* sudo chmod 644 /etc/rancher/k3s/k3s.yaml
+	* kubectl cluster-info
+	* kubectl get nodes -o wide
+	* kubectl get pods -A
+	* kubectl get ns -A
+	* kubectl create ns test prod dev
+	* kubectl run test-nginx --image=nginx --restart=Never
+	* kubectl get pods -n test
+	* kubectl describe pod test-nginx	
+	* kubectl logs test-nginx
+	* kubectl expose pod test-nginx --type=NodePort --port=80
+	* kubectl get svc -n test
+
+#Firewall Setup
+	* sudo firewall-cmd --list-all
+	* sudo firewall-cmd --add-port=3000-32767 --permanent
+	* sudo firewall-cmd --reload
+
+#Deployments
+	* kubectl create deployment nginx-demo --image=nginx -o yaml > nginx-demo.yaml
+	* kubectl get deployments -n test
+	* kubectl scale deployment nginx-demo --replicas=3
+	* kubectl get rs -n test
+	* kubectl expose deployment nginx-demo --type=NodePort --port=80 -n test
+	* kubectl get svc -n test
+
+#Helm installation
+	* curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+	* helm version
+	* helm repo add portainer https://portainer.github.io/k8s/
+	* helm repo list
+	* helm repo update
+	* kubectl create ns portainer
+	* sudo chmod 644 /etc/rancher/k3s/k3s.yaml
+	* export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+	* echo 'export KUBECONFIG=/etc/rancher/k3s/k3s.yaml' >> ~/.bashrc
+    	* source ~/.bashrc
+	* helm install portainer portainer/portainer --namespace portainer --set service.type=NodePort
+	* helm list -A
+	* helm status portainer -n portainer
+	* helm get manifest portainer -n portainer
+	* kubectl get pods -n portainer 

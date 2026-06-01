@@ -30,3 +30,15 @@
 	* sudo visudo /etc/fstab 
 		-comment out the line with swap on it to permanetly disable it
 			---The /etc/fstab (file system table) file is a critical system configuration file in Linux that defines how and where storage drives, disk partitions, and remote network shares are automatically mounted during the boot process
+
+#Networking/package management
+	* /etc/resolve.conf
+	* dnf clean all
+	* dnf makecache
+	* sudo nmcli con show
+	* sudo nmcli con mod "Wired connection 1" ipv4.dns "8.8.8.8 1.1.1.1"
+	* sudo nmcli con mod "Wired connection 1" ipv4.ignore-auto-dns yes
+	* sudo nmcle con up "Wired connection 1"
+	* sudo firewall-cmd --list-all
+	* sudo firewall-cmd --add-port=3000-32767/tcp --permanent
+	* sudo firewall-cmd --reload

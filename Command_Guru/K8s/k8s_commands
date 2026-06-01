@@ -26,8 +26,29 @@
 
 #Services
   - A Service defines Pods policy for how to access them providing IP addresses, DNS names, and load-balancing
-  
-##############################################Commands#####################################
+  - k8s doesnt talk to a pod directly it talks to a Service instead bc of the temporary nature of pods
+	- it give a stable ip (the clusters ip)
+	- it gives stable dns configs name
+	- it load balances across pods
+	- survives pod restarts
+	**************************
+	Browser / Client
+        ↓
+	Service (stable)
+        ↓
+	Pods (ephemeral, changing)
+	***************************  
+  - Types of Services
+	- Cluster IP (default)
+		$internal only
+		$used for backend communication
+	- NodePort
+		$exposes service on each node IP
+		$lets you access from your machine
+	- LoadBalancer
+		$cloud-only (or MetalILB in homelabs)
+
+###################################################################################
 ---
 	* kubectl cluster-info
 	* kubectl get ns
@@ -53,6 +74,9 @@
 	* kubectl get pods -o wide -n dev
 	* kubectl get pods -A -o wide
 	* kubectl get pod webapp -o wide -n dev
+	* kubectl get pod webapp -n dev -o yaml
+	* kubectl expose pod webapp --type=NodePort --port=80
+	* kubectl get svc webapp -n dev
 	* kubectl describe pod webapp -n dev
 	* kubectl create -f webapp.yml
 	* kubectl delete pod webapp -n default
@@ -63,6 +87,66 @@
 	* kubectl apply -f uptime-kuma.yaml >> this is a deployment >> if the pod dies it notices and recreates it >> think docker compose
 	* kubectl get svc -A
 	* kubectl get ingress -A
+	* kubectl get replicasets >> you can create a replicaset its the same but diff. than a deployement...still creates pods but in the rs way
+	* kubectl get rs
+	* kubectl get rs -n dev
+	* kubectl scale rs new-replicaset --replicas=5
+	* kubectl scale rs new-replicaset --replicas=2
+	* kubectl delete rs replicaset-1 -n prod
+	* kubectl api-resources
+	* kubectl api-resources | grep replicaset
+	* kubectl explain replicaset | grep VERSION
+	* kubectl create -f replicaset-definition-1.yaml
+	* kubectl create deployment nginx-demo --image=nginx -n dev -o yaml > nginx-demo.yaml
+	* kubectl get deployments -n test
+	* kubeclt get deployment nginx-demo -n test -o yaml > nginx-deployment.yaml
+	* kubectl scale deployment nginx-demo --replicas=3
+	* kubectl scale deployment nginx-demo -n test --replicas=0
+	* kubectl get rs -n test
+	* kubectl expose deployment nginx-demo --type=NodePort --port=80 -n test >> this creates a service that points to that deployment exposing it ext.
+	* kubectl get svc -n test
+	
+############
+####Helm####
+############
+---
+ - curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-heml-3 | bash
+	* helm version
+	* helm repo add portainer https://portainer.github.io/k8s/
+	* helm repo list
+	* helm repo update
+	* helm install portainer portainer/portainer --namespace portainer --set service.type=NodePort
+		$kubectl get pods -n portainer
+		$kubectl get svc -n portainer
+	* helm list -A
+	* helm status portainer -n portainer
+	* helm get values portainer -n portainer
+	* helm upgrade portainer portainer/portainer -n portainer
+	* helm history portainer -n portainer
+	* helm rollback portainer 1 -n portainer
+	* helm uninstall portainer -n portainer
+	* helm get values portainer -n portainer > portainer-values.yaml
+	* helm upgrade portainer portainer/portainer -f portainer-values.yaml
+
+---
+📦 What Helm does (simple explanation)
+Instead of writing YAML like:
+    Deployment
+    Service
+    ConfigMap
+    Ingress
+You install “charts” like:
+helm install grafana grafana/grafana
+
+---
+🧠 Helm mental model
+A Helm chart is:
+    “a pre-packaged Kubernetes application”
+It contains:
+    deployments
+    services
+    configs
+    defaults
 
 #############################################################################################
 #Lab 1:
@@ -123,3 +207,23 @@
 
  --Change the image on the pod to redis
 	* kubectl edit redis >> change the value in the image: field >> save and exit >> k8s will auto attempt to apply the update 
+
+#Lab 5:
+
+ --How many replicasets exist on the system
+	* kubectl get replicaset
+	* kubectl get rs
+
+ --Create a replicaset in the default name space and ensure it is running
+	* kubectl create -f replicaset-1.yaml >> in hte definition file edit the 'kind' option to create a replicaset instead of a deployement
+	* kubectl get rs -n dev -o wide
+
+ --Edit the image the replicaset is pulling and make sure it is running
+	* kubectl edit replicaset new-replica-set >> modify the image it is pulling >> save and exit >> delete the pods and the new images will be pulled 
+
+ --Scale the replicaset to 5 pods
+	* kubectl edit replicaset new-replicaset >> modify the replicas section to 5 >> save and exit >> the set will be auto updated
+	* kubectl scale rs new-replicaset --replicas=5
+
+ --Scale teh replicaset to 2 pods
+	* kubectl scale rs new-replicaset --replicas=2
