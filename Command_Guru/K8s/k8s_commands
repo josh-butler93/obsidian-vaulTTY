@@ -127,7 +127,14 @@
 	* helm uninstall portainer -n portainer
 	* helm get values portainer -n portainer > portainer-values.yaml
 	* helm upgrade portainer portainer/portainer -f portainer-values.yaml
-
+---
+#Contstant Commands
+	* helm list -A
+	* helm status <release>
+	* helm history <release>
+	* helm upgrade <release>
+	* helm rollback <release> <revision>
+	* helm uninstall <relase>
 ---
 📦 What Helm does (simple explanation)
 Instead of writing YAML like:
