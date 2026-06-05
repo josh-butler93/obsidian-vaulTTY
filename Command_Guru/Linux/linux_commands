@@ -1,3 +1,5 @@
+ps aux | grep [h]ttpd
+
 #File Listing Commands
 	* ls 
 	* ls -l

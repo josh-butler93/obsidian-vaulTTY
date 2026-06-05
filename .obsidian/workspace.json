@@ -13,6 +13,18 @@
             "state": {
               "type": "surfing-view",
               "state": {
+                "url": "https://learn.kodekloud.com/user/dashboard"
+              },
+              "icon": "lucide-file",
+              "title": "Dashboard | KodeKloud"
+            }
+          },
+          {
+            "id": "874e5cc7e322c98f",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
                 "url": "https://kodekloud.com/studio/labs/kubernetes"
               },
               "icon": "lucide-file",
@@ -104,18 +116,17 @@
             }
           },
           {
-            "id": "0fd24cc4d38d17dc",
+            "id": "6f1ae35ea98f844c",
             "type": "leaf",
             "state": {
-              "type": "surfing-view",
-              "state": {
-                "url": "https://www.google.com/search?q=what+does+creating+a+replicaset+do+in+k8s&udm=50&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpFZYo9qIX3pM4_jubAu4b8AaRchTLk94dg4O3CFQ_SX-02VDcOTqIwxBmpVF4xt7f4xuorbdndTIc7egrrInd2Ums8Hql69LsWkgWPKiyd-TiHa-TvpXjtGLnM8-E6AOY2JkjeQceeA7rYEYi_2sTl_VDWiSQcEGCrOsirqSjAcuv8f5I0KrH-5sSoIS6L-XGR_opGA&aep=10&ntc=1&mstk=AUtExfCJZrJ9-ke5Ze_5Ys_rDFEnFuklGoi2X0w8-r317kQiDedPoFHmZ-SNEA1V1QisI2CC735BGr8LascDVCNijyWhz6u-dvO2Czm7-B3nenm6q7hZy1szVQpFnSkmqd5K5KJs2czjb61H8O2IeDvObOXUnmwCZzgScTK2w3HdUlcBG7g2zr2a--EYeTR2Yvenq-UYNzXXITyqgTPSw1lrSQcazYB-zjpbBPaDX6cuttJN-h4WGmIcuPkkPeTv6dVpAFu5ZVrsZsdw3CU3r-TQJjpJGO1SqOXTd9iN46TXfTdSeTIqlB3u59k4iAhsjWGrRmNXgUkKzh72fQ&aioh=3&csuir=1&mtid=sIgcaunsBLLY5NoPxobKiAw"
-              },
-              "icon": "lucide-file",
-              "title": "what does creating a replicaset do in k8s - Google Search"
+              "type": "custom-frames-youtube",
+              "state": {},
+              "icon": "lucide-monitor-play",
+              "title": "Youtube"
             }
           }
-        ]
+        ],
+        "currentTab": 9
       }
     ],
     "direction": "vertical"
@@ -350,7 +361,7 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "b543129fc883e663",
+  "active": "6f1ae35ea98f844c",
   "lastOpenFiles": [
     "homelab_k8s-build/iso_image_locations",
     "Command_Guru/K8s/yaml_files/replicaset-definition-2.yaml",
