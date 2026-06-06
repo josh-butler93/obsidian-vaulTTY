@@ -124,9 +124,23 @@
               "icon": "lucide-monitor-play",
               "title": "Youtube"
             }
+          },
+          {
+            "id": "bc29c15898d10c35",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://www.youtube.com/watch?v=a273XkirPUc&t=833s",
+                "title": "(2) Common Sysadmin Mistakes | Into the Terminal 182 - YouTube",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "(2) Common Sysadmin Mistakes | Into the Terminal 182 - YouTube"
+            }
           }
         ],
-        "currentTab": 9
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -191,7 +205,7 @@
             }
           },
           {
-            "id": "2685e99c5d4647f2",
+            "id": "4d41c650dc3922af",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -361,20 +375,20 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "6f1ae35ea98f844c",
+  "active": "874e5cc7e322c98f",
   "lastOpenFiles": [
+    "Command_Guru/Docker/webapp-color/templates/hello.py",
+    "Command_Guru/Docker/webapp-color/templates",
+    "Command_Guru/Docker/webapp-color/requirements.txt",
+    "Command_Guru/Docker/webapp-color/app.py",
+    "Command_Guru/Docker/webapp-color/Dockerfile_image_mod",
+    "Command_Guru/Docker/webapp-color/Dockerfile",
+    "Command_Guru/Docker/webapp-color",
     "homelab_k8s-build/iso_image_locations",
     "Command_Guru/K8s/yaml_files/replicaset-definition-2.yaml",
     "Command_Guru/K8s/yaml_files/replicaset-setup.yaml",
     "Command_Guru/K8s/yaml_files/yaml",
-    "Command_Guru/K8s/yaml_files/web-pod.yaml",
-    "Command_Guru/K8s/yaml_files/redis.yml",
-    "Command_Guru/K8s/yaml_files/httpd_pod.yml",
-    "Command_Guru/K8s/yaml_files",
     "lab-archive/Excalidraw/Linux Package Managers.md",
-    "homelab_k8s-build/cluster-backup/k3s-test/sha256sum-amd64.txt",
-    "homelab_k8s-build/cluster-backup/k3s-test/k3s",
-    "homelab_k8s-build/cluster-backup/artifactory/values.yaml",
     "lab-archive/Kanban/Vault.md",
     "lab-archive/Commands/Commands Index.md",
     "lab-archive/Excalidraw/AWS EKS.md",
