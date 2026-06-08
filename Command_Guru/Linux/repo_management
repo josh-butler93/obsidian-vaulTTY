@@ -1,0 +1,31 @@
+* sudo subscription-manager config --rhsm.auto_enable_yum_plugin=0
+* sudo subscription-manager clean
+* sudo vi /etc/yum/pluginconf.d/subscription-manager.conf
+* sudo dnf clean all
+* sudo dnf repolist
+
+---Creating Local Repo
+===
+ini    -Local Repo 
+===
+==================================
+[custom-local-repo]
+name=My Practice Local Repository
+baseurl=file:///opt/my-local-repo/
+enabled=1
+gpgcheck=0
+==================================
+----------------------------------------
+----------------------------------------
+===
+ini    -Network File Share Repo
+===
+==================================
+[custom-network-repo]
+name=My Practice Network Repository
+baseurl=http://<IP_OF_OTHER_MACHINE>/repo/
+enabled=1
+gpgcheck=0
+
+---Creating Repo Config File
+* sudo vi /etc/yum.repos.d/local-iso.repo

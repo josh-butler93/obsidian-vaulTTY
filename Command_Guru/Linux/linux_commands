@@ -44,3 +44,8 @@ ps aux | grep [h]ttpd
 	* sudo firewall-cmd --list-all
 	* sudo firewall-cmd --add-port=3000-32767/tcp --permanent
 	* sudo firewall-cmd --reload
+
+#Repo Management
+	* sudo dnf clean all
+	* sudo dnf rm -rf /var/cache/dnf
+	* sudo dnf check-update
