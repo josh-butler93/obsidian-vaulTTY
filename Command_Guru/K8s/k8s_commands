@@ -58,6 +58,8 @@
 	* kubectl get nodes -n Namespace_name * kubectl describe node minikube
 	* kubectl run >> creates a single pod if it dies thats it >> docker run container equivalent 
 	* kubectl run hello-minikube
+	* kubectl run nginx --image nginx
+	* kubectl run nginx --image nginx -n test
 	* kubectl run test --image busybox -it --rm -- sh
 	* kubectl get all -n prod > svc,pods,nodes
 	* kubectl get pods -A
@@ -76,9 +78,14 @@
 	* kubectl get pod webapp -o wide -n dev
 	* kubectl get pod webapp -n dev -o yaml
 	* kubectl expose pod webapp --type=NodePort --port=80
+	* kubectl expose pod test-app --type=LoadBalancer --name=nginx-local-svc --port=80 --target-port=80 -n test
+	* kubectl expose pod test-windows-app --type=LoadBalancer --name=nginx-ext-svc --port=80 --target-port=80 -n default
+	* kubectl port-forward pod/web-app 8080:80 -n dev
 	* kubectl get svc webapp -n dev
 	* kubectl describe pod webapp -n dev
 	* kubectl create -f webapp.yml
+	* kubectl create deployment my-app --image=nginx
+	* kubectl create deployment my-app --image=nginx -n test
 	* kubectl delete pod webapp -n default
 	* kubectl get svc -n prod
 	* kubectl get svc uptime-kuma -n prod
@@ -105,6 +112,16 @@
 	* kubectl get rs -n test
 	* kubectl expose deployment nginx-demo --type=NodePort --port=80 -n test >> this creates a service that points to that deployment exposing it ext.
 	* kubectl get svc -n test
+
+	---
+	* minikube config set driver docker
+	* minikube start
+	* minikube status
+	* minikube dashboard --url
+	* minikube stop
+	* minikube delete
+	* minikube pause
+	* minikube unpause
 	
 ############
 ####Helm####

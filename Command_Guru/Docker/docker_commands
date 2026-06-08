@@ -1,13 +1,110 @@
 Docker Link: https://hub.docker.com/
 
 #Running a Docker Container
-	*docker run <container_name>
+	* docker version
+	* docker run <container_name>
+	* docker ps
 	* docker ps -a
+	* docker images
 	* docker start <container_name>
 	* docker stop <container_name>
+	* docker stop $(docker ps -aq)
 	* docker rm <container_name>
+	* docker rm $(docker ps -aq)
 	* docker rmi <image_name>
+	* docker rmi redis
+	* docker rmi $(docker images -aq)
 	* docker run ubuntu sleep 5
+	* docker run --name webapp nginx:1.14-alpine
+	* docker run -d -p 38282:8080 --name webapp kodecloud/simple:webapp:blue
+	* docker run -p 38282:8989 --name blue-app -e APP_COLOR=blue -d kodekloud/simple-webapp
+	* docker run --name mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123 mysql
+	* docker inspect container_name 
+	* docker inspect webapp 
+	* docker inspect webapp | grep ...
+	* docker build -t webapp-color .
+	* docker build -t webapp-color:lite . 
 
 #Executing Commands on a running container
 	* docker exec <container_name> cat /etc/os-release
+
+
+===============================
+#Lab 1:
+
+ --what version of docker is running on the machine
+ 	* docker version
+
+ --how many containers are running on the machine
+ 	* docker images
+
+ --run a container with the redis image in detached mode
+ 	* docker run -d redis
+
+ --stop the container you just created
+ 	* docker stop optimistitc_launch
+ 
+ --how many containers are running on the machine now
+ 	* docker ps
+
+ --how many containers are on the host both running and not running
+ 	* docker ps -a
+
+ --what is the image that is used to run the nginx-1 container
+ 	* docker ps -a || docker ps 
+
+ --delete all containers from the docker host both running and not running
+ 	* docker stop $(docker ps -aq)
+	* docker rm $(docker ps -aq)
+
+ --delete the ubuntu image
+ 	* docker rmi ubuntu
+
+ --pull a docker image that will be used to run a container using the nginx:1.14-alpine
+ 	* docker pull nginx:1.14-apline
+
+ --run a containe using the image nginx:1.14-alpine with the name webapp
+ 	* docker run -d --name webapp nginx:1.14-alpine
+
+ --delete all images on the host and remove necessary containers as well
+ 	* docker stop $(docker ps)
+	* docker rm $(docker ps -aq)
+	* docker rmi $(docker images -aq)
+
+#Lab 2:
+ 
+ --how many unique ports are published on the container
+ 	* docker ps
+
+ --which port is mapped on the container side
+ 	* docker ps
+		--the ports column format is hostPort->containerPort --the value after the -> in the container internal port
+
+ --which of the below ports are published on the Host
+ 	* docker ps 
+		--ports on the left (before ->) are publisded on the host
+
+ --run an instance of the kodekcloud/simple-webapp:blue with the name blue-app mapping port 8080 on the container to port 38282 on the host
+ 	* docker run -d -p 38282:8080 --name blue-app kodekloud/simple-webapp:blue  
+		--hostPort:containerPort
+
+#Lab 3:
+ --inspect the env. variables set on the running container and identify the app_color
+ 	* docker inspect webapp | grep -A 10 Env
+
+ --run a container named blue-app using the kodedloud/simple-webapp and the env. variables app_color to blue make the available port 38282 to 80 in the container
+ 	* docker run -d 38282:8080 --name blue-app -e APP_COLOR=blue -d kodekloud/simple-webapp 
+
+ --deploy a mysql database using the mysql image name mysql-db set the database password to db_pass123 and look up the mysql image on docker hub 
+ 	* docker run -d --name mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123 mysql
+
+#Lab 4:
+ 
+ --run an instance of the image webapp-color and publish port 8080 on the container to 8282 on the host
+ 	* docker run -d -p 8282:8080 webapp-color
+
+ --build a new smaller docker image by modifying the dockerfile and name it webapp-color && tag it lite ((find a smaller base image for python:3.6))
+ 	* docker build -t webapp-color:lite . 
+
+ --run an instance of the new image webapp-color:lite and publish port 8080 on the container to 8383 on the host
+ 	* docker run -d -p 8383:8080 webapp-color:lite
