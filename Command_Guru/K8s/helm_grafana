@@ -1,0 +1,17 @@
+=======================================================================
+Artifact Hub Link: https://artifacthub.io/packages/helm/grafana/grafana
+=======================================================================
+* helm repo add grafana https://grafana.com.github.io/helm-charts
+	---helm repo add [name] [url] --[name]==local alias or shorthand nickname i choose and used in reference later bitnami/nginx
+* helm repo update
+* helm repo list
+* helm install my-grafana grafana/grafana --namespace monitoring --create-namespace 
+	---kubectl get secret --namespace monitoring my-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+		--Run the above command from git bash
+* kubectl port-forward service/my-grafana 3000:80 --namespace monitoring
+	---http://localhost:3000
+
+---
+
+helm repo add loki oci://ghcr.io/grafana-community/helm-charts/loki
+helm repo add loki

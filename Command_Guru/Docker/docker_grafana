@@ -1,0 +1,6 @@
+* docker pull grafana/grafana
+* docker run grafana/grafana
+* docker run -dit --name grafana -p 3000:3000 grafana/grafana
+	# http://localhost:3000
+	# username: admin
+	# password: admin

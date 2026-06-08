@@ -79,6 +79,7 @@
 	* kubectl get pod webapp -n dev -o yaml
 	* kubectl expose pod webapp --type=NodePort --port=80
 	* kubectl expose pod test-app --type=LoadBalancer --name=nginx-local-svc --port=80 --target-port=80 -n test
+	* kubectl get svc -n test
 	* kubectl expose pod test-windows-app --type=LoadBalancer --name=nginx-ext-svc --port=80 --target-port=80 -n default
 	* kubectl port-forward pod/web-app 8080:80 -n dev
 	* kubectl get svc webapp -n dev
@@ -112,6 +113,7 @@
 	* kubectl get rs -n test
 	* kubectl expose deployment nginx-demo --type=NodePort --port=80 -n test >> this creates a service that points to that deployment exposing it ext.
 	* kubectl get svc -n test
+	* kubectl get secret --namespace monitoring my-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 
 	---
 	* minikube config set driver docker
