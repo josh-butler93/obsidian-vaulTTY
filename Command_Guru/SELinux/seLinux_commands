@@ -1,0 +1,53 @@
+#SELinux Link: https://www.redhat.com/en/topics/linux/what-is-selinux
+#SELinux Setup Link: https://www.hostmycode.com/tutorials/how-to-configure-selinux-on-almalinux
+#
+ -SELinux:
+ 	-Security Enhanced Linux is a security module integrated into the Linux kernel designed to enforce access control policies that confine user programs & system services
+	- It provides a mechanism for supporting access control security policies
+
+---SELinux Modes
+	-Enforcing: SELinux policy is enforced
+	-Permissive: SELinux policy is not enforced but violations are logged
+	-Disabled: SELinux is turned off
+  -To change the Policy you need to edit the ****/etc/selinux/config****
+  	SELINUX=enforcing   # Enforce SELinux policiesSELINUX=permissive  # Do not enforce policies, but log actionsSELINUX=disabled    # Disable SELinux
+	Reboot the system when complete
+
+#Commands:
+
+---
+	* sudo dnf install policycoreutils selinux-policy selinux-policy-targeted
+	* sestatus
+	* getenforce
+	* sudo setenforce 0 --this temporarily changes the policy # 0-Permissive # 1-Enforcing
+		-verify--getenforce
+	* sudo chcon -t default_t /var/www/html/test.html
+	* sudo sealert -a /var/www/html/test.html --where the context needs to be checked
+	* sudo restorecon -v /var/www/html/test.html --this command will restore the defautl context automatically based on system policies
+	* sudo chcon -t httpd_sys_content_t /var/www/html/test.html
+	* ls -lZ /var/www/html/test.html --Exploring Contexts and Booleans
+	* getsebool -a
+	* getsebool -a | grep httpd
+
+
+---
+ - Installs:
+ 	* sudo dnf install -y setroubleshoot-server
+
+==============================
+
+---
+#Setup Lab1:
+	
+--mess up the Web Permissions
+
+	* sudo dnf install -y httpd
+	* sudo systemctl start httpd
+	* echo "Hello SELinux" | sudo tee /var/www/html/test.html
+	* curl http://localhost/test.html
+	* sudo chcon -t default_t /var/www/html/test.html
+		--curl http://localhost/test.html
+	* sudo dnf install -y setroubleshoot-server
+	* sudo sealert -a /var/log/audit/audit.lrssw0rd
+	* sudo restorecon -v /var/www/html/test.html
+	* sudo chcon -t httpd_sys_content_t /var/www/html/test.html

@@ -50,6 +50,7 @@
 
 ###################################################################################
 ---
+	* curl -LO "https://k8s.io(curl -L -s https://k8s.io)/bin/linux/amd64/kubectl"
 	* kubectl cluster-info
 	* kubectl get ns
 	* kubectl get ns Namespace_name

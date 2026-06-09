@@ -49,3 +49,25 @@ ps aux | grep [h]ttpd
 	* sudo dnf clean all
 	* sudo dnf rm -rf /var/cache/dnf
 	* sudo dnf check-update
+	* sudo dnf --enablerepo=extras install epel-release --this is for epel release installations
+	* sudo rm -f /etc/yum.repos.d/docker.com.repo
+	* sudo sed -i 's/\$releasever/9/g' /etc/yum.repos.d/docker-ce.repo
+
+#Sudo misc. Commands
+
+	* sudo tee --this command combo is used write or append data to files owned by the root user simultaneously displaying the output on the screen
+		--standard shell redirection operators like > or >> do not inherit sudo privileges
+--ex:
+  -sudo echo "127.0.0.1 mysite.local" >> /etc/hosts
+  -echo "secret_key" | sudo tee /etc/secrete.txt > /dev/null
+
+---
+	#############################Quick Reference####################################
+	#Overwrite a root file + see output-- echo "text" | sudo tee /path/to/file     #
+	#Append to a root file + see output-- echo "test" | sudo tee -a /path/to/file  #
+	#Write to a root file silently-- echo "test" | sudo tee /path/to/file > dev/nll#
+	################################################################################
+	
+---Misc. Commands
+	
+	* sudo dnf 

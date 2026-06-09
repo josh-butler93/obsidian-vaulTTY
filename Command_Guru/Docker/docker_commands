@@ -1,6 +1,14 @@
 Docker Link: https://hub.docker.com/
 
 #Running a Docker Container
+	* sudo dnf config-manager --add-repo https://docker.com
+	* sudo dnf install -y docker-ce-cli containerd.io docker-compose-plugin
+	* sudo systemctl enable --now docker
+	* sudo systemctl start docker
+	* sudo usermod -aG docker $USER || newgrp docker
+	* sudo dnf config-manager --add-repo https://download.docker.com/linux/rhel/docker-ce.repo
+	* sudo sed -i 's/\$releasever/9/g' /etc/yum.repos.d/docker-ce.repo
+	* sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
 	* docker version
 	* docker run <container_name>
 	* docker ps
@@ -15,6 +23,9 @@ Docker Link: https://hub.docker.com/
 	* docker rmi redis
 	* docker rmi $(docker images -aq)
 	* docker run ubuntu sleep 5
+	* docker run -d --name my-webapp -p 8080:80 nginx
+		--curl http://localhost:8080
+	* docker run -d --name=grafana -p 3000:3000 grafana/grafana
 	* docker run --name webapp nginx:1.14-alpine
 	* docker run -d -p 38282:8080 --name webapp kodecloud/simple:webapp:blue
 	* docker run -p 38282:8989 --name blue-app -e APP_COLOR=blue -d kodekloud/simple-webapp
