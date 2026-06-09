@@ -66,6 +66,8 @@
 	* curl -LO "https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm"
 	* sudo dnf install -y ./minikube-latest.x86_64.rpm
 	* minikube version
+	* sudo dnf install -y docker-ce docker-ce-cli containerd.io
+	* minikube start --driver=docker
 
 	
 

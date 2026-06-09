@@ -49,6 +49,7 @@ ps aux | grep [h]ttpd
 ---sudo 
 
 #Repo Management
+	* sudo dnf repolist
 	* sudo dnf clean all
 	* sudo dnf rm -rf /var/cache/dnf
 	* sudo dnf check-update
