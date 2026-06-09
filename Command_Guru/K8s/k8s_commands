@@ -48,6 +48,27 @@
 	- LoadBalancer
 		$cloud-only (or MetalILB in homelabs)
 
+---Hostname and cluster setup
+	* hostnamectl set-hostname k8s-controller
+	* sudo swapoff -a
+	* cat <<EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
+	  [kubernetes]
+	  name=Kubernetes
+	  baseurl=https://pkgs.k8s.io/core:/stable:/v1.30/rpm/
+	  enable=1
+	  gpgcheck=1
+	  repo_gpgcheck=1
+	  gpgkey=https://pkgs.k8s.io/core:/stable:/v1.30/rpm/repodata/repomd.xml.key
+	  EOF
+	* sudo dnf make clean
+	* sudo dnf makecache
+	* sudo dnf install -y kubectl --disableexludes=kubernetes
+	* curl -LO "https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm"
+	* sudo dnf install -y ./minikube-latest.x86_64.rpm
+	* minikube version
+
+	
+
 ###################################################################################
 ---
 	* curl -LO "https://k8s.io(curl -L -s https://k8s.io)/bin/linux/amd64/kubectl"
@@ -174,6 +195,19 @@ It contains:
     services
     configs
     defaults
+
+$$$$$$$$$$$$$$$$$$$
+cat <<EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://k8s.io
+enabled=1
+gpgcheck=1
+gpgkey=https://k8s.iorepodata/repodata-key.gpg
+exclude=kubelet kubeadm kubectl cri-tools kubernetes-cni
+EOF
+
+--dnf install -y kubelet kubeadm kubectl --disableexcludes=kubernets
 
 #############################################################################################
 #Lab 1:

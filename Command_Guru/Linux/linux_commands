@@ -34,6 +34,7 @@ ps aux | grep [h]ttpd
 			---The /etc/fstab (file system table) file is a critical system configuration file in Linux that defines how and where storage drives, disk partitions, and remote network shares are automatically mounted during the boot process
 
 #Networking/package management
+	* /etc/hosts
 	* /etc/resolve.conf
 	* dnf clean all
 	* dnf makecache
@@ -44,6 +45,8 @@ ps aux | grep [h]ttpd
 	* sudo firewall-cmd --list-all
 	* sudo firewall-cmd --add-port=3000-32767/tcp --permanent
 	* sudo firewall-cmd --reload
+
+---sudo 
 
 #Repo Management
 	* sudo dnf clean all
