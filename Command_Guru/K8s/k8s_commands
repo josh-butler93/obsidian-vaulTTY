@@ -91,6 +91,10 @@
 	* kubectl get svc nginx-nodeport-svc
 	* kubectl get all -n prod > svc,pods,nodes
 	* kubectl get pods -A
+	* kubectl get pods -n portainer -w
+	* kubectl port-forward service/portainer 9443:9443 --namespace portainer --address 0.0.0.0
+	* kubectl port-forward pod/portainer-xfiefwwf 9443:9443 -n portainer --address 0.0.0.0
+	* kubectl rollout restart deployment portainer -n portainer --this will restart the pods in the deployment
 	* kubectl get pods -o wide >> status,ip,os
 	* kubectl get pod uptime-kuma-3wdfvs -n prod -o yaml
 	* kubectl get pod uptime-kuma-3wdfv -n prod -o yaml > uptime-kuma3fsfv.yaml
