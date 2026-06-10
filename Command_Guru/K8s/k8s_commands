@@ -85,6 +85,10 @@
 	* kubectl run nginx --image nginx
 	* kubectl run nginx --image nginx -n test
 	* kubectl run test --image busybox -it --rm -- sh
+	* kubectl run test-nginx --image=nginx --port=80
+	* kubectl port-forward pod/test-nginx 8080:80 --address 0.0.0.0
+	* kubectl expose pod test-nginx --type=NodePort --name=nginxnodeport-svc --port=80
+	* kubectl get svc nginx-nodeport-svc
 	* kubectl get all -n prod > svc,pods,nodes
 	* kubectl get pods -A
 	* kubectl get pods -o wide >> status,ip,os
