@@ -138,6 +138,7 @@
 	* kubectl explain replicaset | grep VERSION
 	* kubectl create -f replicaset-definition-1.yaml
 	* kubectl create deployment nginx-demo --image=nginx -n dev -o yaml > nginx-demo.yaml
+	* kubectl get deployments -A
 	* kubectl get deployments -n test
 	* kubeclt get deployment nginx-demo -n test -o yaml > nginx-deployment.yaml
 	* kubectl scale deployment nginx-demo --replicas=3
@@ -186,6 +187,7 @@
 	* helm upgrade <release>
 	* helm rollback <release> <revision>
 	* helm uninstall <relase>
+	* helm get values <release-name> <namespace> --Name is the value you are looking for in regards to the release-name
 ---
 📦 What Helm does (simple explanation)
 Instead of writing YAML like:

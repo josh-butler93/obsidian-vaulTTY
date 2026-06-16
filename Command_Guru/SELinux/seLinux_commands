@@ -28,6 +28,7 @@
 	* ls -lZ /var/www/html/test.html --Exploring Contexts and Booleans
 	* getsebool -a
 	* getsebool -a | grep httpd
+	* ps auxZ
 
 
 ---
