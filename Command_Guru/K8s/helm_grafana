@@ -10,8 +10,19 @@ Artifact Hub Link: https://artifacthub.io/packages/helm/grafana/grafana
 		--Run the above command from git bash
 * kubectl port-forward service/my-grafana 3000:80 --namespace monitoring
 	---http://localhost:3000
+* helm get values my-grafana -n monitoring >> helm get values <release-name> -n <namespace>
+* 
 
 ---
 
 helm repo add loki oci://ghcr.io/grafana-community/helm-charts/loki
 helm repo add loki
+
+---values.yaml
+
+persistence:
+  enabled: true
+  type: pvc
+  size: 10Gi
+  accessModes:
+    - ReadWriteOnce
