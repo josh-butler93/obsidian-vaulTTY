@@ -1,0 +1,19 @@
+To remote into a machine on the same network (same LAN), you do not need NAT (Network Address Translation). NAT is only used to translate IP addresses when traffic crosses different networks, such as moving between a private home network and the public internet
+
+Alternative: Port Forwarding (Keep NAT Mode)
+Keep the VM in NAT mode
+Go to Network -> Expand Advanced -> Click Port Forwarding
+Add a new rule:
+Host IP: Leave blank (or use 0.0.0.0)
+Host Port: Choose an open port on the host (e.g., 33890 for RDP or 2222 for SSH)
+Guest IP: The internal IP of your VM (usually 10.0.2.15)
+Guest Port: The actual service port (3389 for RDP or 22 for SSH)
+ssh username@10.0.***.72 -p 2222
+
+1. Set Up the Second VM in VirtualBox
+Host IP: Leave blank (or 0.0.0.0)
+Host Port: 2223 (or any unique, unused port)
+Guest IP: 10.0.2.15 (VirtualBox gives most NAT VMs this same internal IP, which is perfectly fine)
+Guest Port: 22
+ssh username2@10.0.***.72 -p 2223
+
