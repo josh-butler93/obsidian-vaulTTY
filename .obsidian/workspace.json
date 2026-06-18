@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "b543129fc883e663",
-            "type": "leaf",
-            "state": {
-              "type": "surfing-view",
-              "state": {
-                "url": "https://learn.kodekloud.com/user/dashboard"
-              },
-              "icon": "lucide-file",
-              "title": "Dashboard | KodeKloud"
-            }
-          },
-          {
             "id": "874e5cc7e322c98f",
             "type": "leaf",
             "state": {
@@ -131,16 +119,15 @@
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://www.youtube.com/watch?v=a273XkirPUc&t=833s",
-                "title": "(2) Common Sysadmin Mistakes | Into the Terminal 182 - YouTube",
+                "url": "https://www.youtube.com/watch?v=alZMRigqChc",
+                "title": "(2) Linux Command line Tricks | Into the Terminal 183 - YouTube",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "(2) Common Sysadmin Mistakes | Into the Terminal 182 - YouTube"
+              "title": "(2) Linux Command line Tricks | Into the Terminal 183 - YouTube"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -205,7 +192,7 @@
             }
           },
           {
-            "id": "4d41c650dc3922af",
+            "id": "5d678df0f3167b68",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -377,6 +364,7 @@
   },
   "active": "874e5cc7e322c98f",
   "lastOpenFiles": [
+    "Command_Guru/AWS",
     "Command_Guru/Docker/webapp-color/templates/hello.py",
     "Command_Guru/Docker/webapp-color/templates",
     "Command_Guru/Docker/webapp-color/requirements.txt",
@@ -387,7 +375,6 @@
     "homelab_k8s-build/iso_image_locations",
     "Command_Guru/K8s/yaml_files/replicaset-definition-2.yaml",
     "Command_Guru/K8s/yaml_files/replicaset-setup.yaml",
-    "Command_Guru/K8s/yaml_files/yaml",
     "lab-archive/Excalidraw/Linux Package Managers.md",
     "lab-archive/Kanban/Vault.md",
     "lab-archive/Commands/Commands Index.md",
