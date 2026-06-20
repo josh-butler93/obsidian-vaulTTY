@@ -1,0 +1,29 @@
+--sudo dnf update -y && sudo dnf upgrade -y
+
+--sudo dnf install -y openssh-server
+    --sudo dnf enable --now sshd
+    --sudo dnf start sshd
+    --sudo dnf status sshd
+
+--sudo dnf install -y oracle-epel-release-el9
+--sudo dnf install -y curl unzip git zsh nvim fastfetch
+
+--sudo chsh -s /bin/zsh <username>
+    --sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        --exec zsh --restarts the terminal
+            --the prompt will ask if you want to make zsh the defualy shell select yes
+
+--alias vim='nvim'
+if [[ -o interactive ]]; then
+        fastfetch or <neofetch>
+fi
+--source ~/.zshrc
+
+--ssh-keygen -t ed25519 -C "k8s controller"
+--ssh-copy-id user@SERVER_IP
+    --cat ~/.ssh/id_ed25519.pub >> Copy the output
+        --mkdir -p ~/.ssh >> Create on the server you want to use the ssh keys on i.e the one you are remoting into
+        --nano ~/.ssh/authorized_keys >> Create on the server you want to use the ssh keys on i.e the one you are remoting into
+
+--git clone https://github.com/josh-butler93/obsidian-vaulTTY.git
+--git clone git@github.com:josh-butler93/obsidian-vaulTTY.git
