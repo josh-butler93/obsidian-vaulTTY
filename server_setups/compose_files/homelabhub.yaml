@@ -1,0 +1,16 @@
+services:
+  homelab-hub:
+    image: raidowl/homelab-hub:latest
+    container_name: homelab-hub
+    ports:
+      - "8000:8000" 
+    volumes:
+      - ./data:/data
+    restart: unless-stopped
+
+# 8085:8000 --in case another port is being used
+# mkdir -p ~/homelab-hub && cd ~/homelab-hub
+# vim compose.yaml --paste the above code and then run the below command
+# docker compose up -d 
+# http://your-vm-ip-address:8000
+

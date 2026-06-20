@@ -1,0 +1,5 @@
+--kubectl create namespace portainer
+--helm repo add portainer https://portainer.github.io/k8s/
+--helm repo update
+--helm search repo portainer
+--helm install portainer/portainer 

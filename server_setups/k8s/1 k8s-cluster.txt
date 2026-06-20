@@ -1,0 +1,36 @@
+--sudo swapoff -a >> temporary until a machine reboot
+--sudo vim /etc/fstab
+--Comment below line out
+    -- # /swapfile none swap sw 0 0
+-------------------------------------------------------------------------------------------
+--curl -sfL https://get.k3s.io | sh -
+--sudo systemctl status k3s
+--sudo systemctl enable --now k3s 
+--sudo systemctl start k3s
+--sudo chmod 644 /etc/rancher/k3s/k3s.yaml
+--export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+        echo 'export KUBECONFIG=/etc/rancher/k3s/k3s.yaml' >> ~/.zshrc
+        source ~/.zshrc
+--kubectl cluster-info
+--kubectl get nodes
+--curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 && chmod 700 get_helm.sh && ./get_helm.sh
+-----------------------------------------------------------------------------------------
+--Extras--
+
+--sudo kubectl get nodes
+    --sudo systemctl stop k3s
+    --sudo systemctl disable k3s
+    --sudo /usr/local/bin/k3s-uninstall.sh
+    --sudo rm -rf /etc/rancher
+    --sudo rm -rf /var/lib/rancher
+    --sudo rm -rf /var/lib/kubelet
+    --sudo rm -rf /var/lib/cni
+    --sudo rm -rf /etc/cni
+    --sudo rm -rf /run/k3s
+
+
+--sudo cat /var/lib/rancher/k3s/server/node-token
+curl -sfL https://get.k3s.io | \
+K3S_URL=https://CONTROL_PLANE_IP:6443 \
+K3S_TOKEN=TOKEN_HERE \
+sh -

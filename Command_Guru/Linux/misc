@@ -1,0 +1,6 @@
+--systemctl status systemd-journald
+--journalctl -u systemd-journald -n 50
+--systemctl status xe-linux-distribution
+--systemctl status xe-daemon
+--sudo swapoff -a
+--systemctl status cloudflared
