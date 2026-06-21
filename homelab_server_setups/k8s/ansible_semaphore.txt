@@ -8,6 +8,8 @@
 --kubectl get secret ansible-semaphore -n automation -o jsonpath="{.data.admin-password}" | base64 --decode
 --kubectl exec -it ansible-semaphore-744db8957c-zlp7w -n automation -- semaphore user add --admin --name admin --login admin --email admin@local --password admin123
 --http://<k8s-node-ip>:3000
+--ssh-keygen -t id_ed25519 -C "comment if you want" >> id_ed25519 = private key >> id_ed25519.pub = public key
+--ssh-copy-id username@ip_address << This command is ran from the server where ansible semaphore is installed on to the machine where ansible will be ran on
 
 --kubectl port-forward svc/ansible-semaphore -n automation 3000:3000 
     --kubectl port-forward svc/ansible-semaphore -n automation 3000:3000 & 

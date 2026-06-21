@@ -1,0 +1,54 @@
+--docker exec -it big-bear-coolify ls -la /etc/nginx/sites-available
+--docker exec -it big-bear-coolify readlink -f /etc/nginx/conf.d/default.conf
+--docker exec -it big-bear-coolify nginx -t
+--docker exec -it big-bear-coolify readlink /etc/nginx/conf.d/default.conf
+--docker exec -it big-bear-coolify sh
+        --rm /etc/nginx/conf.d/default.conf
+        --ln -s /etc/nginx/sites-available/ssl-off /etc/nginx/conf.d/default.conf
+        --nginx -t
+        --nginx -s reload
+        --exit
+--docker ps
+
+
+--docker exec -it big-bear-coolify-postgres sh
+    --printenv | grep POSTGRES
+    ---or 
+    --env | grep POSTGRES
+    --psql -U coolify -d coolify >> coolify=# << you are in the database
+    --\q << exists the database
+--/ # php artisan db:seed --force << run this while still in the container
+    --exit
+--docker exec -it big-bear-coolify sh
+    --php -v
+    --php artisan optimize:clear
+    --php artisan config:clear
+    --php artisan cache:clear
+    --php artisan view:clear
+    --ssh-keygen -t ed25519 -f /tmp/coolify_localhost -N ""
+    --cat /tmp/coolify_localhost
+    --php artisan tinker
+####################################
+use App\Models\PrivateKey;
+
+$key = PrivateKey::create([
+    'name' => 'localhost-key',
+    'private_key' => <<<KEY
+-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+QyNTUxOQAAACAxR8KYrwn8VPZrPeUW2TD9bmkiuG7ZTNUZVjxw0wjs9gAAAJjryqBp68qg
+aQAAAAtzc2gtZWQyNTUxOQAAACAxR8KYrwn8VPZrPeUW2TD9bmkiuG7ZTNUZVjxw0wjs9g
+AAAEA5FLThTJ3GksuRQCHKH4BNWtyjl1R1p+LMhS2/ScgHezFHwpivCfxU9ms95RbZMP1u
+aSK4btlM1RlWPHDTCOz2AAAAFXd3dy1kYXRhQGNlOGYyMDVmOGVjMA==
+-----END OPENSSH PRIVATE KEY-----
+KEY,
+    'team_id' => 0,
+    'is_git_related' => false,
+]);
+############################################
+        --$server = \App\Models\Server::find(0);
+        --$server->private_key_id = $key->id;
+        --$server->save();
+        --exit
+        --exit
+--docker restart big-bear-coolify

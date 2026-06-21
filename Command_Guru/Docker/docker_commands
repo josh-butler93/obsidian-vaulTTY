@@ -35,6 +35,7 @@ Docker Link: https://hub.docker.com/
 	* docker inspect webapp | grep ...
 	* docker build -t webapp-color .
 	* docker build -t webapp-color:lite . 
+	* docker logs big-bear-coolify --tail 50
 
 #Executing Commands on a running container
 	* docker exec <container_name> cat /etc/os-release
