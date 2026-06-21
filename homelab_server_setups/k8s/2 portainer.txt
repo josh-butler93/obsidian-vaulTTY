@@ -1,0 +1,24 @@
+### https://artifacthub.io/packages/search?kind=0 ### --Helm Repos
+
+--kubectl create ns portainer
+--helm repo add portainer https://portainer.github.io/k8s/
+--helm repo update
+--helm search repo portainer
+--(OPTIONAL) -- helm install --dry-run --debug portainer -n portainer deploy/helm/portainer
+--helm install portainer/portainer 
+--helm install portainer portainer/portainer -n portainer --set service.type=LoadBalancer
+--kubectl get --namespace portainer svc -w portainer
+        NAME        TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)                                        AGE
+        portainer   LoadBalancer   10.43.132.127   10.0.0.140    9000:30989/TCP,9443:31815/TCP,8000:30345/TCP   39s
+    --https://10.0.0.140:9443/#!/init/admin
+--kubectl get sa -A | grep portainer
+--kubectl get clusterrolebinding | grep portainer
+--kubectl rollout restart deployment -n portainer
+
+
+--------------------------------------------------------------
+# Node port Installation if needed
+--helm install portainer portainer/portainer \
+  -n portainer \
+  --set service.type=NodePort \
+  --set service.nodePort=30777

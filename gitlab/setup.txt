@@ -1,0 +1,25 @@
+--ssh-keygen -t ed25519 -C "comment as needed"
+--cat .ssh/id_ed25519.pub
+       ssh-ed25519 AAAAAAAAAAA99))))00000 >> grab this key 
+    --add it to the ssh keys in gitlab for pulling down the repo 
+--git clone git@gitlab.com:josh-butler93-group/reponame-ng.git
+--git config --global user.email "useremail@domain.com"
+--git config --global user.name "name"
+
+--Add the lighsail instances private key to the projects variable
+    --go to the project --select settings --ci/cd --add variable --add the private ssh key there Key:ssh Value:The key from the cat command
+    --go to the project --select settings --ci/cd --runners --assign it a runner 
+--From the lightsail instance run the below command to copy its public ssh key to the vm
+    --ssh-copy-id sysadmin@ORACLE_VM_IP
+---------------------------------------
+Test pipeline:
+
+stages:
+  - test
+
+test_ssh:
+  stage: test
+  tags: [lighsail]
+  script:
+    - ssh username@***.*.*.* "kubectl get nodes"
+    - ssh username@***.*.*.* "kubectl get pods -A"

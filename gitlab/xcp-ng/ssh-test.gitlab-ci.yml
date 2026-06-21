@@ -1,0 +1,9 @@
+stages:
+  - test
+
+test_ssh:
+  stage: test
+  tags: [lighsail]
+  script:
+    - ssh username@***.*.*.* "kubectl get nodes"
+    - ssh username@***.*.*.* "kubectl get pods -A"

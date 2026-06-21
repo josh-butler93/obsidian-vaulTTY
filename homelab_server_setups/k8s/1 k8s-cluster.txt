@@ -2,6 +2,7 @@
 --sudo vim /etc/fstab
 --Comment below line out
     -- # /swapfile none swap sw 0 0
+--sudo reboot
 -------------------------------------------------------------------------------------------
 --curl -sfL https://get.k3s.io | sh -
 --sudo systemctl status k3s
