@@ -8,8 +8,27 @@
 --kubectl get secret ansible-semaphore -n automation -o jsonpath="{.data.admin-password}" | base64 --decode
 --kubectl exec -it ansible-semaphore-744db8957c-zlp7w -n automation -- semaphore user add --admin --name admin --login admin --email admin@local --password admin123
 --http://<k8s-node-ip>:3000
---ssh-keygen -t id_ed25519 -C "comment if you want" >> id_ed25519 = private key >> id_ed25519.pub = public key
+--ssh-keygen -t ed25519 -C "comment if you want" >> id_ed25519 = private key >> id_ed25519.pub = public key
+--ls .ssh/ 
 --ssh-copy-id username@ip_address << This command is ran from the server where ansible semaphore is installed on to the machine where ansible will be ran on
+--kubectl exec -it -n automation deploy/ansible-semaphore -- ls /
+--kubectl exec -it -n automation deploy/ansible-semaphore -- mount | grep semaphore
+--kubectl exec -it -n automation deploy/ansible-semaphore -- git --version
+kubectl exec -it -n automation deploy/ansible-semaphore -- sh -c "
+mkdir -p /tmp/semaphore-test &&
+cd /tmp/semaphore-test &&
+git init &&
+cat <<EOF > ping.yml
+---
+- hosts: all
+  gather_facts: false
+  tasks:
+    - name: Test connectivity
+      ping:
+EOF
+git add .
+git commit -m 'initial'
+"
 
 --kubectl port-forward svc/ansible-semaphore -n automation 3000:3000 
     --kubectl port-forward svc/ansible-semaphore -n automation 3000:3000 & 
@@ -29,3 +48,8 @@
 -------------------------------------------------
 #---Extras---#
 --helm uninstall ansible-semaphore -n automation
+
+--run the below commands on the host for setup and maintence
+--mkdir -p ~/semaphore
+--cd ~/semaphore
+--git init

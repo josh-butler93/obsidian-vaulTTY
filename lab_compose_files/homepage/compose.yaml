@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    container_name: homepage
+    ports:
+      - "3001:3000"
+    environment:
+      - HOMEPAGE_ALLOWED_HOSTS=*
+      #- HOMEPAGE_ALLOWED_HOSTS=localhost,127.0.0.1,0.0.0.0
+    volumes:
+      - ./config:/app/config
+    restart: unless-stopped

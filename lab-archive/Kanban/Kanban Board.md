@@ -20,6 +20,7 @@ kanban-plugin: list
 - [ ] [[Build out Portainer Server]]
 - [ ] [[Build out DockerSwarm Cluster]]
 - [ ] [[Build out K8 Cluster]]
+- [ ] [[Build out Terraform Server]]
 
 
 ## To Do

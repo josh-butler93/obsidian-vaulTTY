@@ -1,0 +1,39 @@
+############# For Homelab Container Use Only ##############################
+
+services:
+  # Nginx Proxy Manager (Reverse Proxy)
+  nginx-proxy-manager:
+    image: 'jc21/nginx-proxy-manager:latest'
+    container_name: nginx-proxy-manager
+    restart: unless-stopped
+    ports:
+      - '80:80'   # HTTP traffic
+      - '443:443' # HTTPS traffic
+      - '81:81'   # NPM Admin Web UI Port
+    volumes:
+      - ./npm/data:/data
+      - ./npm/letsencrypt:/etc/letsencrypt
+    networks:
+      - proxy-network
+
+  # Homelab Hub
+  homelab-hub:
+    image: raidowl/homelab-hub:latest
+    container_name: homelab-hub
+    restart: unless-stopped
+    # We no longer need to expose port 8000 to the host, 
+    # as traffic will route internally through the Docker network.
+    expose:
+      - "8000"
+    volumes:
+      - ./data:/data
+    networks:
+      - proxy-network
+
+networks:
+  proxy-network:
+    name: proxy-network
+
+# vim compose.yaml
+# docker compose up -d 
+# Open your browser and navigate to the admin dashboard: http://your-vm-ip-address:81

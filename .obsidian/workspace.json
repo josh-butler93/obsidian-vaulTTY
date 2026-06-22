@@ -11,24 +11,34 @@
             "id": "874e5cc7e322c98f",
             "type": "leaf",
             "state": {
-              "type": "surfing-view",
+              "type": "kanban",
               "state": {
-                "url": "https://kodekloud.com/studio/labs/kubernetes"
+                "file": "lab-archive/Kanban/Kanban Board.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "list",
+                  "list-collapse": [
+                    true,
+                    false,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true
+                  ]
+                }
               },
-              "icon": "lucide-file",
-              "title": "Kubernetes Free Labs | Try Hands-On Labs @ KodeKloud Studio"
+              "icon": "lucide-trello",
+              "title": "Kanban Board"
             }
           },
           {
             "id": "2b4e649a6099e542",
             "type": "leaf",
             "state": {
-              "type": "surfing-view",
-              "state": {
-                "url": "https://developer.hashicorp.com/terraform/language/values/variables"
-              },
-              "icon": "lucide-file",
-              "title": "Use input variables to add module arguments | Terraform | HashiCorp Developer"
+              "type": "custom-frames-labex.io",
+              "state": {},
+              "icon": "lucide-pickaxe",
+              "title": "Labex.io"
             }
           },
           {
@@ -79,52 +89,6 @@
               },
               "icon": "excalidraw-icon",
               "title": "Linux Package Managers"
-            }
-          },
-          {
-            "id": "69dbc8b857d724fa",
-            "type": "leaf",
-            "state": {
-              "type": "surfing-view",
-              "state": {
-                "url": "https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file"
-              },
-              "icon": "lucide-file",
-              "title": "local_file | Resources | hashicorp/local | Terraform | Terraform Registry"
-            }
-          },
-          {
-            "id": "1b88cc33b5968eaa",
-            "type": "leaf",
-            "state": {
-              "type": "custom-frames-tiktok",
-              "state": {},
-              "icon": "lucide-ticket",
-              "title": "Tiktok"
-            }
-          },
-          {
-            "id": "6f1ae35ea98f844c",
-            "type": "leaf",
-            "state": {
-              "type": "custom-frames-youtube",
-              "state": {},
-              "icon": "lucide-monitor-play",
-              "title": "Youtube"
-            }
-          },
-          {
-            "id": "bc29c15898d10c35",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://www.youtube.com/watch?v=alZMRigqChc",
-                "title": "(2) Linux Command line Tricks | Into the Terminal 183 - YouTube",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "(2) Linux Command line Tricks | Into the Terminal 183 - YouTube"
             }
           }
         ]
@@ -192,7 +156,7 @@
             }
           },
           {
-            "id": "5d678df0f3167b68",
+            "id": "d2f31d4776ddd842",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -364,18 +328,21 @@
   },
   "active": "874e5cc7e322c98f",
   "lastOpenFiles": [
-    "Command_Guru/AWS",
-    "Command_Guru/Docker/webapp-color/templates/hello.py",
-    "Command_Guru/Docker/webapp-color/templates",
-    "Command_Guru/Docker/webapp-color/requirements.txt",
-    "Command_Guru/Docker/webapp-color/app.py",
-    "Command_Guru/Docker/webapp-color/Dockerfile_image_mod",
-    "Command_Guru/Docker/webapp-color/Dockerfile",
-    "Command_Guru/Docker/webapp-color",
-    "homelab_k8s-build/iso_image_locations",
-    "Command_Guru/K8s/yaml_files/replicaset-definition-2.yaml",
-    "Command_Guru/K8s/yaml_files/replicaset-setup.yaml",
+    "lab_compose_files/ansible_semaphore/compose.yaml",
+    "lab_compose_files/homepage/compose.yaml",
+    "lab_compose_files/homelabhub/compose.yaml",
+    "lab_compose_files/homepage/icons",
+    "lab_compose_files/homepage/config/services.yaml",
+    "lab_compose_files/homepage/config",
+    "lab_compose_files/homepage/homepage.yaml",
+    "lab_compose_files/homepage",
+    "homelab_server_setups/ansible/Playbooks/ping.yaml",
+    "homelab_server_setups/ansible/ansible_semaphore/semaphore",
+    "homelab_server_setups/ansible/ansible_semaphore",
+    "lab-archive/Kanban/Kanban Board.md",
     "lab-archive/Excalidraw/Linux Package Managers.md",
+    "Build out Terraform Server.md",
+    "lab-archive/Kanban/Build out DockerSwarm Cluster.md",
     "lab-archive/Kanban/Vault.md",
     "lab-archive/Commands/Commands Index.md",
     "lab-archive/Excalidraw/AWS EKS.md",
@@ -390,7 +357,6 @@
     "lab-archive/Kanban/CCNA.md",
     "lab-archive/Kanban/Build out Portainer Server.md",
     "lab-archive/Kanban/Build out K8 Cluster.md",
-    "lab-archive/Kanban/Build out DockerSwarm Cluster.md",
     "lab-archive/lab-archive.md",
     "lab-archive/Gt_Clones/learn-k8s/README.md",
     "Vault.md",
@@ -399,8 +365,6 @@
     "lab-archive/Kanban/Taskings/Build out home Assistant Pod.md",
     "lab-archive/Kanban/Taskings/Build out graylog Server.md",
     "lab-archive/ollama/ollama setup.md",
-    "lab-archive/ollama/ollama models.md",
-    "lab-archive/ollama/ollama cloudfare tunnel.md",
     "lab-archive/Images/wallhaven-x15w2d.jpg",
     "lab-archive/Images/wallhaven-gj15r7.png",
     "lab-archive/Images/wallhaven-4g823l.jpg",
