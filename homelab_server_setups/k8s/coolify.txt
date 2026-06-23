@@ -1,0 +1,19 @@
+--helm install ops oci://ghcr.io/quenchworks/charts/coolify
+
+helm install ops oci://ghcr.io/quenchworks/charts/coolify \
+  --namespace coolify \
+  --create-namespace \
+  --set service.type=LoadBalancer
+
+helm upgrade ops oci://ghcr.io/quenchworks/charts/coolify \
+  --namespace coolify \
+  --set service.type=LoadBalancer
+
+--kubectl get secret --namespace coolify ops-coolify -o jsonpath="{.data.root-user-password}" | base64 -d ; echo
+
+
+
+------------------------
+#---Extras---#
+
+--helm uninstall ops --namespace <YOUR_NAMESPACE>
