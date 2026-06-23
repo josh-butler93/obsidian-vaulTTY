@@ -1,0 +1,103 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/bookmarks
+
+- Developer:
+    - Chatgpt:
+        - abbr: GP
+          href: https://chatgpt.com/
+          icon: chatgpt.png
+
+    - Zapier:
+        - abbr: ZP
+          href: https://zapier.com/app/home?conversationId=5e3c58d4-360e-4af5-9ae3-1138ccd0d243
+          icon: n8n #zapier
+          
+    - Github:
+        - abbr: GH
+          href: https://github.com/
+          icon: github
+
+    - GitLab:
+        - abbr: GL
+          href: https://gitlab.com/dashboard/projects/
+          icon: gitlab #gitlab.png
+
+    - Hostinger:
+        - abbr: HS
+          href: https://hpanel.hostinger.com/
+          icon: hostinger
+
+- Social:
+    - Reddit:
+        - abbr: RE
+          href: https://reddit.com/
+          icon: reddit
+
+- Entertainment:
+    - YouTube:
+        - abbr: YT
+          href: https://youtube.com/
+          icon: youtube
+
+    - Udemy:
+        - abbr: UD
+          href: https://www.udemy.com/home/my-courses/learning/
+          icon: udemy
+
+- HomeLab:
+    - XCP-ng:
+        - abbr: XP
+          href: https://10.0.0.59/
+          icon: xcp-ng
+
+    - XOA:
+        - abbr: XO
+          href: https://10.0.0.137/
+          icon: kubernetes #xcp-ng
+    
+    - Beszel:
+        - abbr: BZ
+          href: http://10.0.0.153:8090/
+          icon: beszel
+
+    - Dockhand:
+        - abbr: DH
+          href: http://10.0.0.33:3002/
+          icon: dockhand
+
+    - Glances:
+        - abbr: GL
+          href: http://10.0.0.153:61208/
+          icon: glances
+
+    - Btop:
+        - abbr: BT
+          href: http://10.0.0.153:7681/
+          icon: prometheus 
+
+    - Excalidraw:
+        - abbr: EX
+          href: http://10.0.0.153:8000/
+          icon: excalidraw
+
+- Labs:
+    - Labex.io:
+        - abbr: LX
+          href: https://labex.io/
+          icon: docker #linux 
+
+    - KodeKloud:
+        - abbr: KX
+          href: https://kodekloud.com/
+          icon: terraform 
+
+    - Boot.dev:
+        - abbr: BD
+          href: https://www.boot.dev/dashboard/
+          icon: python 
+
+    - Codecademy:
+        - abbr: CC
+          href: https://www.codecademy.com/learn/
+          icon: rust 

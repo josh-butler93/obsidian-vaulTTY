@@ -1,0 +1,39 @@
+- Infrastructure:
+    - Portainer:
+        href: http://10.0.0.140:9000
+        description: Container management
+        icon: portainer.png #sh-portainer
+
+    - AWS:
+        href: https://us-east-2.signin.aws.amazon.com/oauth?backwards_compatible=false&iam_user=true&scope=openid&response_type=code&code_challenge_method=SHA-256&redirect_uri=https%3A%2F%2Fus-east-2.console.aws.amazon.com%2Fconsole%2Fhome%3Fca-oauth-flow-id%3D4aba%26hashArgs%3D%2523%26isauthcode%3Dtrue%26nc2%3Dh_si%26src%3Dheader-signin%26state%3DhashArgsFromTB_us-east-2_a6c5c68a8a5ce902%26useDefaultRegion%3Dtrue&client_id=arn%3Aaws%3Asignin%3A%3A%3Aconsole%2Fcanvas&code_challenge=RVUydc9QLCMYvC-9iH5V6G-f6-HYwdHAJq1FwxM6R7o
+        description: Cloud Setup
+        icon: aws.png 
+
+- Monitoring:
+    - CasaOS:
+        href: http://10.0.0.153
+        description: Metrics dashboard
+        icon: grafana #si-grafana
+
+    - Cloudflare:
+        href: https://dash.cloudflare.com/5ff50ecf3455ebebadd0e0e7f7ec9282/home/overview 
+        description: Cloudflare Tunnels
+        icon: cloudflare.png #si-cloudflare
+
+    - Tailscale:
+        href: https://login.tailscale.com/admin/machines
+        description: Tailscale VPN
+        icon: tailscale.png #si-tailscale
+
+- Automation:
+    - Semaphore:
+        href: http://10.0.0.140:3000
+        description: Ansible automation
+        icon: ansible.png #si-ansible
+
+    - Omarchy Semaphore:
+        href: http://10.0.0.33:3001
+        description: Ansiblble automation v2
+        icon: ansible.png #si-ansible
+
+#- Kubernetes:
