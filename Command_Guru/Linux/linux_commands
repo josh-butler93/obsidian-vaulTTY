@@ -1,21 +1,33 @@
 ps aux | grep [h]ttpd
 
-#File Listing Commands
+#File Operations Commands
 	* ls 
 	* ls -l
+	* ls -ld --lists out just the directory not the contents inside it
 	* ls -lh
 	* ls -alh
 	* ls -lt 
 	* ls -ltr
+	* ls -lR dir_name --the -R does a recuresive check on the on all files and subdirectories 
 	* ls -lhSr
 	* ls -l */ --contents of immediate subdirectories
 	* ls -l | cowsay
 	* pwd
 	* echo ~
+	* sudo chown owner:group filename --changing the owner of a file
+	* sudo chown root:root new-dir --changing the own of a directory
+	* sudo chown -R root:root new-dir --changing the users and groups of a directory and its subdirectories
+	* sudo chmod 700 file.txt --changing file permissions
+	* sudo chmod 700 testdir --changing directory permissions
+	* sudo chmod -R testdir --the -R applies the change recursively to all files and subdirectories
 ---
   - '-S': Sort by file size
   - '-X': Sort alphabetically by file extension
   - '-v': Sort by version (useful for numbered files)
+  - '4': Read permissions
+  - '2': Write permissions
+  - '1': Execrute permissions
+  - '0': No permission
 
 #User Info
 	* whoami 
