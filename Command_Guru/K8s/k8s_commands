@@ -72,6 +72,21 @@
 	
 
 ###################################################################################
+When do you use each command?
+Use kubectl get pods when you want:
+Is my app running?
+Is it crashing?
+What node is it on?
+
+Example:
+
+kubectl get pods -n test
+Use kubectl get svc when you want:
+How do I access this app?
+What IP/port do I use?
+Is it LoadBalancer or NodePort?
+kubectl get svc -n test
+########################################################################################
 ---
 	* curl -LO "https://k8s.io(curl -L -s https://k8s.io)/bin/linux/amd64/kubectl"
 	* kubectl cluster-info
@@ -120,7 +135,8 @@
 	* kubectl create deployment my-app --image=nginx
 	* kubectl create deployment my-app --image=nginx -n test
 	* kubectl delete pod webapp -n default
-	* kubectl get svc -n prod
+	* kubectl get svc -n prod 
+	*****svc explained = “Show me networking entry points for apps in the cluster”
 	* kubectl get svc uptime-kuma -n prod
 	* kubectl get svc uptime-kuma -n prod -o yaml > uptime-kuma_sevices.yaml
 	* kubectl get svc homepage -n prod

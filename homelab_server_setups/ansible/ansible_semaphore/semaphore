@@ -1,0 +1,14 @@
+Repo Setup
+----------
+mkdir -p ~/semaphore-test
+cd ~/semaphore-test
+git init
+
+create a playbook on the host to ping 
+--git add .
+--git commit -m "Initial commit"
+
+--------
+Creating a New Repo in the WebUI
+
+

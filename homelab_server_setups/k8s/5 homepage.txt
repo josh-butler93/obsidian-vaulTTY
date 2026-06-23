@@ -1,0 +1,4 @@
+--helm repo add jameswynn https://jameswynn.github.io/helm-charts
+--helm repo update
+
+helm install homepage jameswynn/homepage -n homepage --create-namespace --set service.main.type=LoadBalancer

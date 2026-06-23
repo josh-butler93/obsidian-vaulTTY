@@ -1,0 +1,16 @@
+- Infrastructure:
+    - Portainer:
+        href: http://10.0.0.140:9000
+        description: Container management
+        icon: sh-portainer
+
+    - Semaphore:
+        href: http://10.0.0.140:3000
+        description: Ansible automation
+        icon: si-ansible
+
+- Monitoring:
+    - Grafana:
+        href: http://localhost
+        description: Metrics dashboard
+        icon: si-grafana
