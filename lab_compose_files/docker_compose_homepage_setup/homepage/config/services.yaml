@@ -1,4 +1,14 @@
 - Infrastructure:
+    - XCP-ng:
+        href: https://10.0.0.59/
+        description: XO Lite
+        icon: xcp-ng
+
+    - XOA:
+        href: https://10.0.0.137/
+        description: XOA Agent
+        icon: kubernetes
+
     - Portainer:
         href: http://10.0.0.140:9000
         description: Container management
@@ -13,7 +23,7 @@
     - CasaOS:
         href: http://10.0.0.153
         description: Metrics dashboard
-        icon: grafana #si-grafana
+        icon: casaos #grafana #si-grafana
 
     - Cloudflare:
         href: https://dash.cloudflare.com/5ff50ecf3455ebebadd0e0e7f7ec9282/home/overview 

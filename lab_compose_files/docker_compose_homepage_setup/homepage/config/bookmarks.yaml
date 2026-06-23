@@ -46,16 +46,6 @@
           icon: udemy
 
 - HomeLab:
-    - XCP-ng:
-        - abbr: XP
-          href: https://10.0.0.59/
-          icon: xcp-ng
-
-    - XOA:
-        - abbr: XO
-          href: https://10.0.0.137/
-          icon: kubernetes #xcp-ng
-    
     - Beszel:
         - abbr: BZ
           href: http://10.0.0.153:8090/
