@@ -14,3 +14,20 @@ services:
 # docker compose up -d
 # http://localhost:61208
 # http://<your-pc-ip>:61208
+
+
+##################
+# Windows Config #
+##################
+
+services:
+  glances:
+    image: nicolargo/glances:latest-full
+    container_name: glances
+    restart: unless-stopped
+    ports:
+      - "61208:61208"
+    environment:
+      - GLANCES_OPT=-w
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
