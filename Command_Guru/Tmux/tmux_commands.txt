@@ -1,0 +1,1 @@
+--tmux rename-session -t old_name new_name
