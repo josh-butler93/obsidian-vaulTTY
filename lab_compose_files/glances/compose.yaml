@@ -3,13 +3,13 @@ services:
     image: nicolargo/glances:latest-full
     container_name: glances
     restart: unless-stopped
-    pid: host
-    network_mode: host
+    pid: host # let the container see the host's PID's 
+    network_mode: host # lets glances see the host's network stats
     environment:
-      - GLANCES_OPT=-w
+      - GLANCES_OPT=-w # enable web interface
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - /:/host:ro
+      - /:/host:ro # allows host filesystem metrics
 
 # docker compose up -d
 # http://localhost:61208
