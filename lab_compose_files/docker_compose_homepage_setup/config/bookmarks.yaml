@@ -1,0 +1,72 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/bookmarks
+
+- Developer:
+    - Github:
+        - abbr: GH
+          href: https://github.com/
+
+    - GitLab:
+        - abbr: GL
+          href: https://gitlab.com/dashboard/projects/
+
+    - Hostinger:
+        - abbr: HS
+          href: https://hpanel.hostinger.com/
+
+- Social:
+    - Reddit:
+        - abbr: RE
+          href: https://reddit.com/
+
+- Entertainment:
+    - YouTube:
+        - abbr: YT
+          href: https://youtube.com/
+
+- HomeLab:
+    - XCP-ng:
+        - abbr: XP
+          href: https://10.0.0.59/
+
+    - XOA:
+        - abbr: XO
+          href: https://10.0.0.137/
+    
+    - Beszel:
+        - abbr: BZ
+          href: http://10.0.0.153:8090/
+
+    - Dockhand:
+        - abbr: DH
+          href: http://10.0.0.33:3002/
+
+    - Glances:
+        - abbr: GL
+          href: http://10.0.0.153:61208/
+
+    - Btop:
+        - abbr: BT
+          href: http://10.0.0.153:7681/
+
+    - Excalidraw:
+        - abbr: EX
+          href: http://10.0.0.153:8000/
+
+- Labs:
+    - Labex.io:
+        - abbr: LX
+          href: https://labex.io/
+
+    - KodeKloud:
+        - abbr: KX
+          href: https://kodekloud.com/
+
+    - Boot.dev:
+        - abbr: BD
+          href: https://www.boot.dev/dashboard/
+
+    - Codecademy:
+        - abbr: CC
+          href: https://www.codecademy.com/learn/

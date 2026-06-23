@@ -1,0 +1,24 @@
+- Infrastructure:
+    - Portainer:
+        href: http://10.0.0.140:9000
+        description: Container management
+        icon: sh-portainer
+
+- Monitoring:
+    - CasaOS:
+        href: http://10.0.0.153
+        description: Metrics dashboard
+        icon: si-grafana
+
+- Automation:
+    - Semaphore:
+        href: http://10.0.0.140:3000
+        description: Ansible automation
+        icon: si-ansible
+
+    - Omarchy Semaphore:
+        href: http://10.0.0.33:3001
+        description: Ansiblble automation v2
+        icon: si-ansible
+
+#- Kubernetes:

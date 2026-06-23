@@ -10,10 +10,17 @@ ps aux | grep [h]ttpd
 	* ls -lhSr
 	* ls -l */ --contents of immediate subdirectories
 	* ls -l | cowsay
+	* pwd
+	* echo ~
 ---
   - '-S': Sort by file size
   - '-X': Sort alphabetically by file extension
   - '-v': Sort by version (useful for numbered files)
+
+#User Info
+	* whoami 
+	* id
+	* id -un --to get the username
 
 #hostname setup
 	* hostnamectl set-hostname k8s-control
@@ -21,6 +28,7 @@ ps aux | grep [h]ttpd
 
 #Tailscale
 	* tailscale ip -4
+	* systemctl status tailscaled
 
 #Memory
 	* sudo swapoff -a 
