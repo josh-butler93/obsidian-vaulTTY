@@ -1,0 +1,37 @@
+---#----------------------------------------------------------------------------------
+--mkdir -p ~/jenkins && cd ~/jenkins && vim values.yaml
+controller:
+  admin:
+    username: admin
+    password: admin123
+
+  serviceType: LoadBalancer
+
+  resources:
+    requests:
+      cpu: "200m"
+      memory: "512Mi"
+    limits:
+      cpu: "1000m"
+      memory: "2Gi"
+
+  persistence:
+    enabled: true
+    size: 10Gi
+    storageClass: local-path
+
+agent:
+  enabled: true
+--------------------------------------------------------------------
+--helm repo add jenkins https://charts.jenkins.io
+--helm repo update
+--helm search repo jenkins
+--helm install jenkins jenkins/jenkins -n automation -f ~/jenkins/values.yaml
+--kubectl exec --namespace automation -it svc/jenkins -c jenkins -- /bin/cat /run/secrets/additional/chart-admin-password && echo
+--kubectl get svc --namespace automation -w jenkins
+
+
+------------------------------------------
+#---Extras---#
+--$ helm uninstall jenkins
+--$ helm upgrade [RELEASE_NAME] jenkins/jenkins [flags]
