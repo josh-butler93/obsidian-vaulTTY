@@ -1,5 +1,5 @@
 ps aux | grep [h]ttpd
-
+---------------------------------------------------------------------------------------------------------------------------
 #File Operations Commands
 	* ls 
 	* ls -l
@@ -28,20 +28,31 @@ ps aux | grep [h]ttpd
   - '2': Write permissions
   - '1': Execrute permissions
   - '0': No permission
-
+---------------------------------------------------------------------------------------------------------------------------
 #User Info
 	* whoami 
 	* id
 	* id -un --to get the username
+	* su username --to switch to a different user
 
-#hostname setup
+---------------------------------------------------------------------------------------------------------------------------
+#hostname/os Info
 	* hostnamectl set-hostname k8s-control
 	* hostname
+	* cat /etc/os-release
+	* cat /etc/*release*
 
-#Tailscale
+---------------------------------------------------------------------------------------------------------------------------
+#Services --tailscale included
+	* systemctl status <service_name>
+	* sudo systemctl enable <service_name> --this will ensure the service starts even after a reboot
+	* sudo systemctl start <service_name>
+	* sudo systemctl stop <service_name>
+	* sudo systemctl disable <service_name> --this will ensure the service doesnt start after a reboot 
 	* tailscale ip -4
 	* systemctl status tailscaled
 
+---------------------------------------------------------------------------------------------------------------------------
 #Memory
 	* sudo swapoff -a 
 	* sudo swapon -a
@@ -53,6 +64,7 @@ ps aux | grep [h]ttpd
 		-comment out the line with swap on it to permanetly disable it
 			---The /etc/fstab (file system table) file is a critical system configuration file in Linux that defines how and where storage drives, disk partitions, and remote network shares are automatically mounted during the boot process
 
+---------------------------------------------------------------------------------------------------------------------------
 #Networking/package management
 	* /etc/hosts
 	* /etc/resolve.conf
@@ -68,7 +80,8 @@ ps aux | grep [h]ttpd
 
 ---sudo 
 
-#Repo Management
+---------------------------------------------------------------------------------------------------------------------------
+#Repo and App Management
 	* sudo dnf repolist
 	* sudo dnf clean all
 	* sudo dnf rm -rf /var/cache/dnf
@@ -77,6 +90,27 @@ ps aux | grep [h]ttpd
 	* sudo rm -f /etc/yum.repos.d/docker.com.repo
 	* sudo sed -i 's/\$releasever/9/g' /etc/yum.repos.d/docker-ce.repo
 
+---RPM (Red Hat Pacakage Manager)
+	* rpm -qa --this lists out rpm packages on the machine
+	* rpm -qa package_name
+		* rpm -qa ansible python3 telnet openssh-server
+		* rpm -qa | grep ftp
+	* sudo rpm -i <package_name> --this is used to install rpm package
+		* sudo rpm -i ftp-0.17-89.e19.x86_64.rpm
+	* sudo rpm -e <package_name>
+		* sudo rpm -e ftp-0.17-89.el9.x86_64
+	* sudo yum install -y maven
+		* sudo yum list maven
+			* sudo yum remove maven
+				* sudo yum install -y maven-1:3.6.3-19.el9.noarch
+
+---Installs 
+	* curl <package_name>
+		* curl -O https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf
+
+	* wget <package_name>
+
+---------------------------------------------------------------------------------------------------------------------------
 #Sudo misc. Commands
 
 	* sudo tee --this command combo is used write or append data to files owned by the root user simultaneously displaying the output on the screen
