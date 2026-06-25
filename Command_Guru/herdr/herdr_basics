@@ -1,0 +1,17 @@
+-----------------
+--curl -fsSL https://herdr.dev/install.sh | sh
+
+--------------------------------
+-echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+------or-------
+--echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
+---source ~/.bashrc
+----source ~/.zshrc
+-----herdr --version
+------herdr ==run the application
+
+--------------------------------
+-ctrl + b + q ==exits out of the termina
+--ctrl + b + s ==settings
+herdr server stop
+
