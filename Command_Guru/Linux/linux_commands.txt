@@ -70,6 +70,7 @@ ps aux | grep [h]ttpd
 	* /etc/hosts
 	* /etc/resolve.conf
 	* echo "127.0.0.1 www.google.com" | sudo tee -a /etc/hosts
+	* echo "search yahoo.com" | sudo tee -a /etc/resolv.conf -- curl news -- ping -c 4 news --getent hosts news
 	* dnf clean all
 	* dnf makecache
 	* sudo nmcli con show
