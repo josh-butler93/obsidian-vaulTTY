@@ -44,11 +44,12 @@ ps aux | grep [h]ttpd
 
 ---------------------------------------------------------------------------------------------------------------------------
 #Services --tailscale included
-	* systemctl status <service_name>
-	* sudo systemctl enable <service_name> --this will ensure the service starts even after a reboot
-	* sudo systemctl start <service_name>
-	* sudo systemctl stop <service_name>
-	* sudo systemctl disable <service_name> --this will ensure the service doesnt start after a reboot 
+	* systemctl cat  httpd or httpd.service
+	* systemctl status httpd
+	* sudo systemctl enable httpd --this will ensure the service starts even after a reboot
+	* sudo systemctl start httpd
+	* sudo systemctl stop httpd
+	* sudo systemctl disable httpd --this will ensure the service doesnt start after a reboot 
 	* tailscale ip -4
 	* systemctl status tailscaled
 
@@ -68,6 +69,7 @@ ps aux | grep [h]ttpd
 #Networking/package management
 	* /etc/hosts
 	* /etc/resolve.conf
+	* echo "127.0.0.1 www.google.com" | sudo tee -a /etc/hosts
 	* dnf clean all
 	* dnf makecache
 	* sudo nmcli con show

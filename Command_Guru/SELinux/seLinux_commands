@@ -29,6 +29,7 @@
 	* getsebool -a
 	* getsebool -a | grep httpd
 	* ps auxZ
+	* getent hosts
 
 
 ---
