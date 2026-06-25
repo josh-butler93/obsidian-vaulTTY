@@ -13,5 +13,7 @@
 --------------------------------
 -ctrl + b + q ==exits out of the termina
 --ctrl + b + s ==settings
-herdr server stop
-
+---herdr server stop
+----herdr session list
+----herdr workspace list
+-----herdr --remote <remote-session> ==this command allows you to connect to an ssh session attaching where you are from to that sessions herdr || start the session on the remote host
