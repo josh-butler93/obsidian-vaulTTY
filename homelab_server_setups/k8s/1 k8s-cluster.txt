@@ -25,7 +25,14 @@
 --mkdir -p ~/.kube
 ---sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
 ----sudo chown $(id -u):$(id -g) ~/.kube/config
------kubectl get nodes
+-----export KUBECONFIG=~/.kube/config
+------echo 'export KUBECONFIG=$HOME/.kube/config' >> ~/.zshrc
+-------echo 'export KUBECONFIG=$HOME/.kube/config' >> ~/.bashrc
+--------sudo sh -c 'echo "export KUBECONFIG=/home/$USER/.kube/config" > /etc/profile.d/kubeconfig.sh'
+---------kubectl get nodes
+-kubectl get nodes -o wide
+--kubectl describe node $(kubectl get nodes -o name)
+---kubectl delete node localhost.localdomain
 -----------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------
 --Extras--

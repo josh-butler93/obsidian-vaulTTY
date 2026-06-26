@@ -118,6 +118,21 @@ ps aux | grep [h]ttpd
 
 	* sudo tee --this command combo is used write or append data to files owned by the root user simultaneously displaying the output on the screen
 		--standard shell redirection operators like > or >> do not inherit sudo privileges
+	* timedatectl status
+	* timedatectl show-timesync --all
+	* chronyc sources -v
+	* systemctl status chronyd
+	* cat /etc/chrony.conf
+	* sudo tailscale set --accept-dns=false
+
+sudo bash -c 'cat > /etc/resolv.conf <<EOF
+nameserver 1.1.1.1
+nameserver 8.8.8.8
+EOF' 
+	* getent hosts pool.ntp.org
+	* sudo systemctl restart chronyd
+	* sudo chronyc makestep
+
 --ex:
   -sudo echo "127.0.0.1 mysite.local" >> /etc/hosts
   -echo "secret_key" | sudo tee /etc/secrete.txt > /dev/null

@@ -109,6 +109,8 @@ kubectl get svc -n test
 	* kubectl get pods -n portainer -w
 	* kubectl port-forward service/portainer 9443:9443 --namespace portainer --address 0.0.0.0
 	* kubectl port-forward pod/portainer-xfiefwwf 9443:9443 -n portainer --address 0.0.0.0
+	* kubectl rollout restart deployment/<deployment_name>
+	* kubectl rollout restart deployment/<deployment_name> -n <namespace_name>
 	* kubectl rollout restart deployment portainer -n portainer --this will restart the pods in the deployment
 	* kubectl get pods -o wide >> status,ip,os
 	* kubectl get pod uptime-kuma-3wdfvs -n prod -o yaml

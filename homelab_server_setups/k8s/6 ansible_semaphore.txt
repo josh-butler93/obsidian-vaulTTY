@@ -1,4 +1,5 @@
 --kubectl create ns automation
+--helm install ansible-semaphore oci://ghcr.io/cloudhippie/charts/ansible-semaphore -n automation --create-namespace
 --helm install ansible-semaphore oci://ghcr.io/cloudhippie/charts/ansible-semaphore -n automation --create-namespace  --set admin.create=true --set admin.username=admin --set admin.password=Passw0rd
 --helm list -A 
 --kubectl get pods -n automation
