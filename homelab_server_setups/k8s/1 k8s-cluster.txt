@@ -4,6 +4,8 @@
     -- # /swapfile none swap sw 0 0
 --sudo reboot
 -------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+--Installation--
 --curl -sfL https://get.k3s.io | sh -
 --sudo systemctl status k3s
 --sudo systemctl enable --now k3s 
@@ -15,6 +17,16 @@
 --kubectl cluster-info
 --kubectl get nodes
 --curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 && chmod 700 get_helm.sh && ./get_helm.sh
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+--Troubleshooting--
+
+-sudo chown $(id -u):$(id -g) ~/.kube/config
+--mkdir -p ~/.kube
+---sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
+----sudo chown $(id -u):$(id -g) ~/.kube/config
+-----kubectl get nodes
+-----------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------
 --Extras--
 
