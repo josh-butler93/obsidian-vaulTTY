@@ -1,0 +1,17 @@
+services:
+  terraform:
+    image: terraform-cont:v1
+    container_name: terraform
+    working_dir: /workspace
+    volumes:
+      - ./terraform:/workspace
+    stdin_open: true
+    tty: true
+    entrypoint: ["bin/sh"]
+
+#command: docker compose up -d 
+#command: docker exec -it terraform sh
+#command: terraform init
+#command: terraform plan
+#command: terraform apply
+

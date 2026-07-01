@@ -1,0 +1,18 @@
+services:
+  terraform:
+    image: terraform-cont:v1
+    container_name: terraform
+    working_dir: /workspace
+    volumes:
+      - ./terraform:/workspace
+      - ~/.aws/root/.aws:ro
+    environment:
+      - AWS_PROFILE=default
+    entrypoint: ["terraform"]
+
+#command: docker compose up -d 
+#command: docker exec -it terraform sh
+#command: terraform init
+#command: terraform plan
+#command: terraform apply
+

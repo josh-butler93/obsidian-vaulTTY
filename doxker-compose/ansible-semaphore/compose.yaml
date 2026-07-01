@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  semaphore:
+    image: semaphoreui/semaphore:latest
+    container_name: semaphore
+    ports:
+      - "3000:3000"
+    environment:
+      SEMAPHORE_DB_DIALECT: sqlite
+      SEMAPHORE_DB: /var/lib/semaphore/database.sqlite
+      SEMAPHORE_PLAYBOOK_PATH: /tmp/semaphore
+      SEMAPHORE_ADMIN: admin
+      SEMAPHORE_ADMIN_PASSWORD: admin123
+      SEMAPHORE_ADMIN_NAME: admin
+      SEMAPHORE_ADMIN_EMAIL: admin@local
+    volumes:
+      - semaphore_data:/var/lib/semaphore
+      - semaphore_tmp:/tmp/semaphore
+    restart: unless-stopped
+
+volumes:
+  semaphore_data:
+  semaphore_tmp:
+
+# docker compose up -d
+# http://localhost:3000
+# http://<vm-ip>:3000
