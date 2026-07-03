@@ -83,7 +83,11 @@ ps aux | grep [h]ttpd
 	* sudo firewall-cmd --reload
 
 ---sudo 
-
+---curl
+	* curl -o /dev/null -s -w "%{http_code}" http://localhost:8080 --This will retrieve just the HTTP response code
+	* curl -s http://localhost:8080 --This will pull raw HTML && can be combined with 'grep' for specific keywords
+	* curl -o /dev/null -s -w "%{http_code}" http://localhost:8080 > ~/labex/project/jenkins-web-report.txt
+	* curl -s http://localhost:8080 >> ~/labex/project/jenkins-web-report.txt
 ---------------------------------------------------------------------------------------------------------------------------
 #Repo and App Management
 	* sudo dnf repolist
