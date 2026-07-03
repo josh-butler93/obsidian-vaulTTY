@@ -46,63 +46,7 @@
     ],
     "defaultFilterType": "tree"
   },
-  "treeData": [
-    {
-      "id": "c13465698d7b47a8",
-      "parent": 0,
-      "droppable": true,
-      "text": "Dashboard | KodeKloud",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "80918a9226209b63",
-      "parent": 0,
-      "droppable": true,
-      "text": "Terraform Free Labs | Try Hands-On Labs @ KodeKloud Studio",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "69dbc8b857d724fa",
-      "parent": 0,
-      "droppable": true,
-      "text": "local_file | Resources | hashicorp/local | Terraform | Terraform Registry",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "725f8b3fd34e0edb",
-      "parent": 0,
-      "droppable": true,
-      "text": "obsidian-vaulTTY/Command_Guru/terraform/teform_projects at main · josh-butler93/obsidian-vaulTTY",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "1a7c31b63f2ab3e3",
-      "parent": 0,
-      "droppable": true,
-      "text": "why do i keep gettign this fucking github error Compressing objects: 100% (91/91), done. send-pack: unexpected disconnect while reading sideband packet Connection to github.com closed by remote host. fatal: the remote end hung up unexpectedly - Google Search",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    }
-  ],
+  "treeData": [],
   "enableHtmlPreview": true,
   "supportLivePreviewInlineUrl": true,
   "enableTreeView": true,
