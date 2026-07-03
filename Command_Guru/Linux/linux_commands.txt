@@ -12,6 +12,7 @@ ps aux | grep [h]ttpd
 	* ls -lhSr
 	* ls -l */ --contents of immediate subdirectories
 	* ls -l | cowsay
+	* rm -i <file_name> --this is interactively removing a file
 	* pwd
 	* echo ~
 	* sudo chown owner:group filename --changing the owner of a file

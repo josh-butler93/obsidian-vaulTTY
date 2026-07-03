@@ -14,6 +14,8 @@ Docker Link: https://hub.docker.com/
 	* docker ps
 	* docker ps -a
 	* docker images
+	* docker images <repo_name>
+	* docker images jenkins/jenkins
 	* docker start <container_name>
 	* docker stop <container_name>
 	* docker stop $(docker ps -aq)
@@ -30,12 +32,18 @@ Docker Link: https://hub.docker.com/
 	* docker run -d -p 38282:8080 --name webapp kodecloud/simple:webapp:blue
 	* docker run -p 38282:8989 --name blue-app -e APP_COLOR=blue -d kodekloud/simple-webapp
 	* docker run --name mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123 mysql
+	* docker port <container_name>
+	* docker port dockhand
+	* docker exec jenkins ls /var/jenkins_home
 	* docker inspect container_name 
 	* docker inspect webapp 
 	* docker inspect webapp | grep ...
+	* docker inspect <image_name> --format '{{.Config.Image}}'
+	* docker inspect jenkins --format '{{.Config.Image}}'
 	* docker build -t webapp-color .
 	* docker build -t webapp-color:lite . 
 	* docker logs big-bear-coolify --tail 50
+	* docker logs --tail 59 jenkins
 
 #Executing Commands on a running container
 	* docker exec <container_name> cat /etc/os-release
