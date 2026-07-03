@@ -13,6 +13,8 @@ Docker Link: https://hub.docker.com/
 	* docker run <container_name>
 	* docker ps
 	* docker ps -a
+	* docker ps --filter name=jenkins --format 'name={{.Names}} image={{.Image}} status={{.Status}} ports={{.Ports}}'
+	* docker ps --filter name=jenkins --format 'name={{.Names}} image={{.Image}} status={{.Status}} ports={{.Ports}}' > jenkins-docker-report.txt
 	* docker images
 	* docker images <repo_name>
 	* docker images jenkins/jenkins
@@ -40,6 +42,7 @@ Docker Link: https://hub.docker.com/
 	* docker inspect webapp | grep ...
 	* docker inspect <image_name> --format '{{.Config.Image}}'
 	* docker inspect jenkins --format '{{.Config.Image}}'
+	* docker inspect jenkins --format '{{range .Mounts}}{{.Source}} -> {{.Destination}}{{println}}{{end}}' > jenkins-docker-report.txt
 	* docker build -t webapp-color .
 	* docker build -t webapp-color:lite . 
 	* docker logs big-bear-coolify --tail 50
