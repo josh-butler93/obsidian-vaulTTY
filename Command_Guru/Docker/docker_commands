@@ -15,6 +15,7 @@ Docker Link: https://hub.docker.com/
 	* docker ps -a
 	* docker ps --filter name=jenkins --format 'name={{.Names}} image={{.Image}} status={{.Status}} ports={{.Ports}}'
 	* docker ps --filter name=jenkins --format 'name={{.Names}} image={{.Image}} status={{.Status}} ports={{.Ports}}' > jenkins-docker-report.txt
+	* docker ps --filter name=jenkins-init-lab --format 'table {{.Names}}\t{{.Status}}\t{{.Ports}}'
 	* docker images
 	* docker images <repo_name>
 	* docker images jenkins/jenkins
