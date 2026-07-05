@@ -46,7 +46,19 @@
     ],
     "defaultFilterType": "tree"
   },
-  "treeData": [],
+  "treeData": [
+    {
+      "id": "2be88124505a2d71",
+      "parent": 0,
+      "droppable": true,
+      "text": "KodeKloud Free Labs - Try Hands-On Labs Now !",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    }
+  ],
   "enableHtmlPreview": true,
   "supportLivePreviewInlineUrl": true,
   "enableTreeView": true,

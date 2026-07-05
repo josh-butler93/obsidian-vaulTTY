@@ -46,7 +46,8 @@
     "//docker-compose/docker-compose/omarchy_compose/docker-compose/omarchy_compose/docker-compose/docker-compose/omarchy_compose/docker-compose/terraform",
     "//docker-compose/docker-compose/omarchy_compose/docker-compose/omarchy_compose/docker-compose/docker-compose/omarchy_compose/docker-compose/terraform/docker-compose/omarchy_compose/docker-compose/terraform/dockhand",
     "//lab-archive",
-    "//lab-archive/lab-archive/Kanban"
+    "//lab-archive/lab-archive/Kanban",
+    "//Excalidraw"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
