@@ -8,7 +8,89 @@
         "type": "tabs",
         "children": [
           {
-            "id": "0361d0c1a843c2be",
+            "id": "0ffdbfd8747b26cf",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "http://localhost:3003/"
+              },
+              "icon": "lucide-file",
+              "title": "Homepage"
+            }
+          },
+          {
+            "id": "24c90b3e7951bb90",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "https://www.youtube.com/watch?v=YshMbLgNW7k"
+              },
+              "icon": "lucide-file",
+              "title": "(34) Linux LPIC-2 Training Course - CLI Tools - YouTube"
+            }
+          },
+          {
+            "id": "39af45b52fe6135b",
+            "type": "leaf",
+            "state": {
+              "type": "custom-frames-labex.io",
+              "state": {},
+              "icon": "lucide-pickaxe",
+              "title": "Labex.io"
+            }
+          },
+          {
+            "id": "2be88124505a2d71",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "https://kodekloud.com/studio/labs/devops"
+              },
+              "icon": "lucide-file",
+              "title": "Practice DevOps Pre-Requisites Free Labs With KodeKloud Now !"
+            }
+          },
+          {
+            "id": "52e0adc9b252543b",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "https://profile.hackthebox.com/dashboard"
+              },
+              "icon": "lucide-file",
+              "title": "HTB Profile | Hack The Box"
+            }
+          },
+          {
+            "id": "b4fa49a9e951e032",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "https://www.boot.dev/"
+              },
+              "icon": "lucide-file",
+              "title": "Learn to Code | Boot.dev"
+            }
+          },
+          {
+            "id": "2b4e649a6099e542",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Drawing 2026-07-03 14.15.30.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2026-07-03 14.15.30.excalidraw"
+            }
+          },
+          {
+            "id": "3d545c1b45b4c8da",
             "type": "leaf",
             "state": {
               "type": "terminal:terminal",
@@ -44,42 +126,9 @@
               "icon": "terminal",
               "title": "Terminal: sh"
             }
-          },
-          {
-            "id": "39af45b52fe6135b",
-            "type": "leaf",
-            "state": {
-              "type": "custom-frames-labex.io",
-              "state": {},
-              "icon": "lucide-pickaxe",
-              "title": "Labex.io"
-            }
-          },
-          {
-            "id": "2be88124505a2d71",
-            "type": "leaf",
-            "state": {
-              "type": "surfing-view",
-              "state": {
-                "url": "https://kodekloud.com/studio/labs?utm_source=google&utm_medium=cpc&utm_campaign=KK_SEM_IN_B2C-Acq_Brand_PM_B_PROS_NOA_SEP%2724&utm_term=devops%20kodekloud&utm_content=189832776361&utm_term=devops%20kodekloud&utm_campaign=KK_SEM_US_B2C-Acq_Brand_PM_B_PROS_NOA_Oct%2725&utm_source=adwords&utm_medium=ppc&hsa_acc=8039903603&hsa_cam=23073089507&hsa_grp=189832776361&hsa_ad=776718202968&hsa_src=g&hsa_tgt=kwd-2064499520357&hsa_kw=devops%20kodekloud&hsa_mt=p&hsa_net=adwords&hsa_dev=c&hsa_place=&gad_source=1&gad_campaignid=23073089507&_gl=1*28u36o*_up*MQ..*_gs*MQ..&gclid=EAIaIQobChMIl72b4YC8lQMVjUdHAR3JfiLCEAAYASAAEgK5QfD_BwE&gbraid=0AAAAACO3P68Tejm_FvXqqF42ecN3coVde"
-              },
-              "icon": "lucide-file",
-              "title": "KodeKloud Free Labs - Try Hands-On Labs Now !"
-            }
-          },
-          {
-            "id": "2b4e649a6099e542",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Excalidraw/Drawing 2026-07-03 14.15.30.excalidraw.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "Drawing 2026-07-03 14.15.30.excalidraw"
-            }
           }
-        ]
+        ],
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -324,7 +373,7 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "0361d0c1a843c2be",
+  "active": "3d545c1b45b4c8da",
   "lastOpenFiles": [
     "Excalidraw/Drawing 2026-07-03 14.15.30.excalidraw.md",
     "lab-archive/Excalidraw/Linux Package Managers.md",

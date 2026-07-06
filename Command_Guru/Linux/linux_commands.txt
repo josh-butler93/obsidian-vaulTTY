@@ -65,6 +65,7 @@ ps aux | grep [h]ttpd
 	* sudo visudo /etc/fstab 
 		-comment out the line with swap on it to permanetly disable it
 			---The /etc/fstab (file system table) file is a critical system configuration file in Linux that defines how and where storage drives, disk partitions, and remote network shares are automatically mounted during the boot process
+	* vmstat
 
 ---------------------------------------------------------------------------------------------------------------------------
 #Networking/package management

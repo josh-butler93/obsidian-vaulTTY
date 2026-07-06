@@ -51,7 +51,139 @@
       "id": "2be88124505a2d71",
       "parent": 0,
       "droppable": true,
-      "text": "KodeKloud Free Labs - Try Hands-On Labs Now !",
+      "text": "Practice DevOps Pre-Requisites Free Labs With KodeKloud Now !",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "434970a9fde605cb",
+      "parent": 0,
+      "droppable": true,
+      "text": "Cyber Mastery: Community Inspired. Enterprise Trusted. | Hack The Box",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "0ffdbfd8747b26cf",
+      "parent": 0,
+      "droppable": true,
+      "text": "Homepage",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "52e0adc9b252543b",
+      "parent": 0,
+      "droppable": true,
+      "text": "HTB Profile | Hack The Box",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "b4fa49a9e951e032",
+      "parent": 0,
+      "droppable": true,
+      "text": "Learn to Code | Boot.dev",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "b6203e97bbfd3f0e",
+      "parent": 0,
+      "droppable": true,
+      "text": "Sign In - Google Accounts",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "c1cfa3e6f89916ad",
+      "parent": 0,
+      "droppable": true,
+      "text": "Sign In - Google Accounts",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "f1668e8fec9a4d37",
+      "parent": 0,
+      "droppable": true,
+      "text": "Sign In - Google Accounts",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "df81283bb3d961a0",
+      "parent": 0,
+      "droppable": true,
+      "text": "Sign in - Google Accounts",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "9a6de65776679df0",
+      "parent": 0,
+      "droppable": true,
+      "text": "Sign In - Google Accounts",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "77e115682e3a34f5",
+      "parent": 0,
+      "droppable": true,
+      "text": "Sign In - Google Accounts",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "24c90b3e7951bb90",
+      "parent": 0,
+      "droppable": true,
+      "text": "(34) Linux LPIC-2 Training Course - CLI Tools - YouTube",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "85015bca01281277",
+      "parent": 0,
+      "droppable": true,
+      "text": "pa-vm - Google Search",
       "data": {
         "fileType": "site",
         "fileSize": "",
