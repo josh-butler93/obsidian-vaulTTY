@@ -20,6 +20,18 @@
             }
           },
           {
+            "id": "c75ab0b83560e6b4",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "https://10.0.0.59/"
+              },
+              "icon": "lucide-file",
+              "title": "Surfing"
+            }
+          },
+          {
             "id": "4ba4eba627378523",
             "type": "leaf",
             "state": {
@@ -140,7 +152,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
