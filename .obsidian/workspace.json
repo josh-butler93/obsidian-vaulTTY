@@ -20,15 +20,65 @@
             }
           },
           {
-            "id": "24c90b3e7951bb90",
+            "id": "4ba4eba627378523",
             "type": "leaf",
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://www.youtube.com/watch?v=YshMbLgNW7k"
+                "url": "http://localhost:3002/terminal"
               },
               "icon": "lucide-file",
-              "title": "(34) Linux LPIC-2 Training Course - CLI Tools - YouTube"
+              "title": "Terminal - Dockhand"
+            }
+          },
+          {
+            "id": "155202357a929166",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "http://localhost:8080"
+              },
+              "icon": "lucide-file",
+              "title": "Termix"
+            }
+          },
+          {
+            "id": "f282f65d6f6daecd",
+            "type": "leaf",
+            "state": {
+              "type": "terminal:terminal",
+              "state": {
+                "terminal:terminal": {
+                  "cwd": "/home/sysadmin/Documents/obsidian/obsidian-vaulTTY",
+                  "focus": false,
+                  "profile": {
+                    "args": [],
+                    "executable": "/bin/sh",
+                    "followTheme": true,
+                    "name": "",
+                    "platforms": {
+                      "linux": true
+                    },
+                    "pythonExecutable": "python3",
+                    "restoreHistory": false,
+                    "rightClickAction": "copyPaste",
+                    "successExitCodes": [
+                      "0",
+                      "SIGINT",
+                      "SIGTERM"
+                    ],
+                    "terminalOptions": {
+                      "documentOverride": null
+                    },
+                    "type": "integrated",
+                    "useWin32Conhost": true
+                  },
+                  "serial": null
+                }
+              },
+              "icon": "terminal",
+              "title": "Terminal: ~: exit - exit"
             }
           },
           {
@@ -47,10 +97,10 @@
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://kodekloud.com/studio/labs/devops"
+                "url": "https://kodekloud.com/studio/labs/devops/devops-linux-pkg-mgmt"
               },
               "icon": "lucide-file",
-              "title": "Practice DevOps Pre-Requisites Free Labs With KodeKloud Now !"
+              "title": "Package Management Free Labs | Try Hands-On Labs @ KodeKloud Studio"
             }
           },
           {
@@ -88,47 +138,9 @@
               "icon": "excalidraw-icon",
               "title": "Drawing 2026-07-03 14.15.30.excalidraw"
             }
-          },
-          {
-            "id": "3d545c1b45b4c8da",
-            "type": "leaf",
-            "state": {
-              "type": "terminal:terminal",
-              "state": {
-                "terminal:terminal": {
-                  "cwd": "/home/sysadmin/Documents/obsidian/obsidian-vaulTTY",
-                  "focus": false,
-                  "profile": {
-                    "args": [],
-                    "executable": "/bin/sh",
-                    "followTheme": true,
-                    "name": "",
-                    "platforms": {
-                      "linux": true
-                    },
-                    "pythonExecutable": "python3",
-                    "restoreHistory": false,
-                    "rightClickAction": "copyPaste",
-                    "successExitCodes": [
-                      "0",
-                      "SIGINT",
-                      "SIGTERM"
-                    ],
-                    "terminalOptions": {
-                      "documentOverride": null
-                    },
-                    "type": "integrated",
-                    "useWin32Conhost": true
-                  },
-                  "serial": null
-                }
-              },
-              "icon": "terminal",
-              "title": "Terminal: sh"
-            }
           }
         ],
-        "currentTab": 7
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -193,23 +205,13 @@
             }
           },
           {
-            "id": "d2f31d4776ddd842",
+            "id": "c82ed490c2d6dbc6",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
               "state": {},
               "icon": "layout-grid",
               "title": "Navigator"
-            }
-          },
-          {
-            "id": "e2d3bf99ac1f60d2",
-            "type": "leaf",
-            "state": {
-              "type": "surfing-tab-tree",
-              "state": {},
-              "icon": "chrome",
-              "title": "Surfing Tab Tree"
             }
           }
         ],
@@ -373,7 +375,7 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "3d545c1b45b4c8da",
+  "active": "155202357a929166",
   "lastOpenFiles": [
     "Excalidraw/Drawing 2026-07-03 14.15.30.excalidraw.md",
     "lab-archive/Excalidraw/Linux Package Managers.md",

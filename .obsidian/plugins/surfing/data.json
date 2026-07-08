@@ -172,7 +172,7 @@
       "id": "24c90b3e7951bb90",
       "parent": 0,
       "droppable": true,
-      "text": "(34) Linux LPIC-2 Training Course - CLI Tools - YouTube",
+      "text": "(34) YouTube",
       "data": {
         "fileType": "site",
         "fileSize": "",
@@ -184,6 +184,28 @@
       "parent": 0,
       "droppable": true,
       "text": "pa-vm - Google Search",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "a358b90002813af2",
+      "parent": 0,
+      "droppable": true,
+      "text": "Getting Started - Argo CD - Declarative GitOps CD for Kubernetes",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "5772cf185ff2191c",
+      "parent": 0,
+      "droppable": true,
+      "text": "GitHub - caelestia-dots/caelestia: A fluid, morphing config for your Linux desktop · GitHub",
       "data": {
         "fileType": "site",
         "fileSize": "",
