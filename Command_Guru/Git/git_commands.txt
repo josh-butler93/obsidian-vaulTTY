@@ -36,3 +36,6 @@
 	* git branch -D feature-dimension ---the '-D' will delete the branch if git complains about anything 
 	* git branch
 	* git branch -a ---This command allows you to see all branches, including remote branches
+
+#Adding files to the .gitignore file
+	* echo notes.txt >> .gitignore
