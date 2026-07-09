@@ -16,6 +16,7 @@
 	* git checkout feature-dimension
 	* git switch feature-dimension
 	* git branch
+	* git branch -b story/frogs-and-ox >> creates a new branch and puts you in that branch
 ---
   - echo "This is a powerful artifact from another dimension" > dimensional-artifact.txt
   - git add dimensional-artifact.txt
@@ -46,3 +47,4 @@
 	* git log --oneline --name-only
 	* git log -n 3 >> to see the last 3 commits
 	* git log --max-count=<number>
+	* git log --graph --decorate
