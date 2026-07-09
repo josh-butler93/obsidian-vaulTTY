@@ -39,3 +39,10 @@
 
 #Adding files to the .gitignore file
 	* echo notes.txt >> .gitignore
+
+#Git log commands
+	* git log --name-only >> this command will list out the file name instead of the commit message
+	* git log --oneline
+	* git log --oneline --name-only
+	* git log -n 3 >> to see the last 3 commits
+	* git log --max-count=<number>
