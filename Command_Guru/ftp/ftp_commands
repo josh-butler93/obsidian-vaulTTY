@@ -1,0 +1,10 @@
+-nmap -sV <target_IP>
+---
+-telnet <ip_addy>
+--then enter the username and password
+---
+-ftp <ip_addy>
+--username: anonymous
+---dir >> to list directories
+----ls >> to list directories
+-----git filename to pull down to you machine
