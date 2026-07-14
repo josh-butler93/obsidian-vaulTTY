@@ -31,11 +31,15 @@ ps aux | grep [h]ttpd
   - '1': Execrute permissions
   - '0': No permission
 ---------------------------------------------------------------------------------------------------------------------------
-#User Info
+#User Info/User Management
 	* whoami 
 	* id
 	* id -un --to get the username
 	* su username --to switch to a different user
+	* sudo useradd joker
+	* sudo grep -w 'joker' /etc/passwd
+	* sudo useradd -m bob --this command will create the user along with a default home directory
+	*
 
 ---------------------------------------------------------------------------------------------------------------------------
 #hostname/os Info
@@ -154,3 +158,12 @@ EOF'
 ---Misc. Commands
 	
 	* sudo dnf 
+
+----------------------------------------------------------------------------------------
+---Grep
+	
+	* -i: Perform case-insensitive searching
+	* -c: Count the number of matching lines
+	* -n: Display line numbers alon with matching lines
+	* -v: Invert the match, showing lines that do not match the pattern
+	* -r or -R: Recursively search through directories
