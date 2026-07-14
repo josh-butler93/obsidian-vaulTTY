@@ -9,6 +9,7 @@ ps aux | grep [h]ttpd
 	* ls -lt 
 	* ls -ltr
 	* ls -lR dir_name --the -R does a recuresive check on the on all files and subdirectories 
+	* ls -lR 
 	* ls -lhSr
 	* ls -l */ --contents of immediate subdirectories
 	* ls -l | cowsay
