@@ -37,9 +37,28 @@ ps aux | grep [h]ttpd
 	* id -un --to get the username
 	* su username --to switch to a different user
 	* sudo useradd joker
-	* sudo grep -w 'joker' /etc/passwd
-	* sudo useradd -m bob --this command will create the user along with a default home directory
-	*
+		* sudo grep -w 'joker' /etc/passwd --'-w': is used to match the whole word
+	* sudo useradd -m bob --the '-m' option tells the system to create a home directory
+		* sudo ls -ld /home/bob
+	* sudo passwd joker --this is used to set the password for a user
+		* sudo grep -w 'joker' /etc/shadow
+	* sudo usermod -d /home/wayne joker
+		--usermod: this command is used to modify user account settings
+		--'-d' /home/wayne: specifies the new home directory
+		--joker: is the user we're modifying
+			* sudo grep -w 'joker' /etc/passwd
+	* sudo usermod -s /bin/bash joker --this will change the shell of a user
+	* sudo usermod -aG sudo joker --'-aG': append to group --this will add a user to a group 
+		--usermod: is the command to modify user accounts
+		--'-aG': means "append to Group" (add to the group without removing from other groups)
+		--sudo: is the group we are adding the user to
+		--joker: the user we're modifying
+			* groups joker
+				* su - joker
+	* sudo passwd -l joker --the '-l' option locks the password
+	* sudo passwd -u joker --the '-u' option unlocks the users account
+	* sudo userdel -r bob --the '-r' option removes the user's home directory and mail spool
+	
 
 ---------------------------------------------------------------------------------------------------------------------------
 #hostname/os Info
