@@ -1,0 +1,7 @@
+System: PostgreSQL
+Server: postgres
+Username: labuser
+Password: labpass
+Database: labdb
+
+http://localhost:8090
