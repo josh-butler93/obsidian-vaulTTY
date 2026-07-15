@@ -68,7 +68,9 @@ ps aux | grep [h]ttpd
 	* cat /etc/*release*
 
 ---------------------------------------------------------------------------------------------------------------------------
-#Services --tailscale included
+#Services && Processes --tailscale included
+
+---Services
 	* systemctl cat  httpd or httpd.service
 	* systemctl status httpd
 	* sudo systemctl enable httpd --this will ensure the service starts even after a reboot
@@ -77,6 +79,14 @@ ps aux | grep [h]ttpd
 	* sudo systemctl disable httpd --this will ensure the service doesnt start after a reboot 
 	* tailscale ip -4
 	* systemctl status tailscaled
+
+---Processes
+	
+	* ps aux --this command will show each process along with information liek the user and pid
+	* ps aux | grep root --to see processes running as root
+	* ps aux | grep ^root --the ^ tells grep to only return lines that begin with the word root
+	* ps aux | grep d$ --the '$' character will return only lines that end with a specified character --if your looking for processes that run with systemd this would be useful
+	* 
 
 ---------------------------------------------------------------------------------------------------------------------------
 #Memory
@@ -186,3 +196,17 @@ EOF'
 	* -n: Display line numbers alon with matching lines
 	* -v: Invert the match, showing lines that do not match the pattern
 	* -r or -R: Recursively search through directories
+
+---
+	* cd /usr/share/doc
+	* grep -r copyright --adding the '-r' flag to the grep command will search recursivley for all the files in the current directory tree that contains the text copyright
+	* grep -rl copyright --adding the '-l' flag prints nothing more that the directory and file names 
+	* grep -r copyright | wc --this will print just the numnber of lines,words, and characters in the output 
+	* grep -R copyright | wc --the '-R' flag will recursively return even objects that are symbolic links 
+	* ls -l /usr/share/doc/ | grep debconf 
+	* cat git/README.source | grep extracted 
+	* cat git/README.source | grep -A 2 extracted --this command will print out the two lines that follow the value you were looking for 
+	* cat git/README.source | grep -B 5 extracted --this command will show the lines that follow the value you were looking for 
+	* cat git/README.source | grep -C 4 extracted --this commannd will show the lines that come both before and after the value you are looking for 
+	* 
+---------------------------------------------------------
