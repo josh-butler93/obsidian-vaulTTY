@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# bash runTest.sh TestStep2Task1
+# ------------use the above command to check the deployment or your yaml file
 # Helper function to check command success
 check_command() {
     if [ $? -ne 0 ]; then

@@ -106,7 +106,7 @@ kubectl get svc -n test
 	* kubectl get svc nginx-nodeport-svc
 	* kubectl get all -n prod > svc,pods,nodes
 	* kubectl get pods -A
-	* kubectl get pods -n portainer -w
+	* kubectl get pods -n portainer -w --this will show pods as they are created
 	* kubectl port-forward service/portainer 9443:9443 --namespace portainer --address 0.0.0.0
 	* kubectl port-forward pod/portainer-xfiefwwf 9443:9443 -n portainer --address 0.0.0.0
 	* kubectl rollout restart deployment/<deployment_name>
@@ -156,6 +156,8 @@ kubectl get svc -n test
 	* kubectl explain replicaset | grep VERSION
 	* kubectl create -f replicaset-definition-1.yaml
 	* kubectl create deployment nginx-demo --image=nginx -n dev -o yaml > nginx-demo.yaml
+	* kubeclt delete -f service.yaml -f deployement.yaml
+		* kubectl get deployements,services,pods
 	* kubectl get deployments -A
 	* kubectl get deployments -n test
 	* kubeclt get deployment nginx-demo -n test -o yaml > nginx-deployment.yaml
