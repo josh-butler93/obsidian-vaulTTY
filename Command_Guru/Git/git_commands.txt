@@ -1,3 +1,9 @@
+#Cloning a Repository
+	* git clone http://gitea:3000/sarah/story-blog.git
+		* git log --may allow you to see the logs of the repo
+	* git remote -v --run this command to see if you can push to the repo
+	* 
+
 #Creating a New Branch
 	* mkdir git-branch-lab
 	* cd git-branch-lab
