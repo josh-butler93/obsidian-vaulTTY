@@ -35,6 +35,7 @@ Docker Link: https://hub.docker.com/
 	* docker run -d -p 38282:8080 --name webapp kodecloud/simple:webapp:blue
 	* docker run -p 38282:8989 --name blue-app -e APP_COLOR=blue -d kodekloud/simple-webapp
 	* docker run --name mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123 mysql
+	* docker run --rm python:latest python --version --the '--rm' tells docker to remove the container after it exits
 	* docker port <container_name>
 	* docker port dockhand
 	* docker exec jenkins ls /var/jenkins_home
@@ -44,10 +45,25 @@ Docker Link: https://hub.docker.com/
 	* docker inspect <image_name> --format '{{.Config.Image}}'
 	* docker inspect jenkins --format '{{.Config.Image}}'
 	* docker inspect jenkins --format '{{range .Mounts}}{{.Source}} -> {{.Destination}}{{println}}{{end}}' > jenkins-docker-report.txt
+	* docker inspect --format='{{.RootFS.Layers}}' nginx
 	* docker build -t webapp-color .
 	* docker build -t webapp-color:lite . 
 	* docker logs big-bear-coolify --tail 50
 	* docker logs --tail 59 jenkins
+	* docker build -t custom-nginx .
+	* docker search nginx --this will return a list of images related to nginx
+	* docker save nginx > nginx.tar --this command saves the Nginx image to a file named nginx.tar 
+		* docker load < nginx.tar
+			* docker images nginx
+	* docker tag nginx:latest my-nginx:v1
+		--nginx:latest= is the source image and tag
+		--my-nginx= is the new image name we're creating
+		--v1= is the new tag we're assigning 
+			* docker run -d --name my-nginx-container my-nginx
+				--'-d'= runs the container in detached mode (in the background)
+				--'--name my-nginx-contianer'= gives a name to the new container
+				--my-nginx:v1= is the image and tag we're using to create the container
+					* docker logs my-nginx-container
 
 #Executing Commands on a running container
 	* docker exec <container_name> cat /etc/os-release
@@ -132,3 +148,13 @@ Docker Link: https://hub.docker.com/
 
  --run an instance of the new image webapp-color:lite and publish port 8080 on the container to 8383 on the host
  	* docker run -d -p 8383:8080 webapp-color:lite
+
+#Lab 5:
+--create a docker file and put the following contents inside it 
+	* vim >> new: Dockerfile 
+---
+FROM nginx
+RUN echo "Hello from custom layer" > /usr/share/nginx/html/hello.html
+---
+	* docker build -t custom-nginx . --this command builds a new image based on the Dockerfile and tags it as custom-nginx
+		* docker inspect --format='{{.RootFS.Layers}}' custom-nginx
