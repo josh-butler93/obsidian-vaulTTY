@@ -42,6 +42,7 @@ Docker Link: https://hub.docker.com/
 	* docker port <container_name>
 	* docker port dockhand --this command will show port mappings for the machine
 	* docker exec jenkins ls /var/jenkins_home
+	* docker exec nginx-detached echo "Hello from inside the container"
 	* docker inspect container_name 
 	* docker inspect webapp 
 	* docker inspect webapp | grep ...
@@ -166,3 +167,6 @@ RUN echo "Hello from custom layer" > /usr/share/nginx/html/hello.html
 ---
 	* docker build -t custom-nginx . --this command builds a new image based on the Dockerfile and tags it as custom-nginx
 		* docker inspect --format='{{.RootFS.Layers}}' custom-nginx
+---copying files to a container
+	* echo "<html><body><h1>Hello from host</h1></body></html>" > hello.html
+	* 
