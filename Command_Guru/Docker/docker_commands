@@ -20,6 +20,7 @@ Docker Link: https://hub.docker.com/
 	* docker images <repo_name>
 	* docker images jenkins/jenkins
 	* docker start <container_name>
+	* docker restart nginx-detached
 	* docker stop <container_name>
 	* docker stop $(docker ps -aq)
 	* docker rm <container_name>
@@ -36,6 +37,7 @@ Docker Link: https://hub.docker.com/
 	* docker run -p 38282:8989 --name blue-app -e APP_COLOR=blue -d kodekloud/simple-webapp
 	* docker run --name mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123 mysql
 	* docker run --rm python:latest python --version --the '--rm' tells docker to remove the container after it exits
+  * docker run -it --name ubuntu-interactive ubunut /bin/bash or bash
 	* docker port <container_name>
 	* docker port dockhand
 	* docker exec jenkins ls /var/jenkins_home
