@@ -215,3 +215,11 @@ EOF'
 	* cat git/README.source | grep -C 4 extracted --this commannd will show the lines that come both before and after the value you are looking for 
 	* 
 ---------------------------------------------------------
+---------------------------------------------------------
+---Vim
+
+	* ggVG --to copy all the text on the screen
+	* yy --to copy a line
+	* p --to paste the line
+	* 3yy --to copy three lines
+	* p --to paste those three lines

@@ -31,6 +31,8 @@ Docker Link: https://hub.docker.com/
 	* docker run ubuntu sleep 5
 	* docker run -d --name my-webapp -p 8080:80 nginx
 		--curl http://localhost:8080
+			--'-p 8080:80': maps the host port 8080 to port 80 on the host
+				---format-breakdown: host_port:container_port
 	* docker run -d --name=grafana -p 3000:3000 grafana/grafana
 	* docker run --name webapp nginx:1.14-alpine
 	* docker run -d -p 38282:8080 --name webapp kodecloud/simple:webapp:blue
@@ -52,6 +54,12 @@ Docker Link: https://hub.docker.com/
 		--'--memory=512m': limits the container to 512 megabytes of memory
 		--'--cpus=0.5': limits the container to use at most half of a cpu core
 		--'nginx': image for the container
+	* docker run -d --name nginx-volume -p 8081:80 -v ~/project/nginx-data:/usr/share/nginx/html nginx
+		--'-p 8081:80': this maps port 8081 on the host to port 80 in the container
+		--'-v ~/project/nginx-data:/usr/share/nginx/html': this mounts the nginx-data directory from our host to the /usr/share/nginx/html directory in the container which is where nginx looks for content to serve
+			* curl http://localhost:8081
+			* docker ps | grep nginx-volume
+			* docker logs nginx-volume
 	* docker inspect -f '{{.HostConfig.Memory}}' limited-nginx
 	* docker inspect -f '{{.HostConfig.NanoCpus}}' limited-nginx
 	* docker stats limited-nginx
@@ -199,3 +207,6 @@ YET_ANOTHER_VAR=Also from the file
 ---
 	* docker run --name env-file-test --env-file env_file -d ubuntu sleep infinity
 		* docker exec env-file-test env | grep -E "ANOTHER_VAR| YET_ANOTHER_VAR" 
+
+#Lab 6: Volume Mounting
+
