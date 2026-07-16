@@ -34,12 +34,13 @@ Docker Link: https://hub.docker.com/
 	* docker run -d --name=grafana -p 3000:3000 grafana/grafana
 	* docker run --name webapp nginx:1.14-alpine
 	* docker run -d -p 38282:8080 --name webapp kodecloud/simple:webapp:blue
+		* docker port webapp
 	* docker run -p 38282:8989 --name blue-app -e APP_COLOR=blue -d kodekloud/simple-webapp
 	* docker run --name mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123 mysql
 	* docker run --rm python:latest python --version --the '--rm' tells docker to remove the container after it exits
   * docker run -it --name ubuntu-interactive ubunut /bin/bash or bash
 	* docker port <container_name>
-	* docker port dockhand
+	* docker port dockhand --this command will show port mappings for the machine
 	* docker exec jenkins ls /var/jenkins_home
 	* docker inspect container_name 
 	* docker inspect webapp 
@@ -48,10 +49,15 @@ Docker Link: https://hub.docker.com/
 	* docker inspect jenkins --format '{{.Config.Image}}'
 	* docker inspect jenkins --format '{{range .Mounts}}{{.Source}} -> {{.Destination}}{{println}}{{end}}' > jenkins-docker-report.txt
 	* docker inspect --format='{{.RootFS.Layers}}' nginx
+	* docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAdress}}{{end}}' nginx-detached
+	* docker inspect -f '{{.State.Status}}' nginx-detached
 	* docker build -t webapp-color .
 	* docker build -t webapp-color:lite . 
 	* docker logs big-bear-coolify --tail 50
 	* docker logs --tail 59 jenkins
+	* docker logs --tail 10 nginx-detached
+	* docker logs -f nginx-detached --this will follow the logs in real time
+	* docker logs --timestamps nginx-detached
 	* docker build -t custom-nginx .
 	* docker search nginx --this will return a list of images related to nginx
 	* docker save nginx > nginx.tar --this command saves the Nginx image to a file named nginx.tar 
