@@ -160,10 +160,15 @@ ps aux | grep [h]ttpd
 		--standard shell redirection operators like > or >> do not inherit sudo privileges
 	* timedatectl status
 	* timedatectl show-timesync --all
-	* chronyc sources -v
+	* chronyc sources -v 
 	* systemctl status chronyd
 	* cat /etc/chrony.conf
 	* sudo tailscale set --accept-dns=false
+	* touch note_{1..5}.txt
+	* type ls && type cd
+	* apropos password --this is used to find commands related to "password"
+		* apropos file --this will show commands related to file operations
+			* apropos file | grep create
 
 sudo bash -c 'cat > /etc/resolv.conf <<EOF
 nameserver 1.1.1.1
