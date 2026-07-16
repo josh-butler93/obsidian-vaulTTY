@@ -55,6 +55,7 @@ Docker Link: https://hub.docker.com/
 		--'--cpus=0.5': limits the container to use at most half of a cpu core
 		--'nginx': image for the container
 	* docker run -d --name nginx-volume -p 8081:80 -v ~/project/nginx-data:/usr/share/nginx/html nginx
+	* docker run -d --name nginx-env -e NGINX_HOST=mywebsite.com -e NGINX_PORT=80 nginx
 		--'-p 8081:80': this maps port 8081 on the host to port 80 in the container
 		--'-v ~/project/nginx-data:/usr/share/nginx/html': this mounts the nginx-data directory from our host to the /usr/share/nginx/html directory in the container which is where nginx looks for content to serve
 			* curl http://localhost:8081
@@ -76,6 +77,9 @@ Docker Link: https://hub.docker.com/
 	* docker inspect --format='{{.RootFS.Layers}}' nginx
 	* docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAdress}}{{end}}' nginx-detached
 	* docker inspect -f '{{.State.Status}}' nginx-detached
+	* docker run -d --name nginx-restart --restart unless-stopped nginx
+		* docker inspect -f '{{.HostConfig.RestartPolicy.Name}}' nginx-restart
+	* docker run -d --name nginx-custom -w /app nginx sh -c "mkdir -p /app && touch newfile.txt && nginx -g 'daemon off;'"
 	* docker build -t webapp-color .
 	* docker build -t webapp-color:lite . 
 	* docker logs big-bear-coolify --tail 50
@@ -210,3 +214,30 @@ YET_ANOTHER_VAR=Also from the file
 
 #Lab 6: Volume Mounting
 
+---using the -e parameter to set environment variables in the container
+
+	* docker run -d --name nginx-env -e NGINX_HOST=mywebsite.com -e NGINX_PORT=80 nginx
+		--'-e NGINX_HOST=mywebsite.com': sets an environment variable named NGINX_HOST with the value mywebsite.com
+		--'-e NGINX_PORT=80': sets another environment variable NGINX_PORT with the value 80
+			* docker exec nginx-env env | grep NGINX_
+
+#Lab 7:
+
+---Network Settings
+
+---network parameters in docker allow you to connect a container to a network
+
+	--Creating a custom bridge network
+		* docker network create my-custom-network
+		* docker run -d --name nginx-networked --network my-custom-network nginx
+
+---Restart Policies
+
+	--the --restart parameter in docker run allow you to specify a restart policy for the container
+		--this is useful for ensuring that containers stay running even if they crash or if the docker daemon restarts
+	* docker run -d --name nginx-restart --restart unless-stopped nginx
+		---Other policies include
+			-no:The default...dont auto restart the container
+			-on-failure:Restarts only if the container exits with a non-zero status
+			-always:Always restarts the container regardless of the exit status
+	* docker inspect -f '{{.HostConfig.RestartPolicy.Name}}' nginx-restart
