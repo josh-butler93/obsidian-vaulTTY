@@ -38,7 +38,23 @@ Docker Link: https://hub.docker.com/
 	* docker run -p 38282:8989 --name blue-app -e APP_COLOR=blue -d kodekloud/simple-webapp
 	* docker run --name mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123 mysql
 	* docker run --rm python:latest python --version --the '--rm' tells docker to remove the container after it exits
-  * docker run -it --name ubuntu-interactive ubunut /bin/bash or bash
+        * docker run -it --name ubuntu-interactive ubunut /bin/bash or bash
+	* docker run --name env-test -e MY_VAR="Hello, Environment" -d ubuntu sleep infinity
+		--'--name env-test': Names the container
+		--'-e MY_VAR="Hello, Environment': Sets an environment variable named MY_VAR
+		--'-d': runs the container in detached mode
+		--'ubuntu': Uses the ubuntu image
+		--'sleep infinity': keeps teh container running indefinitely
+			* docker exec env-test env | grep MY_VAR
+	* docker run --name limited-nginx -d --memeory=512m --cpus=0.5 nginx
+		--'--name limited-nginx': names the container 
+		--'-d': runs the container in detached mode
+		--'--memory=512m': limits the container to 512 megabytes of memory
+		--'--cpus=0.5': limits the container to use at most half of a cpu core
+		--'nginx': image for the container
+	* docker inspect -f '{{.HostConfig.Memory}}' limited-nginx
+	* docker inspect -f '{{.HostConfig.NanoCpus}}' limited-nginx
+	* docker stats limited-nginx
 	* docker port <container_name>
 	* docker port dockhand --this command will show port mappings for the machine
 	* docker exec jenkins ls /var/jenkins_home
@@ -169,4 +185,17 @@ RUN echo "Hello from custom layer" > /usr/share/nginx/html/hello.html
 		* docker inspect --format='{{.RootFS.Layers}}' custom-nginx
 ---copying files to a container
 	* echo "<html><body><h1>Hello from host</h1></body></html>" > hello.html
-	* 
+	* docker cp hello.html nginx-detached:/usr/share/nginx/html/hello.html 
+	* docker exec nginx-detached cat /usr/share/nginx/html/hello.html
+
+---copying files from the container to the host
+	* docker cp nginx-detached:/etc/nginx/nginx.conf ~/project/nginx.conf
+
+---creating an env file to run with the container
+
+---
+ANOTHER_VAR=From a file
+YET_ANOTHER_VAR=Also from the file
+---
+	* docker run --name env-file-test --env-file env_file -d ubuntu sleep infinity
+		* docker exec env-file-test env | grep -E "ANOTHER_VAR| YET_ANOTHER_VAR" 
