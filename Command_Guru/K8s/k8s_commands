@@ -92,6 +92,12 @@ kubectl get svc -n test
 ---
 	* curl -LO "https://k8s.io(curl -L -s https://k8s.io)/bin/linux/amd64/kubectl"
 	* curl $(kubectl config view --minify -o jsonpath='{.clusters[0].cluster.server}') --insecure
+	* kubectl version
+	* kubectl version --client
+	* kubectl version --output=json
+	* kubectl version --output=yaml
+		* kubectl version --output=yaml | grep kustomizeVersion <<this is just an example of what we could grep for
+	*
 	* kubectl cluster-info
 	* kubectl cluster-info dump
 	* kubectl cluster-info dump > cluster-details.txt
