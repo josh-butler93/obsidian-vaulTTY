@@ -8,6 +8,7 @@
 
 #Control Plane
   - kube-apiserver (API): Serves as the cluster’s front door. All administrative commands and resource requests pass through it
+	---the entry point for k8s api requests
   - etcd (Key Value Store): Stores all configuration data and the current state of the cluster
   	---If you lose etcd data, you lose the state of the cluster
   - kube-scheduler (SCH): Assigns Pods to Nodes based on resource requirements, constraints, and policies
@@ -90,7 +91,10 @@ kubectl get svc -n test
 ########################################################################################
 ---
 	* curl -LO "https://k8s.io(curl -L -s https://k8s.io)/bin/linux/amd64/kubectl"
+	* curl $(kubectl config view --minify -o jsonpath='{.clusters[0].cluster.server}') --insecure
 	* kubectl cluster-info
+	* kubectl cluster-info dump
+	* kubectl cluster-info dump > cluster-details.txt
 	* kubectl get ns
 	* kubectl get ns Namespace_name
 	* kubectl get nodes
