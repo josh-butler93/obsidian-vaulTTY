@@ -4,6 +4,7 @@
   --Master=Another node with k8s installed on it that watches over the nodes in the cluster and is responsible for the orchestration of the nodes
   --kubectl=is used to deploy,manage, and maintain the k8s cluster
   --pods=containers are encapsulated into a k8s object called a pod
+  --deployment=is a k8s object that manages a group of identical pods
 
 #Control Plane
   - kube-apiserver (API): Serves as the cluster’s front door. All administrative commands and resource requests pass through it
@@ -156,6 +157,17 @@ kubectl get svc -n test
 	* kubectl explain replicaset | grep VERSION
 	* kubectl create -f replicaset-definition-1.yaml
 	* kubectl create deployment nginx-demo --image=nginx -n dev -o yaml > nginx-demo.yaml
+	* kubectl create deployment hello-kubernetes --image=nginx:latest --port=80 
+		--'kubectl': command-line tool for interacting with k8s
+		--'create deployment': tell k8s to create a new deployment
+		--'hello-Kubernetes': is the name we are giving the deployment
+		--'--image=nginx:latest': specifies the image we want to use
+		--'--port=80': tells k8s that the container will listen on port 80
+			* kubectl get deployments 
+			* kubectl describe pod hello-kubernetes-883432
+			* kubectl port-forward $(kubectl get pods -o name) 8080:80
+			* curl http://localhost:8080
+			* kubectl delete deployement hello-kubernetes
 	* kubeclt delete -f service.yaml -f deployement.yaml
 		* kubectl get deployements,services,pods
 	* kubectl get deployments -A
