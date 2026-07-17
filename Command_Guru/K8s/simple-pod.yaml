@@ -1,0 +1,19 @@
+ # 1. Tell k8s which API version to use
+ apiVersion: v1
+ # Declare what kind of resources we want to create
+ kind: Pod
+ #3. Set metadata for this resource
+ metadata:
+   name: nginx-pod # Name of the Pod
+   labels: # labels help us find and orginzie Pods
+     app: nginx
+# 4. Define what the Pod should container
+spec:
+  containers: # Pod can run one or more containers
+      - name: nginx # Name of the container
+        image: nginx:latest # which container image to use
+        ports: # which ports to expose
+          - containerPort: 80 #nginx uses port 80
+
+# kubectl apply -f simple-pod.yaml
+# -f: means read from file

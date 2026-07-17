@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: nginx-service
+spec:
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: NodePort
+
+# selector: determines which Pods the service will send traffic to...in this case it will select any Pods with the label app:nginx
+# ports: this specifies which ports the Service should use
+# type: NodePort--means the Service will be accessible on a port on each node in     the cluster
+####
+# ----kubectl apply -f nginx-service.yaml
+# ----kubectl describe service nginx-service
+# ----kubectl get services -n <name_space> <<add name space if needed>>
+# ------PORT(S)--80:84453/TCP
+#                port 80 inside cluster___port 84453 on the node
+# ----minikube service nginx-service --url
+# ----curl $(minikube service nginx-service --url)

@@ -70,6 +70,7 @@
 	* minikube version
 	* sudo dnf install -y docker-ce docker-ce-cli containerd.io
 	* minikube start --driver=docker
+	* minikube service nginx-service --url --this command will output the url for accessing the service url
 
 	
 
@@ -97,10 +98,14 @@ kubectl get svc -n test
 	* kubectl version --output=json
 	* kubectl version --output=yaml
 		* kubectl version --output=yaml | grep kustomizeVersion <<this is just an example of what we could grep for
-	*
+	* kubectl 
 	* kubectl cluster-info
 	* kubectl cluster-info dump
 	* kubectl cluster-info dump > cluster-details.txt
+	* kubectl get componetstatuses
+		--scheduler: watches newly created pods with no assigned node and selects a node for them to run on
+		--controller manager: runs controller processes which regulate the state of the system i.e. making sure the right number of pod replicas are running
+		--etcd: distributed key-value store that acts as k8s backing store for all cluster data
 	* kubectl get ns
 	* kubectl get ns Namespace_name
 	* kubectl get nodes
