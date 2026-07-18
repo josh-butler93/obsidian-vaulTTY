@@ -13,10 +13,11 @@ zabbixServer:
   service:
     type: NodePort
     nodePort: 31051 #This is for agent reporting
----
+------Helm Repo-----
 --helm repo add zabbix-community https://zabbix-community.github.io/helm-zabbix
 --helm repo update
 
+--------Helm Installation------------
 helm upgrade --install zabbix zabbix-community/zabbix \
   --namespace zabbix \
   --create-namespace \
@@ -35,6 +36,8 @@ Password: zabbix
 --kubectl logs -n zabbix deployment/zabbix-zabbix-server --tail=100
 -------------------------------------------------------------------
 agent installations
+-------------------
+--------Arch-------
 --sudo pacman -S zabbix-agent2
 --zabbix_agent2 -V
 --sudo pacman -S openbsd-netcat
@@ -46,3 +49,26 @@ Hostname=<your-hostname>
 --sudo zabbix_agent2 -T -c /etc/zabbix/zabbix_agent2.conf
 --sudo systemctl enable --now zabbix-agent2
 --systemctl status zabbix-agent2 --no-pager
+
+-------Oracle--------
+--sudo rpm -Uvh https://repo.zabbix.com/zabbix/7.4/release/oracle/9/noarch/zabbix-release-latest-7.4.el9.noarch.rpm
+--sudo dnf clean all
+--sudo dnf makecache
+--sudo dnf install zabbix-agent2 -y
+--sudo nano /etc/zabbix/zabbix_agent2.conf
+--hostnamectl 
+ServerActive=10.0.0.140:31051
+Hostname=k8s-controller
+--grep -E '^(ServerActive|Hostname)=' /etc/zabbix/zabbix_agent2.conf
+
+-----------------------------------------------------
+-----------WebUI Setup----------
+---So the next step is in the Zabbix web UI:
+--Go to Data collection → Hosts
+--Click Create host
+--Set the host name to exactly
+---Add it to a host group, for example:
+--Linux servers
+---Then check the Templates tab and make sure this is actually linked:
+--Linux by Zabbix agent active
+--sudo systemctl restart zabbix-agent2
