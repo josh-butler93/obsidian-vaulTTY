@@ -1,0 +1,34 @@
+---Breakdown---
+--MariaDB is a fork of MySQL, created by the original developers of MySQL
+--It's designed to be a drop-in replacement for MySQL, meaning it's fully compatible with MySQL syntax and operatio
+--MariaDB was created to ensure that a truly open-source version of MySQL would always be available
+--It maintains high compatibility with MySQL while also offering some unique features and improvements
+--!MariaDB is often considered more lightweight and faster than MySQL, which makes it an excellent choice for learning environments like this lab
+
+
+---Initial Setup---
+    * sudo apt update && sudo apt install mysql-server -y
+    * sudo service mysql status
+    * sudo service mysql start
+
+---Commands---
+    * sudo mysql -u root --this will log you into the database
+        --mysql: is used to access the mysql shell
+        --'-u root': flag specifies that you are connecting as the root user
+    * EXIT;
+    * sudo mysql -u root -e "SHOW DATABASES;" | tee /home/labex/project/system_databases.txt
+        --'-e': tells MYSQL to execute the SQL statement directly from the terminal
+        --'tee': command save a copy of the output to the specified location
+            :information_schema: This is a database that provides access to database metadata
+            :mysql: This database contains information required by the MySQL server for its operation
+            :performance_schema: This database provides a way to inspect internal execution of the server at runtime
+            :sys: This database contains a set of objects that help DBAs and developers interpret data collected by the performance_schema
+    * sudo mysql -u root -e "USE mysql; SHOW TABLES;" | tee /home/labex/project/mysql_tables.txt
+    * sudo mysql -u root
+        * USE mysql; --this command switches to the mysql database
+            * DESCRIBE user;
+                * SELECT User, Host, Password_expired FROM user;
+                    :user: the username of the mysql account 
+                    :host: the host which this user is allowed to connect 
+                    :password_expired: whether the password has expired
+                        * EXIT;
