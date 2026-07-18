@@ -192,6 +192,7 @@ EOF'
 	* sudo dnf clean all
 	* sudo dnf update
 	* sudo test 2 >> this can be ignored was using it to test git 
+	* testing again
 	#############################Quick Reference####################################
 	#Overwrite a root file + see output-- echo "text" | sudo tee /path/to/file     #
 	#Append to a root file + see output-- echo "test" | sudo tee -a /path/to/file  #
