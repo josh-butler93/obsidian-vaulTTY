@@ -11,6 +11,10 @@ spec:
       targetPort: 80
   type: NodePort # This means the service will be accessible on a port on each node in the cluster
 
+# kubectl get services | grep nginx-service
+# NODE_PORT=$(kubectl get service nginx-service -o jsonpath='{.spec.ports[0].nodePort}')
+# http://<node-ip>:<node-port>
+
 # selector: determines which Pods the service will send traffic to...in this case it will select any Pods with the label app:nginx
 # ports: this specifies which ports the Service should use
 # type: NodePort--means the Service will be accessible on a port on each node in     the cluster
