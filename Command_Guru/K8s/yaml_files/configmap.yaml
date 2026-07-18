@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: myapp
+  namespace: mynamespace
+data:
+  database.host: "example.com"
+  database.port: "5432"
+
+# kubectl create -f configmap.yaml
+# kubectl get configmaps -n mynamespace

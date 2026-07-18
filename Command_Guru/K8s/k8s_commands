@@ -100,6 +100,8 @@ kubectl get svc -n test
 	* kubectl version --output=yaml
 		* kubectl version --output=yaml | grep kustomizeVersion <<this is just an example of what we could grep for
 	* kubectl explain pod 
+	* kubectl create -y --this will show the subcommands for create
+	* kubectl create -f namespace.yaml --when pointed to a yaml namespace file it will create the namespace for you 
 	* kubectl cluster-info
 	* kubectl cluster-info dump
 	* kubectl cluster-info dump > cluster-details.txt
@@ -199,6 +201,7 @@ kubectl get svc -n test
 	* kubectl expose deployment nginx-demo --type=NodePort --port=80 -n test >> this creates a service that points to that deployment exposing it ext.
 	* kubectl get svc -n test
 	* kubectl get secret --namespace monitoring my-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+	* kubectl describe secret mysecret -n mynamespace
 
 	---
 	* minikube config set driver docker
