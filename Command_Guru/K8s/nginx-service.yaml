@@ -1,15 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata: 
-  name: nginx-service
+  name: nginx-service # The name of the service --i.e. kubectl get svc -n monitoring --name will be nginx-service
 spec:
-  selector:
+  selector: # Pods service will send traffic to this selecting any pods with the label app: nginx
     app: nginx
-  ports:
+  ports: # Specifies which port the Service should use
     - protocol: TCP
       port: 80
       targetPort: 80
-  type: NodePort
+  type: NodePort # This means the service will be accessible on a port on each node in the cluster
 
 # selector: determines which Pods the service will send traffic to...in this case it will select any Pods with the label app:nginx
 # ports: this specifies which ports the Service should use
