@@ -11,6 +11,7 @@
         NAME        TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)                                        AGE
         portainer   LoadBalancer   10.43.132.127   10.0.0.140    9000:30989/TCP,9443:31815/TCP,8000:30345/TCP   39s
     --https://10.0.0.140:9443/#!/init/admin
+--kubectl logs -n portainer <portainer-pod-name> --to get the setup token for the intial setup 
 --kubectl get sa -A | grep portainer
 --kubectl get clusterrolebinding | grep portainer
 --kubectl rollout restart deployment -n portainer
