@@ -19,6 +19,7 @@
   - Node: Nodes are where workloads run
   - kubelet (KLT): A node-level agent that communicates with the Control Plane
   	---It ensures Pods are running and reports their status back to the Control Plane
+  - kube-proxy: This maintains network fules on the node allow network communication to your pods from inside of outside of the cluster
   - Container Runtime (CR): Software that runs and manages containers (e.g., Docker or containerd)
   	---It creates and manages containerized applications within Pods
 
@@ -98,7 +99,7 @@ kubectl get svc -n test
 	* kubectl version --output=json
 	* kubectl version --output=yaml
 		* kubectl version --output=yaml | grep kustomizeVersion <<this is just an example of what we could grep for
-	* kubectl 
+	* kubectl explain pod 
 	* kubectl cluster-info
 	* kubectl cluster-info dump
 	* kubectl cluster-info dump > cluster-details.txt
@@ -144,13 +145,15 @@ kubectl get svc -n test
 	* kubectl get pods -A -o wide
 	* kubectl get pod webapp -o wide -n dev
 	* kubectl get pod webapp -n dev -o yaml
-	* kubectl expose pod webapp --type=NodePort --port=80
+	* kubectl expose pod webapp --type=NodePort --port=80 --this is exposing the vm on port 80 allowing it to be accessed outside of the pod itself
+		--traffic then gets forwarded to the correct pods running the application
 	* kubectl expose pod test-app --type=LoadBalancer --name=nginx-local-svc --port=80 --target-port=80 -n test
 	* kubectl get svc -n test
 	* kubectl expose pod test-windows-app --type=LoadBalancer --name=nginx-ext-svc --port=80 --target-port=80 -n default
 	* kubectl port-forward pod/web-app 8080:80 -n dev
 	* kubectl get svc webapp -n dev
 	* kubectl describe pod webapp -n dev
+	* kubectl describe svc nginx-service
 	* kubectl create -f webapp.yml
 	* kubectl create deployment my-app --image=nginx
 	* kubectl create deployment my-app --image=nginx -n test
