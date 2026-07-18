@@ -102,9 +102,21 @@ kubectl get svc -n test
 	* kubectl explain pod 
 	* kubectl create -y --this will show the subcommands for create
 	* kubectl create -f namespace.yaml --when pointed to a yaml namespace file it will create the namespace for you 
+	* kubectl create deployment nginx-deployment --image=nginx
+		* kubectl scale deployment nginx-deployement --relicas=3
+			* kubectl get deployments --this will show how much the deployment has scaled up
+	* kubectl create job busybox-job --image=busybox -- echo "Hello from k8s" --create job--creates a Job resource instead of a standalone Pod
+		* kubectl get jobs
+			* kubectl get pods --this should show the pod and its status 
+				* kubectl logs job/busybox-job
+					* kubectl delete pod nginx-pod
+					* kubectl delete deployment nginx-deployment
+					* kubectl delete job busybox-job
 	* kubectl cluster-info
 	* kubectl cluster-info dump
 	* kubectl cluster-info dump > cluster-details.txt
+	* kubectl run -h --the run command is used to create and run specific images in a pod allowing for customization
+	* kubectl run nginx-pod --image=nginx
 	* kubectl get componetstatuses
 		--scheduler: watches newly created pods with no assigned node and selects a node for them to run on
 		--controller manager: runs controller processes which regulate the state of the system i.e. making sure the right number of pod replicas are running
