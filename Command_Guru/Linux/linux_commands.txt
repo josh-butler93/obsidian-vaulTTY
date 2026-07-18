@@ -233,3 +233,74 @@ EOF'
 	* p --to paste the line
 	* 3yy --to copy three lines
 	* p --to paste those three lines
+-----------------------------------------------------------
+---Security Hardening---
+	* ls /home/ubuntu | grep -E '(READY|COMPLETE)'
+	* ssh-keygen -t ed25519 -f ~/auditor_key -N '' -C 'auditor lab key'
+		* cat ~/auditor_key.pub
+	* sudo install -d -o auditor -g auditor -m 700 /home/auditor/.ssh --should be no output
+	* sudo install -o auditor -g auditor -g auditor -m 600 ~/auditor_key.pub /home/auditor/.ssh/auditor_key
+	* ssh -i ~/auditor_key -o StrictHostKeyChecking=accept-new auditor@localhost 'whoami && hostname' --should show Warning: Permanetly added 'localhost' (ED25519)...
+---------------------------------------------------------------------
+sudo tee /etc/ssh/sshd_config.d/70-hardening.conf > /dev/null <<'EOF'
+PermitRootLogin no
+PasswordAuthentication no
+MaxAuthTries 3
+AllowUsers ubuntu auditor
+LoginGraceTime 30
+EOF
+---------------------------------------------------------------------
+	* sudo sshd -t && echo "config ok" --if this reports anything other than ok reloading ssh will not work
+	* sudo systemctl reload ssh
+	* sudo sshd -T | grep -E '^(permitrootlogin|passwordauthentication|maxauthtries|allowusers|logingracetime)'
+	* ssh -i ~/auditor_key -o StrictHostKeyChecking=accept-new auditor@localhost 'echo "auditor login ok"' --this verifies the user can still log in after the config changes
+		--should return 'auditor login ok'
+	* ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new root@localhost 'whoami' || echo 'root login denied as expected' --this will confirm the root user is rejected
+------------------------------------
+---fail2ban---
+sudo tee /etc/fail2ban/jail.d/sshd.local > /dev/null <<'EOF'
+[DEFAULT]
+ignoreip = 127.0.0.1/8 ::1
+bantime  = 3600
+findtime = 600
+maxretry = 3
+
+[sshd]
+enabled = true
+port    = ssh
+logpath = %(sshd_log)s
+backend = systemd
+EOF	
+---
+	* sudo systemctl enable --now fail2ban
+	* systemctl status fail2ban
+	* sudo fail2ban-client status sshd
+	* sudo fail2ban-client get sshd maxretry
+	* sudo fail2ban-client get sshd findtime
+	* sudo fail2ban-client get sshd bantime
+-------------------------
+---ufw---
+	* sudo ufw status
+	* sudo ufw default deny incoming
+	* sudo ufw default allow outgoing
+	* sudo ufw allow 80/tcp --this allows http traffic
+	* sudo ufw limit 22/tcp --ufw limit rejects connections from an ip if it makes six or more attempts in the last 30 seconds
+	* sudo ufw --force enable
+	* sudo ufw status verbose
+----------------------------
+---defining audit rules for sensitive events---
+udo tee /etc/audit/rules.d/security-hardening.rules > /dev/null <<'EOF'
+# Watch sensitive account files for any write or attribute change
+-w /etc/passwd -p wa -k account-changes
+-w /etc/shadow -p wa -k account-changes
+
+# Watch the SSH auth log for any write
+-w /var/log/auth.log -p wa -k auth-log
+
+# Audit every execution of sudo by tagging it with the 'privileged' key
+-a always,exit -F arch=b64 -S execve -F path=/usr/bin/sudo -F key=privileged
+EOF
+---
+	* sudo augenrules --load 
+		--this loads the new rules from /etc/audit/rule.d into the running audit daemon
+	* sudo auditctl -l
