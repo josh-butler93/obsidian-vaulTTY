@@ -108,9 +108,11 @@ kubectl get svc -n test
 		--etcd: distributed key-value store that acts as k8s backing store for all cluster data
 	* kubectl get ns
 	* kubectl get ns Namespace_name
+	* kubectl get pvc -n zabbix
 	* kubectl get nodes
 	* kubectl get nodes -o wide
 	* kubectl get nodes -n Namespace_name * kubectl describe node minikube
+	* kubectl get storageclass
 	* kubectl run >> creates a single pod if it dies thats it >> docker run container equivalent 
 	* kubectl run hello-minikube
 	* kubectl run nginx --image nginx

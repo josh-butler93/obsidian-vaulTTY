@@ -1,0 +1,48 @@
+--kubectl get storageclass
+
+---zabbix-values.yaml
+postgresql:
+  persistence:
+    enabled: true
+    storageSize: 10Gi
+zabbixWeb:
+    service:
+        type: NodePort
+        nodePort: 31080
+zabbixServer:
+  service:
+    type: NodePort
+    nodePort: 31051 #This is for agent reporting
+---
+--helm repo add zabbix-community https://zabbix-community.github.io/helm-zabbix
+--helm repo update
+
+helm upgrade --install zabbix zabbix-community/zabbix \
+  --namespace zabbix \
+  --create-namespace \
+  --dependency-update \
+  --values zabbix-values.yaml
+
+--kubectl get pods -n zabbix
+--kubectl get svc -n zabbix
+--kubectl get pvc -n zabbix
+Username: Admin
+Password: zabbix
+
+--kubectl get pods -n zabbix -o wide
+--kubectl get svc -n zabbix
+--kubectl get endpoints -n zabbix
+--kubectl logs -n zabbix deployment/zabbix-zabbix-server --tail=100
+-------------------------------------------------------------------
+agent installations
+--sudo pacman -S zabbix-agent2
+--zabbix_agent2 -V
+--sudo pacman -S openbsd-netcat
+--nc -vz 10.0.0.140 31051
+--hostnamectl --static
+--sudo nano /etc/zabbix/zabbix_agent2.conf
+ServerActive=10.0.0.140:31051
+Hostname=<your-hostname>
+--sudo zabbix_agent2 -T -c /etc/zabbix/zabbix_agent2.conf
+--sudo systemctl enable --now zabbix-agent2
+--systemctl status zabbix-agent2 --no-pager

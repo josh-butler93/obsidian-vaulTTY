@@ -1,17 +1,40 @@
 --helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 --helm repo add grafana https://grafana.github.io/helm-charts
 --helm repo update
-helm install grafana grafana/grafana -n monitoring \
-  --set service.type=LoadBalancer \
-  --set adminPassword=admin123
+#helm install grafana grafana/grafana -n monitoring \
+#  --set service.type=LoadBalancer \
+#  --set adminPassword=admin123
 
+Run this below command for grafana pod 
+--------------------------------------
 helm install grafana grafana/grafana -n monitoring --create-namespace \
   --set service.type=LoadBalancer \
-  --set service.port=3001 \
-  --set service.targetPort=3001 \
+  --set service.port=3000 \
+  --set service.targetPort=3000 \
   --set adminPassword=admin123
 
+--kubectl get svc --namespace monitoring -w grafana
 --kubectl get secret --namespace monitoring grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 --kubectl get svc -n monitoring
 --kubectl get svc --namespace monitoring grafana -o jsonpath='{.status.loadBalancer.ingress[0].ip}
 --kubectl get svc --namespace monitoring -w grafana'
+
+---prometheus pod
+# helm repo update
+
+helm upgrade --install monitoring prometheus-community/kube-prometheus-stack \
+  --namespace monitoring \
+  --create-namespace \
+  --set grafana.enabled=false
+--kubectl get svc -n monitoring | grep prometheus
+Then in your existing Grafana instance:
+1. Go to Connections → Data sources → Add data source
+2. Choose Prometheus
+3. Set the URL to the Prometheus service
+--kubectl get svc -n monitoring | grep prometheus
+    --look for: monitoring-kube-prometheus-prometheus
+4. http://monitoring-kube-prometheus-prometheus.monitoring.svc.cluster.local:9090
+5. Next, open Dashboards → New → Import in Grafana and import a Kubernetes dashboard
+
+--kubectl get pods -n monitoring
+--kubectl get svc -n monitoring | grep prometheus
