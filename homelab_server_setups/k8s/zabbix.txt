@@ -55,6 +55,7 @@ Hostname=<your-hostname>
 --sudo dnf clean all
 --sudo dnf makecache
 --sudo dnf install zabbix-agent2 -y
+--sudo systemctl enable --now zabbix-agent2
 --sudo nano /etc/zabbix/zabbix_agent2.conf
 --hostnamectl 
 ServerActive=10.0.0.140:31051
