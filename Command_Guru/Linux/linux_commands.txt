@@ -183,6 +183,14 @@ EOF'
   -echo "secret_key" | sudo tee /etc/secrete.txt > /dev/null
 
 ---
+	* df -h
+	* sudo dmesg -T | tail -n 50
+	* rpm -V libsolv
+	* rpm -qf /lib64/libsolv.so.1
+	* find /var/cache/dnf -type f -name 'libsolv*.rpm'
+	* sudo rpm -Uvh --replacepkgs /path/to/libsolv-*.rpm
+	* sudo dnf clean all
+	* sudo dnf update
 	#############################Quick Reference####################################
 	#Overwrite a root file + see output-- echo "text" | sudo tee /path/to/file     #
 	#Append to a root file + see output-- echo "test" | sudo tee -a /path/to/file  #
