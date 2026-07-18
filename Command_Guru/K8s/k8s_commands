@@ -209,7 +209,34 @@ kubectl get svc -n test
 	* minikube delete
 	* minikube pause
 	* minikube unpause
-	
+	* kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.3.1/aio/deploy/recommended.yaml 
+		--kubectl get pods -n kubernetes-dashboard
+		--kubectl get ns | grep kubernetes-dashboard
+	* vim dashboard-admin.yaml --this needs to be created in order to log in with admin priviledges
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: admin-user
+  namespace: kubernetes-dashboard
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: admin-user
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+  - kind: ServiceAccount
+    name: admin-user
+    namespace: kubernetes-dashboard
+---
+	* kubectl apply -f dashboard-admin.yaml	
+	* kubectl get sa -n kubernetes-dashboard
+	* kubectl get clusterrolebinding
+	* kubectl -n kubernetes-dashboard create token admin-user
 ############
 ####Helm####
 ############
