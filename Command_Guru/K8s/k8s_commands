@@ -140,6 +140,14 @@ kubectl get svc -n test
 	* kubectl get all -n prod > svc,pods,nodes
 	* kubectl get pods -A
 	* kubectl get pods -n portainer -w --this will show pods as they are created
+	* kubectl exec -h	
+	* kubectl exec -it POD_NAME -- /bin/bash
+	* kubectl exec nginx-busybox -c busybox -- ls /bin --nginx-busybox is the deployment name -c is the container name
+	* kubectl exec -it nginx-busybox -- /bin/bash
+	* kubectl exec nginx-env -- sh -c 'echo $MY_VAR'
+		* kubectl create deployment nginx --image=nginx --replicas=1
+			* kubectl get pods -n defaults
+				* kubectl exec -it nginx-433265-wff24 -- /bin/bash
 	* kubectl port-forward service/portainer 9443:9443 --namespace portainer --address 0.0.0.0
 	* kubectl port-forward pod/portainer-xfiefwwf 9443:9443 -n portainer --address 0.0.0.0
 	* kubectl rollout restart deployment/<deployment_name>
@@ -154,6 +162,7 @@ kubectl get svc -n test
 	* kubectl get all -A
 	* kubectl run nginx --image nginx -n default
 	* kubectl run nginx-app --image nginx -n dev 
+	* kubectl run nginx-env --image=nginx --env="MY_VAR=my-value"
 	* kubectl edit nginx-app >> image: nginx:latest
 	* kubectl get pods -o wide -n dev
 	* kubectl get pods -A -o wide
@@ -427,3 +436,25 @@ spec:
 EOF
 	* kubectl wait --for=condition=Ready pod nginx-busybox
 	* kubectl logs nginx-busybox -c busybox
+------------
+---2Pod Creation && exec
+cat << EOF | kubectl apply -f -
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-busybox
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+  - name: busybox
+    image: busybox
+    command:
+      - sleep
+      - "3600"
+EOF
+
+	* kubectl wait --for=condition=Ready pod nginx-busybox
+	* kubectl get pods -n default --the pods name will be there but there are two containers spun up with this deployment
+	* kubectl exec nginx-busybox -c busybox -- ls /bin --nginx-busybox is the deployment name -c is the container name
+	* kubectl exec -it nginx-busybox -- /bin/bash
