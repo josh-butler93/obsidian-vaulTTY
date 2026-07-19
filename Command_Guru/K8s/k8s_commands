@@ -166,6 +166,7 @@ kubectl get svc -n test
 	* kubectl expose pod test-windows-app --type=LoadBalancer --name=nginx-ext-svc --port=80 --target-port=80 -n default
 	* kubectl port-forward pod/web-app 8080:80 -n dev
 	* kubectl get svc webapp -n dev
+	* kubectl describe -h --this will output all commands and actions tied to the describe command
 	* kubectl describe pod webapp -n dev
 	* kubectl describe svc nginx-service
 	* kubectl create -f webapp.yml
