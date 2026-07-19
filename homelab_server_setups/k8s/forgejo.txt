@@ -1,0 +1,37 @@
+---Initial Setup---
+    * kubectl get storageclass --this is used to ensure the cluster can create persistent storage for the database
+    * helm version --short
+    * kubectl get svc -A -o custom-columns='NAMESPACE:.metadata.namespace,NAME:.metadata.name,TYPE:.spec.type,NODEPORTS:.spec.ports[*].nodePort'
+
+---Values Setup---
+    * mkdir forgejo && cd forgejo 
+    * vim . && :new values.yaml
+persistence:
+  enabled: true
+  storageClass: local-path
+  size: 10Gi
+
+service:
+  http:
+    type: NodePort
+    nodePort: 31000
+  ssh:
+    type: NodePort
+    nodePort: 30022
+
+---Pod Creation---
+helm upgrade --install forgejo \
+  oci://code.forgejo.org/forgejo-helm/forgejo \
+  --version 17.1.3 \
+  --namespace forgejo \
+  --create-namespace \
+  --values forgejo-values.yaml
+
+    * kubectl get pods,pvc,svc -n forgejo
+        --You should see the Forgejo pod Running, a Bound PVC, and NodePorts 31000 (web) and 30022 (SSH).
+        --Forgejo container/service port 3000 → Kubernetes NodePort 31000
+--http://ip:31000
+--git clone ssh://git@10.0.0.140:30022/your-user/your-repo.git
+
+--Docker:      host port → container port
+--Kubernetes:  container port → Service port → NodePort

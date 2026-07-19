@@ -213,6 +213,7 @@ kubectl get svc -n test
 	* kubectl get rs -n test
 	* kubectl expose deployment nginx-demo --type=NodePort --port=80 -n test >> this creates a service that points to that deployment exposing it ext.
 	* kubectl get svc -n test
+	* kubectl get svc -A -o custom-columns='NAMESPACE:.metadata.namespace,NAME:.metadata.name,TYPE:.spec.type,NODEPORTS:.spec.ports[*].nodePort'
 	* kubectl get secret --namespace monitoring my-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 	* kubectl describe secret mysecret -n mynamespace
 	* kubectl logs -h
