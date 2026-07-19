@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod 
+metadata:
+  name:  nginx-fluentd
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+    - name: fluentd 
+      image: fluentd
+
+# or 
+#cat << EOF | kubectl apply -f -
+#apiVersion: v1
+#kind: Pod
+#metadata:
+#  name: nginx-fluentd
+#spec:
+#  containers:
+#  - name: nginx
+#    image: nginx
+#  - name: fluentd
+#    image: fluentd
+#EOF
+# kubectl wait --for=condition=Ready pod nginx-fluentd

@@ -215,6 +215,16 @@ kubectl get svc -n test
 	* kubectl get svc -n test
 	* kubectl get secret --namespace monitoring my-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 	* kubectl describe secret mysecret -n mynamespace
+	* kubectl logs -h
+		:syntax: kubectl logs POD_NAME
+			* kubectl get pods
+			* kubectl logs ngixn-3223r-lfe
+	* kubectl logs -f nginx-busybox --this will follow the logs of a pod in real-time
+		* kubectl exec -it nginx-busybox -c nginx -- /bin/sh --run this paired with the above command to watch the logs change
+			* curl 127.0.0.1 --this will generate traffic and watch the logs flow
+	* kubectl logs nginx-fluentd -c nginx --deployment followed by container name 
+	* kubectl logs nginx-fluentd -c fluentd --deployment followed by container name
+	* kubectl wait --for=condition=Ready pod -l app=nginx
 
 	---
 	* minikube config set driver docker
@@ -395,3 +405,24 @@ EOF
 
  --Scale teh replicaset to 2 pods
 	* kubectl scale rs new-replicaset --replicas=2
+
+-------------
+#Lab 6:
+--View logs from a specifig pod
+cat << EOF | kubectl apply -f -
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-busybox
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+  - name: busybox
+    image: busybox
+    command:
+      - sleep
+      - "3600"
+EOF
+	* kubectl wait --for=condition=Ready pod nginx-busybox
+	* kubectl logs nginx-busybox -c busybox
