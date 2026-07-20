@@ -54,3 +54,10 @@
 	* git log -n 3 >> to see the last 3 commits
 	* git log --max-count=<number>
 	* git log --graph --decorate
+
+#Git cherry pick
+	* git log <branch_name> --oneline --this command gets you the hash of the commit
+		* git log master --oneline 
+	* git checkout story/hare-and-tortoise
+		* git cherry-pick <commit hash from the above command>
+			* git cherry-pick 2ffefd
