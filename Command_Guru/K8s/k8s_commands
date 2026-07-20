@@ -2,7 +2,7 @@
   --Node=Machine with Kubernetes installed where pods are deployed to
   --Cluster=Group of nodes
   --Master=Another node with k8s installed on it that watches over the nodes in the cluster and is responsible for the orchestration of the nodes
-  --kubectl=is used to deploy,manage, and maintain the k8s cluster
+  --kubectl=is used to deploy,manage, and maintain the k8s cluste
   --pods=containers are encapsulated into a k8s object called a pod
   --deployment=is a k8s object that manages a group of identical pods
 
