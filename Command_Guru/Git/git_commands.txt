@@ -78,3 +78,83 @@
 	* git stash list
 	* git stash show stash@{0}; git stash show stash@{1} --these will show the contents of the stash
 	* git stash pop 
+
+#Amending your last commit 
+	* git add hello.txt
+	* git commit --amend -m "Initial commit with important note"
+		--git commit --amend: The --amend flag tells Git that instead of creating a new commit, we want to modify the last commit
+		--Instead of creating a new commit in your Git history, Git has effectively replaced the previous "Initial commit" with a new, improved version
+		--git log --oneline
+
+#Reverting a Commit
+	--git revert creates a new commit that undoes the changes introduced by a specific commit	
+	--It doesn't erase the original commit from history; instead, it adds a new commit that effectively reverses the effects of the unwanted commit
+	--This preserves the history and is much safer for shared repositories
+	* git revert HEAD
+		--git revert: This is the command to revert changes
+		--HEAD: In Git, HEAD is a pointer to the current commit of your current branch
+			--In most cases, HEAD refers to the most recent commit
+			--So, git revert HEAD means "revert the most recent commit". 
+			--You can also specify a specific commit hash to revert an older commit
+
+
+#Cherry-picking Commits
+	* git checkou -b feature-branch
+	* echo "This is a new feature" >> feature.txt
+	* git add feature.txt
+	* git commit -m "Add new feature"
+	* git checkout master
+	* git cherry-pick feature-branch
+
+#Interactive Rebasing
+	--It allows you to rewrite your commit history in very flexible ways
+	--You can reorder commits, combine (squash) commits, edit commit messages, or even remove commits entirely
+	* git add -am "First change"
+		--The -am shorthand in git commit
+		--'-am':combines staging all modified and deleted files (-a) with committing (-m)
+	* git rebase -i HEAD~3 
+		--git rebase -i: git rebase is the command for rebasing
+			--The -i flag stands for "interactive", which tells Git we want to perform an interactive rebase
+			--HEAD~3: This specifies the range of commits we want to rebase
+			--HEAD refers to the current commit. ~3 means "go back three commits from HEAD"
+			--So, HEAD~3 selects the last three commits
+	* git rebase -i --root >> this rebases from root		
+#####_______Rebase Breakdown__________######
+Commands: Below the commit list, Git provides a list of available commands that you can use to modify each commit. The most common ones are:
+
+pick (or p): Use the commit as is. This is the default.
+
+reword (or r): Use the commit, but allow you to change the commit message.
+
+edit (or e): Use the commit, but stop the rebase process at this commit so you can make further changes (e.g., amend files, add more changes).
+
+squash (or s): Combine this commit into the previous commit in the list. The commit message of this commit will be appended to the message of the previous commit (you'll get to edit the combined message later).
+
+fixup (or f): Similar to squash, but discards the commit message of this commit and just uses the message of the previous commit.
+
+drop (or d): Remove this commit entirely from the history.
+
+Our Interactive Rebase Plan:
+
+
+
+We want to:
+
+
+
+Squash "Second change" into "First change".
+
+Reword "Third change" to have a better message.
+
+To achieve this, modify the editor file to look like this:
+
+
+
+pick abc1234 First change
+
+squash def5678 Second change
+
+reword ghi9101 Third change
+
+
+
