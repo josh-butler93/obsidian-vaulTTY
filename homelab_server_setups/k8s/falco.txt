@@ -1,0 +1,53 @@
+---Installation---
+    * helm repo add falcosecurity https://falcosecurity.github.io/charts
+    * helm repo update
+
+---No WebUI---
+helm install falco falcosecurity/falco \
+  --namespace falco \
+  --create-namespace
+
+    * kubectl get pods -n falco
+    * kubectl get daemonset -n falco
+    * kubectl logs -n falco -l app.kubernetes.io/name=falco --tail=50
+
+---WebUI---
+helm upgrade falco falcosecurity/falco \
+  --namespace falco \
+  --set falcosidekick.enabled=true \
+  --set falcosidekick.webui.enabled=true \
+  --set falcosidekick.webui.service.type=NodePort \
+  --set falcosidekick.webui.service.nodePort=30282
+
+    * http://10.0.0.140:30282
+        * user: admin
+        * pass: admin
+        
+---k9s setup---
+    * sudo cat /etc/rancher/k3s/k3s.yaml
+    * mkdir -p ~/.kube
+    * scp sysadmin@<k3s-controller-ip>:/etc/rancher/k3s/k3s.yaml ~/.kube/config
+    * nano ~/.kube/config
+    * Change 127.0.0.1 to your K3s controller's actual LAN IP, for example:
+         * server: https://10.0.0.140:6443
+    * nc -vz 10.0.0.140 6443
+    * sudo firewall-cmd --permanent --add-port=6443/tcp
+    * sudo firewall-cmd --reload 
+    * sudo firewall-cmd --permanent --add-port=30282/tcp
+    * sudo firewall-cmd --reload
+
+---Verification---
+
+kubectl run falco-test \
+  --image=alpine \
+  --restart=Never \
+  -- sleep 300
+
+    * kubectl exec -it falco-test -- /bin/sh
+    * cat /etc/shadow
+    * kubectl logs -n falco -l app.kubernetes.io/name=falco -f --run this in the other terminal 
+            or 
+        * k9s >> :namespace >> select the 'falco' namespace >> select the falco pod >> press l
+    * exit 
+    * kubectl delete pod falco-test
+    * 
