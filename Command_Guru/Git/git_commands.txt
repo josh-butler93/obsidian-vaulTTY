@@ -54,6 +54,7 @@
 	* git log -n 3 >> to see the last 3 commits
 	* git log --max-count=<number>
 	* git log --graph --decorate
+	* git log --name-only
 
 #Git cherry pick
 	* git log <branch_name> --oneline --this command gets you the hash of the commit
@@ -61,3 +62,19 @@
 	* git checkout story/hare-and-tortoise
 		* git cherry-pick <commit hash from the above command>
 			* git cherry-pick 2ffefd
+
+#Undoing Changes
+	* git revert HEAD~0
+		or
+	* git revert <commit id>
+		* git log >> look for the commit and next to it is the commit id
+			* git revert 23rrf2fsflllsdf >> add a commit message
+
+	* git log >> from the top to where you want to revert count
+	* git reset --hard HEAD~3
+
+#Stashing Changes
+	* git stash 
+	* git stash list
+	* git stash show stash@{0}; git stash show stash@{1} --these will show the contents of the stash
+	* git stash pop 
