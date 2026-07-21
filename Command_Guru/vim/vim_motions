@@ -1,0 +1,13 @@
+shift + S --will take you to the end of the line and allow you to write from there
+shift + A --will delete the whole line
+yy --will copy the line >> p --to paste what you just copied
+y3 --will copy 3 lines below that line >> so on and so forth
+d$ will delete from where the cursor is to the end of the line
+dd --will delete the line
+3 dd --will delete 3 lines and so on and so forth
+shift + g + dd --will delete the whole file
+gg --will move you to the top of a file
+shift + g --will move you to the end of the file
+gg + VG --will select all lines in the file
+u --will undue a change you just made
+ctrl + r --undue your undue
