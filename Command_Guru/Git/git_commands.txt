@@ -235,3 +235,52 @@ echo "Change 5" >> README.md
 	* git stash drop stash@{2} >> this will drop stash 2
 	* git stash clear >> this wil remove all stashes
 	* git stash pop >> will do the same as the above commands
+
+#Commit Tags
+
+--echo "# My Awesome Project" > README.md
+--git add README.md
+--git commit -m "Initial commit"
+
+--echo "function greet(name) { console.log('Hello, ' + name + '!'); }" > app.js
+--git add app.js
+--git commit -m "Add greeting function"
+
+--echo "const PI = 3.14159;" >> app.js
+--git add app.js
+--git commit -m "Add PI constant"
+
+--echo "function calculateArea(radius) { return PI * radius * radius; }" >> app.js
+--git add app.js
+--git commit -m "Add area calculation function"
+
+---Creating lightweight tags:
+	* git tag v0.1 --This creates a tag named v0.1 pointing to the current commit (HEAD)
+	* git log --oneline 
+	* git tag v0.0.1 <commit-hash> --you get the hash from the above command 
+	* git tag v0.0.1 29b1ace
+	* git tag
+
+---Creating Annotated Tags
+-Annotated tags are stored as full objects in the Git database
+-They contain the tagger's name, email, date, and a tagging message
+-They can also be signed and verified with GNU Privacy Guard (GPG)
+
+--To create an annotated tag, use the -a flag with git tag:
+	* git tag -a v1.0 -m "First major release"
+		--This creates an annotated tag named v1.0 with the message "First major release"
+	* git show v1.0 
+  --Annotated tags are recommended for public releases because they include much more information and can be verified
+
+--If you want to search for tags matching a particular pattern, you can use the -l (or --list) option with a wildcard
+	* git tag -l "v1.*"
+	* git tag -n 
+
+---Checking Out Tags
+	* git checkout v1.0 This will put your repository in a "detached HEAD" state at the commit that v1.0 points to
+	* git checkout -b branch-name v1.0 make changes and create a new branch to retain these changes
+
+---Deleting Tags
+	* git tag -d v0.0.1
+
+	* 
