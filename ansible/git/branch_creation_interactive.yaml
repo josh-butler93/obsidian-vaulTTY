@@ -1,0 +1,72 @@
+---
+# Run from the Git repository you want to update:
+# ansible-playbook /path/to/create_and_switch_branch.yml
+- name: Create and switch to a Git branch
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars_prompt:
+    - name: branch_name
+      prompt: "Name for the new Git branch"
+      private: false
+
+  vars:
+    # The repository is the directory from which ansible-playbook is run.
+    repo_path: "{{ lookup('env', 'PWD') }}"
+
+  tasks:
+    - name: Verify that the current directory is a Git repository
+      ansible.builtin.command:
+        argv:
+          - git
+          - rev-parse
+          - --is-inside-work-tree
+      args:
+        chdir: "{{ repo_path }}"
+      changed_when: false
+
+    - name: Validate the requested branch name
+      ansible.builtin.command:
+        argv:
+          - git
+          - check-ref-format
+          - --branch
+          - "{{ branch_name }}"
+      args:
+        chdir: "{{ repo_path }}"
+      changed_when: false
+
+    - name: Ensure the branch does not already exist
+      ansible.builtin.command:
+        argv:
+          - git
+          - show-ref
+          - --verify
+          - --quiet
+          - "refs/heads/{{ branch_name }}"
+      args:
+        chdir: "{{ repo_path }}"
+      register: branch_exists
+      changed_when: false
+      failed_when: branch_exists.rc not in [0, 1]
+
+    - name: Stop if the requested branch already exists
+      ansible.builtin.fail:
+        msg: "The branch '{{ branch_name }}' already exists; no changes were made."
+      when: branch_exists.rc == 0
+
+    - name: Create and switch to the new branch
+      ansible.builtin.command:
+        argv:
+          - git
+          - switch
+          - -c
+          - "{{ branch_name }}"
+      args:
+        chdir: "{{ repo_path }}"
+      changed_when: true
+
+    - name: Report the active branch
+      ansible.builtin.debug:
+        msg: "Created and switched to '{{ branch_name }}' in {{ repo_path }}."
