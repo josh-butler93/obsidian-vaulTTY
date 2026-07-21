@@ -87,6 +87,7 @@
 		--git log --oneline
 
 #Reverting a Commit
+--Any changes you made to code or a file wiill revert back to before you made the commit
 	--git revert creates a new commit that undoes the changes introduced by a specific commit	
 	--It doesn't erase the original commit from history; instead, it adds a new commit that effectively reverses the effects of the unwanted commit
 	--This preserves the history and is much safer for shared repositories
@@ -96,6 +97,10 @@
 			--In most cases, HEAD refers to the most recent commit
 			--So, git revert HEAD means "revert the most recent commit". 
 			--You can also specify a specific commit hash to revert an older commit
+	---Breakdown---
+		--Analyze the changes: It looks at the changes introduced by the HEAD commit (in our case, "Add line to be reverted")
+		--Create reverse changes: It figures out how to undo those changes (in our case, removing the "This line will be reverted" line from "hello.txt")
+		--Create a new commit: It automatically creates a new commit that applies these reverse changes
 
 
 #Cherry-picking Commits
@@ -156,5 +161,77 @@ squash def5678 Second change
 
 reword ghi9101 Third change
 
+# Stashing Changes
 
+	* echo "This is a work in progress" >> README.md
+	* git add && git commit -m "Initial commit"
+	* echo "Some important notes" > notes.txt --need to change branches real quick dont want to commit just yet so solution is to STASH the changes
+	* git stash >> with this command it only stashes changes to tracked files so README.md is stashed but notes.txt is still untracked
+		--This behavior ensures that Git doesn't accidentally hide new files you might not want to include in the repository
+	* git stash -u --this will include untracked files as well so in the above example it will include notes.txt 
+	* git status
+	* git stash list
 
+---Getting back stashed changes---
+Now that we've stashed our changes, let's learn how to bring them back
+	--There are two main commands for this:
+		a. git stash apply
+		b. git stash pop
+	* git stash apply --this command will not include the notes.txt or untracked files 
+		--In Step 2, we used git stash without the -u option first, which only stashed the changes to README.md
+		--When we apply the stash, Git applies the most recent stash (the one created with -u), which only contains notes.txt, so you don't see changes to README.md
+	* git stash apply stash@{1} --this is the stash that included the notes.txt file
+	* git stash clear
+	* git stash -u 
+	* git stash apply
+	* git stash pop >> this will take out the stash 
+	* git stash list >> you will no longer see a list of stashes
+  --Why have both apply and pop? apply is useful when you want to apply the same stashed changes to multiple branches
+  --pop is more commonly used when you're just resuming work on the same branch
+
+#Creating a Branch from a stash
+--echo "Feature in progress" >> README.md
+--echo "More notes" >> notes.txt
+	* git stash -u
+	* git stash branch feature-branch >> This command creates a new branch named "feature-branch", checks it out, and then applies the stashed changes to it	
+		--The stash is then removed from your stash list
+	* git add README.md notes.txt
+	* git commit -m "Start new feature"	
+--git checkout master
+
+#Managing Multiple Stashes
+
+--using 'git stash push' explicitly gives you more control and clarity, particularly when managing multiple stashes with descriptive messages
+	--Used the -m flag to add descriptive messages
+	--Used the -u flag for the second stash to include the untracked file
+
+# First stash --Created first stash with a change to README.md
+--echo "Change 1" >> README.md
+	* git stash push -m "First change"
+
+# Second stash with untracked file --Created second stash with both a change to README.md and a new untracked file
+--echo "Change 2" >> README.md
+--echo "Note 2" >> notes.txt
+	* git stash push -u -m "Second change"
+
+# Third stash --Created third stash with another change to README.md
+--echo "Change 3" >> README.md
+	* git stash push -m "Third change"
+	* git stash list
+	* git stash show stash@{1}
+	* git stash show -p stash@{1}
+		--For more detail, add the -p flag to see the full diff:
+
+# Fourth stash
+echo "Change 4" >> README.md
+	* git stash push -m "Fourth change"
+
+# Fifth stash
+echo "Change 5" >> README.md
+	* git stash push -m "Fifth change"
+
+#Cleaning Up Stashes
+
+	* git stash drop stash@{2} >> this will drop stash 2
+	* git stash clear >> this wil remove all stashes
+	* git stash pop >> will do the same as the above commands
