@@ -1,0 +1,3 @@
+--cd downloads
+--sudo openvpn starting_points_us-starting-point-2-dhcp.ovpn
+--ping -c -4 <ip_addy> # to verify connection

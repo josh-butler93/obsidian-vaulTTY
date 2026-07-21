@@ -1,0 +1,16 @@
+--nmap -p- --min-rate 5000 -T5 <TARGET_IP> --After it finishes, scan the discovered ports/services in detail:
+--nmap -Pn -sC -sV -p <PORTS> <TARGET_IP>
+
+---redis Installation---
+--sudo pacman -S redis
+--redis-cli --version
+-------
+--redis-cli -h <TARGET_IP> INFO server --to get the version of the redis server running on the other machine
+or
+--nmap -sV -p 6379 <TARGET_IP>
+--redis-cli -h <TARGET_IP> DBSIZE --redis starts at index 0 so this will get you all the keys you need
+--redis-cli -h <TARGET_IP> -n 0 DBSIZE
+--redis-cli -h <target_ip> KEYS '*' >> command is used to obtain all the keys in a database
+--redis-cli -h <target_ip> SCAN 0 >> command is used to obtain all the keys in a database
+--redis-cli -h 10.129.219.175 GET flag >> this command is used to get the flag from the database
+---redis-cli -h 10.129.219.175 -n <INDEX> GET flag >> in case its in another index
