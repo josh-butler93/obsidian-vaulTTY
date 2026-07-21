@@ -1,3 +1,4 @@
+---https://app.redislabs.com/#/databases---Redis dashboard---
 --nmap -p- --min-rate 5000 -T5 <TARGET_IP> --After it finishes, scan the discovered ports/services in detail:
 --nmap -Pn -sC -sV -p <PORTS> <TARGET_IP>
 
