@@ -1,0 +1,1766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container Daily Practice Guide</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #0a0a0f;
+            font-family: 'Rajdhani', sans-serif;
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 234, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 234, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .glow-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.3;
+            animation: float 8s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .glow-orb.cyan {
+            width: 400px;
+            height: 400px;
+            background: #00ffea;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .glow-orb.purple {
+            width: 350px;
+            height: 350px;
+            background: #8b5cf6;
+            bottom: 20%;
+            right: 10%;
+            animation-delay: -4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(30px, -30px) scale(1.1); }
+        }
+
+        .scan-line {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ffea, transparent);
+            animation: scan 4s linear infinite;
+            pointer-events: none;
+            z-index: 100;
+            opacity: 0.5;
+        }
+
+        @keyframes scan {
+            0% { top: 0; }
+            100% { top: 100%; }
+        }
+
+        .corner {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            border: 2px solid rgba(0, 255, 234, 0.3);
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .corner.top-left {
+            top: 20px;
+            left: 20px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .corner.top-right {
+            top: 20px;
+            right: 20px;
+            border-left: none;
+            border-bottom: none;
+        }
+
+        .corner.bottom-left {
+            bottom: 20px;
+            left: 20px;
+            border-right: none;
+            border-top: none;
+        }
+
+        .corner.bottom-right {
+            bottom: 20px;
+            right: 20px;
+            border-left: none;
+            border-top: none;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            border-bottom: 1px solid rgba(0, 255, 234, 0.2);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ffea, transparent);
+        }
+
+        header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #00ffea 0%, #8b5cf6 50%, #00ffea 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        header p {
+            color: #666;
+            margin-top: 15px;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .hero-subtitle {
+            margin-top: 25px;
+            padding: 10px 25px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 25px;
+            display: inline-block;
+            border: 1px solid rgba(0, 255, 234, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-subtitle span {
+            color: #8b5cf6;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+        }
+
+        .tabs {
+            display: flex;
+            gap: 4px;
+            background: rgba(10, 10, 15, 0.8);
+            padding: 6px;
+            border-radius: 12px;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
+            border: 1px solid rgba(0, 255, 234, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .tab-btn {
+            flex: 1;
+            min-width: 100px;
+            padding: 12px 15px;
+            background: transparent;
+            border: none;
+            color: #555;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn:hover {
+            color: #00ffea;
+            background: rgba(0, 255, 234, 0.1);
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, rgba(0, 255, 234, 0.2), rgba(139, 92, 246, 0.1));
+            color: #00ffea;
+            font-weight: 700;
+            box-shadow: 0 0 15px rgba(0, 255, 234, 0.2);
+            border: 1px solid rgba(0, 255, 234, 0.3);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section {
+            background: rgba(15, 15, 20, 0.8);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(0, 255, 234, 0.1);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 234, 0.5), transparent);
+        }
+
+        .section h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: #00ffea;
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(0, 255, 234, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px rgba(0, 255, 234, 0.3);
+        }
+
+        .section h3 {
+            color: #8b5cf6;
+            margin: 30px 0 15px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+        }
+
+        .section h4 {
+            color: #00ffea;
+            margin: 20px 0 12px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cmd-line {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 12px 18px;
+            background: rgba(0, 0, 0, 0.6);
+            border-left: 3px solid #00ffea;
+            margin: 10px 0;
+            border-radius: 0 8px 8px 0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .cmd-line::before {
+            content: '>';
+            position: absolute;
+            left: -20px;
+            color: rgba(0, 255, 234, 0.3);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .cmd-line:hover {
+            background: rgba(0, 255, 234, 0.05);
+            transform: translateX(5px);
+            box-shadow: 0 0 20px rgba(0, 255, 234, 0.1);
+        }
+
+        .cmd-line .cmd {
+            font-family: 'JetBrains Mono', monospace;
+            color: #00ffea;
+            flex: 1;
+            white-space: pre-wrap;
+            word-break: break-all;
+            font-weight: 500;
+            text-shadow: 0 0 10px rgba(0, 255, 234, 0.3);
+        }
+
+        .cmd-line .desc {
+            color: #666;
+            font-size: 0.85rem;
+            min-width: 200px;
+            font-weight: 500;
+        }
+
+        .cmd-line.red { border-left-color: #ff3366; }
+        .cmd-line.red .cmd { color: #ff3366; text-shadow: 0 0 10px rgba(255, 51, 102, 0.3); }
+
+        .cmd-line.yellow { border-left-color: #ffaa00; }
+        .cmd-line.yellow .cmd { color: #ffaa00; text-shadow: 0 0 10px rgba(255, 170, 0, 0.3); }
+
+        .cmd-line.blue { border-left-color: #00d4ff; }
+        .cmd-line.blue .cmd { color: #00d4ff; text-shadow: 0 0 10px rgba(0, 212, 255, 0.3); }
+
+        .cmd-line.purple { border-left-color: #8b5cf6; }
+        .cmd-line.purple .cmd { color: #8b5cf6; text-shadow: 0 0 10px rgba(139, 92, 246, 0.3); }
+
+        .week-card {
+            background: rgba(20, 20, 25, 0.8);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            border: 1px solid rgba(0, 255, 234, 0.15);
+            position: relative;
+        }
+
+        .week-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20px;
+            right: 20px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 234, 0.3), transparent);
+        }
+
+        .week-card h4 {
+            color: #00ffea;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .week-card h4 .day {
+            background: rgba(0, 255, 234, 0.1);
+            color: #8b5cf6;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .week-card h4 .week-num {
+            background: rgba(0, 255, 234, 0.1);
+            color: #00ffea;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            border: 1px solid rgba(0, 255, 234, 0.3);
+        }
+
+        .week-card .goal {
+            color: #ffaa00;
+            font-style: italic;
+            margin-bottom: 18px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-shadow: 0 0 10px rgba(255, 170, 0, 0.2);
+        }
+
+        .cmd-block {
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(0, 255, 234, 0.2);
+            border-radius: 8px;
+            padding: 18px;
+            margin: 12px 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: #00ffea;
+            white-space: pre-wrap;
+            word-break: break-all;
+            text-shadow: 0 0 10px rgba(0, 255, 234, 0.2);
+            position: relative;
+            overflow-x: auto;
+        }
+
+        .cmd-block::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .cmd-block::-webkit-scrollbar-track {
+            background: rgba(0, 255, 234, 0.1);
+            border-radius: 3px;
+        }
+
+        .cmd-block::-webkit-scrollbar-thumb {
+            background: rgba(0, 255, 234, 0.3);
+            border-radius: 3px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tag.green { background: rgba(0, 255, 234, 0.15); color: #00ffea; border: 1px solid rgba(0, 255, 234, 0.3); }
+        .tag.red { background: rgba(255, 51, 102, 0.15); color: #ff3366; border: 1px solid rgba(255, 51, 102, 0.3); }
+        .tag.yellow { background: rgba(255, 170, 0, 0.15); color: #ffaa00; border: 1px solid rgba(255, 170, 0, 0.3); }
+        .tag.blue { background: rgba(0, 212, 255, 0.15); color: #00d4ff; border: 1px solid rgba(0, 212, 255, 0.3); }
+        .tag.purple { background: rgba(139, 92, 246, 0.15); color: #8b5cf6; border: 1px solid rgba(139, 92, 246, 0.3); }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 255, 234, 0.1);
+        }
+
+        th, td {
+            padding: 14px 18px;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 255, 234, 0.1);
+        }
+
+        th {
+            background: linear-gradient(135deg, rgba(0, 255, 234, 0.1), rgba(139, 92, 246, 0.05));
+            color: #00ffea;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        td {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        tr:hover {
+            background: rgba(0, 255, 234, 0.05);
+        }
+
+        tr:hover td {
+            color: #e0e0e0;
+        }
+
+        .mindset-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .mindset-card {
+            background: rgba(20, 20, 25, 0.8);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(0, 255, 234, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mindset-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 255, 234, 0.05), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .mindset-card:hover::before {
+            opacity: 1;
+        }
+
+        .mindset-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 255, 234, 0.15);
+            border-color: rgba(0, 255, 234, 0.3);
+        }
+
+        .mindset-card .icon {
+            font-size: 3.5rem;
+            margin-bottom: 18px;
+            filter: drop-shadow(0 0 20px rgba(0, 255, 234, 0.3));
+        }
+
+        .mindset-card h4 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .mindset-card .use-case {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .workflow-box {
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 12px;
+            padding: 25px;
+            border: 2px solid rgba(0, 255, 234, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .workflow-compare {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .workflow-box h4 {
+            margin-bottom: 15px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .workflow-box.db { border-color: rgba(0, 255, 234, 0.4); }
+        .workflow-box.check { border-color: rgba(139, 92, 246, 0.4); }
+        .workflow-box.dev { border-color: rgba(187, 134, 252, 0.4); }
+
+        .workflow-box.db h4 { color: #00ffea; }
+        .workflow-box.check h4 { color: #8b5cf6; }
+        .workflow-box.dev h4 { color: #bb86fc; }
+
+        .workflow-box:hover {
+            box-shadow: 0 0 30px rgba(0, 255, 234, 0.1);
+        }
+
+        .note {
+            background: rgba(0, 255, 234, 0.08);
+            border: 1px solid rgba(0, 255, 234, 0.3);
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 20px 0;
+            color: #00d4ff;
+            font-size: 0.9rem;
+            font-weight: 500;
+            position: relative;
+            padding-left: 50px;
+        }
+
+        .note::before {
+            content: 'i';
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 22px;
+            height: 22px;
+            border: 2px solid #00ffea;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #00ffea;
+        }
+
+        .danger-note {
+            background: rgba(255, 51, 102, 0.08);
+            border: 1px solid rgba(255, 51, 102, 0.3);
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 20px 0;
+            color: #ff3366;
+            font-size: 0.9rem;
+            font-weight: 500;
+            position: relative;
+            padding-left: 50px;
+        }
+
+        .danger-note::before {
+            content: '!';
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 22px;
+            height: 22px;
+            border: 2px solid #ff3366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #444;
+            margin-top: 50px;
+            border-top: 1px solid rgba(0, 255, 234, 0.1);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        footer span {
+            color: #00ffea;
+            text-shadow: 0 0 10px rgba(0, 255, 234, 0.5);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 255, 234, 0.3);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 255, 234, 0.5);
+        }
+
+        ::selection {
+            background: rgba(0, 255, 234, 0.3);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="glow-orb cyan"></div>
+    <div class="glow-orb purple"></div>
+    <div class="scan-line"></div>
+    
+    <div class="corner top-left"></div>
+    <div class="corner top-right"></div>
+    <div class="corner bottom-left"></div>
+    <div class="corner bottom-right"></div>
+
+    <div class="container">
+        <header>
+            <h1>Container Daily Practice Guide</h1>
+            <p>12-Week Journey from Beginner to DevOps Foundation</p>
+            <div class="hero-subtitle">
+                <span>Podman</span> • Docker • Containers • DevOps
+            </div>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab('quickref')">Quick Ref</button>
+            <button class="tab-btn" onclick="openTab('flags')">Run Flags</button>
+            <button class="tab-btn" onclick="openTab('cleanup')">Cleanup</button>
+            <button class="tab-btn" onclick="openTab('week1')">Week 1-2</button>
+            <button class="tab-btn" onclick="openTab('week3')">Week 3-4</button>
+            <button class="tab-btn" onclick="openTab('week5')">Week 5-6</button>
+            <button class="tab-btn" onclick="openTab('week7')">Week 7-9</button>
+            <button class="tab-btn" onclick="openTab('mindset')">When to Use</button>
+        </div>
+
+        <!-- Quick Reference Tab -->
+        <div id="quickref" class="tab-content active">
+            <div class="section">
+                <h2>Essential Commands</h2>
+                
+                <h3>Container Lifecycle</h3>
+                <div class="cmd-line green">
+                    <span class="cmd">podman run -d --name web nginx</span>
+                    <span class="desc">Start detached</span>
+                </div>
+                <div class="cmd-line yellow">
+                    <span class="cmd">podman run -it --name test alpine sh</span>
+                    <span class="desc">Start with terminal</span>
+                </div>
+                <div class="cmd-line green">
+                    <span class="cmd">podman run -dit --name practice alpine</span>
+                    <span class="desc">Start detached, ready for exec</span>
+                </div>
+                <div class="cmd-line green">
+                    <span class="cmd">podman ps -a</span>
+                    <span class="desc">List all containers</span>
+                </div>
+                <div class="cmd-line blue">
+                    <span class="cmd">podman exec -it web sh</span>
+                    <span class="desc">Shell into container</span>
+                </div>
+                <div class="cmd-line blue">
+                    <span class="cmd">podman start / stop web</span>
+                    <span class="desc">Start or stop container</span>
+                </div>
+                <div class="cmd-line red">
+                    <span class="cmd">podman rm web</span>
+                    <span class="desc">Remove container</span>
+                </div>
+                <div class="cmd-line yellow">
+                    <span class="cmd">podman logs web</span>
+                    <span class="desc">View logs</span>
+                </div>
+
+                <h3>Images</h3>
+                <div class="cmd-line">
+                    <span class="cmd">podman images</span>
+                    <span class="desc">List local images</span>
+                </div>
+                <div class="cmd-line">
+                    <span class="cmd">podman pull nginx:latest</span>
+                    <span class="desc">Download image</span>
+                </div>
+                <div class="cmd-line red">
+                    <span class="cmd">podman rmi nginx:latest</span>
+                    <span class="desc">Remove image</span>
+                </div>
+                <div class="cmd-line">
+                    <span class="cmd">podman build -t myapp:v1 .</span>
+                    <span class="desc">Build from Dockerfile</span>
+                </div>
+
+                <h3>Port Mapping & Volumes</h3>
+                <div class="cmd-line green">
+                    <span class="cmd">podman run -d -p 8080:80 nginx</span>
+                    <span class="desc">Map ports</span>
+                </div>
+                <div class="cmd-line purple">
+                    <span class="cmd">podman run -d -v mydata:/data postgres</span>
+                    <span class="desc">Named volume</span>
+                </div>
+                <div class="cmd-line purple">
+                    <span class="cmd">podman run -d -v /host:/container nginx</span>
+                    <span class="desc">Bind mount</span>
+                </div>
+
+                <h3>Advanced</h3>
+                <div class="cmd-line blue">
+                    <span class="cmd">podman network create mynet</span>
+                    <span class="desc">Create network</span>
+                </div>
+                <div class="cmd-line blue">
+                    <span class="cmd">podman compose up -d</span>
+                    <span class="desc">Multi-container orchestration</span>
+                </div>
+                <div class="cmd-line yellow">
+                    <span class="cmd">podman stats --no-stream</span>
+                    <span class="desc">Resource usage</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Daily Practice Template</h2>
+                <div class="note">
+                    Morning routine script - 10-15 minutes
+                </div>
+                <div class="cmd-block">#!/bin/bash
+
+echo "=== Container Daily Practice ==="
+
+# 1. List current containers
+podman ps -a
+
+# 2. Clean up old containers
+podman container prune -f
+
+# 3. Remove dangling images
+podman image prune -f
+
+# 4. Pull latest images
+podman pull alpine:latest
+podman pull nginx:latest
+podman pull ubuntu:latest
+
+# 5. Quick test
+podman run --rm alpine echo "Container runtime works!"
+
+# 6. Check resource usage
+podman stats --no-stream
+
+# 7. Check disk usage
+podman system df</div>
+            </div>
+        </div>
+
+        <!-- Run Flags Tab -->
+        <div id="flags" class="tab-content">
+            <div class="section">
+                <h2>The Three Main Patterns</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Flag</th>
+                            <th>What it does</th>
+                            <th>Stays running after exit?</th>
+                            <th>Can exec later?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="tag green">-d</span></td>
+                            <td>Detached (background)</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td><span class="tag yellow">-it</span></td>
+                            <td>Interactive terminal</td>
+                            <td>No (stops)</td>
+                            <td>Yes (after start)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="tag green">-dit</span></td>
+                            <td>Detached but ready for exec</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2>Flag Details</h2>
+
+                <h4><span class="tag green">-d</span> Detached</h4>
+                <p style="color: #888; margin: 10px 0;">Container starts in background, no terminal attached, keeps running</p>
+                <div class="cmd-block">podman run -d --name web nginx</div>
+
+                <h4><span class="tag yellow">-it</span> Interactive Terminal</h4>
+                <p style="color: #888; margin: 10px 0;">Container starts, you're dropped into shell. Exit = container stops</p>
+                <div class="cmd-block">podman run -it --name test alpine sh</div>
+
+                <h4><span class="tag green">-dit</span> Detached + Interactive</h4>
+                <p style="color: #888; margin: 10px 0;">Same as -d, but signals "future exec commands will be interactive"</p>
+                <div class="cmd-block">podman run -dit --name practice alpine</div>
+            </div>
+
+            <div class="section">
+                <h2>Common Flag Combinations</h2>
+
+                <h4>Detached with port mapping</h4>
+                <div class="cmd-block">podman run -d --name web -p 8080:80 nginx</div>
+
+                <h4>Interactive with cleanup</h4>
+                <div class="cmd-block">podman run -it --rm alpine sh</div>
+
+                <h4>Detached with volume</h4>
+                <div class="cmd-block">podman run -dit -v $(pwd):/app --name dev alpine</div>
+
+                <h4>Detached with environment variables</h4>
+                <div class="cmd-block">podman run -d --name db \
+  -e POSTGRES_PASSWORD=secret \
+  postgres</div>
+
+                <h4>Detached with resource limits</h4>
+                <div class="cmd-block">podman run -d --name limited \
+  --memory="512m" \
+  --cpus="0.5" \
+  nginx</div>
+            </div>
+
+            <div class="section">
+                <h2>Quick Decision Guide</h2>
+                <div class="cmd-block">Need shell RIGHT NOW?
+  ├── Yes → -it (you stay in terminal)
+  └── No (start and leave)
+      ├── Will need shell LATER?
+      │   ├── Yes → -d
+      │   └── No → -d
+      └── Not sure → -d (you can always exec later)</div>
+            </div>
+
+            <div class="section">
+                <h2>Magic Keys</h2>
+                <div class="cmd-line yellow">
+                    <span class="cmd">Ctrl+P, Ctrl+Q</span>
+                    <span class="desc">Detach from -it without stopping container</span>
+                </div>
+                <div class="cmd-line red">
+                    <span class="cmd">Ctrl+C</span>
+                    <span class="desc">Force stop (if running foreground)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cleanup Tab -->
+        <div id="cleanup" class="tab-content">
+            <div class="section">
+                <h2>Container Cleanup</h2>
+
+                <h3>Remove Single Container</h3>
+                <div class="cmd-line green">
+                    <span class="cmd">podman rm container-name</span>
+                    <span class="desc">Remove stopped container</span>
+                </div>
+                <div class="cmd-line red">
+                    <span class="cmd">podman rm -f container-name</span>
+                    <span class="desc">Force remove (even if running)</span>
+                </div>
+
+                <h3>Remove Multiple Containers</h3>
+                <div class="cmd-block"># By names
+podman rm container1 container2 container3
+
+# All stopped containers
+podman container prune
+
+# All containers (force)
+podman rm -a
+
+# All containers (force, single command)
+podman rm -f $(podman ps -aq)</div>
+
+                <h3>Remove Containers by Filter</h3>
+                <div class="cmd-block"># Remove exited containers
+podman rm $(podman ps -aq --filter status=exited)
+
+# Remove containers older than a day
+podman rm --filter "until=24h"
+
+# Remove containers not running
+podman container prune -f</div>
+            </div>
+
+            <div class="section">
+                <h2>Image Cleanup</h2>
+
+                <h3>Remove Single Image</h3>
+                <div class="cmd-line green">
+                    <span class="cmd">podman rmi image-name:tag</span>
+                    <span class="desc">Remove specific image</span>
+                </div>
+
+                <h3>Remove Multiple Images</h3>
+                <div class="cmd-block"># By names
+podman rmi nginx:latest ubuntu:22.04
+
+# All unused images
+podman image prune
+
+# All unused images (force)
+podman image prune -a
+
+# Dangling images only
+podman image prune -f</div>
+
+                <div class="cmd-line yellow">
+                    <span class="cmd">podman image prune -a</span>
+                    <span class="desc">Remove all images not used by containers</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Volume Cleanup</h2>
+
+                <div class="cmd-line green">
+                    <span class="cmd">podman volume ls</span>
+                    <span class="desc">List volumes first</span>
+                </div>
+                <div class="cmd-line green">
+                    <span class="cmd">podman volume rm volume-name</span>
+                    <span class="desc">Remove specific volume</span>
+                </div>
+                <div class="cmd-line red">
+                    <span class="cmd">podman volume prune</span>
+                    <span class="desc">Remove all unused volumes</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Network Cleanup</h2>
+
+                <div class="cmd-line green">
+                    <span class="cmd">podman network ls</span>
+                    <span class="desc">List networks</span>
+                </div>
+                <div class="cmd-line green">
+                    <span class="cmd">podman network rm network-name</span>
+                    <span class="desc">Remove specific network</span>
+                </div>
+                <div class="cmd-line yellow">
+                    <span class="cmd">podman network prune</span>
+                    <span class="desc">Remove all unused networks</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Complete System Cleanup</h2>
+
+                <div class="cmd-line yellow">
+                    <span class="cmd">podman system prune</span>
+                    <span class="desc">Remove stopped containers, unused networks, dangling images</span>
+                </div>
+
+                <div class="cmd-line red">
+                    <span class="cmd">podman system prune -a</span>
+                    <span class="desc">Everything above + all unused images</span>
+                </div>
+
+                <div class="danger-note">
+                    <strong>WARNING:</strong> The following removes EVERYTHING - use with extreme caution!
+                </div>
+
+                <div class="cmd-line red">
+                    <span class="cmd">podman system prune --volumes</span>
+                    <span class="desc">Everything above + unused volumes</span>
+                </div>
+
+                <h3>Full Nuclear Cleanup</h3>
+                <div class="cmd-block"># Stop all containers
+podman stop $(podman ps -aq)
+
+# Remove all containers
+podman rm -a
+
+# Remove all images
+podman rmi -a
+
+# Remove all volumes
+podman volume prune -f
+
+# Remove all networks (except default)
+podman network prune -f
+
+# Full system cleanup
+podman system prune -a --volumes -f</div>
+            </div>
+
+            <div class="section">
+                <h2>Cleanup Best Practices</h2>
+
+                <div class="note">
+                    <strong>Daily Cleanup</strong> - Run these safely every day
+                </div>
+                <div class="cmd-block"># Remove stopped containers
+podman container prune -f
+
+# Remove dangling images
+podman image prune -f</div>
+
+                <div class="note">
+                    <strong>Weekly Cleanup</strong> - More thorough cleanup
+                </div>
+                <div class="cmd-block"># Remove unused images
+podman image prune -a
+
+# Check disk usage
+podman system df</div>
+
+                <h3>Safety Levels</h3>
+                <div class="cmd-line green">
+                    <span class="cmd">container prune -f</span>
+                    <span class="desc">Safe - only removes stopped</span>
+                </div>
+                <div class="cmd-line green">
+                    <span class="cmd">image prune -f</span>
+                    <span class="desc">Safe - only removes dangling</span>
+                </div>
+                <div class="cmd-line yellow">
+                    <span class="cmd">image prune -a</span>
+                    <span class="desc">Careful - removes all unused</span>
+                </div>
+                <div class="cmd-line red">
+                    <span class="cmd">system prune -a --volumes</span>
+                    <span class="desc">Dangerous - removes everything!</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Week 1-2 Tab -->
+        <div id="week1" class="tab-content">
+            <div class="section">
+                <h2>Week 1: Container Lifecycle Basics</h2>
+                <p class="goal">Goal: Master the run/exec/rm cycle</p>
+
+                <div class="week-card">
+                    <h4><span class="day">Days 1-2</span> nginx basics</h4>
+                    <div class="cmd-block">podman pull nginx
+podman run -dit --name practice nginx
+podman ps</div>
+                    <h4>Inside container:</h4>
+                    <div class="cmd-block">ls -la /usr/share/nginx/html/
+cat /etc/nginx/nginx.conf
+ps aux
+whoami
+exit</div>
+                </div>
+
+                <div class="week-card">
+                    <h4><span class="day">Days 3-4</span> Ubuntu container</h4>
+                    <div class="cmd-block">podman run -dit --name ubuntu-practice ubuntu
+podman exec -it ubuntu-practice bash</div>
+                    <h4>Inside container:</h4>
+                    <div class="cmd-block">apt update
+apt install -y curl vim
+curl --version
+which curl
+exit</div>
+                </div>
+
+                <div class="week-card">
+                    <h4><span class="day">Days 5-7</span> Alpine (minimal)</h4>
+                    <div class="cmd-block">podman run -dit --name alpine-practice alpine
+podman exec -it alpine-practice sh</div>
+                    <h4>Inside container:</h4>
+                    <div class="cmd-block">apk add curl
+curl -I https://example.com
+exit</div>
+                </div>
+
+                <h3>Commands to Master</h3>
+                <div class="cmd-line green">
+                    <span class="cmd">podman run -d</span>
+                    <span class="desc">Detached</span>
+                </div>
+                <div class="cmd-line yellow">
+                    <span class="cmd">podman run -it</span>
+                    <span class="desc">Interactive</span>
+                </div>
+                <div class="cmd-line green">
+                    <span class="cmd">podman exec -it</span>
+                    <span class="desc">Enter running container</span>
+                </div>
+                <div class="cmd-line blue">
+                    <span class="cmd">podman stop / podman start</span>
+                    <span class="desc">Stop and start</span>
+                </div>
+                <div class="cmd-line red">
+                    <span class="cmd">podman rm (-f)</span>
+                    <span class="desc">Remove container</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Week 2: Port Mapping & Networking</h2>
+                <p class="goal">Goal: Access containers and understand networking</p>
+
+                <div class="week-card">
+                    <h4><span class="day">Days 1-2</span> Port mapping</h4>
+                    <div class="cmd-block">podman run -d --name web -p 8080:80 nginx
+curl localhost:8080
+podman port web</div>
+                </div>
+
+                <div class="week-card">
+                    <h4><span class="day">Days 3-4</span> Multiple ports</h4>
+                    <div class="cmd-block">podman run -d --name app \
+  -p 3000:3000 \
+  -p 9229:9229 \
+  node:alpine
+
+podman logs app</div>
+                </div>
+
+                <div class="week-card">
+                    <h4><span class="day">Days 5-6</span> Custom networks</h4>
+                    <div class="cmd-block">podman network create mynet
+podman run -d --name db \
+  --network mynet \
+  postgres
+
+podman run -dit --name app \
+  --network mynet \
+  alpine
+
+podman exec app ping -c 2 db</div>
+                </div>
+
+                <div class="week-card">
+                    <h4><span class="day">Day 7</span> Inspect networking</h4>
+                    <div class="cmd-block">podman inspect web | grep -A 20 Networks
+podman network ls</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Week 3-4 Tab -->
+        <div id="week3" class="tab-content">
+            <div class="section">
+                <h2>Week 3: Volumes & Data Persistence</h2>
+                <p class="goal">Goal: Store data outside containers</p>
+
+                <div class="week-card">
+                    <h4><span class="day">Days 1-2</span> Bind mounts</h4>
+                    <div class="cmd-block">mkdir -p ~/container-data
+
+podman run -d --name webdata \
+  -v ~/container-data:/usr/share/nginx/html \
+  nginx
+
+echo "&lt;h1&gt;Hello from host&lt;/h1&gt;" &gt; ~/container-data/index.html
+
+curl localhost:8080</div>
+                </div>
+
+                <div class="week-card">
+                    <h4><span class="day">Days 3-4</span> Named volumes</h4>
+                    <div class="cmd-block">podman volume create mydata
+
+podman run -dit -v mydata:/data alpine
+
+podman exec alpine sh -c "echo 'data' &gt; /data/file.txt"
+
+podman rm -f alpine
+
+podman run -dit -v mydata:/data alpine
+
+podman exec alpine cat /data/file.txt
+# Data preserved!</div>
+                </div>
+
+                <div class="week-card">
+                    <h4><span class="day">Days 5-6</span> Database with volume</h4>
+                    <div class="cmd-block">podman run -d --name postgresdb \
+  -v pgdata:/var/lib/postgresql/data \
+  -e POSTGRES_PASSWORD=secret \
+  postgres
+
+podman exec -it postgresdb psql -U postgres</div>
+                    <h4>Inside psql:</h4>
+                    <div class="cmd-block">CREATE DATABASE testdb;
+\l
+\q</div>
+                </div>
+
+                <div class="week-card">
+                    <h4><span class="day">Day 7</span> Backup and restore</h4>
+                    <div class="cmd-block">podman run --rm \
+  -v mydata:/data \
+  -v $(pwd):/backup \
+  alpine \
+  tar czf /backup/backup.tar.gz /data</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Week 4: Building Custom Images</h2>
+                <p class="goal">Goal: Create your own container images</p>
+
+                <div class="week-card">
+                    <h4><span class="day">Days 1-2</span> Simple Dockerfile</h4>
+                    <div class="cmd-block">FROM alpine:latest
+
+RUN apk add --no-cache curl vim
+
+WORKDIR /app
+
+COPY . .
+
+CMD ["sh"]</div>
+                    <div style="margin-top: 15px;">
+                        <strong>Build and run:</strong>
+                    </div>
+                    <div class="cmd-block">podman build -t myalpine:v1 .
+podman run -it myalpine:v1</div>
+                </div>
+
+                <div class="week-card">
+                    <h4><span class="day">Days 3-4</span> Web app Dockerfile</h4>
+                    <div class="cmd-block">FROM node:18-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["node", "index.js"]</div>
+                </div>
+
+                <div class="week-card">
+                    <h4><span class="day">Days 5-6</span> Multi-stage build</h4>
+                    <div class="cmd-block"># Build stage
+FROM node:18 AS builder
+WORKDIR /app
+COPY . .
+RUN npm run build
+
+# Production stage
+FROM nginx:alpine
+COPY --from=builder /app/dist /usr/share/nginx/html
+EXPOSE 80</div>
+                </div>
+
+                <h3>Dockerfile Keywords to Master</h3>
+                <div class="cmd-line green">
+                    <span class="cmd">FROM</span>
+                    <span class="desc">Base image</span>
+                </div>
+                <div class="cmd-line blue">
+                    <span class="cmd">RUN</span>
+                    <span class="desc">Execute commands</span>
+                </div>
+                <div class="cmd-line purple">
+                    <span class="cmd">COPY / ADD</span>
+                    <span class="desc">Files</span>
+                </div>
+                <div class="cmd-line green">
+                    <span class="cmd">WORKDIR</span>
+                    <span class="desc">Set directory</span>
+                </div>
+                <div class="cmd-line yellow">
+                    <span class="cmd">EXPOSE</span>
+                    <span class="desc">Documentation</span>
+                </div>
+                <div class="cmd-line red">
+                    <span class="cmd">CMD / ENTRYPOINT</span>
+                    <span class="desc">Startup command</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Week 5-6 Tab -->
+        <div id="week5" class="tab-content">
+            <div class="section">
+                <h2>Week 5: Environment Variables</h2>
+                <p class="goal">Goal: Configure containers dynamically</p>
+
+                <div class="week-card">
+                    <h4><span class="day">Days 1-2</span> -e flag</h4>
+                    <div class="cmd-block">podman run -e MY_VAR=hello \
+  alpine echo $MY_VAR
+
+podman run -d --name db \
+  -e POSTGRES_USER=admin \
+  -e POSTGRES_DB=mydb \
+  postgres
+
+podman exec db env | grep POSTGRES</div>
+                </div>
+
+                <div class="week-card">
+                    <h4><span class="day">Days 3-4</span> .env file</h4>
+                    <div class="cmd-block">cat &gt; .env &lt;&lt; 'EOF'
+DB_PASSWORD=secret123
+API_KEY=abc123
+DEBUG=true
+EOF
+
+podman run --env-file .env \
+  alpine env</div>
+                </div>
+
+                <div class="week-card">
+                    <h4><span class="day">Days 5-6</span> Config files via volumes</h4>
+                    <div class="cmd-block">podman run -v ~/nginx-conf:/etc/nginx/conf.d nginx</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Week 6: Logs, Inspection & Troubleshooting</h2>
+                <p class="goal">Goal: Debug and monitor containers</p>
+
+                <div class="week-card">
+                    <h4><span class="day">Basic logging</span></h4>
+                    <div class="cmd-block">podman logs webserver
+podman logs -f webserver
+podman logs --tail 20 webserver</div>
+                </div>
+
+                <div class="week-card">
+                    <h4><span class="day">Inspection</span></h4>
+                    <div class="cmd-block">podman inspect webserver
+
+podman inspect --format '{{.NetworkSettings.IPAddress}}' webserver
+
+podman inspect --format '{{.Config.Image}}' webserver</div>
+                </div>
+
+                <div class="week-card">
+                    <h4><span class="day">Resource usage</span></h4>
+                    <div class="cmd-block">podman stats webserver
+podman top webserver</div>
+                </div>
+
+                <h3>Troubleshooting Flow</h3>
+                <div class="cmd-line yellow">
+                    <span class="cmd">podman ps</span>
+                    <span class="desc">Is it running?</span>
+                </div>
+                <div class="cmd-line blue">
+                    <span class="cmd">podman port container</span>
+                    <span class="desc">Check port mapping</span>
+                </div>
+                <div class="cmd-line green">
+                    <span class="cmd">podman logs container</span>
+                    <span class="desc">Check logs</span>
+                </div>
+                <div class="cmd-line purple">
+                    <span class="cmd">podman inspect container</span>
+                    <span class="desc">Deep inspection</span>
+                </div>
+                <div class="cmd-line yellow">
+                    <span class="cmd">podman exec -it container sh</span>
+                    <span class="desc">Go inside and investigate</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Week 7-9 Tab -->
+        <div id="week7" class="tab-content">
+            <div class="section">
+                <h2>Week 7: Docker Compose Basics</h2>
+                <p class="goal">Goal: Orchestrate multi-container apps</p>
+
+                <div class="week-card">
+                    <h4><span class="day">First compose file</span></h4>
+                    <div class="cmd-block">version: '3.8'
+services:
+  web:
+    image: nginx
+    ports:
+      - "8080:80"
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: secret
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:</div>
+                </div>
+
+                <h3>Compose Commands</h3>
+                <div class="cmd-block">podman compose up -d
+podman compose down
+podman compose ps
+podman compose logs -f
+podman compose exec web sh
+podman compose restart
+podman compose build</div>
+            </div>
+
+            <div class="section">
+                <h2>Week 8: Compose Advanced</h2>
+
+                <div class="week-card">
+                    <h4><span class="day">Networks</span></h4>
+                    <div class="cmd-block">services:
+  frontend:
+    networks:
+      - webnet
+  backend:
+    networks:
+      - webnet
+      - dbnet
+  db:
+    networks:
+      - dbnet
+
+networks:
+  webnet:
+  dbnet:</div>
+                </div>
+
+                <div class="week-card">
+                    <h4><span class="day">Healthchecks</span></h4>
+                    <div class="cmd-block">services:
+  web:
+    image: nginx
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Week 9: Security & Production Hardening</h2>
+
+                <div class="week-card">
+                    <h4><span class="day">Non-root users</span></h4>
+                    <div class="cmd-block"># In Dockerfile:
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+USER appuser</div>
+                </div>
+
+                <div class="week-card">
+                    <h4><span class="day">Resource limits</span></h4>
+                    <div class="cmd-block">podman run -d \
+  --name limited \
+  --memory="512m" \
+  --cpus="0.5" \
+  nginx</div>
+                </div>
+
+                <div class="week-card">
+                    <h4><span class="day">Read-only containers</span></h4>
+                    <div class="cmd-block">podman run --read-only --name secured alpine sh</div>
+                </div>
+
+                <h3>Security Checklist</h3>
+                <div class="cmd-line green">
+                    <span class="cmd">no-new-privileges: true</span>
+                    <span class="desc">Prevent privilege escalation</span>
+                </div>
+                <div class="cmd-line blue">
+                    <span class="cmd">read_only: true</span>
+                    <span class="desc">Read-only filesystem</span>
+                </div>
+                <div class="cmd-line yellow">
+                    <span class="cmd">tmpfs: /tmp</span>
+                    <span class="desc">Temporary files in memory</span>
+                </div>
+                <div class="cmd-line purple">
+                    <span class="cmd">memory/CPUs limits</span>
+                    <span class="desc">Resource constraints</span>
+                </div>
+                <div class="cmd-line green">
+                    <span class="cmd">Non-root user</span>
+                    <span class="desc">Don't run as root</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Week 10-12+: Real-World Projects</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Project</th>
+                            <th>Skills Applied</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Personal blog (WordPress/Ghost)</td>
+                            <td>Volumes, compose, networking</td>
+                        </tr>
+                        <tr>
+                            <td>Pi-hole DNS server</td>
+                            <td>Single service, persistence</td>
+                        </tr>
+                        <tr>
+                            <td>Home media server (Jellyfin)</td>
+                            <td>GPUs, volumes, networking</td>
+                        </tr>
+                        <tr>
+                            <td>Git server (Gitea)</td>
+                            <td>Database, volumes, reverse proxy</td>
+                        </tr>
+                        <tr>
+                            <td>Monitoring stack (Prometheus + Grafana)</td>
+                            <td>Multi-container, networking</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Mindset Tab -->
+        <div id="mindset" class="tab-content">
+            <div class="section">
+                <h2>When to Use Each Flag (The Mindset)</h2>
+                
+                <div class="mindset-grid">
+                    <div class="mindset-card">
+                        <div class="icon">🚀</div>
+                        <h4>-d (Start and Forget)</h4>
+                        <p class="use-case">
+                            Running services (web servers, databases, APIs)<br>
+                            Anything that needs to keep running continuously<br>
+                            You need to exec in periodically to check/monitor
+                        </p>
+                    </div>
+
+                    <div class="mindset-card">
+                        <div class="icon">⚡</div>
+                        <h4>-it (Quick Task)</h4>
+                        <p class="use-case">
+                            Testing a tool or exploring an image<br>
+                            One-time setup or troubleshooting<br>
+                            Teaching/demos where you want to show what happens inside
+                        </p>
+                    </div>
+
+                    <div class="mindset-card">
+                        <div class="icon">💻</div>
+                        <h4>-dit (Dev Workspace)</h4>
+                        <p class="use-case">
+                            Prepping containers you'll need throughout your day<br>
+                            Creating a persistent workspace<br>
+                            Development environments you want running
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Real-World Workflow Comparison</h2>
+                <div class="workflow-compare">
+                    <div class="workflow-box db">
+                        <h4>DATABASE - Use -d</h4>
+                        <p style="color: #888; margin-bottom: 10px;">Runs all day, exec when needed</p>
+                        <div class="cmd-block">podman run -d --name postgres \
+  -e POSTGRES_PASSWORD=secret postgres
+podman exec -it postgres psql -U postgres
+# Container keeps running</div>
+                    </div>
+
+                    <div class="workflow-box check">
+                        <h4>QUICK CHECK - Use -it --rm</h4>
+                        <p style="color: #888; margin-bottom: 10px;">One glance, done, auto-cleanup</p>
+                        <div class="cmd-block">podman run -it --rm alpine \
+  cat /etc/os-release
+# You got your answer</div>
+                    </div>
+
+                    <div class="workflow-box dev">
+                        <h4>DEV WORKSPACE - Use -dit</h4>
+                        <p style="color: #888; margin-bottom: 10px;">Prep once, use all day</p>
+                        <div class="cmd-block">podman run -dit -v ~/project:/app \
+  --name dev alpine
+# First time: set things up
+# Later: just exec in when ready</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Quick Reference Summary</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Scenario</th>
+                            <th>Flag</th>
+                            <th>Why</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Web server</td>
+                            <td><span class="tag green">-d</span></td>
+                            <td>Needs to keep running</td>
+                        </tr>
+                        <tr>
+                            <td>Database</td>
+                            <td><span class="tag green">-d</span></td>
+                            <td>Long-running service</td>
+                        </tr>
+                        <tr>
+                            <td>Quick test</td>
+                            <td><span class="tag yellow">-it --rm</span></td>
+                            <td>One-off, auto-cleanup</td>
+                        </tr>
+                        <tr>
+                            <td>Exploring an image</td>
+                            <td><span class="tag yellow">-it</span></td>
+                            <td>Just looking around</td>
+                        </tr>
+                        <tr>
+                            <td>Dev workspace</td>
+                            <td><span class="tag green">-dit</span></td>
+                            <td>Persistent, you'll return</td>
+                        </tr>
+                        <tr>
+                            <td>One-time script</td>
+                            <td><span class="tag yellow">-it --rm</span></td>
+                            <td>Run and done</td>
+                        </tr>
+                        <tr>
+                            <td>Monitoring tool</td>
+                            <td><span class="tag green">-d</span></td>
+                            <td>Background process</td>
+                        </tr>
+                        <tr>
+                            <td>Teaching</td>
+                            <td><span class="tag yellow">-it</span></td>
+                            <td>Show and explain</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Practice <span>15-30 minutes daily</span> • Consistency beats intensity</p>
+    </footer>
+
+    <script>
+        function openTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

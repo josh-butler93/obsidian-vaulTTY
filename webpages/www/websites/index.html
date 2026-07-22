@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #0a0a0f;
+            font-family: 'Rajdhani', sans-serif;
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 234, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 234, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .glow-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.3;
+            animation: float 8s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .glow-orb.cyan {
+            width: 400px;
+            height: 400px;
+            background: #00ffea;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .glow-orb.purple {
+            width: 350px;
+            height: 350px;
+            background: #8b5cf6;
+            bottom: 20%;
+            right: 10%;
+            animation-delay: -4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(30px, -30px) scale(1.1); }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .terminal-line {
+            font-family: 'Rajdhani', monospace;
+            font-size: 0.9rem;
+            color: #00ffea;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+            text-shadow: 0 0 10px rgba(0, 255, 234, 0.5);
+        }
+
+        .terminal-line span {
+            color: #8b5cf6;
+        }
+
+        .title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            font-weight: 900;
+            letter-spacing: 0.2em;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00ffea 0%, #8b5cf6 50%, #00ffea 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease infinite, fadeInUp 1s ease 0.3s forwards;
+            opacity: 0;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #888;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.6s forwards;
+        }
+
+        .status-bar {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.9s forwards;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #00ffea;
+            box-shadow: 0 0 10px #00ffea;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .status-dot.purple {
+            background: #8b5cf6;
+            box-shadow: 0 0 10px #8b5cf6;
+            animation-delay: -1s;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .cta-button {
+            position: relative;
+            padding: 1rem 3rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: #0a0a0f;
+            background: linear-gradient(135deg, #00ffea, #8b5cf6);
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeInUp 1s ease 1.2s forwards;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(0, 255, 234, 0.3);
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .scan-line {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ffea, transparent);
+            animation: scan 4s linear infinite;
+            pointer-events: none;
+            z-index: 100;
+            opacity: 0.5;
+        }
+
+        @keyframes scan {
+            0% { top: 0; }
+            100% { top: 100%; }
+        }
+
+        .corner {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            border: 2px solid rgba(0, 255, 234, 0.3);
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .corner.top-left {
+            top: 20px;
+            left: 20px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .corner.top-right {
+            top: 20px;
+            right: 20px;
+            border-left: none;
+            border-bottom: none;
+        }
+
+        .corner.bottom-left {
+            bottom: 20px;
+            left: 20px;
+            border-right: none;
+            border-top: none;
+        }
+
+        .corner.bottom-right {
+            bottom: 20px;
+            right: 20px;
+            border-left: none;
+            border-top: none;
+        }
+
+        .datetime {
+            position: fixed;
+            bottom: 30px;
+            right: 100px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+            color: #00ffea;
+            opacity: 0.6;
+            letter-spacing: 0.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="glow-orb cyan"></div>
+    <div class="glow-orb purple"></div>
+    <div class="scan-line"></div>
+    
+    <div class="corner top-left"></div>
+    <div class="corner top-right"></div>
+    <div class="corner bottom-left"></div>
+    <div class="corner bottom-right"></div>
+
+    <div class="container">
+        <div class="terminal-line">root@system:~# <span>connection_established</span></div>
+        
+        <h1 class="title">WELCOME</h1>
+        
+        <p class="subtitle">System Initialized • Ready for Access</p>
+        
+        <div class="status-bar">
+            <div class="status-item">
+                <div class="status-dot"></div>
+                <span>Online</span>
+            </div>
+            <div class="status-item">
+                <div class="status-dot purple"></div>
+                <span>Secure</span>
+            </div>
+        </div>
+
+        <a href="#" class="cta-button">ENTER PORTAL</a>
+    </div>
+
+    <div class="datetime" id="datetime"></div>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const options = { 
+                year: 'numeric', 
+                month: 'short', 
+                day: '2-digit',
+                hour: '2-digit', 
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            };
+            document.getElementById('datetime').textContent = 
+                now.toLocaleString('en-US', options).toUpperCase();
+        }
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>

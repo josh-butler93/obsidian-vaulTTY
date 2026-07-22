@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CompTIA Linux+ SELinux Reference</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --primary: #00d4aa;
+            --primary-dim: #006855;
+            --primary-glow: rgba(0, 212, 170, 0.4);
+            --bg-dark: #070a0d;
+            --bg-card: #0a1115;
+            --bg-hover: #0f1815;
+            --text: #66aa99;
+            --text-dim: #335544;
+        }
+        body {
+            font-family: 'Share Tech Mono', 'Fira Code', monospace;
+            background: var(--bg-dark);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 40px 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(0, 212, 170, 0.02) 2px,
+                    rgba(0, 212, 170, 0.02) 4px
+                );
+            pointer-events: none;
+            z-index: 1000;
+            animation: scanlines 6s linear infinite;
+        }
+        @keyframes scanlines {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(4px); }
+        }
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 30% 20%, rgba(0, 212, 170, 0.08) 0%, transparent 40%),
+                radial-gradient(ellipse at 70% 80%, rgba(0, 212, 170, 0.05) 0%, transparent 30%),
+                radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.5) 100%);
+            pointer-events: none;
+            z-index: 999;
+        }
+        
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(50px);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .orb-1 {
+            width: 250px;
+            height: 250px;
+            background: rgba(0, 212, 170, 0.12);
+            top: 15%;
+            left: 10%;
+            animation: orb-float 20s ease-in-out infinite;
+        }
+        .orb-2 {
+            width: 200px;
+            height: 200px;
+            background: rgba(0, 180, 140, 0.08);
+            bottom: 20%;
+            right: 15%;
+            animation: orb-float2 25s ease-in-out infinite;
+            animation-delay: -8s;
+        }
+        @keyframes orb-float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(40px, -30px) scale(1.1); }
+            66% { transform: translate(-20px, -50px) scale(0.9); }
+        }
+        @keyframes orb-float2 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-40px, 30px) scale(1.15); }
+        }
+        
+        .lightning {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 998;
+            opacity: 0;
+        }
+        .lightning::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 60%;
+            width: 120px;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.25) 0%, transparent 40%);
+            clip-path: polygon(50% 0%, 55% 12%, 45% 22%, 52% 32%, 48% 45%, 55% 55%, 45% 65%, 50% 75%, 52% 85%, 50% 100%);
+            animation: lightning-strike 7s infinite;
+            animation-delay: 2s;
+        }
+        @keyframes lightning-strike {
+            0%, 96%, 100% { opacity: 0; }
+            97% { opacity: 0.5; }
+            98% { opacity: 0.1; }
+            99% { opacity: 0.3; }
+        }
+        
+        .glitch {
+            position: relative;
+            animation: glitch 3s infinite;
+        }
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #ff00aa;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 #00ffaa;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+        @keyframes glitch {
+            0%, 90%, 100% { transform: translate(0); }
+            92% { transform: translate(-2px, 1px); }
+            94% { transform: translate(2px, -1px); }
+            96% { transform: translate(-1px, 2px); }
+            98% { transform: translate(1px, -2px); }
+        }
+        @keyframes glitch-anim {
+            0% { clip: rect(30px, 9999px, 10px, 0); }
+            25% { clip: rect(70px, 9999px, 90px, 0); }
+            50% { clip: rect(10px, 9999px, 50px, 0); }
+            75% { clip: rect(90px, 9999px, 30px, 0); }
+            100% { clip: rect(50px, 9999px, 70px, 0); }
+        }
+        @keyframes glitch-anim2 {
+            0% { clip: rect(50px, 9999px, 70px, 0); }
+            25% { clip: rect(10px, 9999px, 30px, 0); }
+            50% { clip: rect(90px, 9999px, 10px, 0); }
+            75% { clip: rect(30px, 9999px, 50px, 0); }
+            100% { clip: rect(70px, 9999px, 90px, 0); }
+        }
+        @keyframes floatIn {
+            0% { 
+                opacity: 0;
+                transform: translateY(-30px) scale(0.95);
+                filter: blur(10px);
+            }
+            100% { 
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0);
+            }
+        }
+        @keyframes fadeInUp {
+            0% { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        h1 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+            text-shadow: 
+                0 0 15px var(--primary-glow),
+                0 0 30px var(--primary-glow);
+            letter-spacing: 4px;
+            animation: floatIn 1s ease-out, glitch 8s infinite;
+        }
+        h1 .bracket {
+            color: var(--primary-dim);
+            margin: 0 8px;
+        }
+        .subtitle {
+            text-align: center;
+            color: var(--text-dim);
+            margin-bottom: 40px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--primary-dim);
+            padding: 25px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, var(--primary-glow), transparent);
+            transition: left 0.5s;
+        }
+        .card:hover::before {
+            left: 100%;
+        }
+        .card:hover {
+            background: var(--bg-hover);
+            border-color: var(--primary);
+            box-shadow: 
+                0 0 25px var(--primary-glow),
+                inset 0 0 25px rgba(0, 212, 170, 0.08);
+            transform: translateY(-5px) scale(1.02);
+        }
+        .card:hover h3 {
+            animation: glitch 0.3s ease-out;
+        }
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            text-shadow: 0 0 10px var(--primary-glow);
+        }
+        .card p {
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+        .card .badge {
+            display: inline-block;
+            background: rgba(0, 212, 170, 0.15);
+            color: var(--primary);
+            padding: 5px 12px;
+            border: 1px solid var(--primary-dim);
+            font-size: 0.8rem;
+            margin-top: 15px;
+        }
+        
+        /* Quiz View */
+        .quiz-view, .commands-view { 
+            display: none;
+            animation: floatIn 0.5s ease-out;
+        }
+        .progress {
+            text-align: center;
+            color: var(--text-dim);
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+        }
+        .question {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: var(--bg-card);
+            border: 1px solid var(--primary-dim);
+            color: var(--primary);
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 15px var(--primary-glow);
+        }
+        input[type="text"]::placeholder {
+            color: var(--text-dim);
+        }
+        .btn {
+            width: 100%;
+            padding: 15px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .btn:hover {
+            background: var(--primary);
+            color: var(--bg-dark);
+            box-shadow: 0 0 20px var(--primary-glow);
+        }
+        .result {
+            padding: 15px;
+            margin-top: 15px;
+            text-align: center;
+            display: none;
+        }
+        .correct { background: rgba(0, 180, 120, 0.15); color: #66ffbb; border: 1px solid #00aa70; }
+        .incorrect { background: rgba(200, 80, 80, 0.15); color: #ff8888; border: 1px solid #aa4040; }
+        .hint-box {
+            background: var(--bg-card);
+            padding: 15px;
+            border: 1px solid var(--primary-dim);
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+            color: var(--primary);
+        }
+        .hint-box::before {
+            content: '// HINT: ';
+            color: var(--text-dim);
+        }
+        .score-display { text-align: center; }
+        .score-display h2 { color: var(--primary); margin-bottom: 20px; text-shadow: 0 0 10px var(--primary-glow); }
+        .score-display p { margin: 10px 0; font-size: 1.1rem; }
+        .final-score { font-size: 2rem; color: var(--primary); font-weight: bold; text-shadow: 0 0 20px var(--primary-glow); }
+        
+        /* Commands View */
+        .nav-btn {
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 10px 20px;
+            cursor: pointer;
+            font-family: inherit;
+            margin-bottom: 20px;
+            transition: all 0.2s;
+        }
+        .nav-btn:hover {
+            background: var(--primary);
+            color: var(--bg-dark);
+            box-shadow: 0 0 20px var(--primary-glow);
+        }
+        .search-box input {
+            width: 100%;
+            padding: 15px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: var(--bg-card);
+            border: 1px solid var(--primary-dim);
+            color: var(--primary);
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 15px var(--primary-glow);
+        }
+        .search-box input::placeholder {
+            color: var(--text-dim);
+        }
+        .commands-grid {
+            display: grid;
+            gap: 12px;
+        }
+        .cmd-card {
+            background: var(--bg-card);
+            border: 1px solid var(--primary-dim);
+            padding: 15px 20px;
+            position: relative;
+            transition: all 0.3s;
+            animation: fadeInUp 0.4s ease-out backwards;
+        }
+        .cmd-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 0 15px var(--primary-glow);
+            transform: translateX(5px);
+        }
+        .cmd-card::before {
+            content: '>';
+            position: absolute;
+            top: 15px;
+            left: 12px;
+            color: var(--primary-dim);
+            font-size: 0.85rem;
+        }
+        .cmd-card code {
+            display: block;
+            background: var(--bg-dark);
+            padding: 8px 12px 8px 22px;
+            color: var(--primary);
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            text-shadow: 0 0 8px var(--primary-glow);
+        }
+        .cmd-card .desc {
+            color: var(--text);
+            font-size: 0.85rem;
+            margin-left: 8px;
+        }
+        
+        ::selection {
+            background: var(--primary);
+            color: var(--bg-dark);
+        }
+        .status-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            background: var(--bg-card);
+            padding: 8px 20px;
+            border: 1px solid var(--primary-dim);
+            z-index: 100;
+        }
+        .status-bar span {
+            color: var(--primary);
+        }
+        .section-title {
+            color: var(--primary);
+            font-size: 1.3rem;
+            text-shadow: 0 0 10px var(--primary-glow);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="lightning"></div>
+    <div class="container">
+        <div id="menu-view">
+            <h1 class="glitch" data-text="SELINUX REFERENCE">SELINUX<span class="bracket">[</span>+<span class="bracket">]</span> REFERENCE</h1>
+            <p class="subtitle">Choose a section</p>
+            <div class="menu">
+                <div class="card" onclick="startQuiz()">
+                    <h3 class="glitch" data-text="SELinux Exam">▶ SELinux Exam</h3>
+                    <p>50 interactive questions covering SELinux concepts, modes, contexts, booleans, and troubleshooting</p>
+                    <span class="badge">50 Questions</span>
+                </div>
+                <div class="card" onclick="showCommands()">
+                    <h3 class="glitch" data-text="SELinux Commands">▶ SELinux Commands</h3>
+                    <p>Complete reference of SELinux commands with descriptions and examples</p>
+                    <span class="badge">Commands</span>
+                </div>
+            </div>
+        </div>
+        
+        <div id="quiz-view" class="quiz-view">
+            <button class="nav-btn" onclick="showMenu()">← Back to Menu</button>
+            <div class="progress" id="progress">Question 1 of 50</div>
+            <div class="hint-box" id="hint"></div>
+            <div class="question" id="question"></div>
+            <input type="text" id="answer" placeholder="Type your answer..." autocomplete="off">
+            <button class="btn" id="submit">Submit Answer</button>
+            <div class="result" id="result"></div>
+        </div>
+        
+        <div id="commands-view" class="commands-view">
+            <button class="nav-btn" onclick="showMenu()">← Back to Menu</button>
+            <h2 class="section-title">Select a Section</h2>
+            <div class="menu" id="sectionMenu"></div>
+            <div id="commandsDetail" style="display:none;">
+                <button class="nav-btn" onclick="showSectionMenu()" style="margin-top:20px;">← Back to Sections</button>
+                <h3 class="section-title" id="detailTitle"></h3>
+                <div class="search-box">
+                    <input type="text" id="cmdSearch" placeholder="Search commands..." autocomplete="off">
+                </div>
+                <div class="commands-grid" id="commandsList"></div>
+            </div>
+        </div>
+        
+        <div id="score-view" class="score-display" style="display:none;">
+            <button class="nav-btn" onclick="showMenu()">← Back to Menu</button>
+            <div id="scoreContent"></div>
+        </div>
+    </div>
+    <div class="status-bar">
+        <span>SELINUX::</span> SYSTEM <span>|</span> ENFORCING <span>|</span> <span id="clock">00:00:00</span>
+    </div>
+
+    <script>
+        const questions = [
+            { q: "What are the three SELinux modes?", a: ["enforcing,permissive,disabled", "enforcing permissive disabled"], hint: "Three modes (one blocks, one logs, one off)" },
+            { q: "What command shows the current SELinux mode?", a: ["getenforce", "getenforce -"], hint: "get enforce" },
+            { q: "What command sets SELinux to enforcing mode?", a: ["setenforce 1", "setenforce 1; enforce"], hint: "set enforce 1" },
+            { q: "What command sets SELinux to permissive mode?", a: ["setenforce 0", "setenforce 0; permissive"], hint: "set enforce 0" },
+            { q: "What file controls SELinux at boot?", a: ["/etc/selinux/config", "/etc/sysconfig/selinux"], hint: "config file" },
+            { q: "What is the SELinux context for a process?", a: ["user:role:type:level", "user:role:type"], hint: "Four parts or three" },
+            { q: "What command lists all SELinux booleans?", a: ["getsebool -a", "semanage boolean -l", "getsebool -a"], hint: "getsebool" },
+            { q: "What boolean allows HTTPd to use CGI?", a: ["httpd_enable_cgi", "httpd_sys_script_exec"], hint: "httpd enable cgi" },
+            { q: "What boolean allows HTTPd to read user files?", a: ["httpd_read_user_content", "httpd_read_user_files"], hint: "httpd read user" },
+            { q: "What boolean allows named to write to zone files?", a: ["named_write_master_zones", "allow_bind_write"], hint: "named write" },
+            { q: "What command changes the SELinux context of a file?", a: ["chcon -t type file", "chcon", "restorecon"], hint: "change context" },
+            { q: "What command restores default SELinux contexts?", a: ["restorecon -Rv /", "restorecon"], hint: "restore context" },
+            { q: "What command adds an SELinux port rule?", a: ["semanage port -a"], hint: "semanage port" },
+            { q: "What command shows port types?", a: ["semanage port -l", "netstat -tulpnZ"], hint: "semanage port" },
+            { q: "What is the default targeted type?", a: ["targeted"], hint: "policy type" },
+            { q: "What is the minimum policy type?", a: ["minimum"], hint: "policy type" },
+            { q: "What directory contains SELinux policy files?", a: ["/etc/selinux", "/var/lib/selinux"], hint: "selinux directory" },
+            { q: "What file has the.boolean definitions?", a: ["/etc/selinux/targeted/booleans", "/etc/selinux/*/booleans"], hint: "booleans file" },
+            { q: "What is the MLS sensitivity level?", a: ["s0", "s0-s15"], hint: "Sensitivity 0" },
+            { q: "What command shows file contexts?", a: ["matchpathcon", "ls -lZ", "getfattr"], hint: "match path context" },
+            { q: "What is the user context for unconfined?", a: ["unconfined_u", "unconfined_u:unconfined_r"], hint: "unconfined user" },
+            { q: "What role has full access?", a: ["unconfined_r", "sysadm_r"], hint: "unconfined role" },
+            { q: "What type for httpd content?", a: ["httpd_sys_content_t", "httpd_t"], hint: "httpd type" },
+            { q: "What type for httpd log?", a: ["httpd_log_t", "var_log_t"], hint: "httpd log type" },
+            { q: "What boolean enables nfs to share?", a: ["nfs_export_all_ro", "nfs_export_all_rw"], hint: "nfs export" },
+            { q: "What boolean enables samba sharing?", a: ["samba_enable_home_dirs", "smbd_anon_write"], hint: "samba enable" },
+            { q: "What command shows process context?", a: ["ps -eZ", "ps auxZ"], hint: "ps with Z" },
+            { q: "What command shows network context?", a: ["netstat -tulpnZ", "ss -tulpnZ"], hint: "netstat with Z" },
+            { q: "What is the default port 80 context?", a: ["http_port_t"], hint: "http port type" },
+            { q: "What boolean allowsftp to write?", a: ["allow_ftpd_anon_write", "ftpd_anon_write"], hint: "ftpd write" },
+            { q: "What command checks boolean state?", a: ["getsebool boolean_name", "semanage boolean -l"], hint: "getsebool" },
+            { q: "What command loads policy temporarily?", a: ["setsebool -P 1", "setsebool -P"], hint: "setsebool -P" },
+            { q: "What directory has modules?", a: ["/etc/selinux/targeted/modules", "/var/lib/selinux/targeted/module"], hint: "modules dir" },
+            { q: "What command lists users?", a: ["semanage user -l", "seinfo -u"], hint: "semanage user" },
+            { q: "What type is for tmp files?", a: ["tmp_t", "user_tmp_t"], hint: "tmp type" },
+            { q: "What boolean for ssh root?", a: ["ssh_sysadm_login", "sysadm_exec_content"], hint: "ssh sysadm" },
+            { q: "What command dumps policy?", a: ["seinfo", "sesearch", "apol"], hint: "se info" },
+            { q: "What type is for var www?", a: ["httpd_sys_content_t", "var_t"], hint: "var www" },
+            { q: "What boolean enables rsync?", a: ["rsync_export_all_ro", "rsync_export_all"], hint: "rsync export" },
+            { q: "What SELinux log file?", a: ["/var/log/audit/audit.log", "/var/log/avc.log"], hint: "audit log" },
+            { q: "What command shows denial messages?", a: ["ausearch -i", "dmesg | grep avc", "journalctl -g avc"], hint: "ausearch" },
+            { q: "What context for user home?", a: ["user_home_dir_t", "user_home_t"], hint: "user home type" },
+            { q: "What boolean enablesnis?", a: ["nis_enabled", "ypbind_enable"], hint: "nis enabled" },
+            { q: "What is the mls range?", a: ["s0-s15:c0-c1023", "s0-s15"], hint: "MLS range" },
+            { q: "What command analyzes logs?", a: ["ausearch", "audit пле"], hint: "audit search" },
+            { q: "What type for executables?", a: ["exec_t", "bin_t"], hint: "exec type" },
+            { q: "What boolean allows postfix?", a: ["postfix_local_write_mail_spool", "postfix_spool"], hint: "postfix write" },
+            { q: "What is permissive domain?", a: ["permissive_domain", "domain_can_except"], hint: "permissive" }
+        ];
+
+        const commandSections = {
+            modes: {
+                title: "Modes & Status",
+                desc: "View and set SELinux modes",
+                commands: [
+                    { cmd: "getenforce", desc: "Shows current SELinux mode (Enforcing/Permissive/Disabled)" },
+                    { cmd: "setenforce 1", desc: "Sets SELinux to Enforcing mode (temporary)" },
+                    { cmd: "setenforce 0", desc: "Sets SELinux to Permissive mode (temporary)" },
+                    { cmd: "sestatus", desc: "Shows full SELinux status with mode, policy, booleans" },
+                    { cmd: "getenforce && sestatus", desc: "Shows mode and detailed status" }
+                ]
+            },
+            booleans: {
+                title: "Booleans",
+                desc: "Manage SELinux boolean values",
+                commands: [
+                    { cmd: "getsebool -a", desc: "Lists all SELinux boolean values with current state" },
+                    { cmd: "getsebool boolean_name", desc: "Shows the current state of a specific boolean" },
+                    { cmd: "setsebool -P boolean 1", desc: "Enables boolean persistantly" },
+                    { cmd: "setsebool -P boolean 0", desc: "Disables boolean persistantly" },
+                    { cmd: "setsebool -P httpd_enable_cgi 1", desc: "Enables httpd CGI boolean" },
+                    { cmd: "semanage boolean -l", desc: "Lists all booleans with descriptions" }
+                ]
+            },
+            contexts: {
+                title: "Contexts & Labels",
+                desc: "Manage file and process contexts",
+                commands: [
+                    { cmd: "chcon -t type file", desc: "Changes SELinux context type of a file" },
+                    { cmd: "chcon -R -t type /dir", desc: "Recursively changes type for directory" },
+                    { cmd: "restorecon -Rv /path", desc: "Restores default contexts recursively" },
+                    { cmd: "restorecon -F /path", desc: "Forces re-labeling of file" },
+                    { cmd: "matchpathcon /path", desc: "Shows default context for path" },
+                    { cmd: "ls -lZ file", desc: "Shows file SELinux context" },
+                    { cmd: "id -Z", desc: "Shows current user's SELinux context" },
+                    { cmd: "ps -eZ", desc: "Shows processes with SELinux context" }
+                ]
+            },
+            ports: {
+                title: "Port Management",
+                desc: "Configure port types and labels",
+                commands: [
+                    { cmd: "semanage port -a -t type -p tcp 81", desc: "Adds port 81 with type" },
+                    { cmd: "semanage port -d -t type -p tcp 81", desc: "Removes port definition" },
+                    { cmd: "semanage port -l", desc: "Lists all port type definitions" },
+                    { cmd: "netstat -tulpnZ", desc: "Shows listening ports with context" },
+                    { cmd: "ss -tulpnZ", desc: "Shows sockets with context" }
+                ]
+            },
+            users: {
+                title: "Users & Roles",
+                desc: "Manage SELinux identities",
+                commands: [
+                    { cmd: "seinfo -u", desc: "Lists all SELinux users" },
+                    { cmd: "seinfo -r", desc: "Lists all SELinux roles" },
+                    { cmd: "seinfo -t", desc: "Lists all SELinux types" },
+                    { cmd: "semanage user -a -R role user", desc: "Maps SELinux user to roles" },
+                    { cmd: "semanage login -a -s user_u username", desc: "Maps login user to SELinux user" },
+                    { cmd: "semanage user -l", desc: "Lists SELinux users and roles" }
+                ]
+            },
+            policies: {
+                title: "Policy Analysis",
+                desc: "View and analyze SELinux policies",
+                commands: [
+                    { cmd: "sesearch --allow -s src_t -t tgt_t", desc: "Searches policy for transitions" },
+                    { cmd: "sesearch --type -t type", desc: "Searches policy for type rules" },
+                    { cmd: "seinfo -b", desc: "Lists all SELinux booleans in policy" },
+                    { cmd: "seinfo -n", desc: "Shows policy attributes" },
+                    { cmd: "apol", desc: "Opens SELinux policy analysis tool" }
+                ]
+            },
+            modules: {
+                title: "Policy Modules",
+                desc: "Load and manage custom modules",
+                commands: [
+                    { cmd: "semodule -l", desc: "Lists loaded modules" },
+                    { cmd: "semodule -i module.pp", desc: "Installs policy module" },
+                    { cmd: "semodule -r modulename", desc: "Removes policy module" },
+                    { cmd: "semodule -d modulename", desc: "Disables policy module" },
+                    { cmd: "semodule -e modulename", desc: "Enables disabled module" },
+                    { cmd: "semanage module -l", desc: "Lists custom modules" },
+                    { cmd: "checkmodule -m -o file.mod file.te", desc: "Compiles policy module" },
+                    { cmd: "semodule package -o file.pp file.mod", desc: "Packages module" }
+                ]
+            },
+            audit: {
+                title: "Audit & Troubleshooting",
+                desc: "Analyze logs and fix issues",
+                commands: [
+                    { cmd: "ausearch -m avc -ts recent", desc: "Searches recent AVC denials" },
+                    { cmd: "ausearch -i -k name", desc: "Searches AVC by key" },
+                    { cmd: "sealert -l UUID", desc: "Shows detailed alert info" },
+                    { cmd: "sealert -a /var/log/audit/audit.log", desc: "Analyzes audit log" },
+                    { cmd: "audit2why", desc: "Shows why access was denied" },
+                    { cmd: "audit2allow", desc: "Generates policy rules from denials" },
+                    { cmd: "audit2allow -M name -w log", desc: "Creates module from denials" },
+                    { cmd: "dmesg | grep avc", desc: "Shows kernel AVC messages" }
+                ]
+            }
+        };
+
+        const commands = Object.values(commandSections).flatMap(s => s.commands);
+
+        let current = 0;
+        let correct = 0;
+        let questionOrder = [];
+
+        const menuView = document.getElementById('menu-view');
+        const quizView = document.getElementById('quiz-view');
+        const commandsView = document.getElementById('commands-view');
+        const scoreView = document.getElementById('score-view');
+        const progressEl = document.getElementById('progress');
+        const questionEl = document.getElementById('question');
+        const hintEl = document.getElementById('hint');
+        const answerEl = document.getElementById('answer');
+        const submitBtn = document.getElementById('submit');
+        const resultEl = document.getElementById('result');
+        const commandsList = document.getElementById('commandsList');
+        const cmdSearch = document.getElementById('cmdSearch');
+        const scoreContent = document.getElementById('scoreContent');
+
+        function shuffleArray(arr) {
+            let arr2 = [...arr];
+            for (let i = arr2.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr2[i], arr2[j]] = [arr2[j], arr2[i]];
+            }
+            return arr2;
+        }
+
+        function startQuiz() {
+            questionOrder = shuffleArray(questions).map((_, i) => i);
+            current = 0;
+            correct = 0;
+            menuView.style.display = 'none';
+            quizView.style.display = 'block';
+            scoreView.style.display = 'none';
+            loadQuestion();
+        }
+
+        let currentSection = null;
+        const commandsListEl = document.getElementById('commandsList');
+        const sectionMenuEl = document.getElementById('sectionMenu');
+        const commandsDetail = document.getElementById('commandsDetail');
+        const detailTitle = document.getElementById('detailTitle');
+        const cmdSearchInput = document.getElementById('cmdSearch');
+
+        function showCommands() {
+            menuView.style.display = 'none';
+            quizView.style.display = 'none';
+            commandsView.style.display = 'block';
+            scoreView.style.display = 'none';
+            showSectionMenu();
+        }
+
+        function showSectionMenu() {
+            sectionMenuEl.style.display = 'grid';
+            commandsDetail.style.display = 'none';
+            sectionMenuEl.innerHTML = '';
+            
+            Object.keys(commandSections).forEach((key, i) => {
+                const s = commandSections[key];
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.style.animationDelay = `${i * 0.1}s`;
+                card.innerHTML = `
+                    <h3>${s.title}</h3>
+                    <p>${s.desc}</p>
+                    <span class="badge">${s.commands.length} Commands</span>
+                `;
+                card.onclick = () => showSection(key);
+                sectionMenuEl.appendChild(card);
+            });
+        }
+
+        function showSection(key) {
+            currentSection = commandSections[key];
+            detailTitle.textContent = currentSection.title;
+            sectionMenuEl.style.display = 'none';
+            commandsDetail.style.display = 'block';
+            cmdSearchInput.value = '';
+            renderCommands(currentSection.commands);
+        }
+
+        function showMenu() {
+            menuView.style.display = 'block';
+            quizView.style.display = 'none';
+            commandsView.style.display = 'none';
+            scoreView.style.display = 'none';
+        }
+
+        function loadQuestion() {
+            const idx = questionOrder[current];
+            progressEl.textContent = `Question ${current + 1} of ${questions.length}`;
+            questionEl.textContent = questions[idx].q;
+            hintEl.textContent = questions[idx].hint;
+            answerEl.value = '';
+            resultEl.style.display = 'none';
+            answerEl.focus();
+        }
+
+        function checkAnswer() {
+            const idx = questionOrder[current];
+            const userAnswer = answerEl.value.trim().toLowerCase();
+            const correctAnswers = questions[idx].a.map(a => a.toLowerCase());
+            
+            if (correctAnswers.includes(userAnswer)) {
+                resultEl.textContent = '✓ Correct!';
+                resultEl.className = 'result correct';
+                correct++;
+            } else {
+                resultEl.textContent = `✗ Incorrect. Answer: ${questions[idx].a[0]}`;
+                resultEl.className = 'result incorrect';
+            }
+            resultEl.style.display = 'block';
+            
+            setTimeout(() => {
+                current++;
+                if (current < questions.length) {
+                    loadQuestion();
+                } else {
+                    showScore();
+                }
+            }, 1500);
+        }
+
+        function showScore() {
+            quizView.style.display = 'none';
+            scoreView.style.display = 'block';
+            scoreContent.innerHTML = `
+                <h2>Exam Complete</h2>
+                <p>You scored:</p>
+                <p class="final-score">${correct} / ${questions.length}</p>
+                <p>${correct >= 40 ? 'Excellent work!' : correct >= 30 ? 'Good job!' : 'Keep studying!'}</p>
+                <button class="btn" onclick="startQuiz()" style="margin-top:20px;">Try Again</button>
+            `;
+        }
+
+        function renderCommands(cmds) {
+            commandsListEl.innerHTML = cmds.map((c, i) => `
+                <div class="cmd-card" style="animation-delay: ${i * 0.03}s">
+                    <code>${c.cmd}</code>
+                    <div class="desc">${c.desc}</div>
+                </div>
+            `).join('');
+        }
+
+        function filterCommands() {
+            if (!currentSection) return;
+            const query = cmdSearchInput.value.toLowerCase().trim();
+            if (!query) {
+                renderCommands(currentSection.commands);
+                return;
+            }
+            const filtered = currentSection.commands.filter(c => 
+                c.cmd.toLowerCase().includes(query) ||
+                c.desc.toLowerCase().includes(query)
+            );
+            renderCommands(filtered);
+        }
+
+        submitBtn.addEventListener('click', checkAnswer);
+        answerEl.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') checkAnswer();
+        });
+        cmdSearchInput.addEventListener('input', filterCommands);
+
+        function updateClock() {
+            const now = new Date();
+            document.getElementById('clock').textContent = now.toLocaleTimeString('en-US', { hour12: false });
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>
