@@ -272,7 +272,7 @@ echo "Change 5" >> README.md
 	* git show v1.0 
   --Annotated tags are recommended for public releases because they include much more information and can be verified
 
---If you want to search for tags matching a particular pattern, you can use the -l (or --list) option with a wildcard
+--If you want to search for tags matching a particular pattern, you can use the -l (or --list) option with a wildcard:
 	* git tag -l "v1.*"
 	* git tag -n 
 
@@ -283,5 +283,54 @@ echo "Change 5" >> README.md
 ---Deleting Tags
 	* git tag -d v0.0.1
 
----
-	* 
+
+---Git History && Log Management
+--echo "# Git History Lab" > README.md
+--git add README.md
+--git commit -m "Initial commit"
+
+--echo "function hello() {" > script.js
+--echo "  console.log('Hello, Git!');" >> script.js
+--echo "}" >> script.js
+--git add script.js
+--git commit -m "Add hello function"
+
+--echo "function goodbye() {" >> script.js
+--echo "  console.log('Goodbye, Git!');" >> script.js
+--echo "}" >> script.js
+--git add script.js
+--git commit -m "Add goodbye function"
+
+--echo "This is a test file" > test.txt
+--git add test.txt
+--git commit -m "Add test file"
+
+--echo "hello();" >> script.js
+--echo "goodbye();" >> script.js
+--git add script.js
+--git commit -m "Call hello and goodbye functions"
+
+	* git log
+	* git log --oneline >> This shows each commit on a single line, with just the short commit hash and the commit message
+	* git log --stat >> This will show you which files were changed in each commit and how many lines were added or removed
+	* git log -p >> This shows the actual patch (the lines that were added and removed) for each commit
+	* git log --pretty=format:"%h - %an, %ar : %s"
+		--%h: abbreviated commit hash
+		--%an: author name
+		--%ar: author date, relative
+		--%s: subject (commit message)
+				--%H: full commit hash
+				--%ad: author date
+				--%cn: committer name
+				--%ce: committer email
+				--%cd: committer date
+	* git log --since=1.week
+	* git log --after="2023-06-01" --before="2023-06-30"
+		--You can also use the --until option instead of --before, and --after is synonymous with --since
+	* git log --grep="function" >> This shows all commits that affected the script.js file
+	* git log --grep="function" -i >> This uses case insensative search with the -i flag
+	* git log -S "console.log" >> This is called a "pickaxe" search -- It shows commits where the number of occurrences of "console.log" changed
+	* git log -p --since=1.week -- script.js 
+	* git shortlog -s -n >> This shows a list of authors, sorted by the number of commits, with the commit count next to each name
+	* git log --author="Jane Doe" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "Added lines: %s, Removed lines: %s, Total lines: %s\n", add, subs, loc }'
+		--Replace "Jane Doe" with the author's name you want to check
