@@ -334,3 +334,5 @@ echo "Change 5" >> README.md
 	* git shortlog -s -n >> This shows a list of authors, sorted by the number of commits, with the commit count next to each name
 	* git log --author="Jane Doe" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "Added lines: %s, Removed lines: %s, Total lines: %s\n", add, subs, loc }'
 		--Replace "Jane Doe" with the author's name you want to check
+	* git log --pretty=format: --name-only | sort | uniq -c | sort -rg | head -10
+	* git rev-list --count HEAD >> 
