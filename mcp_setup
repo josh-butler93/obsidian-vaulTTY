@@ -4,3 +4,4 @@ VSCode Setup Link: https://www.youtube.com/watch?v=5NxGqnTazR8
 	--github extension >> be sure to install the extention in the homelab vscode install
 	--also install gh on the arch pc as well which is for github-cli
 	* gh issue create >> this command is used to create github issue
+	* gh issue list >> to see a list of the issues in the repo
