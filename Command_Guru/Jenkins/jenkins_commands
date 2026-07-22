@@ -1,0 +1,29 @@
+---Server Installation---
+	* sudo yum install java-21-openjdk java-21-openjdk-devel -y
+	* sudo curl -fsSL -o /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+	* sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+	* sudo yum install jenkins -y
+	* sudo vi /lib/systemd/system/jenkins.service
+		--Port Config-- --Change if needed--
+			Environment="JENKINS_PORT=8090"
+			* sudo systemctl enable jenkins
+			* sudo systemctl start jenkins
+			* sudo systemctl status jenkins
+
+---Jenkins Contaier Build
+docker run -d \
+  --name jenkins-init-lab \
+  -p 18080:8080 \
+  -v jenkins-init-lab-home:/var/jenkins_home \
+  jenkins/jenkins:latest
+	--docker run = starts the temp. controller in the background
+	--'-d' detached mode
+	--'--name' gives the container a stable name
+	--'-p 18080:8080' publishes Jenkins on host port 18080
+	--'-v' attaches the isolated Jenkins home volume
+
+---Password Retrival:
+	* docker exec jenkins-init-lab cat /var/jenkins_home/secrets/initialAdminPassword > /home/labex/project/jenkins-init-password.txt
+--------------------------------------------------------
+--------------------------------------------------------
+
