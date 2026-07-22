@@ -96,3 +96,17 @@ curl -s -u 'lab-admin:LabEx-Admin-123' \
 	* docker port jenkins
 	* docker exec jenkins ls /var/jenkins_home
 	* docker logs --tail 30 jenkins
+
+----Setting up Build Triggers
+--Navigate back to the sample-project configuration page (Project Page > Configure)
+--Find the Triggers section
+--Check the box next to Build periodically
+--A Schedule text area will appear
+	--This field uses cron syntax to define the schedule
+		--The syntax consists of 5 fields separated by spaces: MINUTE HOUR DAYOFMONTH MONTH DAYOFWEEK
+			--* * * * * --This cron expression means "run every minute"
+
+---Archiving Build Artifacts---
+--*Artifacts are the output files produced by a build, such as compiled binaries or reports*--
+--*Archiving them makes them available for download after the build is complete*--
+--
