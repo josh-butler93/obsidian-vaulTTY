@@ -3,3 +3,4 @@ VSCode Setup Link: https://www.youtube.com/watch?v=5NxGqnTazR8
 	--@mcp >> choose to enable mcp in the marketplace
 	--github extension >> be sure to install the extention in the homelab vscode install
 	--also install gh on the arch pc as well which is for github-cli
+	* gh issue create >> this command is used to create github issue
