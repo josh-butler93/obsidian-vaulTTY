@@ -27,3 +27,10 @@ docker run -d \
 --------------------------------------------------------
 --------------------------------------------------------
 
+---Docker Installation & Build---
+
+	* docker inspect jenkins --format '{{.Config.Image}}'
+	* docker images jenkins/jenkins
+	* docker port jenkins
+	* docker exec jenkins ls /var/jenkins_home
+	* docker logs --tail 30 jenkins
