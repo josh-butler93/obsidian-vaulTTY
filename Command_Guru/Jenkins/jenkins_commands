@@ -15,6 +15,68 @@ docker run -d \
   --name jenkins-init-lab \
   -p 18080:8080 \
   -v jenkins-init-lab-home:/var/jenkins_home \
+--docker ps --filter name=jenkins-init-lab --format 'table {{.Names}}\t{{.Status}}\t{{.Ports}}'
+--docker exec jenkins-init-lab cat /var/jenkins_home/secrets/initialAdminPassword > /home/labex/project/jenkins-init-password.txt
+
+Jenkins protects form submissions with a crumb token. A crumb is tied to the same browser or HTTP session that requested it, so the command below also saves Jenkins cookies in a cookie jar file
+---SetUp---
+INIT_PASSWORD=$(tr -d '\r\n' < /home/labex/project/jenkins-init-password.txt)
+COOKIE_JAR=/home/labex/project/jenkins-init-cookies.txt
+
+curl -fsS -c "${COOKIE_JAR}" -u "admin:${INIT_PASSWORD}" \
+  http://localhost:18080/crumbIssuer/api/json \
+  > /home/labex/project/jenkins-init-crumb.json
+
+---The next command sends a small Groovy script to Jenkins. The script creates a private security realm, adds the lab-admin user, grants full control to logged-in users, and marks the setup wizard as completed
+
+CRUMB_FIELD=$(sed -n 's/.*"crumbRequestField":"\([^"]*\)".*/\1/p' /home/labex/project/jenkins-init-crumb.json)
+CRUMB_VALUE=$(sed -n 's/.*"crumb":"\([^"]*\)".*/\1/p' /home/labex/project/jenkins-init-crumb.json)
+
+cat > /home/labex/project/initialize-controller.groovy <<'GROOVY'
+import jenkins.model.Jenkins
+import jenkins.install.InstallState
+import hudson.security.HudsonPrivateSecurityRealm
+import hudson.security.FullControlOnceLoggedInAuthorizationStrategy
+
+def jenkins = Jenkins.get()
+def realm = new HudsonPrivateSecurityRealm(false)
+realm.createAccount('lab-admin', 'LabEx-Admin-123')
+jenkins.setSecurityRealm(realm)
+
+def strategy = new FullControlOnceLoggedInAuthorizationStrategy()
+strategy.setAllowAnonymousRead(false)
+jenkins.setAuthorizationStrategy(strategy)
+
+jenkins.setInstallState(InstallState.INITIAL_SETUP_COMPLETED)
+jenkins.save()
+println('created lab-admin and completed setup')
+GROOVY
+
+curl -fsS -b "${COOKIE_JAR}" -u "admin:${INIT_PASSWORD}" \
+  -H "${CRUMB_FIELD}: ${CRUMB_VALUE}" \
+  --data-urlencode "script@/home/labex/project/initialize-controller.groovy" \
+  http://localhost:18080/scriptText \
+  > /home/labex/project/jenkins-init-result.txt
+
+--cat /home/labex/project/jenkins-init-result.txt --this is where the final results are stored
+
+------------------------
+--Use curl with -u to authenticate. The -o option writes the HTML to a file, and -w '%{http_code}' prints only the HTTP status code
+
+curl -s -u 'lab-admin:LabEx-Admin-123' \
+  -o /home/labex/project/jenkins-init-dashboard.html \
+  -w '%{http_code}\n' \
+  http://localhost:18080/
+
+---Searching the saved dashboard page stable for jenkins
+--grep -o -E 'Dashboard|Welcome to Jenkins|Jenkins' /home/labex/project/jenkins-init-dashboard.html | head
+
+---Contaier Removal
+--docker rm -f jenkins-init-lab
+--docker volume rm jenkins-init-lab-home
+--docker ps -a --filter name=jenkins-init-lab --format '{{.Names}}'
+
+---------------
   jenkins/jenkins:latest
 	--docker run = starts the temp. controller in the background
 	--'-d' detached mode
