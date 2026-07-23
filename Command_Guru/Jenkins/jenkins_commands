@@ -149,3 +149,19 @@ exit 1
 --docker exec jenkins rm -rf /var/jenkins_home/webhook-repo
 --docker cp /home/labex/project/webhook-repo jenkins:/var/jenkins_home/webhook-repo
 --docker exec -u root jenkins chown -R jenkins:jenkins /var/jenkins_home/webhook-repo
+
+----------------------------------
+#Jenkins Pipelines
+---This project type is specifically designed to execute pipelines defined in a Jenkinsfile
+
+---Now you will configure your Jenkins project to retrieve its pipeline definition from a local Git repository served inside the Jenkins container
+---This keeps the lab independent from external network availability while still using the real Pipeline script from SCM workflow
+---Jenkinsfile Pipeline Breakdown
+
+--pipeline { ... }: The main block that defines the entire pipeline
+--agent any: Instructs Jenkins to run this pipeline on any available agent
+--environment { ... }: Defines environment variables that can be used throughout the pipeline
+--stages { ... }: A wrapper for all the stages in the pipeline
+--stage('...') { ... }: Defines specific stages. Stages help visualize the workflow
+--echo '...': A step that prints a message to the build log
+--sh '...': A step that executes shell commands
