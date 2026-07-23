@@ -110,3 +110,42 @@ curl -s -u 'lab-admin:LabEx-Admin-123' \
 --*Artifacts are the output files produced by a build, such as compiled binaries or reports*--
 --*Archiving them makes them available for download after the build is complete*--
 --
+
+#Jenkins Reload Script
+
+#!/bin/bash
+set -e
+
+COOKIE_JAR=/tmp/jenkins-webhook-lab.cookies
+CRUMB=$(curl -fsS -c "$COOKIE_JAR" 'http://localhost:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)')
+curl -fsS -b "$COOKIE_JAR" -H "$CRUMB" -X POST http://localhost:8080/reload >/dev/null || true
+
+for i in {1..30}; do
+  if curl -fsS http://localhost:8080/api/json >/dev/null 2>&1; then
+    exit 0
+  fi
+  sleep 2
+done
+
+echo "Jenkins did not become ready after reload" >&2
+exit 1
+-----------------------------------------------------------------
+#WebHook Setup
+
+--cd /home/labex/project
+--mkdir -p webhook-repo
+--cd webhook-repo
+--git init -b main
+--git config user.email "labex@example.com"
+--git config user.name "LabEx Webhook"
+
+--COMMIT=$(git rev-parse --short=12 HEAD)
+--BRANCH=$(git branch --show-current)
+--printf 'WEBHOOK_BRANCH=%s\nWEBHOOK_COMMIT=%s\n' "$BRANCH" "$COMMIT" | tee /home/labex/project/webhook-values.env
+	--The tee command writes the values to a file and also prints them so you can inspect them
+---The Jenkins job will run inside the Jenkins Docker container
+---Copy the repository into /var/jenkins_home/webhook-repo so the build process can read it from inside that container:
+----
+--docker exec jenkins rm -rf /var/jenkins_home/webhook-repo
+--docker cp /home/labex/project/webhook-repo jenkins:/var/jenkins_home/webhook-repo
+--docker exec -u root jenkins chown -R jenkins:jenkins /var/jenkins_home/webhook-repo
