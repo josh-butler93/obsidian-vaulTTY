@@ -1,0 +1,9 @@
+* sudo dnf install -y httpd php php-fpm php-mysqli php-json git
+* sudo dnf install -y mariadb105-server
+* sudo systemctl start mariadb && sudo systemctl start php-fpm && sudo systemctl start httpd
+* http://<PUBLIC-IP>
+* sudo find /var/www/todo -type d -exec chmod 2775 {} \;
+* systemctl is-enabled httpd
+* sudo journalctl -u todo-init.service
+        --The -u option filters the journal by systemd unit. The second and third lines indicate a permission-related error. Press the Right Arrow key to view the full log. For this type of error, check whether the script has execute permissions
+*
