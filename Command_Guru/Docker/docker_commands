@@ -15,11 +15,13 @@ Docker Link: https://hub.docker.com/
 	* docker run <container_name>
 	* docker ps
 	* docker ps -a
+	* docker ps --format 'container={{.Names}} image={{.Image}} status={{.Status}}'
 	* docker ps --filter name=jenkins --format 'name={{.Names}} image={{.Image}} status={{.Status}} ports={{.Ports}}'
 	* docker ps --filter name=jenkins --format 'name={{.Names}} image={{.Image}} status={{.Status}} ports={{.Ports}}' > jenkins-docker-report.txt
 	* docker ps --filter name=jenkins-init-lab --format 'table {{.Names}}\t{{.Status}}\t{{.Ports}}'
 	* docker ps -a --format 'table {{.Names}}\t{{.Image}}\t{{.Ports}}'
 	* docker images
+	* docker images --format '{{.Repository}}:{{.Tag}}' | sort
 	* docker images <repo_name>
 	* docker images jenkins/jenkins
 	* docker start <container_name>
