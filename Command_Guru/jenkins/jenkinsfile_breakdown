@@ -1,0 +1,8 @@
+pipeline { ... }: The main block that defines the entire pipeline.
+agent any: Instructs Jenkins to run this pipeline on any available agent.
+environment { ... }: Defines environment variables that can be used throughout the pipeline.
+stages { ... }: A wrapper for all the stages in the pipeline.
+stage('...') { ... }: Defines specific stages. Stages help visualize the workflow.
+steps { ... }: Contains the actual commands to be executed in a stage.
+echo '...': A step that prints a message to the build log.
+sh '...': A step that executes shell commands.
