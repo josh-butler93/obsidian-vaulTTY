@@ -5,17 +5,20 @@ Docker Link: https://hub.docker.com/
 	* sudo dnf install -y docker-ce-cli containerd.io docker-compose-plugin
 	* sudo systemctl enable --now docker
 	* sudo systemctl start docker
+	* sudo systemctl is-active docker
 	* sudo usermod -aG docker $USER || newgrp docker
 	* sudo dnf config-manager --add-repo https://download.docker.com/linux/rhel/docker-ce.repo
 	* sudo sed -i 's/\$releasever/9/g' /etc/yum.repos.d/docker-ce.repo
 	* sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
 	* docker version
+	* docker version --format '{{.Server.Version}}'
 	* docker run <container_name>
 	* docker ps
 	* docker ps -a
 	* docker ps --filter name=jenkins --format 'name={{.Names}} image={{.Image}} status={{.Status}} ports={{.Ports}}'
 	* docker ps --filter name=jenkins --format 'name={{.Names}} image={{.Image}} status={{.Status}} ports={{.Ports}}' > jenkins-docker-report.txt
 	* docker ps --filter name=jenkins-init-lab --format 'table {{.Names}}\t{{.Status}}\t{{.Ports}}'
+	* docker ps -a --format 'table {{.Names}}\t{{.Image}}\t{{.Ports}}'
 	* docker images
 	* docker images <repo_name>
 	* docker images jenkins/jenkins
