@@ -15,3 +15,5 @@ or
 --redis-cli -h <target_ip> SCAN 0 >> command is used to obtain all the keys in a database
 --redis-cli -h 10.129.219.175 GET flag >> this command is used to get the flag from the database
 ---redis-cli -h 10.129.219.175 -n <INDEX> GET flag >> in case its in another index
+
+--redis dashboard setup link:--
