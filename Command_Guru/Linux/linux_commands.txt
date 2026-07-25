@@ -115,6 +115,21 @@ ps aux | grep [h]ttpd
 		-comment out the line with swap on it to permanetly disable it
 			---The /etc/fstab (file system table) file is a critical system configuration file in Linux that defines how and where storage drives, disk partitions, and remote network shares are automatically mounted during the boot process
 	* vmstat
+	* vmstat 1 5 
+			--The si/so fields indicate if the memory is using swap–of which it is now
+			--Additionally, free indicates free memory
+	* iostat -z 1 5
+			--Further review the disk usage by using iostat to check disk input/output
+			--This will take a sample every second, five times
+			--The -z flag hides devices with no activity:
+			--You should see high avg-cpu output for the %user parameter, as well as usage for the %system and %iowait stats
+			--iowait is especially important here: Any non-zero percentage indicates time the CPU is spent waiting on disk I/O
+	* sar -d 1 5
+			--Finally, use sar to review stats for each block device
+			--Notice that all activity is on the nvme0n1 or nvme1n1 device, where the local filesystem is hosted
+	* sar -r 1 5
+			--You should see reports of about over 50% of the memory being used
+	* sudo kill -9 <PID>
 
 ---------------------------------------------------------------------------------------------------------------------------
 #Networking/package management
@@ -138,6 +153,7 @@ ps aux | grep [h]ttpd
 	* curl -s http://localhost:8080 --This will pull raw HTML && can be combined with 'grep' for specific keywords
 	* curl -o /dev/null -s -w "%{http_code}" http://localhost:8080 > ~/labex/project/jenkins-web-report.txt
 	* curl -s http://localhost:8080 >> ~/labex/project/jenkins-web-report.txt
+	* curl -I http://localhost
 ---------------------------------------------------------------------------------------------------------------------------
 #Repo and App Management
 	* sudo dnf repolist
@@ -177,6 +193,8 @@ ps aux | grep [h]ttpd
 	* timedatectl show-timesync --all
 	* chronyc sources -v 
 	* systemctl status chronyd
+	* systemctl status <pid>
+	* systemctl status 319183
 	* cat /etc/chrony.conf
 	* sudo tailscale set --accept-dns=false
 	* touch note_{1..5}.txt
