@@ -22,6 +22,7 @@ ps aux | grep [h]ttpd
 	* sudo chmod 700 file.txt --changing file permissions
 	* sudo chmod 700 testdir --changing directory permissions
 	* sudo chmod -R testdir --the -R applies the change recursively to all files and subdirectories
+	* find . -type d -perm -002 --this will show misconfigured file permissions being writable by all users
 ---
   - '-S': Sort by file size
   - '-X': Sort alphabetically by file extension
@@ -58,6 +59,20 @@ ps aux | grep [h]ttpd
 	* sudo passwd -l joker --the '-l' option locks the password
 	* sudo passwd -u joker --the '-u' option unlocks the users account
 	* sudo userdel -r bob --the '-r' option removes the user's home directory and mail spool
+	* sudo groupadd frontend_group
+	* sudo groupadd backend_group
+	* sudo groupadd admin_group
+	* grep -R "frontend" /etc/group
+	* getent group frontend_group
+	* sudo chmod g+s Frontend --Enable the setgid bit on the Frontend directory
+			--This sets the setgid (Set Group ID) bit on the Frontend directory
+			--With the setgid bit enabled, all new files and subdirectories inherit the directory's group ownership instead of the creator's primary group
+	* sudo chmod +t Frontend
+			--This sets the sticky bit on the directory
+			--Normally, users with write permission to a directory can delete any file inside it
+			--With the sticky bit enabled, users can delete only files they own, even if they have write permission to the directory
+		* ls -ld Frontend --In the permission string, verify that you see an s and a T, indicating that the setgid and sticky bits are enabled
+	* 
 	
 
 ---------------------------------------------------------------------------------------------------------------------------
@@ -188,6 +203,7 @@ EOF'
 	* rpm -V libsolv
 	* rpm -qf /lib64/libsolv.so.1
 	* find /var/cache/dnf -type f -name 'libsolv*.rpm'
+	* find . -name "health.html"
 	* sudo rpm -Uvh --replacepkgs /path/to/libsolv-*.rpm
 	* sudo dnf clean all
 	* sudo dnf update
@@ -241,6 +257,17 @@ EOF'
 	* sudo install -d -o auditor -g auditor -m 700 /home/auditor/.ssh --should be no output
 	* sudo install -o auditor -g auditor -g auditor -m 600 ~/auditor_key.pub /home/auditor/.ssh/auditor_key
 	* ssh -i ~/auditor_key -o StrictHostKeyChecking=accept-new auditor@localhost 'whoami && hostname' --should show Warning: Permanetly added 'localhost' (ED25519)...
+	* ssh-keygen -t ed25519 -C "lab-key"
+	* cat ~/.ssh/id_ed25519.pub >> ~/.ssh/authorized_keys
+	* chmod 700 ~/.ssh
+	* chmod 600 ~/.ssh/authorized_keys
+	* cat ~/.ssh/id_ed25519 -n --Copy the entire private key. You will need it in the following steps
+	* add_key --This will open a window for you to add your SSH key to the filesystem for later use 
+			--Press i to enter insert mode
+			--Paste in the private key you retrieve in earlier steps at the top of this editor
+			--Press Esc.
+			--Use the command :wq and press Enter to save the key and exit
+	* ssh -i /home/cloud_user/.ssh/id_dropbear ec2-user@<public-IP>
 ---------------------------------------------------------------------
 sudo tee /etc/ssh/sshd_config.d/70-hardening.conf > /dev/null <<'EOF'
 PermitRootLogin no
