@@ -23,3 +23,4 @@ test_ssh:
   script:
     - ssh username@***.*.*.* "kubectl get nodes"
     - ssh username@***.*.*.* "kubectl get pods -A"
+# jupyter testing
