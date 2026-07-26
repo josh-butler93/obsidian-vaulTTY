@@ -1,0 +1,26 @@
+services:
+  arcane:
+    image: ghcr.io/getarcaneapp/manager:latest
+    container_name: arcane
+    ports:
+      - "127.0.0.1:3552:3552"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - arcane-data:/app/data
+      - /home/sysadmin/Documents/docker/doxker-compose:/home/sysadmin/Documents/docker/doxker-compose
+    environment:
+      APP_URL: http://localhost:3552
+      PUID: 1000
+      PGID: 1000
+      PROJECTS_DIRECTORY: /home/sysadmin/Documents/docker/doxker-compose
+      ENCRYPTION_KEY: REPLACE_WITH_FIRST_SECRET
+      JWT_SECRET: REPLACE_WITH_SECOND_SECRET
+    restart: unless-stopped
+
+volumes:
+  arcane-data:
+
+# encryptionkey command: openssl rand -hex 32 --paste this in the encryption key field
+# jwtsecret command: openssl rand -hex 32 --paste this in the jwt secret field
+# for the volumes be sure to mount it at the folder where all your docker-compose files are stored, so that arcane can read them and manage them
+# to get the login credentials, you can check the logs of the container after starting it, it will print out the username and password for the first login
