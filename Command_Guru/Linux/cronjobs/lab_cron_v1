@@ -1,0 +1,50 @@
+-----Breakdown-----
+Yes. crontab -e opens your personal cron schedule, and you can put multiple jobs in that one file—one job per line
+--crontab -e
+
+minute hour day-of-month month day-of-week command
+| Position | Allowed values | `*` means |
+|---|---:|---|
+| Minute | `0–59` | every minute |
+| Hour | `0–23` | every hour |
+| Day of month | `1–31` | every day |
+| Month | `1–12` | every month |
+| Day of week | `0–7` (`0` and `7` = Sunday) | every day of the week |
+
+*/5 * * * * command      # every 5 minutes --The /5 means “step by 5.” || So it runs at: :00, :05, :10, :15, :20, :25, :30, :35, :40, :45, :50, :55
+0 * * * * command        # at the start of every hour
+0 9 * * 1-5 command      # 9 AM, Monday through Friday
+0 21 * * * command       # 9 PM every day
+0 0 1 * * command         # midnight on the first of each month
+
+*/15 * * * * command     # every 15 minutes
+0 */2 * * * command       # every 2 hours, at :00
+0 9-17/2 * * * command    # every 2 hours from 9 AM through 5 PM
+-----
+
+-------------------Examples
+
+# Write a test message every day at 9 PM
+0 21 * * * echo "hello from Cronie - $(/usr/bin/date)" >> /home/sysadmin/Documents/cronie/cronie-hello.log 2>&1
+
+# Run a backup at 2 AM daily
+0 2 * * * /home/sysadmin/scripts/backup.sh >> /home/sysadmin/Documents/cronie/backup.log 2>&1
+
+# Clean temporary files every Sunday at 3 AM
+0 3 * * 0 /home/sysadmin/scripts/cleanup.sh >> /home/sysadmin/Documents/cronie/cleanup.log 2>&1
+
+-------------Monitoring
+--crontab -l
+--systemctl status cronie.service --service checks
+--journalctl -u cronie.service -f --service logs
+--tail -f ~/Documents/cronie/cronie-hello.log
+
+----------------Installation
+--sudo pacman -S cronie
+--sudo systemctl enable --now cronie && systemctl start cronie
+--EDITOR=vim crontab -e 
+--0 21 * * * echo "hello from Cronie - $(/usr/bin/date)" >> /home/sysadmin/Documents/cronie/cronie-hello.log
+
+--test run
+* * * * * echo "hello from Cronie - $(/usr/bin/date)" >> /home/sysadmin/Documents/cronie/cronie-hello.log 2>&1
+    --once complete comment this out
