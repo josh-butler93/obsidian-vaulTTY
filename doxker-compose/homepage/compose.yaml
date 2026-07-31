@@ -11,3 +11,8 @@ services:
     volumes:
       - ./config:/app/config
     restart: unless-stopped
+
+# When deploying it with coolify ports are not needed 
+# Configure the subdomain and the name you want so http://subdomain:80 
+# in the coolify setup page in the services section click on setting and paster the url in there
+# deploy the container once complete

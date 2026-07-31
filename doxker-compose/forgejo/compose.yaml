@@ -1,0 +1,19 @@
+services:
+  forgejo:
+    image: codeberg.org/forgejo/forgejo:11
+    container_name: forgejo
+    restart: unless-stopped
+
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - FORGEJO__server__DOMAIN=git.jbtechops.com
+      - FORGEJO__server__ROOT_URL=https://git.j****ops.com/
+      - FORGEJO__server__HTTP_PORT=3000
+      - FORGEJO__server__PROTOCOL=http
+
+    volumes:
+      - /data:/data
+
+# in coolify for the service setting the url should be set to http://git.j****ops.com:3000
+# in cloudflare the A record should be set to git.j****ops.com and http://localhost:80
