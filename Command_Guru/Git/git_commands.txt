@@ -58,6 +58,7 @@
 	* git reflog --The reflog is a log of all the places HEAD has been in your local repository
 	* git reset --hard HEAD~1 This stages and commits our division function, then performs a hard reset to the previous commit, effectively "undoing" our last commi
 	* git reset HEAD --This unstages our changes but keeps them in the working directory
+	* git reset --soft HEAD~2 --This command moves HEAD back two commits -- The ~2 means "two commits before the current HEAD"
 
 #Git cherry pick
 	* git log <branch_name> --oneline --this command gets you the hash of the commit
