@@ -55,6 +55,9 @@
 	* git log --max-count=<number>
 	* git log --graph --decorate
 	* git log --name-only
+	* git reflog --The reflog is a log of all the places HEAD has been in your local repository
+	* git reset --hard HEAD~1 This stages and commits our division function, then performs a hard reset to the previous commit, effectively "undoing" our last commi
+	* git reset HEAD --This unstages our changes but keeps them in the working directory
 
 #Git cherry pick
 	* git log <branch_name> --oneline --this command gets you the hash of the commit
@@ -335,4 +338,5 @@ echo "Change 5" >> README.md
 	* git log --author="Jane Doe" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "Added lines: %s, Removed lines: %s, Total lines: %s\n", add, subs, loc }'
 		--Replace "Jane Doe" with the author's name you want to check
 	* git log --pretty=format: --name-only | sort | uniq -c | sort -rg | head -10
+
 	* git rev-list --count HEAD >> 
