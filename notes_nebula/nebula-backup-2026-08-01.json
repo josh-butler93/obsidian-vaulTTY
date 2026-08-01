@@ -19,36 +19,53 @@
       "id": "cdb7772a-0171-47dc-95e5-8d7174612563",
       "name": "git",
       "color": "#ffc873"
+    },
+    {
+      "id": "f091d14e-d07f-4503-9525-6456b93e1f18",
+      "name": "k8s",
+      "color": "#9a7cff"
+    },
+    {
+      "id": "4b7114a3-7dcb-440f-8b00-897ef97b0fd3",
+      "name": "github Actions",
+      "color": "#55e6d1"
     }
   ],
   "notes": [
     {
-      "id": "258b2c35-62c8-41a9-a6b0-ac73759024c5",
-      "title": "Google Colabs",
-      "body": "# LinK\n\n<href> https://colab.research.google.com/ </href>",
-      "folderId": "ideas",
-      "updatedAt": "2026-08-01T21:25:58.932Z"
+      "id": "e737bbee-5503-495a-83ff-09b090738277",
+      "title": "Nebula setup v1",
+      "body": "# Initial Github Setup\n\nA good setup is:\nGitHub Action runs when you push to main.\nIt verifies nebula_v1/index.html and nebula_v1/fold.js have valid JavaScript.\nIf the check passes, GitHub triggers Coolify through its webhook—or Coolify’s GitHub App detects the push and redeploys automatically\n\nIn your obsidian-vaulTTY repository, create:\n\n*.github/workflows/deploy-nebula.yml*\n\n---\n## deploy-nebula.yaml\n\nname: Validate and deploy Nebula\n\non:\n  push:\n    branches: [main]\n    paths:\n      - \"nebula_v1/**\"\n      - \".github/workflows/deploy-nebula.yml\"\n\njobs:\n  validate-and-deploy:\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: Check out code\n        uses: actions/checkout@v4\n\n      - name: Validate Nebula JavaScript\n        run: |\n          node <<'NODE'\n          const fs = require('fs');\n          const html = fs.readFileSync('nebula_v1/index.html', 'utf8');\n\n          if (!html.includes('fold.js')) {\n            throw new Error('index.html must reference fold.js');\n          }\n\n          for (const [, script] of html.matchAll(/<script>([\\s\\S]*?)<\\/script>/g)) {\n            new Function(script);\n          }\n\n          new Function(fs.readFileSync('nebula_v1/fold.js', 'utf8'));\n          console.log('Nebula validation passed.');\n          NODE\n\n      - name: Deploy with Coolify\n        run: |\n          curl --fail --request GET \"${{ secrets.COOLIFY_WEBHOOK }}\" \\\n            --header \"Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}\"\n\n---\n# Github Actions Finial Setup\n\n---\n## Create these GitHub repository secrets:\n\nCOOLIFY_WEBHOOK — the application’s deploy webhook URL from Coolify.\nCOOLIFY_TOKEN — an API token created in Coolify\n\n---\n## Coolify Webhooks\n\nIn Coolify, find your Nebula application’s Webhooks section to get the deployment URL, and create an API token in the Coolify dashboard’s API/token settings\n\nCoolify’s GitHub Actions example uses the same webhook-plus-Bearer-token pattern\n\n---\n## Final Push\n\n*git add .github/workflows/deploy-nebula.yaml*\n*git commit -m \"commit message\"*\n*git push origin main*",
+      "folderId": "4b7114a3-7dcb-440f-8b00-897ef97b0fd3",
+      "updatedAt": "2026-08-01T23:04:43.998Z"
     },
     {
-      "id": "274ac0af-40a0-4f7e-a412-eb5adfa0d5c9",
+      "id": "f6f3f6bc-69b6-4305-838c-e8329ca1eb5f",
       "title": "Definitions",
-      "body": "# Soft Reset\n\nMoves HEAD without changing the staging area or working directory. Useful for squashing commits.\n\n# Mixed Reset\n\nMoves HEAD and updates the staging area, but doesn't touch the working directory. Great for unstaging changes.\nHard Reset: Moves HEAD, updates the staging area, and updates the working directory. Powerful but potentially destructive.\n\n# Reflog\n\nA safety net that records all changes to HEAD, allowing you to recover from almost any Git accident.\n\n# Time-based Resets\n\nAllow you to reset your repository to its state at a specific point in time.",
-      "folderId": "cdb7772a-0171-47dc-95e5-8d7174612563",
-      "updatedAt": "2026-08-01T21:24:11.998Z"
+      "body": "# Github Actions Trigger Events\n\nNote: GitHub Actions supports many other trigger events. For example:\n\n## pull_request\n\nTriggers when a pull request is opened, synchronized, or closed\n\n## workflow_dispatch\n\nAllows manual triggering from the GitHub Actions tab\n\n## schedule\n\nRuns on a schedule using cron syntax\n\n## release\n\nTriggers when a release is published\nAnd many more events like issues, pull_request_review, etc.\n\n# Github Actions Naming Convention\n\n# Github Actions Jobs\n\nA workflow run is made up of one or more jobs\nJobs run in parallel by default",
+      "folderId": "4b7114a3-7dcb-440f-8b00-897ef97b0fd3",
+      "updatedAt": "2026-08-01T22:35:04.700Z"
     },
     {
-      "id": "93a92373-503d-48a7-b469-4c6181a41e9c",
-      "title": "Command Sheet",
-      "body": "# Reflog\n\n--git reset --soft HEAD~2\n--git reset HEAD\n--git log\n--git log --oneline\n--git status\n",
-      "folderId": "cdb7772a-0171-47dc-95e5-8d7174612563",
-      "updatedAt": "2026-08-01T21:22:06.133Z"
+      "id": "35fcb95f-2714-4996-a6de-27031c58de70",
+      "title": "Yaml File Creation",
+      "body": "# hello-world.yml\n\n--touch .github/workflows/hello-world.yml\n--ls -lR .github\n\n---\nname: Hello World Workflow #This key-value pair assigns a human-readable name to your workflow\non: [push] # The on: [push] configuration tells GitHub Actions to trigger this workflow every time a git push is made to any branch in the repository\njobs: # This job will run on an Ubuntu environment and execute a simple command\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Say Hello\n        run: echo \"Hello, World!\"\n\n---\n# Running the Action\n\n*git add .github/workflows/hello-world.yml*\n*git commit -m \"Add hello world workflow\"*\n*git push*\n\n---\nWhen you push code, multiple Actions may be triggered if you have multiple workflow files in your repository\nPlease identify the correct workflow run by checking the workflow name in the left sidebar or using the workflow run list on the right side\n\n---\n# Yaml File Breakdown\n\nLet's break down what this does:\n\na. jobs:: Starts the jobs section\nb. build:: The ID of the job\nc. runs-on: ubuntu-latest: Specifies the type of machine (runner) to run the job on\nd. steps:: A list of tasks to run in the job\ne. run: echo \"Hello, World!\": A shell command to execute\n\n---\n# Workflow Breakdown\n\nClick on the workflow run to view the detailed execution logs\n\nYou will see:\n\na. The workflow name: \"Hello World Workflow\" at the top\nb. The job name: \"build\" in the left sidebar\nc. The step execution: Click on the \"build\" job to expand it, then click on the \"Say Hello\" step\nd. The output: You should see the output Hello, World! displayed in the logs\n\n\n\n\n",
+      "folderId": "4b7114a3-7dcb-440f-8b00-897ef97b0fd3",
+      "updatedAt": "2026-08-01T22:47:12.849Z"
     },
     {
-      "id": "ab6b3bec-bbb1-44f8-a784-d199c482608a",
-      "title": "Git Reset  && Reflog",
-      "body": "# Soft Reset\n\n## ***git reset --soft HEAD~2***\n\nThis command moves HEAD back two commits (to the commit before \"Add subtraction function\")\nThe ~2 means \"two commits before the current HEAD\"\nYou can use ~N to go back N commit\nThen run the below command to verify the reset should see the log go back 2\n***git log --oneline***\n\n# Mixed Reset: Unstaging Changes\n\n## ***git reset HEAD***\n\n--This unstages our changes but keeps them in the working directory\n1. echo \"function divide(a, b) { return a / b; }\" >> math.js\n2. git add math.js\n3. Now, let's say we've changed our mind and don't want to stage this change yet\n4. We can use a mixed reset:\n*This is actually the default mode for git reset*\n*A mixed reset moves the HEAD and updates the staging area to match, but it doesn't touch the working directory*\n\n# Hard Reset: Discarding Changes\n\n## ***git reset --hard HEAD~1***\n\nA hard reset moves the HEAD, updates the staging area, AND updates the working directory to match\n\nThis stages and commits our division function, then performs a hard reset to the previous commit, effectively \"undoing\" our last commit and discarding the changes\n\n# Using Reflog to Recover Lost Commits\n\nThe reflog is a log of all the places HEAD has been in your local repository. It's like a super-history that even records history-rewriting commands like reset\n\n## ***git reflog***\n\n**git reset --hard HEAD@{1}**\nThis resets to the state of HEAD before your last action (which was the hard reset\n\n# Time-based Resets\n\nGit also allows you to reset your repository to its state at a specific point in time\n\n## ***git reset --hard master@{\"1 hour ago\"}***\n\nThis resets your repository to its state from 1 hour ago\nYou can use various time descriptors like \"yesterday\", \"2 days ago\", \"3 minutes ago\", etc.",
+      "id": "8281e5bc-524b-4044-b583-553a66e9b155",
+      "title": "Initial Setup",
+      "body": "# Creating a .github/workflows directory\n\nGitHub Actions looks for workflow configuration files in a specific directory within your repository: .github/workflows\n---\n## ***mkdir -p .github/workflows***\n\na. touch .github/workflows/main.yml\nb. ls -R .github\nc. git add .\nd. git commit -m \"Setup GitHub Actions workflow directory\"\ne. git push origin main\n\n\n",
+      "folderId": "4b7114a3-7dcb-440f-8b00-897ef97b0fd3",
+      "updatedAt": "2026-08-01T22:38:20.386Z"
+    },
+    {
+      "id": "31c63857-cada-42de-8a89-9a96c9a48599",
+      "title": "Reverting && Rebasing",
+      "body": "# You can rebase\nworking\n# git cli -- with dashes\ncommand Ccommand\n\n## Rwawr",
       "folderId": "cdb7772a-0171-47dc-95e5-8d7174612563",
-      "updatedAt": "2026-08-01T21:22:10.351Z"
+      "updatedAt": "2026-08-01T22:09:29.929Z"
     },
     {
       "id": "992ca5ba-ec06-40d7-aa2f-0f3ca8353046",
@@ -69,14 +86,14 @@
       "title": "Welcome to Nebula",
       "body": "## *A calm place for your thoughts.*\n### fefe\ntestugb\n\n## Create folders to organize your ideas, and export your library whenever you want a portable backup.",
       "folderId": "inbox",
-      "updatedAt": "2026-08-01T20:47:13.952Z"
+      "updatedAt": "2026-08-01T22:08:56.765Z"
     },
     {
       "id": "orbit",
       "title": "Orbiting ideas",
       "body": "• Build small things\n• Keep what matters close\n• Make space to think",
       "folderId": "ideas",
-      "updatedAt": "2026-08-01T19:36:47.390Z"
+      "updatedAt": "2026-08-01T20:09:11.282Z"
     }
   ]
 }
