@@ -1,0 +1,82 @@
+{
+  "folders": [
+    {
+      "id": "inbox",
+      "name": "All notes",
+      "color": "#9a7cff"
+    },
+    {
+      "id": "ideas",
+      "name": "Ideas",
+      "color": "#55e6d1"
+    },
+    {
+      "id": "personal",
+      "name": "Personal",
+      "color": "#fb82bb"
+    },
+    {
+      "id": "cdb7772a-0171-47dc-95e5-8d7174612563",
+      "name": "git",
+      "color": "#ffc873"
+    }
+  ],
+  "notes": [
+    {
+      "id": "258b2c35-62c8-41a9-a6b0-ac73759024c5",
+      "title": "Google Colabs",
+      "body": "# LinK\n\n<href> https://colab.research.google.com/ </href>",
+      "folderId": "ideas",
+      "updatedAt": "2026-08-01T21:25:58.932Z"
+    },
+    {
+      "id": "274ac0af-40a0-4f7e-a412-eb5adfa0d5c9",
+      "title": "Definitions",
+      "body": "# Soft Reset\n\nMoves HEAD without changing the staging area or working directory. Useful for squashing commits.\n\n# Mixed Reset\n\nMoves HEAD and updates the staging area, but doesn't touch the working directory. Great for unstaging changes.\nHard Reset: Moves HEAD, updates the staging area, and updates the working directory. Powerful but potentially destructive.\n\n# Reflog\n\nA safety net that records all changes to HEAD, allowing you to recover from almost any Git accident.\n\n# Time-based Resets\n\nAllow you to reset your repository to its state at a specific point in time.",
+      "folderId": "cdb7772a-0171-47dc-95e5-8d7174612563",
+      "updatedAt": "2026-08-01T21:24:11.998Z"
+    },
+    {
+      "id": "93a92373-503d-48a7-b469-4c6181a41e9c",
+      "title": "Command Sheet",
+      "body": "# Reflog\n\n--git reset --soft HEAD~2\n--git reset HEAD\n--git log\n--git log --oneline\n--git status\n",
+      "folderId": "cdb7772a-0171-47dc-95e5-8d7174612563",
+      "updatedAt": "2026-08-01T21:22:06.133Z"
+    },
+    {
+      "id": "ab6b3bec-bbb1-44f8-a784-d199c482608a",
+      "title": "Git Reset  && Reflog",
+      "body": "# Soft Reset\n\n## ***git reset --soft HEAD~2***\n\nThis command moves HEAD back two commits (to the commit before \"Add subtraction function\")\nThe ~2 means \"two commits before the current HEAD\"\nYou can use ~N to go back N commit\nThen run the below command to verify the reset should see the log go back 2\n***git log --oneline***\n\n# Mixed Reset: Unstaging Changes\n\n## ***git reset HEAD***\n\n--This unstages our changes but keeps them in the working directory\n1. echo \"function divide(a, b) { return a / b; }\" >> math.js\n2. git add math.js\n3. Now, let's say we've changed our mind and don't want to stage this change yet\n4. We can use a mixed reset:\n*This is actually the default mode for git reset*\n*A mixed reset moves the HEAD and updates the staging area to match, but it doesn't touch the working directory*\n\n# Hard Reset: Discarding Changes\n\n## ***git reset --hard HEAD~1***\n\nA hard reset moves the HEAD, updates the staging area, AND updates the working directory to match\n\nThis stages and commits our division function, then performs a hard reset to the previous commit, effectively \"undoing\" our last commit and discarding the changes\n\n# Using Reflog to Recover Lost Commits\n\nThe reflog is a log of all the places HEAD has been in your local repository. It's like a super-history that even records history-rewriting commands like reset\n\n## ***git reflog***\n\n**git reset --hard HEAD@{1}**\nThis resets to the state of HEAD before your last action (which was the hard reset\n\n# Time-based Resets\n\nGit also allows you to reset your repository to its state at a specific point in time\n\n## ***git reset --hard master@{\"1 hour ago\"}***\n\nThis resets your repository to its state from 1 hour ago\nYou can use various time descriptors like \"yesterday\", \"2 days ago\", \"3 minutes ago\", etc.",
+      "folderId": "cdb7772a-0171-47dc-95e5-8d7174612563",
+      "updatedAt": "2026-08-01T21:22:10.351Z"
+    },
+    {
+      "id": "992ca5ba-ec06-40d7-aa2f-0f3ca8353046",
+      "title": "Nebula Test V_3",
+      "body": "# Testing 1.0\n## Testing v2\nTesting this out\n\n# Testing 2",
+      "folderId": "personal",
+      "updatedAt": "2026-08-01T19:54:47.884Z"
+    },
+    {
+      "id": "87d0e7e0-5f32-4d47-93fe-78322288105c",
+      "title": "Nebula_v1",
+      "body": "Testing\n\n",
+      "folderId": "inbox",
+      "updatedAt": "2026-08-01T19:37:07.648Z"
+    },
+    {
+      "id": "welcome",
+      "title": "Welcome to Nebula",
+      "body": "## *A calm place for your thoughts.*\n### fefe\ntestugb\n\n## Create folders to organize your ideas, and export your library whenever you want a portable backup.",
+      "folderId": "inbox",
+      "updatedAt": "2026-08-01T20:47:13.952Z"
+    },
+    {
+      "id": "orbit",
+      "title": "Orbiting ideas",
+      "body": "• Build small things\n• Keep what matters close\n• Make space to think",
+      "folderId": "ideas",
+      "updatedAt": "2026-08-01T19:36:47.390Z"
+    }
+  ]
+}
