@@ -58,34 +58,8 @@ window.addEventListener('load', () => {
   document.addEventListener('drop', event => { const target = event.target.closest('[data-core-drop]'); if (!target || !dragged) return; event.preventDefault(); const destination = target.dataset.coreDrop; if (dragged.type === 'note') data.notes.find(item => item.id === dragged.id).folderId = destination; if (dragged.type === 'folder' && dragged.id !== destination) data.folders.find(item => item.id === dragged.id).parentId = destination; dragged = null; persist(); draw() })
   document.querySelector('#editor').ondblclick = event => { if (event.target.closest('.markdown') && previewMode) { previewMode = false; draw() } }
   document.querySelector('#search').oninput = event => { search = event.target.value; draw() }
-  const app = document.querySelector('.app')
-  const navToggle = document.createElement('button')
-  navToggle.className = 'pane-toggle nav-toggle'
-  navToggle.textContent = '‹'
-  navToggle.title = 'Collapse folders sidebar'
-  navToggle.onclick = event => { event.stopPropagation(); const hidden = app.classList.toggle('nav-collapsed'); navToggle.textContent = hidden ? '›' : '‹'; navToggle.title = hidden ? 'Expand folders sidebar' : 'Collapse folders sidebar'; (hidden ? document.querySelector('.notes') : document.querySelector('.sidebar')).append(navToggle) }
-  document.querySelector('.sidebar').append(navToggle)
-  const notesToggle = document.createElement('button')
-  notesToggle.className = 'pane-toggle notes-toggle'
-  notesToggle.textContent = '‹'
-  notesToggle.title = 'Collapse notes panel'
-  notesToggle.onclick = event => { event.stopPropagation(); const hidden = app.classList.toggle('notes-collapsed'); notesToggle.textContent = hidden ? '›' : '‹'; notesToggle.title = hidden ? 'Expand notes panel' : 'Collapse notes panel'; (hidden ? document.querySelector('.editor') : document.querySelector('.notes-head')).append(notesToggle) }
-  document.querySelector('.notes-head').append(notesToggle)
   const css = document.createElement('style')
-  css.textContent = `.app{transition:grid-template-columns .25s ease}.app.nav-collapsed{grid-template-columns:0 minmax(0,315px) minmax(0,1fr)}.app.notes-collapsed{grid-template-columns:245px 0 minmax(0,1fr)}.app.nav-collapsed.notes-collapsed{grid-template-columns:0 0 minmax(0,1fr)}.sidebar,.notes{transition:opacity .2s ease,padding .25s ease;overflow:hidden}.app.nav-collapsed .sidebar,.app.notes-collapsed .notes{opacity:0;padding-left:0;padding-right:0;pointer-events:none}.pane-toggle{position:absolute;z-index:5;border:1px solid #6854a8;background:#151126;color:#d1c4ff;width:22px;height:26px;border-radius:0 6px 6px 0;cursor:pointer}.pane-toggle:hover{color:#fff;background:#8066e5;box-shadow:0 0 12px #8b70ed77}.sidebar{position:relative}.nav-toggle{right:-23px;top:90px}.notes .nav-toggle{left:-1px;right:auto;top:90px}.notes-head,.editor{position:relative}.notes-toggle{right:-39px;top:2px}.editor .notes-toggle{left:-1px;right:auto;top:29px}.subfolder-toolbar{display:flex;justify-content:space-between;align-items:center;color:#8a849f;font:10px 'DM Mono';padding:5px 2px 9px}.subfolder-toolbar button{border:1px solid #6d5bb155;background:#1a1630;color:#c8baff;border-radius:6px;padding:6px;font:10px 'DM Mono'}.subfolder-toolbar .up-folder{padding:0;border:0;background:transparent;color:#b9a8ff}.subfolder-toolbar .up-folder:hover{color:#fff;text-shadow:0 0 10px #a58bff}.subfolder-card{width:100%;display:grid;grid-template-columns:10px 1fr;gap:4px;border:1px solid #403661;background:#141126;color:#e0daf1;border-radius:9px;padding:10px;text-align:left;margin:0 0 6px}.subfolder-card:hover{border-color:var(--folder-color);box-shadow:0 0 16px color-mix(in srgb,var(--folder-color) 35%,transparent)}.subfolder-card i{grid-row:span 2;width:8px;height:8px;border-radius:50%;background:var(--folder-color);box-shadow:0 0 9px var(--folder-color);margin-top:4px}.subfolder-card b{font-size:12px}.subfolder-card small{color:#89819f;font:9px 'DM Mono'}`
+  css.textContent = `.subfolder-toolbar{display:flex;justify-content:space-between;align-items:center;color:#8a849f;font:10px 'DM Mono';padding:5px 2px 9px}.subfolder-toolbar button{border:1px solid #6d5bb155;background:#1a1630;color:#c8baff;border-radius:6px;padding:6px;font:10px 'DM Mono'}.subfolder-toolbar .up-folder{padding:0;border:0;background:transparent;color:#b9a8ff}.subfolder-toolbar .up-folder:hover{color:#fff;text-shadow:0 0 10px #a58bff}.subfolder-card{width:100%;display:grid;grid-template-columns:10px 1fr;gap:4px;border:1px solid #403661;background:#141126;color:#e0daf1;border-radius:9px;padding:10px;text-align:left;margin:0 0 6px}.subfolder-card:hover{border-color:var(--folder-color);box-shadow:0 0 16px color-mix(in srgb,var(--folder-color) 35%,transparent)}.subfolder-card i{grid-row:span 2;width:8px;height:8px;border-radius:50%;background:var(--folder-color);box-shadow:0 0 9px var(--folder-color);margin-top:4px}.subfolder-card b{font-size:12px}.subfolder-card small{color:#89819f;font:9px 'DM Mono'}`
   document.head.append(css)
   draw()
-  const dock = document.createElement('div')
-  dock.className = 'nebula-dock'
-  dock.innerHTML = '<button data-dock="folders">☰ Folders</button><button data-dock="notes">☷ Notes</button><span></span><a href="https://colab.research.google.com/" target="_blank" rel="noopener">◉ Colab</a><a href="https://vscode.dev/" target="_blank" rel="noopener">⌘ VS Code</a><a href="https://github.com/" target="_blank" rel="noopener">◈ GitHub</a><a href="https://www.google.com/" target="_blank" rel="noopener">◧ Browse</a>'
-  document.body.append(dock)
-  dock.onclick = event => {
-    const button = event.target.closest('[data-dock]')
-    if (!button) return
-    if (button.dataset.dock === 'folders') app.classList.toggle('nav-collapsed')
-    if (button.dataset.dock === 'notes') app.classList.toggle('notes-collapsed')
-  }
-  const dockStyle = document.createElement('style')
-  dockStyle.textContent = '.nebula-dock{position:fixed;right:20px;bottom:18px;z-index:100;display:flex;gap:5px;align-items:center;max-width:calc(100vw - 30px);padding:7px;border:1px solid #554681;background:#0b091beF;border-radius:10px;box-shadow:0 12px 34px #0009,0 0 20px #8066e533;backdrop-filter:blur(12px);font:10px "DM Mono"}.nebula-dock span{height:18px;border-left:1px solid #4d426b;margin:0 2px}.nebula-dock button,.nebula-dock a{border:1px solid transparent;border-radius:6px;background:transparent;color:#cfc6ea;padding:6px 7px;text-decoration:none;font:inherit;white-space:nowrap;cursor:pointer}.nebula-dock button:hover,.nebula-dock a:hover{color:white;background:#725ad155;border-color:#aa92ff66;box-shadow:0 0 12px #8066e555}@media(max-width:700px){.nebula-dock{right:8px;bottom:8px;gap:2px}.nebula-dock a,.nebula-dock button{font-size:9px;padding:5px}.nebula-dock a:nth-last-child(-n+2){display:none}}'
-  document.head.append(dockStyle)
 })
