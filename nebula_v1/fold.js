@@ -38,11 +38,15 @@ document.body.append(launchpad)
 window.addEventListener('load', () => {
   const originalRender = render
   let dragged = null
-  const persist = () => { save(); originalRender() }
+  const currentFolderId = () => {
+    const name = document.querySelector('#folder-title')?.textContent
+    return data.folders.find(item => item.name === name)?.id || 'inbox'
+  }
+  const persist = () => { save(); render() }
 
   render = function enhancedRender() {
     originalRender()
-    const active = folder
+    const active = currentFolderId()
     const list = document.querySelector('#note-list')
     const panel = document.querySelector('.notes-head')
     if (!list || !panel) return
@@ -61,7 +65,7 @@ window.addEventListener('load', () => {
         const name = prompt('Subfolder name')
         if (!name?.trim()) return
         const colors = ['#9a7cff', '#55e6d1', '#fb82bb', '#ffc873']
-        data.folders.push({ id: uid(), name: name.trim(), color: colors[data.folders.length % colors.length], parentId: folder })
+        data.folders.push({ id: uid(), name: name.trim(), color: colors[data.folders.length % colors.length], parentId: currentFolderId() })
         persist()
       }
       panel.append(button)
