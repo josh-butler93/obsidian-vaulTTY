@@ -3,32 +3,38 @@
     {
       "id": "inbox",
       "name": "All notes",
-      "color": "#9a7cff"
+      "color": "#9a7cff",
+      "parentId": null
     },
     {
       "id": "ideas",
       "name": "Ideas",
-      "color": "#55e6d1"
+      "color": "#55e6d1",
+      "parentId": null
     },
     {
       "id": "personal",
       "name": "Personal",
-      "color": "#fb82bb"
+      "color": "#fb82bb",
+      "parentId": null
     },
     {
       "id": "cdb7772a-0171-47dc-95e5-8d7174612563",
       "name": "git",
-      "color": "#ffc873"
+      "color": "#ffc873",
+      "parentId": null
     },
     {
       "id": "f091d14e-d07f-4503-9525-6456b93e1f18",
       "name": "k8s",
-      "color": "#9a7cff"
+      "color": "#9a7cff",
+      "parentId": null
     },
     {
       "id": "4b7114a3-7dcb-440f-8b00-897ef97b0fd3",
       "name": "github Actions",
-      "color": "#55e6d1"
+      "color": "#55e6d1",
+      "parentId": null
     }
   ],
   "notes": [
@@ -37,7 +43,7 @@
       "title": "actions/checkout@v4",
       "body": "# Inital Setup\n\n---\ntouch .github/workflows/ci.yml\nThis uses: actions/checkout@v4 line tells GitHub Actions to download and run the v4 version of the official checkout action\n\n## ci.yaml\n\n---\n\nname: CI\n\non: [push]\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: Checkout code\n        uses: actions/checkout@v4 #This uses: actions/checkout@v4 line tells GitHub Actions to download and run the v4 version of the official checkout action.\n\n      - name: List Files\n        run: ls -la # The run keyword allows you to execute command-line programs \n\n---\n## index.js File\n\n***echo \"console.log('Hello, GitHub Actions!');\" > index.js***\n\n*This file will serve as proof that the actions/checkout action is working correctly when we see it listed in the workflow logs*\n\n#git add .\n#git commit -m \"Add CI workflow and index.js\"\n#git push\n\n",
       "folderId": "4b7114a3-7dcb-440f-8b00-897ef97b0fd3",
-      "updatedAt": "2026-08-02T00:01:45.033Z"
+      "updatedAt": "2026-08-02T00:28:55.544Z"
     },
     {
       "id": "f8b4429d-027e-49de-ac24-8433932d359e",
@@ -100,7 +106,7 @@
       "title": "Welcome to Nebula",
       "body": "## *A calm place for your thoughts.*\n### fefe\ntestugb\n\n## Create folders to organize your ideas, and export your library whenever you want a portable backup.",
       "folderId": "inbox",
-      "updatedAt": "2026-08-01T22:08:56.765Z"
+      "updatedAt": "2026-08-02T01:08:57.784Z"
     },
     {
       "id": "orbit",
