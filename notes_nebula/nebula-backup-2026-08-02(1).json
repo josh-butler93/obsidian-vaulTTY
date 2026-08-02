@@ -63,11 +63,32 @@
   ],
   "notes": [
     {
+      "id": "b705a43c-c2cc-4a3a-ae61-39745724df11",
+      "title": "GH Actions TO-DO-List",
+      "body": "# Labeling new issues\n\nWhenever a new issue comes up have gh actions trigger to give it a label\nVideo Link: https://www.youtube.com/watch?v=BQrohJ3PT7I\n\nStatus:\n[x] On hold\n[] In progress\n[] Complete\n---",
+      "folderId": "4b7114a3-7dcb-440f-8b00-897ef97b0fd3",
+      "updatedAt": "2026-08-02T02:34:01.676Z"
+    },
+    {
+      "id": "6892c1a1-6de6-40ea-9f65-f9196b1c6ca9",
+      "title": "Setting Up Secrets",
+      "body": "# Adding Repo Secrets\n\n---\n**Add a Repository Secret**\na. Open your web browser and navigate to your github-actions-demo repository on GitHub: https://github.com/your-username/github-actions-demo\nb. Click on the Settings tab\nc. In the left sidebar, scroll down to the Security section, click on Secrets and variables, and then select Actions\ne. Click the green New repository secret button\n       *Enter the following details:*\n       *Name: MY_SECRET*\n       *Secret: SuperSecretValue123*\n\n***When you use a secret in a workflow, GitHub automatically masks it in the logs***\n*Even if you try to echo it, the output will show asterisks (***) instead of the actual value*\n\n# Inital Setup\n\n---\n*touch .github/workflows/touch .github/workflows/secrets-demo.yml-demo.yml*\n\n---\n## secrets-demo.yml\n\nname: Secrets Demo\non: [push]\n\njobs:\n  use-secret:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout code\n        uses: actions/checkout@v4 ##This action downloads or checks out the repository’s files into the GitHub Actions runner\n\n      - name: Print Secret\n        env:\n          MY_SECRET_VAL: ${{ secrets.MY_SECRET }}\n        run: |\n          echo \"Printing secret directly (masked): ${{ secrets.MY_SECRET }}\"\n          echo \"Printing secret from env (masked): $MY_SECRET_VAL\"\n\n#git add .github/workflows/secrets-demo.yml\n#git commit -m \"Add workflow to test secrets\"\n#git push\n---",
+      "folderId": "4b7114a3-7dcb-440f-8b00-897ef97b0fd3",
+      "updatedAt": "2026-08-02T02:24:38.948Z"
+    },
+    {
+      "id": "792a540d-3ebc-4110-942b-1e093a7e2151",
+      "title": "env Vars",
+      "body": "# Initial Setup\n\ntouch .github/workflows/env-demo.yml\n\n---\n## env-demo.yaml\n\nname: Environment Variable Demo\n\non: [push]\n\nenv:\n  GREETING: \"Hello\"\n\njobs:\n  print-greeting:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Print Greeting\n        run: echo \"${{ env.GREETING }}, World!\"\n\n#git add .github/workflows/env-demo.yml\n#git commit -m \"Add workflow with environment variable\"\n#git push\n\n---\n## Setup Breakdown\n\na. jobs: Defines the jobs that the workflow runs\nb. print-greeting: The ID of the job\nc. runs-on: Configures the machine type (runner) to run the job\nd. steps: Groups together all the steps that run in the job\ne. run: Executes a command in the runner's shell\n        We use echo to print the value of GREETING followed by , World!",
+      "folderId": "4b7114a3-7dcb-440f-8b00-897ef97b0fd3",
+      "updatedAt": "2026-08-02T01:50:20.874Z"
+    },
+    {
       "id": "77a45778-ca41-43f1-b49c-26a026693600",
       "title": "actions/checkout@v4",
       "body": "# Inital Setup\n\n---\ntouch .github/workflows/ci.yml\nThis uses: actions/checkout@v4 line tells GitHub Actions to download and run the v4 version of the official checkout action\n\n## ci.yaml\n\n---\n\nname: CI\n\non: [push]\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: Checkout code\n        uses: actions/checkout@v4 #This uses: actions/checkout@v4 line tells GitHub Actions to download and run the v4 version of the official checkout action.\n\n      - name: List Files\n        run: ls -la # The run keyword allows you to execute command-line programs \n\n---\n## index.js File\n\n***echo \"console.log('Hello, GitHub Actions!');\" > index.js***\n\n*This file will serve as proof that the actions/checkout action is working correctly when we see it listed in the workflow logs*\n\n#git add .\n#git commit -m \"Add CI workflow and index.js\"\n#git push\n\n",
       "folderId": "4b7114a3-7dcb-440f-8b00-897ef97b0fd3",
-      "updatedAt": "2026-08-02T01:35:13.035Z"
+      "updatedAt": "2026-08-02T01:38:00.216Z"
     },
     {
       "id": "f8b4429d-027e-49de-ac24-8433932d359e",
@@ -130,7 +151,7 @@
       "title": "Welcome to Nebula",
       "body": "## *A calm place for your thoughts.*\n### fefe\ntestugb\n\n## Create folders to organize your ideas, and export your library whenever you want a portable backup.",
       "folderId": "inbox",
-      "updatedAt": "2026-08-02T01:35:21.333Z"
+      "updatedAt": "2026-08-02T01:38:07.122Z"
     },
     {
       "id": "orbit",
