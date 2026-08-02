@@ -61,7 +61,7 @@ window.addEventListener('load', () => {
         const name = prompt('Subfolder name')
         if (!name?.trim()) return
         const colors = ['#9a7cff', '#55e6d1', '#fb82bb', '#ffc873']
-        data.folders.push({ id: uid(), name: name.trim(), color: colors[data.folders.length % colors.length], parentId: active })
+        data.folders.push({ id: uid(), name: name.trim(), color: colors[data.folders.length % colors.length], parentId: folder })
         persist()
       }
       panel.append(button)
