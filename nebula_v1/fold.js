@@ -42,7 +42,7 @@ window.addEventListener('load', () => {
 
   render = function enhancedRender() {
     originalRender()
-    const active = document.querySelector('.folder.active[data-folder]')?.dataset.folder || 'inbox'
+    const active = folder
     const list = document.querySelector('#note-list')
     const panel = document.querySelector('.notes-head')
     if (!list || !panel) return
