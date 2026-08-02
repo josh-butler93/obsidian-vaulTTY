@@ -33,11 +33,25 @@
   ],
   "notes": [
     {
+      "id": "77a45778-ca41-43f1-b49c-26a026693600",
+      "title": "actions/checkout@v4",
+      "body": "# Inital Setup\n\n---\ntouch .github/workflows/ci.yml\nThis uses: actions/checkout@v4 line tells GitHub Actions to download and run the v4 version of the official checkout action\n\n## ci.yaml\n\n---\n\nname: CI\n\non: [push]\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: Checkout code\n        uses: actions/checkout@v4 #This uses: actions/checkout@v4 line tells GitHub Actions to download and run the v4 version of the official checkout action.\n\n      - name: List Files\n        run: ls -la # The run keyword allows you to execute command-line programs \n\n---\n## index.js File\n\n***echo \"console.log('Hello, GitHub Actions!');\" > index.js***\n\n*This file will serve as proof that the actions/checkout action is working correctly when we see it listed in the workflow logs*\n\n#git add .\n#git commit -m \"Add CI workflow and index.js\"\n#git push\n\n",
+      "folderId": "4b7114a3-7dcb-440f-8b00-897ef97b0fd3",
+      "updatedAt": "2026-08-02T00:01:45.033Z"
+    },
+    {
+      "id": "f8b4429d-027e-49de-ac24-8433932d359e",
+      "title": "Commands.yaml",
+      "body": "# Setup\n\n---\ntouch .github/workflows/simple-commands.yml\nvim \n\n---\n## simple-commands.yaml\n\n---\n\nname: Simple Commands\non: [push]\n\njobs:\n  build:\n    runs-on: ubuntu-latest # The runs-on keyword allows you to specify the type of machine to run the job on\n    steps: # A job contains a sequence of tasks called steps -- Steps can run commands, run setup tasks, or run an action in your repository\n      - name: Echo Hello\n        run: echo \"Hello, World!\"\n\n      - name: Show Date\n        run: date\n\n      - name: List Files\n        run: ls -la\n\n#git add .github/workflows/simple-commands.yml\n#git commit -m \"Add simple commands workflow\"\n#git push\n\n",
+      "folderId": "4b7114a3-7dcb-440f-8b00-897ef97b0fd3",
+      "updatedAt": "2026-08-01T23:49:14.044Z"
+    },
+    {
       "id": "e737bbee-5503-495a-83ff-09b090738277",
-      "title": "Nebula setup v1",
+      "title": "gitHub Actions Nebula setup v1",
       "body": "# Initial Github Setup\n\nA good setup is:\nGitHub Action runs when you push to main.\nIt verifies nebula_v1/index.html and nebula_v1/fold.js have valid JavaScript.\nIf the check passes, GitHub triggers Coolify through its webhook—or Coolify’s GitHub App detects the push and redeploys automatically\n\nIn your obsidian-vaulTTY repository, create:\n\n*.github/workflows/deploy-nebula.yml*\n\n---\n## deploy-nebula.yaml\n\nname: Validate and deploy Nebula\n\non:\n  push:\n    branches: [main]\n    paths:\n      - \"nebula_v1/**\"\n      - \".github/workflows/deploy-nebula.yml\"\n\njobs:\n  validate-and-deploy:\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: Check out code\n        uses: actions/checkout@v4\n\n      - name: Validate Nebula JavaScript\n        run: |\n          node <<'NODE'\n          const fs = require('fs');\n          const html = fs.readFileSync('nebula_v1/index.html', 'utf8');\n\n          if (!html.includes('fold.js')) {\n            throw new Error('index.html must reference fold.js');\n          }\n\n          for (const [, script] of html.matchAll(/<script>([\\s\\S]*?)<\\/script>/g)) {\n            new Function(script);\n          }\n\n          new Function(fs.readFileSync('nebula_v1/fold.js', 'utf8'));\n          console.log('Nebula validation passed.');\n          NODE\n\n      - name: Deploy with Coolify\n        run: |\n          curl --fail --request GET \"${{ secrets.COOLIFY_WEBHOOK }}\" \\\n            --header \"Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}\"\n\n---\n# Github Actions Finial Setup\n\n---\n## Create these GitHub repository secrets:\n\nCOOLIFY_WEBHOOK — the application’s deploy webhook URL from Coolify.\nCOOLIFY_TOKEN — an API token created in Coolify\n\n---\n## Coolify Webhooks\n\nIn Coolify, find your Nebula application’s Webhooks section to get the deployment URL, and create an API token in the Coolify dashboard’s API/token settings\n\nCoolify’s GitHub Actions example uses the same webhook-plus-Bearer-token pattern\n\n---\n## Final Push\n\n*git add .github/workflows/deploy-nebula.yaml*\n*git commit -m \"commit message\"*\n*git push origin main*",
       "folderId": "4b7114a3-7dcb-440f-8b00-897ef97b0fd3",
-      "updatedAt": "2026-08-01T23:04:43.998Z"
+      "updatedAt": "2026-08-01T23:49:33.876Z"
     },
     {
       "id": "f6f3f6bc-69b6-4305-838c-e8329ca1eb5f",
@@ -48,10 +62,10 @@
     },
     {
       "id": "35fcb95f-2714-4996-a6de-27031c58de70",
-      "title": "Yaml File Creation",
+      "title": "Hello-world.yaml",
       "body": "# hello-world.yml\n\n--touch .github/workflows/hello-world.yml\n--ls -lR .github\n\n---\nname: Hello World Workflow #This key-value pair assigns a human-readable name to your workflow\non: [push] # The on: [push] configuration tells GitHub Actions to trigger this workflow every time a git push is made to any branch in the repository\njobs: # This job will run on an Ubuntu environment and execute a simple command\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Say Hello\n        run: echo \"Hello, World!\"\n\n---\n# Running the Action\n\n*git add .github/workflows/hello-world.yml*\n*git commit -m \"Add hello world workflow\"*\n*git push*\n\n---\nWhen you push code, multiple Actions may be triggered if you have multiple workflow files in your repository\nPlease identify the correct workflow run by checking the workflow name in the left sidebar or using the workflow run list on the right side\n\n---\n# Yaml File Breakdown\n\nLet's break down what this does:\n\na. jobs:: Starts the jobs section\nb. build:: The ID of the job\nc. runs-on: ubuntu-latest: Specifies the type of machine (runner) to run the job on\nd. steps:: A list of tasks to run in the job\ne. run: echo \"Hello, World!\": A shell command to execute\n\n---\n# Workflow Breakdown\n\nClick on the workflow run to view the detailed execution logs\n\nYou will see:\n\na. The workflow name: \"Hello World Workflow\" at the top\nb. The job name: \"build\" in the left sidebar\nc. The step execution: Click on the \"build\" job to expand it, then click on the \"Say Hello\" step\nd. The output: You should see the output Hello, World! displayed in the logs\n\n\n\n\n",
       "folderId": "4b7114a3-7dcb-440f-8b00-897ef97b0fd3",
-      "updatedAt": "2026-08-01T22:47:12.849Z"
+      "updatedAt": "2026-08-01T23:41:01.440Z"
     },
     {
       "id": "8281e5bc-524b-4044-b583-553a66e9b155",
@@ -65,7 +79,7 @@
       "title": "Reverting && Rebasing",
       "body": "# You can rebase\nworking\n# git cli -- with dashes\ncommand Ccommand\n\n## Rwawr",
       "folderId": "cdb7772a-0171-47dc-95e5-8d7174612563",
-      "updatedAt": "2026-08-01T22:09:29.929Z"
+      "updatedAt": "2026-08-01T23:07:05.102Z"
     },
     {
       "id": "992ca5ba-ec06-40d7-aa2f-0f3ca8353046",
