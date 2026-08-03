@@ -37,6 +37,7 @@ ps aux | grep [h]ttpd
 	* id
 	* id -un --to get the username
 	* su username --to switch to a different user
+	* sudo adduser jack --this will create a primary group for the user and have you setup the password and info for the user as well
 	* sudo useradd joker
 		* sudo grep -w 'joker' /etc/passwd --'-w': is used to match the whole word
 	* sudo useradd -m bob --the '-m' option tells the system to create a home directory
@@ -72,7 +73,10 @@ ps aux | grep [h]ttpd
 			--Normally, users with write permission to a directory can delete any file inside it
 			--With the sticky bit enabled, users can delete only files they own, even if they have write permission to the directory
 		* ls -ld Frontend --In the permission string, verify that you see an s and a T, indicating that the setgid and sticky bits are enabled
-	* 
+	* sudo chown jack:jack /home/labex/testfile --this changes the owner of the file
+		--ls -l /home/labex/testfile
+	* sudo chmod 750 /home/labex/testfile --this changes the files permission
+		-- 
 	
 
 ---------------------------------------------------------------------------------------------------------------------------
