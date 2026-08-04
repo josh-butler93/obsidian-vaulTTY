@@ -226,6 +226,8 @@ EOF'
 	* rpm -qf /lib64/libsolv.so.1
 	* find /var/cache/dnf -type f -name 'libsolv*.rpm'
 	* find . -name "health.html"
+	* find ~ -size +1M
+	* find ~ -mtime -1
 	* sudo rpm -Uvh --replacepkgs /path/to/libsolv-*.rpm
 	* sudo dnf clean all
 	* sudo dnf update
@@ -261,7 +263,15 @@ EOF'
 	* cat git/README.source | grep -A 2 extracted --this command will print out the two lines that follow the value you were looking for 
 	* cat git/README.source | grep -B 5 extracted --this command will show the lines that follow the value you were looking for 
 	* cat git/README.source | grep -C 4 extracted --this commannd will show the lines that come both before and after the value you are looking for 
-	* 
+	* tree -L 1 / 
+		--The -L 1 option limits the output to the first level under the root directory, which keeps the result readable and avoids flooding your terminal
+		--The / argument tells it to start from the root directory
+	* ls /home
+		--/home is where user directories are stored. Each user typically has their own directory here
+	* ls /etc
+		--/etc contains system configuration files
+	* ls /bin
+		--/bin holds essential command binaries (programs) that need to be available for all users
 ---------------------------------------------------------
 ---------------------------------------------------------
 ---Vim
