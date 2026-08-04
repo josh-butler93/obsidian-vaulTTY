@@ -363,3 +363,27 @@ EOF
 	* sudo augenrules --load 
 		--this loads the new rules from /etc/audit/rule.d into the running audit daemon
 	* sudo auditctl -l
+
+--------------------------
+Linux Variables
+
+	* my_var="Hello,Linx"
+		--Important Note: When assigning variables in Bash (and Zsh, which we're using in this lab), there should be no spaces around the equals sign (=)
+	* echo $my_var
+	* echo "The value of my_var is: $my_var"
+
+---
+Environment Variables
+
+	* env
+		--This will display a long list of variables
+	* echo $PATH
+		--The PATH variable lists directories where the system looks for executable programs
+		--Each directory is separated by a colon (:)
+	* export MY_ENV_VAR="This is an environment variable"
+		* echo $MY_ENV_VAR
+	* env | grep MY_ENV_VAR
+	* unset MY_ENV_VAR
+		--To unset (remove) this variable, use the unset command:
+	* unset -v MY_ENV_VAR
+		--use the -v option with unset to ensure you're unsetting a variable and not a shell function
