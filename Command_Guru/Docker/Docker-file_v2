@@ -1,0 +1,14 @@
+FROM nginx
+RUN apt-get update && apt-get install -y nano
+COPY index.html /usr/share/nginx/html/
+
+--This Dockerfile adds a new RUN instruction that updates the package index and installs the nano package by using the apt-get package manager
+
+--RUN apt-get update && apt-get install -y nano: This line updates the package list (apt-get update) and then installs nano (apt-get install -y nano)
+--
+
+	* docker build -t my-nginx-nano .
+	* docker run -d --name nano-container my-nginx-nano
+	* docker exec nano-container nano --version
+
+
