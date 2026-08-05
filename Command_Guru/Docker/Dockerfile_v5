@@ -1,0 +1,59 @@
+mkdir -p ~/project/advanced-dockerfile && cd ~/project/advanced-dockerfile
+
+---app.py
+from flask import Flask
+import os
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return f"Hello from {os.environ.get('ENVIRONMENT', 'unknown')} environment!"
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+---
+
+This is a simple Flask application that responds with a greeting message, including the environment it's running in
+
+---requirements.txt
+
+Flask==2.0.1
+Werkzeug==2.0.1
+
+---Dockerfile
+
+# Use an official Python runtime as the base image
+FROM python:3.9-slim
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Set an environment variable
+ENV ENVIRONMENT=production
+
+# Copy the requirements file into the container
+COPY requirements.txt .
+
+# Install the required packages
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the application code into the container
+COPY app.py .
+
+# Specify the command to run when the container starts
+CMD ["python", "app.py"]
+
+# Expose the port the app runs on
+EXPOSE 5000
+
+# Add labels for metadata
+LABEL maintainer="Your Name <your.email@example.com>"
+LABEL version="1.0"
+LABEL description="Flask app demo for advanced Dockerfile techniques"
+
+	* docker build -t advanced-flask-app .
+	* docker run -d -p 5000:5000 --name flask-container advanced-flask-app
+---
+
+
