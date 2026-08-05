@@ -1,0 +1,40 @@
+# The .dockerignore file allows you to specify files and directories that should be excluded when building a Docker image
+
+---touch .dockerignore
+
+---
+**/.git
+**/.gitignore
+**/__pycache__
+**/*.pyc
+**/*.pyo
+**/*.pyd
+**/.Python
+**/env
+**/venv
+**/ENV
+**/env.bak
+**/venv.bak
+---
+
+## Breakdown
+
+---
+**/.git: Ignore the .git directory and all its contents, wherever it appears in the directory structure.
+**/.gitignore: Ignore .gitignore files.
+**/__pycache__: Ignore Python's cache directories.
+**/*.pyc, **/*.pyo, **/*.pyd: Ignore compiled Python files.
+**/.Python: Ignore .Python files (often created by virtual environments).
+**/env, **/venv, **/ENV: Ignore virtual environment directories.
+**/env.bak, **/venv.bak: Ignore backup copies of virtual environment directories
+---
+	--The ** at the start of each line means "in any directory"
+
+---
+## Testing
+
+	* mkdir venv
+	* touch venv/ignore_me.txt
+	* touch .gitignore
+	* docker build -t ignored-flask-app .
+	* docker history ignored-flask-app

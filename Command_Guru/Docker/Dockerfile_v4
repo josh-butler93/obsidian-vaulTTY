@@ -1,0 +1,33 @@
+# Multi-stage Builds
+
+Multi-stage builds allow you to use multiple FROM statements in your Dockerfile
+
+---Dockerfile
+
+---
+# Build stage
+FROM python:3.9-slim AS builder
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --user --no-cache-dir -r requirements.txt
+
+# Final stage
+FROM python:3.9-slim
+WORKDIR /app
+
+# Copy only the installed packages from the builder stage
+COPY --from=builder /root/.local /root/.local
+COPY app.py .
+ENV PATH=/root/.local/bin:$PATH
+ENV ENVIRONMENT=production
+CMD ["python", "app.py"]
+EXPOSE 5000
+LABEL maintainer="Your Name <your.email@example.com>"
+LABEL version="1.0"
+LABEL description="Flask app demo with multi-stage build"
+---
+	* docker build -t multi-stage-flask-app .
+	* docker images | grep flask-app
+	* docker run -d -p 5001:5000 --name multi-stage-container multi-stage-flask-app
+	* docker history advanced-flask-app
+	* docker history multi-stage-flask-app
