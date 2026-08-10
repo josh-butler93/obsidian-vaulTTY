@@ -1,0 +1,31 @@
+Kali Linux Tool Collections: 
+
+Kali Linux offers different metapackages for installing tools:
+	• Individual Packages: Install specific tools one by one (e.g., nmap, wireshark, metasploit-framework)
+
+	• kali-linux-headless: A minimal set of tools suitable for headless systems, containing the most common command-line tools
+
+	• kali-linux-large: A comprehensive collection that includes most of Kali Linux's security tools (~450 tools
+
+Launching a Kali Linux Docker Container
+docker pull kalilinux/kali-rolling
+docker run -d --name kali-container -it kalilinux/kali-rolling /bin/bash
+	• docker run: Creates and starts a new container.
+	• -d: Runs the container in detached mode (in the background).
+	• --name kali-container: Names the container for easy reference.
+	• -it: Combines -i (interactive) and -t (tty) to allow interaction with the container's terminal.
+	• kalilinux/kali-rolling: Specifies the image to use.
+	• /bin/bash: Starts a Bash shell inside the container
+
+docker exec -it kali-container /bin/bash
+apt --version
+apt -y install nmap wireshark
+apt -y install kali-linux-headless
+	• This is good for basic security testing and when working with limited resources
+apt -y install kali-linux-large
+	• Install the large collection (for comprehensive security testing):
+VERSION_ID=$(docker exec kali-container cat /etc/os-release | grep VERSION_ID | cut -d '=' -f2 | tr -d '"')
+	• docker exec kali-container cat /etc/os-release: Executes cat /etc/os-release inside the container.
+	• grep VERSION_ID: Filters the output to only include the line containing VERSION_ID.
+	• cut -d '=' -f2: Splits the line at the = character and takes the second field (the value).
+	• tr -d '"': Removes the double quotes fro

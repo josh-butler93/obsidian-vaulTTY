@@ -109,6 +109,19 @@ Docker Link: https://hub.docker.com/
 
 #Executing Commands on a running container
 	* docker exec <container_name> cat /etc/os-release
+	* docker network ls
+		--This command lists all the networks that Docker create on the system
+		--bridge: This is the default network driver. When you start a container without specifying a network, it automatically connects to the bridge network. Containers on the same bridge network can communicate with each other using their IP addresses
+		--host: This driver removes network isolation between the container and the Docker host. The container shares the host's networking namespace, which means it uses the host's IP address and port space directly
+		--none: This driver disables all networking for a container. Containers using this network type will have no access to external networks or other containers. It's useful when you want to completely isolate a container
+	* docker network inspect bridge
+		--this command provides detailed info about the bridge network
+		--Subnet: The subnet used by containers in this network is 172.17.0.0/16. This means containers will be assigned IP addresses within this range
+		--Gateway: The gateway for this network is 172.17.0.1. This is the IP address that containers use to communicate with networks outside their own
+		--Containers: This field is empty because we haven't started any containers yet
+		--Options: These are various configuration options for the bridge network
+	*
+	* 
 
 
 ===============================
