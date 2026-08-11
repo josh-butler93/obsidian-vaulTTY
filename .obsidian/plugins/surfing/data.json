@@ -1,0 +1,135 @@
+{
+  "defaultSearchEngine": "google",
+  "customSearchEngine": [
+    {
+      "name": "duckduckgo",
+      "url": "https://duckduckgo.com/?q="
+    }
+  ],
+  "hoverPopover": true,
+  "ignoreList": [
+    "notion",
+    "craft"
+  ],
+  "alwaysShowCustomSearch": false,
+  "showOtherSearchEngines": false,
+  "showSearchBarInPage": true,
+  "markdownPath": "/",
+  "customHighlightFormat": false,
+  "highlightFormat": "[{CONTENT}]({URL})",
+  "highlightInSameTab": false,
+  "openInSameTab": false,
+  "showRefreshButton": true,
+  "openInObsidianWeb": false,
+  "useCustomIcons": false,
+  "useWebview": false,
+  "useIconList": true,
+  "darkMode": false,
+  "randomBackground": false,
+  "lastOpenedFiles": false,
+  "bookmarkManager": {
+    "openBookMark": false,
+    "saveBookMark": false,
+    "sendToReadWise": false,
+    "pagination": "12",
+    "category": "- Computer\n    - 算法\n    - 数据结构\n- obsidian\n    - surfing\n    - dataview\n",
+    "defaultCategory": "ROOT",
+    "defaultColumnList": [
+      "name",
+      "description",
+      "url",
+      "category",
+      "tags",
+      "created",
+      "modified",
+      "action"
+    ],
+    "defaultFilterType": "tree"
+  },
+  "treeData": [
+    {
+      "id": "cff34ee0b0754ac7",
+      "parent": 0,
+      "droppable": true,
+      "data": {
+        "fileType": "site",
+        "fileSize": ""
+      }
+    },
+    {
+      "id": "84d35bb7314ac1e0",
+      "parent": 0,
+      "droppable": true,
+      "data": {
+        "fileType": "site",
+        "fileSize": ""
+      }
+    },
+    {
+      "id": "a693fd95f9629d22",
+      "parent": 0,
+      "droppable": true,
+      "text": "Log in to continue your learning journey | Udemy",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "b77edb3575c42e68",
+      "parent": 0,
+      "droppable": true,
+      "data": {
+        "fileType": "site",
+        "fileSize": ""
+      }
+    },
+    {
+      "id": "1fafc55e17e70012",
+      "parent": 0,
+      "droppable": true,
+      "data": {
+        "fileType": "site",
+        "fileSize": ""
+      }
+    },
+    {
+      "id": "df20d40ed4214ad4",
+      "parent": 0,
+      "droppable": true,
+      "text": "Coolify",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "e6134e684313639f",
+      "parent": 0,
+      "droppable": true,
+      "text": "Surfing",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "131b1e3c6dfe741f",
+      "parent": 0,
+      "droppable": true,
+      "text": "Command Guru - Trilium Notes",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    }
+  ],
+  "enableHtmlPreview": true,
+  "supportLivePreviewInlineUrl": false,
+  "enableTreeView": true,
+  "focusSearchBarViaKeyboard": true
+}
