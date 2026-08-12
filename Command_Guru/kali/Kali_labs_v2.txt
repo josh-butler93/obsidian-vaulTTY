@@ -1,4 +1,5 @@
 ﻿Command_Guru
+Linux
 Kali-Linux_v1
 Nmap Breakdown
 nmap -sT -p 8000 localhost
@@ -33,4 +34,6 @@ python3 -m http.server 8000
     • We specify port 8000, which means our server will listen for incoming requests on this port
         ◦ curl http://localhost:8000
 
+
+Networking
 
