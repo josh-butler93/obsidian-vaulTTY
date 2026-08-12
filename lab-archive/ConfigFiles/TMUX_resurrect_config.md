@@ -1,3 +1,4 @@
+
 # Plugins
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
@@ -12,4 +13,4 @@ run '~/.tmux/plugins/tpm/tpm'
 bind S run-shell "~/.tmux/plugins/tmux-resurrect/scripts/save.sh"
 
 # Restore session
-bind R run-shell "~/.tmux/plugins/tmux-resurrect/scripts/restore.sh"
+bind R run-shell "~/.tmux/plugins/tmux-resurrect/scripts/restore.

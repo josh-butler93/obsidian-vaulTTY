@@ -1,0 +1,26 @@
+{
+  "createdUtc": 1786503478197,
+  "files": [
+    {
+      "createdUtc": 1786503582571,
+      "id": "cbe124de-4682-4906-ae3b-e8a89387451b",
+      "metadata": {},
+      "modifiedUtc": 1786503582571,
+      "name": "k8s.txt",
+      "tags": []
+    },
+    {
+      "createdUtc": 1786503979930,
+      "id": "200ac3c4-24f0-4aa4-82a8-6b638da5c90e",
+      "metadata": {},
+      "modifiedUtc": 1786503979930,
+      "name": "Testing2.txt",
+      "tags": []
+    }
+  ],
+  "folders": [],
+  "id": "a9291228-1475-4fff-8613-48b23dd76cbc",
+  "metadata": {},
+  "modifiedUtc": 1786503979930,
+  "name": "."
+}

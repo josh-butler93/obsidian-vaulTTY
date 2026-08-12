@@ -28,7 +28,19 @@
                 "url": "https://www.youtube.com/"
               },
               "icon": "lucide-file",
-              "title": "(51) YouTube"
+              "title": "(52) YouTube"
+            }
+          },
+          {
+            "id": "3ade4ee4d5eed888",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "https://www.youtube.com/watch?v=7BP9iWiKx8Q"
+              },
+              "icon": "lucide-file",
+              "title": "(52) Tmux Popups - The Most Underrated Feature in Tmux - YouTube"
             }
           },
           {
@@ -73,14 +85,14 @@
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "http://localhost:8082/#root/f2tz3RtFE9RY/FJxl5Yp17yfU/WAtnQZ0v47vk?ntxId=Rt64ob"
+                "url": "http://localhost:8082/api/branches/root_f2tz3RtFE9RY/export/subtree/markdown/bEAB4xnQQk"
               },
               "icon": "lucide-file",
-              "title": "Kali - Trilium Notes"
+              "title": "Command Guru - Trilium Notes"
             }
           },
           {
-            "id": "0426606b5f767401",
+            "id": "34f13afcd84bcfe8",
             "type": "leaf",
             "pinned": true,
             "state": {
@@ -123,7 +135,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -182,16 +194,6 @@
             }
           },
           {
-            "id": "a157092db13fcda6",
-            "type": "leaf",
-            "state": {
-              "type": "mk-path-view",
-              "state": {},
-              "icon": "layout-grid",
-              "title": "Navigator"
-            }
-          },
-          {
             "id": "74c73b237421e136",
             "type": "leaf",
             "state": {
@@ -200,9 +202,19 @@
               "icon": "chrome",
               "title": "Surfing Tab Tree"
             }
+          },
+          {
+            "id": "dbd9f735f822a701",
+            "type": "leaf",
+            "state": {
+              "type": "mk-path-view",
+              "state": {},
+              "icon": "layout-grid",
+              "title": "Navigator"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       },
       {
         "id": "7e36c167590167bf",
@@ -222,7 +234,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "cb577a5a97e1c06d",
@@ -332,6 +345,7 @@
   },
   "active": "131b1e3c6dfe741f",
   "lastOpenFiles": [
+    "Command Guru.zip",
     "Command_Guru/langchain/test 7.md",
     "Command_Guru/kali/Kali_labs_v2.txt",
     "Command_Guru/kali/lu753620docex.tmp",

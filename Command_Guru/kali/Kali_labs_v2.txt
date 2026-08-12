@@ -1,6 +1,8 @@
 ﻿Command_Guru
 Linux
 Kali-Linux_v1
+Links
+https://colab.research.google.com/
 Nmap Breakdown
 nmap -sT -p 8000 localhost
             ▪ -sT is an option that specifies a TCP connect scan. This tells Nmap to use the TCP connect method to check the status of the ports
