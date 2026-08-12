@@ -85,7 +85,7 @@
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "http://localhost:8082/api/branches/root_f2tz3RtFE9RY/export/subtree/markdown/bEAB4xnQQk"
+                "url": "http://localhost:8082/#root/f2tz3RtFE9RY?ntxId=Rt64ob"
               },
               "icon": "lucide-file",
               "title": "Command Guru - Trilium Notes"
