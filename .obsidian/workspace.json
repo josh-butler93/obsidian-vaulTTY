@@ -73,10 +73,10 @@
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "http://localhost:8082/#root/f2tz3RtFE9RY?ntxId=Rt64ob"
+                "url": "http://localhost:8082/#root/f2tz3RtFE9RY/FJxl5Yp17yfU/WAtnQZ0v47vk?ntxId=Rt64ob"
               },
               "icon": "lucide-file",
-              "title": "Command Guru - Trilium Notes"
+              "title": "Kali - Trilium Notes"
             }
           },
           {
@@ -123,7 +123,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -222,8 +222,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "cb577a5a97e1c06d",
@@ -331,8 +330,19 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "0426606b5f767401",
+  "active": "131b1e3c6dfe741f",
   "lastOpenFiles": [
+    "Command_Guru/langchain/test 7.md",
+    "Command_Guru/kali/Kali_labs_v2.txt",
+    "Command_Guru/kali/lu753620docex.tmp",
+    "Command_Guru/kali/lu753620doces.tmp",
+    "Command_Guru/kali/Kali_labs.odt",
+    "Command_Guru/kali/lu753620docep.tmp",
+    "Command_Guru/SELinux/lu743288dh4cx.tmp",
+    "Command_Guru/SELinux/Test2.txt",
+    "Command_Guru/SELinux/lu725011d4qb3.tmp",
+    "Command_Guru/SELinux/Test LibreOffice.odt",
+    "Command_Guru/SELinux/lu725011d4q6z.tmp",
     "2026-08-10.md",
     "Excalidraw/Untitled.md"
   ]

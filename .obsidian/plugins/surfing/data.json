@@ -80,9 +80,11 @@
       "id": "b77edb3575c42e68",
       "parent": 0,
       "droppable": true,
+      "text": "Arcane",
       "data": {
         "fileType": "site",
-        "fileSize": ""
+        "fileSize": "",
+        "icon": {}
       }
     },
     {
@@ -120,7 +122,7 @@
       "id": "131b1e3c6dfe741f",
       "parent": 0,
       "droppable": true,
-      "text": "Command Guru - Trilium Notes",
+      "text": "Kali - Trilium Notes",
       "data": {
         "fileType": "site",
         "fileSize": "",
