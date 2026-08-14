@@ -40,7 +40,7 @@
                 "url": "https://www.youtube.com/watch?v=7BP9iWiKx8Q"
               },
               "icon": "lucide-file",
-              "title": "(52) Tmux Popups - The Most Underrated Feature in Tmux - YouTube"
+              "title": "(54) Tmux Popups - The Most Underrated Feature in Tmux - YouTube"
             }
           },
           {
@@ -85,10 +85,10 @@
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "http://localhost:8082/#root/f2tz3RtFE9RY?ntxId=Rt64ob"
+                "url": "http://localhost:8082/#root/f2tz3RtFE9RY/ysCdQKAwcjQK/fSKNv5yUlYSy?ntxId=Rt64ob"
               },
               "icon": "lucide-file",
-              "title": "Command Guru - Trilium Notes"
+              "title": "Command Grail - Trilium Notes"
             }
           },
           {
@@ -134,8 +134,7 @@
               "title": "sh"
             }
           }
-        ],
-        "currentTab": 6
+        ]
       }
     ],
     "direction": "vertical"
@@ -343,8 +342,10 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "131b1e3c6dfe741f",
+  "active": "cff34ee0b0754ac7",
   "lastOpenFiles": [
+    "Command_Guru/Installs/installation_manifesto",
+    "Command_Guru/Installs",
     "text.txt",
     "test.txt",
     "Command Guru.zip",
@@ -355,8 +356,6 @@
     "Command_Guru/kali/Kali_labs.odt",
     "Command_Guru/kali/lu753620docep.tmp",
     "Command_Guru/SELinux/lu743288dh4cx.tmp",
-    "Command_Guru/SELinux/Test2.txt",
-    "Command_Guru/SELinux/lu725011d4qb3.tmp",
     "2026-08-10.md",
     "Excalidraw/Untitled.md"
   ]
