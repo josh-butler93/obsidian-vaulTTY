@@ -24,6 +24,7 @@ docker run -d --name kali-container -it kalilinux/kali-rolling /bin/bash
 	• -it: Combines -i (interactive) and -t (tty) to allow interaction with the container's terminal.
 	• kalilinux/kali-rolling: Specifies the image to use.
 	• /bin/bash: Starts a Bash shell inside the container
+
 docker exec -it kali-container /bin/bash
 apt --version
 apt -y install nmap wireshark
@@ -39,74 +40,148 @@ VERSION_ID=$(docker exec kali-container cat /etc/os-release | grep VERSION_ID | 
 
 Kali Linux Tool Collections: 
 
+
+
 Kali Linux offers different metapackages for installing tools:
+
 	• Individual Packages: Install specific tools one by one (e.g., nmap, wireshark, metasploit-framework)
+
 	• kali-linux-headless: A minimal set of tools suitable for headless systems, containing the most common command-line tools
+
 	• kali-linux-large: A comprehensive collection that includes most of Kali Linux's security tools (~450 tools
+
 Ctrl + d -- exits out of the container
+
+
+
 Launching a Kali Linux Docker Container
+
+
+
 docker pull kalilinux/kali-rolling
+
 docker run -d --name kali-container -it kalilinux/kali-rolling /bin/bash
+
 	• docker run: Creates and starts a new container.
+
 	• -d: Runs the container in detached mode (in the background).
+
 	• --name kali-container: Names the container for easy reference.
+
 	• -it: Combines -i (interactive) and -t (tty) to allow interaction with the container's terminal.
+
 	• kalilinux/kali-rolling: Specifies the image to use.
+
 	• /bin/bash: Starts a Bash shell inside the container
+
 docker exec -it kali-container /bin/bash
+
 apt --version
+
 apt -y install nmap wireshark
+
 apt -y install kali-linux-headless
+
 	• This is good for basic security testing and when working with limited resources
+
 apt -y install kali-linux-large
+
 	• Install the large collection (for comprehensive security testing):
+
 VERSION_ID=$(docker exec kali-container cat /etc/os-release | grep VERSION_ID | cut -d '=' -f2 | tr -d '"')
+
 	• docker exec kali-container cat /etc/os-release: Executes cat /etc/os-release inside the container.
+
 	• grep VERSION_ID: Filters the output to only include the line containing VERSION_ID.
+
 	• cut -d '=' -f2: Splits the line at the = character and takes the second field (the value).
+
 	• tr -d '"': Removes the double quotes from the value
+
 echo "$VERSION_ID" > ~/project/version.txt
+
 apt update && apt install -y iproute2
+
 ip a
+
 	• This command lists all network interfaces on your system along with their details, such as IP addresses and status
+
 	• In the output, you will see interfaces like lo (loopback) and eth0 (your primary network interface)
+
 	• Look for the inet line under eth0 to find your IP address, such as 172.17.0.2. The <UP> status indicates the interface is active
+
+
+
+
+
 apt install -y iputils-ping --installing ping
+
 ping -c 4 8.8.8.8
+
 apt install -y netdiscover
+
 netdiscover -i eth0 -r 172.17.0.0/16 -- (The netdiscover tool uses ARP requests to detect active devices on the local network)
+
 	• The -i eth0 specifies the interface
+
 	• -r 172.17.0.0/16 defines the IP range to scan
+
 	• If your interface name differs, replace eth0 accordingly
+
 	• The output lists IP addresses and MAC addresses of devices on the network
+
 apt install -y nmap
+
 nmap 172.17.0.1
+
 	• From the netdiscover output in the previous step, you should have noted IP addresses of devices on the network, such as 172.17.0.1
+
 	• You will scan this IP address for open ports. If you have a different IP from your scan, use that instead
+
 	• This output lists open ports on the target IP
+
 	• For example, 22/tcp open ssh indicates an SSH service is running, while 3000/tcp and 3001/tcp suggest a web server
+
 	• The nmap tool, short for Network Mapper, is widely used for network discovery and security auditing, allowing you to identify potential points of access on a device
+
 nmap 172.17.0.1 -oN /root/scan_results.txt
+
 	• The -oN option instructs nmap to save the results in a normal format to the specified file path /root/scan_results.txt
+
 	• If you used a different IP in Step 4, replace 172.17.0.1 with that IP
+
 cat /root/scan_results.txt
+
 dpkg -l
+
 	• This command displays a detailed list of all installed packages, including their names, versions, architectures, and brief descriptions
+
 rpm -I
+
 	• Installs a specific package file
+
 rpm -e
+
 	• Removes an installed package by name
+
 rpm -q
+
 	• Queries information about a package
+
 apt install -y metasploit-framework
+
 msfconsole
+
 apt install -y apache2
+
 service apache2 start
+
 nmap localhost -- you should see port 80 open when ran in succession with the above 2 commands
+
 nmap localhost > /root/nmap_scan.txt
+
 apt install -y nikto
+
 nikto -h localhost
+
 	• The -h option specifies the host to scan, in this case, localhost, targeting the default web server port (usually 80)
-nmap -v -p 7777 localhost > /home/labex/project/nmap_scan_output.txt
-ip addr show | grep inet
-	-The grep inet command then filters the output to show only the lines that contain the word "inet", which are the lines with IP addresses	

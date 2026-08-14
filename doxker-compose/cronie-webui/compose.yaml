@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  cron-webui:
+    image: alseambusher/crontab-ui:latest
+    container_name: cron_manager
+    restart: unless-stopped
+    ports:
+      # Maps host port 8000 to the container's internal web interface
+      - "8000:8000"
+    environment:
+      # MANDATORY FOR SECURITY: Sets authentication for your Web UI
+      - BASIC_AUTH_USER=admin
+      - BASIC_AUTH_PWD=admin
+    volumes:
+      # Persists your created cron jobs on the host machine
+      - ./crontabs:/crontab-ui/crontabs
+      # Optional: Persists execution logs so you can view them in the UI
+      - ./logs:/crontab-ui/crontabs/logs
