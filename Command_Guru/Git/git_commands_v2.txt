@@ -1,0 +1,35 @@
+# Initial Git repo Setup
+
+    * cd ~/project
+    * mkdir my-time-machine
+    * cd my-time-machine
+    * git init
+    * git status
+    * echo "Hello, Future Me" > message.txt
+    * git status
+    * git add message.txt
+    * git commit -m "Send a message to the future"
+    * git log
+
+# Git Config Management
+
+    *mkdir git-config-lab
+    * cd git-config-lab
+    * git init
+    * git config --list
+    * git config user.name
+    * git config --global user.name "Your Name"
+    * git config --global user.email "jane.doe@example.com"The --global flag: tells your time machine to apply these settings to all your time travel experiments on this systemgit config --global user.name
+    * git config --global user.email
+    * git config --global color.ui auto
+        --git config --global color.ui
+            -output should be auto
+    * git config --global core.editor nano
+        --git config --global core.editor
+            -You should see nano as the output
+    * git config --global core.autocrlf input 
+        --This tells your time machine to convert CRLF to LF when you commit (add events to your timeline), but not the other way around when you checkout (view events from the timeline)
+    * git config --global alias.st status
+        --This creates an alias st for the status command
+        --Now, instead of typing git status, you can simply type git st
+            ** git st
