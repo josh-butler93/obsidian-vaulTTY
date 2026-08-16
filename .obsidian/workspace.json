@@ -25,10 +25,10 @@
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://www.youtube.com/watch?v=1KmuHzkpVGQ"
+                "url": "https://www.youtube.com/watch?v=_WI4i8iIsrc"
               },
               "icon": "lucide-file",
-              "title": "(56) SILO Season 3 Episode 7 Live Discussion - YouTube"
+              "title": "(56) SILO Season 3 Episode 7 Ending Explained - YouTube"
             }
           },
           {
@@ -345,19 +345,45 @@
   },
   "active": "84d35bb7314ac1e0",
   "lastOpenFiles": [
-    "Command_Guru/networking/networking_commands.ipynb",
-    "Command_Guru/networking",
-    "Command_Guru/Untitled Folder",
-    "Command_Guru/jupyter/jupyternotes.ipynb",
-    "Command_Guru/jupyter/jupyternotes.ipygb",
-    "Command_Guru/jupyter/untitled.ipygb",
-    "Command_Guru/jupyter",
-    "Command_Guru/Git/git_definitions",
-    "Command_Guru/Git/definitions",
-    "Command_Guru/Git/git_commands_v2.txt",
-    "Command_Guru/Git/git_commands_v2",
-    "Command_Guru/langchain/test 7.md",
-    "2026-08-10.md",
-    "Excalidraw/Untitled.md"
+    "Command_Guru/obsidian-vaulTTY/webpages/www/webpages/selinux/index.html",
+    "Command_Guru/obsidian-vaulTTY/webpages/www/webpages/portal/index.html",
+    "Command_Guru/obsidian-vaulTTY/webpages/www/webpages/podman/index.html.bak",
+    "Command_Guru/obsidian-vaulTTY/webpages/www/webpages/podman/index.html",
+    "Command_Guru/obsidian-vaulTTY/webpages/www/webpages/linux/index.html",
+    "Command_Guru/obsidian-vaulTTY/webpages/www/websites/index.html",
+    "Command_Guru/obsidian-vaulTTY/webpages/www/webpages/selinux",
+    "Command_Guru/obsidian-vaulTTY/webpages/www/webpages/portal",
+    "Command_Guru/obsidian-vaulTTY/webpages/www/webpages/podman",
+    "Command_Guru/obsidian-vaulTTY/webpages/www/webpages/linux",
+    "Command_Guru/obsidian-vaulTTY/webpages/www/webpages/index.html",
+    "Command_Guru/obsidian-vaulTTY/lab-archive/ollama/ollama setup.md",
+    "Command_Guru/obsidian-vaulTTY/lab-archive/ollama/ollama models.md",
+    "Command_Guru/obsidian-vaulTTY/lab-archive/ollama/ollama cloudfare tunnel.md",
+    "Command_Guru/obsidian-vaulTTY/lab-archive/Terraform/terraform-proxmox/README.md",
+    "Command_Guru/obsidian-vaulTTY/lab-archive/Kanban/Taskings/Untitled.md",
+    "Command_Guru/obsidian-vaulTTY/lab-archive/Kanban/Taskings/Build out home Assistant Pod.md",
+    "Command_Guru/obsidian-vaulTTY/lab-archive/Kanban/Taskings/Build out graylog Server.md",
+    "Command_Guru/obsidian-vaulTTY/lab-archive/Gt_Clones/learn-k8s/README.md",
+    "Command_Guru/obsidian-vaulTTY/lab-archive/docker-compose/tugtainer-compose.md",
+    "Command_Guru/obsidian-vaulTTY/lab-archive/docker-compose/Docker Compose Install_v2.md",
+    "Command_Guru/obsidian-vaulTTY/lab-archive/docker-compose/Docker Compose Index.md",
+    "Command_Guru/obsidian-vaulTTY/lab-archive/Yaml/Yaml Index.md",
+    "Command_Guru/obsidian-vaulTTY/lab-archive/TmuxRestore/ssh_tmux_session.md",
+    "Command_Guru/obsidian-vaulTTY/lab-archive/TmuxRestore/Tmux Restore Index.md",
+    "Command_Guru/obsidian-vaulTTY/lab-archive/Tmux/Tmux Restore.md",
+    "Command_Guru/obsidian-vaulTTY/lab-archive/Tmux/Tmux Index.md",
+    "Command_Guru/obsidian-vaulTTY/lab-archive/Tmux/Tmux Commands.md",
+    "Command_Guru/obsidian-vaulTTY/lab-archive/Terraform/Terraform Index.md",
+    "Command_Guru/obsidian-vaulTTY/lab-archive/Tailscale/Tailscale Index.md",
+    "Command_Guru/obsidian-vaulTTY/lab-archive/SSH/ssh_keys.md",
+    "Command_Guru/obsidian-vaulTTY/lab-archive/SSH/SSH Index.md",
+    "Command_Guru/obsidian-vaulTTY/lab-archive/Portainer/Portainer Install.md",
+    "Command_Guru/obsidian-vaulTTY/lab-archive/Portainer/Portainer Index.md",
+    "Command_Guru/obsidian-vaulTTY/lab-archive/Portainer/Portainer Agent Install.md",
+    "Command_Guru/obsidian-vaulTTY/lab-archive/PodmanDesktop/PodmanDesktop Index.md",
+    "Command_Guru/obsidian-vaulTTY/lab-archive/Images/wallhaven-x15w2d.jpg",
+    "Command_Guru/obsidian-vaulTTY/lab-archive/Images/wallhaven-gj15r7.png",
+    "Command_Guru/obsidian-vaulTTY/lab-archive/Images/wallhaven-4g823l.jpg",
+    "Command_Guru/obsidian-vaulTTY/lab-archive/Excalidraw/AWS EKS.svg"
   ]
 }
