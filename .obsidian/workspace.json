@@ -25,10 +25,10 @@
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://www.youtube.com/watch?v=_WI4i8iIsrc"
+                "url": "https://www.youtube.com/"
               },
               "icon": "lucide-file",
-              "title": "(56) SILO Season 3 Episode 6 LIVE Discussion - YouTube"
+              "title": "(56) YouTube"
             }
           },
           {
@@ -134,8 +134,7 @@
               "title": "sh"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -343,8 +342,9 @@
       "soundscapes:Soundscapes: My Music": false
     }
   },
-  "active": "84d35bb7314ac1e0",
+  "active": "cff34ee0b0754ac7",
   "lastOpenFiles": [
+    "Command_Guru/kali/kali_commands.ipynb",
     "Command_Guru/pluralsight",
     "Command_Guru/notebooks",
     "Command_Guru/obsidian-vaulTTY/webpages/www/webpages/selinux/index.html",
@@ -355,7 +355,6 @@
     "Command_Guru/obsidian-vaulTTY/webpages/www/websites/index.html",
     "Command_Guru/obsidian-vaulTTY/webpages/www/webpages/selinux",
     "Command_Guru/obsidian-vaulTTY/webpages/www/webpages/portal",
-    "Command_Guru/obsidian-vaulTTY/webpages/www/webpages/podman",
     "Command_Guru/obsidian-vaulTTY/lab-archive/ollama/ollama setup.md",
     "Command_Guru/obsidian-vaulTTY/lab-archive/ollama/ollama models.md",
     "Command_Guru/obsidian-vaulTTY/lab-archive/ollama/ollama cloudfare tunnel.md",
