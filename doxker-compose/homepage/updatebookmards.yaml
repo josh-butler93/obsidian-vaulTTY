@@ -1,0 +1,240 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/bookmarks
+
+- Developer:
+    - HermesAgent:
+        - abbr: HA
+          href: http://127.0.0.1:9119/chat
+          icon: hermes
+
+#    - Chatgpt:
+#        - abbr: GP
+#          href: https://chatgpt.com/
+#          icon: chatgpt.png
+
+    - Zapier:
+        - abbr: ZP
+          href: https://zapier.com/app/home?conversationId=5e3c58d4-360e-4af5-9ae3-1138ccd0d243
+          icon: n8n #zapier
+          
+    - Agents:
+        - abbr: ZPA
+          href: https://agents.zapier.com/bot-groups/4f5e3325-40d7-40d3-869e-51226fa11fa3
+          icon: zapier 
+
+    - Github:
+        - abbr: GH
+          href: https://github.com/
+          icon: github
+
+    #- GitLab:
+    #    - abbr: GL
+    #      href: https://gitlab.com/dashboard/projects/
+    #      icon: gitlab #gitlab.png
+
+    - Hostinger:
+        - abbr: HS
+          href: https://hpanel.hostinger.com/
+          icon: hostinger
+
+    - CircleCi:
+        - abbr: Ci
+          href: https://app.circleci.com/organization/circleci/8jvkU1FgUtToDpcxnRgqBQ
+          icon: circleci
+
+    - Helm:
+        - abbr: AH
+          href: https://artifacthub.io/packages/search?kind=0
+          icon: helm
+
+    - HuggingFace:
+        - abbr: HF
+          href: https://huggingface.co/
+          icon: grok
+
+    - LangSmith:
+        - abbr: LS
+          href: https://smith.langchain.com/
+          icon: discord
+
+    - Composio:
+        - abbr: CO
+          href: https://dashboard.composio.dev/butlerjl804_workspace/~/connect
+          icon: jira
+
+    - LMStudio:
+        - abbr: LMS
+          href: https://lmstudio.ai/models
+          icon: grok
+
+- Social:
+    #- Reddit:
+    #    - abbr: RE
+    #      href: https://reddit.com/
+    #      icon: reddit
+
+    - Atlassian:
+        - abbr: AL
+          href: https://id.atlassian.com/login
+          icon: atlassian
+
+    - GoogleCollab:
+        - abbr: GC
+          href: https://colab.research.google.com/
+          icon: collab
+
+    - OpenRouter:
+        - abbr: OR
+          href: https://openrouter.ai/workspaces/default/guardrails
+          icon: network
+
+    - Redis:
+        - abbr: RDS
+          href: https://app.redislabs.com/#/login
+          icon: redis
+
+    - Kraken:
+        - abbr: KR
+          href: https://id.kraken.com/sign-in
+          icon: bitcoin 
+
+    - eToro:
+        - abbr: ET
+          href: https://www.etoro.com/home
+          icon: ruby 
+          
+    - BankofAmerica:
+        - abbr: Bofa
+          href: https://www.bankofamerica.com/?page_msg=signoff&request_locale=en_us
+          icon: go
+
+    - Gmail:
+        - abbr: GM
+          href: https://mail.google.com/mail/u/0/#inbox
+          icon: gmail
+
+    - Command Guru:
+        - abbr: CG
+          href: http://localhost:5000
+          icon: linux 
+
+    - Portal:
+        - abbr: PR
+          href: http://localhost:3001
+          icon: apache 
+
+- Entertainment:
+    - YouTube:
+        - abbr: YT
+          href: https://youtube.com/
+          icon: youtube
+
+    - Udemy:
+        - abbr: UD
+          href: https://www.udemy.com/home/my-courses/learning/
+          icon: udemy
+
+    - Cineby:
+        - abbr: CB
+          href: https://www.cineby.at/
+          icon: jellyfin 
+
+    - HydraHD:
+        - abbr: HH
+          href: https://hydrahd.ru/
+          icon: plex
+
+    - Fmovies:
+        - abbr: FM
+          href: https://fmoviess.org/
+          icon: hulu
+
+    - 123Movies:
+        - abbr: MV
+          href: https://ww8.123moviesfree.net/
+          icon: netflix
+
+    - Prime Video:
+        - abbr: PV
+          href: https://www.amazon.com/gp/video/storefront?redirectToCMP=1
+          icon: amazon
+
+    - Tubi:
+        - abbr: TB
+          href: https://tubitv.com/
+          icon: tubi
+         
+    - Ahoy!:
+        - abbr: AH
+          href: https://yarrlist.net/movies-and-tv-shows
+          icon: proxmox 
+          # https://www.reddit.com/r/MoviesAndTVTalk/comments/1ultjon/looking_for_options_where_to_watch_silo_season_3/
+
+- HomeLab:
+    - Omarchy Glances:
+        - abbr: GL
+          href: http://10.0.0.33:61208/
+          icon: glances
+
+    #- Beszel:
+    #    - abbr: BZ
+    #      href: http://10.0.0.153:8090/
+    #      icon: beszel
+
+    - Dockhand:
+        - abbr: DH
+          href: http://10.0.0.33:3002/
+          icon: dockhand
+
+    - CasaOS Glances:
+        - abbr: GL
+          href: http://10.0.0.153:61208/
+          icon: glances
+
+    - Btop:
+        - abbr: BT
+          href: http://10.0.0.153:7681/
+          icon: prometheus 
+
+    - Excalidraw:
+        - abbr: EX
+          href: http://localhost:8181/ 
+          icon: excalidraw
+
+    - NetBird:
+        - abbr: NB
+          href: https://app.netbird.io/control-center
+          icon: netbird
+
+- Labs:
+    - Labex.io:
+        - abbr: LX
+          href: https://labex.io/
+          icon: docker #linux 
+
+    - KodeKloud:
+        - abbr: KX
+          href: https://kodekloud.com/
+          icon: terraform 
+
+    - Boot.dev:
+        - abbr: BD
+          href: https://www.boot.dev/dashboard/
+          icon: python 
+
+    - Codecademy:
+        - abbr: CC
+          href: https://www.codecademy.com/learn/
+          icon: rust 
+
+    - KillerCoda:
+        - abbr: KDA
+          href: https://killercoda.com/
+          icon: powershell 
+
+#- Webpages:
+#    - Command Guru:
+#        - abbr: CG
+#          href: http://localhost:5000
+#          icon: php 
