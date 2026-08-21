@@ -20,6 +20,18 @@
             }
           },
           {
+            "id": "02f67e05e980b3e1",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "http://10.0.0.193:3004/auth/login?return=%2F"
+              },
+              "icon": "lucide-file",
+              "title": "Dashboard - Semaphore UI"
+            }
+          },
+          {
             "id": "84d35bb7314ac1e0",
             "type": "leaf",
             "state": {
@@ -134,7 +146,8 @@
               "title": "sh"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -342,8 +355,9 @@
       "soundscapes:Soundscapes: My Music": false
     }
   },
-  "active": "cff34ee0b0754ac7",
+  "active": "02f67e05e980b3e1",
   "lastOpenFiles": [
+    "Command_Guru/jupyter_notebooks/linux_commands.ipynb",
     "doxker-compose/homepage/updatebookmards.yaml",
     "Command_Guru/jupyter_notebooks/docker_commands.ipynb",
     "Command_Guru/jupyter_notebooks/k8s_commands.ipynb",
@@ -354,7 +368,6 @@
     "Command_Guru/jupyter_notebooks",
     "Command_Guru/kali/kali_commands.ipynb",
     "Command_Guru/pluralsight",
-    "Command_Guru/notebooks",
     "Command_Guru/obsidian-vaulTTY/lab-archive/ollama/ollama setup.md",
     "Command_Guru/obsidian-vaulTTY/lab-archive/ollama/ollama models.md",
     "Command_Guru/obsidian-vaulTTY/lab-archive/ollama/ollama cloudfare tunnel.md",
