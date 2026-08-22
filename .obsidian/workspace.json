@@ -357,6 +357,8 @@
   },
   "active": "02f67e05e980b3e1",
   "lastOpenFiles": [
+    "Command_Guru/jupyter_notebooks/bash_scripts.ipynb",
+    "Command_Guru/jupyter_notebooks/notebook_experimenting.ipynb",
     "Command_Guru/jupyter_notebooks/pluralsight.ipynb",
     "Command_Guru/jupyter_notebooks/linux_commands.ipynb",
     "doxker-compose/homepage/updatebookmards.yaml",
@@ -366,8 +368,6 @@
     "Command_Guru/jupyter_notebooks/jupyternotes.ipynb",
     "Command_Guru/jupyter_notebooks/git_cmds_v1.ipynb",
     "Command_Guru/Git/git_cmds_v1.ipynb",
-    "Command_Guru/jupyter_notebooks",
-    "Command_Guru/kali/kali_commands.ipynb",
     "Command_Guru/obsidian-vaulTTY/lab-archive/ollama/ollama setup.md",
     "Command_Guru/obsidian-vaulTTY/lab-archive/ollama/ollama models.md",
     "Command_Guru/obsidian-vaulTTY/lab-archive/ollama/ollama cloudfare tunnel.md",
