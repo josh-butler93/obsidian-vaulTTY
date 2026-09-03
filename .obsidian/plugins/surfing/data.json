@@ -128,6 +128,39 @@
         "fileSize": "",
         "icon": {}
       }
+    },
+    {
+      "id": "02f67e05e980b3e1",
+      "parent": 0,
+      "droppable": true,
+      "text": "Termix",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "4c4019ec49d429ec",
+      "parent": 0,
+      "droppable": true,
+      "text": "Prime Video: Watch movies, TV shows, sports, and live TV",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "9b1e6a3441d96be8",
+      "parent": 0,
+      "droppable": true,
+      "text": "Dashboard - Semaphore UI",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
     }
   ],
   "enableHtmlPreview": true,

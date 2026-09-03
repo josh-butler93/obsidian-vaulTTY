@@ -25,10 +25,10 @@
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "http://10.0.0.193:3004/auth/login?return=%2F"
+                "url": "http://localhost:8080/"
               },
               "icon": "lucide-file",
-              "title": "Dashboard - Semaphore UI"
+              "title": "Termix"
             }
           },
           {
@@ -37,117 +37,44 @@
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://www.youtube.com/"
+                "url": "https://www.google.com/aclk?sa=L&pf=1&ai=DChsSEwjPlty8wNGWAxVvcUcBHVpPGY0YACICCAEQABoCcXU&co=1&ase=2&gclid=Cj0KCQjwkt_UBhDMARIsALpnOAy918_rxc2skPKV9L3bn0U5t0IBTUajr7KBgr6V5pO1Be1v4bjmNoYaAmp9EALw_wcB&ei=Ie6YatiAGvel5NoPk-jV4AY&cid=CAAS0gHkaLcCQHKQ-YH5efnF7wvL9hdYFb1_hcLhLp4q3TSmpij6ViaapiDjm2A_v4yJtdftqXlgJ1HtVNnm1wV2GzZEFEsglJOaFzipFUg_bIRK5TEs6fT9fRz7_7E85UZ1MXP9bmqasZe9dkNNM9yEMOp7IoUjnfL5tAhkhKxXfB3u0eu0rCMrgSz7YXXP1bqxbtWBfY05D5pFb2-Vwcts4VEkgaYylZJA0Dkhxee2VB1Ytq-YioS93M5LaoqRkj_CDFMKyULcmbM6fqv5B4F3dKB6S6s&cce=2&category=acrcp_v1_32&sig=AOD64_0WjvVmqS_t7cJ5D_eRkcSHbqXJVw&q&sqi=2&nis=6&ch=1&adurl=https://www.amazon.com/gp/video/storefront?ref%3Ddvm_us_dl_sl_go_br_brsa_mkw_p401-kw370-cr2856286-c%26mrntrk%3Dgo_cmp-22386851402_adg-177983916460_ad-818155172843_aud-2358113831031:kwd-2850171361_dev-c_ext-&ved=2ahUKEwiYlda8wNGWAxX3ElkFHRN0FWwQ0Qx6BAgPEAE"
               },
               "icon": "lucide-file",
-              "title": "(56) YouTube"
+              "title": "Prime Video: Watch movies, TV shows, sports, and live TV"
             }
           },
           {
-            "id": "3ade4ee4d5eed888",
+            "id": "4c4019ec49d429ec",
             "type": "leaf",
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://www.youtube.com/watch?v=7BP9iWiKx8Q"
+                "url": "https://www.google.com/aclk?sa=L&pf=1&ai=DChsSEwjPlty8wNGWAxVvcUcBHVpPGY0YACICCAEQABoCcXU&co=1&ase=2&gclid=Cj0KCQjwkt_UBhDMARIsALpnOAy918_rxc2skPKV9L3bn0U5t0IBTUajr7KBgr6V5pO1Be1v4bjmNoYaAmp9EALw_wcB&ei=Ie6YatiAGvel5NoPk-jV4AY&cid=CAAS0gHkaLcCQHKQ-YH5efnF7wvL9hdYFb1_hcLhLp4q3TSmpij6ViaapiDjm2A_v4yJtdftqXlgJ1HtVNnm1wV2GzZEFEsglJOaFzipFUg_bIRK5TEs6fT9fRz7_7E85UZ1MXP9bmqasZe9dkNNM9yEMOp7IoUjnfL5tAhkhKxXfB3u0eu0rCMrgSz7YXXP1bqxbtWBfY05D5pFb2-Vwcts4VEkgaYylZJA0Dkhxee2VB1Ytq-YioS93M5LaoqRkj_CDFMKyULcmbM6fqv5B4F3dKB6S6s&cce=2&category=acrcp_v1_32&sig=AOD64_0WjvVmqS_t7cJ5D_eRkcSHbqXJVw&q&sqi=2&nis=6&ch=1&adurl=https://www.amazon.com/gp/video/storefront?ref%3Ddvm_us_dl_sl_go_br_brsa_mkw_p401-kw370-cr2856286-c%26mrntrk%3Dgo_cmp-22386851402_adg-177983916460_ad-818155172843_aud-2358113831031:kwd-2850171361_dev-c_ext-&ved=2ahUKEwiYlda8wNGWAxX3ElkFHRN0FWwQ0Qx6BAgPEAE"
               },
               "icon": "lucide-file",
-              "title": "(54) Tmux Popups - The Most Underrated Feature in Tmux - YouTube"
-            }
-          },
-          {
-            "id": "a693fd95f9629d22",
-            "type": "leaf",
-            "state": {
-              "type": "surfing-view",
-              "state": {
-                "url": "https://www.udemy.com/course/draft/5514490/learn/quiz/6025566#content"
-              },
-              "icon": "lucide-file",
-              "title": "Log in to continue your learning journey | Udemy"
-            }
-          },
-          {
-            "id": "b77edb3575c42e68",
-            "type": "leaf",
-            "state": {
-              "type": "surfing-view",
-              "state": {
-                "url": "http://localhost:3552/login?redirect=%2Fdashboard"
-              },
-              "icon": "lucide-file",
-              "title": "Arcane"
-            }
-          },
-          {
-            "id": "df20d40ed4214ad4",
-            "type": "leaf",
-            "state": {
-              "type": "surfing-view",
-              "state": {
-                "url": "https://jbtechops.com/login"
-              },
-              "icon": "lucide-file",
-              "title": "Coolify"
-            }
-          },
-          {
-            "id": "131b1e3c6dfe741f",
-            "type": "leaf",
-            "state": {
-              "type": "surfing-view",
-              "state": {
-                "url": "http://localhost:8082/#root/f2tz3RtFE9RY/ysCdQKAwcjQK/fSKNv5yUlYSy?ntxId=Rt64ob"
-              },
-              "icon": "lucide-file",
-              "title": "Command Grail - Trilium Notes"
-            }
-          },
-          {
-            "id": "34f13afcd84bcfe8",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "terminal:terminal",
-              "state": {
-                "terminal:terminal": {
-                  "cwd": "/home/sysadmin/Documents/obsidian/obsidian-vaulTTY",
-                  "focus": false,
-                  "profile": {
-                    "args": [],
-                    "environment": [],
-                    "executable": "/bin/sh",
-                    "followTheme": true,
-                    "name": "",
-                    "platforms": {
-                      "linux": true
-                    },
-                    "pythonExecutable": "python3",
-                    "restoreHistory": false,
-                    "rightClickAction": "copyPaste",
-                    "successExitCodes": [
-                      "0",
-                      "SIGINT",
-                      "SIGTERM"
-                    ],
-                    "terminalOptions": {
-                      "documentOverride": null
-                    },
-                    "type": "integrated",
-                    "useWin32Conhost": true
-                  },
-                  "profileSourceId": "linuxIntegratedDefault",
-                  "serial": null,
-                  "userTitle": ""
-                }
-              },
-              "pinned": true,
-              "icon": "terminal",
-              "title": "sh"
+              "title": "Prime Video: Watch movies, TV shows, sports, and live TV"
             }
           }
         ],
         "currentTab": 1
+      },
+      {
+        "id": "60623341bdac7c13",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9b1e6a3441d96be8",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "http://10.0.0.193:3004/auth/login?return=%2F"
+              },
+              "icon": "lucide-file",
+              "title": "Dashboard - Semaphore UI"
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -211,18 +138,28 @@
             "state": {
               "type": "surfing-tab-tree",
               "state": {},
-              "icon": "chrome",
-              "title": "Surfing Tab Tree"
+              "icon": "lucide-ghost",
+              "title": "surfing-tab-tree"
             }
           },
           {
-            "id": "dbd9f735f822a701",
+            "id": "98468928ffe23ad6",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
               "state": {},
               "icon": "layout-grid",
               "title": "Navigator"
+            }
+          },
+          {
+            "id": "d1bdea291688f275",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-tab-tree",
+              "state": {},
+              "icon": "chrome",
+              "title": "Surfing Tab Tree"
             }
           }
         ],
@@ -246,7 +183,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "cb577a5a97e1c06d",
@@ -350,7 +288,6 @@
       "obsidian-excalidraw-plugin:New drawing": false,
       "obsidian-full-calendar:Open Full Calendar": false,
       "obsidian-git:Open Git source control": false,
-      "omnisearch:Omnisearch": false,
       "terminal:Open terminal": false,
       "soundscapes:Soundscapes: My Music": false
     }
