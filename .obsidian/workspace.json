@@ -26,22 +26,22 @@
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://labex.io/labs/ansible-ansible-playbook-basics-390426?course=ansible-for-beginners"
+                "url": "https://labex.io/learn/ansible"
               },
               "icon": "lucide-file",
-              "title": "Ansible Playbook Basics | Ansible for Beginners"
+              "title": "Learn Ansible | Ansible Courses Online | LabEx"
             }
           },
           {
-            "id": "880d8f65d685e6f7",
+            "id": "76bfc55b73f138e7",
             "type": "leaf",
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://kodekloud.com/studio/labs"
+                "url": "https://app.pluralsight.com/hands-on?tab=hands-on-labs&filters=%7B%22category%22%3A%5B%228b477e1f-12bd-4c97-93fd-677a644efc7c%22%5D%7D"
               },
               "icon": "lucide-file",
-              "title": "KodeKloud Free Labs - Try Hands-On Labs Now !"
+              "title": "Hands-on | Pluralsight"
             }
           },
           {
@@ -50,10 +50,10 @@
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://account.hackthebox.com/login"
+                "url": "https://profile.hackthebox.com/dashboard"
               },
               "icon": "lucide-file",
-              "title": "HTB Account"
+              "title": "HTB Profile | Hack The Box"
             }
           },
           {
@@ -67,33 +67,9 @@
               "icon": "lucide-file",
               "title": "Coolify"
             }
-          },
-          {
-            "id": "059aa0fe8fd1faf6",
-            "type": "leaf",
-            "state": {
-              "type": "surfing-view",
-              "state": {
-                "url": "https://app.simplenote.com/signup/"
-              },
-              "icon": "lucide-file",
-              "title": "Create a Simplenote Account"
-            }
-          },
-          {
-            "id": "dea603488bc2ffa0",
-            "type": "leaf",
-            "state": {
-              "type": "surfing-view",
-              "state": {
-                "url": "https://www.google.com/search?q=youtube&sca_esv=db3a156b681938a9&sxsrf=APpeQnsT3lY9aoMMfdnKPNPCX3JBdTHx2A%3A1788629971828&ei=01OcariSMrXR5NoP4rWQ6Qk&biw=1052&bih=1001&ved=2ahUKEwj4x-vw_deWAxW1KFkFHeIaJJ0Q4dUDegQIBhAM&uact=5&oq=youtube&gs_lp=Egxnd3Mtd2l6LXNlcnAiB3lvdXR1YmUyBBAjGCcyEBAuGEMYgwEYsQMYgAQYigUyCxAAGIAEGLEDGIMBMhAQABiABBiKBRhDGLEDGIMBMgoQABiABBiKBRhDMhAQABiABBiKBRhDGLEDGIMBMgsQABiABBixAxiDATIQEAAYgAQYigUYQxixAxiDATILEAAYgAQYsQMYgwEyCxAAGIAEGLEDGIMBSPAZULIOWIYZcAJ4AZABAJgBSaAB7wKqAQE3uAEDyAEA-AEBmAIJoAK3A8ICBxAjGLADGCfCAgoQABhHGNYEGLADwgINEAAYgAQYigUYQxiwA8ICERAuGIAEGLEDGIMBGMcBGNEDwgIQEC4YgAQYigUYQxixAxiDAcICDhAuGIAEGIoFGLEDGIMBwgIIEC4YsQMYgATCAggQLhiABBixA5gDAIgGAZAGDJIHATmgB-BIsgcBN7gHpwPCBwUyLTcuMsgHOYAIAQ&sclient=gws-wiz-serp"
-              },
-              "icon": "lucide-file",
-              "title": "youtube - Google Search"
-            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       },
       {
         "id": "8214e90b5428d8f1",
@@ -113,6 +89,30 @@
               },
               "icon": "lucide-file",
               "title": "k8s Breakdown"
+            }
+          },
+          {
+            "id": "76ec487f3b7b0af7",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "https://onenote.cloud.microsoft/notebooks"
+              },
+              "icon": "lucide-file",
+              "title": "OneNote"
+            }
+          },
+          {
+            "id": "1943451c6987a0ef",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "https://onedrive.live.com/personal/dc9a5d43b57142ec/_layouts/15/Doc.aspx?sourcedoc={12adaf2a-ed72-4876-bdd9-86c1ffafe569}&action=edit&wd=target%28Linux.one%7C%2FCommands%7C2f9777f3-5b10-419c-87c5-312264f04bf5%2F%29&wdorigin=NavigationUrl"
+              },
+              "icon": "lucide-file",
+              "title": "Command Guru"
             }
           }
         ]
@@ -326,7 +326,7 @@
       "obsidian-custom-frames:Open Proxmox": false
     }
   },
-  "active": "9c6ecce1430861ed",
+  "active": "76bfc55b73f138e7",
   "lastOpenFiles": [
     "Command_Guru_v3/k8s/k8s Breakdown.md",
     "Command_Guru/jupyter_notebooks/Command_Guru.ipynb",

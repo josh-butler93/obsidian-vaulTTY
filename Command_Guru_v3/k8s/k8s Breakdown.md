@@ -127,6 +127,36 @@
         msg: "File exists: {{ file_info.stat.exists }}"
 ```
 
+## group_creation.yaml
+
+```
+---
+- name: Create and verify a Linux group
+  hosts: all
+  become: true
+
+  vars_prompt:
+    - name: group_name
+      prompt: "Enter the group name you want to create"
+      private: false
+
+  tasks:
+    - name: Create the group
+      ansible.builtin.group:
+        name: "{{ group_name }}"
+        state: present
+
+    - name: Verify the group exists
+      ansible.builtin.command:
+        cmd: "getent group {{ group_name }}"
+      register: group_check
+      changed_when: false
+
+    - name: Display verification output
+      ansible.builtin.debug:
+        msg: "Group created successfully: {{ group_check.stdout }}"
+```
+
 ## <u>Running Playbooks</u>
 
 ## <u>Labs</u>
@@ -349,7 +379,7 @@ Adding Variables to Playbooks
 
 # **==k8s==**
 ## *Links*
-## *Definitions*
+## <u>Definitions</u>
 #### minikube
 	- creates and manages local Kubernetes clusters
 		- A named Minikube environment is called a profile
@@ -387,11 +417,20 @@ Adding Variables to Playbooks
 - <u>Service</u>:
 	- gives selected Pods a stable virtual IP and DNS name because replaceable Pod IPs can change
 
-## *Commands*
+## *<u>k8s Commands</u>*
 - minikube version --short
 - kubectl version
+- kubectl version --client
 - kubectl cluster-info
+- kubectl cluster-info dump
 - kubectl get nodes
+- kubectl describe node | grep Taints
+	- ==**Note:** The `node-role.kubernetes.io/control-plane` taint prevents regular pods from being scheduled onto the node
+		- In a multi-node cluster, this taint keeps application workloads off the control plane
+		- ==This cluster has only one node, so application pods cannot run until the taint is removed which is what the below command is for
+- kubectl describe node controlplane | grep Taints
+- kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+	- This removes the control-plane taint
 - kubectl get pods -n default
 - kubectl get pods -n kube-system -l tier=control-plane
 - kubectl get pods -n kube-system -l tier=control-plane --show-labels
@@ -403,6 +442,192 @@ Adding Variables to Playbooks
 	- ClusterIP is reachable inside the cluster
 	- NodePort also opens a node port
 - kubectl get all -A
+- kubectl get all -n globomantics
+- **kubectl create deployment globomantics-web --image=nginx:1.31**
+	- ==**Note:** The `kubectl create deployment` command builds this full object specification for you, including the pod template, labels, and selector fields
+- kubectl rollout status deployment/globomantics-web
+- kubectl get pods -o wide
+- kubectl get deployment globomantics-web -o yaml
+- kubectl **scale** deployment globomantics-web --replicas=2
+- kubectl get pods
+	- **Expected output:** Two pods are listed with a `Running` status and a `READY` value of `1/1`
+- kubectl get deployments -n default 
+	- ==> run this command to get the deployment name <==
+- kubectl expose deployment globomantics-web --type=NodePort --port=80
+- kubectl get service globomantics-web
+	- Record the port number displayed in the `PORT(S)` column after `80:`
+		- globomantics-web   NodePort    10.110.75.94   none       80:30375/TCP   5s 
+- kubectl apply -f globomantics-frontend.yaml
+- kubectl get pods -n globomantics -l app.kubernetes.io/name=wordpress -w
+- kubectl get pods -n globomantics
+
+## <u>Helm Commands</u>
+- helm version
+- helm repo add bitnami https://charts.bitnami.com/bitnami
+- helm repo update
+- helm search repo bitnami/wordpress
+- helm show values bitnami/wordpress | head -30
+- helm create globomantics-mysql
+- ls globomantics-mysql
+- helm lint globomantics-mysql
+- helm install mysql-release ./globomantics-mysql -n globomantics
+- helm list 
+- helm list -n globomantics
+- helm list -A
+- helm uninstall mysql-release -n globomantics
+- helm get manifest release-name
+- helm status mysql-release -n globomantics
+- helm install wordpress-release bitnami/wordpress -f wordpress-values.yaml -n globomantics --timeout 2m
+- helm package globomantics-mysql
+	- This creates a zip file of the ...-mysql chart
+		- **Expected output:** `Successfully packaged chart and saved it to: /home/cloud_user/globomantics-mysql-0.1.0.tgz`
+- mv globomantics-mysql-0.1.0.tgz helm-repo
+- helm repo index helm-repo --url http://localhost:8080
+	- This generates the repository index file that Helm uses to discover available charts:
+- python3 -m http.server 8080 --directory helm-repo &
+- helm repo add globomantics-private http://localhost:8080
+- helm search repo globomantics-private
+- helm install mysql-private-release globomantics-private/globomantics-mysql -n globomantics
+- helm list -n globomantics
+- helm dependency update ./globomantics-stack
+	- Download and bundle the declared dependencies into the `charts/` directory
+- 
+### <u>Charts</u>
+#### Wordpress
+##### wordpress-values.yaml
+
+```
+cat > wordpress-values.yaml << 'EOF'
+wordpressUsername: admin
+wordpressPassword: "GloboCMS123!"
+wordpressBlogName: "Globomantics Blog"
+wordpressEmail: "admin@globomantics.com"
+service:
+  type: NodePort
+persistence:
+  enabled: false
+mariadb:
+  enabled: false
+externalDatabase:
+  host: mysql-release.globomantics.svc.cluster.local
+  port: 3306
+  user: globouser
+  password: "GloboPass123!"
+  database: globomanticsdb
+EOF
+```
+
+#### Globomantics
+- helm create globomantics-mysql
+- rm -rf globomantics-mysql/templates
+- mkdir globomantics-mysql/templates
+##### Chart.yaml
+
+```
+cat > globomantics-mysql/Chart.yaml << 'EOF'
+apiVersion: v2
+name: globomantics-mysql
+description: A Helm chart for deploying the MySQL database for Globomantics
+type: application
+version: 0.1.0
+appVersion: "8.4"
+EOF
+```
+
+##### values.yaml
+```
+cat > globomantics-mysql/values.yaml << 'EOF'
+replicaCount: 1
+
+image:
+  repository: mysql
+  pullPolicy: IfNotPresent
+  tag: "8.4"
+
+service:
+  type: ClusterIP
+  port: 3306
+
+mysql:
+  rootPassword: "GlobomanticsDB!"
+  database: globomanticsdb
+  user: globouser
+  password: "GloboPass123!"
+
+resources:
+  limits:
+    memory: 512Mi
+    cpu: 500m
+  requests:
+    memory: 256Mi
+    cpu: 250m
+EOF
+```
+
+##### deplyment.yaml
+```
+bomantics-mysql/templates/deployment.yaml << 'EOF'
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app: globomantics-mysql
+    release: {{ .Release.Name }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: globomantics-mysql
+  template:
+    metadata:
+      labels:
+        app: globomantics-mysql
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: 3306
+          name: mysql
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: {{ .Values.mysql.rootPassword | quote }}
+        - name: MYSQL_DATABASE
+          value: {{ .Values.mysql.database | quote }}
+        - name: MYSQL_USER
+          value: {{ .Values.mysql.user | quote }}
+        - name: MYSQL_PASSWORD
+          value: {{ .Values.mysql.password | quote }}
+        resources:
+          {{- toYaml .Values.resources | nindent 12 }}
+EOF
+```
+
+##### services.yaml
+```
+cat > globomantics-mysql/templates/service.yaml << 'EOF'
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app: globomantics-mysql
+    release: {{ .Release.Name }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+  - port: {{ .Values.service.port }}
+    targetPort: 3306
+    protocol: TCP
+    name: mysql
+  selector:
+    app: globomantics-mysql
+EOF
+```
+
 ## *Labs*
 ### *<u>Exploring k8s cluster</u>*
 - minikube version --short
@@ -427,8 +652,240 @@ Adding Variables to Playbooks
 - kubectl get deployments -A
 - kubectl get services -A
 - kubectl get all -A
-## *Command Breakdowns*
 
+## <u>Manifest Files</u>
+### globomantics-frontend.yaml
+
+```
+cat > globomantics-frontend.yaml << 'EOF'
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: globomantics-frontend
+  namespace: globomantics
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: globomantics-frontend
+  template:
+    metadata:
+      labels:
+        app: globomantics-frontend
+    spec:
+      containers:
+      - name: frontend
+        image: nginx:1.31
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: globomantics-frontend-svc
+  namespace: globomantics
+spec:
+  selector:
+    app: globomantics-frontend
+  ports:
+  - port: 80
+    targetPort: 80
+  type: ClusterIP
+EOF
+
+kubectl apply -f globomantics-frontend.yaml
+```
+- **Note:** The manifest file contains a Deployment and a Service for the Globomantics frontend application
+	- The Deployment is configured to run 2 replicas of the `nginx:1.31` image, and the Service is configured to expose the frontend on port 80
+
+## <u>Command Breakdowns</u>
+
+# **==Pluaralsight Labs==
+## <u>Navigating and Managing Amazon Linux</u>
+###  Connecting to an EC2 instance
+
+- ssh ec2-user@*54.197.218.255 _kWk!5f3*
+- ssh-keygen -t ed25519 -C "lab-key"
+- cat ~/.ssh/id_ed25519.pub >> ~/.ssh/authorized_keys
+
+```
+-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+QyNTUxOQAAACArqK+qQX/olcKy8YN/ebY8cuHT1mSqVst3RMqzOHOF6wAAAJD/l+Pg/5fj
+4AAAAAtzc2gtZWQyNTUxOQAAACArqK+qQX/olcKy8YN/ebY8cuHT1mSqVst3RMqzOHOF6w
+AAAEBuP3tRjT242PzYzukWvMjWPk2RF2A73ZDZnX7aOrsU4Cuor6pBf+iVwrLxg395tjxy
+4dPWZKpWy3dEyrM4c4XrAAAAB2xhYi1rZXkBAgMEBQY=
+-----END OPENSSH PRIVATE KEY-----
+```
+
+- exit && mkdir -p ~/.ssh 
+	- --> you are running this on the server that will be used to remote into ec2-instance <--
+- add_key ==> press i & paster the key from above
+- ssh -i /home/cloud_user/.ssh/id_dropbear ec2-user@54.197.218.255
+	- ==> to ssh into the lightsail instance <==
+- sudo dnf update -y
+- sudo dnf install git -y
+### **Perform filesystem navigation and file management tasks**
+- cd /srv
+- sudo git clone https://github.com/ps-interactive/lab_navigating-and-managing-amazon-linux.git && pwd && ls
+- cd lab_navigating-and-managing-amazon-linux/
+- find . -name "health.html"
+- cd public/ && ls && cd ..
+- grep -R "DB_NAME"
+- cd config/ && cat database.conf && cd && pwd
+- cd /srv/lab_navigating-and-managing-amazon-linux/
+- sudo mkdir Backend && cd Backend/ && ls -ld
+- sudo touch server.js && ls
+
+### **Create and configure users, groups, and sudo access for a multi-team application environment**
+- sudo groupadd frontend_group && sudo groupadd backend_group && sudo groupadd admin_group && getent group frontend_group
+- sudo useradd -m frontend1 && sudo useradd -m frontend2
+- sudo useradd -m backend1 && sudo useradd -m backend2
+- sudo useradd -m admin1 && tail -n 5 /etc/passwd
+- sudo usermod -aG frontend_group frontend1 && sudo usermod -aG frontend_group frontend2 && groups frontend1 && groups frontend2
+- sudo usermod -aG backend_group backend1 && sudo usermod -aG backend_group backend2 && groups backend1 && groups backend2
+- sudo usermod -aG frontend_group admin1 && sudo usermod -aG backend_group admin1 && groups admin1
+- cd ..
+- sudo chown -R root:frontend_group Frontend && ls -ld Frontend
+- sudo chown -R root:backend_group Backend && ls -ld Frontend Backend
+- sudo chmod -R 770 Frontend && sudo chmod -R 777 Backend && ls -ld Frontend Backend
+	- This gives the user owner and group owner full access to the Frontend directory
+	- This gives the user owner, group owner, and everyone full access to the `Backend` directory, which will be important later on for practicing troubleshooting
+- sudo visudo
+		```%admin_group ALL=(ALL) ALL```
+	- Add above to the bottom of the file
+	- This allows members of the `admin_group` to run commands with `sudo`
+- sudo passwd frontend1 && sudo passwd frontend2 ==> Learner123
+- sudo passwd backend1 && sudo passwd backend1 && sudo passwd admin1 && su - frontend1 && whoami
+- touch /srv/lab_navigating-and-managing-amazon-linux/Frontend/test.txt
+	- The command should complete successfully because `frontend1` belongs to the `frontend_group
+- exit 
+- su - backend1
+- whoami && touch /srv/lab_navigating-and-managing-amazon-linux/Frontend/permission_test.txt
+	- You should receive a `Permission denied` error because backend1 does not belong to the `frontend_group`
+- exit 
+- su - admin1
+- touch /srv/lab_navigating-and-managing-amazon-linux/Frontend/admin.txt && exit
+
+### **Implement and audit file permissions using special permission bits**
+- sudo chmod g+s Frontend
+	- This enables the setgid bit on the `Frontend` directory:
+	- This sets the setgid (Set Group ID) bit on the `Frontend` directory
+	- ==With the setgid bit enabled, all new files and subdirectories inherit the directory's group ownership instead of the creator's primary group
+- sudo chmod +t Frontend
+	- This sets the sticky bit on the directory. Normally, users with write permission to a directory can delete any file inside it
+	- ==With the sticky bit enabled, users can delete only files they own, even if they have write permission to the directory
+- ls -ld Frontend
+	- drwxrws--T. 10 root frontend_group 16384 Sep  5 18:57 Frontend
+- su - frontend1
+- touch /srv/lab_navigating-and-managing-amazon-linux/Frontend/app.js && ls -l /srv/lab_navigating-and-managing-amazon-linux/Frontend/app.js
+- touch /srv/lab_navigating-and-managing-amazon-linux/Frontend/styles.css && ls -l /srv/lab_navigating-and-managing-amazon-linux/Frontend/styles.css
+- exit
+- su - frontend2
+- rm /srv/lab_navigating-and-managing-amazon-linux/Frontend/style.css
+	- You should get an access denied error
+- find . -type d -perm -002
+- ls -ld Backend && sudo chmod 770 Backend
+
+## <u>Building a Basic Kubernetes Cluster</u>
+### **Access the terminal and verify the cluster prerequisites**
+- ssh cloud_user@44.202.26.144
+	- iZv1(1^l
+- kubeadm version
+- systemctl status containerd
+### **Initialize the Kubernetes cluster with kubeadm**
+- swapon --show
+	- **Note:** No output confirms that swap is disabled, which Kubernetes requires
+- sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+	- enter the password of the cloud_user
+		- **Expected output:** The message `Your Kubernetes control-plane has initialized successfully!` is displayed, along with a `kubeadm join` command for adding worker nodes
+- mkdir -p $HOME/.kube && sudo cp /etc/kubernetes/admin.conf $HOME/.kube/config && sudo chown $(id -u):$(id -g) $HOME/.kube/config
+- kubectl cluster-info
+- kubectl get nodes
+	- **Expected output:** The node's `STATUS` shows `NotReady`
+		- This is expected
+			- The cluster does not yet have a CNI (Container Network Interface) plugin installed to manage pod networking
+- kubectl get pods -n kube-system
+	- **Expected output:** The CoreDNS pods show a `Pending` status because they cannot be scheduled until the node is ready
+### **Configure cluster networking and make the node schedulable**
+- kubectl apply -f kube-flannel.yml
+- kubectl get pods -n kube-flannel
+- kubectl get nodes
+	- 1. **Expected output:** The node's `STATUS` now shows `Ready
+- kubectl get pods -n kube-system
+- kubectl describe node controlplane | grep Taints
+- kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+
+### **Deploy a web server application to the cluster**
+- kubectl create deployment globomantics-web --image=nginx:1.31
+- kubectl rollout status deployment/globomantics-web
+- kubectl get pods -o wide
+	- 1. **Expected output:** The `NODE` column shows the pod scheduled onto `controlplane`, since it is the only node in the cluster
+- kubectl get deployment globomantics-web -o yaml
+- kubectl scale deployment globomantics-web --replicas=2
+### **Expose and verify access to the application**
+- kubectl expose deployment globomantics-web --type=NodePort --port=80
+- kubectl get service globomantics-web
+- http://10.0.0.248:32737
+- CLUSTER_IP=$(kubectl get service globomantics-web -o jsonpath='{.spec.clusterIP}')
+	- This creates a variable to store the service's cluster IP
+- curl http://$CLUSTER_IP
+- curl http://localhost:80:30375
+
+## <u>Building and Managing Helm Charts for Kubernetes</u>
+### **Access the terminal**
+- ssh cloud_user@18.209.247.208
+	- 6wF(l]C)
+- kubectl cluster-info
+- helm version
+- python3 --version
+### **Deploy an application with kubectl to establish a baseline**
+- kubectl get nodes
+- kubectl create namespace globomantics
+- kubectl apply -f globomantics-frontend.yaml
+	- **Expected output:** `deployment.apps/globomantics-frontend created` and `service/globomantics-frontend-svc created` are displayed
+- kubectl get pods -n globomantics
+- kubectl get all -n globomantics
+
+### **Create a Helm chart to deploy a MySQL database**
+- helm create globomantics-mysql
+- rm -rf globomantics-mysql/templates
+- mkdir globomantics-mysql/templates
+- helm lint globomantics-mysql
+- helm install mysql-release ./globomantics-mysql -n globomantics
+- helm status mysql-release -n globomantics
+- kubectl get pods -n globomantics -l release=mysql-release
+### **Install and validate an existing Helm chart for WordPress**
+- helm repo add bitnami https://charts.bitnami.com/bitnami
+- helm repo update
+- helm search repo bitnami/wordpress
+- helm show values bitnami/wordpress | head -30
+- helm install wordpress-release bitnami/wordpress -f wordpress-values.yaml -n globomantics --timeout 2m
+
+### **Store and pull Helm charts using a private Helm repository**
+- helm package globomantics-mysql
+- mkdir helm-repo
+	- **Expected output:** `Successfully packaged chart and saved it to: /home/cloud_user/globomantics-mysql-0.1.0.tgz`
+- mv globomantics-mysql-0.1.0.tgz helm-repo
+- helm repo index helm-repo --url http://localhost:8080
+- python3 -m http.server 8080 --directory helm-repo &
+	- **Note:** The `&` at the end of the command runs the server in the background
+### **Register and use the private repository**
+- helm repo add globomantics-private http://localhost:8080
+- helm repo update
+- helm search repo globomantics-private
+- helm search repo globomantics-private
+- helm install mysql-private-release globomantics-private/globomantics-mysql -n globomantics
+- helm list -n globomantics
+### **Manage dependencies between Helm charts**
+- helm create globomantics-stack
+- rm -rf globomantics-stack/templates/*
+- helm dependency update ./globomantics-stack
+	- Download and bundle the declared dependencies into the `charts/` directory
+- ls globomantics-stack/charts/
+- helm install stack-release ./globomantics-stack -n globomantics
+- helm list -n globomantics
+- kubectl get pods -n globomantics
 # **==Storage==**
 ## <u>Commands</u>
 - systemctl status nfs-server
