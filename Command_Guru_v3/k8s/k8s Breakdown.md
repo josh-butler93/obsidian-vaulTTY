@@ -1,4 +1,5 @@
-# Definitions
+# **k8s**
+## *Definitions*
 - **<u>minikube:</u>**
 	- creates and manages local Kubernetes clusters
 		- A named Minikube environment is called a profile
@@ -31,8 +32,12 @@
 - <u>CoreDNS</u>:
 	- provides DNS service discovery, allowing workloads to find Services by name instead of tracking changing IPs
 		- Addresses vary, so focus on is running, which shows the API server returned information. It does not prove every workload is healthy
+- <u>Deployment</u>:
+	- declares how many copies of a stateless application should run and manages Pods through a ReplicaSet
+- <u>Service</u>:
+	- gives selected Pods a stable virtual IP and DNS name because replaceable Pod IPs can change
 
-# Command
+## *Commands*
 - minikube version --short
 - kubectl version
 - kubectl cluster-info
@@ -40,9 +45,16 @@
 - kubectl get pods -n default
 - kubectl get pods -n kube-system -l tier=control-plane
 - kubectl get pods -n kube-system -l tier=control-plane --show-labels
-# Labs
-
-## *<u>Exploring k8s cluster</u>*
+- kubectl describe node labex-v135
+- kubectl get pods -A
+- kubectl get deployments -A
+- **kubectl get services -A**
+	- TYPE describes exposure
+	- ClusterIP is reachable inside the cluster
+	- NodePort also opens a node port
+- kubectl get all -A
+## *Labs*
+### *<u>Exploring k8s cluster</u>*
 - minikube version --short
 - kubectl version
 - kubectl config current-context
@@ -59,4 +71,12 @@
 #### <u>Inspect Cluster and Node Details</u>
 - kubectl cluster-info
 - kubectl get nodes -o wide
-# Command Breakdowns
+	- Add -o wide to request more columns
+- kubectl describe node labex-v135
+- kubectl get pods -A
+- kubectl get deployments -A
+- kubectl get services -A
+- kubectl get all -A
+## *Command Breakdowns*
+
+# Docker
