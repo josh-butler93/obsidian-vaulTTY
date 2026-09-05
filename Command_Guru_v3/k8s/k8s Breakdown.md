@@ -1,8 +1,19 @@
 # ==**Ansible**==
 
 ## <u>Links</u>
-
 ## <u>Definitions</u>
+- <u>ping module</u>:
+	- is useful for checking connectivity to hosts
+- <u>command module</u>:
+	- allows you to run arbitrary commands on target hosts. It's the default module, so -m command can be omitted
+- <u>copy module</u>:
+	- for copying files to remote hosts
+- <u>file</u>:
+	- for managing files and directories
+- <u>setup</u>:
+	- for gathering facts about remote hosts
+- <u>Ad-hoc commands</u>:
+	- are a powerful feature of Ansible that allow you to perform quick tasks across your infrastructure
 
 ## <u>Commands</u>
 - Ad-hoc Command Structure
@@ -37,6 +48,86 @@
 - ansible nginx -i inventory.ini -m file -a "path=/tmp/test_dir state=directory mode=0755"
 - ansible nginx -i inventory.ini -m setup -a "filter=ansible_distribution*"
 ## <u>Playbooks</u>
+### file_creation.yaml
+ 
+```
+---
+- name: My First Playbook
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Create a directory
+      file: #file module
+        path: /home/labex/project/test_directory #this shows the directory path
+        state: directory #this tells it that it should be a directory
+        mode: "0755" #permissions of the directory
+
+    - name: Create a file
+      copy: #copy module
+        content: "Hello from Ansible!"
+        dest: /home/labex/project/test_directory/hello.txt
+```
+
+### file_creation_w_variables.yaml
+
+```
+---
+- name: My First Playbook
+  hosts: localhost
+  connection: local
+  vars:
+    dir_path: /home/sysadmin/project/test_directory
+    file_content: "Hello from Ansible! The time is {{ ansible_date_time.iso8601 }}"
+
+  tasks:
+    - name: Create a directory
+      file:
+        path: "{{ dir_path }}"
+        state: directory
+        mode: "0755"
+
+    - name: Create a file
+      copy:
+        content: "{{ file_content }}"
+        dest: "{{ dir_path }}/hello.txt"
+
+    - name: Display file content
+      debug:
+        msg: "The content of the file is: {{ file_content }}"
+```
+### file_module.yaml
+```
+---
+- name: File Module
+  hosts: localhost
+  become: true
+  gather_facts: true
+  tasks:
+    - name: Create a file on remote host
+      file:
+        path: /home/labex/file.txt
+        state: touch
+
+    - name: Set file permissions
+      file:
+        path: /home/labex/file.txt
+        mode: "0644"
+
+    - name: Delete a file on remote host
+      file:
+        path: /home/labex/file.txt
+        state: absent #This parameter indicates that the file should be in the absent state 
+    - name: Check file existence on remote host
+      stat:
+        path: /home/labex/file.txt
+      register: file_info
+
+    - name: Print file existence
+      debug:
+        msg: "File exists: {{ file_info.stat.exists }}"
+```
+
+## <u>Running Playbooks</u>
 
 ## <u>Labs</u>
 ### *Understanding Ansible Ad-hoc Command Structure*
@@ -75,6 +166,56 @@
 - ansible dbservers -i /home/labex/project/inventory -m setup
 	- This command will display a large amount of information about the hosts in the dbservers group
 - ansible dbservers -i /home/labex/project/inventory -m setup -a "filter=ansible_distribution*"
+### *Ansible Playbook Basics*
+
+```
+Understanding Playbook Structure
+---
+# Playbook starts with three dashes
+- name: My First Playbook # Name of the play
+  hosts: localhost # Target host(s) for this play
+  connection: local # Connection type (local in this case)
+
+  tasks: # List of tasks to be executed
+    - name: Create a directory # Name of the first task
+      file: # The 'file' module is used for this task
+        path: /home/labex/project/test_directory # Path of the directory to create
+        state: directory # Desired state (create the directory)
+        mode: "0755" # Permissions for the directory
+
+    - name: Create a file # Name of the second task
+      copy: # The 'copy' module is used for this task
+        content: "Hello from Ansible!" # Content to be written to the file
+        dest: /home/labex/project/test_directory/hello.txt # Destination path for the file
+```
+
+```
+Adding Variables to Playbooks
+---
+- name: My First Playbook
+  hosts: localhost
+  connection: local
+  vars:
+    dir_path: /home/labex/project/test_directory
+    file_content: "Hello from Ansible! The time is {{ ansible_date_time.iso8601 }}"
+
+  tasks:
+    - name: Create a directory
+      file:
+        path: "{{ dir_path }}"
+        state: directory
+        mode: "0755"
+
+    - name: Create a file
+      copy:
+        content: "{{ file_content }}"
+        dest: "{{ dir_path }}/hello.txt"
+
+    - name: Display file content
+      debug:
+        msg: "The content of the file is: {{ file_content }}"
+
+```
 # ==**Docker**==
 # ==**Linux**==
 ## <u>Links</u>
@@ -206,7 +347,7 @@
 	- `mountd` helps handle **NFS mount requests**, particularly with NFSv3
 	- `mountd` checks the server's export information to determine whether a client is allowed access
 
-# ==**k8s**
+# **==k8s==**
 ## *Links*
 ## *Definitions*
 #### minikube
@@ -288,8 +429,7 @@
 - kubectl get all -A
 ## *Command Breakdowns*
 
-
-# **==Storage**
+# **==Storage==**
 ## <u>Commands</u>
 - systemctl status nfs-server
 - sudo exportfs -rav

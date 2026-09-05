@@ -26,10 +26,10 @@
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://labex.io/labs/ansible-ansible-ad-hoc-commands-390441?course=ansible-for-beginners"
+                "url": "https://labex.io/labs/ansible-ansible-playbook-basics-390426?course=ansible-for-beginners"
               },
               "icon": "lucide-file",
-              "title": "Ansible Ad-Hoc Commands | Ansible for Beginners"
+              "title": "Ansible Playbook Basics | Ansible for Beginners"
             }
           },
           {
@@ -74,10 +74,22 @@
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://www.google.com/"
+                "url": "https://app.simplenote.com/signup/"
               },
               "icon": "lucide-file",
-              "title": "Google"
+              "title": "Create a Simplenote Account"
+            }
+          },
+          {
+            "id": "dea603488bc2ffa0",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "https://www.google.com/search?q=youtube&sca_esv=db3a156b681938a9&sxsrf=APpeQnsT3lY9aoMMfdnKPNPCX3JBdTHx2A%3A1788629971828&ei=01OcariSMrXR5NoP4rWQ6Qk&biw=1052&bih=1001&ved=2ahUKEwj4x-vw_deWAxW1KFkFHeIaJJ0Q4dUDegQIBhAM&uact=5&oq=youtube&gs_lp=Egxnd3Mtd2l6LXNlcnAiB3lvdXR1YmUyBBAjGCcyEBAuGEMYgwEYsQMYgAQYigUyCxAAGIAEGLEDGIMBMhAQABiABBiKBRhDGLEDGIMBMgoQABiABBiKBRhDMhAQABiABBiKBRhDGLEDGIMBMgsQABiABBixAxiDATIQEAAYgAQYigUYQxixAxiDATILEAAYgAQYsQMYgwEyCxAAGIAEGLEDGIMBSPAZULIOWIYZcAJ4AZABAJgBSaAB7wKqAQE3uAEDyAEA-AEBmAIJoAK3A8ICBxAjGLADGCfCAgoQABhHGNYEGLADwgINEAAYgAQYigUYQxiwA8ICERAuGIAEGLEDGIMBGMcBGNEDwgIQEC4YgAQYigUYQxixAxiDAcICDhAuGIAEGIoFGLEDGIMBwgIIEC4YsQMYgATCAggQLhiABBixA5gDAIgGAZAGDJIHATmgB-BIsgcBN7gHpwPCBwUyLTcuMsgHOYAIAQ&sclient=gws-wiz-serp"
+              },
+              "icon": "lucide-file",
+              "title": "youtube - Google Search"
             }
           }
         ],
@@ -101,18 +113,6 @@
               },
               "icon": "lucide-file",
               "title": "k8s Breakdown"
-            }
-          },
-          {
-            "id": "3d940ea802c510ea",
-            "type": "leaf",
-            "state": {
-              "type": "jupyter-viewer",
-              "state": {
-                "file": "Command_Guru/jupyter_notebooks/Command_Guru.ipynb"
-              },
-              "icon": "lucide-file",
-              "title": "Command_Guru"
             }
           }
         ]
@@ -330,6 +330,7 @@
   "lastOpenFiles": [
     "Command_Guru_v3/k8s/k8s Breakdown.md",
     "Command_Guru/jupyter_notebooks/Command_Guru.ipynb",
+    "Command_Guru/jupyter_notebooks/Untitled.md",
     "Command_Guru/jupyter_notebooks/bash_scripts.ipynb",
     "Command_Guru/jupyter_notebooks/testing.md",
     "Command_Guru/jupyter_notebooks/testing.ipynb",
@@ -362,7 +363,6 @@
     "Command_Guru/obsidian-vaulTTY/lab-archive/Kanban/Taskings/Build out home Assistant Pod.md",
     "Command_Guru/obsidian-vaulTTY/lab-archive/Kanban/Taskings/Build out graylog Server.md",
     "Command_Guru/obsidian-vaulTTY/lab-archive/Gt_Clones/learn-k8s/README.md",
-    "Command_Guru/obsidian-vaulTTY/lab-archive/docker-compose/tugtainer-compose.md",
     "Command_Guru/obsidian-vaulTTY/lab-archive/Images/wallhaven-x15w2d.jpg",
     "Command_Guru/obsidian-vaulTTY/lab-archive/Images/wallhaven-gj15r7.png",
     "Command_Guru/obsidian-vaulTTY/lab-archive/Images/wallhaven-4g823l.jpg",
