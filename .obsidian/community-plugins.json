@@ -11,5 +11,7 @@
   "ninja-cursor",
   "soundscapes",
   "obsidian-custom-frames",
-  "vim-motions"
+  "vim-motions",
+  "jupymd",
+  "jupyter-viewer"
 ]

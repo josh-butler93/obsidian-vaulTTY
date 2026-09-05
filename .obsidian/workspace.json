@@ -6,18 +6,30 @@
       {
         "id": "6a85adebc08f8f2a",
         "type": "tabs",
-        "dimension": 59.9680170575693,
+        "dimension": 62.40359897172236,
         "children": [
+          {
+            "id": "9496287e03d1c3c9",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "https://chatgpt.com/c/6a6bed96-890c-83ea-8613-8ae204838670"
+              },
+              "icon": "lucide-file",
+              "title": "Coolify domain setup"
+            }
+          },
           {
             "id": "9c6ecce1430861ed",
             "type": "leaf",
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://labex.io/labs/kubernetes-explore-the-kubernetes-cluster-434519?course=kubernetes-for-beginners"
+                "url": "https://labex.io/labs/ansible-ansible-ad-hoc-commands-390441?course=ansible-for-beginners"
               },
               "icon": "lucide-file",
-              "title": "Explore the Kubernetes Cluster | Kubernetes for Beginners"
+              "title": "Ansible Ad-Hoc Commands | Ansible for Beginners"
             }
           },
           {
@@ -55,13 +67,26 @@
               "icon": "lucide-file",
               "title": "Coolify"
             }
+          },
+          {
+            "id": "059aa0fe8fd1faf6",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "https://www.google.com/"
+              },
+              "icon": "lucide-file",
+              "title": "Google"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "8214e90b5428d8f1",
         "type": "tabs",
-        "dimension": 40.0319829424307,
+        "dimension": 37.59640102827764,
         "children": [
           {
             "id": "329271a997c7ff82",
@@ -76,6 +101,18 @@
               },
               "icon": "lucide-file",
               "title": "k8s Breakdown"
+            }
+          },
+          {
+            "id": "3d940ea802c510ea",
+            "type": "leaf",
+            "state": {
+              "type": "jupyter-viewer",
+              "state": {
+                "file": "Command_Guru/jupyter_notebooks/Command_Guru.ipynb"
+              },
+              "icon": "lucide-file",
+              "title": "Command_Guru"
             }
           }
         ]
@@ -269,7 +306,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 590.29296875,
+    "width": 253.296875,
     "collapsed": true
   },
   "left-ribbon": {
@@ -292,6 +329,12 @@
   "active": "9c6ecce1430861ed",
   "lastOpenFiles": [
     "Command_Guru_v3/k8s/k8s Breakdown.md",
+    "Command_Guru/jupyter_notebooks/Command_Guru.ipynb",
+    "Command_Guru/jupyter_notebooks/bash_scripts.ipynb",
+    "Command_Guru/jupyter_notebooks/testing.md",
+    "Command_Guru/jupyter_notebooks/testing.ipynb",
+    "Command_Guru/Command_Guru_v2.ipynb",
+    "lab-archive/Maldev/docker target practice setup.md",
     "Command_Guru_v3/k8s/k8s.md",
     "Command Guru/Command Guru/k8s/New note v1.md",
     "Command Guru/Command Guru/Linux_Notes/commands.md",
@@ -308,13 +351,9 @@
     "Command Guru/!!!meta.json",
     "Command Guru",
     "Build out Terraform Server.md",
-    "Command_Guru_v3/k8s",
     "Command_Guru_v3/Command_Guru_v3.md",
-    "Command_Guru_v3",
     "Untitled 1.md",
     "Untitled.md",
-    "Command_Guru/jupyter_notebooks/Command_Guru.ipynb",
-    "Command_Guru/nagios/services",
     "Command_Guru/obsidian-vaulTTY/lab-archive/ollama/ollama setup.md",
     "Command_Guru/obsidian-vaulTTY/lab-archive/ollama/ollama models.md",
     "Command_Guru/obsidian-vaulTTY/lab-archive/ollama/ollama cloudfare tunnel.md",
@@ -324,9 +363,6 @@
     "Command_Guru/obsidian-vaulTTY/lab-archive/Kanban/Taskings/Build out graylog Server.md",
     "Command_Guru/obsidian-vaulTTY/lab-archive/Gt_Clones/learn-k8s/README.md",
     "Command_Guru/obsidian-vaulTTY/lab-archive/docker-compose/tugtainer-compose.md",
-    "Command_Guru/obsidian-vaulTTY/lab-archive/docker-compose/Docker Compose Install_v2.md",
-    "Command_Guru/obsidian-vaulTTY/lab-archive/docker-compose/Docker Compose Index.md",
-    "Command_Guru/obsidian-vaulTTY/lab-archive/Yaml/Yaml Index.md",
     "Command_Guru/obsidian-vaulTTY/lab-archive/Images/wallhaven-x15w2d.jpg",
     "Command_Guru/obsidian-vaulTTY/lab-archive/Images/wallhaven-gj15r7.png",
     "Command_Guru/obsidian-vaulTTY/lab-archive/Images/wallhaven-4g823l.jpg",

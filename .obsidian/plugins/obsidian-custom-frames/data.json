@@ -1,14 +1,14 @@
 {
   "frames": [
     {
-      "url": "https://10.0.0.151:8006",
-      "displayName": "Proxmox",
+      "url": "https://www.google.com/",
+      "displayName": "google",
       "icon": "mail",
       "hideOnMobile": true,
       "addRibbonIcon": true,
       "openInCenter": true,
       "zoomLevel": 1,
-      "forceIframe": true,
+      "forceIframe": false,
       "customCss": "",
       "customJs": ""
     }

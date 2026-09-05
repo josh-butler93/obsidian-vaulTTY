@@ -1,10 +1,162 @@
-# **k8s**
+# ==**Ansible**==
+
+## <u>Links</u>
+
+## <u>Definitions</u>
+
+## <u>Commands</u>
+- Ad-hoc Command Structure
+	- ansible [pattern] -m [module] -a "[module options]"
+		- [pattern] is the host or group of hosts from your inventory that you want to target
+		- -m [module] specifies which Ansible module to use
+		- -a "[module options]" provides arguments to the module
+
+## <u>Command Oneliners</u>
+
+## <u>Playbooks</u>
+
+## <u>Labs</u>
+
+
+# ==**Docker**==
+# ==**Linux**==
+## <u>Links</u>
+## <u>Commands</u>
+- <u>autofs</u>
+		- **`auto.master` tells autofs which map files control which directories**
+			- the map file then tells it which remote filesystems to mount
+	- sudo systemctl enable --now autofs
+	- cat /etc/auto.master ==> default config
+	- **sudo vim /etc/auto.master.d/nfs.autofs** => creating master map entry
+		```/shares /etc/auto.nfs```
+		- This tells it:
+			- =="For anything underneath `/shares`, look in `/etc/auto.nfs` to determine what should be mounted."
+	- sudo vim /etc/auto.nfs
+		```shared -fstype=nfs,rw 10.0.0.2:/exports/shared```
+		- shared: directory name ==>/shares/shared
+		- -fstype=nfs,rw: 
+			- ├── filesystem = NFS
+			- └── read/write
+		- 10.0.0.2:/exports/shared
+			- └── actual NFS share location
+	- sudo systemctl reload autofs
+	- cd /shares/shared ==> to trigger autofs mount
+	- mount | grep /shares ==> to verify its been mounted
+
+- <u>firewalld</u>
+	- sudo firewall-cmd --list-all
+		- Ouput:
+			public (active)
+			  target: default
+			  icmp-block-inversion: no
+			  interfaces: ens18
+			  sources: 
+			  services: cockpit dhcpv6-client ssh
+			  ports: 
+			  protocols: 
+			  forward: yes
+			  masquerade: no
+			  forward-ports: 
+			  source-ports: 
+			  icmp-blocks: 
+			  rich rules:
+		- Output Breakdown
+			- `public (active)` is the firewall **zone** currently protecting `ens18`
+				- Firewalld uses zones as groups of rules
+				- You can have different interfaces assigned to different zones
+			- `interfaces: ens18` means your network card/interface is assigned to the `public` zone
+				- Therefore, traffic arriving through `ens18` is evaluated against the `public` zone's rules
+			- `services:` shows predefined services currently allowed through the firewall
+				- services: cockpit dhcpv6-client ssh
+					- cockpit → RHEL web administration
+					- dhcpv6-client → DHCPv6 client traffic
+					- ssh → SSH
+			- `ports:` is for ports you've manually opened rather than using a predefined service
+			- `masquerade` is related to NAT
+			- `forward-ports` to port forwarding
+			- `icmp-blocks` to blocking particular ICMP types
+			- `rich rules` gives you more advanced conditional firewall rules
+	- firewall-cmd --add-service=ssh
+	- sudo firewall-cmd --permanent --add-service=nfs
+		- The `--permanent` part means:
+			- Save these rules so they're still present after reboot
+	- sudo firewall-cmd --permanent --add-service=nfs
+		- --add-service=nfs
+			- allows that NFS traffic through firewalld
+	- sudo firewall-cmd --permanent --add-service=mountd
+	- sudo firewall-cmd --permanent --add-service=rpc-bind
+	- sudo firewall-cmd --reload
+	- sudo firewall-cmd --list-services
+	- sudo firewall-cmd --list-ports
+	- sudo firewall-cmd --list-interfaces
+	- sudo firewall-cmd --list-icmp-block
+
+- <u>nfs</u>
+	- systemctl status nfs-server
+	- sudo exportfs -rav
+	- sudo exportfs -v
+	- showmount -e 10.0.0.2 <--IP of the nfs Server ran from the client
+			- This confirms whether or not the client can reach the nfs server meaning 10.0.0.2 is advertising on that port
+			- "Contact the NFS/RPC services on `10.0.0.2` and ask for its exports."
+			- "What NFS directories does this server export?"
+		- ==showmount → query an NFS server
+		- ===-e → show its export list===
+	- sudo mount -t nfs 10.0.0.2:/exports/shared /mnt/shared
+		- run this on the client machine to mount the shared folder
+		- Mount the NFS share `/exports/shared` from server `10.0.0.2` onto my local `/mnt/shared` directory
+	- mount | grep nfs
+	- df -hT /mnt/shared
+
+- <u>fstab</u>
+	- /etc/fstab
+		- An `/etc/fstab` entry essentially has six fields:
+		- WHAT                WHERE         TYPE   OPTIONS           DUMP  CHECK
+		- 10.0.0.2:/exports/shared   /mnt/shared   nfs    defaults,_netdev  0     0
+			- 10.0.0.2:/exports/shared: Remote filesystem to use
+			- /mnt/shared: Where to attach it locally
+			- nfs: Filesystem TYPE
+			- defaults,_netdev: Mount options
+			- 0 0 ==> Backup/fsck settings
+	- sudo cp /etc/fstab /etc/fstab.bak
+	- sudo vim /etc/fstab ==> to edit the file
+	- sudo umount /mnt/shared ==> unmount for testing
+	- df -hT /mnt/shared --> verify its been unmounted
+	- **sudo mount** -a ==> remount
+	- df -hT /mnt/shared --> verify its been remounted
+	- sudo systemctl daemon-reload
+
+- <u>df</u>
+	- df -hT /mnt/shared
+
+## <u>Services</u>
+- <u>nfs</u>
+	- This is the actual **file-sharing service**
+	- It's the part clients communicate with when they're reading/writing files over NFS
+		- Modern NFS primarily uses TCP port **2049**
+		- NFS client
+			    │
+			    │ :2049
+			   ▼
+			NFS server
+			    │
+			   ▼
+			/exports/shared
+- <u>rpc-bind</u>
+	- `rpc-bind` is essentially a **directory/service locator for RPC services**
+	- `rpcbind` listens primarily on port **111**
+		- NFS historically consists of multiple RPC services
+- <u>mountd</u>
+	- `mountd` helps handle **NFS mount requests**, particularly with NFSv3
+	- `mountd` checks the server's export information to determine whether a client is allowed access
+
+# ==**k8s**
+## *Links*
 ## *Definitions*
-- **<u>minikube:</u>**
+#### minikube
 	- creates and manages local Kubernetes clusters
 		- A named Minikube environment is called a profile
 		- This lab uses the labex-v135 profile
-- **<u>kubectl</u>:**
+#### kubectl
 	- is the standard Kubernetes command-line client
 		- It sends requests to the Kubernetes API server to list, create, update, and delete objects
 - <u>Pod</u>: 
@@ -79,4 +231,162 @@
 - kubectl get all -A
 ## *Command Breakdowns*
 
-# Docker
+
+# **==Storage**
+## <u>Commands</u>
+- systemctl status nfs-server
+- sudo exportfs -rav
+- sudo exportfs -v
+- sudo firewall-cmd --list-all
+- showmount -e 10.0.0.2 <--IP of the nfs Server ran from the client
+- sudo mount -t nfs 10.0.0.2:/exports/shared /mnt/shared 
+- mount | grep nfs
+## <u>NFS Concepts</u>
+- `/etc/exports` — yes, that's the important NFS server config
+- When you installed: *sudo dnf install nfs-utils*
+	- the package provides the NFS tooling and supporting configuration
+	- Nginx                       NFS
+
+		/etc/nginx/nginx.conf       /etc/exports
+           │                                                 │
+           ▼                                               ▼
+		How Nginx behaves           What directories are shared
+- /exports/shared 10.0.0.0/24(rw,sync,no_subtree_check)
+	- basically says:
+		- "Share `/exports/shared`, allow machines on `10.0.0.x` to connect, and give them these options."
+- /exports **is NOT required**
+	- ==You could export:
+		- /data
+		- /srv/files
+		- /home
+		- /home/users
+		- /mnt/storage
+		- /company/accounting
+		- or almost any suitable directory
+	- For example:
+		- /srv/company-files 10.0.0.0/24(rw,sync)
+		- What directory --> Who can access it --> What are they allowed to do 
+			- ==That's what `/etc/exports` describes
+- What `exportfs` does
+	- After changing `/etc/exports`, the running NFS server needs to know about those changes --> That's what: --> exportfs
+- You might have technologies such as:
+	- AD / LDAP        → identity
+	- Kerberos         → authentication
+	- SSSD             → connects Linux identity/auth to AD
+	- NFS              → provides files
+	- autofs           → mounts them automatically
+	- NAS              → physically stores the files
+- ==Enterprise Diagram
+	- Authentication and Mounting workflow
+		- AD      = Who is Josh?
+		- Kerberos = Can Josh prove he's Josh?
+		- NAS     = Where are Josh's files?
+		- NFS/SMB = How do we access those files?
+		- autofs  = When/how should Linux mount them?
+	- User logs in:
+			jbutler
+			   │
+			   ├── SSSD/AD → "Yes, this user exists."
+			   │
+			   └── autofs
+			         │
+			         ▼
+				nas01:/home/jbutler
+			         │
+			         ▼
+				/home/jbutler
+- Services
+	- nfs       = actually serves the files
+	- mountd    = helps clients mount exported filesystems
+	- rpc-bind  = tells clients where RPC services are
+## <u>Setting up NFS Server</u>
+- sudo dnf install -y nfs-utils
+- sudo systemctl enable --now nfs-server
+- systemctl status nfs-server
+	- You want to see:
+		- ==Active: active (exited)
+- sudo mkdir -p /exports/shared
+	- ll
+- sudo chmod 777 /exports/shared
+- ls -ld /exports/shared
+- sudo vim /etc/exports
+	- `/exports/shared 10.0.0.0/24(rw,sync,no_subtree_check)`
+		- ==/exports/shared     directory being shared
+		- ==10.0.0.0/24         clients allowed from your LAN
+		- ==rw                   read + write
+		- ==sync                 commit writes synchronously
+		- ==no_subtree_check     disable subtree checking
+- **sudo exportfs -rav** <--This applys the export
+	- "Read my export configuration again, apply all of it, and show me what you're doing."
+	- You should see something similar to:
+		- ==exporting 10.0.0.0/24:/exports/shared
+			- -r: re-export
+				- Synchronize the active exports with /etc/exports
+			- -a: all
+				- Apply this to all configured exports
+			- -v verbose
+				- Tell me what you're doing
+- **sudo exportfs -v** <-- this verifies the export fs
+	- "Show me the currently exported directories and their options."
+	- You should see `/exports/shared` listed
+	- ==root_squash:== prevents client-side root from automatically having unrestricted root privileges over the exported filesystem
+- sudo firewall-cmd --list-all
+- sudo firewall-cmd --permanent --add-service=nfs
+- sudo firewall-cmd --permanent --add-service=mountd
+- sudo firewall-cmd --permanent --add-service=rpc-bind
+- sudo firewall-cmd --reload
+- sudo firewall-cmd --list-services
+	- output should show below:
+		- cockpit dhcpv6-client **mountd nfs rpc-bind ssh**
+## <u>Setting up NFS Client</u>
+- sudo dnf install -y nfs-utils
+	- Notice it's the same `nfs-utils` package we installed on the server. It contains both NFS server and client utilities
+	- We **do not** need to enable `nfs-server` on this machine just to use it as a client
+- sudo mkdir -p /mnt/shared
+- ls -ld /mnt/shared
+- sudo mount -t nfs 10.0.0.2:/exports/shared /mnt/shared
+- mount | grep nfs
+- df -hT /mnt/shared
+- echo "Created from the NFS client" | sudo tee /mnt/shared/client-test.txt
+- ls -l /mnt/shared/
+## <u>Setting Up Persistance -> Client Side</u>
+* sudo cp /etc/fstab /etc/fstab.bak <== client side command
+* sudo vim /etc/fstab => add below to the end of the file
+	```10.0.0.2:/exports/shared /mnt/shared nfs defaults,_netdev 0 0```
+	- nfs ==> tells linux what type of file system this is
+	- `_netdev` is particularly useful for network filesystems. It tells the system:
+		- This isn't a local disk. Networking needs to be available for this mount
+- sudo umount /mnt/shared
+- df -hT /mnt/shared ==> to verify its unmounted
+- sudo mount -a
+- df -hT /mnt/shared
+
+## <u>Setting up Autofs -> Client Side</u>
+- sudo dnf install -y autofs
+- sudo systemctl enable --now autofs
+- systemctl status autofs
+	- You should see:
+		- Active: active (running)
+- cat /etc/auto.master
+- **sudo vim /etc/auto.master.d/nfs.autofs** => creating master map entry
+	```/shares /etc/auto.nfs```
+	- This tells it:
+		- =="For anything underneath `/shares`, look in `/etc/auto.nfs` to determine what should be mounted."
+- sudo vim /etc/auto.nfs
+	```shared -fstype=nfs,rw 10.0.0.2:/exports/shared```
+	- shared: directory name ==>/shares/shared
+	- -fstype=nfs,rw: 
+		- ├── filesystem = NFS
+		- └── read/write
+	- 10.0.0.2:/exports/shared
+		- └── actual NFS share location
+- sudo systemctl reload autofs
+- systemctl status autofs
+- mount | grep /shares
+	- you wont see it until you run the below commands
+- cd /shares/shared ==> if your not inside this dir the autofs will auto unmount itself
+	- once inside this directory it will the autofs will be triggered
+- pwd
+- ls -la
+- mount | grep /shares
+	- you should now see the nfs-server share

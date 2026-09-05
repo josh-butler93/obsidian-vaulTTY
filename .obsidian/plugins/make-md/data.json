@@ -40,7 +40,9 @@
   "expandedSpaces": [
     "/",
     "//Command_Guru_v3",
-    "//Command_Guru_v3/Command_Guru_v3/k8s"
+    "//Command_Guru_v3/Command_Guru_v3/k8s",
+    "//Command_Guru",
+    "//Command_Guru/Command_Guru/jupyter_notebooks"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
