@@ -10,14 +10,71 @@
 		- [pattern] is the host or group of hosts from your inventory that you want to target
 		- -m [module] specifies which Ansible module to use
 		- -a "[module options]" provides arguments to the module
+	- ansible all -i inventory.ini -m ping
+			- This command uses the ping module to check connectivity to all hosts in the inventory
+			- The all keyword targets all hosts
+		- all: is the pattern, targeting all hosts in the inventory
+		- -i /home/labex/project/inventory: specifies the inventory file to use
+		- -m ping: tells Ansible to use the ping module
+	- ansible all -i inventory.ini -m command -a "df -h"
+		- The command module is the default module, so you can omit -m command if you're using this module. For example:
+	- ansible webservers -i /home/labex/project/inventory -m command -a "uptime"
+	- ansible dbservers -i inventory.ini -a "free -m"
+		- This command will show the memory usage on all hosts in the dbservers group
+	- ansible all -i /home/labex/project/inventory -m copy -a "src=/home/labex/project/hello.txt dest=/tmp/hello.txt"
+		- This command copies the hello.txt file from the local machine to the /tmp directory on all remote hosts
+	- ansible webservers -i /home/labex/project/inventory -m file -a "path=/tmp/test_dir state=directory mode=0755"
+	- ansible dbservers -i /home/labex/project/inventory -m setup
+		- This command will display a large amount of information about the hosts in the dbservers group
+	- ansible dbservers -i /home/labex/project/inventory -m setup -a "filter=ansible_distribution*"
+		- This will only show facts related to the OS distribution
 
 ## <u>Command Oneliners</u>
-
+- ansible all -i inventory.ini -m ping | less -r
+- ansible all -i inventory.ini -m command -a "df -h"
+- ansible all -i inventory.ini -a "free -m"
+- ansible all -i inventory.ini -m command -a "uptime"
+- ansible nginx -i inventory.ini -m file -a "path=/tmp/test_dir state=directory mode=0755"
+- ansible nginx -i inventory.ini -m setup -a "filter=ansible_distribution*"
 ## <u>Playbooks</u>
 
 ## <u>Labs</u>
+### *Understanding Ansible Ad-hoc Command Structure*
+- ansible [pattern] -m [module] -a "[module options]"
+- nano /home/labex/project/inventory
+		localhost ansible_connection=local
+		
+		[webservers] localhost
+		
+		[dbservers] localhost
+- ansible all -i /home/labex/project/inventory -m ping
+#### *Command Module*
+	- Command Module Explained:
+		- command module: allows you to run arbitrary commands on the target hosts
+		- Remember, the command module doesn't support shell variables or operations like |, >, <, &. For those, you'd need to use the shell module
+- ansible all -i /home/labex/project/inventory -m command -a "df -h"
+	- The command module is the default module, so you can omit -m command if you're using this module -- For example: see the next command
+- ansible webservers -i /home/labex/project/inventory -m command -a "uptime"
+- ansible dbservers -i /home/labex/project/inventory -a "free -m"
+#### *Copy Module*
+	- Copy Module Explained:
+		- copy module: is used to copy files from the local machine to the remote hosts
+- echo "Hello from Ansible" > /home/labex/project/hello.txt
+- ansible all -i /home/labex/project/inventory -m copy -a "src=/home/labex/project/hello.txt dest=/tmp/hello.txt"
 
+#### *File Module*
+	- File Module Explained:
+		- file module: This module is used to manage files and directories
+- ansible webservers -i /home/labex/project/inventory -m file -a "path=/tmp/test_dir state=directory mode=0755"
+	- This command creates a directory named test_dir in the /tmp directory on all webservers, with permissions set to 0755
 
+#### *Setup Module*
+		- Setup Module Explained:
+			- setup module: This module is used to gather facts about the remote hosts
+			- It's automatically run at the beginning of playbooks, but can also be used in ad-hoc commands
+- ansible dbservers -i /home/labex/project/inventory -m setup
+	- This command will display a large amount of information about the hosts in the dbservers group
+- ansible dbservers -i /home/labex/project/inventory -m setup -a "filter=ansible_distribution*"
 # ==**Docker**==
 # ==**Linux**==
 ## <u>Links</u>

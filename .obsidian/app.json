@@ -1,5 +1,5 @@
 {
   "settingsPopoutWindow": false,
   "vimMode": true,
-  "readableLineLength": true
+  "readableLineLength": false
 }
