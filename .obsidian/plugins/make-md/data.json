@@ -39,8 +39,8 @@
   "deleteFileOption": "trash",
   "expandedSpaces": [
     "/",
-    "//Command_Guru",
-    "//Command_Guru/Command_Guru/kali"
+    "//Command_Guru_v3",
+    "//Command_Guru_v3/Command_Guru_v3/k8s"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",

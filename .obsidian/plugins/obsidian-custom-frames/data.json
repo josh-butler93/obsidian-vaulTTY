@@ -1,0 +1,17 @@
+{
+  "frames": [
+    {
+      "url": "https://10.0.0.151:8006",
+      "displayName": "Proxmox",
+      "icon": "mail",
+      "hideOnMobile": true,
+      "addRibbonIcon": true,
+      "openInCenter": true,
+      "zoomLevel": 1,
+      "forceIframe": true,
+      "customCss": "",
+      "customJs": ""
+    }
+  ],
+  "padding": 5
+}

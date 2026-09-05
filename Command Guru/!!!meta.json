@@ -1,0 +1,240 @@
+{
+	"formatVersion": 2,
+	"appVersion": "0.104.1",
+	"files": [
+		{
+			"isClone": false,
+			"noteId": "f2tz3RtFE9RY",
+			"notePath": [
+				"f2tz3RtFE9RY"
+			],
+			"title": "Command Guru",
+			"notePosition": 40,
+			"prefix": null,
+			"isExpanded": true,
+			"type": "text",
+			"mime": "text/html",
+			"attributes": [
+				{
+					"type": "label",
+					"name": "iconClass",
+					"value": "bx bxs-book",
+					"isInheritable": false,
+					"position": 10
+				}
+			],
+			"format": "markdown",
+			"attachments": [],
+			"dirFileName": "Command Guru",
+			"children": [
+				{
+					"isClone": false,
+					"noteId": "ysCdQKAwcjQK",
+					"notePath": [
+						"f2tz3RtFE9RY",
+						"ysCdQKAwcjQK"
+					],
+					"title": "Linux_Notes",
+					"notePosition": 10,
+					"prefix": null,
+					"isExpanded": false,
+					"type": "text",
+					"mime": "text/html",
+					"attributes": [
+						{
+							"type": "label",
+							"name": "iconClass",
+							"value": "bx bxs-book",
+							"isInheritable": false,
+							"position": 10
+						}
+					],
+					"format": "markdown",
+					"dataFileName": "Linux_Notes.md",
+					"attachments": [],
+					"dirFileName": "Linux_Notes",
+					"children": [
+						{
+							"isClone": false,
+							"noteId": "FHOZL3B6nPvk",
+							"notePath": [
+								"f2tz3RtFE9RY",
+								"ysCdQKAwcjQK",
+								"FHOZL3B6nPvk"
+							],
+							"title": "commands",
+							"notePosition": 10,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "code",
+							"mime": "text/x-markdown",
+							"attributes": [
+								{
+									"type": "label",
+									"name": "displayMode",
+									"value": "preview",
+									"isInheritable": false,
+									"position": 10
+								}
+							],
+							"dataFileName": "commands.md",
+							"attachments": []
+						},
+						{
+							"isClone": false,
+							"noteId": "fSKNv5yUlYSy",
+							"notePath": [
+								"f2tz3RtFE9RY",
+								"ysCdQKAwcjQK",
+								"fSKNv5yUlYSy"
+							],
+							"title": "New note",
+							"notePosition": 20,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "markdown",
+							"dataFileName": "New note.md",
+							"attachments": []
+						}
+					]
+				},
+				{
+					"isClone": false,
+					"noteId": "bYrL63BzYlHv",
+					"notePath": [
+						"f2tz3RtFE9RY",
+						"bYrL63BzYlHv"
+					],
+					"title": "k8s",
+					"notePosition": 20,
+					"prefix": null,
+					"isExpanded": false,
+					"type": "text",
+					"mime": "text/html",
+					"attributes": [
+						{
+							"type": "label",
+							"name": "iconClass",
+							"value": "bx bxs-book",
+							"isInheritable": false,
+							"position": 10
+						}
+					],
+					"format": "markdown",
+					"dataFileName": "k8s.md",
+					"attachments": [],
+					"dirFileName": "k8s",
+					"children": [
+						{
+							"isClone": false,
+							"noteId": "Lh4MvQCmm6kh",
+							"notePath": [
+								"f2tz3RtFE9RY",
+								"bYrL63BzYlHv",
+								"Lh4MvQCmm6kh"
+							],
+							"title": "New note v1",
+							"notePosition": 10,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "markdown",
+							"dataFileName": "New note v1.md",
+							"attachments": []
+						}
+					]
+				},
+				{
+					"isClone": false,
+					"noteId": "FJxl5Yp17yfU",
+					"notePath": [
+						"f2tz3RtFE9RY",
+						"FJxl5Yp17yfU"
+					],
+					"title": "HackerOne",
+					"notePosition": 30,
+					"prefix": null,
+					"isExpanded": true,
+					"type": "text",
+					"mime": "text/html",
+					"attributes": [
+						{
+							"type": "label",
+							"name": "iconClass",
+							"value": "bx bxs-book",
+							"isInheritable": false,
+							"position": 10
+						}
+					],
+					"format": "markdown",
+					"attachments": [],
+					"dirFileName": "HackerOne",
+					"children": [
+						{
+							"isClone": false,
+							"noteId": "iCWp9L9i8O4p",
+							"notePath": [
+								"f2tz3RtFE9RY",
+								"FJxl5Yp17yfU",
+								"iCWp9L9i8O4p"
+							],
+							"title": "Metasploit Installation",
+							"notePosition": 10,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "markdown",
+							"dataFileName": "Metasploit Installation.md",
+							"attachments": []
+						},
+						{
+							"isClone": false,
+							"noteId": "47JFS6mgKq1w",
+							"notePath": [
+								"f2tz3RtFE9RY",
+								"FJxl5Yp17yfU",
+								"47JFS6mgKq1w"
+							],
+							"title": "Definitions",
+							"notePosition": 30,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "markdown",
+							"dataFileName": "Definitions.md",
+							"attachments": []
+						},
+						{
+							"isClone": false,
+							"noteId": "WAtnQZ0v47vk",
+							"notePath": [
+								"f2tz3RtFE9RY",
+								"FJxl5Yp17yfU",
+								"WAtnQZ0v47vk"
+							],
+							"title": "Kali",
+							"notePosition": 40,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "markdown",
+							"dataFileName": "Kali.md",
+							"attachments": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

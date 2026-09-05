@@ -6,72 +6,76 @@
       {
         "id": "6a85adebc08f8f2a",
         "type": "tabs",
+        "dimension": 59.9680170575693,
         "children": [
           {
-            "id": "cff34ee0b0754ac7",
+            "id": "9c6ecce1430861ed",
             "type": "leaf",
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "http://localhost:3003/"
+                "url": "https://labex.io/labs/kubernetes-explore-the-kubernetes-cluster-434519?course=kubernetes-for-beginners"
               },
               "icon": "lucide-file",
-              "title": "Homepage"
+              "title": "Explore the Kubernetes Cluster | Kubernetes for Beginners"
             }
           },
           {
-            "id": "02f67e05e980b3e1",
+            "id": "880d8f65d685e6f7",
             "type": "leaf",
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "http://localhost:8080/"
+                "url": "https://kodekloud.com/studio/labs"
               },
               "icon": "lucide-file",
-              "title": "Termix"
+              "title": "KodeKloud Free Labs - Try Hands-On Labs Now !"
             }
           },
           {
-            "id": "84d35bb7314ac1e0",
+            "id": "00729216c92f6e82",
             "type": "leaf",
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://www.google.com/aclk?sa=L&pf=1&ai=DChsSEwjPlty8wNGWAxVvcUcBHVpPGY0YACICCAEQABoCcXU&co=1&ase=2&gclid=Cj0KCQjwkt_UBhDMARIsALpnOAy918_rxc2skPKV9L3bn0U5t0IBTUajr7KBgr6V5pO1Be1v4bjmNoYaAmp9EALw_wcB&ei=Ie6YatiAGvel5NoPk-jV4AY&cid=CAAS0gHkaLcCQHKQ-YH5efnF7wvL9hdYFb1_hcLhLp4q3TSmpij6ViaapiDjm2A_v4yJtdftqXlgJ1HtVNnm1wV2GzZEFEsglJOaFzipFUg_bIRK5TEs6fT9fRz7_7E85UZ1MXP9bmqasZe9dkNNM9yEMOp7IoUjnfL5tAhkhKxXfB3u0eu0rCMrgSz7YXXP1bqxbtWBfY05D5pFb2-Vwcts4VEkgaYylZJA0Dkhxee2VB1Ytq-YioS93M5LaoqRkj_CDFMKyULcmbM6fqv5B4F3dKB6S6s&cce=2&category=acrcp_v1_32&sig=AOD64_0WjvVmqS_t7cJ5D_eRkcSHbqXJVw&q&sqi=2&nis=6&ch=1&adurl=https://www.amazon.com/gp/video/storefront?ref%3Ddvm_us_dl_sl_go_br_brsa_mkw_p401-kw370-cr2856286-c%26mrntrk%3Dgo_cmp-22386851402_adg-177983916460_ad-818155172843_aud-2358113831031:kwd-2850171361_dev-c_ext-&ved=2ahUKEwiYlda8wNGWAxX3ElkFHRN0FWwQ0Qx6BAgPEAE"
+                "url": "https://account.hackthebox.com/login"
               },
               "icon": "lucide-file",
-              "title": "Prime Video: Watch movies, TV shows, sports, and live TV"
+              "title": "HTB Account"
             }
           },
           {
-            "id": "4c4019ec49d429ec",
+            "id": "76376bfe834798a4",
             "type": "leaf",
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://www.google.com/aclk?sa=L&pf=1&ai=DChsSEwjPlty8wNGWAxVvcUcBHVpPGY0YACICCAEQABoCcXU&co=1&ase=2&gclid=Cj0KCQjwkt_UBhDMARIsALpnOAy918_rxc2skPKV9L3bn0U5t0IBTUajr7KBgr6V5pO1Be1v4bjmNoYaAmp9EALw_wcB&ei=Ie6YatiAGvel5NoPk-jV4AY&cid=CAAS0gHkaLcCQHKQ-YH5efnF7wvL9hdYFb1_hcLhLp4q3TSmpij6ViaapiDjm2A_v4yJtdftqXlgJ1HtVNnm1wV2GzZEFEsglJOaFzipFUg_bIRK5TEs6fT9fRz7_7E85UZ1MXP9bmqasZe9dkNNM9yEMOp7IoUjnfL5tAhkhKxXfB3u0eu0rCMrgSz7YXXP1bqxbtWBfY05D5pFb2-Vwcts4VEkgaYylZJA0Dkhxee2VB1Ytq-YioS93M5LaoqRkj_CDFMKyULcmbM6fqv5B4F3dKB6S6s&cce=2&category=acrcp_v1_32&sig=AOD64_0WjvVmqS_t7cJ5D_eRkcSHbqXJVw&q&sqi=2&nis=6&ch=1&adurl=https://www.amazon.com/gp/video/storefront?ref%3Ddvm_us_dl_sl_go_br_brsa_mkw_p401-kw370-cr2856286-c%26mrntrk%3Dgo_cmp-22386851402_adg-177983916460_ad-818155172843_aud-2358113831031:kwd-2850171361_dev-c_ext-&ved=2ahUKEwiYlda8wNGWAxX3ElkFHRN0FWwQ0Qx6BAgPEAE"
+                "url": "https://jbtechops.com/login"
               },
               "icon": "lucide-file",
-              "title": "Prime Video: Watch movies, TV shows, sports, and live TV"
+              "title": "Coolify"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
-        "id": "60623341bdac7c13",
+        "id": "8214e90b5428d8f1",
         "type": "tabs",
+        "dimension": 40.0319829424307,
         "children": [
           {
-            "id": "9b1e6a3441d96be8",
+            "id": "329271a997c7ff82",
             "type": "leaf",
             "state": {
-              "type": "surfing-view",
+              "type": "markdown",
               "state": {
-                "url": "http://10.0.0.193:3004/auth/login?return=%2F"
+                "file": "Command_Guru_v3/k8s/k8s Breakdown.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "Dashboard - Semaphore UI"
+              "title": "k8s Breakdown"
             }
           }
         ]
@@ -86,6 +90,7 @@
       {
         "id": "06b4fd5283534fde",
         "type": "tabs",
+        "dimension": 59.922928709055874,
         "children": [
           {
             "id": "ee7ce0c64be5b6a2",
@@ -143,23 +148,13 @@
             }
           },
           {
-            "id": "98468928ffe23ad6",
+            "id": "6f8b13802753aa8a",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
               "state": {},
               "icon": "layout-grid",
               "title": "Navigator"
-            }
-          },
-          {
-            "id": "d1bdea291688f275",
-            "type": "leaf",
-            "state": {
-              "type": "surfing-tab-tree",
-              "state": {},
-              "icon": "chrome",
-              "title": "Surfing Tab Tree"
             }
           }
         ],
@@ -168,6 +163,7 @@
       {
         "id": "7e36c167590167bf",
         "type": "tabs",
+        "dimension": 40.07707129094412,
         "children": [
           {
             "id": "1f2ce12c2772314f",
@@ -183,7 +179,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 265.7890625,
     "collapsed": true
   },
   "right": {
@@ -289,22 +285,36 @@
       "obsidian-full-calendar:Open Full Calendar": false,
       "obsidian-git:Open Git source control": false,
       "terminal:Open terminal": false,
-      "soundscapes:Soundscapes: My Music": false
+      "soundscapes:Soundscapes: My Music": false,
+      "obsidian-custom-frames:Open Proxmox": false
     }
   },
-  "active": "02f67e05e980b3e1",
+  "active": "9c6ecce1430861ed",
   "lastOpenFiles": [
+    "Command_Guru_v3/k8s/k8s Breakdown.md",
+    "Command_Guru_v3/k8s/k8s.md",
+    "Command Guru/Command Guru/k8s/New note v1.md",
+    "Command Guru/Command Guru/Linux_Notes/commands.md",
+    "Command Guru/Command Guru/Linux_Notes/New note.md",
+    "Command Guru/Command Guru/HackerOne/Metasploit Installation.md",
+    "Command Guru/Command Guru/HackerOne/Kali.md",
+    "Command Guru/Command Guru/HackerOne/Definitions.md",
+    "Command Guru/Command Guru/k8s.md",
+    "Command Guru/Command Guru/k8s",
+    "Command Guru/Command Guru/Linux_Notes.md",
+    "Command Guru/Command Guru/Linux_Notes",
+    "Command Guru/Command Guru/HackerOne",
+    "Command Guru/Command Guru",
+    "Command Guru/!!!meta.json",
+    "Command Guru",
+    "Build out Terraform Server.md",
+    "Command_Guru_v3/k8s",
+    "Command_Guru_v3/Command_Guru_v3.md",
+    "Command_Guru_v3",
+    "Untitled 1.md",
+    "Untitled.md",
     "Command_Guru/jupyter_notebooks/Command_Guru.ipynb",
     "Command_Guru/nagios/services",
-    "Command_Guru/nagios",
-    "Command_Guru/jupyter_notebooks/webpages.ipynb",
-    "Command_Guru/jupyter_notebooks/bash_scripts.ipynb",
-    "Command_Guru/jupyter_notebooks/notebook_experimenting.ipynb",
-    "Command_Guru/jupyter_notebooks/pluralsight.ipynb",
-    "Command_Guru/jupyter_notebooks/linux_commands.ipynb",
-    "doxker-compose/homepage/updatebookmards.yaml",
-    "Command_Guru/jupyter_notebooks/docker_commands.ipynb",
-    "Command_Guru/jupyter_notebooks/k8s_commands.ipynb",
     "Command_Guru/obsidian-vaulTTY/lab-archive/ollama/ollama setup.md",
     "Command_Guru/obsidian-vaulTTY/lab-archive/ollama/ollama models.md",
     "Command_Guru/obsidian-vaulTTY/lab-archive/ollama/ollama cloudfare tunnel.md",
@@ -317,19 +327,6 @@
     "Command_Guru/obsidian-vaulTTY/lab-archive/docker-compose/Docker Compose Install_v2.md",
     "Command_Guru/obsidian-vaulTTY/lab-archive/docker-compose/Docker Compose Index.md",
     "Command_Guru/obsidian-vaulTTY/lab-archive/Yaml/Yaml Index.md",
-    "Command_Guru/obsidian-vaulTTY/lab-archive/TmuxRestore/ssh_tmux_session.md",
-    "Command_Guru/obsidian-vaulTTY/lab-archive/TmuxRestore/Tmux Restore Index.md",
-    "Command_Guru/obsidian-vaulTTY/lab-archive/Tmux/Tmux Restore.md",
-    "Command_Guru/obsidian-vaulTTY/lab-archive/Tmux/Tmux Index.md",
-    "Command_Guru/obsidian-vaulTTY/lab-archive/Tmux/Tmux Commands.md",
-    "Command_Guru/obsidian-vaulTTY/lab-archive/Terraform/Terraform Index.md",
-    "Command_Guru/obsidian-vaulTTY/lab-archive/Tailscale/Tailscale Index.md",
-    "Command_Guru/obsidian-vaulTTY/lab-archive/SSH/ssh_keys.md",
-    "Command_Guru/obsidian-vaulTTY/lab-archive/SSH/SSH Index.md",
-    "Command_Guru/obsidian-vaulTTY/lab-archive/Portainer/Portainer Install.md",
-    "Command_Guru/obsidian-vaulTTY/lab-archive/Portainer/Portainer Index.md",
-    "Command_Guru/obsidian-vaulTTY/lab-archive/Portainer/Portainer Agent Install.md",
-    "Command_Guru/obsidian-vaulTTY/lab-archive/PodmanDesktop/PodmanDesktop Index.md",
     "Command_Guru/obsidian-vaulTTY/lab-archive/Images/wallhaven-x15w2d.jpg",
     "Command_Guru/obsidian-vaulTTY/lab-archive/Images/wallhaven-gj15r7.png",
     "Command_Guru/obsidian-vaulTTY/lab-archive/Images/wallhaven-4g823l.jpg",
