@@ -38,10 +38,10 @@
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://app.pluralsight.com/hands-on?tab=hands-on-labs&filters=%7B%22category%22%3A%5B%228b477e1f-12bd-4c97-93fd-677a644efc7c%22%5D%7D"
+                "url": "https://app.pluralsight.com/hands-on/labs/3ecc0050-c131-4f04-bacd-370809beecb9?originUrl=https%3A%2F%2Fapp.pluralsight.com%2Fhands-on"
               },
               "icon": "lucide-file",
-              "title": "Hands-on | Pluralsight"
+              "title": "Ubuntu Security Hardening"
             }
           },
           {
@@ -67,9 +67,33 @@
               "icon": "lucide-file",
               "title": "Coolify"
             }
+          },
+          {
+            "id": "96312e6466640532",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "https://www.google.com/search?q=datadog+vs+grafana&sca_esv=ccb2cbc31bb26bce&sxsrf=APpeQnsMGbqGBvo7NcFKJazL7OxLkFWhXQ%3A1788656531862&ei=WricaqenJfrU5NoPvZ7GyAs&biw=872&bih=822&uact=5&sclient=gws-wiz-serp&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832cSpkWkfSwsmpNIrD_OQ-UdFAe4qAwsQWVbrtprjzBSpjDzGa2iAzCYjz69Mu1iWxyRZVURqYKbxiTK-ZaQSUo4wE6XPzwI4NozimNTPuhX6QNiifV1gtOeaNEulDtYS55KMuMMBcCG_7lLCQVyavb2_naXaLRr1w8YxJvMdckmU8W2Zdg&aep=10&ntc=1&mstk=AUtExfC-_BKaHIaSA0VQU_lVwvxtWvURlQeXe3Zr-aH9KDYTtiTNbHghTeaXyWzCqd9nwEE7N_pVQkUZwcNiHdISYMbnSmeM_xMWMHfTYBV_SgaKQrKHjpMTp4Tr0n-vvXr2IQkgdeanT56zI5ki723uu6j-wk64RsJR6t2Li_dtkeepOE89BW_KDx8kI6a2tT0D8Kyk4JSBl6W-jT1ybWgqEApKt1t6iwVwqvfa9cqoJqrYbWcqozF9x7k6NrC3CnPI2uqqpWxgbeoOTljck9MqKVqDofrPCapZuBgf4cucFVPXY3SdGOCin3Lg53MHoRZO2F68jJWzYejsLw&aioh=3&csuir=1&cs=1&atvm=2&mtid=5LucatapCMSf5NoP5Y71uQM&udm=50&lns_mode=cvst"
+              },
+              "icon": "lucide-file",
+              "title": "datadog vs grafana - Google Search"
+            }
+          },
+          {
+            "id": "57816255a40ad0e9",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "https://www.youtube.com/"
+              },
+              "icon": "lucide-file",
+              "title": "(81) YouTube"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 6
       },
       {
         "id": "8214e90b5428d8f1",
@@ -92,27 +116,27 @@
             }
           },
           {
-            "id": "76ec487f3b7b0af7",
+            "id": "dfd390c9495b3056",
             "type": "leaf",
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://onenote.cloud.microsoft/notebooks"
+                "url": "https://artifacthub.io/packages/search?kind=0&sort=relevance&page=10"
               },
               "icon": "lucide-file",
-              "title": "OneNote"
+              "title": "Artifact Hub"
             }
           },
           {
-            "id": "1943451c6987a0ef",
+            "id": "73d14074af80f283",
             "type": "leaf",
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://onedrive.live.com/personal/dc9a5d43b57142ec/_layouts/15/Doc.aspx?sourcedoc={12adaf2a-ed72-4876-bdd9-86c1ffafe569}&action=edit&wd=target%28Linux.one%7C%2FCommands%7C2f9777f3-5b10-419c-87c5-312264f04bf5%2F%29&wdorigin=NavigationUrl"
+                "url": "https://app-catalog.vmware.com/registries"
               },
               "icon": "lucide-file",
-              "title": "Command Guru"
+              "title": "Bitnami Secure Images"
             }
           }
         ]
@@ -293,6 +317,7 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Command_Guru_v3/k8s/k8s Breakdown.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -326,9 +351,11 @@
       "obsidian-custom-frames:Open Proxmox": false
     }
   },
-  "active": "76bfc55b73f138e7",
+  "active": "329271a997c7ff82",
   "lastOpenFiles": [
     "Command_Guru_v3/k8s/k8s Breakdown.md",
+    "Command_Guru_v3/Command_Guru_v3.md",
+    "Command_Guru_v3/k8s/k8s.md",
     "Command_Guru/jupyter_notebooks/Command_Guru.ipynb",
     "Command_Guru/jupyter_notebooks/Untitled.md",
     "Command_Guru/jupyter_notebooks/bash_scripts.ipynb",
@@ -336,7 +363,6 @@
     "Command_Guru/jupyter_notebooks/testing.ipynb",
     "Command_Guru/Command_Guru_v2.ipynb",
     "lab-archive/Maldev/docker target practice setup.md",
-    "Command_Guru_v3/k8s/k8s.md",
     "Command Guru/Command Guru/k8s/New note v1.md",
     "Command Guru/Command Guru/Linux_Notes/commands.md",
     "Command Guru/Command Guru/Linux_Notes/New note.md",
@@ -352,7 +378,6 @@
     "Command Guru/!!!meta.json",
     "Command Guru",
     "Build out Terraform Server.md",
-    "Command_Guru_v3/Command_Guru_v3.md",
     "Untitled 1.md",
     "Untitled.md",
     "Command_Guru/obsidian-vaulTTY/lab-archive/ollama/ollama setup.md",

@@ -9,9 +9,9 @@
   "terminal",
   "calendar",
   "ninja-cursor",
-  "soundscapes",
   "obsidian-custom-frames",
   "vim-motions",
   "jupymd",
-  "jupyter-viewer"
+  "jupyter-viewer",
+  "soundscapes"
 ]

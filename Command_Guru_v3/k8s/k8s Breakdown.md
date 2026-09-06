@@ -319,6 +319,38 @@ Adding Variables to Playbooks
 	- sudo firewall-cmd --list-interfaces
 	- sudo firewall-cmd --list-icmp-block
 
+- <u>grep</u>
+	- grep copyright
+	- grep -r copyright
+		- Add the `-r` flag to the `grep` command so it will search recursively for all the files in the current directory tree that contain the text `copyright`
+	- grep -rl copyright
+		- Add the `l` flag to that command if you want `grep` to print nothing more than the directory and file names
+	- grep -r copyright | wc
+		- Piping the output to the `wc` command will print just the number of lines, words, and characters in the output
+	- grep -R copyright | wc
+		- Using the uppercase `-R` flag instead of the lowercase `-r` will recursively return even objects that are symbolic links
+	- grep -r copyright > ~/lowercase.txt
+	- grep -R copyright > ~/uppercase.txt
+	- diff ~/lowercase.txt ~/uppercase.txt
+	- ls -l /usr/share/doc/ | grep debconf
+	- cat git/README.source | grep extracted
+	- cat git/README.source | grep -A 2 extracted
+		- Add the `-A` flag to `grep` with the value of `2` to print the two lines that come **after** the matching line
+	- cat git/README.source | grep -B 5 extracted
+		- If you need to see the lines that come before the matching line, use the `-B` flag along with some value
+	- cat git/README.source | grep -C 4 extracted
+		- If you want to see both lines before **and** after the matching line, use the `-C` (context) flag
+	- ps aux
+		- Run `ps` along with the `aux` arguments to list all the processes currently active on your machine
+	- ps aux | grep root
+	- ps aux | grep ^root
+		- he `^` character tells `grep` to return only lines that **begin** with (in this case) the word `root`
+	- ps aux | grep d$
+		- The `$` character will work similarly by telling `grep` to return only lines that **end** with a specified character (or characters)
+		- That example can be useful because it returns only processes that executed using a `systemd` service (whose names commonly end in the letter `d`)
+	- ls /home/ubuntu/ | grep -E '(READY|COMPLETE)'
+	- 
+
 - <u>nfs</u>
 	- systemctl status nfs-server
 	- sudo exportfs -rav
@@ -356,6 +388,34 @@ Adding Variables to Playbooks
 - <u>df</u>
 	- df -hT /mnt/shared
 
+- <u>ssh</u>
+	- ==Setting `PasswordAuthentication no` is the single most important hardening directive here because it forces every login to use a key pair and completely removes brute-force password guessing as an attack vector
+	- ssh-keygen -t ed25519 
+	- ssh-keygen -t ed25519 -f ~/auditor_key -N '' -C 'auditor lab key'
+	- cat ~/auditor_key.pub
+	- sudo install -d -o auditor -g auditor -m 700 /home/auditor/.ssh
+		- **Expected result:** No output
+	- sudo install -o auditor -g auditor -m 600 ~/auditor_key.pub /home/auditor/.ssh/authorized_keys
+		- **Expected result:** No output
+	- ssh -i ~/auditor_key -o StrictHostKeyChecking=accept-new auditor@localhost 'whoami && hostname'
+		- **Expected result:** A line similar to `Warning: Permanently added 'localhost' (ED25519)...` may appear if this is the first connection
+			- The command then returns `auditor` followed by the lab VM hostname
+			- The session authenticates using the SSH key without prompting for a password
+	- sudo sshd -t && echo "config ok"
+		- Validate the configuration syntactically before reloading sshd which is what the above command is for
+		- **Expected result:** `config ok`
+			- If `sshd -t` reports an error, the reload would fail
+			- This test catches the problem before it locks you out
+	- sudo systemctl reload ssh
+	- sudo sshd -T | grep -E '^(permitrootlogin|passwordauthentication|maxauthtries|allowusers|logingracetime)'
+		- Note that `sshd -T` displays each `AllowUsers` value on its own line
+	- ssh -i ~/auditor_key -o StrictHostKeyChecking=accept-new auditor@localhost 'echo "auditor login ok"'
+		- **Expected result:** `auditor login ok`
+	- ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new root@localhost 'whoami' || echo 'root login denied as expected'
+		- **Expected result:** A line similar to `root@localhost: Permission denied (publickey).` followed by `root login denied as expected`
+	- sudo tail -n 30 /var/log/auth.log | grep -E '(Accepted|Failed|not allowed|not listed)'
+		- **Expected result:** A mix of `Accepted publickey for auditor` lines and entries similar to `User root from 127.0.0.1 not allowed because not listed in AllowUsers` and `User stranger from 127.0.0.1 not allowed because not listed in AllowUsers`
+	- 
 ## <u>Services</u>
 - <u>nfs</u>
 	- This is the actual **file-sharing service**
@@ -700,7 +760,17 @@ kubectl apply -f globomantics-frontend.yaml
 
 ## <u>Command Breakdowns</u>
 
-# **==Pluaralsight Labs==
+# ==Homelab==
+## <u>k8s Builds</u>
+### **Headlamp**
+- helm repo add headlamp https://kubernetes-sigs.github.io/headlamp/
+- helm repo update
+- helm install my-headlamp headlamp/headlamp --namespace kube-system
+- kubectl port-forward -n kube-system svc/my-headlamp 8080:80 <== can only  be access from this vm though
+- kubectl port-forward -n kube-system svc/my-headlamp --address 0.0.0.0 8080:80
+
+
+# ==Pluaralsight Labs==
 ## <u>Navigating and Managing Amazon Linux</u>
 ###  Connecting to an EC2 instance
 
@@ -886,6 +956,209 @@ AAAEBuP3tRjT242PzYzukWvMjWPk2RF2A73ZDZnX7aOrsU4Cuor6pBf+iVwrLxg395tjxy
 - helm install stack-release ./globomantics-stack -n globomantics
 - helm list -n globomantics
 - kubectl get pods -n globomantics
+
+## <u>Install and Configure an Amazon Linux LAMP Environment</u>
+### **LAMP Stack on Amazon Linux 2023**
+- ssh cloud_user@54.159.148.154
+- -K5l[ut9
+- whoami
+- sudo dnf upgrade -y && dnf --version
+- sudo dnf install -y httpd php php-fpm php-mysqli php-json git
+- sudo dnf install -y mariadb105-server
+- sudo systemctl start mariadb
+- sudo systemctl start php-fpm
+- sudo systemctl start httpd
+- http://PUBLIC-IP ==> http://54.159.148.154
+### **Secure MariaDB installation**
+- sudo mysql_secure_installation
+	- Switch to unix_socket authentication? Y
+	- Change root password: n
+	- Remove anonymous users? Y
+	- Disallow root login remotely? Y
+	- Remove test database and access to it? Y
+	- Reload privilege tables now? Y
+- sudo mariadb
+	- ==Create the application database:
+		- CREATE DATABASE todo_app
+			- CHARACTER SET utf8mb4
+			- COLLATE utf8mb4_unicode_ci;
+	- ==Create a database account for the PHP application:
+		- CREATE USER 'todo_user'@'localhost'
+			- IDENTIFIED BY 'TodoAppLab2026!';
+	- ==Grant the application account access to the database:
+		- GRANT SELECT, INSERT, UPDATE, DELETE
+			- ON todo_app.*
+			- TO 'todo_user'@'localhost';
+	- ==Apply the updated privileges:
+		- FLUSH PRIVILEGES;
+	- ==Select the application database:
+		- USE todo_app;
+	- ==Create the `todos` table:
+		- CREATE TABLE todos (
+			- id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+			- task VARCHAR(255) NOT NULL,
+			- completed BOOLEAN NOT NULL DEFAULT FALSE,
+			- created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+			- PRIMARY KEY (id) );
+	- ==Insert the initial to-do items:
+		- INSERT INTO todos (task, completed)
+			- VALUES
+				- ('Verify the Apache service', FALSE),
+				- ('Secure the MariaDB installation', TRUE),
+				- ('Configure automatic service startup', FALSE),
+				- ('Review application service logs', FALSE);
+	- ==Display the inserted records:
+		- SELECT id, task, completed FROM todos;
+	- ==Exit MariaDB:
+		- EXIT;
+### **Create the directories and pages for your web application**
+- git clone https://github.com/ps-interactive/lab_amazon-linux-package-management-service-configuration.git
+- sudo mkdir -p /var/www/todo/public
+- sudo mkdir -p /etc/todo-app
+- sudo chown -R cloud_user:apache /var/www/todo
+- sudo find /var/www/todo -type d -exec chmod 2775 {} \;
+- sudo cp lab_amazon-linux-package-management-service-configuration/database.php /etc/todo-app/database.php
+- sudo chown root:apache /etc/todo-app/database.php
+- sudo chmod 640 /etc/todo-app/database.php
+- sudo vim /var/www/todo/public/index.php
+- sudo chown cloud_user:apache /var/www/todo/public/index.php
+- chmod 664 /var/www/todo/public/index.php
+- php -l /var/www/todo/public/index.php
+	- Expected output: `No syntax errors detected in /var/www/todo/public/index.php`
+
+### **Create the virtual host**
+- sudo cp lab_amazon-linux-package-management-service-configuration/todo.conf /etc/httpd/conf.d/todo.conf
+- sudo apachectl configtest
+- sudo systemctl restart httpd
+### **Configure `systemd` Services for Automatic Startup**
+- systemctl is-enabled httpd
+- sudo systemctl enable httpd
+- sudo systemctl enable mariadb
+- sudo systemctl enable php-fpm
+- systemctl is-enabled httpd
+- sudo cp lab_amazon-linux-package-management-service-configuration/todo-init.sh /usr/local/bin/todo-init.sh
+- sudo cp lab_amazon-linux-package-management-service-configuration/todo-init.service /etc/systemd/system/todo-init.service
+- sudo systemctl daemon-reload
+- systemctl list-unit-files | grep todo-init
+- sudo systemctl enable todo-init.service
+- systemctl is-enabled todo-init.service
+- sudo systemctl start todo-init.service
+### **Diagnose and Resolve a Failed systemd Service**
+- systemctl is-active todo-init.service
+- sudo journalctl -u todo-init.service
+	- The `-u` option filters the journal by systemd unit
+- ls -l /usr/local/bin/todo-init.sh <== To check permissions ==>
+- sudo chmod 755 /usr/local/bin/todo-init.sh <== makes it executable <==
+- systemctl status todo-init.service --no-pager
+- sudo journalctl -u todo-init.service -n 20
+## <u>Ubuntu Security Hardening</u>
+### **Harden SSH Access and Validate with fail2ban**
+- ls /home/ubuntu/ | grep -E '(READY|COMPLETE)'
+	- **Expected result:** Five lines, in some order:
+		- `APT READY`
+		- `AUDITOR READY`
+		- `APPARMOR READY`
+		- `README READY`
+		- `SYSTEM_COMPLETE`
+- cat ~/LAB_README.txt
+### **Generate an SSH Key Pair for the auditor User**
+- ssh-keygen -t ed25519 -f ~/auditor_key -N '' -C 'auditor lab key'
+- cat ~/auditor_key.pub
+- sudo install -d -o auditor -g auditor -m 700 /home/auditor/.ssh
+- sudo install -o auditor -g auditor -m 600 ~/auditor_key.pub /home/auditor/.ssh/authorized_keys
+- ssh -i ~/auditor_key -o StrictHostKeyChecking=accept-new auditor@localhost 'whoami && hostname'
+### **Harden the SSHD Configuration**
+- sudo tee /etc/ssh/sshd_config.d/70-hardening.conf > /dev/null <<'EOF' PermitRootLogin no 
+  PasswordAuthentication no 
+  MaxAuthTries 3 
+  AllowUsers ubuntu auditor 
+  LoginGraceTime 30 EOF
+	- **Expected result:** No output. The hardening drop-in is created at `/etc/ssh/sshd_config.d/70-hardening.conf
+- sudo sshd -t && echo "config ok" 
+- sudo systemctl reload ssh
+### **Verify Allow and Deny Behavior**
+- ssh -i ~/auditor_key -o StrictHostKeyChecking=accept-new auditor@localhost 'echo "auditor login ok"'
+- ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new root@localhost 'whoami' || echo 'root login denied as expected'
+- sudo useradd -m -s /bin/bash stranger
+	- **Expected result:** No output
+- ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new stranger@localhost 'whoami' || echo 'stranger login denied as expected'
+	- **Expected result:** A line similar to `stranger@localhost: Permission denied (publickey).`, followed by `stranger login denied as expected`
+- sudo tail -n 30 /var/log/auth.log | grep -E '(Accepted|Failed|not allowed|not listed)'
+### **Configure `fail2ban` for SSH Defense**
+##### fail2ban jail for sshd
+
+```
+sudo tee /etc/fail2ban/jail.d/sshd.local > /dev/null <<'EOF'
+[DEFAULT]
+ignoreip = 127.0.0.1/8 ::1
+bantime  = 3600
+findtime = 600
+maxretry = 3
+
+[sshd]
+enabled = true
+port    = ssh
+logpath = %(sshd_log)s
+backend = systemd
+EOF
+```
+
+- sudo systemctl enable --now fail2ban
+- sudo fail2ban-client status
+	- **Expected result:** A short report with `Number of jail: 1` and `Jail list: sshd`
+- sudo fail2ban-client status sshd
+	- **Expected result:** A table showing `Filter` with `Currently failed`, `Total failed`, and a `File list` (or journal source), plus `Actions` with `Currently banned 0`, `Total banned 0`, and an empty `Banned IP list`
+		- With no malicious traffic yet, the jail is armed but quiet
+- sudo fail2ban-client get sshd maxretry
+	- **Expected result:** `3`, matching your `jail.local` configuration
+- sudo fail2ban-client get sshd findtime
+	- **Expected result:** `600`, matching your `jail.local` configuration
+	- **Expected result:** `3600`, matching your `jail.local` configuration
+	- **Note:** In production, when an IP exceeds `maxretry` failures within `findtime` seconds, `fail2ban` inserts a kernel-level firewall block that remains in place for `bantime` seconds
+	- The block is invisible to legitimate users and automatically clears when the ban expires, which is why `fail2ban` is a low-overhead defense-in-depth layer behind SSH key authentication
+### **Enable UFW, Configure auditd, and Correlate Security Events**
+- sudo ufw status
+- sudo ufw default deny incoming
+	- **Expected result:** `Default incoming policy changed to 'deny'`, followed by `(be sure to update your rules accordingly)`
+- sudo ufw default allow outgoing
+	- **Expected result:** `Default outgoing policy changed to 'allow'`
+- sudo ufw allow 80/tcp
+- sudo ufw limit 22/tcp
+	- `ufw limit` rejects connections from an IP if it makes six or more attempts in the last 30 seconds
+- sudo ufw --force enable
+- sudo ufw status verbose
+- sudo ufw reload
+	- This ensures the rules are persistent
+	- ==**Note:** `ufw reload` is the recommended way to apply UFW rule changes in production because it avoids the brief exposure window that `ufw disable` followed by `ufw enable` would create
+- sudo ufw status verbose
+- cat /etc/ufw/ufw.conf
+### **Define Audit Rules for Sensitive Events**
+##### security-hardening.rules
+
+```
+sudo tee /etc/audit/rules.d/security-hardening.rules > /dev/null <<'EOF'
+# Watch sensitive account files for any write or attribute change
+-w /etc/passwd -p wa -k account-changes
+-w /etc/shadow -p wa -k account-changes
+
+# Watch the SSH auth log for any write
+-w /var/log/auth.log -p wa -k auth-log
+
+# Audit every execution of sudo by tagging it with the 'privileged' key
+-a always,exit -F arch=b64 -S execve -F path=/usr/bin/sudo -F key=privileged
+EOF
+```
+
+- sudo augenrules --load
+	- ==Load the new rules from `/etc/audit/rules.d/` into the running audit daemon
+- sudo auditctl -l
+- sudo usermod -c "Auditor Account" auditor
+- sudo ls /root
+- su - root -c whoami < /dev/null || echo 'failed su recorded'
+- sudo ausearch -k account-changes -ts recent | tail -n 25
+- sudo ausearch -k privileged -ts recent | tail -n 25
+- sudo ausearch -k auth-log
+
 # **==Storage==**
 ## <u>Commands</u>
 - systemctl status nfs-server
