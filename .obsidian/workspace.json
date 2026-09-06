@@ -86,7 +86,7 @@
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://www.youtube.com/"
+                "url": "https://www.youtube.com/watch?v=tBxtnvatFYI"
               },
               "icon": "lucide-file",
               "title": "(81) YouTube"
@@ -317,7 +317,6 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Command_Guru_v3/k8s/k8s Breakdown.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -351,7 +350,7 @@
       "obsidian-custom-frames:Open Proxmox": false
     }
   },
-  "active": "329271a997c7ff82",
+  "active": "57816255a40ad0e9",
   "lastOpenFiles": [
     "Command_Guru_v3/k8s/k8s Breakdown.md",
     "Command_Guru_v3/Command_Guru_v3.md",
