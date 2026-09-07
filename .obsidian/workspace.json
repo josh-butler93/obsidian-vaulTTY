@@ -16,8 +16,8 @@
               "state": {
                 "url": "https://chatgpt.com/c/6a6bed96-890c-83ea-8613-8ae204838670"
               },
-              "icon": "lucide-file",
-              "title": "Coolify domain setup"
+              "icon": "lucide-ghost",
+              "title": "surfing-view"
             }
           },
           {
@@ -28,8 +28,8 @@
               "state": {
                 "url": "https://labex.io/learn/ansible"
               },
-              "icon": "lucide-file",
-              "title": "Learn Ansible | Ansible Courses Online | LabEx"
+              "icon": "lucide-ghost",
+              "title": "surfing-view"
             }
           },
           {
@@ -40,8 +40,8 @@
               "state": {
                 "url": "https://app.pluralsight.com/hands-on/labs/3ecc0050-c131-4f04-bacd-370809beecb9?originUrl=https%3A%2F%2Fapp.pluralsight.com%2Fhands-on"
               },
-              "icon": "lucide-file",
-              "title": "Ubuntu Security Hardening"
+              "icon": "lucide-ghost",
+              "title": "surfing-view"
             }
           },
           {
@@ -52,8 +52,8 @@
               "state": {
                 "url": "https://profile.hackthebox.com/dashboard"
               },
-              "icon": "lucide-file",
-              "title": "HTB Profile | Hack The Box"
+              "icon": "lucide-ghost",
+              "title": "surfing-view"
             }
           },
           {
@@ -64,8 +64,8 @@
               "state": {
                 "url": "https://jbtechops.com/login"
               },
-              "icon": "lucide-file",
-              "title": "Coolify"
+              "icon": "lucide-ghost",
+              "title": "surfing-view"
             }
           },
           {
@@ -76,8 +76,8 @@
               "state": {
                 "url": "https://www.google.com/search?q=datadog+vs+grafana&sca_esv=ccb2cbc31bb26bce&sxsrf=APpeQnsMGbqGBvo7NcFKJazL7OxLkFWhXQ%3A1788656531862&ei=WricaqenJfrU5NoPvZ7GyAs&biw=872&bih=822&uact=5&sclient=gws-wiz-serp&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832cSpkWkfSwsmpNIrD_OQ-UdFAe4qAwsQWVbrtprjzBSpjDzGa2iAzCYjz69Mu1iWxyRZVURqYKbxiTK-ZaQSUo4wE6XPzwI4NozimNTPuhX6QNiifV1gtOeaNEulDtYS55KMuMMBcCG_7lLCQVyavb2_naXaLRr1w8YxJvMdckmU8W2Zdg&aep=10&ntc=1&mstk=AUtExfC-_BKaHIaSA0VQU_lVwvxtWvURlQeXe3Zr-aH9KDYTtiTNbHghTeaXyWzCqd9nwEE7N_pVQkUZwcNiHdISYMbnSmeM_xMWMHfTYBV_SgaKQrKHjpMTp4Tr0n-vvXr2IQkgdeanT56zI5ki723uu6j-wk64RsJR6t2Li_dtkeepOE89BW_KDx8kI6a2tT0D8Kyk4JSBl6W-jT1ybWgqEApKt1t6iwVwqvfa9cqoJqrYbWcqozF9x7k6NrC3CnPI2uqqpWxgbeoOTljck9MqKVqDofrPCapZuBgf4cucFVPXY3SdGOCin3Lg53MHoRZO2F68jJWzYejsLw&aioh=3&csuir=1&cs=1&atvm=2&mtid=5LucatapCMSf5NoP5Y71uQM&udm=50&lns_mode=cvst"
               },
-              "icon": "lucide-file",
-              "title": "datadog vs grafana - Google Search"
+              "icon": "lucide-ghost",
+              "title": "surfing-view"
             }
           },
           {
@@ -86,10 +86,10 @@
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://www.youtube.com/watch?v=tBxtnvatFYI"
+                "url": "https://www.youtube.com/watch?v=0SNjt9wUnVM"
               },
               "icon": "lucide-file",
-              "title": "(81) YouTube"
+              "title": "(83) WIDOW'S BAY Episode 10 Ending Explained - YouTube"
             }
           }
         ],
@@ -123,8 +123,8 @@
               "state": {
                 "url": "https://artifacthub.io/packages/search?kind=0&sort=relevance&page=10"
               },
-              "icon": "lucide-file",
-              "title": "Artifact Hub"
+              "icon": "lucide-ghost",
+              "title": "surfing-view"
             }
           },
           {
@@ -135,8 +135,8 @@
               "state": {
                 "url": "https://app-catalog.vmware.com/registries"
               },
-              "icon": "lucide-file",
-              "title": "Bitnami Secure Images"
+              "icon": "lucide-ghost",
+              "title": "surfing-view"
             }
           }
         ]
@@ -216,6 +216,16 @@
               "state": {},
               "icon": "layout-grid",
               "title": "Navigator"
+            }
+          },
+          {
+            "id": "6826954bcc949765",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-tab-tree",
+              "state": {},
+              "icon": "chrome",
+              "title": "Surfing Tab Tree"
             }
           }
         ],
@@ -346,8 +356,8 @@
       "obsidian-full-calendar:Open Full Calendar": false,
       "obsidian-git:Open Git source control": false,
       "terminal:Open terminal": false,
-      "soundscapes:Soundscapes: My Music": false,
-      "obsidian-custom-frames:Open Proxmox": false
+      "obsidian-custom-frames:Open google": false,
+      "soundscapes:Soundscapes: My Music": false
     }
   },
   "active": "57816255a40ad0e9",

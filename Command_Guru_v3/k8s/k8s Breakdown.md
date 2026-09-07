@@ -127,7 +127,7 @@
         msg: "File exists: {{ file_info.stat.exists }}"
 ```
 
-## group_creation.yaml
+### group_creation.yaml
 
 ```
 ---
