@@ -16,8 +16,8 @@
               "state": {
                 "url": "https://chatgpt.com/c/6a6bed96-890c-83ea-8613-8ae204838670"
               },
-              "icon": "lucide-ghost",
-              "title": "surfing-view"
+              "icon": "lucide-file",
+              "title": "Coolify domain setup"
             }
           },
           {
@@ -28,8 +28,8 @@
               "state": {
                 "url": "https://labex.io/learn/ansible"
               },
-              "icon": "lucide-ghost",
-              "title": "surfing-view"
+              "icon": "lucide-file",
+              "title": "Learn Ansible | Ansible Courses Online | LabEx"
             }
           },
           {
@@ -38,10 +38,10 @@
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://app.pluralsight.com/hands-on/labs/3ecc0050-c131-4f04-bacd-370809beecb9?originUrl=https%3A%2F%2Fapp.pluralsight.com%2Fhands-on"
+                "url": "https://app.pluralsight.com/id"
               },
-              "icon": "lucide-ghost",
-              "title": "surfing-view"
+              "icon": "lucide-file",
+              "title": "Sign In | Pluralsight"
             }
           },
           {
@@ -52,8 +52,8 @@
               "state": {
                 "url": "https://profile.hackthebox.com/dashboard"
               },
-              "icon": "lucide-ghost",
-              "title": "surfing-view"
+              "icon": "lucide-file",
+              "title": "HTB Profile | Hack The Box"
             }
           },
           {
@@ -64,8 +64,8 @@
               "state": {
                 "url": "https://jbtechops.com/login"
               },
-              "icon": "lucide-ghost",
-              "title": "surfing-view"
+              "icon": "lucide-file",
+              "title": "Coolify"
             }
           },
           {
@@ -74,22 +74,22 @@
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://www.google.com/search?q=datadog+vs+grafana&sca_esv=ccb2cbc31bb26bce&sxsrf=APpeQnsMGbqGBvo7NcFKJazL7OxLkFWhXQ%3A1788656531862&ei=WricaqenJfrU5NoPvZ7GyAs&biw=872&bih=822&uact=5&sclient=gws-wiz-serp&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832cSpkWkfSwsmpNIrD_OQ-UdFAe4qAwsQWVbrtprjzBSpjDzGa2iAzCYjz69Mu1iWxyRZVURqYKbxiTK-ZaQSUo4wE6XPzwI4NozimNTPuhX6QNiifV1gtOeaNEulDtYS55KMuMMBcCG_7lLCQVyavb2_naXaLRr1w8YxJvMdckmU8W2Zdg&aep=10&ntc=1&mstk=AUtExfC-_BKaHIaSA0VQU_lVwvxtWvURlQeXe3Zr-aH9KDYTtiTNbHghTeaXyWzCqd9nwEE7N_pVQkUZwcNiHdISYMbnSmeM_xMWMHfTYBV_SgaKQrKHjpMTp4Tr0n-vvXr2IQkgdeanT56zI5ki723uu6j-wk64RsJR6t2Li_dtkeepOE89BW_KDx8kI6a2tT0D8Kyk4JSBl6W-jT1ybWgqEApKt1t6iwVwqvfa9cqoJqrYbWcqozF9x7k6NrC3CnPI2uqqpWxgbeoOTljck9MqKVqDofrPCapZuBgf4cucFVPXY3SdGOCin3Lg53MHoRZO2F68jJWzYejsLw&aioh=3&csuir=1&cs=1&atvm=2&mtid=5LucatapCMSf5NoP5Y71uQM&udm=50&lns_mode=cvst"
+                "url": "https://www.google.com/search?q=datadog+vs+grafana&sca_esv=ccb2cbc31bb26bce&sxsrf=APpeQnsMGbqGBvo7NcFKJazL7OxLkFWhXQ%3A1788656531862&ei=WricaqenJfrU5NoPvZ7GyAs&biw=872&bih=822&uact=5&sclient=gws-wiz-serp&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832cSpkWkfSwsmpNIrD_OQ-UdFAe4qAwsQWVbrtprjzBSpjDzGa2iAzCYjz69Mu1iWxyRZVURqYKbxiTK-ZaQSUo4wE6XPzwI4NozimNTPuhX6QNiifV1gtOeaNEulDtYS55KMuMMBcCG_7lLCQVyavb2_naXaLRr1w8YxJvMdckmU8W2Zdg&aep=10&ntc=1&mstk=AUtExfD5rOUTF6pgyCzYVlWFvHkoI4Ar_JKwSLt1IcJ37oyTQfcS9K9ymaTu5hU1Rncdxa35PZ1sSjO02wfU8VL8F5vPboBGrJWEPWtA5iLHvV0UlH8fqkvubp0LMs87X-kzCTFeY9xrMsckNLmtz46KmQWzltuqwmTLo5gDDB_Ntd1RNCa3ZVaoj3O72-oomMsTUwu2omkIg7-ZnIVCmhDfnpfevMfyGsWPwvkF-lYTdN4frX5iCOxeT-mx5lIvTZJ3qewnV2qUynsOHGieXgeusOYL-oj2PEO86RVZREtRpIbEWVRua_BDbzHCwL9IEt7T8mGCWfmELUMQxg&aioh=3&csuir=1&cs=1&atvm=2&mtid=5LucatapCMSf5NoP5Y71uQM&udm=50&lns_mode=cvst"
               },
-              "icon": "lucide-ghost",
-              "title": "surfing-view"
+              "icon": "lucide-file",
+              "title": "datadog vs grafana - Google Search"
             }
           },
           {
-            "id": "57816255a40ad0e9",
+            "id": "7ffcb24bd2f3f273",
             "type": "leaf",
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://www.youtube.com/watch?v=0SNjt9wUnVM"
+                "url": "https://www.youtube.com/watch?v=fQHB8jVinVw"
               },
               "icon": "lucide-file",
-              "title": "(83) WIDOW'S BAY Episode 10 Ending Explained - YouTube"
+              "title": "(83) DARK MATTER S2 Episode 2: A Perfect World | Analysis & Discussion - YouTube"
             }
           }
         ],
@@ -209,23 +209,13 @@
             }
           },
           {
-            "id": "6f8b13802753aa8a",
+            "id": "89d5c9860cbb630a",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
               "state": {},
               "icon": "layout-grid",
               "title": "Navigator"
-            }
-          },
-          {
-            "id": "6826954bcc949765",
-            "type": "leaf",
-            "state": {
-              "type": "surfing-tab-tree",
-              "state": {},
-              "icon": "chrome",
-              "title": "Surfing Tab Tree"
             }
           }
         ],
@@ -345,6 +335,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "omnisearch:Omnisearch": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -360,7 +351,7 @@
       "soundscapes:Soundscapes: My Music": false
     }
   },
-  "active": "57816255a40ad0e9",
+  "active": "7ffcb24bd2f3f273",
   "lastOpenFiles": [
     "Command_Guru_v3/k8s/k8s Breakdown.md",
     "Command_Guru_v3/Command_Guru_v3.md",
