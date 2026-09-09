@@ -438,18 +438,19 @@ Adding Variables to Playbooks
 	- `mountd` checks the server's export information to determine whether a client is allowed access
 
 # **==k8s==**
-## *Links*
+## <u>Links</u>
 ## <u>Definitions</u>
-#### minikube
+- minikube
 	- creates and manages local Kubernetes clusters
 		- A named Minikube environment is called a profile
 		- This lab uses the labex-v135 profile
-#### kubectl
+- kubectl
 	- is the standard Kubernetes command-line client
 		- It sends requests to the Kubernetes API server to list, create, update, and delete objects
 - <u>Pod</u>: 
 	- is the smallest deployable Kubernetes unit
 		- It wraps one or more closely related containers and gives them shared networking and storage context
+		- A Pod gives one or more tightly related containers a shared network identity and storage context
 - <u>namespace</u>: 
 	- provides a logical scope for namespaced objects
 - <u>API server</u>: 
@@ -474,9 +475,26 @@ Adding Variables to Playbooks
 		- Addresses vary, so focus on is running, which shows the API server returned information. It does not prove every workload is healthy
 - <u>Deployment</u>:
 	- declares how many copies of a stateless application should run and manages Pods through a ReplicaSet
+	- provides a desired replica count and Pod template
 - <u>Service</u>:
 	- gives selected Pods a stable virtual IP and DNS name because replaceable Pod IPs can change
-
+- <u>Imperative Command:</u>
+	- With an imperative command, ==you directly request an action==, such as “create a Pod named first-nginx.”
+- <u>Declarative Manifest</u>
+	- With a declarative manifest, you save the desired object configuration in a file and ask Kubernetes to make the cluster match it
+		- Declarative files are valuable because you can read them before making a change, apply them repeatedly, review differences, and store them in version control
+- <u>apiVersion</u>:
+	- selects the Kubernetes API group and version
+- <u>kind</u>:
+	- identifies the object type, such as Pod or Deployment
+- <u>metadata</u>:
+	- gives the object identity, including its name and labels
+- <u>spec</u>:
+	- describes the desired state of that object
+- <u>status</u>:
+	- reports observed state and is normally filled in by Kubernetes after creation, not written in your manifest
+- <u>ReplicaSet</u>
+	- A ReplicaSet maintains the requested Pods
 ## *<u>k8s Commands</u>*
 - minikube version --short
 - kubectl version
@@ -520,7 +538,25 @@ Adding Variables to Playbooks
 - kubectl apply -f globomantics-frontend.yaml
 - kubectl get pods -n globomantics -l app.kubernetes.io/name=wordpress -w
 - kubectl get pods -n globomantics
-
+- printf '%s\n' apiVersion kind metadata spec > manifest-fields.txt
+- kubectl apply --dry-run=client -f first_pod.yaml
+- kubectl apply --dry-run=client -f first_pod.yaml -o yaml
+- kubectl apply -f first_pod.yaml
+- kubectl wait --for=condition=Ready pod/first-nginx --timeout=60s
+- kubectl get pod first-nginx -n dev -o wide
+- kubectl get pod first-nginx --show-labels -n dev
+	- Labels are stored with the object and will become important when Deployments and Services select Pods
+- -o jsonpath='...' extracts selected fields instead of printing the whole object
+	- The expression walks through metadata.ownerReferences; {"\n"} adds a final newline so the shell prompt appears on the next line
+- kubectl apply --dry-run=client -f course-web-deployment.yaml
+- kubectl apply --dry-run=client -f course-web-deployment.yaml -o yaml
+- kubectl diff -f course-web-deployment.yaml || true
+	- || true: keeps the shell prompt from treating that expected difference as a failure
+- kubectl rollout status deployment/course-web --timeout=60s
+- kubectl get deployment course-web
+- kubectl get deployment course-web -w
+- kubectl get deployment,replicaset,pods -l app=course-web
+- kubectl get replicaset -l app=course-web
 ## <u>Helm Commands</u>
 - helm version
 - helm repo add bitnami https://charts.bitnami.com/bitnami
@@ -688,22 +724,22 @@ spec:
 EOF
 ```
 
-## *Labs*
-### *<u>Exploring k8s cluster</u>*
+## <u>Labs</u>
+### **Exploring k8s cluster**
 - minikube version --short
 - kubectl version
 - kubectl config current-context
 - kubectl config get-contexts
 - kubectl config use-context labex-v135
 - minikube status -p labex-v135
-#### <u>Identify Kubernetes Architecture Components</u>
+#### **Identify Kubernetes Architecture Components**
 - kubectl get pods -n kube-system -l tier=control-plane
 	- ==Use -l tier=control-plane to select Pods with that label:
 	- READY=1/1 means the Pod's one container is ready
 - kubectl get pods -n kube-system -l tier=control-plane --show-labels
 - kubectl get pods -n kube-system -l 'k8s-app in (kube-proxy,calico-node)'
 
-#### <u>Inspect Cluster and Node Details</u>
+#### **Inspect Cluster and Node Details**
 - kubectl cluster-info
 - kubectl get nodes -o wide
 	- Add -o wide to request more columns
@@ -712,8 +748,83 @@ EOF
 - kubectl get deployments -A
 - kubectl get services -A
 - kubectl get all -A
-
+### **Deploying Application on K8s**
+- Application Flow State
+	- manifest spec -> API server stores desired state -> controllers act -> object status reports actual state
+- cat <<'EOF' > first-pod.yaml...
+- kubectl apply --dry-run=client -f first-pod.yaml
+- kubectl apply --dry-run=client -f first_pod.yaml -o yaml
+- kubectl apply -f first-pod.yaml
+- kubectl wait --for=condition=Ready pod/first-nginx --timeout=60s
+- kubectl get pod first-nginx -o wide
+- kubectl get pod first-nginx --show-labels
+- **==Why Use a Deployment?**
+	- Ownership Chain:
+		- Deployment -> ReplicaSet -> Pods -> containers
+	- A bare Pod is useful for learning, but applications usually need a controller
+	- A Deployment provides a desired replica count and Pod template
+	- It creates a ReplicaSet, and the ReplicaSet maintains the requested Pods
+-  cat <<'EOF' > course-web-deployment.yaml
+- kubectl apply --dry-run=client -f course-web-deployment.yaml
+- kubectl diff -f course-web-deployment.yaml || true
+- kubectl get deployment course-web
+- kubectl get deployment,replicaset,pods -l app=course-web
 ## <u>Manifest Files</u>
+### course-web-deployment.yaml
+ 
+```
+cat <<'EOF' > course-web-deployment.yaml
+apiVersion: apps/v1 # what it is using to spin this up
+kind: Deployment # what the object is
+metadata:
+  name: course-web # name of the deployment
+  labels:
+    app: course-web # label for the deployment
+spec:
+  replicas: 2 # the desired number of Pods
+  selector: # identifies the Pods the Deployment manages
+    matchLabels:
+      app: course-web # label name of the pods it will manage
+  template: # the blueprint used to create each Pod
+    metadata:
+      labels:
+        app: course-web # label for the pods
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.27-alpine
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 80
+EOF
+
+# The selector and template.metadata.labels both use app: course-web
+# They must match; otherwise the Deployment could not identify Pods created from its own template
+```
+### first_pod.yaml
+
+```
+cat <<'EOF' > first-pod.yaml
+apiVersion: v1 # selects the core API used by Pods
+kind: Pod # declares the resource type
+metadata: 
+  name: first-nginx # gives the Pod the stable name first-nginx
+  namespace: default # places it in the course's ordinary application namespace rather than a system namespace
+  labels: # attaches app=first-nginx, which can later select this Pod
+    app: first-nginx
+spec:
+  containers: # is a list of containers the Pod should run
+    - name: nginx
+      image: nginx:1.27-alpine
+      imagePullPolicy: IfNotPresent # uses the cached image when available
+      ports:
+        - name: http # gives the port a name
+          containerPort: 80 
+          protocol: TCP
+EOF
+```
+
 ### globomantics-frontend.yaml
 
 ```
