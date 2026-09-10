@@ -1,4 +1,4 @@
-# ==**Ansible**==
+# ==Ansible
 
 ## <u>Links</u>
 ## <u>Definitions</u>
@@ -246,10 +246,13 @@ Adding Variables to Playbooks
         msg: "The content of the file is: {{ file_content }}"
 
 ```
-# ==**Docker**==
-# ==**Linux**==
+# ==Docker==
+# ==Linux==
 ## <u>Links</u>
 ## <u>Commands</u>
+- <u>ps aux</u>
+	- ps aux --sort=-%mem | head -15
+
 - <u>autofs</u>
 		- **`auto.master` tells autofs which map files control which directories**
 			- the map file then tells it which remote filesystems to mount
@@ -415,6 +418,10 @@ Adding Variables to Playbooks
 		- **Expected result:** A line similar to `root@localhost: Permission denied (publickey).` followed by `root login denied as expected`
 	- sudo tail -n 30 /var/log/auth.log | grep -E '(Accepted|Failed|not allowed|not listed)'
 		- **Expected result:** A mix of `Accepted publickey for auditor` lines and entries similar to `User root from 127.0.0.1 not allowed because not listed in AllowUsers` and `User stranger from 127.0.0.1 not allowed because not listed in AllowUsers`
+
+- <u>sed</u>
+	- sed -i **'s/nginx:1.27-alpine-missing/nginx:1.27-alpine/'** broken-web.yaml
+		- performs a text substitution written as ==s/old/new/==; -i edits the named file in place instead of only printing the changed text
 	- 
 ## <u>Services</u>
 - <u>nfs</u>
@@ -437,7 +444,7 @@ Adding Variables to Playbooks
 	- `mountd` helps handle **NFS mount requests**, particularly with NFSv3
 	- `mountd` checks the server's export information to determine whether a client is allowed access
 
-# **==k8s==**
+# ==k8s==
 ## <u>Links</u>
 ## <u>Definitions</u>
 - minikube
@@ -495,6 +502,18 @@ Adding Variables to Playbooks
 	- reports observed state and is normally filled in by Kubernetes after creation, not written in your manifest
 - <u>ReplicaSet</u>
 	- A ReplicaSet maintains the requested Pods
+- <u>ErrImagePull and later become ImagePullBackOff</u>:
+	- Both indicate that the container never started because Kubernetes could not obtain its image
+- <u>get</u>:
+	- quickly locates the unhealthy object
+- <u>describe</u>:
+	- combines configuration, state, and related events for one object
+- <u>events</u>:
+	- provides a time-ordered view that can reveal repeated attempts
+- <u>exposure methods</u>:
+	- `ClusterIP` — internal cluster access only
+	- `NodePort` — reachable at `NODE-IP:PORT`
+	- `Ingress` — reachable through a hostname like `grafana.jbtechops.com`
 ## *<u>k8s Commands</u>*
 - minikube version --short
 - kubectl version
@@ -509,23 +528,32 @@ Adding Variables to Playbooks
 - kubectl describe node controlplane | grep Taints
 - kubectl taint nodes --all node-role.kubernetes.io/control-plane-
 	- This removes the control-plane taint
-- kubectl get pods -n default
+- **kubectl get pods -n default**
 - kubectl get pods -n kube-system -l tier=control-plane
 - kubectl get pods -n kube-system -l tier=control-plane --show-labels
 - kubectl describe node labex-v135
-- kubectl get pods -A
-- kubectl get deployments -A
+- **kubectl run nginx --image=nginx -n dev
+- kubectl run nginx --image=nginx --port=80
+- **kubectl expose pod nginx --type=NodePort --port=80 --target-port=80 -n dev
+- kubectl expose pod nginx --type=NodePort --port=80
+- kubectl get svc -n dev
+- **kubectl get svc nginx -o jsonpath='{.spec.ports[0].nodePort}'
+- kubectl delete pod nginx -n dev
+- **kubectl describe pod broken-web-5fcd668857-6mnz4 -n default
+- **kubectl get pods -A**
+- **kubectl get deployments -A**
 - **kubectl get services -A**
 	- TYPE describes exposure
 	- ClusterIP is reachable inside the cluster
 	- NodePort also opens a node port
-- kubectl get all -A
+- **kubectl get all -A**
 - kubectl get all -n globomantics
 - **kubectl create deployment globomantics-web --image=nginx:1.31**
 	- ==**Note:** The `kubectl create deployment` command builds this full object specification for you, including the pod template, labels, and selector fields
 - kubectl rollout status deployment/globomantics-web
-- kubectl get pods -o wide
-- kubectl get deployment globomantics-web -o yaml
+- **kubectl get pods -o wide**
+- **kubectl get deployment globomantics-web -o yaml
+- kubectl delete deployment globomantics -n dev
 - kubectl **scale** deployment globomantics-web --replicas=2
 - kubectl get pods
 	- **Expected output:** Two pods are listed with a `Running` status and a `READY` value of `1/1`
@@ -535,13 +563,24 @@ Adding Variables to Playbooks
 - kubectl get service globomantics-web
 	- Record the port number displayed in the `PORT(S)` column after `80:`
 		- globomantics-web   NodePort    10.110.75.94   none       80:30375/TCP   5s 
+- **kubectl exec broken-web-65f84868b8-rqf7v -- wget -qO- http://127.0.0.1 | head
+	- kubectl exec POD -- COMMAND
+	- the -- separates kubectl options from the command executed inside the container
+- kubectl exec broken-web-65f84868b8-rqf7v -- hostname
+- **kubectl exec globomantics-frontend-7d4bd5599c-4g9ng -n globomantics -- hostname
+- kubectl exec globomantics-frontend-7d4bd5599c-4g9ng -n globomantics -- ls -l
+- kubectl exec globomantics-frontend-7d4bd5599c-4g9ng -n globomantics -- nginx -t
+- **kubectl logs globomantics-frontend-7d4bd5599c-4g9ng -n globomantics
+- kubectl logs globomantics-frontend-7d4bd5599c-4g9ng -n globomantics --tail=10
+- kubectl logs broken-web-65f84868b8-rqf7v --tail=10
 - kubectl apply -f globomantics-frontend.yaml
 - kubectl get pods -n globomantics -l app.kubernetes.io/name=wordpress -w
-- kubectl get pods -n globomantics
+- **kubectl get pods -n globomantics
 - printf '%s\n' apiVersion kind metadata spec > manifest-fields.txt
-- kubectl apply --dry-run=client -f first_pod.yaml
-- kubectl apply --dry-run=client -f first_pod.yaml -o yaml
-- kubectl apply -f first_pod.yaml
+- **kubectl apply --dry-run=client -f first_pod.yaml
+- **kubectl apply --dry-run=client -f first_pod.yaml -o yaml
+- **kubectl apply -f first_pod.yaml
+- **kubectl apply -f healthy-web.yaml -f broken-web.yaml
 - kubectl wait --for=condition=Ready pod/first-nginx --timeout=60s
 - kubectl get pod first-nginx -n dev -o wide
 - kubectl get pod first-nginx --show-labels -n dev
@@ -550,17 +589,34 @@ Adding Variables to Playbooks
 	- The expression walks through metadata.ownerReferences; {"\n"} adds a final newline so the shell prompt appears on the next line
 - kubectl apply --dry-run=client -f course-web-deployment.yaml
 - kubectl apply --dry-run=client -f course-web-deployment.yaml -o yaml
-- kubectl diff -f course-web-deployment.yaml || true
+- **kubectl diff -f course-web-deployment.yaml || true
 	- || true: keeps the shell prompt from treating that expected difference as a failure
 - kubectl rollout status deployment/course-web --timeout=60s
 - kubectl get deployment course-web
 - kubectl get deployment course-web -w
-- kubectl get deployment,replicaset,pods -l app=course-web
-- kubectl get replicaset -l app=course-web
+- **kubectl get deployment,replicaset,pods -l app=course-web
+- **kubectl get replicaset -l app=course-web
+- kubectl rollout status deployment/broken-web --timeout=15s || true
+	- || true tells the shell to continue because this failure is evidence for the exercise, not a reason to stop the lab
+- **kubectl get deployments,replicasets,pods -o wide
+	- **List the related object types together. Commas let one kubectl get request several resource types, while -o wide adds useful columns such as node and IP information
+- BROKEN_POD=$(kubectl get pods -l app=broken-web -o jsonpath='{.items[0].metadata.name}') 
+- echo "$BROKEN_POD"
+- **kubectl get pod broken-web-5fcd668857-6mnz4 -o jsonpath='Image: {.spec.containers[0].image}{"\n"}'
+- **kubectl get events --sort-by='.metadata.creationTimestamp' -n kube-system 
+- **kubectl get events -A
+- grep -n 'image:' healthy-web.yaml broken-web.yaml
+- sed -i 's/nginx:1.27-alpine-missing/nginx:1.27-alpine/' broken-web.yaml
+- kubectl diff -f broken-web.yaml || true
+- kubectl top nodes
+- kubectl expose deployment nginx --type=NodePort --port=80 --target-port=80
+- ==kubectl expose deployment *deployment-name* --type=NodePort --port=*service-port* --target-port=container-port
+- 
 ## <u>Helm Commands</u>
 - helm version
 - helm repo add bitnami https://charts.bitnami.com/bitnami
 - helm repo update
+- helm search repo grafana
 - helm search repo bitnami/wordpress
 - helm show values bitnami/wordpress | head -30
 - helm create globomantics-mysql
@@ -725,7 +781,41 @@ EOF
 ```
 
 ## <u>Labs</u>
-### **Exploring k8s cluster**
+### Exploring and Debug k8s Applications
+- kubectl apply -f healthy-web.yaml -f broken-web.yaml
+- kubectl rollout status deployment/healthy-web --timeout=60s
+- kubectl rollout status deployment/broken-web --timeout=15s || true
+- kubectl get deployments
+- kubectl describe pod broken-web-5fcd668857-6mnz4 -n default
+- kubectl get deployments,replicasets,pods -o wide
+---
+- kubectl get pods -l app=broken-web -o wide
+- kubectl get pods -l app=broken-web -o custom-columns='NAME:.metadata.name,READY:.status.containerStatuses[0].ready,WAITING_REASON:.status.containerStatuses[0].state.waiting.reason,NODE:.spec.nodeName'
+- BROKEN_POD=$(kubectl get pods -l app=broken-web -o jsonpath='{.items[0].metadata.name}')
+- echo "$BROKEN_POD"
+- kubectl describe pod "$BROKEN_POD"
+- kubectl get pod broken-web-5fcd668857-6mnz4 -o jsonpath='Image: {.spec.containers[0].image}{"\n"}'
+- kubectl get events --sort-by='.metadata.creationTimestamp'
+- BROKEN_POD= $(kubectl get pods -l app=broken-web -o jsonpath='{.items[0].metadata.name}') kubectl get events \ --field-selector involvedObject.kind=Pod,involvedObject.name="$BROKEN_POD" \ --sort-by='.metadata.creationTimestamp'
+- *The repeated BackOff entries do not mean Kubernetes has abandoned the Pod -- They mean it is spacing out repeated pull attempts after failures*
+---
+- grep -n 'image:' healthy-web.yaml broken-web.yaml
+- sed -i 's/nginx:1.27-alpine-missing/nginx:1.27-alpine/' broken-web.yaml
+- kubectl apply --dry-run=client -f broken-web.yaml
+- kubectl apply -f broken-web.yaml 
+- kubectl rollout status deployment/broken-web --timeout=60s
+- kubectl get deployments
+- ---
+- WEB_POD=$(kubectl get pods -l app=broken-web \ --field-selector=status.phase=Running \ -o jsonpath='{.items[0].metadata.name}') echo "$WEB_POD"
+- echo "$WEB_POD"
+- kubectl exec "$WEB_POD" -- wget -qO- http://127.0.0.1 | head
+- kubectl logs "$WEB_POD" --tail=10
+---
+- WEB_POD=$(kubectl get pods -l app=broken-web \ --field-selector=status.phase=Running \ -o jsonpath='{.items[0].metadata.name}')
+- kubectl exec broken-web-65f84868b8-rqf7v -- hostname
+- kubectl exec "$WEB_POD" -- nginx -t
+- kubectl exec "$WEB_POD" -- wget -qO- http://127.0.0.1 >/dev/null && echo "NGINX responded inside the Pod"
+### Exploring k8s cluster
 - minikube version --short
 - kubectl version
 - kubectl config current-context
@@ -770,6 +860,30 @@ EOF
 - kubectl get deployment course-web
 - kubectl get deployment,replicaset,pods -l app=course-web
 ## <u>Manifest Files</u>
+### healthy_pod.yaml
+```
+apiVersion: apps/v1                                                                                               
+kind: Deployment
+metadata:
+  name: healthy-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: healthy-web
+  template:
+    metadata:
+      labels:
+        app: healthy-web
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.27-alpine
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 80
+```
 ### course-web-deployment.yaml
  
 ```
@@ -873,6 +987,119 @@ kubectl apply -f globomantics-frontend.yaml
 
 # ==Homelab==
 ## <u>k8s Builds</u>
+### Grafana
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grafana
+  namespace: grafana
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grafana
+  template:
+    metadata:
+      labels:
+        app: grafana
+    spec:
+      containers:
+        - name: grafana
+          image: grafana/grafana:13.2.1
+
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+
+          ports:
+            - containerPort: 3000
+
+          env:
+            - name: GF_SECURITY_ADMIN_USER
+              value: admin
+
+            - name: GF_SECURITY_ADMIN_PASSWORD
+              value: admin
+
+          volumeMounts:
+            - name: grafana-storage
+              mountPath: /var/lib/grafana
+
+      volumes:
+        - name: grafana-storage
+          persistentVolumeClaim:
+            claimName: grafana-storage
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: grafana
+  namespace: grafana
+spec:
+  type: NodePort
+  selector:
+    app: grafana
+  ports:
+    - port: 3000
+      targetPort: 3000
+      nodePort: 30300
+```
+
+- kubectl apply -f grafana.yaml --dry-run=client
+- kubectl apply -f grafana.yaml
+- kubectl get pods -n grafana -w
+- kubectl get svc -n grafana
+- kubectl get all -n grafana
+- kubectl get pvc -n grafana
+---
+#### Helm Install: values.yaml
+
+```
+persistence:
+  enabled: true
+  size: 5Gi
+
+service:
+  type: NodePort
+  nodePort: 30300
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+  limits:
+    cpu: 500m
+    memory: 512Mi
+```
+
+- helm repo add grafana https://grafana.github.io/helm-charts
+	- That basically tells Helm:
+		- =="When I say `grafana/...`, look in this Helm repository."
+- helm repo update
+- helm install grafana grafana-community/grafana --namespace grafana --create-namespace
+- helm upgrade grafana grafana/grafana -n grafana -f values.yaml
+- helm upgrade grafana grafana-community/grafana \
+  -n grafana \
+  --set service.type=NodePort \
+  --set service.nodePort=30300
+- helm history grafana -n grafana
+- helm rollback grafana 1 -n grafana
+
+helm install grafana grafana-community/grafana
+     │          │          │
+     │          │          └── repository/chart --> Chart name repository/chart
+     │          └───────────── what i am naming it
+     └──────────────────────── Release name
+
+---
 ### **Headlamp**
 - helm repo add headlamp https://kubernetes-sigs.github.io/headlamp/
 - helm repo update
@@ -906,7 +1133,7 @@ AAAEBuP3tRjT242PzYzukWvMjWPk2RF2A73ZDZnX7aOrsU4Cuor6pBf+iVwrLxg395tjxy
 	- ==> to ssh into the lightsail instance <==
 - sudo dnf update -y
 - sudo dnf install git -y
-### **Perform filesystem navigation and file management tasks**
+### Perform filesystem navigation and file management tasks
 - cd /srv
 - sudo git clone https://github.com/ps-interactive/lab_navigating-and-managing-amazon-linux.git && pwd && ls
 - cd lab_navigating-and-managing-amazon-linux/
@@ -918,7 +1145,7 @@ AAAEBuP3tRjT242PzYzukWvMjWPk2RF2A73ZDZnX7aOrsU4Cuor6pBf+iVwrLxg395tjxy
 - sudo mkdir Backend && cd Backend/ && ls -ld
 - sudo touch server.js && ls
 
-### **Create and configure users, groups, and sudo access for a multi-team application environment**
+### Create and configure users, groups, and sudo access for a multi-team application environment
 - sudo groupadd frontend_group && sudo groupadd backend_group && sudo groupadd admin_group && getent group frontend_group
 - sudo useradd -m frontend1 && sudo useradd -m frontend2
 - sudo useradd -m backend1 && sudo useradd -m backend2

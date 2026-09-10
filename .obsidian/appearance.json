@@ -1,5 +1,7 @@
 {
   "theme": "obsidian",
-  "cssTheme": "Minimal",
-  "accentColor": "#5c9ef5"
+  "cssTheme": "Typewriter",
+  "accentColor": "#5c9ef5",
+  "baseFontSize": 16,
+  "baseFontSizeAction": false
 }

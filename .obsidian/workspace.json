@@ -6,30 +6,18 @@
       {
         "id": "6a85adebc08f8f2a",
         "type": "tabs",
-        "dimension": 57.75307197191339,
+        "dimension": 58.04904051172708,
         "children": [
-          {
-            "id": "9496287e03d1c3c9",
-            "type": "leaf",
-            "state": {
-              "type": "surfing-view",
-              "state": {
-                "url": "https://chatgpt.com/c/6a6bed96-890c-83ea-8613-8ae204838670"
-              },
-              "icon": "lucide-file",
-              "title": "Coolify domain setup"
-            }
-          },
           {
             "id": "9c6ecce1430861ed",
             "type": "leaf",
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://labex.io/learn/kubernetes"
+                "url": "https://labex.io/labs/kubernetes-troubleshoot-kubernetes-nginx-deployment-434782?course=kubernetes-for-beginners"
               },
               "icon": "lucide-file",
-              "title": "Learn Kubernetes | Kubernetes Courses Online | LabEx"
+              "title": "Troubleshoot Kubernetes NGINX Deployment | Kubernetes for Beginners"
             }
           },
           {
@@ -69,36 +57,48 @@
             }
           },
           {
-            "id": "96312e6466640532",
-            "type": "leaf",
-            "state": {
-              "type": "surfing-view",
-              "state": {
-                "url": "https://www.google.com/search?q=datadog+vs+grafana&sca_esv=ccb2cbc31bb26bce&sxsrf=APpeQnsMGbqGBvo7NcFKJazL7OxLkFWhXQ%3A1788656531862&ei=WricaqenJfrU5NoPvZ7GyAs&biw=872&bih=822&uact=5&sclient=gws-wiz-serp&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832cSpkWkfSwsmpNIrD_OQ-UdFAe4qAwsQWVbrtprjzBSpjDzGa2iAzCYjz69Mu1iWxyRZVURqYKbxiTK-ZaQSUo4wE6XPzwI4NozimNTPuhX6QNiifV1gtOeaNEulDtYS55KMuMMBcCG_7lLCQVyavb2_naXaLRr1w8YxJvMdckmU8W2Zdg&aep=10&ntc=1&mstk=AUtExfD5rOUTF6pgyCzYVlWFvHkoI4Ar_JKwSLt1IcJ37oyTQfcS9K9ymaTu5hU1Rncdxa35PZ1sSjO02wfU8VL8F5vPboBGrJWEPWtA5iLHvV0UlH8fqkvubp0LMs87X-kzCTFeY9xrMsckNLmtz46KmQWzltuqwmTLo5gDDB_Ntd1RNCa3ZVaoj3O72-oomMsTUwu2omkIg7-ZnIVCmhDfnpfevMfyGsWPwvkF-lYTdN4frX5iCOxeT-mx5lIvTZJ3qewnV2qUynsOHGieXgeusOYL-oj2PEO86RVZREtRpIbEWVRua_BDbzHCwL9IEt7T8mGCWfmELUMQxg&aioh=3&csuir=1&cs=1&atvm=2&mtid=5LucatapCMSf5NoP5Y71uQM&udm=50&lns_mode=cvst"
-              },
-              "icon": "lucide-file",
-              "title": "datadog vs grafana - Google Search"
-            }
-          },
-          {
             "id": "7ffcb24bd2f3f273",
             "type": "leaf",
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://www.youtube.com/watch?v=fQHB8jVinVw"
+                "url": "https://www.youtube.com/"
               },
               "icon": "lucide-file",
-              "title": "(85) WIDOW'S BAY Episode 9 REVIEW: Tom's Impossible Decision - YouTube"
+              "title": "(85) YouTube"
+            }
+          },
+          {
+            "id": "fcae611c20a587b4",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "https://www.bluehost.com/"
+              },
+              "icon": "lucide-file",
+              "title": "Web Hosting, Domain & AI Website Builder | Bluehost"
+            }
+          },
+          {
+            "id": "180ec87ee81f84f9",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "https://chatgpt.com/c/6aa2155f-21c8-83ea-96f9-93fc1859ce72"
+              },
+              "icon": "lucide-file",
+              "title": "Grafana Deployment Manifest"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 6
       },
       {
         "id": "8214e90b5428d8f1",
         "type": "tabs",
-        "dimension": 42.2469280280866,
+        "dimension": 41.95095948827292,
         "children": [
           {
             "id": "329271a997c7ff82",
@@ -113,6 +113,49 @@
               },
               "icon": "lucide-file",
               "title": "k8s Breakdown"
+            }
+          },
+          {
+            "id": "b3afbcd9eeeb3ee3",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "terminal:terminal",
+              "state": {
+                "terminal:terminal": {
+                  "cwd": "/home/sysadmin/Documents/obsidian/obsidian-vaulTTY",
+                  "focus": false,
+                  "profile": {
+                    "args": [],
+                    "environment": [],
+                    "executable": "/bin/sh",
+                    "followTheme": true,
+                    "name": "",
+                    "platforms": {
+                      "linux": true
+                    },
+                    "pythonExecutable": "python3",
+                    "restoreHistory": false,
+                    "rightClickAction": "copyPaste",
+                    "successExitCodes": [
+                      "0",
+                      "SIGINT",
+                      "SIGTERM"
+                    ],
+                    "terminalOptions": {
+                      "documentOverride": null
+                    },
+                    "type": "integrated",
+                    "useWin32Conhost": true
+                  },
+                  "profileSourceId": "linuxIntegratedDefault",
+                  "serial": null,
+                  "userTitle": ""
+                }
+              },
+              "pinned": true,
+              "icon": "terminal",
+              "title": "sh"
             }
           }
         ]
@@ -327,7 +370,7 @@
       "soundscapes:Soundscapes: My Music": false
     }
   },
-  "active": "9c6ecce1430861ed",
+  "active": "180ec87ee81f84f9",
   "lastOpenFiles": [
     "Command_Guru_v3/k8s/k8s Breakdown.md",
     "Command_Guru_v3/Command_Guru_v3.md",
