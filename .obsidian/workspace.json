@@ -9,6 +9,18 @@
         "dimension": 58.04904051172708,
         "children": [
           {
+            "id": "180ec87ee81f84f9",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "https://chatgpt.com/c/6aa2155f-21c8-83ea-96f9-93fc1859ce72"
+              },
+              "icon": "lucide-file",
+              "title": "Grafana Deployment Manifest"
+            }
+          },
+          {
             "id": "9c6ecce1430861ed",
             "type": "leaf",
             "state": {
@@ -33,15 +45,15 @@
             }
           },
           {
-            "id": "00729216c92f6e82",
+            "id": "a49dd23d077bb699",
             "type": "leaf",
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://profile.hackthebox.com/dashboard"
+                "url": "https://gitlab.com/dashboard/projects"
               },
               "icon": "lucide-file",
-              "title": "HTB Profile | Hack The Box"
+              "title": "Projects · GitLab"
             }
           },
           {
@@ -67,33 +79,8 @@
               "icon": "lucide-file",
               "title": "(85) YouTube"
             }
-          },
-          {
-            "id": "fcae611c20a587b4",
-            "type": "leaf",
-            "state": {
-              "type": "surfing-view",
-              "state": {
-                "url": "https://www.bluehost.com/"
-              },
-              "icon": "lucide-file",
-              "title": "Web Hosting, Domain & AI Website Builder | Bluehost"
-            }
-          },
-          {
-            "id": "180ec87ee81f84f9",
-            "type": "leaf",
-            "state": {
-              "type": "surfing-view",
-              "state": {
-                "url": "https://chatgpt.com/c/6aa2155f-21c8-83ea-96f9-93fc1859ce72"
-              },
-              "icon": "lucide-file",
-              "title": "Grafana Deployment Manifest"
-            }
           }
-        ],
-        "currentTab": 6
+        ]
       },
       {
         "id": "8214e90b5428d8f1",
