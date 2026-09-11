@@ -252,6 +252,7 @@ Adding Variables to Playbooks
 ## <u>Commands</u>
 - <u>ps aux</u>
 	- ps aux --sort=-%mem | head -15
+	- ps aux --sort=-%mem | head -20
 
 - <u>autofs</u>
 		- **`auto.master` tells autofs which map files control which directories**
@@ -514,12 +515,15 @@ Adding Variables to Playbooks
 	- `ClusterIP` — internal cluster access only
 	- `NodePort` — reachable at `NODE-IP:PORT`
 	- `Ingress` — reachable through a hostname like `grafana.jbtechops.com`
+- <u>backend</u>:
+	- means a Pod able to receive traffic for a Service
 ## *<u>k8s Commands</u>*
 - minikube version --short
 - kubectl version
 - kubectl version --client
 - kubectl cluster-info
 - kubectl cluster-info dump
+- kubectl top
 - kubectl get nodes
 - kubectl describe node | grep Taints
 	- ==**Note:** The `node-role.kubernetes.io/control-plane` taint prevents regular pods from being scheduled onto the node
@@ -531,6 +535,9 @@ Adding Variables to Playbooks
 - **kubectl get pods -n default**
 - kubectl get pods -n kube-system -l tier=control-plane
 - kubectl get pods -n kube-system -l tier=control-plane --show-labels
+- kubectl get pods -n kube-system | grep metrics
+- kubectl get apiservice v1beta1.metrics.k8s.io
+- kubectl logs -n kube-system deployment/metrics-server --tail=50
 - kubectl describe node labex-v135
 - **kubectl run nginx --image=nginx -n dev
 - kubectl run nginx --image=nginx --port=80
@@ -609,9 +616,52 @@ Adding Variables to Playbooks
 - sed -i 's/nginx:1.27-alpine-missing/nginx:1.27-alpine/' broken-web.yaml
 - kubectl diff -f broken-web.yaml || true
 - kubectl top nodes
-- kubectl expose deployment nginx --type=NodePort --port=80 --target-port=80
-- ==kubectl expose deployment *deployment-name* --type=NodePort --port=*service-port* --target-port=container-port
-- 
+- ==kubectl expose deployment nginx --type=NodePort --port=80 --target-port=80
+	- --port=80
+     │
+     └── The port the Kubernetes SERVICE listens on
+	- --target-port=80
+     │
+     └── The port the NGINX POD listens on
+- **kubectl get svc
+	- to get the service name from teh expose command from above
+	- course-nginx   NodePort    10.109.3.218   none        80:31444/TCP
+	- 80:31444/TCP 
+		│    │
+		│    └── NodePort = 31444
+		│
+		└── Service port = 80
+	- http://NODE-IP:31444
+	- http://10.0.0.140:31444
+- ==kubectl describe svc grafana -n grafana
+- *kubectl get endpointslices -l kubernetes.io/service-name=grafana -n grafana
+- curl -s --retry 5 --retry-connrefused --retry-delay 2 "http://${NODE_IP}:30080" | grep 'Welcome to nginx'
+	- -s hides the progress meter
+	- --retry 5 permits up to five retries
+	- --retry-connrefused treats an early refused connection as retryable
+	- --retry-delay 2 waits two seconds between attempts
+- **kubectl delete svc nginx
+- kubectl expose deployment *deployment-name* --type=NodePort --port=*service-port* --target-port=container-port
+- ~~kubectl get endpointslices -l kubernetes.io/service-name=grafana \ -o jsonpath='{range .items[*].endpoints[*]}{.addresses[0]}{" ready="}{.conditions.ready}{"\n"}{end}'
+- **kubectl logs grafana-6dd8b69449-xvxjb -n grafana
+- **kubectl logs grafana-6dd8b69449-xvxjb -n grafana > pod_output.log
+- **kubectl logs grafana-6dd8b69449-xvxjb -n grafana | head -n 10
+- kubectl logs 'pod-name' > pod.log && head -n 20 pod.log
+- kubectl logs -f grafana-6dd8b69449-xvxjb -n grafana 
+	- Streams and updates logs in real time (like `tail -f`)
+- kubectl logs -p grafana-6dd8b69449-xvxjb -n grafana
+	- Fetches logs from a previously crashed or restarted instance of the container
+- kubectl logs grafana-6dd8b69449-xvxjb -n grafana --since=1h
+	- Filters logs to show only those newer than a relative time frame (e.g., `5m`, `3h`)
+- kubectl logs grafana-6dd8b69449-xvxjb -n grafana --timestamps
+- kubectl logs grafana-6dd8b69449-xvxjb -n grafana --timestamps --tail=10
+- kubectl logs grafana-6dd8b69449-xvxjb -n grafana --tail=10
+	- Limits output to a specific number of recent lines
+- kubectl logs grafana-6dd8b69449-xvxjb -n grafana --head=10
+- kubectl logs 'pod-name' --all-containers=true -f
+	- Stream all containers within a pod at once
+- kubectl get pods -l app=course-nginx -o wide
+-  
 ## <u>Helm Commands</u>
 - helm version
 - helm repo add bitnami https://charts.bitnami.com/bitnami
@@ -781,6 +831,48 @@ EOF
 ```
 
 ## <u>Labs</u>
+
+### Expose k8s Application
+---
+- Deploy the Service Backends
+	- cat <<'EOF' > course-nginx-deployment.yaml
+	- kubectl apply --dry-run=client -f course-nginx-deployment.yaml
+	- kubectl apply -f course-nginx-deployment.yaml
+	- kubectl rollout status deployment/course-nginx --timeout=60s
+	- kubectl get pods -l app=course-nginx -o wide
+	- kubectl expose deployment course-nginx --type=NodePort --port=80 --target-port=80
+	- Kubernetes will normally create a Service named `course-nginx` when using the above command
+	- kubectl get svc
+	- to get the service name from teh expose command from above
+	- course-nginx   NodePort    10.109.3.218   none        80:31444/TCP
+	- kubectl delete svc course-nginx
+---
+- Connect Labels to Service Selection
+	- kubectl get pods -l app=course-nginx --show-labels
+	- kubectl get pods -l app=course-nginx -o custom-columns='NAME:.metadata.name,LABEL:.metadata.labels.app,IP:.status.podIP,READY:.status.containerStatuses[0].ready'
+		- -o custom-columns creates a table from selected object fields
+	- kubectl get deployment course-nginx -o jsonpath='Selector: {.spec.selector.matchLabels.app}{"\n"}Pod label: {.spec.template.metadata.labels.app}{"\n"}'
+---
+- Create a ClusterIP Service
+	- cat <<'EOF' > course-nginx-service.yaml
+	- kubectl apply --dry-run=client -f course-nginx-service.yaml
+	- kubectl apply -f course-nginx-service.yaml
+	- kubectl get svc
+	- kubectl get service course-nginx
+	- kubectl get endpointslices -l kubernetes.io/service-name=course-nginx \ -o jsonpath='{range .items[*].endpoints[*]}{.addresses[0]}{" ready="}{.conditions.ready}{"\n"}{end}'
+	- kubectl run service-client \ --image=busybox:1.36 \ --image-pull-policy=IfNotPresent \ --restart=Never \ --rm -i \ -- wget -qO- http://course-nginx
+	- kubectl run service-client-check \ --image=busybox:1.36 \ --image-pull-policy=IfNotPresent \ --restart=Never \ --rm -i \ -- wget -qO- http://course-nginx >/dev/null && echo "ClusterIP Service responded"
+---
+- Add a NodePort Service
+	- cat <<'EOF' > course-nginx-services.yaml
+	- kubectl apply --dry-run=client -f course-nginx-services.yaml
+	- kubectl apply -f course-nginx-services.yaml
+	- kubectl get service course-nginx-nodeport
+	- 80:30080/TCP: port 80 is the Service port and 30080 is the node-facing port
+	- NODE_IP=$(minikube ip -p labex-v135)
+	- echo "$NODE_IP"
+	- curl -s --retry 5 --retry-connrefused --retry-delay 2 "http://${NODE_IP}:30080" | grep 'Welcome to nginx'
+	- kubectl get services course-nginx course-nginx-nodeport
 ### Exploring and Debug k8s Applications
 - kubectl apply -f healthy-web.yaml -f broken-web.yaml
 - kubectl rollout status deployment/healthy-web --timeout=60s
@@ -859,7 +951,85 @@ EOF
 - kubectl diff -f course-web-deployment.yaml || true
 - kubectl get deployment course-web
 - kubectl get deployment,replicaset,pods -l app=course-web
+
+
 ## <u>Manifest Files</u>
+
+### course-nginx-nodePort-service.yaml
+---
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: course-nginx
+spec:
+  type: ClusterIP
+  selector:
+    app: course-nginx
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: course-nginx-nodeport
+spec:
+  type: NodePort
+  selector:
+    app: course-nginx
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      nodePort: 30080
+      protocol: TCP
+```
+### course-nginx-service.yaml
+---
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: course-nginx
+spec:
+  type: ClusterIP
+  selector:
+    app: course-nginx
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      protocol: TCP
+```
+### course-nginx-deployment.yaml
+---
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: course-nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: course-nginx
+  template:
+    metadata:
+      labels:
+        app: course-nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.27-alpine
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+```
 ### healthy_pod.yaml
 ```
 apiVersion: apps/v1                                                                                               
@@ -988,7 +1158,9 @@ kubectl apply -f globomantics-frontend.yaml
 # ==Homelab==
 ## <u>k8s Builds</u>
 ### Grafana
-
+---
+#### Grafana.yaml
+---
 ```
 apiVersion: apps/v1
 kind: Deployment
@@ -1052,9 +1224,11 @@ spec:
       nodePort: 30300
 ```
 
+---
 - kubectl apply -f grafana.yaml --dry-run=client
 - kubectl apply -f grafana.yaml
 - kubectl get pods -n grafana -w
+- kubectl get pods -n grafana
 - kubectl get svc -n grafana
 - kubectl get all -n grafana
 - kubectl get pvc -n grafana
@@ -1100,6 +1274,144 @@ helm install grafana grafana-community/grafana
      └──────────────────────── Release name
 
 ---
+#### Promethus.yaml 
+---
+```
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: monitoring
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prometheus-config
+  namespace: monitoring
+data:
+  prometheus.yml: |
+    global:
+      scrape_interval: 60s
+
+    scrape_configs:
+      - job_name: "prometheus"
+        static_configs:
+          - targets:
+              - "localhost:9090"
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: prometheus-storage
+  namespace: monitoring
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prometheus
+  namespace: monitoring
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: prometheus
+
+  template:
+    metadata:
+      labels:
+        app: prometheus
+
+    spec:
+      containers:
+        - name: prometheus
+          image: prom/prometheus:v3.14.0
+
+          ports:
+            - containerPort: 9090
+
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+
+          args:
+            - "--config.file=/etc/prometheus/prometheus.yml"
+            - "--storage.tsdb.path=/prometheus"
+
+          volumeMounts:
+            - name: prometheus-config
+              mountPath: /etc/prometheus
+
+            - name: prometheus-storage
+              mountPath: /prometheus
+
+      volumes:
+        - name: prometheus-config
+          configMap:
+            name: prometheus-config
+
+        - name: prometheus-storage
+          persistentVolumeClaim:
+            claimName: prometheus-storage
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prometheus
+  namespace: monitoring
+spec:
+  type: ClusterIP
+
+  selector:
+    app: prometheus
+
+  ports:
+    - port: 9090
+      targetPort: 9090
+```
+
+---
+- kubectl apply -f prometheus.yaml --dry-run=client
+- kubectl get pods -n monitoring
+- kubectl describe pod prometheus-5496f8fcf7-dj2cx -n monitoring | head -n 10
+- kubectl describe pod prometheus-5496f8fcf7-dj2cx -n monitoring | tail -n 15
+- kubectl get deployments -n monitoring
+- **kubectl exec -n grafana grafana-6dd8b69449-xvxjb -- wget -qO- http://prometheus.monitoring.svc.cluster.local:9090/-/healthy
+	- ==the command actually ran **inside the Grafana pod** to verify its conneciton to prometheus
+	- -q Quiet — don't print wget's normal status information
+	- -O- Write the downloaded response to stdout instead of saving it to a file
+	- That URL is querying **Prometheus itself**, specifically its built-in **health-check endpoint**
+- kubectl exec -n grafana deployment/grafana -- wget -qO- http://prometheus.monitoring.svc.cluster.local:9090/-/healthy
+- kubectl get rs -n monitoring 
+- kubectl get svc -n monitoring
+- kubectl logs prometheus-5496f8fcf7-dj2cx -n monitoring | head -n 10
+- kubectl logs prometheus-5496f8fcf7-dj2cx -n monitoring --tail=10
+---
+#### Connecting Prometheus to Grafana
+- Connections → Data sources → Add new data source → Prometheus
+- Prometheus server URL: http://prometheus.monitoring.svc.cluster.local:9090
+---
+Data Testing
+- In Grafana, click **Explore view** from that message. Make sure **Prometheus** is selected as the data source
+- In the query box
+- Builder | Code -> click code
+- enter: up
+- Then click **Run query**
+- 
+
 ### **Headlamp**
 - helm repo add headlamp https://kubernetes-sigs.github.io/headlamp/
 - helm repo update
@@ -1498,6 +1810,7 @@ EOF
 - sudo ausearch -k auth-log
 
 # **==Storage==**
+---
 ## <u>Commands</u>
 - systemctl status nfs-server
 - sudo exportfs -rav
@@ -1506,6 +1819,7 @@ EOF
 - showmount -e 10.0.0.2 <--IP of the nfs Server ran from the client
 - sudo mount -t nfs 10.0.0.2:/exports/shared /mnt/shared 
 - mount | grep nfs
+---
 ## <u>NFS Concepts</u>
 - `/etc/exports` — yes, that's the important NFS server config
 - When you installed: *sudo dnf install nfs-utils*
@@ -1564,6 +1878,7 @@ EOF
 	- nfs       = actually serves the files
 	- mountd    = helps clients mount exported filesystems
 	- rpc-bind  = tells clients where RPC services are
+---
 ## <u>Setting up NFS Server</u>
 - sudo dnf install -y nfs-utils
 - sudo systemctl enable --now nfs-server
@@ -1603,6 +1918,7 @@ EOF
 - sudo firewall-cmd --list-services
 	- output should show below:
 		- cockpit dhcpv6-client **mountd nfs rpc-bind ssh**
+---
 ## <u>Setting up NFS Client</u>
 - sudo dnf install -y nfs-utils
 	- Notice it's the same `nfs-utils` package we installed on the server. It contains both NFS server and client utilities
@@ -1614,6 +1930,7 @@ EOF
 - df -hT /mnt/shared
 - echo "Created from the NFS client" | sudo tee /mnt/shared/client-test.txt
 - ls -l /mnt/shared/
+---
 ## <u>Setting Up Persistance -> Client Side</u>
 * sudo cp /etc/fstab /etc/fstab.bak <== client side command
 * sudo vim /etc/fstab => add below to the end of the file
@@ -1625,7 +1942,7 @@ EOF
 - df -hT /mnt/shared ==> to verify its unmounted
 - sudo mount -a
 - df -hT /mnt/shared
-
+---
 ## <u>Setting up Autofs -> Client Side</u>
 - sudo dnf install -y autofs
 - sudo systemctl enable --now autofs
@@ -1655,3 +1972,10 @@ EOF
 - ls -la
 - mount | grep /shares
 	- you should now see the nfs-server share
+
+# ==ARch==
+---
+## Repo Management
+- sudo pacman -Sy
+	- That forces Pacman to refresh the package databases.
+- yay -Syu --aur

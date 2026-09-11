@@ -26,10 +26,10 @@
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://labex.io/labs/kubernetes-troubleshoot-kubernetes-nginx-deployment-434782?course=kubernetes-for-beginners"
+                "url": "https://labex.io/labs/kubernetes-deploy-and-expose-kubernetes-web-services-434804?course=kubernetes-for-beginners"
               },
               "icon": "lucide-file",
-              "title": "Troubleshoot Kubernetes NGINX Deployment | Kubernetes for Beginners"
+              "title": "Deploy and Expose Kubernetes Web Services | Kubernetes for Beginners"
             }
           },
           {
@@ -78,6 +78,18 @@
               },
               "icon": "lucide-file",
               "title": "(85) YouTube"
+            }
+          },
+          {
+            "id": "b34622f34893d6e8",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "https://www.google.com/search?q=kubectl+get+logs+command&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8cqCQj_06QnZs315LoFmPf5bBLHMJ0vMQmTbuI72DM7jn1PTmby9t4tumVo2l1imA7Sgl2sn6UgauLDePlglhpIUW78G1Kdjmp8H-Q7RgokRny8YNIJcvz7W2uCPaHor_uYTuE9NwRIVgr6vIwJ4p51AyVOp3ZZT5XYnl2Q83tBsu-8ixiWTdSrtklTU5Csf1CvXE39Q&aep=10&ntc=1&sxsrf=APpeQntnT4T4ug1eCQMjOK4hxT5KOca4uA%3A1789087769930&mstk=AUtExfALd_bXBCY41U6b1lNOnAAXmOXgr6Je6gWtdxJI0DEYsA9vVKXomk1lKgJ0J21fGnmh8szKvjz0JsljaAIceeW26YFiygCbErEy4hbgqSEJq4thTGH5rVq-B0UXssFvYbpnIn6gWGUE7TrqyjXvzous4UoIznnOzYM&aioh=3&csuir=1&cs=1&atvm=2&mtid=1lKjauGIHMSf5NoP3s7TiAE&udm=50"
+              },
+              "icon": "lucide-file",
+              "title": "kubectl get logs command - Google Search"
             }
           }
         ]
@@ -145,7 +157,8 @@
               "title": "sh"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -357,7 +370,7 @@
       "soundscapes:Soundscapes: My Music": false
     }
   },
-  "active": "180ec87ee81f84f9",
+  "active": "b3afbcd9eeeb3ee3",
   "lastOpenFiles": [
     "Command_Guru_v3/k8s/k8s Breakdown.md",
     "Command_Guru_v3/Command_Guru_v3.md",
