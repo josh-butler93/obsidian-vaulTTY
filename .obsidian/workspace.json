@@ -26,10 +26,10 @@
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://labex.io/labs/kubernetes-deploy-and-expose-kubernetes-web-services-434804?course=kubernetes-for-beginners"
+                "url": "https://labex.io/labs/kubernetes-scale-and-load-balance-applications-434648?course=kubernetes-for-beginners"
               },
               "icon": "lucide-file",
-              "title": "Deploy and Expose Kubernetes Web Services | Kubernetes for Beginners"
+              "title": "Scale and Load Balance Applications | Kubernetes for Beginners"
             }
           },
           {
@@ -86,13 +86,14 @@
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://www.google.com/search?q=kubectl+get+logs+command&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8cqCQj_06QnZs315LoFmPf5bBLHMJ0vMQmTbuI72DM7jn1PTmby9t4tumVo2l1imA7Sgl2sn6UgauLDePlglhpIUW78G1Kdjmp8H-Q7RgokRny8YNIJcvz7W2uCPaHor_uYTuE9NwRIVgr6vIwJ4p51AyVOp3ZZT5XYnl2Q83tBsu-8ixiWTdSrtklTU5Csf1CvXE39Q&aep=10&ntc=1&sxsrf=APpeQntnT4T4ug1eCQMjOK4hxT5KOca4uA%3A1789087769930&mstk=AUtExfALd_bXBCY41U6b1lNOnAAXmOXgr6Je6gWtdxJI0DEYsA9vVKXomk1lKgJ0J21fGnmh8szKvjz0JsljaAIceeW26YFiygCbErEy4hbgqSEJq4thTGH5rVq-B0UXssFvYbpnIn6gWGUE7TrqyjXvzous4UoIznnOzYM&aioh=3&csuir=1&cs=1&atvm=2&mtid=1lKjauGIHMSf5NoP3s7TiAE&udm=50"
+                "url": "https://www.google.com/search?q=k8s+get+events+command&sca_esv=3fd7e35aed588986&hl=en&sxsrf=APpeQns9YKDR6SnY7tXK6ZhSmp7cToGArA%3A1789233611253&ei=xYmlatflBqOz5NoPw57KgAc&iflsig=ABILxe8AAAAAaqWX1brNvJgEWLLAlKozsKZuRmz1zGeZ&uact=5&sclient=gws-wiz&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8cxpBkeIeqYwoCbfNVc4vKE6A5_9xraAmHsehE8ybQankQszSTTs2KnlnrcKQ4m3m_Zushp240ZRsrcGAW0iGFG-xMnl5cxfdF99oXgi9-d_n8y7ZSiS4jKj6TFJpnML4CXFUC7YW9EgWXrKTZefLvFjrsWQtq6cAzVZlD8iCOgFjyDl6SW5EPgmPJKuJqfq1515L8iw&aep=10&ntc=1&mstk=AUtExfBZapzwjjEk_GyahKFESh7nvashCenflwD3yVt8ZMCVG2akYXXldw_HTHcVtuQSuh5JeNHBJkckmiAKpOQ5m2QcQHet6-k5bcUJyAyK0RGMwgExy8a2vqYaU8Os-Z8cw3UFlIjcGdTTwTwFSQeZdZvIeZ3bJCAqOj6a1ZQRNW5xxxZWdSbZdcdQU7nOD1A0av4ZHfy7VZmSwNhcUeJbs0kKTEDKVjZBG1DM1WTYf6FStNa4uJx-HoUMuHBuqXBNZHtMURtI6F9XkmFH-iotP2FFaN-vwwVI5Lg4wwLkamq5Wll_OnZovmDZ1JfQtWv8wdplf5UwYjmXxQ&aioh=3&csuir=1&cs=1&atvm=2&mtid=eIqlao2NMtruiLMPif-d8Qg&udm=50"
               },
               "icon": "lucide-file",
-              "title": "kubectl get logs command - Google Search"
+              "title": "k8s get events command - Google Search"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "8214e90b5428d8f1",
@@ -157,8 +158,7 @@
               "title": "sh"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -370,7 +370,7 @@
       "soundscapes:Soundscapes: My Music": false
     }
   },
-  "active": "b3afbcd9eeeb3ee3",
+  "active": "329271a997c7ff82",
   "lastOpenFiles": [
     "Command_Guru_v3/k8s/k8s Breakdown.md",
     "Command_Guru_v3/Command_Guru_v3.md",

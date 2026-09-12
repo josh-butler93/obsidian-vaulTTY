@@ -353,7 +353,7 @@ Adding Variables to Playbooks
 		- The `$` character will work similarly by telling `grep` to return only lines that **end** with a specified character (or characters)
 		- That example can be useful because it returns only processes that executed using a `systemd` service (whose names commonly end in the letter `d`)
 	- ls /home/ubuntu/ | grep -E '(READY|COMPLETE)'
-	- 
+	- grep -n 'replicas:' hostname-web.yaml
 
 - <u>nfs</u>
 	- systemctl status nfs-server
@@ -423,7 +423,7 @@ Adding Variables to Playbooks
 - <u>sed</u>
 	- sed -i **'s/nginx:1.27-alpine-missing/nginx:1.27-alpine/'** broken-web.yaml
 		- performs a text substitution written as ==s/old/new/==; -i edits the named file in place instead of only printing the changed text
-	- 
+	- sed -i 's/replicas: 2/replicas: 4/' hostname-web.yaml
 ## <u>Services</u>
 - <u>nfs</u>
 	- This is the actual **file-sharing service**
@@ -517,6 +517,10 @@ Adding Variables to Playbooks
 	- `Ingress` — reachable through a hostname like `grafana.jbtechops.com`
 - <u>backend</u>:
 	- means a Pod able to receive traffic for a Service
+- <u>Cluster-IP</u>:
+	- the internal, stable IP address assigned to the Service
+- <u>External-IP</u>:
+	- an external address, if one exists
 ## *<u>k8s Commands</u>*
 - minikube version --short
 - kubectl version
@@ -541,12 +545,15 @@ Adding Variables to Playbooks
 - kubectl describe node labex-v135
 - **kubectl run nginx --image=nginx -n dev
 - kubectl run nginx --image=nginx --port=80
+- **kubectl run load-client --image=busybox:1.36 -n dev --image-pull-policy=IfNotPresent --restart=Never -- sleep 3600
+- kubectl delete pod load-client
 - **kubectl expose pod nginx --type=NodePort --port=80 --target-port=80 -n dev
 - kubectl expose pod nginx --type=NodePort --port=80
 - kubectl get svc -n dev
 - **kubectl get svc nginx -o jsonpath='{.spec.ports[0].nodePort}'
 - kubectl delete pod nginx -n dev
 - **kubectl describe pod broken-web-5fcd668857-6mnz4 -n default
+- kubectl describe pod metrics-server-6dc596dfb8-lhv8s -n kube-system | sed -n '/Events:/,$p'
 - **kubectl get pods -A**
 - **kubectl get deployments -A**
 - **kubectl get services -A**
@@ -560,8 +567,11 @@ Adding Variables to Playbooks
 - kubectl rollout status deployment/globomantics-web
 - **kubectl get pods -o wide**
 - **kubectl get deployment globomantics-web -o yaml
+- kubectl describe deployment metrics-server -n kube-system 
+- ~~kubectl describe deployment metrics-server -n kube-system | sed -n '/Events:/,$p'
 - kubectl delete deployment globomantics -n dev
 - kubectl **scale** deployment globomantics-web --replicas=2
+- **kubectl scale deployment/hostname-web --replicas=2
 - kubectl get pods
 	- **Expected output:** Two pods are listed with a `Running` status and a `READY` value of `1/1`
 - kubectl get deployments -n default 
@@ -599,10 +609,21 @@ Adding Variables to Playbooks
 - **kubectl diff -f course-web-deployment.yaml || true
 	- || true: keeps the shell prompt from treating that expected difference as a failure
 - kubectl rollout status deployment/course-web --timeout=60s
+	- `rollout status` monitors the Deployment rollout
+	- `--timeout=60s` stops waiting after 60 seconds if it has not completed
 - kubectl get deployment course-web
 - kubectl get deployment course-web -w
+- kubectl get pods,deployment,rs,svc
 - **kubectl get deployment,replicaset,pods -l app=course-web
 - **kubectl get replicaset -l app=course-web
+- kubectl get events -A
+- kubectl get events -w
+- kubectl get events --field-selector type=Warning
+- kubectl get events --field-selector type=Normal
+- kubectl get events --field-selector type=Warning -A
+- kubectl get events -n grafana
+- kubectl get events -n kube-system --field-selector involvedObject.name=coredns-54996dc9b4-x72jx
+- **kubectl get deployment grafana -n grafana -o jsonpath='Live replicas: {.spec.replicas}{"\n"}'
 - kubectl rollout status deployment/broken-web --timeout=15s || true
 	- || true tells the shell to continue because this failure is evidence for the exercise, not a reason to stop the lab
 - **kubectl get deployments,replicasets,pods -o wide
@@ -612,8 +633,18 @@ Adding Variables to Playbooks
 - **kubectl get pod broken-web-5fcd668857-6mnz4 -o jsonpath='Image: {.spec.containers[0].image}{"\n"}'
 - **kubectl get events --sort-by='.metadata.creationTimestamp' -n kube-system 
 - **kubectl get events -A
+- **kubectl get endpointslices -l kubernetes.io/service-name=grafana -n grafana
+- ~~kubectl get endpointslices -l kubernetes.io/service-name=grafana -n grafana \ -o jsonpath='{range .items[*].endpoints[*]}{.addresses[0]}{" ready="}{.conditions.ready}{"\n"}{end}'
 - grep -n 'image:' healthy-web.yaml broken-web.yaml
 - sed -i 's/nginx:1.27-alpine-missing/nginx:1.27-alpine/' broken-web.yaml
+- sed -i 's/replicas: 2/replicas: 4/' hostname-web.yaml
+	- `sed` is a text-editing command
+	- `-i` means “modify the file in place.”
+	- `s/replicas: 2/replicas: 4/` replaces `replicas: 2` with `replicas: 4`.
+- grep -n 'replicas:' hostname-web.yaml
+	- `grep` searches text
+	- `-n` displays the matching line number
+- kubectl diff -f hostname-web.yaml
 - kubectl diff -f broken-web.yaml || true
 - kubectl top nodes
 - ==kubectl expose deployment nginx --type=NodePort --port=80 --target-port=80
@@ -831,7 +862,47 @@ EOF
 ```
 
 ## <u>Labs</u>
-
+### Scale and Load Balance Applications
+---
+- Build an Observable Replicated Application
+	- cat <<'EOF' > hostname-web.yaml
+	- kubectl apply -f hostname-web.yaml
+	- kubectl rollout status deployment/hostname-web --timeout=60s
+	- kubectl get pods -l app=hostname-web
+	- kubectl get pods,deployment,rs,svc 
+	- kubectl logs deployment/hostname-web
+	- kubectl get deployment hostname-web
+	- kubectl get pods -l app=hostname-web -o wide
+	- kubectl get endpointslices -l kubernetes.io/service-name=hostname-web
+	- kubectl run load-client --image=busybox:1.36 --image-pull-policy=IfNotPresent --restart=Never -- sleep 3600
+	- kubectl wait --for=condition=Ready pod/load-client --timeout=30s
+	- for i in $(seq 1 6); do kubectl exec load-client -- wget -qO- http://hostname-web; done
+		- this helps to determine which pod is responding which is load balancing on the backend for k8s
+---
+- Scale Up Declaratively
+	- cd /home/labex/project/scale-lab
+	- sed -i 's/replicas: 2/replicas: 4/' hostname-web.yaml
+	- grep -n 'replicas:' hostname-web.yaml
+	- kubectl diff -f hostname-web.yaml
+	- kubectl apply -f hostname-web.yaml
+	- kubectl get pods -l app=hostname-web -o wide
+	- kubectl get endpointslices -l kubernetes.io/service-name=hostname-web \ -o jsonpath='{range .items[*].endpoints[*]}{.addresses[0]}{" ready="}{.conditions.ready}{"\n"}{end}'
+	- kubectl get service hostname-web -o wide
+		- **SELECTOR** — the labels used to find matching Pods
+	- rm -f /tmp/hostname-responses.txt 
+	- for i in $(seq 1 20); do kubectl exec load-client -- wget -qO- http://hostname-web >> /tmp/hostname-responses.txt done 
+	- sort /tmp/hostname-responses.txt | uniq -c
+	- sort -u /tmp/hostname-responses.txt | wc -l
+	- kubectl scale deployment/hostname-web --replicas=2
+---
+- Reconcile the Manifest and Read the Controller Trail
+	- grep -n 'replicas:' /home/labex/project/scale-lab/hostname-web.yaml
+	- kubectl get deployment hostname-web -o jsonpath='Live replicas: {.spec.replicas}{"\n"}'
+	- sed -i 's/replicas: 4/replicas: 2/' /home/labex/project/scale-lab/hostname-web.yaml
+	- grep -n 'replicas:' /home/labex/project/scale-lab/hostname-web.yaml
+	- kubectl diff -f hostname-web.yaml
+	- kubectl describe deployment hostname-web | sed -n '/Events:/,$p'
+	- kubectl delete pod load-client --ignore-not-found
 ### Expose k8s Application
 ---
 - Deploy the Service Backends
@@ -954,7 +1025,52 @@ EOF
 
 
 ## <u>Manifest Files</u>
-
+### hostname-web.yaml
+---
+``` 
+cd /home/labex/project/scale-lab
+cat <<'EOF' > hostname-web.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hostname-web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hostname-web
+  template:
+    metadata:
+      labels:
+        app: hostname-web
+    spec:
+      containers:
+        - name: web
+          image: busybox:1.36
+          imagePullPolicy: IfNotPresent
+          command: ["sh", "-c"]
+          args:
+            - mkdir -p /www; hostname > /www/index.html; exec httpd -f -p 8080 -h /www
+          ports:
+            - name: http
+              containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hostname-web
+spec:
+  selector:
+    app: hostname-web
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+EOF
+kubectl apply -f hostname-web.yaml
+kubectl rollout status deployment/hostname-web --timeout=60s
+kubectl get pods -l app=hostname-web
+```
 ### course-nginx-nodePort-service.yaml
 ---
 ```
