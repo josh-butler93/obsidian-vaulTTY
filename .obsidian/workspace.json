@@ -26,10 +26,10 @@
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://labex.io/labs/kubernetes-scale-and-load-balance-applications-434648?course=kubernetes-for-beginners"
+                "url": "https://labex.io/labs/kubernetes-update-and-rollback-applications-434649?course=kubernetes-for-beginners"
               },
               "icon": "lucide-file",
-              "title": "Scale and Load Balance Applications | Kubernetes for Beginners"
+              "title": "Update and Rollback Applications | Kubernetes for Beginners"
             }
           },
           {
@@ -86,10 +86,22 @@
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://www.google.com/search?q=k8s+get+events+command&sca_esv=3fd7e35aed588986&hl=en&sxsrf=APpeQns9YKDR6SnY7tXK6ZhSmp7cToGArA%3A1789233611253&ei=xYmlatflBqOz5NoPw57KgAc&iflsig=ABILxe8AAAAAaqWX1brNvJgEWLLAlKozsKZuRmz1zGeZ&uact=5&sclient=gws-wiz&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8cxpBkeIeqYwoCbfNVc4vKE6A5_9xraAmHsehE8ybQankQszSTTs2KnlnrcKQ4m3m_Zushp240ZRsrcGAW0iGFG-xMnl5cxfdF99oXgi9-d_n8y7ZSiS4jKj6TFJpnML4CXFUC7YW9EgWXrKTZefLvFjrsWQtq6cAzVZlD8iCOgFjyDl6SW5EPgmPJKuJqfq1515L8iw&aep=10&ntc=1&mstk=AUtExfBZapzwjjEk_GyahKFESh7nvashCenflwD3yVt8ZMCVG2akYXXldw_HTHcVtuQSuh5JeNHBJkckmiAKpOQ5m2QcQHet6-k5bcUJyAyK0RGMwgExy8a2vqYaU8Os-Z8cw3UFlIjcGdTTwTwFSQeZdZvIeZ3bJCAqOj6a1ZQRNW5xxxZWdSbZdcdQU7nOD1A0av4ZHfy7VZmSwNhcUeJbs0kKTEDKVjZBG1DM1WTYf6FStNa4uJx-HoUMuHBuqXBNZHtMURtI6F9XkmFH-iotP2FFaN-vwwVI5Lg4wwLkamq5Wll_OnZovmDZ1JfQtWv8wdplf5UwYjmXxQ&aioh=3&csuir=1&cs=1&atvm=2&mtid=eIqlao2NMtruiLMPif-d8Qg&udm=50"
+                "url": "https://www.google.com/search?q=k8s+get+events+command&sca_esv=3fd7e35aed588986&hl=en&sxsrf=APpeQns9YKDR6SnY7tXK6ZhSmp7cToGArA%3A1789233611253&ei=xYmlatflBqOz5NoPw57KgAc&iflsig=ABILxe8AAAAAaqWX1brNvJgEWLLAlKozsKZuRmz1zGeZ&uact=5&sclient=gws-wiz&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8cxpBkeIeqYwoCbfNVc4vKE6A5_9xraAmHsehE8ybQankQszSTTs2KnlnrcKQ4m3m_Zushp240ZRsrcGAW0iGFG-xMnl5cxfdF99oXgi9-d_n8y7ZSiS4jKj6TFJpnML4CXFUC7YW9EgWXrKTZefLvFjrsWQtq6cAzVZlD8iCOgFjyDl6SW5EPgmPJKuJqfq1515L8iw&aep=10&ntc=1&mstk=AUtExfAsF1CCL_D_iL-FGTEQsAAFIIzqjq-k9LlTxfZu46eK31H8CwPwMHrwhZZNZfI2KraqVrCAFubYD2gbUjhvWia829P5rd7rWzhEQkK-L9HF9scIio6LWgRFMULwnD4zpD1YLLMCTfNTq5uXrEyQraWOqYVw1Uw3uyEj7mYfaaFfg1lfVzJ36d12jdAR2_MxzQSVPpzKFea0OTrxxpf6IcIosIOYK-l92duvialacx3nGsJscpE99jUXNqJNqnOaVBCn7IpfMp3kz7JcXEMm0Lx7bI1Lw_KRPX8dCqUcb-84NX-qZTn7RF2ATxcNe6aYOO5yLIDseMNdxg&aioh=3&csuir=1&cs=1&atvm=2&mtid=eIqlao2NMtruiLMPif-d8Qg&udm=50"
               },
               "icon": "lucide-file",
               "title": "k8s get events command - Google Search"
+            }
+          },
+          {
+            "id": "c7cbc8ea02899469",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "https://pve.proxmox.com/pve-docs/chapter-sysadmin.html"
+              },
+              "icon": "lucide-file",
+              "title": "Host System Administration"
             }
           }
         ],
@@ -158,7 +170,8 @@
               "title": "sh"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -370,7 +383,7 @@
       "soundscapes:Soundscapes: My Music": false
     }
   },
-  "active": "329271a997c7ff82",
+  "active": "b3afbcd9eeeb3ee3",
   "lastOpenFiles": [
     "Command_Guru_v3/k8s/k8s Breakdown.md",
     "Command_Guru_v3/Command_Guru_v3.md",

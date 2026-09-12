@@ -419,11 +419,32 @@ Adding Variables to Playbooks
 		- **Expected result:** A line similar to `root@localhost: Permission denied (publickey).` followed by `root login denied as expected`
 	- sudo tail -n 30 /var/log/auth.log | grep -E '(Accepted|Failed|not allowed|not listed)'
 		- **Expected result:** A mix of `Accepted publickey for auditor` lines and entries similar to `User root from 127.0.0.1 not allowed because not listed in AllowUsers` and `User stranger from 127.0.0.1 not allowed because not listed in AllowUsers`
-
+---
 - <u>sed</u>
 	- sed -i **'s/nginx:1.27-alpine-missing/nginx:1.27-alpine/'** broken-web.yaml
 		- performs a text substitution written as ==s/old/new/==; -i edits the named file in place instead of only printing the changed text
 	- sed -i 's/replicas: 2/replicas: 4/' hostname-web.yaml
+---
+- <u>swapoff</u>
+	- swapoff -a && swapon -a
+	- swapoff -a 
+		- **`swapoff -a`** disables swap and forces all data back into physical RAM
+	- swapon -a
+		- **`swapon -a`** immediately turns swap back on so it's available if an emergency occurs
+	- Reduce "Swappiness" (Highly Recommended)
+		- vim /etc/sysctl.conf
+		- Scroll to the bottom and add this line:
+		- vm.swappiness = 1
+		- sysctl -p
+		- applies the change instantly without a reboot
+	- Permanently Turn Off Swap
+		- **swapoff -a
+			- Disable all active swap immediately
+		- **vim /etc/fstab
+			- Prevent swap from turning back on when the server reboots
+		- **/dev/pve/swap none swap sw 0 0
+			- Look for the line that mentions **`swap`** and comment it out by adding a **`#`** at the absolute beginning of the line
+---
 ## <u>Services</u>
 - <u>nfs</u>
 	- This is the actual **file-sharing service**
@@ -862,6 +883,9 @@ EOF
 ```
 
 ## <u>Labs</u>
+### Update and Rollback Application
+---
+- 
 ### Scale and Load Balance Applications
 ---
 - Build an Observable Replicated Application
@@ -1272,7 +1296,708 @@ kubectl apply -f globomantics-frontend.yaml
 ## <u>Command Breakdowns</u>
 
 # ==Homelab==
+## <u>Servers Ports</u>
+---
+- **Grafana** — `30300`
+- **Homepage** — `30301`
+- **Uptime Kuma** — `30302`
+- **Cronicle** — `30303`
+- **Forgejo** — `30304`
+- **Semaphore** — `30305`
+- **Jenkins** — `30306`
+- **Rancher** — `30114`
+- **Prometheus** — internal `ClusterIP`
+---
 ## <u>k8s Builds</u>
+### rancher
+---
+- kubectl get pods -n cert-manager
+- helm repo add jetstack https://charts.jetstack.io
+- helm repo update
+- helm install cert-manager jetstack/cert-manager \
+  --namespace cert-manager \
+  --create-namespace \
+  --set crds.enabled=true
+- helm repo add rancher-latest https://releases.rancher.com/server-charts/latest
+- helm repo update
+- mkdir rancher && vim values.yaml
+- vim rancher_namespace.yaml && apply -f rancher_namespace.yaml
+- helm install rancher rancher-latest/rancher \
+  --namespace cattle-system \
+  -f values.yaml
+- kubectl get pods -n cattle-system -w
+- kubectl get pods -n cattle-system
+- kubectl rollout status deployment/rancher -n cattle-system
+- kubectl get all -n cattle-system
+- kubectl get ingress -n cattle-system
+- helm get values rancher -n cattle-system
+- helm list -n cattle-system
+- kubectl get svc -n cattle-system
+- kubectl describe ingress rancher -n cattle-system
+- kubectl get endpoints -n cattle-system rancher
+- kubectl exec -n kube-system deployment/traefik -- \
+  wget -qO- http://10.42.0.47:80/ping
+- kubectl exec -n kube-system deployment/traefik -- \
+  wget -S -O- http://10.42.0.47:80 2>&1 | head -n 20
+- helm upgrade rancher rancher-latest/rancher \
+  -n cattle-system \
+  -f values.yaml
+- kubectl get svc -n cattle-system
+- **helm get manifest rancher -n cattle-system
+- **helm get manifest rancher -n cattle-system > rancher-rendered.yaml
+- less rancher-rendered.yaml
+- helm get values rancher -n cattle-system 
+- helm get values rancher -n cattle-system --all 
+- http://10.0.0.248:30704
+- https://10.0.0.248:30114
+---
+#### values.yaml
+
+```
+hostname: rancher.10.0.0.248.sslip.io
+
+replicas: 1
+
+bootstrapPassword: admin
+
+ingress:
+  enabled: false
+
+service:
+  type: NodePort
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 256Mi
+  limits:
+    cpu: 1000m
+    memory: 1Gi
+```
+
+---
+#### rancher-namespace.yaml
+
+```
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: cattle-system
+
+```
+
+
+---
+### jenkins
+---
+#### jenkins.yaml
+---
+
+```
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: jenkins
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: jenkins-home
+  namespace: jenkins
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins
+  namespace: jenkins
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jenkins
+  template:
+    metadata:
+      labels:
+        app: jenkins
+    spec:
+      containers:
+        - name: jenkins
+          image: jenkins/jenkins:lts
+          ports:
+            - containerPort: 8080
+            - containerPort: 50000
+
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "100m"
+            limits:
+              memory: "1Gi"
+              cpu: "1000m"
+
+          volumeMounts:
+            - name: jenkins-home
+              mountPath: /var/jenkins_home
+
+      volumes:
+        - name: jenkins-home
+          persistentVolumeClaim:
+            claimName: jenkins-home
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jenkins
+  namespace: jenkins
+spec:
+  type: NodePort
+  selector:
+    app: jenkins
+  ports:
+    - name: web
+      port: 8080
+      targetPort: 8080
+      nodePort: 30306
+```
+
+---
+- kubectl apply -f jenkins.yaml --dry-run=client
+- kubectl apply -f jenkins.yaml
+- kubectl get pods -n jenkins -w
+- kubectl get pods -n jenkins
+- kubectl get pods -n jenkins -o wide
+- kubectl describe pod jenkins-99859db7d-gp6kp -n jenkins | tail -n 20
+- kubectl describe deployment jenkins -n jenkins
+- kubectl logs jenkins-99859db7d-gp6kp -n jenkins
+- kubectl logs jenkins-99859db7d-gp6kp -n jenkins | grep -i warning
+- kubectl logs deployment/jenkins -n jenkins
+- kubectl logs deployment/jenkins -n jenkins | grep -i warning
+- kubectl get events -n jenkins
+- kubectl get svc -n jenkins
+- kubectl get rs -n jenkins
+- http://10.0.0.248:30306
+- kubectl exec jenkins-99859db7d-gp6kp -n jenkins -- cat /var/jenkins_home/secrets/initialAdminPassword
+### ansible-semaphore
+---
+#### semaphore.yaml
+---
+
+```
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: semaphore
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: semaphore-data
+  namespace: semaphore
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: semaphore
+  namespace: semaphore
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: semaphore
+
+  template:
+    metadata:
+      labels:
+        app: semaphore
+    
+    spec:
+      enableServiceLinks: false
+      
+      containers:
+        - name: semaphore
+          image: semaphoreui/semaphore:latest
+
+          ports:
+            - containerPort: 3000
+
+          env:
+            - name: SEMAPHORE_DB_DIALECT
+              value: "sqlite"
+
+            - name: SEMAPHORE_ADMIN
+              value: "admin"
+
+            - name: SEMAPHORE_ADMIN_PASSWORD
+              value: "changeme"!!!!!!!!!!!!!!!
+
+            - name: SEMAPHORE_ADMIN_NAME
+              value: "Admin"
+
+            - name: SEMAPHORE_ADMIN_EMAIL
+              value: "admin@localhost"
+
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "50m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+
+          volumeMounts:
+            - name: semaphore-data
+              mountPath: /var/lib/semaphore
+
+      volumes:
+        - name: semaphore-data
+          persistentVolumeClaim:
+            claimName: semaphore-data
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: semaphore
+  namespace: semaphore
+spec:
+  type: NodePort
+
+  selector:
+    app: semaphore
+
+  ports:
+    - port: 3000
+      targetPort: 3000
+      nodePort: 30305
+```
+
+---
+- kubectl apply -f semaphore.yaml --dry-run=client
+- kubectl apply -f semaphore.yaml
+- kubectl get pods -n semaphore -w
+- kubectl get pods -n semaphore
+- kubectl describe pod semaphore-7bc85d7786-7jhwb -n semaphore| tail -n 20
+- kubectl logs semaphore-745f894878-d8kp7 -n semaphore | less -r
+- kubectl logs -n semaphore deployment/semaphore
+- kubectl describe deployment semaphore -n semaphore
+- kubectl get events -n semaphore
+- http://10.0.0.248:30305
+### forgejo
+---
+#### forgejo.yaml
+---
+
+```
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: forgejo
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: forgejo-data
+  namespace: forgejo
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: forgejo
+  namespace: forgejo
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: forgejo
+
+  template:
+    metadata:
+      labels:
+        app: forgejo
+
+    spec:
+      containers:
+        - name: forgejo
+          image: codeberg.org/forgejo/forgejo:16.0.4
+
+          ports:
+            - containerPort: 3000
+
+          env:
+            - name: USER_UID
+              value: "1000"
+            - name: USER_GID
+              value: "1000"
+
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+
+          volumeMounts:
+            - name: forgejo-data
+              mountPath: /data
+
+      volumes:
+        - name: forgejo-data
+          persistentVolumeClaim:
+            claimName: forgejo-data
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: forgejo
+  namespace: forgejo
+spec:
+  type: NodePort
+
+  selector:
+    app: forgejo
+
+  ports:
+    - port: 3000
+      targetPort: 3000
+      nodePort: 30304
+```
+
+---
+- kubectl apply -f forgejo.yaml --dry-run=client
+- kubectl apply -f forgejo.yaml
+- kubectl get pods -n forgejo -w
+- kubectl get pods -n forgejo
+- kubectl logs forgejo-69fc6c6696-tv7p8 -n forgejo
+- kubectl events -n forgejo | head -n 10 
+- kubectl events -n forgejo | tail -n 10  
+- http://10.0.0.248:30304
+### cronicle
+---
+#### cronicle.yaml
+---
+```
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: cronicle
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: cronicle-data
+  namespace: cronicle
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cronicle
+  namespace: cronicle
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: cronicle
+
+  template:
+    metadata:
+      labels:
+        app: cronicle
+
+    spec:
+      hostname: cronicle
+
+      containers:
+        - name: cronicle
+          image: cronicle/edge:v1.14.5
+
+          args:
+            - manager
+
+          ports:
+            - containerPort: 3012
+
+          env:
+            - name: CRONICLE_secret_key
+              value: "homelab-cronicle-secret"
+
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "50m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+
+          volumeMounts:
+            - name: cronicle-data
+              mountPath: /opt/cronicle/data
+
+      volumes:
+        - name: cronicle-data
+          persistentVolumeClaim:
+            claimName: cronicle-data
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cronicle
+  namespace: cronicle
+spec:
+  type: NodePort
+
+  selector:
+    app: cronicle
+
+  ports:
+    - port: 3012
+      targetPort: 3012
+      nodePort: 30303
+```
+
+---
+- kubectl apply -f cronicle.yaml --dry-run=client
+- kubectl apply -f cronicle.yaml
+- kubectl get all -n cronicle 
+- kubectl get pods -n cronicle
+- kubectl describe pod cronicle-674476d5d5-d42qf -n cronicle
+- kubectl get svc -n cronicle
+- kubectl get pvc -n cronicle
+- kubectl describe deployment cronicle -n cronicle
+- kubectl events -n cronicle
+- kubectl logs pod/cronicle-674476d5d5-d42qf -n cronicle --tail=10   
+- **kubectl logs pod/cronicle-674476d5d5-d42qf -n cronicle | head -n 10
+	- - to get the username and password for the webui
+- http://10.0.0.248:30303
+---
+### uptime-kuma
+---
+#### uptime-kuma.yaml
+---
+```
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: uptime-kuma
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: uptime-kuma-data
+  namespace: uptime-kuma
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: uptime-kuma
+  namespace: uptime-kuma
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: uptime-kuma
+
+  template:
+    metadata:
+      labels:
+        app: uptime-kuma
+
+    spec:
+      containers:
+        - name: uptime-kuma
+          image: louislam/uptime-kuma:2
+
+          ports:
+            - containerPort: 3001
+
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "50m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+
+          volumeMounts:
+            - name: uptime-kuma-data
+              mountPath: /app/data
+
+      volumes:
+        - name: uptime-kuma-data
+          persistentVolumeClaim:
+            claimName: uptime-kuma-data
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: uptime-kuma
+  namespace: uptime-kuma
+spec:
+  type: NodePort
+
+  selector:
+    app: uptime-kuma
+
+  ports:
+    - port: 3001
+      targetPort: 3001
+      nodePort: 30302
+```
+
+---
+- kubectl apply -f uptime-kuma.yaml --dry-run=client
+- kubectl apply -f uptime-kuma.yaml
+- kubectl get pods -n uptime-kuma -w
+- kubectl get pvc -n uptime-kuma
+- http://10.0.0.248:30302
+---
+### homepage
+---
+#### homepage.yaml
+---
+```
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: homepage
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: homepage-config
+  namespace: homepage
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: homepage
+  namespace: homepage
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: homepage
+
+  template:
+    metadata:
+      labels:
+        app: homepage
+
+    spec:
+      containers:
+        - name: homepage
+          image: ghcr.io/gethomepage/homepage:v2.3.0
+
+          ports:
+            - containerPort: 3000
+
+          env:
+            - name: HOMEPAGE_ALLOWED_HOSTS
+              value: "10.0.0.248:30301"
+
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "50m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+
+          volumeMounts:
+            - name: homepage-config
+              mountPath: /app/config
+
+      volumes:
+        - name: homepage-config
+          persistentVolumeClaim:
+            claimName: homepage-config
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: homepage
+  namespace: homepage
+spec:
+  type: NodePort
+
+  selector:
+    app: homepage
+
+  ports:
+    - port: 3000
+      targetPort: 3000
+      nodePort: 30301
+```
+
+---
+- homepage kubectl apply -f homepage.yaml --dry-run=client
+- homepage kubectl apply -f homepage.yaml
+- kubectl get pods -n homepage -w
+- kubectl get all -n homepage
+- kubectl get svc -n homepage
+- kubectl logs homepage-698c455b4f-4kdbh -n homepage
+- kubectl events -n homepage
+- kubectl get pvc -n homepage
+- http://10.0.0.248:30301/
+---
 ### Grafana
 ---
 #### Grafana.yaml
