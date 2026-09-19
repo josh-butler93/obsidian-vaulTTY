@@ -250,6 +250,12 @@ Adding Variables to Playbooks
 # ==Linux==
 ## <u>Links</u>
 ## <u>Commands</u>
+- <u>chmod</u>
+	- chmod +x hello.sh
+		- `chmod` is the command to change file permissions
+		- `+x` means "add execute permission"
+		- `hello.sh` is the name of our file
+---
 - <u>ps aux</u>
 	- ps aux --sort=-%mem | head -15
 	- ps aux --sort=-%mem | head -20
@@ -335,6 +341,11 @@ Adding Variables to Playbooks
 		- Using the uppercase `-R` flag instead of the lowercase `-r` will recursively return even objects that are symbolic links
 	- grep -r copyright > ~/lowercase.txt
 	- grep -R copyright > ~/uppercase.txt
+	- grep -nE 'change-cause|image:' release-web.yaml
+		- `-n` includes line numbers
+		- `-E` enables extended regular expressions
+		- The `|` means “or.”
+	- grep -niE 'replicas|Image' release-web.yaml
 	- diff ~/lowercase.txt ~/uppercase.txt
 	- ls -l /usr/share/doc/ | grep debconf
 	- cat git/README.source | grep extracted
@@ -445,6 +456,9 @@ Adding Variables to Playbooks
 		- **/dev/pve/swap none swap sw 0 0
 			- Look for the line that mentions **`swap`** and comment it out by adding a **`#`** at the absolute beginning of the line
 ---
+- <u>uptime</u>:
+	- uptime
+	- uptime -p
 ## <u>Services</u>
 - <u>nfs</u>
 	- This is the actual **file-sharing service**
@@ -465,7 +479,10 @@ Adding Variables to Playbooks
 - <u>mountd</u>
 	- `mountd` helps handle **NFS mount requests**, particularly with NFSv3
 	- `mountd` checks the server's export information to determine whether a client is allowed access
-
+---
+## <u>Shell Types</u>
+- [The](https://www.digitalocean.com/community/tutorials/different-types-of-shells-in-linux#1-the-bourne-shell-https-en-wikipedia-org-wiki-bourne_shell-sh) [Bourne Shell](https://en.wikipedia.org/wiki/Bourne_shell) (sh)
+	- 
 # ==k8s==
 ## <u>Links</u>
 ## <u>Definitions</u>
@@ -542,14 +559,33 @@ Adding Variables to Playbooks
 	- the internal, stable IP address assigned to the Service
 - <u>External-IP</u>:
 	- an external address, if one exists
+- <u>Kubernetes API</u>:
+	- The Kubernetes API lets you query and manipulate the state of objects in Kubernetes
+		- The core of Kubernetes' control plane is the API server and the HTTP API that it exposes
+		- Users, the different parts of your cluster, and external components all communicate with one another through the API server
+- <u>Context</u>:
+	- is the kubeconfig selection that connects kubectl to a particular cluster, user, and default namespace
+- <u>maxUnavailable</u>:
+	- is how many desired replicas may be unavailable during a rollout
+- <u>maxSurge</u>:
+	- is how many extra Pods may temporarily exist above the desired replica count
+- <u>ConfigMap</u>:
+	- ConfigMap stores non-sensitive configuration data for applications
+		- It is lightweight, quick to create, and namespaced, which makes it useful for practicing namespace behavior before you start deploying real applications
 ## *<u>k8s Commands</u>*
+- /etc/rancher/k3s/k3s.yaml
 - minikube version --short
 - kubectl version
 - kubectl version --client
 - kubectl cluster-info
 - kubectl cluster-info dump
+- kubectl config current-context
+- kubectl config set-context --current --namespace=default
+- kubectl config current-context
+	- config current-context names the active connection
 - kubectl top
 - kubectl get nodes
+- kubectl get nodes --request-timeout=5s
 - kubectl describe node | grep Taints
 	- ==**Note:** The `node-role.kubernetes.io/control-plane` taint prevents regular pods from being scheduled onto the node
 		- In a multi-node cluster, this taint keeps application workloads off the control plane
@@ -557,6 +593,13 @@ Adding Variables to Playbooks
 - kubectl describe node controlplane | grep Taints
 - kubectl taint nodes --all node-role.kubernetes.io/control-plane-
 	- This removes the control-plane taint
+- kubectl create namespace ckad-prep-contexts
+- ==kubectl config set-context --current --namespace=ckad-prep-contexts
+	- when you run the kubectl get pods this now changes the default to this namespace
+- kubectl get pods >> *No resources found in ckad-prep-contexts namespace
+- kubectl create configmap app-settings --from-literal=mode=prep
+- kubectl get configmap app-settings
+- kubectl get configmap app-settings --namespace ckad-prep-contexts
 - **kubectl get pods -n default**
 - kubectl get pods -n kube-system -l tier=control-plane
 - kubectl get pods -n kube-system -l tier=control-plane --show-labels
@@ -566,6 +609,12 @@ Adding Variables to Playbooks
 - kubectl describe node labex-v135
 - **kubectl run nginx --image=nginx -n dev
 - kubectl run nginx --image=nginx --port=80
+- **kubectl run release-client --image=busybox:1.36 --image-pull-policy=IfNotPresent \ --restart=Never -- sleep 3600 
+	- kubectl run: creates a Pod
+	- --image chooses BusyBox
+	- --restart=Never keeps it as a standalone Pod
+	- The -- separator introduces its long-running sleep 3600 command
+- *kubectl wait --for=condition=Ready pod/release-client --timeout=30s*
 - **kubectl run load-client --image=busybox:1.36 -n dev --image-pull-policy=IfNotPresent --restart=Never -- sleep 3600
 - kubectl delete pod load-client
 - **kubectl expose pod nginx --type=NodePort --port=80 --target-port=80 -n dev
@@ -573,7 +622,9 @@ Adding Variables to Playbooks
 - kubectl get svc -n dev
 - **kubectl get svc nginx -o jsonpath='{.spec.ports[0].nodePort}'
 - kubectl delete pod nginx -n dev
+- kubectl rollout history deployment/grafana -n grafana
 - **kubectl describe pod broken-web-5fcd668857-6mnz4 -n default
+- kubectl describe pod release-web-7f675985f9-gsgp4 | sed -n '/Events:/,$p'
 - kubectl describe pod metrics-server-6dc596dfb8-lhv8s -n kube-system | sed -n '/Events:/,$p'
 - **kubectl get pods -A**
 - **kubectl get deployments -A**
@@ -586,6 +637,9 @@ Adding Variables to Playbooks
 - **kubectl create deployment globomantics-web --image=nginx:1.31**
 	- ==**Note:** The `kubectl create deployment` command builds this full object specification for you, including the pod template, labels, and selector fields
 - kubectl rollout status deployment/globomantics-web
+- **sed -i '/type: RollingUpdate/a\    rollingUpdate:\n      maxUnavailable: 0\n      maxSurge: 1' release-web.yaml
+	- /type: RollingUpdate/, to find the strategy line
+	- a\ action appends the following newline-separated YAML with the required indentation
 - **kubectl get pods -o wide**
 - **kubectl get deployment globomantics-web -o yaml
 - kubectl describe deployment metrics-server -n kube-system 
@@ -647,8 +701,11 @@ Adding Variables to Playbooks
 - **kubectl get deployment grafana -n grafana -o jsonpath='Live replicas: {.spec.replicas}{"\n"}'
 - kubectl rollout status deployment/broken-web --timeout=15s || true
 	- || true tells the shell to continue because this failure is evidence for the exercise, not a reason to stop the lab
+- **kubectl rollout undo deployment/release-web
+	- rollout undo creates a new revision from an older Pod template; it does not rewind the revision counter
 - **kubectl get deployments,replicasets,pods -o wide
 	- **List the related object types together. Commas let one kubectl get request several resource types, while -o wide adds useful columns such as node and IP information
+- **kubectl get deployment grafana -n grafana -o jsonpath='maxUnavailable={.spec.strategy.rollingUpdate.maxUnavailable}{"\n"}maxSurge={.spec.strategy.rollingUpdate.maxSurge}{"\n"}'
 - BROKEN_POD=$(kubectl get pods -l app=broken-web -o jsonpath='{.items[0].metadata.name}') 
 - echo "$BROKEN_POD"
 - **kubectl get pod broken-web-5fcd668857-6mnz4 -o jsonpath='Image: {.spec.containers[0].image}{"\n"}'
@@ -885,7 +942,64 @@ EOF
 ## <u>Labs</u>
 ### Update and Rollback Application
 ---
-- 
+- kubectl config current-context
+	- config current-context names the active connection
+- kubectl get node
+- kubectl version
+- kubectl run release-client --image=busybox:1.36 --image-pull-policy=IfNotPresent \ --restart=Never -- sleep 3600 
+- kubectl wait --for=condition=Ready pod/release-client --timeout=30s
+---
+- Deploy the Stable Baseline
+	- cat <<'EOF' > release-web.yaml
+	- kubectl apply -f release-web.yaml
+	- kubectl rollout status deployment/release-web --timeout=60s
+	- kubectl get deployment,service,pods -l app=release-web
+	- kubectl exec release-client -- wget -qO- http://release-web | head
+	- sed -i 's/Initial release: nginx 1.26/Release nginx 1.27/' release-web.yaml
+		- `sed` searches and replaces text
+		- `-i` saves the change in the file
+		- It changes the release description from: `Initial release: nginx 1.26` -> `Release nginx 1.27` 
+	- sed -i 's/nginx:1.26-alpine/nginx:1.27-alpine/' release-web.yaml
+	- grep -nE 'change-cause|image:' release-web.yaml
+	- kubectl apply -f release-web.yaml
+	- kubectl rollout status deployment/release-web --timeout=60s
+	- kubectl get deployment release-web
+	- kubectl rollout history deployment/release-web
+	- kubectl get replicasets -l app=release-web -o custom-columns='NAME:.metadata.name,DESIRED:.spec.replicas,CURRENT:.status.replicas,READY:.status.readyReplicas,IMAGE:.spec.template.spec.containers[0].image'
+	- kubectl get pods -l app=release-web -o jsonpath='{range .items[*]}{.metadata.name}{"  "}{.spec.containers[0].image}{"\n"}{end}'
+	- kubectl get endpointslices -l kubernetes.io/service-name=release-web -o jsonpath='{range .items[*].endpoints[*]}{.addresses[0]}{" ready="}{.conditions.ready}{"\n"}{end}'
+	- kubectl exec release-client -- wget -qO- http://release-web | head
+---
+- Diagnose a Broken Release
+	- sed -i 's/Release nginx 1.27/Broken release: missing image/' release-web.yaml
+	- sed -i 's/nginx:1.27-alpine/nginx:does-not-exist-course/' release-web.yaml
+	- kubectl apply -f release-web.yaml
+	- kubectl rollout status deployment/release-web --timeout=20s || true
+	- kubectl get deployment release-web
+	- kubectl get pods -l app=release-web
+	- kubectl logs release-web-7f675985f9-gsgp4
+	- BAD_POD=$(kubectl get pods -l app=release-web -o json | jq -r '.items[] | select(.spec.containers[0].image == "nginx:does-not-exist-course") | .metadata.name' | head -n1)
+	- echo "$BAD_POD"
+	- kubectl describe pod "$BAD_POD" | sed -n '/Events:/,$p'
+	- kubectl get replicasets -l app=release-web
+	- kubectl exec release-client -- wget -qO- http://release-web | head
+---
+- Roll Back and Reconcile the Manifest
+	- kubectl rollout history deployment/release-web
+	- kubectl rollout undo deployment/release-web
+	- kubectl rollout status deployment/release-web --timeout=60s
+	- kubectl get deployment release-web -o custom-columns='NAME:.metadata.name,IMAGE:.spec.template.spec.containers[0].image,READY:.status.readyReplicas'
+	- sed -i 's/Broken release: missing image/Rollback to nginx 1.27/' release-web.yaml
+	- sed -i 's/nginx:does-not-exist-course/nginx:1.27-alpine/' release-web.yaml
+	- kubectl apply -f release-web.yaml
+	- kubectl rollout status deployment/release-web --timeout=60s
+	- grep -nE 'change-cause|image:' release-web.yaml
+	- kubectl rollout history deployment/release-web
+	- sed -i '/type: RollingUpdate/a\    rollingUpdate:\n      maxUnavailable: 0\n      maxSurge: 1' release-web.yaml
+	- kubectl apply -f release-web.yaml
+	- kubectl get deployment release-web -o jsonpath='maxUnavailable={.spec.strategy.rollingUpdate.maxUnavailable}{"\n"}maxSurge={.spec.strategy.rollingUpdate.maxSurge}{"\n"}'
+	- kubectl describe deployment release-web
+
 ### Scale and Load Balance Applications
 ---
 - Build an Observable Replicated Application
@@ -1049,6 +1163,56 @@ EOF
 
 
 ## <u>Manifest Files</u>
+### release-web.yaml
+---
+
+```
+cd /home/labex/project/update-lab
+cat <<'EOF' > release-web.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: release-web
+  annotations:
+    kubernetes.io/change-cause: "Initial release: nginx 1.26"
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: release-web
+  template:
+    metadata:
+      labels:
+        app: release-web
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.26-alpine
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: release-web
+spec:
+  selector:
+    app: release-web
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+EOF
+kubectl apply -f release-web.yaml
+kubectl rollout status deployment/release-web --timeout=60s
+kubectl get deployment,service,pods -l app=release-web
+```
+
+---
 ### hostname-web.yaml
 ---
 ``` 
@@ -1295,6 +1459,39 @@ kubectl apply -f globomantics-frontend.yaml
 
 ## <u>Command Breakdowns</u>
 
+## <u>CKAD Training</u>
+### Explore kubectl, Contexts, and Namespaces
+- kubectl config current-context
+	- Kubernetes context is a saved connection choice in your kubeconfig
+	- It tells kubectl which cluster, user credentials, and default namespace to use
+	- Check the active context before running any object-changing command
+- **kubectl config set-context --current --namespace=default
+	- set the current context namespace to default
+	- ==you are only telling kubectl which namespace to use when a later namespaced command omits --namespace==
+- kubectl get nodes --request-timeout=5s
+- kubectl cluster-info
+	- ask the API server for basic cluster information
+	- This proves that your terminal is not just finding the kubectl binary; it is actually authenticated to a running cluster
+- kubectl get namespaces
+- kubectl config view --minify --output 'jsonpath={..namespace}'; echo
+- kubectl get pods --namespace kube-system
+- kubectl create namespace ckad-prep-contexts
+- kubectl config set-context --current --namespace=ckad-prep-contexts
+- kubectl config view --minify --output 'jsonpath={..namespace}'; echo
+- kubectl get pods
+- kubectl create configmap app-settings --from-literal=mode=prep
+	- **`create configmap`**: Tells Kubernetes to create a new ConfigMap object
+	- **`app-settings`**: The name assigned to the ConfigMap
+	- **`--from-literal=mode=prep`**: Adds a key-value pair
+		- Key: `mode`
+		- Value: `prep`
+	- Because no `--namespace` option is provided, Kubernetes creates the ConfigMap in the namespace configured for your current context
+- kubectl get configmap app-settings
+- kubectl get configmap app-settings --namespace ckad-prep-contexts
+- kubectl get configmap app-settings --namespace default --ignore-not-found
+### Inspect k8s API Resources
+
+
 # ==Homelab==
 ## <u>Servers Ports</u>
 ---
@@ -1309,6 +1506,14 @@ kubectl apply -f globomantics-frontend.yaml
 - **Prometheus** — internal `ClusterIP`
 ---
 ## <u>k8s Builds</u>
+### k8s build
+- mkdir -p ~/.kube
+- sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
+- sudo chown $(id -u):$(id -g) ~/.kube/config
+- chmod 600 ~/.kube/config
+- echo $KUBECONFIG
+- export KUBECONFIG=$HOME/.kube/config
+- kubectl get nodes
 ### rancher
 ---
 - kubectl get pods -n cert-manager
@@ -2262,6 +2467,14 @@ Data Testing
 
 
 # ==Pluaralsight Labs==
+## <u>Automate Container Management with Ansible</u>
+---
+#### Creating Docker Image Registry
+---
+- registry.yaml
+```
+
+```
 ## <u>Navigating and Managing Amazon Linux</u>
 ###  Connecting to an EC2 instance
 
@@ -2649,6 +2862,33 @@ EOF
 - sudo ausearch -k account-changes -ts recent | tail -n 25
 - sudo ausearch -k privileged -ts recent | tail -n 25
 - sudo ausearch -k auth-log
+- sudo aureport --summary
+- less /var/log/auth.log
+- sudo cat /var/log/auth.log
+- tail /var/log/auth.log
+- sudo timeout 30 journalctl -f _COMM=sudo --no-pager &
+- sudo journalctl _COMM=sudo --since "10 minutes ago" --no-pager | tail -n 20
+- sudo tail -n 30 /var/log/auth.log | grep -E '(sudo|su:)'
+---
+### Manage AppArmor Profiles and Review Denial Logs
+---
+#### Inspect the AppArmor Posture
+- sudo aa-status --json | python3 -c "import json,sys; d=json.load(sys.stdin); print('profiles loaded:', sum(len(v) for v in d['profiles'].values())); print('processes confined:', sum(len(v) for v in d['processes'].values()))" 2>/dev/null || sudo aa-status
+	- **Expected result:** Either a two-line summary including `profiles loaded:` and `processes confined:`, or (if Python parsing fails) the standard `aa-status` text report showing the number of loaded profiles, the number in enforce vs complain mode, and a list of confined processes including `/usr/sbin/nginx`
+- sudo cat /etc/apparmor.d/usr.sbin.nginx
+- sudo aa-status | grep -E '(nginx|profiles are in)'
+- *sudo aa-complain /etc/apparmor.d/usr.sbin.nginx*
+- sudo aa-status | grep -E 'complain mode|enforce mode' | head -2
+- sudo /usr/local/bin/rogue-demo.sh
+- sudo rm -f /etc/rogue-marker
+- sudo ausearch -m AVC -ts recent | tail -n 30
+- *sudo aa-enforce /etc/apparmor.d/usr.sbin.nginx*
+- ls -l /etc/rogue-marker 2>&1
+- sudo ausearch -m AVC -ts recent | tail -n 30
+- sudo aa-logprof
+- sudo grep -c 'deny /etc/' /etc/apparmor.d/usr.sbin.nginx
+- sudo aa-exec -p /usr/sbin/nginx -- /usr/local/bin/rogue-demo.sh
+- 
 
 # **==Storage==**
 ---
@@ -2820,3 +3060,165 @@ EOF
 - sudo pacman -Sy
 	- That forces Pacman to refresh the package databases.
 - yay -Syu --aur
+---
+# ==Bash==
+---
+## <u>Bash Scripts</u>
+---
+### env_vars.sh
+
+```
+#!/bin/bash
+
+# Displaying some common environment variables
+echo "Home directory: $HOME"
+echo "Current user: $LOGNAME"
+echo "Shell being used: $SHELL"
+echo "Current PATH: $PATH"
+
+# Creating a new environment variable
+export MY_VARIABLE="Hello from my variable"
+
+# Displaying the new variable
+echo "My new variable: $MY_VARIABLE"
+
+# Creating a child process to demonstrate variable scope
+bash -c 'echo "MY_VARIABLE in child process: $MY_VARIABLE"'
+
+# Removing the environment variable
+unset MY_VARIABLE
+
+# Verifying the variable is unset
+echo "MY_VARIABLE after unsetting: $MY_VARIABLE"
+```
+
+---
+- Breakdown
+	- chmod +x /home/labex/project/environment.sh
+	- ./environment.sh
+---
+### arithmatic.sh
+---
+
+```
+#!/bin/bash
+
+X=10
+Y=5
+
+# Addition
+SUM=$((X + Y))
+echo "Sum of $X and $Y is: $SUM"
+
+# Subtraction
+DIFF=$((X - Y))
+echo "Difference between $X and $Y is: $DIFF"
+
+# Multiplication
+PRODUCT=$((X * Y))
+echo "Product of $X and $Y is: $PRODUCT"
+
+# Division
+QUOTIENT=$((X / Y))
+echo "Quotient of $X divided by $Y is: $QUOTIENT"
+
+# Modulus (remainder)
+REMAINDER=$((X % Y))
+echo "Remainder of $X divided by $Y is: $REMAINDER"
+
+# Increment
+X=$((X + 1))
+echo "After incrementing, X is now: $X"
+
+# Decrement
+Y=$((Y - 1))
+echo "After decrementing, Y is now: $Y"
+```
+
+---
+- Breakdown
+	- chmod +x /home/labex/project/arithmetic.sh
+	- ./arithmetic.sh
+### command_subsitution.sh
+---
+
+```
+# Command substitution
+CURRENT_DATE=$(date +"%Y-%m-%d")
+echo "Today's date is: $CURRENT_DATE"
+
+FILES_IN_DIR=$(ls)
+echo "Files in the current directory:"
+echo "$FILES_IN_DIR"
+
+UPTIME=$(uptime -p)
+echo "System uptime: $UPTIME"
+```
+
+---
+- Breakdown
+	- `$(date +"%Y-%m-%d")` runs the `date` command and captures its output
+	- `$(ls)` runs the `ls` command and captures its output
+	- `$(uptime -p)` runs the `uptime` command with the `-p` option and captures its output
+	- ./command_subsitution.sh
+### variables.sh
+
+---
+
+```
+#!/bin/bash v1
+
+PRICE_PER_APPLE=5
+MyFirstLetters=ABC
+greeting='Hello        world!'
+
+echo "Price per apple: $PRICE_PER_APPLE"
+echo "My first letters: $MyFirstLetters"
+echo "Greeting: $greeting"
+```
+
+```
+#!/bin/bash v2
+
+PRICE_PER_APPLE=5
+MyFirstLetters=ABC
+greeting='Hello        world!'
+
+# Escaping special characters
+echo "The price of an Apple today is: \$HK $PRICE_PER_APPLE"
+
+# Avoiding ambiguity
+echo "The first 10 letters in the alphabet are: ${MyFirstLetters}DEFGHIJ"
+
+# Preserving whitespace
+echo $greeting
+echo "$greeting"
+
+- The `$` sign is escaped in the first line to print it literally
+- Curly braces `{}` are used to clearly define the variable name in the second line
+    
+```
+---
+- Breakdown
+	- `PRICE_PER_APPLE`: An integer variable
+	- `MyFirstLetters`: A string variable
+	- `greeting`: A string variable with multiple spaces
+	- chmod +x /home/labex/project/variables.sh
+	- ./variables.sh
+### hello.sh
+---
+
+```
+#!/bin/bash
+echo 'Hello, World!'
+```
+
+---
+- Breakdown
+	- `#!/bin/bash` 
+		- This is called a "shebang" line
+		- It tells the system which interpreter should be used to run this script
+	- `echo 'Hello, World!'` 
+		- This line uses the `echo` command to print the text "Hello, World!" to the screen
+	- chmod +x hello.sh
+	- ./hello.sh

@@ -26,10 +26,10 @@
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://labex.io/labs/kubernetes-update-and-rollback-applications-434649?course=kubernetes-for-beginners"
+                "url": "https://labex.io/labs/inspect-kubernetes-api-resources-663608?course=ckad-prep"
               },
               "icon": "lucide-file",
-              "title": "Update and Rollback Applications | Kubernetes for Beginners"
+              "title": "Inspect Kubernetes API Resources | CKAD Prep"
             }
           },
           {
@@ -41,7 +41,19 @@
                 "url": "https://app.pluralsight.com/id"
               },
               "icon": "lucide-file",
-              "title": "Sign In | Pluralsight"
+              "title": "Pluralsight"
+            }
+          },
+          {
+            "id": "979a64d3ad28716f",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "https://app.pluralsight.com/hands-on/labs/8a2ed89d-3da1-4dcb-8e90-a5eca0942aba"
+              },
+              "icon": "lucide-file",
+              "title": "Automate Container Management with Ansible"
             }
           },
           {
@@ -57,18 +69,6 @@
             }
           },
           {
-            "id": "76376bfe834798a4",
-            "type": "leaf",
-            "state": {
-              "type": "surfing-view",
-              "state": {
-                "url": "https://jbtechops.com/login"
-              },
-              "icon": "lucide-file",
-              "title": "Coolify"
-            }
-          },
-          {
             "id": "7ffcb24bd2f3f273",
             "type": "leaf",
             "state": {
@@ -77,38 +77,36 @@
                 "url": "https://www.youtube.com/"
               },
               "icon": "lucide-file",
-              "title": "(85) YouTube"
+              "title": "(94) YouTube"
             }
           },
           {
-            "id": "b34622f34893d6e8",
+            "id": "c71c645a1b33a41a",
             "type": "leaf",
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://www.google.com/search?q=k8s+get+events+command&sca_esv=3fd7e35aed588986&hl=en&sxsrf=APpeQns9YKDR6SnY7tXK6ZhSmp7cToGArA%3A1789233611253&ei=xYmlatflBqOz5NoPw57KgAc&iflsig=ABILxe8AAAAAaqWX1brNvJgEWLLAlKozsKZuRmz1zGeZ&uact=5&sclient=gws-wiz&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8cxpBkeIeqYwoCbfNVc4vKE6A5_9xraAmHsehE8ybQankQszSTTs2KnlnrcKQ4m3m_Zushp240ZRsrcGAW0iGFG-xMnl5cxfdF99oXgi9-d_n8y7ZSiS4jKj6TFJpnML4CXFUC7YW9EgWXrKTZefLvFjrsWQtq6cAzVZlD8iCOgFjyDl6SW5EPgmPJKuJqfq1515L8iw&aep=10&ntc=1&mstk=AUtExfAsF1CCL_D_iL-FGTEQsAAFIIzqjq-k9LlTxfZu46eK31H8CwPwMHrwhZZNZfI2KraqVrCAFubYD2gbUjhvWia829P5rd7rWzhEQkK-L9HF9scIio6LWgRFMULwnD4zpD1YLLMCTfNTq5uXrEyQraWOqYVw1Uw3uyEj7mYfaaFfg1lfVzJ36d12jdAR2_MxzQSVPpzKFea0OTrxxpf6IcIosIOYK-l92duvialacx3nGsJscpE99jUXNqJNqnOaVBCn7IpfMp3kz7JcXEMm0Lx7bI1Lw_KRPX8dCqUcb-84NX-qZTn7RF2ATxcNe6aYOO5yLIDseMNdxg&aioh=3&csuir=1&cs=1&atvm=2&mtid=eIqlao2NMtruiLMPif-d8Qg&udm=50"
+                "url": "https://www.digitalocean.com/community/tutorials/different-types-of-shells-in-linux"
               },
               "icon": "lucide-file",
-              "title": "k8s get events command - Google Search"
+              "title": "What are the Different Types of Shells in Linux? | DigitalOcean"
             }
           },
           {
-            "id": "c7cbc8ea02899469",
+            "id": "0211bdc79d871549",
             "type": "leaf",
             "state": {
-              "type": "surfing-view",
-              "state": {
-                "url": "https://pve.proxmox.com/pve-docs/chapter-sysadmin.html"
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Host System Administration"
+              "title": "New tab"
             }
           }
         ],
         "currentTab": 1
       },
       {
-        "id": "8214e90b5428d8f1",
+        "id": "59c1fad8a1c07baf",
         "type": "tabs",
         "dimension": 41.95095948827292,
         "children": [
@@ -170,8 +168,7 @@
               "title": "sh"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -383,7 +380,7 @@
       "soundscapes:Soundscapes: My Music": false
     }
   },
-  "active": "b3afbcd9eeeb3ee3",
+  "active": "9c6ecce1430861ed",
   "lastOpenFiles": [
     "Command_Guru_v3/k8s/k8s Breakdown.md",
     "Command_Guru_v3/Command_Guru_v3.md",
