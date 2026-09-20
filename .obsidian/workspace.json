@@ -26,10 +26,10 @@
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://labex.io/labs/inspect-kubernetes-api-resources-663608?course=ckad-prep"
+                "url": "https://labex.io/labs/write-a-pod-manifest-663628?course=ckad-prep"
               },
               "icon": "lucide-file",
-              "title": "Inspect Kubernetes API Resources | CKAD Prep"
+              "title": "Write a Pod Manifest | CKAD Prep"
             }
           },
           {
@@ -77,7 +77,19 @@
                 "url": "https://www.youtube.com/"
               },
               "icon": "lucide-file",
-              "title": "(94) YouTube"
+              "title": "(95) YouTube"
+            }
+          },
+          {
+            "id": "b5caed0d18a691e4",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "https://www.youtube.com/watch?v=tY7f0KvEJic"
+              },
+              "icon": "lucide-file",
+              "title": "(95) Building your Linux career in 2026 | Into the Terminal 198 - YouTube"
             }
           },
           {
@@ -96,33 +108,12 @@
             "id": "0211bdc79d871549",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
-            }
-          }
-        ],
-        "currentTab": 1
-      },
-      {
-        "id": "59c1fad8a1c07baf",
-        "type": "tabs",
-        "dimension": 41.95095948827292,
-        "children": [
-          {
-            "id": "329271a997c7ff82",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
+              "type": "surfing-view",
               "state": {
-                "file": "Command_Guru_v3/k8s/k8s Breakdown.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
+                "url": "https://www.google.com/search?q=what+is+considered+carbs&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832a9BVCEiB2iPJNekNderQwLP8msUKsz-6AMxGyueJZ9cK2mNBy2II_6WvkKSZWdegvvKnEPeeArWgEP9exNATg6oybL0Q4MEKOxPxFbct-gPoxJydwQkFVgNkm6vNXPQZjfoWDOyzkktih_Z6lssQmfbdqIKqxUyGROmvXoo-iyz5AhpVQ&aep=10&ntc=1&sxsrf=APpeQntgv3s1QUHT7ihcPR5hpstEElqLiA%3A1789848731822&mstk=AUtExfA2T6CZ8niuGnfjzWvl0GZvNHrdhAZvwVFvNgzWDdqCfGWg64ivdVXAPbQaqwCy2-bNxWmsRXEHmgpxesjt6ap1Whgx2e9jHwGqa665dJBxIoXm2RzXfruqzKKoRWoJpzIEvyvk-_GIexWUkh3cRfJDzgCDjXoHNqD0mjuSqhXVDgN5G5o0uqcqC8FDDDbKq7lRL9lHmA_8SOuwlCRVJVgJnb_hmuYF3h3JiWY4kR_fKvMgPHMK4iwmFX4gmd_2psfxNHGsZoGlrWk_FwzWecD5MpzLAuVYj58PeZA4v37GmIZxCVdkcplw6FzEpeMHdl1TxXu7ed1PNH36nZ-WbR0qxAEdh9TuDEajIj6Wj7fxeW0ame7kkuE&aioh=3&csuir=1&cs=1&mtid=wOyuarSMHprX5NoPwIG00A8&zx=1789848772910&udm=50"
               },
               "icon": "lucide-file",
-              "title": "k8s Breakdown"
+              "title": "what is considered carbs - Google Search"
             }
           },
           {
@@ -166,6 +157,29 @@
               "pinned": true,
               "icon": "terminal",
               "title": "sh"
+            }
+          }
+        ],
+        "currentTab": 9
+      },
+      {
+        "id": "59c1fad8a1c07baf",
+        "type": "tabs",
+        "dimension": 41.95095948827292,
+        "children": [
+          {
+            "id": "329271a997c7ff82",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Command_Guru_v3/k8s/k8s Breakdown.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "k8s Breakdown"
             }
           }
         ]
@@ -380,7 +394,7 @@
       "soundscapes:Soundscapes: My Music": false
     }
   },
-  "active": "9c6ecce1430861ed",
+  "active": "b3afbcd9eeeb3ee3",
   "lastOpenFiles": [
     "Command_Guru_v3/k8s/k8s Breakdown.md",
     "Command_Guru_v3/Command_Guru_v3.md",

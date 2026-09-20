@@ -579,8 +579,27 @@ Adding Variables to Playbooks
 - kubectl version --client
 - kubectl cluster-info
 - kubectl cluster-info dump
-- kubectl config current-context
-- kubectl config set-context --current --namespace=default
+- **kubectl api-resources | less
+	- NAME: is the plural resource name used in commands such as kubectl get pods
+	- SHORTNAMES: are optional shorter aliases, such as po for Pods
+	- ==APIVERSION: is the API version used in manifests
+	- NAMESPACED: tells you whether the object belongs to one namespace
+	- KIND: is the object kind used in manifest kind fields
+	- The important columns are resource NAME, optional SHORTNAMES, APIVERSION, whether the resource is NAMESPACED, and the object KIND
+- **kubectl api-resources | grep -i pods
+- kubectl api-resources | head
+- kubectl api-resources | tail
+- *kubectl api-resources --api-group='' | grep -E '^(pods|services|configmaps|secrets)[[:space:]]'
+	- The --api-group='' option narrows the result to core resources such as Pods and Services
+	- The -E option enables an extended regular expression
+	- ^ means the match must start at the beginning of the line
+- kubectl api-resources --api-group='' | grep -E '^nodes[[:space:]]'
+- **kubectl api-resources --api-group=apps
+- **kubectl api-resources --api-group=batch
+- **kubectl config current-context
+- kubectl config set-context --current --namespace=grafana
+	- this changes it from default to grafana for where it searches for things without the -n flag attached to it
+	- kubectl get pods <<--should return pods in the grafana ns
 - kubectl config current-context
 	- config current-context names the active connection
 - kubectl top
@@ -596,6 +615,10 @@ Adding Variables to Playbooks
 - kubectl create namespace ckad-prep-contexts
 - ==kubectl config set-context --current --namespace=ckad-prep-contexts
 	- when you run the kubectl get pods this now changes the default to this namespace
+- ==kubectl explain pod
+- ==kubectl explain pod.spec.containers
+- kubectl explain deployment.spec.replicas
+- kubectl explain cronjob | kubectl explain deployment
 - kubectl get pods >> *No resources found in ckad-prep-contexts namespace
 - kubectl create configmap app-settings --from-literal=mode=prep
 - kubectl get configmap app-settings
@@ -607,7 +630,10 @@ Adding Variables to Playbooks
 - kubectl get apiservice v1beta1.metrics.k8s.io
 - kubectl logs -n kube-system deployment/metrics-server --tail=50
 - kubectl describe node labex-v135
+- **kubectl run sample-pod --image=registry.k8s.io/pause:3.10.1 --restart=Never
 - **kubectl run nginx --image=nginx -n dev
+- **kubectl get pod nginx  -n dev -o yaml > nginx_pod_build.yaml
+- **kubectl get pod nginx -n dev -o jsonpath='{.spec.containers[0].image}'; echo
 - kubectl run nginx --image=nginx --port=80
 - **kubectl run release-client --image=busybox:1.36 --image-pull-policy=IfNotPresent \ --restart=Never -- sleep 3600 
 	- kubectl run: creates a Pod
@@ -1490,8 +1516,38 @@ kubectl apply -f globomantics-frontend.yaml
 - kubectl get configmap app-settings --namespace ckad-prep-contexts
 - kubectl get configmap app-settings --namespace default --ignore-not-found
 ### Inspect k8s API Resources
-
-
+- kubectl config current-context
+- kubectl config set-context --current --namespace=default
+- kubectl get pods <<-- should return no resources found in default ns
+- kubectl get nodes --request-timeout=5s
+- kubectl api-resources
+- kubectl api-resources | head
+---
+- Discover Resource Kinds and Scope
+	- kubectl api-resources
+	- kubectl api-resources --api-group='' | grep -E '^(pods|services|configmaps|secrets)[[:space:]]'
+	- kubectl api-resources --api-group='' | grep -E '^nodes[[:space:]]'
+	- kubectl api-versions
+	- kubectl api-resources --api-group=apps
+	- kubectl api-resources --api-group=batch
+	- kubectl explain pod
+	- kubectl explain pod.spec.containers
+	- kubectl explain deployment.spec.replicas
+### Create and Inspect a Pod
+---
+- Prepare a Pod Workspace
+	- kubectl get nodes --request-timeout=5s
+	- kubectl create namespace ckad-prep-pod
+	- kubectl config set-context --current --namespace=ckad-prep-pod
+	- **kubectl config view --minify --output 'jsonpath={..namespace}'; echo
+	- kubectl run sample-pod --image=registry.k8s.io/pause:3.10.1 --restart=Never
+	- kubectl wait --for=condition=Ready pod/sample-pod --timeout=60s
+	- kubectl get po -o wide
+	- kubectl get pod sample-pod -o wide
+	- kubectl logs sample-pod 
+	- kubectl describe pod sample-pod
+	- kubectl describe pod sample-pod | tail 
+	- kubectl get pod sample-pod -o jsonpath='{.spec.containers[0].image}'; echo
 # ==Homelab==
 ## <u>Servers Ports</u>
 ---
