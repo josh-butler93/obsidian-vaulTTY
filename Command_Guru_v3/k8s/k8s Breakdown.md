@@ -531,6 +531,7 @@ Adding Variables to Playbooks
 		- Declarative files are valuable because you can read them before making a change, apply them repeatedly, review differences, and store them in version control
 - <u>apiVersion</u>:
 	- selects the Kubernetes API group and version
+	- which API version serves the object
 - <u>kind</u>:
 	- identifies the object type, such as Pod or Deployment
 - <u>metadata</u>:
@@ -572,11 +573,18 @@ Adding Variables to Playbooks
 - <u>ConfigMap</u>:
 	- ConfigMap stores non-sensitive configuration data for applications
 		- It is lightweight, quick to create, and namespaced, which makes it useful for practicing namespace behavior before you start deploying real applications
+- <u>metadata</u>:
+	- the object's name, namespace, labels, and other identity data
+- <u>blank</u>
 ## *<u>k8s Commands</u>*
 - /etc/rancher/k3s/k3s.yaml
 - minikube version --short
 - kubectl version
 - kubectl version --client
+- kubectl config current-context
+- kubectl config set-context --current --namespace=dev
+- **kubectl config view
+- **kubectl config view | grep -i namespace
 - kubectl cluster-info
 - kubectl cluster-info dump
 - **kubectl api-resources | less
@@ -597,6 +605,8 @@ Adding Variables to Playbooks
 - **kubectl api-resources --api-group=apps
 - **kubectl api-resources --api-group=batch
 - **kubectl config current-context
+- **kubectl get pods -n dev -l run=nginx
+- kubectl config set-context --current --namespace=ckad-prep-manifest
 - kubectl config set-context --current --namespace=grafana
 	- this changes it from default to grafana for where it searches for things without the -n flag attached to it
 	- kubectl get pods <<--should return pods in the grafana ns
@@ -624,6 +634,20 @@ Adding Variables to Playbooks
 - kubectl get configmap app-settings
 - kubectl get configmap app-settings --namespace ckad-prep-contexts
 - **kubectl get pods -n default**
+- **kubectl get pod manifest-pod -o yaml | sed -n '1,90p'
+	- `sed` is a **stream editor** — a tool that reads text line by line and can filter or transform it
+	- `-n` tells sed: **do not print anything automatically**
+			- Nothing is shown unless you explicitly ask for it
+	- `'1,90p'` is the command
+		- `1,90` is an **address range** (lines 1 through 90), and `p` is the **print** `command`
+	- =="print only lines 1 to 90, and keep quiet about everything else."==
+- **kubectl get pods -n dev --show-labels
+- **kubectl get pods -n dev -L run,app,tier,track
+	- Use -L to show selected labels as separate columns
+- **kubectl label pod frontend-green track=blue --overwrite
+	- Use this command to overwrite the labels of a pod
+- kubectl get pods --show-labels
+- kubectl get po nginx -n dev -o yaml > manifiest_testfile.yaml
 - kubectl get pods -n kube-system -l tier=control-plane
 - kubectl get pods -n kube-system -l tier=control-plane --show-labels
 - kubectl get pods -n kube-system | grep metrics
@@ -1486,6 +1510,110 @@ kubectl apply -f globomantics-frontend.yaml
 ## <u>Command Breakdowns</u>
 
 ## <u>CKAD Training</u>
+### Use Labels and Selectors
+---
+- Prepare a Labeling Namespace
+	- kubectl wait --namespace kube-system --for=condition=Ready pod -l k8s-app=calico-node --timeout=120s
+		- Pods also need the cluster networking plugin before they can start cleanly. Wait for the Calico node Pod to be Ready
+	- kubectl config set-context --current --namespace=ckad-prep-labels
+	- kubectl config view --minify --output 'jsonpath={..namespace}'; echo
+- Creating a labeled pod
+---
+#### labeled-pods.yaml
+```
+cat > labeled-pods.yaml <<'EOF'
+apiVersion: v1
+kind: Pod
+metadata:
+  name: frontend-blue
+  labels:
+    app: storefront
+    tier: frontend
+    track: blue
+spec:
+  containers:
+  - name: app
+    image: registry.k8s.io/pause:3.10.1
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: frontend-green
+  labels:
+    app: storefront
+    tier: frontend
+    track: green
+spec:
+  containers:
+  - name: app
+    image: registry.k8s.io/pause:3.10.1
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: worker-blue
+  labels:
+    app: storefront
+    tier: worker
+    track: blue
+spec:
+  containers:
+  - name: app
+    image: registry.k8s.io/pause:3.10.1
+EOF
+```
+
+---
+- kubectl apply -f labeled-pods.yaml --dry-run=client
+- kubectl apply -f labeled-pods.yaml
+- kubectl wait --for=condition=Ready pod -l app=storefront --timeout=60s
+- kubectl get pods -w
+- kubectl logs frontend-blue -n ckad-label
+- kubectl get pods --show-labels
+- kubectl get pods -L app,tier,track
+- kubectl get pods -l tier=frontend
+---
+#### Update Labels and Use Set Selectors
+	- ==Labels are metadata, so you can add or change them without recreating a Pod==
+- kubectl label pods -l app=storefront env=prep
+- kubectl label pod frontend-green track=blue --overwrite
+- kubectl get pods -L app,tier,track,env
+- kubectl get pods -l 'tier in (frontend,worker),env'
+### Write a Pod Manifest
+---
+- Prepare a Manifest Namespace
+	- kubectl get nodes --request-timeout=5s
+		- Check that the Kubernetes API server is reachable
+	- kubectl get nodes --request-timeout=5s o wide
+	- kubectl create namespace ckad-prep-manifest
+	- kubectl config current-context
+	- kubectl config set-context --current --namespace=ckad-prep-manifest
+	- kubectl get pods
+		- should return 'no resources found in ckad...-manifest namespace'
+---
+#### pod.yaml
+```
+cat > pod.yaml <<'EOF'
+apiVersion: v1 #apiVersion: which API version serves the object
+kind: Pod #kind: which object kind to create
+metadata: #metadata: the object's name, namespace, labels, and other identity data
+  name: manifest-pod
+  labels:
+    app: manifest-demo
+spec: #spec: the desired state of the object
+  containers:
+  - name: app
+    image: registry.k8s.io/pause:3.10.1
+EOF
+```
+
+---
+- kubectl apply --dry-run=server -f pod.yaml
+- kubectl apply -f pod.yaml
+- kubectl wait --for=condition=Ready pod/manifest-pod --timeout=60s
+- kubectl get pods
+- kubectl get pod manifest-pod -o jsonpath='{.apiVersion}{" "}{.kind}{" "}{.metadata.name}{" "}{.spec.containers[0].image}'; echo
+- kubectl get pod manifest-pod -o yaml | sed -n '1,90p'
 ### Explore kubectl, Contexts, and Namespaces
 - kubectl config current-context
 	- Kubernetes context is a saved connection choice in your kubeconfig

@@ -26,10 +26,10 @@
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://labex.io/labs/write-a-pod-manifest-663628?course=ckad-prep"
+                "url": "https://labex.io/labs/generate-and-edit-manifests-with-kubectl-663604?course=ckad-prep"
               },
               "icon": "lucide-file",
-              "title": "Write a Pod Manifest | CKAD Prep"
+              "title": "Generate and Edit Manifests with kubectl | CKAD Prep"
             }
           },
           {
@@ -160,7 +160,7 @@
             }
           }
         ],
-        "currentTab": 9
+        "currentTab": 1
       },
       {
         "id": "59c1fad8a1c07baf",
@@ -394,7 +394,7 @@
       "soundscapes:Soundscapes: My Music": false
     }
   },
-  "active": "b3afbcd9eeeb3ee3",
+  "active": "329271a997c7ff82",
   "lastOpenFiles": [
     "Command_Guru_v3/k8s/k8s Breakdown.md",
     "Command_Guru_v3/Command_Guru_v3.md",
