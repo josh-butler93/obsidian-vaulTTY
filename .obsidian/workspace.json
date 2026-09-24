@@ -26,10 +26,10 @@
             "state": {
               "type": "surfing-view",
               "state": {
-                "url": "https://labex.io/labs/generate-and-edit-manifests-with-kubectl-663604?course=ckad-prep"
+                "url": "https://labex.io/labs/create-a-deployment-663596?course=ckad-prep"
               },
               "icon": "lucide-file",
-              "title": "Generate and Edit Manifests with kubectl | CKAD Prep"
+              "title": "Create a Deployment | LabEx"
             }
           },
           {
@@ -252,7 +252,7 @@
             }
           },
           {
-            "id": "1bc78de1e349846d",
+            "id": "6c8e08f2ea9e0bbb",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -394,9 +394,10 @@
       "soundscapes:Soundscapes: My Music": false
     }
   },
-  "active": "329271a997c7ff82",
+  "active": "9c6ecce1430861ed",
   "lastOpenFiles": [
     "Command_Guru_v3/k8s/k8s Breakdown.md",
+    "Command_Guru_v3/command_guru_v3.ipynb",
     "Command_Guru_v3/Command_Guru_v3.md",
     "Command_Guru_v3/k8s/k8s.md",
     "Command_Guru/jupyter_notebooks/Command_Guru.ipynb",
@@ -419,7 +420,6 @@
     "Command Guru/Command Guru/HackerOne",
     "Command Guru/Command Guru",
     "Command Guru/!!!meta.json",
-    "Command Guru",
     "Build out Terraform Server.md",
     "Untitled 1.md",
     "Untitled.md",

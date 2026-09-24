@@ -613,6 +613,15 @@ Adding Variables to Playbooks
 - kubectl config current-context
 	- config current-context names the active connection
 - kubectl top
+- **kubectl label --local -f generated-pod.yaml app=manifest-demo tier=frontend -o yaml > labeled-pod.yaml
+	- `kubectl label` adds labels to a Kubernetes object
+	- `--local` tells `kubectl` to work with the file locally rather than update an object in the cluster
+- *yq e --no-colors '.metadata.labels' labeled-pod.yaml
+	- `yq` is a tool for reading and querying YAML files
+	- `e` means “evaluate” the expression that follows
+	- `--no-colors` prints plain text without colored formatting
+	- `'.metadata.labels'` selects the `labels` field inside the YAML’s `metadata`
+- **kubectl set resources --local -f labeled-pod.yaml --requests=cpu=10m,memory=32Mi --limits=cpu=50m,memory=64Mi -o yaml > ready-pod.yaml
 - kubectl get nodes
 - kubectl get nodes --request-timeout=5s
 - kubectl describe node | grep Taints
@@ -656,6 +665,12 @@ Adding Variables to Playbooks
 - kubectl describe node labex-v135
 - **kubectl run sample-pod --image=registry.k8s.io/pause:3.10.1 --restart=Never
 - **kubectl run nginx --image=nginx -n dev
+- **kubectl run generated-web --image=registry.k8s.io/pause:3.10.1 --restart=Never --dry-run=client -o yaml > generated-pod.yaml
+- *sed -n '1,80p' generated-pod.yaml
+	- `sed` is a tool for reading or editing text
+	- `-n` prevents `sed` from printing every line automatically
+	- `'1,80p'` tells `sed` to print (`p`) only the lines from 1 to 80
+	- `generated-pod.yaml` is the file being read
 - **kubectl get pod nginx  -n dev -o yaml > nginx_pod_build.yaml
 - **kubectl get pod nginx -n dev -o jsonpath='{.spec.containers[0].image}'; echo
 - kubectl run nginx --image=nginx --port=80
@@ -1510,6 +1525,30 @@ kubectl apply -f globomantics-frontend.yaml
 ## <u>Command Breakdowns</u>
 
 ## <u>CKAD Training</u>
+### Generate and Edit Manifest with Kubeclt
+---
+- Prepare a Manifest Workspace
+	- kubectl get nodes --request-timeout=5s
+	- kubectl wait --namespace kube-system --for=condition=Ready pod -l k8s-app=calico-node --timeout=120s
+	- kubectl create namespace ckad-prep-generate
+	- kubectl config set-context --current --namespace=ckad-prep-generate
+	- kubectl config view | grep -i namespace, name
+	- kubectl config view --minify --output 'jsonpath={..namespace}'; echo
+	- kubectl run generated-web --image=registry.k8s.io/pause:3.10.1 --restart=Never --dry-run=client -o yaml > generated-pod.yaml
+	- kubectl explain pod.spec.containers
+	- **kubectl apply --dry-run=server -f generated-pod.yaml
+		- `--dry-run=server` sends the request to the Kubernetes API server for validation, but does not store the object
+	- kubectl label --local -f generated-pod.yaml app=manifest-demo tier=frontend -o yaml > labeled-pod.yaml
+	- yq e --no-colors '.metadata.labels' labeled-pod.yaml
+	- kubectl set resources --local -f labeled-pod.yaml --requests=cpu=10m,memory=32Mi --limits=cpu=50m,memory=64Mi -o yaml > ready-pod.yaml
+	- yq e --no-colors '.spec.containers[0].resources' ready-pod.yaml
+	- kubectl apply --dry-run=server -f ready-pod.yaml
+	- kubectl apply -f ready-pod.yaml
+	- kubectl wait --for=condition=Ready pod/generated-web --timeout=60s
+	- kubectl get pods --show-labels
+	- kubectl get pod generated-web -L app,tier
+	- kubectl get pod generated-web -o 'jsonpath={.spec.containers[0].resources.requests.cpu}{" "}{.spec.containers[0].resources.limits.memory}{"\n"}'
+---
 ### Use Labels and Selectors
 ---
 - Prepare a Labeling Namespace
