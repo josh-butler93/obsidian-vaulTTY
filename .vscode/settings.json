@@ -4,5 +4,8 @@
     "editor.smoothScrolling": true,
     "workbench.list.smoothScrolling": true,
     "terminal.integrated.smoothScrolling": true,
-    "editor.cursorStyle": "block-outline"
+    "editor.cursorStyle": "block-outline",
+    "editor.wordWrap": "off",
+    "workbench.editor.pinnedTabSizing": "compact",
+    "workbench.editor.pinnedTabsOnSeparateRow": true
 }
